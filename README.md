@@ -30,7 +30,7 @@ CARBENTRA Smart Plug — 碳镜校园终端工程开发项目
 
 首先阅读发布说明和各模块 README。机械尺寸以同一参数源与装配坐标为准。修改 PCB 包络或器件高度后，应重新进行机械装配与视图检查。渲染与动画用于展示，不替代尺寸图及电气审查。
 
-用户指定远程仓库：https://github.com/hicancan/carbentra-smart-plug 。首次远程同步正在等待安全授权，尚未宣称推送成功。
+用户指定远程仓库：https://github.com/hicancan/carbentra-smart-plug 。账号与目标仓库权限已验证，首次工程同步正在进行；完整同步状态以实际远端文件及最终核验记录为准。
 
 ## 修订导航
 
