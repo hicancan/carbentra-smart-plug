@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100">
-<title>碳镜校园：云—边—端控制与数据架构</title><desc>云端目标下发、边缘聚合与能力过滤、端侧安全执行。遥测回传和原生空调接口独立显示。Rev B 开发架构，云端为规划，未连接真实硬件。</desc>
+<title>碳迹未来：云—边—端控制与数据架构</title><desc>云端目标下发、边缘聚合与能力过滤、端侧安全执行。遥测回传和原生空调接口独立显示。Rev B 开发架构，云端为规划，未连接真实硬件。</desc>
 <defs><marker id="down" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#1a8179" stroke-width="1.5"/></marker><marker id="up" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#698296" stroke-width="1.5"/></marker></defs>
 <rect width="1600" height="1100" fill="#eef3f1"/>
 <g font-family="Noto Sans CJK SC, sans-serif" fill="#193f45">
-<text x="70" y="73" font-size="17" letter-spacing="3" fill="#1a8179">CARBONMIRROR / SYSTEM ARCHITECTURE</text>
-<text x="70" y="128" font-size="40" font-weight="700">碳镜校园 · 云—边—端协同</text>
+<text x="70" y="73" font-size="17" letter-spacing="3" fill="#1a8179">CARBENTRA / SYSTEM ARCHITECTURE</text>
+<text x="70" y="128" font-size="40" font-weight="700">碳迹未来 · 云—边—端协同</text>
 <text x="70" y="166" font-size="21" fill="#617b80">一个硬件平台，负载能力决定可执行动作；本地安全永远优先</text>
 <rect x="70" y="208" width="1130" height="212" rx="18" fill="#193f45"/>
-<text x="100" y="250" font-size="17" fill="#8dddd0">01 / CLOUD</text><text x="100" y="290" font-size="29" fill="white" font-weight="700">碳镜校园 · 数字孪生与优化目标</text>
+<text x="100" y="250" font-size="17" fill="#8dddd0">01 / CLOUD</text><text x="100" y="290" font-size="29" fill="white" font-weight="700">碳迹未来 · 数字孪生与优化目标</text>
 <text x="100" y="337" font-size="21" fill="#deeeea">空间 / 回路 / 资产拓扑　·　能耗与碳账本　·　教学与舒适度约束</text>
 <text x="100" y="376" font-size="21" fill="#deeeea">经批准的策略、目标与预算　｜　因子来源 + 基线版本 + 数据质量</text>
 <path d="M230 424 V484" stroke="#1a8179" stroke-width="3" marker-end="url(#down)"/>

@@ -1,4 +1,4 @@
-# CarbonMirror electronic development release
+# CARBENTRA electronic development release
 
 ## What exists
 
@@ -10,8 +10,8 @@ A real external antenna candidate and a mechanical pocket are defined in `PROTEC
 
 ## Files
 
-- `carbonmirror.kicad_sch`, `.kicad_pcb`, `.kicad_pro`, `.kicad_dru`: editable source and preliminary constraints
-- `CarbonMirror.kicad_sym`, `sym-lib-table`: local symbols, flattened from installed KiCad library for portability
+- `carbentra.kicad_sch`, `.kicad_pcb`, `.kicad_pro`, `.kicad_dru`: editable source and preliminary constraints
+- `CARBENTRA.kicad_sym`, `sym-lib-table`: local symbols, flattened from installed KiCad library for portability
 - `circuit_manifest.json`: machine-readable pins, nets, placements and schematic positions
 - `bom.csv`: candidates, NOT a purchase-approved BOM; passives require precise grade/voltage/package selection
 - `METERING_DESIGN.md`: substantive isolated metering boundary, pin map and sizing; daughterboard NOT implemented

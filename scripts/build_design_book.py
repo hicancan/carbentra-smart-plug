@@ -11,9 +11,9 @@ R=Path(__file__).resolve().parents[1]; O=R/'release'; O.mkdir(exist_ok=True)
 pdfmetrics.registerFont(UnicodeCIDFont('STSong-Light'))
 W,H=595.28,841.89
 DRAFT='--draft' in sys.argv
-TARGET=O/('CarbonMirror_Design_Review_DRAFT.pdf' if DRAFT else 'CarbonMirror_Design_Review_CN.pdf')
+TARGET=O/('CARBENTRA_Design_Review_DRAFT.pdf' if DRAFT else 'CARBENTRA_Design_Review_CN.pdf')
 C=canvas.Canvas(str(TARGET),pagesize=(W,H))
-C.setTitle('碳镜校园统一自适应智能插座设计审阅册');C.setAuthor('CarbonMirror project')
+C.setTitle('碳迹未来统一自适应智能插座设计审阅册');C.setAuthor('CARBENTRA project')
 style=ParagraphStyle('body',fontName='STSong-Light',fontSize=11,leading=18,textColor='#213a3c',wordWrap='CJK')
 small=ParagraphStyle('small',parent=style,fontSize=9,leading=14,textColor='#566868')
 page=0
@@ -21,10 +21,10 @@ page=0
 def base(title,sub):
  global page
  page+=1;C.setFillColorRGB(.965,.973,.969);C.rect(0,0,W,H,fill=1,stroke=0)
- C.setFillColorRGB(.05,.18,.17);C.setFont('Helvetica-Bold',10);C.drawString(42,H-40,'CARBONMIRROR / ENGINEERING DEVELOPMENT')
+ C.setFillColorRGB(.05,.18,.17);C.setFont('Helvetica-Bold',10);C.drawString(42,H-40,'CARBENTRA / ENGINEERING DEVELOPMENT')
  C.setFont('STSong-Light',23);C.drawString(42,H-80,title)
  para(sub,42,H-110,W-84,small)
- C.setFillColorRGB(.3,.4,.4);C.setFont('Helvetica',8);C.drawString(42,28,'CM-S16-EVT-A   |   2026-09-30   |   NOT FOR ENERGIZATION');C.drawRightString(W-42,28,f'{page:02d}')
+ C.setFillColorRGB(.3,.4,.4);C.setFont('Helvetica',8);C.drawString(42,28,'CARBENTRA-P16-EVT-A   |   2026-09-30   |   NOT FOR ENERGIZATION');C.drawRightString(W-42,28,f'{page:02d}')
 
 def para(s,x,y,w,st=style):
  p=Paragraph(s,st);_,h=p.wrap(w,1000);p.drawOn(C,x,y-h);return y-h-12

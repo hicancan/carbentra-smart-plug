@@ -1,4 +1,4 @@
-"""CarbonMirror studio. All geometry imported from the common engineering assembly.
+"""CARBENTRA studio. All geometry imported from the common engineering assembly.
 Usage: blender -b --python visuals/scripts/build_studio.py -- preview|stills|animation|all
 Units: source mm, Blender meters. Mesh source manifests remain authority.
 """
@@ -6,13 +6,24 @@ import bpy, math, json, sys, os, subprocess, hashlib
 from pathlib import Path
 from mathutils import Vector
 from bpy_extras.object_utils import world_to_camera_view
-ROOT=Path(os.environ.get('CM_PROJECT_ROOT',str(Path(__file__).resolve().parents[2]))); OUT=Path(os.environ.get('CM_OUTPUT_DIR',str(ROOT/'visuals'))); MODE=sys.argv[-1] if '--' in sys.argv else 'preview'
+ROOT=Path(os.environ.get('CARBENTRA_PROJECT_ROOT',str(Path(__file__).resolve().parents[2]))); OUT=Path(os.environ.get('CARBENTRA_OUTPUT_DIR',str(ROOT/'visuals'))); MODE=sys.argv[-1] if '--' in sys.argv else 'preview'
 for d in ['renders','exports','animation']: (OUT/d).mkdir(parents=True,exist_ok=True)
 bpy.ops.object.select_all(action='SELECT'); bpy.ops.object.delete(use_global=False)
 for d in bpy.data.materials: bpy.data.materials.remove(d)
 scene=bpy.context.scene;bpy.context.preferences.filepaths.save_version=0
 scene.unit_settings.system='METRIC'; scene.unit_settings.scale_length=1
-scene.render.engine='CYCLES';scene.cycles.samples=96;scene.cycles.use_denoising=False;scene.cycles.adaptive_threshold=.025
+scene.render.engine='CYCLES';
+if os.environ.get('CARBENTRA_USE_GPU','0') == '1':
+ try:
+  prefs=bpy.context.preferences.addons['cycles'].preferences
+  for backend in ('OPTIX','CUDA'):
+   try:
+    prefs.compute_device_type=backend;prefs.get_devices();break
+   except Exception:pass
+  for dev in prefs.devices:dev.use=dev.type in {'OPTIX','CUDA'}
+  scene.cycles.device='GPU'
+ except Exception as exc:print('GPU setup fallback:',exc)
+scene.cycles.samples=96;scene.cycles.use_denoising=False;scene.cycles.adaptive_threshold=.025
 scene.render.resolution_percentage=100; scene.render.image_settings.file_format='PNG'
 scene.view_settings.view_transform='AgX';scene.view_settings.exposure=-3.5;scene.view_settings.look='AgX - Medium High Contrast'
 scene.world.color=(.25,.25,.25)
@@ -90,11 +101,12 @@ for o in parts:
   if err>.05:raise RuntimeError('Mesh transform mismatch '+o.name+': '+str(err)+'mm')
 (OUT/'exports/import_validation.json').write_text(json.dumps(validation,indent=2))
 
-font=bpy.data.fonts.load('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf')
-cn=bpy.data.fonts.load('/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc')
+FONT_FILE=Path(__file__).resolve().parents[3]/'assets/fonts/NotoSansSC-Regular.ttf'
+font=bpy.data.fonts.load(str(FONT_FILE))
+cn=font
 def text(body,name,size,loc,material='ink',fontob=font):
  c=bpy.data.curves.new(name,'FONT');c.body=body;c.align_x='CENTER';c.size=size;c.extrude=.000008;c.font=fontob;o=bpy.data.objects.new(name,c);scene.collection.objects.link(o);o.location=loc;assign(o,material);return o
-branding=[text('CARBONMIRROR','Brand / front pad print',.0034,(0,-.020,front_z+.00004)),text('碳镜校园','Brand / Chinese',.0034,(0,-.025,front_z+.00004),fontob=cn)]
+branding=[text('CARBENTRA','Brand / front pad print',.0034,(0,-.020,front_z+.00004)),text('碳迹未来','Brand / Chinese',.0034,(0,-.025,front_z+.00004),fontob=cn)]
 parts+=branding
 # Actual source reference designators, drawn as inspection annotations on large package envelopes.
 board_labels=[]
@@ -164,8 +176,8 @@ def save_export():
  reset();scene.render.film_transparent=False;scene.render.engine='CYCLES';scene.view_settings.view_transform='AgX';scene.view_settings.look='AgX - Medium High Contrast';scene.view_settings.exposure=-3.5;camera((.145,-.185,.215));
  bpy.ops.object.select_all(action='DESELECT')
  for o in parts:o.select_set(True)
- bpy.ops.export_scene.gltf(filepath=str(OUT/'exports/carbonmirror_assembly.glb'),export_format='GLB',use_selection=True,export_apply=False,export_extras=True)
- scene.render.resolution_x=2400;scene.render.resolution_y=2000;scene.cycles.samples=256;scene.render.filepath=str(OUT/'renders/01_hero_ivory.png');bpy.ops.file.pack_all();bpy.ops.wm.save_as_mainfile(filepath=str(OUT/'carbonmirror_studio.blend'),compress=True)
+ bpy.ops.export_scene.gltf(filepath=str(OUT/'exports/carbentra_assembly.glb'),export_format='GLB',use_selection=True,export_apply=False,export_extras=True)
+ scene.render.resolution_x=2400;scene.render.resolution_y=2000;scene.cycles.samples=256;scene.render.filepath=str(OUT/'renders/01_hero_ivory.png');bpy.ops.file.pack_all();bpy.ops.wm.save_as_mainfile(filepath=str(OUT/'carbentra_studio.blend'),compress=True)
 
 save_export()
 if MODE=='views':
@@ -250,7 +262,7 @@ if MODE in ('animation','all'):
  if any(min(v['min_xy'])<.025 or max(v['max_xy'])>.975 for v in framing.values()):raise RuntimeError('Animation framing guard: part would approach edge')
  frames=OUT/'animation/frames';frames.mkdir(parents=True,exist_ok=True)
  scene.render.image_settings.file_format='PNG';scene.render.filepath=str(frames/'frame_')
- scene.frame_set(1);bpy.ops.file.pack_all();bpy.ops.wm.save_as_mainfile(filepath=str(OUT/'carbonmirror_animation.blend'),compress=True);bpy.ops.render.render(animation=True)
- subprocess.run(['ffmpeg','-y','-framerate','24','-i',str(frames/'frame_%04d.png'),'-vf',"drawtext=fontfile=/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc:text='碳镜校园  /  ASSEMBLY STUDY':fontsize=32:fontcolor=0x173c40:x=55:y=45,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf:text='ENGINEERING DEVELOPMENT  •  VERIFICATION PENDING':fontsize=19:fontcolor=0x526d6e:x=55:y=1220",'-c:v','libx264','-crf','18','-pix_fmt','yuv420p','-movflags','+faststart',str(OUT/'animation/carbonmirror_exploded.mp4')],check=True)
+ scene.frame_set(1);bpy.ops.file.pack_all();bpy.ops.wm.save_as_mainfile(filepath=str(OUT/'carbentra_animation.blend'),compress=True);bpy.ops.render.render(animation=True)
+ subprocess.run(['ffmpeg','-y','-framerate','24','-i',str(frames/'frame_%04d.png'),'-c:v','libx264','-crf','18','-pix_fmt','yuv420p','-movflags','+faststart',str(OUT/'animation/carbentra_exploded.mp4')],check=True)
 
 print('STUDIO COMPLETE',MODE)

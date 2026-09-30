@@ -1,11 +1,11 @@
 {
   "brand": "CARBENTRA",
-  "revision": "CM-S16-EVT-B",
+  "revision": "CARBENTRA-P16-EVT-B",
   "created_utc": "2026-09-30T12:30:51.411995+00:00",
   "scope": "Export-only supplement to the frozen digital review snapshot. Detailed PCB copper/lead/package geometry, not new physical qualification or vendor-internal CAD. RF slack reservation deliberately excluded as non-physical.",
   "source_sha256": {
     "mechanical": {
-      "path": "mechanical/rev_b/CM-S16-EVT-B.FCStd",
+      "path": "mechanical/rev_b/CARBENTRA-P16-EVT-B.FCStd",
       "sha256": "45cfa343b0a7dc74c4e8bd6ff6a016bdb83c3e152dcf93402c634cf8199dda04"
     },
     "main": {
@@ -46,7 +46,7 @@
   "step_summed_volume_mm3": 230213.0856079955,
   "relative_summed_volume_difference": 2.119624111262338e-08,
   "output": {
-    "path": "mechanical/rev_b/CM-S16-EVT-B_system_detailed.step",
+    "path": "mechanical/rev_b/CARBENTRA-P16-EVT-B_system_detailed.step",
     "bytes": 36490894,
     "sha256": "76a282c5c0acb60a52f61dbe29d4a0f8c6038d64d0ca48cc2e8fb402eb77e8ab"
   }

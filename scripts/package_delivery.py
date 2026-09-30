@@ -38,7 +38,7 @@ def main():
   'CARBENTRA_RevB_VisualSources.zip':lambda p: str(p).startswith('visuals/scripts/') or (str(p).startswith('visuals/rev_b/') and '/renders/' not in str(p) and p.suffix!='.mp4'),
   'CARBENTRA_RevB_ReviewMedia.zip':lambda p: (str(p).startswith('visuals/rev_b/') and ('/renders/' in str(p) or p.suffix=='.mp4')) or str(p)=='release/CARBENTRA_RevB_Design_Review_CN.pdf',
  }
- manifest={'product':'CARBENTRA','revision':'CM-S16-EVT-B','commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=R,text=True).strip(),'digital_only':True,'files':[]}
+ manifest={'product':'CARBENTRA','revision':'CARBENTRA-P16-EVT-B','commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=R,text=True).strip(),'digital_only':True,'files':[]}
  for name,select in groups.items():
   target=out/name
   with zipfile.ZipFile(target,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:

@@ -1,47 +1,38 @@
-# CarbonMirror studio assets
+# CARBENTRA visual engineering
 
-All model geometry comes from the shared mechanical STL assembly and electronic OBJ assembly, in their common millimetre coordinate frame. The scene converts those exact engineering exports to metres. No image-generation substitute or unrelated visual shell is used.
+This directory is the visual layer of **碳迹未来 · CARBENTRA**. The canonical current assets are under [`rev_b/`](rev_b/); Rev A is retained only as an engineering-history baseline.
 
-## Reproduce
+All product geometry is derived from the shared mechanical and ECAD sources in their common millimetre coordinate frame. Blender converts those engineering exports to presentation units; it does not substitute an unrelated shell or AI-generated product geometry.
 
-From the repository root, after generating mechanical and electronic files:
+## Current baseline
+
+- **Platform:** CARBENTRA
+- **Device:** CARBENTRA Plug
+- **Revision:** CARBENTRA-P16-EVT-B
+- **Canonical scene:** `rev_b/carbentra_studio.blend`
+- **Detailed GLB:** `rev_b/exports/carbentra_assembly.glb`
+- **Twin GLB:** `rev_b/exports/carbentra_twin_light.glb`
+- **Animation:** `rev_b/animation/carbentra_exploded.mp4`
+- **Renders:** `rev_b/renders/`
+
+The active scene includes the CARBENTRA product mark and the Chinese project identity **碳迹未来**. Display-only transparent, exploded and section views are inspection devices, not material or manufacturing claims.
+
+## Reproduce Rev B
+
+From the repository root, after the mechanical and ECAD exports exist, set the Rev B source paths described in [`rev_b/README.md`](rev_b/README.md) and run:
 
 ```sh
-blender -b --python visuals/scripts/build_studio.py -- preview
-blender -b --python visuals/scripts/build_studio.py -- hero
-blender -b --python visuals/scripts/build_studio.py -- technical
-blender -b --python visuals/scripts/build_studio.py -- animation
-python visuals/scripts/compose_sheets.py
+blender -b --python visuals/scripts/build_studio.py -- all
+python visuals/scripts/compose_sheets_zh.py
+python visuals/scripts/validate_deliverables.py
 ```
 
-Use `all` to run everything in one process. Blender 4.3.2; Python/Pillow for annotated sheets. Fonts: DejaVu Sans and Noto Sans CJK. Render camera/lighting, brand pad-print lettering and small render-only edge bevels are presentation additions. The engineering geometry remains in mechanical/ and electronics/.
+The Blender pipeline supports `CARBENTRA_USE_GPU=1` for a local CUDA/OptiX render path when available. The annotated-sheet scripts use the repository font asset instead of an OS-specific font path.
 
-## Deliverables
+## Revision policy
 
-- `carbonmirror_studio.blend`: assembled source, named CAD/ECAD parts, materials, physical studio lighting and camera
-- `carbonmirror_animation.blend`: animated explosion/reassembly source
-- `exports/carbonmirror_assembly.glb`: named selectable-part assembly, metre units
-- `renders/01_hero_ivory.png`, `02_hero_detail.png`: 2400 × 2000 Cycles studio images
-- `renders/03_rear_interface.png`: rear input interface
-- `renders/04_internal_architecture.png`: exterior removed to inspect shared structure
-- `renders/05_transparent_inspection.png`: nonphysical diagnostic ghost-shell treatment (not a transparent material proposal)
-- `renders/06_exploded_annotated.png`: labeled exploded assembly
-- `renders/07_six_view_sheet.png`: labeled orthographic sheet
-- `renders/08_section_annotated.png`: true display-only longitudinal section
-- `renders/09_pcb_assembly.png`: source-routed PCB inspection with footprint package envelopes
-- `renders/view_*.png`: individual orthographic images
-- `animation/carbonmirror_exploded.mp4`: smooth 24 fps engineering presentation
+[`revA_baseline/`](revA_baseline/) is kept to document engineering evolution. It must not be mixed with Rev B dimensions, PCB placement, validation results or release status. Generated archive media that still carried obsolete branding is intentionally excluded from the current canonical set; Git history remains the provenance record.
 
-## Meaning and limits
+## Engineering boundary
 
-CM-S16-EVT-A is an engineering development design with verification pending. The interface is a single three-pin, 16 A-class design target, not a claim of certified dimensions, universal compatibility, successful manufacture or safe operation. Electronic body solids are footprint-derived package envelopes, not vendor-detailed solids. Transparent and exploded views are inspection visualizations. Colour and candidate material choices are presentation specifications, not material qualification.
-
-The assembly explosion uses mechanical manifest offsets and moves the entire electronics group together. It illustrates architecture; it is not a validated manufacturing assembly procedure. Photoreal lighting does not imply a fabricated or tested product.
-
-### Animation representation
-
-The MP4 is studio-shaded CAD animation (Workbench), not a photoreal film. The animation-specific Blender source batches components by rigid explosion layer for rendering performance; each layer records its original `source_members`. The assembled studio source and GLB retain individual selectable parts. All layer geometry is converted from the same imported assembly, without a substitute shell. Frames use smooth Bezier easing with assembled/exploded pauses and a slow camera arc.
-
-The half-section sheet applies a display-only Boolean cut at X = 0 to copies of the original geometry. It does not modify native CAD or imply that parts have been fabricated and sectioned.
-
-Routed copper and vias, when present, are imported from the electronics source export. The green trace material is a routing-inspection overlay, not a finished soldermask specification. Mask openings, tenting and manufacturing finish remain unqualified. The animation title/footer is added during FFmpeg encoding.
+Photoreal lighting does not imply a fabricated or tested product. The 220 V AC / 16 A target remains a design target until physical safety, gauge, temperature-rise, insulation, protection, EMC, calibration and reliability work is complete.

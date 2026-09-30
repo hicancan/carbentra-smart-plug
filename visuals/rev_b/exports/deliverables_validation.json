@@ -2,27 +2,27 @@
   "status": "Engineering development; verification pending",
   "deliverables": [
     {
-      "file": "carbonmirror_studio.blend",
+      "file": "carbentra_studio.blend",
       "bytes": 71934012,
       "sha256": "312a35e62b5f1e2f8be96cc11e98d845fc1409c1abd836f56c3744d75f9c5d4d"
     },
     {
-      "file": "carbonmirror_animation.blend",
+      "file": "carbentra_animation.blend",
       "bytes": 27581059,
       "sha256": "8ad4790c931c87dc72491500a74c462d371f5a0f1896a9c89e2507bd3eafe877"
     },
     {
-      "file": "exports/carbonmirror_assembly.glb",
+      "file": "exports/carbentra_assembly.glb",
       "bytes": 73559808,
       "sha256": "9ada23dabb3b9b1bf728946e9adae17eb58f407cd4af545b2222740806d9a159"
     },
     {
-      "file": "exports/carbonmirror_twin_light.glb",
+      "file": "exports/carbentra_twin_light.glb",
       "bytes": 30337768,
       "sha256": "dc25e3965a9e653eb5c91a4514fcc1a3e051ffa47593778d7e70a71071e439d0"
     },
     {
-      "file": "animation/carbonmirror_exploded.mp4",
+      "file": "animation/carbentra_exploded.mp4",
       "bytes": 1098532,
       "sha256": "819613b8f59d86eda9998e2ac80e9e9406e48efb03af68be05245358d7bb1138"
     },
@@ -131,7 +131,7 @@
     "RFServiceSlackEnvelope"
   ],
   "light_model_validation": {
-    "artifact": "exports/carbonmirror_twin_light.glb",
+    "artifact": "exports/carbentra_twin_light.glb",
     "status": "READY / final frozen-source lightweight display model",
     "bytes": 30337768,
     "sha256": "dc25e3965a9e653eb5c91a4514fcc1a3e051ffa47593778d7e70a71071e439d0",

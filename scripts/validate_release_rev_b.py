@@ -47,16 +47,16 @@ cf=read('visuals/rev_b/exports/common_frame_validation.json')
 check('visual common-frame source comparison',cf.get('all_pass') and cf.get('head_aggregate_pass'))
 for n in ['01_hero_ivory','02_hero_detail','03_rear_interface','04_internal_architecture','05_transparent_inspection','06_exploded_raw','06_exploded_annotated','07_six_view_sheet','08_section_raw','08_section_annotated','09_pcb_assembly']:
  path=R/'visuals/rev_b/renders'/f'{n}.png';check('render '+n,path.is_file() and path.stat().st_size>1000)
-for n in ['carbonmirror_studio.blend','carbonmirror_animation.blend']:
+for n in ['carbentra_studio.blend','carbentra_animation.blend']:
  path=R/'visuals/rev_b'/n;check('native scene '+n,path.is_file() and path.stat().st_size>1000)
-for n in ['carbonmirror_assembly.glb','carbonmirror_twin_light.glb']:
+for n in ['carbentra_assembly.glb','carbentra_twin_light.glb']:
  path=R/'visuals/rev_b/exports'/n
  if not path.exists():check('GLB '+n,False);continue
  data=path.read_bytes();header=struct.unpack('<4sII',data[:12]);check('GLB structure '+n,header==(b'glTF',2,len(data)))
  length,kind=struct.unpack('<II',data[12:20]);j=json.loads(data[20:20+length]);check('GLB nodes '+n,len(j.get('nodes',[]))>=10)
 gi=read('release/light_glb_import_check.json')
-check('actual Blender light GLB import',gi.get('import_pass') and gi.get('sha256')==sha(R/'visuals/rev_b/exports/carbonmirror_twin_light.glb'))
-movie=R/'visuals/rev_b/animation/carbonmirror_exploded.mp4'
+check('actual Blender light GLB import',gi.get('import_pass') and gi.get('sha256')==sha(R/'visuals/rev_b/exports/carbentra_twin_light.glb'))
+movie=R/'visuals/rev_b/animation/carbentra_exploded.mp4'
 if movie.exists():
  r=subprocess.run(['ffprobe','-v','error','-count_frames','-show_entries','format=duration:stream=codec_name,width,height,avg_frame_rate,nb_read_frames','-of','json',str(movie)],capture_output=True,text=True)
  d=json.loads(r.stdout) if r.returncode==0 else {};v=d.get('streams',[{}])[0]
@@ -67,6 +67,6 @@ for cmd,label in [([sys.executable,'scripts/validate_firmware_evidence.py'],'fir
 review=R/'release/CARBENTRA_RevB_Design_Review_CN.pdf';check('final Chinese review PDF',review.is_file() and review.stat().st_size>1000)
 pq=read('release/review_pdf_qa.json')
 check('final PDF visual QA and hash',pq.get('passed') and pq.get('all_pages_rendered_and_contact_sheet_visually_reviewed') and pq.get('sha256')==sha(review))
-out={'product':'CARBENTRA','revision':'CM-S16-EVT-B','scope':'Frozen digital consistency and software checks only; no physical/electrical certification','release_for_fabrication':False,'release_for_energization':False,'passed':all(c['passed'] for c in checks),'checks':checks}
+out={'product':'CARBENTRA','revision':'CARBENTRA-P16-EVT-B','scope':'Frozen digital consistency and software checks only; no physical/electrical certification','release_for_fabrication':False,'release_for_energization':False,'passed':all(c['passed'] for c in checks),'checks':checks}
 (R/'release/digital_checks_rev_b.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps({'passed':out['passed'],'check_count':len(checks),'failures':[c['check'] for c in checks if not c['passed']]},ensure_ascii=False,indent=2));sys.exit(0 if out['passed'] else 1)

@@ -4,8 +4,8 @@ from pathlib import Path
 sys.path.append('/usr/lib/freecad/lib')
 import FreeCAD as A,Part,Mesh
 import pcbnew as p
-R=Path(__file__).resolve().parents[1]; b=p.LoadBoard(str(R/'carbonmirror.kicad_pcb')); cs={c['ref']:c for c in json.loads((R/'circuit_manifest.json').read_text())}
-doc=A.newDocument('CarbonMirror_PCB_DEV_A'); objects=[];manifest=[]
+R=Path(__file__).resolve().parents[1]; b=p.LoadBoard(str(R/'carbentra.kicad_pcb')); cs={c['ref']:c for c in json.loads((R/'circuit_manifest.json').read_text())}
+doc=A.newDocument('CARBENTRA_PCB_DEV_A'); objects=[];manifest=[]
 def obj(name,shape,color):
  o=doc.addObject('Part::Feature',name);o.Label=name;o.Shape=shape;objects.append(o);return o
 board=Part.makeBox(72,68,1.6,A.Vector(-36,-34,8))

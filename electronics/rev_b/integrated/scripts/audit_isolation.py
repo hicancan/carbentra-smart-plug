@@ -6,7 +6,7 @@ from pathlib import Path
 import sys,json,math,os,hashlib
 import pcbnew as p
 sys.path.insert(0,str(Path(__file__).parent));from route_signals import domain,xy
-R=Path(__file__).resolve().parents[1];board_path=Path(os.environ.get('CM_AUDIT_BOARD',str(R/'integrated.kicad_pcb')));b=p.LoadBoard(str(board_path))
+R=Path(__file__).resolve().parents[1];board_path=Path(os.environ.get('CARBENTRA_AUDIT_BOARD',str(R/'integrated.kicad_pcb')));b=p.LoadBoard(str(board_path))
 def pdist(q,a,z):
  dx=z[0]-a[0];dy=z[1]-a[1];v=dx*dx+dy*dy;t=max(0,min(1,((q[0]-a[0])*dx+(q[1]-a[1])*dy)/(v or 1)));return math.hypot(q[0]-a[0]-t*dx,q[1]-a[1]-t*dy)
 def orient(a,z,q):return (z[0]-a[0])*(q[1]-a[1])-(z[1]-a[1])*(q[0]-a[0])
@@ -53,4 +53,4 @@ for a in hot:
   if dist<8.399 and (':copper' in a['label'] or ':copper' in z['label'] or a['label'].startswith('ZONE:') or z['label'].startswith('ZONE:')):margin_bad.append({'distance_mm':dist,'hot':a['label'],'isolated':z['label']})
   if dist<7.999:bad.append({'distance_mm':dist,'hot':a['label'],'isolated':z['label']})
 result={'board_sha256':hashlib.sha256(board_path.read_bytes()).hexdigest(),'basis':'all-layer XY projection, conservative pad bounding rectangles; vias/NC pins included; copper-zone outlines included as completely filled conservative regions','copper_items':len(items),'minimum_mm':best[0],'minimum_pair':best[1:],'component_only_minimum':body_best,'routing_margin_below_8p4':margin_bad,'violations_below_8mm':bad,'pass':not bad}
-Path(os.environ.get('CM_AUDIT_OUTPUT',str(R/'validation/projected_isolation.json'))).write_text(json.dumps(result,indent=2));print(json.dumps(result,indent=2))
+Path(os.environ.get('CARBENTRA_AUDIT_OUTPUT',str(R/'validation/projected_isolation.json'))).write_text(json.dumps(result,indent=2));print(json.dumps(result,indent=2))

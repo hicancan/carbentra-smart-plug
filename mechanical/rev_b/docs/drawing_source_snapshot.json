@@ -1,5 +1,5 @@
 {
-  "document_revision": "CM-S16-EVT-B",
+  "document_revision": "CARBENTRA-P16-EVT-B",
   "title": "CARBENTRA Face-view polarity control",
   "status": "Drawing QA only; not final model validation",
   "source_files": {
@@ -28,7 +28,7 @@
     }
   ],
   "output_files": [
-    "CM-S16-EVT-B_face_view_polarity.pdf",
-    "CM-S16-EVT-B_face_view_polarity.svg"
+    "CARBENTRA-P16-EVT-B_face_view_polarity.pdf",
+    "CARBENTRA-P16-EVT-B_face_view_polarity.svg"
   ]
 }

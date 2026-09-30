@@ -1,5 +1,6 @@
 {
-  "scope": "Hash and development evidence consistency only; not hardware verification",
+  "scope": "Current-source hash and reproducible development evidence consistency only; not hardware verification",
+  "target_build_state": "REBUILD_REQUIRED_AFTER_BRAND_NAMESPACE_MIGRATION",
   "passed": true,
   "checks": [
     {
@@ -33,42 +34,42 @@
       "detail": ""
     },
     {
-      "check": "source firmware/core/cm_command_json.c",
+      "check": "source firmware/core/carbentra_command_json.c",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "source firmware/core/cm_command_json.h",
+      "check": "source firmware/core/carbentra_command_json.h",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "source firmware/core/cm_feedback.c",
+      "check": "source firmware/core/carbentra_feedback.c",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "source firmware/core/cm_feedback.h",
+      "check": "source firmware/core/carbentra_feedback.h",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "source firmware/core/cm_meter_decode.c",
+      "check": "source firmware/core/carbentra_meter_decode.c",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "source firmware/core/cm_meter_decode.h",
+      "check": "source firmware/core/carbentra_meter_decode.h",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "source firmware/core/cm_policy.c",
+      "check": "source firmware/core/carbentra_policy.c",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "source firmware/core/cm_policy.h",
+      "check": "source firmware/core/carbentra_policy.h",
       "passed": true,
       "detail": ""
     },
@@ -88,22 +89,22 @@
       "detail": ""
     },
     {
-      "check": "source firmware/main/cm_meter.c",
+      "check": "source firmware/main/carbentra_meter.c",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "source firmware/main/cm_meter.h",
+      "check": "source firmware/main/carbentra_meter.h",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "source firmware/main/cm_network.c",
+      "check": "source firmware/main/carbentra_network.c",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "source firmware/main/cm_network.h",
+      "check": "source firmware/main/carbentra_network.h",
       "passed": true,
       "detail": ""
     },
@@ -168,32 +169,17 @@
       "detail": ""
     },
     {
-      "check": "binary bootloader_DEV.bin",
+      "check": "target identity",
       "passed": true,
-      "detail": ""
+      "detail": "esp32c3"
     },
     {
-      "check": "binary partition-table_DEV.bin",
-      "passed": true,
-      "detail": ""
-    },
-    {
-      "check": "binary carbonmirror_endpoint_DEV_ACTUATION_DISABLED.bin",
-      "passed": true,
-      "detail": ""
-    },
-    {
-      "check": "recorded target build",
+      "check": "target rebuild explicitly pending",
       "passed": true,
       "detail": ""
     },
     {
       "check": "actuation disabled",
-      "passed": true,
-      "detail": ""
-    },
-    {
-      "check": "actual build log",
       "passed": true,
       "detail": ""
     },

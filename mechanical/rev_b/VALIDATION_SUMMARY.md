@@ -1,4 +1,4 @@
-# CARBENTRA CM-S16-EVT-B · Final digital review snapshot
+# CARBENTRA CARBENTRA-P16-EVT-B · Final digital review snapshot
 
 - Envelope:108 ×93 ×65 mm nominal; original design, single16A-class interface
 - Mechanical geometry:71 physical parts and1 explicitly non-physical RF slack reservation

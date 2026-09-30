@@ -2,7 +2,7 @@
 import os,sys,json
 BASE=os.path.dirname(os.path.abspath(__file__));sys.path.extend(['/usr/lib/freecad-python3/lib',BASE])
 import FreeCAD as A,Part,socket_b_features as m
-D=A.openDocument(BASE+'/CM_S16_B_base_provisional.FCStd');rows=[]
+D=A.openDocument(BASE+'/CARBENTRA-P16-B-base-provisional.FCStd');rows=[]
 for thick in [1.8,1.95]:
  for p in m.S:
   n=p['name'];z=43.58 if n=='PE' else 46.65

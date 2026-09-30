@@ -1,4 +1,4 @@
-"""CM-S16 parametric development geometry. Load this module before FCStd recompute.
+"""CARBENTRA-P16 parametric development geometry. Load this module before FCStd recompute.
 No part is dimensioned or approved for mains fabrication. Dimensions are design inputs.
 """
 import FreeCAD as App, Part, math, json, os

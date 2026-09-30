@@ -5,7 +5,7 @@ sys.path.extend(['/usr/lib/freecad-python3/lib',BASE])
 import FreeCAD as App,Part,MeshPart
 from socket_features import SocketPart,P,H
 os.makedirs(BASE+'/meshes',exist_ok=True);os.makedirs(BASE+'/step',exist_ok=True)
-doc=App.newDocument('CarbonMirror_S16_EVT_A')
+doc=App.newDocument('CARBENTRA-P16-EVT-A')
 ss=doc.addObject('Spreadsheet::Sheet','Parameters')
 for i,(n,v) in enumerate([('Width',88),('Height',88),('Depth',55)],1):ss.set('A'+str(i),n);ss.set('B'+str(i),str(v)+' mm');ss.setAlias('B'+str(i),n)
 ss.set('A5','Development model; do not energize')
@@ -34,8 +34,8 @@ for k,label,mat,col,explode in items:
  b=shape.BoundBox
  manifest.append({'id':k,'name':label,'file':'meshes/'+k+'.stl','material':mat,'color':col,'explode':[0,0,explode],'volume_mm3':shape.Volume,'solids':len(shape.Solids),'bbox_mm':[b.XMin,b.YMin,b.ZMin,b.XMax,b.YMax,b.ZMax],'valid':shape.isValid()})
  objs.append(obj)
-doc.recompute();doc.saveAs(BASE+'/CarbonMirror_S16_EVT_A.FCStd')
-Part.export(objs,BASE+'/CarbonMirror_S16_EVT_A.step')
+doc.recompute();doc.saveAs(BASE+'/CARBENTRA-P16-EVT-A.FCStd')
+Part.export(objs,BASE+'/CARBENTRA-P16-EVT-A.step')
 json.dump({'units':'mm','front_axis':'+Z','origin':'rear plane center','parts':manifest},open(BASE+'/parts_manifest.json','w'),indent=2)
 # Measure exact BRep intersections. Intentional connected conductors are listed separately.
 intentional={frozenset(['PEBus','Blade_PE']),frozenset(['PEBus','Contact_PE'])}

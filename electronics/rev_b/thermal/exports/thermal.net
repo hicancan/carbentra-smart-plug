@@ -1,11 +1,11 @@
 (export (version "E")
   (design
-    (source "/workspace/scratch/abc8258751a2/carbonmirror-socket/electronics/rev_b/thermal/thermal_interlock.kicad_sch")
+    (source "/workspace/scratch/abc8258751a2/carbentra-smart-plug/electronics/rev_b/thermal/thermal_interlock.kicad_sch")
     (date "2026-09-30T03:19:38-0700")
     (tool "Eeschema 9.0.2+dfsg-1")
     (sheet (number "1") (name "/") (tstamps "/")
       (title_block
-        (title "CarbonMirror Rev B hardware thermal interlock")
+        (title "CARBENTRA Rev B hardware thermal interlock")
         (company)
         (rev "B-CANDIDATE / HOLD")
         (date)
@@ -694,7 +694,7 @@
         (pin (num "1") (name "1") (type "passive")))))
   (libraries
     (library (logical "Thermal")
-      (uri "/workspace/scratch/abc8258751a2/carbonmirror-socket/electronics/rev_b/thermal/Thermal.kicad_sym")))
+      (uri "/workspace/scratch/abc8258751a2/carbentra-smart-plug/electronics/rev_b/thermal/Thermal.kicad_sym")))
   (nets
     (net (code "1") (name "/+3V3_HEAD") (class "Default")
       (node (ref "C1") (pin "1") (pintype "passive"))

@@ -4,7 +4,7 @@ from pathlib import Path
 import pcbnew as p,json,math,uuid,sys
 R=Path(__file__).resolve().parents[1];m=json.loads((R/'electrical_manifest.json').read_text());parts=[c for c in m['components'] if c['board_designation']=='integrated']
 def vec(x,y):return p.VECTOR2I(p.FromMM(x),p.FromMM(y))
-def uid(s):return str(uuid.uuid5(uuid.NAMESPACE_URL,'carbonmirror/integrated-b/'+s))
+def uid(s):return str(uuid.uuid5(uuid.NAMESPACE_URL,'carbentra/integrated-b/'+s))
 def custom(name,body,origin,pads):
  f=p.FOOTPRINT(None);f.SetFPID(p.LIB_ID('Integrated',name));f.SetValue(name)
  for num,x,y,diam,drill in pads:
@@ -28,7 +28,7 @@ if over.exists():pos.update({k:tuple(v) for k,v in json.loads(over.read_text()).
 missing=[c['ref'] for c in parts if c['ref'] not in pos]
 if missing:raise RuntimeError('Missing physical placement:'+str(missing))
 paths={'RevB':R.parent/'meter/RevB.pretty','Feedback':R.parent/'feedback/Feedback.pretty','Thermal':R.parent/'thermal/Thermal.pretty','Integrated':R/'Integrated.pretty'}
-boards={'controller':'controller/carbonmirror.kicad_pcb','meter':'meter/meter.kicad_pcb','feedback':'feedback/output_feedback.kicad_pcb','thermal':'thermal/thermal_controller.kicad_pcb'}
+boards={'controller':'controller/carbentra.kicad_pcb','meter':'meter/meter.kicad_pcb','feedback':'feedback/output_feedback.kicad_pcb','thermal':'thermal/thermal_controller.kicad_pcb'}
 sources={}
 for mod,path in boards.items():
  if (R.parent/path).exists():sources[mod]=p.LoadBoard(str(R.parent/path))
@@ -67,7 +67,7 @@ p.SaveBoard(str(R/'integrated.kicad_pcb'),b)
 (R/'placement.json').write_text(json.dumps({'status':'PLACEMENT CANDIDATE; no routing proof yet','board_mm':[100,85,1.6],'corner_radius_mm':10,'layer_count':4,'frame':'PCB upper-leftXY,mm; mechanics x=pcb_x-50,y=42.5-pcb_y; board bottom assembly z11.5','positions':pos,'bottom_components':['F501'],'holes_mm':[[6,6.5,3.2],[94,6.5,3.2],[6,78.5,3.2],[94,78.5,3.2]],'mount_keepout_diameter_mm':7,'left_notch_pcb_mm':[0,50.5,12,14],'right_notch_pcb_mm':[94,20.5,6,10]},indent=2))
 # Library paths remain local and explicit, rather than relying on a user's global installation.
 (R/'fp-lib-table').write_text('(fp_lib_table '+''.join(f'(lib (name "{lib}") (type "KiCad") (uri "${{KIPRJMOD}}/{__import__("os").path.relpath(path,R)}") (options "") (descr "Revision B candidate"))' for lib,path in paths.items())+')')
-if not (R/'integrated.kicad_pro').exists():(R/'integrated.kicad_pro').write_text((R.parent/'controller/carbonmirror.kicad_pro').read_text())
+if not (R/'integrated.kicad_pro').exists():(R/'integrated.kicad_pro').write_text((R.parent/'controller/carbentra.kicad_pro').read_text())
 (R/'integrated.kicad_dru').write_text((R/'design_rules.kicad_dru').read_text())
 conf=json.loads((R/'integrated.kicad_pro').read_text());conf.setdefault('board',{}).setdefault('design_settings',{}).setdefault('rules',{}).update(min_through_hole_diameter=.2,min_via_diameter=.45);(R/'integrated.kicad_pro').write_text(json.dumps(conf,indent=2))
 print('Placed',len(parts),'electrical components;',len(names),'nets')

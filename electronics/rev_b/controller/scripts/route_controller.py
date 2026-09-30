@@ -2,7 +2,7 @@
 """Targeted LV airwire closure on a duplicate board. DRC remains authoritative."""
 from pathlib import Path
 import pcbnew as p,numpy as np,heapq,math,json,shutil,sys,re
-R=Path(__file__).resolve().parents[1];P=R/'carbonmirror.kicad_pcb'
+R=Path(__file__).resolve().parents[1];P=R/'carbentra.kicad_pcb'
 b=p.LoadBoard(str(P)); S=.1;W=.15;D=.5;DR=.3;C=.16;NX=721;NY=681
 xx,yy=np.meshgrid(np.arange(NX)*S,np.arange(NY)*S,indexing='ij');mains=('L_FUSED','L_AUX_FUSED','L_SWITCHED','N','L_NC_UNUSED')
 def xy(q):return(p.ToMM(q.x),p.ToMM(q.y))

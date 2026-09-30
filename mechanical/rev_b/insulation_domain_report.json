@@ -1,15 +1,15 @@
 {
   "brand": "CARBENTRA",
-  "revision": "CM-S16-EVT-B",
+  "revision": "CARBENTRA-P16-EVT-B",
   "status": "DEVELOPMENT AUDIT / NO INSULATION OR ENERGIZATION APPROVAL",
   "scope": "Concrete nominal 3D proximity of exposed primary link ends, fuse metal, thermal-cutoff leads, contacts and primary solder tails to isolated circuitry and controls; covered-link/core distances separately identified",
   "units": "mm",
   "rf_geometry_reconciliation": {
     "status": "All33 inspected primary metal, insulation carriers/sleeves, existing control/thermal and screw shapes are byte-identical after removing triangulations",
-    "reference_export": "mechanical/rev_b/CM-S16-EVT-B.FCStd",
+    "reference_export": "mechanical/rev_b/CARBENTRA-P16-EVT-B.FCStd",
     "reference_export_sha256": "9af6ad8f930632b6d672ae2c9f215f0361f31ad44212c4460ae7f8b14a37286a",
     "reference_basis": "12:06 exported copy of the12:02 audited native build; parent export roundtrip report recorded zero per-part volume differences",
-    "updated_native": "mechanical/rev_b/CM_S16_B_base_provisional.FCStd",
+    "updated_native": "mechanical/rev_b/CARBENTRA-P16-B-base-provisional.FCStd",
     "updated_native_sha256": "63ffd16d85f4f4bbb9ed7b98d0bbd067ceb9eae9e78fa0b20741dcd0ab05dd71",
     "method": "FreeCAD Shape.cleaned().exportBrepToString() SHA-256; removes visualization mesh data before comparing geometry",
     "parts": [
@@ -232,7 +232,7 @@
   ],
   "incremental_scope": "Exact-mirror export-fidelity correction: rechecked Contact_L,Contact_N,ThermalBody,ThermalLead1,ThermalLead2 against all targets and thermal head; added ThermalBody conservatively as potentially primary, total53 sources. Prior other sources/target layouts unchanged.",
   "prior_full_audit_input_snapshot": {
-    "mechanical/rev_b/CM_S16_B_base_provisional.FCStd": {
+    "mechanical/rev_b/CARBENTRA-P16-B-base-provisional.FCStd": {
       "sha256": "b820edea393c4b4a77a8ce50f736544baa50d0b3e14fd29cb145b722360dc941",
       "mtime_ns": 1790770813555830969
     },
@@ -270,7 +270,7 @@
     }
   },
   "input_snapshot": {
-    "mechanical/rev_b/CM_S16_B_base_provisional.FCStd": {
+    "mechanical/rev_b/CARBENTRA-P16-B-base-provisional.FCStd": {
       "sha256": "5014c43bd451f3764d00777a9cb8c5e1eac664d920650c4be0b6d957995c24c7",
       "mtime_ns": 1790770925718288319
     },

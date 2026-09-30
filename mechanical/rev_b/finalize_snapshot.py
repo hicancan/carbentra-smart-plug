@@ -18,7 +18,7 @@ for p,v in ins['input_snapshot'].items():assert hashlib.sha256((R/p).read_bytes(
 assert rt['all_mechanical_geometry_numeric_equivalent'] and rt['step_roundtrip_all_valid'] and rt['step_roundtrip_solids']==234
 assert rt['relative_volume_difference']<1e-6,rt['relative_volume_difference']
 physical=[p for p in man['parts'] if p.get('geometry_role')!='clearance_envelope'];refs=[p for p in man['parts'] if p.get('geometry_role')=='clearance_envelope'];assert len(physical)==71 and len(refs)==1
-text=f'''# CARBENTRA CM-S16-EVT-B · Final digital review snapshot
+text=f'''# CARBENTRA CARBENTRA-P16-EVT-B · Final digital review snapshot
 
 - Envelope:108 ×93 ×65 mm nominal; original design, single16A-class interface
 - Mechanical geometry:71 physical parts and1 explicitly non-physical RF slack reservation
@@ -40,5 +40,5 @@ The PCB bodies and several connector/lead geometries are nominal/max envelopes, 
 files=[p for p in B.rglob('*') if p.is_file() and p.suffix in ['.py','.json','.md','.csv','.FCStd','.step','.stl','.pdf','.svg'] and '__pycache__' not in p.parts and p.name!='freeze_manifest.json']
 extra=[R/'electronics/rev_b/integrated/integrated.kicad_pcb',R/'electronics/rev_b/integrated/exports/integrated_assembly.obj',R/'electronics/rev_b/integrated/exports/remote_head_assembled.obj']
 rows=[{'path':str(p.relative_to(R)),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'bytes':p.stat().st_size} for p in sorted(files+extra)]
-out={'brand':'CARBENTRA','revision':'CM-S16-EVT-B','snapshot_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'Bounded digital engineering review configuration; not a manufacturing/energization/certification release','physical_mechanical_parts':71,'nonphysical_reservations':1,'combined_physical_objects':234,'all_defined_digital_checks_pass':True,'files':rows}
+out={'brand':'CARBENTRA','revision':'CARBENTRA-P16-EVT-B','snapshot_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'Bounded digital engineering review configuration; not a manufacturing/energization/certification release','physical_mechanical_parts':71,'nonphysical_reservations':1,'combined_physical_objects':234,'all_defined_digital_checks_pass':True,'files':rows}
 (B/'freeze_manifest.json').write_text(json.dumps(out,indent=2));(B/'checksums.sha256').write_text(''.join(x['sha256']+'  '+x['path']+'\n' for x in rows));print(json.dumps({k:v for k,v in out.items() if k!='files'},indent=2))

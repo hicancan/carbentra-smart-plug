@@ -30,7 +30,7 @@ if drc.exists():
  summary=json.loads((R/'electronics/validation/final_summary.json').read_text())
  check('fabrication hold retained',summary.get('release_status')=='FABRICATION_HOLD','Electrical completion not inferred from geometric DRC.')
  check('low-voltage connectivity',summary.get('lv_unconnected')==0,'Mains unconnected count: '+str(summary.get('mains_unconnected')))
- check('canonical board hash',hashlib.sha256((R/'electronics/carbonmirror.kicad_pcb').read_bytes()).hexdigest()==summary.get('board_sha256'))
+ check('canonical board hash',hashlib.sha256((R/'electronics/carbentra.kicad_pcb').read_bytes()).hexdigest()==summary.get('board_sha256'))
  pin=json.loads((R/'electronics/validation/net_pin_consistency.json').read_text())
  check('schematic to PCB pin-net consistency',pin.get('status')=='PASS' and not pin.get('errors'),str(pin.get('assigned_pins_checked'))+' assigned pins')
  sysfit=json.loads((R/'mechanical/system_fit_validation.json').read_text())

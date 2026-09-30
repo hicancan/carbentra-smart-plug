@@ -1,4 +1,4 @@
-"""CarbonMirror building-edge reference service.
+"""CARBENTRA building-edge reference service.
 No default broker, account, certificate or actuation. Only starts with explicit
 owner configuration. The broker MUST enforce per-device certificate/topic ACLs.
 """
@@ -62,7 +62,7 @@ class Edge:
     def accept(self, topic, payload, now=None):
         now = time.time() if now is None else now
         parts = topic.split('/')
-        if len(parts) != 4 or parts[:2] != ['carbonmirror', 'v1']: raise ValueError('invalid topic')
+        if len(parts) != 4 or parts[:2] != ['carbentra', 'v1']: raise ValueError('invalid topic')
         device, kind = parts[2:]
         if device not in self.allowed: raise ValueError('not enrolled')
         message = strict_json(payload)
@@ -70,7 +70,7 @@ class Edge:
         if kind == 'hello':
             nonce = message.get('clock_nonce')
             if not isinstance(nonce, str) or not NONCE.fullmatch(nonce): raise ValueError('bad nonce')
-            return f'carbonmirror/v1/{device}/time', {'clock_nonce': nonce, 'unix_s': int(now)}
+            return f'carbentra/v1/{device}/time', {'clock_nonce': nonce, 'unix_s': int(now)}
         if kind == 'telemetry':
             if message.get('device_id') != device: raise ValueError('identity mismatch')
             seq, epoch = message.get('sample_seq'), message.get('boot_epoch')
@@ -89,7 +89,7 @@ class Edge:
                 if json.dumps(strict_json(saved),ensure_ascii=False,separators=(',',':'),sort_keys=True,allow_nan=False)!=canonical:
                     raise ValueError('conflicting duplicate sample')
             # Durable receipt is distinct from MQTT PUBACK.
-            return f'carbonmirror/v1/{device}/receipt', {'boot_epoch':epoch,'sample_seq':seq}
+            return f'carbentra/v1/{device}/receipt', {'boot_epoch':epoch,'sample_seq':seq}
         if kind == 'ack':
             cid = message.get('id')
             if not isinstance(cid,str) or not DEVICE.fullmatch(cid): raise ValueError('bad command ID')
@@ -119,13 +119,13 @@ def main():
     p.add_argument('--port',type=int,default=8883);args=p.parse_args()
     import paho.mqtt.client as mqtt
     config=strict_json(Path(args.devices).read_text());edge=Edge(args.database,config['devices'])
-    client=mqtt.Client(mqtt.CallbackAPIVersion.VERSION2,client_id='carbonmirror-building-edge')
+    client=mqtt.Client(mqtt.CallbackAPIVersion.VERSION2,client_id='carbentra-building-edge')
     client.tls_set(ca_certs=args.ca,certfile=args.certificate,keyfile=args.key,tls_version=ssl.PROTOCOL_TLS_CLIENT)
     client.tls_insecure_set(False)
     def connect(c,u,flags,reason,props):
         if reason != 0: return
         for device in edge.allowed:
-            for channel in ('hello','telemetry','ack'):c.subscribe(f'carbonmirror/v1/{device}/{channel}',qos=1)
+            for channel in ('hello','telemetry','ack'):c.subscribe(f'carbentra/v1/{device}/{channel}',qos=1)
     def message(c,u,m):
         if m.retain: return
         try:

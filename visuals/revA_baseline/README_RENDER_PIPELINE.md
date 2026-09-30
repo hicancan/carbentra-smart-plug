@@ -1,4 +1,4 @@
-# CarbonMirror studio assets
+# CARBENTRA studio assets
 
 All model geometry comes from the shared mechanical STL assembly and electronic OBJ assembly, in their common millimetre coordinate frame. The scene converts those exact engineering exports to metres. No image-generation substitute or unrelated visual shell is used.
 
@@ -18,9 +18,9 @@ Use `all` to run everything in one process. Blender 4.3.2; Python/Pillow for ann
 
 ## Deliverables
 
-- `carbonmirror_studio.blend`: assembled source, named CAD/ECAD parts, materials, physical studio lighting and camera
-- `carbonmirror_animation.blend`: animated explosion/reassembly source
-- `exports/carbonmirror_assembly.glb`: named selectable-part assembly, metre units
+- `carbentra_studio.blend`: assembled source, named CAD/ECAD parts, materials, physical studio lighting and camera
+- `carbentra_animation.blend`: animated explosion/reassembly source
+- `exports/carbentra_assembly.glb`: named selectable-part assembly, metre units
 - `renders/01_hero_ivory.png`, `02_hero_detail.png`: 2400 × 2000 Cycles studio images
 - `renders/03_rear_interface.png`: rear input interface
 - `renders/04_internal_architecture.png`: exterior removed to inspect shared structure
@@ -30,11 +30,11 @@ Use `all` to run everything in one process. Blender 4.3.2; Python/Pillow for ann
 - `renders/08_section_annotated.png`: true display-only longitudinal section
 - `renders/09_pcb_assembly.png`: source-routed PCB inspection with footprint package envelopes
 - `renders/view_*.png`: individual orthographic images
-- `animation/carbonmirror_exploded.mp4`: smooth 24 fps engineering presentation
+- `animation/carbentra_exploded.mp4`: smooth 24 fps engineering presentation
 
 ## Meaning and limits
 
-CM-S16-EVT-A is an engineering development design with verification pending. The interface is a single three-pin, 16 A-class design target, not a claim of certified dimensions, universal compatibility, successful manufacture or safe operation. Electronic body solids are footprint-derived package envelopes, not vendor-detailed solids. Transparent and exploded views are inspection visualizations. Colour and candidate material choices are presentation specifications, not material qualification.
+CARBENTRA-P16-EVT-A is an engineering development design with verification pending. The interface is a single three-pin, 16 A-class design target, not a claim of certified dimensions, universal compatibility, successful manufacture or safe operation. Electronic body solids are footprint-derived package envelopes, not vendor-detailed solids. Transparent and exploded views are inspection visualizations. Colour and candidate material choices are presentation specifications, not material qualification.
 
 The assembly explosion uses mechanical manifest offsets and moves the entire electronics group together. It illustrates architecture; it is not a validated manufacturing assembly procedure. Photoreal lighting does not imply a fabricated or tested product.
 

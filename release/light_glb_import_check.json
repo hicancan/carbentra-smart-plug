@@ -1,6 +1,6 @@
 {
   "scope": "Actual Blender GLB import and world bounding-box check; not a manufacturing check",
-  "file": "carbonmirror_twin_light.glb",
+  "file": "carbentra_twin_light.glb",
   "sha256": "dc25e3965a9e653eb5c91a4514fcc1a3e051ffa47593778d7e70a71071e439d0",
   "imported_meshes": 227,
   "vertices": 1003407,

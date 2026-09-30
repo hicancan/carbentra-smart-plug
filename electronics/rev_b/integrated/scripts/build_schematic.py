@@ -4,7 +4,7 @@ from pathlib import Path
 import re,json,uuid,copy,math
 R=Path(__file__).resolve().parents[1];BASE=R.parent
 M=json.loads((R/'electrical_manifest.json').read_text());PARTS={c['ref']:c for c in M['components']}
-def uid(x):return str(uuid.uuid5(uuid.NAMESPACE_URL,'carbonmirror/revb/integrated/'+x))
+def uid(x):return str(uuid.uuid5(uuid.NAMESPACE_URL,'carbentra/revb/integrated/'+x))
 def q(x):return json.dumps(str(x))
 def parse(s):
  st=[]
@@ -44,7 +44,7 @@ for mod in ['controller','meter','feedback','thermal']:
    if c['ref']=='J201':continue
    mp.update(c['netmap'])
  maps[mod]=mp
-ROOT=uid('root');sheetids={m:uid('sheet-instance-'+m) for m in maps};sourcefiles={'controller':'carbonmirror.kicad_sch','meter':'meter.kicad_sch','feedback':'output_feedback.kicad_sch','thermal':'thermal_interlock.kicad_sch'}
+ROOT=uid('root');sheetids={m:uid('sheet-instance-'+m) for m in maps};sourcefiles={'controller':'carbentra.kicad_sch','meter':'meter.kicad_sch','feedback':'output_feedback.kicad_sch','thermal':'thermal_interlock.kicad_sch'}
 libraries=[]
 # Native clock and its dedicated bypass are drawn on the integration overview.
 rootrefs={'F501','Y201','CX201'}
@@ -179,8 +179,8 @@ for ref,lib,name,xy in [('F501','Device','Fuse',(330.2,76.2)),('Y201','Oscillato
  c=PARTS[ref];add(ref,lib,name,xy,c['pins'],c['value'],c['footprint'],c['datasheet'])
 for i,net in enumerate(['+3V3_ISO','HOT_N','HOT_AUX_FUSED','HOT_AVDD','TH_3V3_HEAD','TH_GND_HEAD','HOT_NC']):
  add('#FLG'+str(i+1),'power','PWR_FLAG',(30.48+(i%4)*91.44,218.44+(i//4)*22.86),{'1':net},'NC LIVE-POTENTIAL NET ANCHOR' if net=='HOT_NC' else 'EXTERNAL / PASSIVE RAIL',bom=False)
-for txt,x,y,siz in [('CARBENTRA / CM-S16-EVT-B INTEGRATED ELECTRICAL SOURCE',12.7,15.24,2),('101 main-board parts + 4 remote-head parts + 4 off-board assemblies; harness models are not PCB parts',12.7,25.4,1.3),('Hierarchy is functional grouping. Shared global net names are real electrical connections.',12.7,33.02,1.3),('CANDIDATE ONLY: no fabrication, energization, safety or certification release',12.7,40.64,1.3),('AUXILIARY FUSE: protected line to isolated supply input',279.4,48.26,1.1),('POWERED CLOCK: OSCO is NC; exact frequency procurement HOLD',279.4,116.84,1.1),('HOT_GND is LINE POTENTIAL. PE is external, continuous and never switched.',12.7,266.7,1.2),('Remote head: component face rear; smooth GND copper backside to qualified insulating pad. Thermal lag/insulation HOLD.',12.7,276.86,1.1)]:items.append(f'(text {q(txt)} (at {x} {y} 0) (effects (font (size {siz} {siz})) (justify left)) (uuid {uid(txt)}))')
-(R/'integrated.kicad_sch').write_text(f'(kicad_sch (version 20250114) (generator "eeschema") (uuid {ROOT}) (paper "A3") (title_block (title "CARBENTRA CM-S16-EVT-B integrated source") (rev "EVT-B HOLD")) (lib_symbols '+''.join(rootdefs.values())+')'+''.join(items)+')')
+for txt,x,y,siz in [('CARBENTRA / CARBENTRA-P16-EVT-B INTEGRATED ELECTRICAL SOURCE',12.7,15.24,2),('101 main-board parts + 4 remote-head parts + 4 off-board assemblies; harness models are not PCB parts',12.7,25.4,1.3),('Hierarchy is functional grouping. Shared global net names are real electrical connections.',12.7,33.02,1.3),('CANDIDATE ONLY: no fabrication, energization, safety or certification release',12.7,40.64,1.3),('AUXILIARY FUSE: protected line to isolated supply input',279.4,48.26,1.1),('POWERED CLOCK: OSCO is NC; exact frequency procurement HOLD',279.4,116.84,1.1),('HOT_GND is LINE POTENTIAL. PE is external, continuous and never switched.',12.7,266.7,1.2),('Remote head: component face rear; smooth GND copper backside to qualified insulating pad. Thermal lag/insulation HOLD.',12.7,276.86,1.1)]:items.append(f'(text {q(txt)} (at {x} {y} 0) (effects (font (size {siz} {siz})) (justify left)) (uuid {uid(txt)}))')
+(R/'integrated.kicad_sch').write_text(f'(kicad_sch (version 20250114) (generator "eeschema") (uuid {ROOT}) (paper "A3") (title_block (title "CARBENTRA CARBENTRA-P16-EVT-B integrated source") (rev "EVT-B HOLD")) (lib_symbols '+''.join(rootdefs.values())+')'+''.join(items)+')')
 (R/'IntegratedRoot.kicad_sym').write_text('(kicad_symbol_lib (version 20241209) (generator "kicad_symbol_editor")'+''.join(s.replace('IntegratedRoot:','') for s in rootdefs.values())+')');libraries.append('IntegratedRoot')
 (R/'sym-lib-table').write_text('(sym_lib_table'+''.join(f'(lib (name "{n}") (type "KiCad") (uri "${{KIPRJMOD}}/{n}.kicad_sym") (options "") (descr "Integrated source symbols"))' for n in libraries)+')')
 # Do not overwrite parent's PCB project configuration.

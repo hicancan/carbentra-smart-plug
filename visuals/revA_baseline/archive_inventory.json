@@ -1,16 +1,16 @@
 {
-  "revision": "CM-S16-EVT-A",
+  "revision": "CARBENTRA-P16-EVT-A",
   "stills_complete": true,
   "animation_mp4_complete": false,
   "animation_scene_complete": true,
   "files": [
     {
-      "file": "carbonmirror_studio.blend",
+      "file": "carbentra_studio.blend",
       "bytes": 20721703,
       "sha256": "528f9547d27bf507779a57c1d8e8fa24a2181719aec1b24ee30ee725396929ed"
     },
     {
-      "file": "carbonmirror_animation.blend",
+      "file": "carbentra_animation.blend",
       "bytes": 25047581,
       "sha256": "3a914ca633e681e674c79e4102d504a90b4101dd9d8313b0789519d50bfe9ed9"
     },
@@ -235,12 +235,12 @@
       "sha256": "bb2b368d38f715fcf38a6d42cffecd5258d34e12172932d326708759cb628153"
     },
     {
-      "file": "exports/carbonmirror_twin_light.glb",
+      "file": "exports/carbentra_twin_light.glb",
       "bytes": 11488932,
       "sha256": "4f4191fcff28303388fc850018263ca48cc8cd58139a5d82eeeacd210c73892d"
     },
     {
-      "file": "exports/carbonmirror_assembly.glb",
+      "file": "exports/carbentra_assembly.glb",
       "bytes": 11778140,
       "sha256": "553d79ff30e20ce4882e37fa7958d1ddf17565db7c5b027d79a2c6cf2d3d5332"
     },

@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parents[2]
 sys.path.extend(['/usr/lib/freecad-python3/lib',str(ROOT/'mechanical/rev_b')])
 import FreeCAD as App,MeshPart
 out=ROOT/'visuals/rev_b/_preview/source';mech=out/'mechanical';(mech/'meshes').mkdir(parents=True,exist_ok=True)
-doc=App.openDocument(str(ROOT/'mechanical/rev_b/CM_S16_B_base_provisional.FCStd'))
+doc=App.openDocument(str(ROOT/'mechanical/rev_b/CARBENTRA-P16-B-base-provisional.FCStd'))
 parts=[]
 for o in doc.Objects:
  if not hasattr(o,'Shape') or o.Shape.isNull():continue

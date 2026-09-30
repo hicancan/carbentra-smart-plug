@@ -1,7 +1,14 @@
-# Development binaries — actuation disabled
+# Target firmware artifacts
 
-These are actual ESP32-C3 / ESP-IDF 5.4.3 build outputs, supplied for provenance and development review. SHA-256 values and source snapshots are listed in ../validation.json.
+The source tree has completed the **CARBENTRA** namespace and product-identity migration. The previously checked-in ESP32-C3 binaries were built before that migration, so they were intentionally removed rather than relabeled as if they matched the current sources.
 
-They have not been flashed or tested on a physical device. CONFIG_CM_ALLOW_ACTUATION is disabled. No broker credentials, device identity keys, per-unit calibration, secure boot keys, or flash encryption provisioning are included.
+Current evidence is therefore split deliberately:
 
-Do not connect this development design to mains or use SDK-generated flash commands as a commissioning procedure. A qualified hardware and safety review, complete test setup, verified board revision, measured calibration, and authorized controlled commissioning remain necessary.
+- host-side policy, protocol, feedback and meter regressions are reproducible from the current source;
+- edge unit tests are reproducible from the current source;
+- the ESP32-C3 target remains the intended hardware target;
+- a fresh target binary must be built from the current tree in a configured ESP-IDF environment before any binary is published again.
+
+`firmware/validation.json` records this state as `REBUILD_REQUIRED_AFTER_BRAND_NAMESPACE_MIGRATION`.
+
+This is a digital-development repository, not a commissioning package. No checked-in binary is evidence that the device is safe to energize, switch mains loads, or deploy in the field.

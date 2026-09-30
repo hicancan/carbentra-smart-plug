@@ -4,13 +4,13 @@ import json,sys
 from pathlib import Path
 import pcbnew as p
 from sexpr_util import parse,ch
-R=Path(__file__).resolve().parents[1];circuit=json.loads((R/'circuit_manifest.json').read_text());tree=parse((R/'exports/carbonmirror.net').read_text());nets=ch(tree,'nets');actual={}
+R=Path(__file__).resolve().parents[1];circuit=json.loads((R/'circuit_manifest.json').read_text());tree=parse((R/'exports/carbentra.net').read_text());nets=ch(tree,'nets');actual={}
 for n in nets[1:]:
  if not isinstance(n,list):continue
  name=ch(n,'name')[1].strip('"');name=name.lstrip('/')
  for node in n:
   if isinstance(node,list) and node[0]=='node':actual[(ch(node,'ref')[1].strip('"'),ch(node,'pin')[1].strip('"'))]=name
-b=p.LoadBoard(str(R/'carbonmirror.kicad_pcb'));fps={f.GetReference():f for f in b.GetFootprints()};errors=[];count=0
+b=p.LoadBoard(str(R/'carbentra.kicad_pcb'));fps={f.GetReference():f for f in b.GetFootprints()};errors=[];count=0
 for c in circuit:
  pins={x['number'] for x in c['pins']};fp=fps[c['ref']];pads={pd.GetNumber() for pd in fp.Pads()}
  for pin,net in c['nets'].items():

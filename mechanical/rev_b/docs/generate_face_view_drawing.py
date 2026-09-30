@@ -11,11 +11,11 @@ P=json.loads((ROOT.parent/'design_parameters.json').read_text())
 W,H=420,297
 pdfmetrics.registerFont(TTFont('DV','/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'))
 pdfmetrics.registerFont(TTFont('DVB','/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'))
-base='CM-S16-EVT-B_face_view_polarity'
+base='CARBENTRA-P16-EVT-B_face_view_polarity'
 c=canvas.Canvas(str(ROOT/(base+'.pdf')),pagesize=(W*mm,H*mm))
-c.setTitle('CARBENTRA CM-S16-EVT-B | Face-view polarity and interface control')
+c.setTitle('CARBENTRA CARBENTRA-P16-EVT-B | Face-view polarity and interface control')
 c.setAuthor('CARBENTRA Engineering Development')
-svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297">', '<title>CARBENTRA CM-S16-EVT-B Face-view polarity and interface control</title>', '<desc>Original design. Front female L right, rear male L left. Nominal reference dimensions only; manufacturing and energization hold.</desc>', '<rect width="420" height="297" fill="white"/>']
+svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297">', '<title>CARBENTRA CARBENTRA-P16-EVT-B Face-view polarity and interface control</title>', '<desc>Original design. Front female L right, rear male L left. Nominal reference dimensions only; manufacturing and energization hold.</desc>', '<rect width="420" height="297" fill="white"/>']
 NAV='#17383F'; TEAL='#167E78'; MUT='#60747A'; RED='#A93D2C'; LINE='#A8B9BB'; PALE='#F2F7F6'; GOLD='#B58945'; BLUE='#3379AF'
 def color(v):return tuple(int(v[i:i+2],16)/255 for i in (1,3,5))
 def line(x1,y1,x2,y2,col=NAV,w=.22,dash=False):
@@ -60,7 +60,7 @@ def heading(x,y,t):text(x,y,t,3.4,NAV,True)
 # Frame and header.
 rect(8,8,404,281,0,None,LINE,.25)
 text(14,20,'CARBENTRA',6.1,NAV,True)
-text(14,27,'CM-S16-EVT-B  /  ORIGINAL MECHANICAL DEVELOPMENT',3.05,MUT)
+text(14,27,'CARBENTRA-P16-EVT-B  /  ORIGINAL MECHANICAL DEVELOPMENT',3.05,MUT)
 text(405,19,'MANUFACTURING + ENERGIZATION HOLD',3.45,RED,True,'end')
 text(405,26,'Reference dimensions only  |  GB 1002 gauge validation open',2.9,RED,False,'end')
 line(8,31,412,31,LINE)
@@ -194,11 +194,11 @@ for url,x,y,w,h in [(
  svg.append(f'<a href="{html.escape(url, quote=True)}"><rect x="{x}" y="{y}" width="{w}" height="{h}" fill="transparent"><title>Open primary source</title></rect></a>')
 # Footer.
 line(8,277,412,277,LINE)
-text(14,283,'CM-S16-EVT-B  |  2026-09-30  |  Original face-view polarity control',2.6,NAV,True)
+text(14,283,'CARBENTRA-P16-EVT-B  |  2026-09-30  |  Original face-view polarity control',2.6,NAV,True)
 text(14,287,'Source: design_parameters.json + socket_b_features.py; Volex interface cross-check. Source links and release gates in docs/README.md.',2.15,MUT)
 text(405,283,'A3 landscape  |  Main faces 1:1 at 100%',2.55,MUT,False,'end')
 text(405,287,'Reference only - do not scale for manufacture  |  Sheet 1 / 1',2.3,MUT,False,'end')
 c.save();svg.append('</svg>');(ROOT/(base+'.svg')).write_text('\n'.join(svg),encoding='utf-8')
-snap={'document_revision':'CM-S16-EVT-B','title':'CARBENTRA Face-view polarity control','status':'Drawing QA only; not final model validation','source_files':{str(p.relative_to(ROOT.parent)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [ROOT.parent/'design_parameters.json',ROOT.parent/'socket_b_features.py',ROOT.parent/'power_links.py']},'coordinate_check':P['interface']['slots'],'output_files':[base+'.pdf',base+'.svg']}
+snap={'document_revision':'CARBENTRA-P16-EVT-B','title':'CARBENTRA Face-view polarity control','status':'Drawing QA only; not final model validation','source_files':{str(p.relative_to(ROOT.parent)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [ROOT.parent/'design_parameters.json',ROOT.parent/'socket_b_features.py',ROOT.parent/'power_links.py']},'coordinate_check':P['interface']['slots'],'output_files':[base+'.pdf',base+'.svg']}
 (ROOT/'drawing_source_snapshot.json').write_text(json.dumps(snap,indent=2)+'\n')
 print('Wrote',base+'.pdf and .svg')

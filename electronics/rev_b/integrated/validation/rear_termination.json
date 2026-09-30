@@ -2,7 +2,7 @@
   "status": "nominal engineering geometry only; fabrication and insulation qualification remain held",
   "inputs": {
     "electronics/rev_b/integrated/integrated.kicad_pcb": "4d7e9873a8ee5407c3d85fe8441672f0e26eebc90ed07c9dd3c443b68b161660",
-    "mechanical/rev_b/CM_S16_B_base_provisional.FCStd": "2b84036646ef4fd68a75ea46cda82e0c52e991d0b498a6b9426c4c5025c39d60",
+    "mechanical/rev_b/CARBENTRA-P16-B-base-provisional.FCStd": "2b84036646ef4fd68a75ea46cda82e0c52e991d0b498a6b9426c4c5025c39d60",
     "mechanical/rev_b/power_links.py": "84e30c9fce812364d92e0ece2ed3ebb02e8bb5b98365e9c333a67c141e07b069"
   },
   "pcb_bottom_z_mm": 11.5,

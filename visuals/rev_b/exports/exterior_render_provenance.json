@@ -1,7 +1,7 @@
 {
   "scope": "Exterior-only frozen surface renders",
   "brand": "CARBENTRA",
-  "source_scene": "_staged_exterior/carbonmirror_studio.blend",
+  "source_scene": "_staged_exterior/carbentra_studio.blend",
   "source_geometry_snapshot": "_preview/source",
   "exterior_freeze_confirmation": "Mechanical engineer confirmed exterior unchanged through insulation-domain correction; parent explicitly confirmed exterior heroes remain valid",
   "files": [

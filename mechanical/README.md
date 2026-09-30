@@ -1,18 +1,18 @@
-# 碳镜校园 CM-S16 · 机械工程开发模型
+# 碳迹未来 CARBENTRA-P16 · 机械工程开发模型
 
-**版本 CM-S16-EVT-A。工程开发设计，禁止按此直接制造通电样机。**
+**版本 CARBENTRA-P16-EVT-A。工程开发设计，禁止按此直接制造通电样机。**
 
 这是一个统一硬件平台：单个三孔、16 A 等级、220 VAC 设计目标，软件负载能力档案不改变插头/插座的物理兼容性。没有 10 A 插头兼容性或“万能孔”承诺。不是米家产品内部复原。六张用户参考图片仅用于观察外观类别；所有内部结构和尺寸是本项目自定义设计输入。
 
 ## 文件与打开方式
 
-- `CarbonMirror_S16_SystemAssembly.FCStd` / `.step`：统一坐标的完整机械+KiCad板件装配（电子器件为候选包络）
-- `CarbonMirror_S16_EVT_A.FCStd`：54 个独立、命名、可检查的 FreeCAD 实体与参数表
-- `CarbonMirror_S16_EVT_A.step`：装配交换文件
+- `CARBENTRA-P16-SystemAssembly.FCStd` / `.step`：统一坐标的完整机械+KiCad板件装配（电子器件为候选包络）
+- `CARBENTRA-P16-EVT-A.FCStd`：54 个独立、命名、可检查的 FreeCAD 实体与参数表
+- `CARBENTRA-P16-EVT-A.step`：装配交换文件
 - `step/*.step`：单件 STEP；`meshes/*.stl`：对应单件可视化网格
 - `design_parameters.json`：尺寸、坐标、接口和工程边界
 - `parts_manifest.json`：部件清单、材质候选、色彩、包围盒与建议爆炸位移
-- `drawings/CM-S16-EVT-A_general_arrangement.pdf` / `.svg`：A3 总体尺寸与装配控制图；侧向视图是标明的名义堆叠布局，不是隐藏线投影的制造剖面
+- `drawings/CARBENTRA-P16-EVT-A_general_arrangement.pdf` / `.svg`：A3 总体尺寸与装配控制图；侧向视图是标明的名义堆叠布局，不是隐藏线投影的制造剖面
 - `validation.json`：54 个机械实体的逐对 BRep 干涉审计
 - `integration_validation.json`：FCStd 重载、参数编辑、PE 联通、PCB/元件包络适配审计
 

@@ -4,7 +4,7 @@ BASE=os.path.dirname(os.path.abspath(__file__))
 sys.path.extend(['/usr/lib/freecad-python3/lib',BASE])
 import FreeCAD as App,Part,socket_features
 V=App.Vector
-d=App.openDocument(BASE+'/CarbonMirror_S16_EVT_A.FCStd');d.recompute()
+d=App.openDocument(BASE+'/CARBENTRA-P16-EVT-A.FCStd');d.recompute()
 parts=[o for o in d.Objects if hasattr(o,'PartKind')]
 # Native file regenerates; spreadsheet propagates 88->90->88 envelope edit.
 d.Parameters.set('B1','90 mm');d.recompute()

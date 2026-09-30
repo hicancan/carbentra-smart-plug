@@ -1,1 +1,1 @@
-(sym_lib_table (lib (name "CarbonMirror") (type "KiCad") (uri "${KIPRJMOD}/CarbonMirror.kicad_sym") (options "") (descr "Vendored upstream KiCad symbol geometry")))
+(sym_lib_table (lib (name "CARBENTRA") (type "KiCad") (uri "${KIPRJMOD}/CARBENTRA.kicad_sym") (options "") (descr "Vendored upstream KiCad symbol geometry")))

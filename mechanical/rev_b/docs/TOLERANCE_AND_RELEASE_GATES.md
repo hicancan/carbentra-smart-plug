@@ -1,4 +1,4 @@
-# CARBENTRA CM-S16-EVT-B · 公差预算与放行门槛
+# CARBENTRA CARBENTRA-P16-EVT-B · 公差预算与放行门槛
 
 **2026-09-30 | 开发审查 | 全部制造/通电放行门槛仍开放**
 

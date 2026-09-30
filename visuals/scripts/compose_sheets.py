@@ -2,13 +2,13 @@
 from PIL import Image,ImageDraw,ImageFont
 from pathlib import Path
 import json,os
-V=Path(os.environ.get('CM_OUTPUT_DIR',str(Path(__file__).resolve().parents[1])));R=V/'renders'
-CTX=json.loads((V/'exports/render_context.json').read_text()) if (V/'exports/render_context.json').exists() else {'revision':'CM-S16-EVT-A','enclosure_mm':{'width':88,'height':88,'depth':55}}
+V=Path(os.environ.get('CARBENTRA_OUTPUT_DIR',str(Path(__file__).resolve().parents[1])));R=V/'renders'
+CTX=json.loads((V/'exports/render_context.json').read_text()) if (V/'exports/render_context.json').exists() else {'revision':'CARBENTRA-P16-EVT-A','enclosure_mm':{'width':88,'height':88,'depth':55}}
 REG='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf';BOLD='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
 def f(s,b=False):return ImageFont.truetype(BOLD if b else REG,s)
 INK='#173c40';GRAY='#657a7c';JADE='#198c76';LINE='#9bb1af';BG='#f5f7f3'
 def header(im,title,subtitle):
- d=ImageDraw.Draw(im);d.text((115,80),'CARBONMIRROR  /',font=f(27),fill=GRAY);d.text((410,76),'碳镜校园',font=ImageFont.truetype('/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc',27),fill=GRAY);d.text((115,140),title,font=f(69,True),fill=INK);d.text((118,238),subtitle,font=f(27),fill=GRAY);d.line((115,310,im.width-115,310),fill=LINE,width=2)
+ d=ImageDraw.Draw(im);d.text((115,80),'CARBENTRA  /',font=f(27),fill=GRAY);d.text((410,76),'碳迹未来',font=ImageFont.truetype('/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc',27),fill=GRAY);d.text((115,140),title,font=f(69,True),fill=INK);d.text((118,238),subtitle,font=f(27),fill=GRAY);d.line((115,310,im.width-115,310),fill=LINE,width=2)
 def footer(im):
  d=ImageDraw.Draw(im);d.line((115,im.height-145,im.width-115,im.height-145),fill=LINE,width=2);d.text((115,im.height-112),CTX['revision']+'  •  ENGINEERING DEVELOPMENT  •  VERIFICATION PENDING',font=f(24),fill=GRAY);d.text((115,im.height-73),'Single three-pin 16 A-class target. Interface dimensions, electrical safety and certification remain unverified.',font=f(23),fill=GRAY)
 if (R/'06_exploded_raw.png').exists():

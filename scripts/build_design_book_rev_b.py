@@ -24,7 +24,7 @@ def base(title,sub):
  C.setFillColorRGB(.05,.18,.17);C.setFont('Helvetica-Bold',10);C.drawString(42,H-40,'CARBENTRA / ENGINEERING DEVELOPMENT')
  C.setFont('NotoSansSC',23);C.drawString(42,H-80,title)
  para(sub,42,H-110,W-84,small)
- C.setFillColorRGB(.3,.4,.4);C.setFont('Helvetica',8);C.drawString(42,28,'CM-S16-EVT-B   |   2026-09-30   |   NOT FOR ENERGIZATION');C.drawRightString(W-42,28,f'{page:02d}')
+ C.setFillColorRGB(.3,.4,.4);C.setFont('Helvetica',8);C.drawString(42,28,'CARBENTRA-P16-EVT-B   |   2026-09-30   |   NOT FOR ENERGIZATION');C.drawRightString(W-42,28,f'{page:02d}')
 
 def para(s,x,y,w,st=style):
  p=Paragraph(s,st);_,h=p.wrap(w,1000);p.drawOn(C,x,y-h);return y-h-12

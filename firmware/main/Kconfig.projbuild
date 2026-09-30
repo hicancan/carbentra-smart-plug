@@ -1,14 +1,14 @@
-menu "CarbonMirror development endpoint"
-config CM_ALLOW_ACTUATION
+menu "CARBENTRA development endpoint"
+config CARBENTRA_ALLOW_ACTUATION
     bool "Enable relay requests after independent hardware release"
     default n
     help
         Must remain disabled until complete mains design, calibration and physical
         safety review. Compilation is not authorization to energize any load.
-config CM_BOARD_REV_B
+config CARBENTRA_BOARD_REV_B
     bool "Use revision B GPIO3 output-presence feedback"
     default y
-config CM_SNTP_SERVER
+config CARBENTRA_SNTP_SERVER
     string "Commissioned local time server"
     default ""
     help

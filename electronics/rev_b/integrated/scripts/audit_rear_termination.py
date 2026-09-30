@@ -6,7 +6,7 @@ from pathlib import Path
 R=Path(__file__).resolve().parents[1];ROOT=R.parents[2];M=ROOT/'mechanical/rev_b'
 sys.path.extend(['/usr/lib/freecad/lib',str(M)])
 import FreeCAD as A,Part,pcbnew as p,power_links
-V=A.Vector;b=p.LoadBoard(str(R/'integrated.kicad_pcb'));doc=A.openDocument(str(M/'CM_S16_B_base_provisional.FCStd'))
+V=A.Vector;b=p.LoadBoard(str(R/'integrated.kicad_pcb'));doc=A.openDocument(str(M/'CARBENTRA-P16-B-base-provisional.FCStd'))
 sources=[]
 for n in ['Blade_L','Blade_N']:sources.append((n,doc.getObject(n).Shape.copy()))
 for n in ['L_RAW','N_RAW']:
@@ -50,6 +50,6 @@ for name,s in sources:
   if d<best[0]:best=(d,key,[[list(a),list(c)]for a,c in pts[:1]])
   if d<8.4:bad.append({'source':name,'target':key,'mm':d})
  mins.append({'source':name,'minimum_mm':best[0],'target':best[1],'closest_points_mm':best[2]})
-files=[R/'integrated.kicad_pcb',M/'CM_S16_B_base_provisional.FCStd',M/'power_links.py']
+files=[R/'integrated.kicad_pcb',M/'CARBENTRA-P16-B-base-provisional.FCStd',M/'power_links.py']
 report={'status':'nominal engineering geometry only; fabrication and insulation qualification remain held','inputs':{str(a.relative_to(ROOT)):hashlib.sha256(a.read_bytes()).hexdigest()for a in files},'pcb_bottom_z_mm':11.5,'target_mm':8.4,'minimums':mins,'pairs_below_8p4_mm':bad,'pass_nominal_margin':not bad,'limitations':['Nominal direct 3D distance, not creepage or qualified free-air clearance.','Rear blades and bare input-link starts only; complete assembly audit is separate.','Conservative whole zone-outline fill and solid full via-land column.','No fabrication/assembly tolerance, thermal motion or material qualification.']}
 (R/'validation/rear_termination.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))

@@ -1,5 +1,5 @@
 {
-  "revision": "CM-S16-EVT-B",
+  "revision": "CARBENTRA-P16-EVT-B",
   "enclosure_mm": {
     "width": 108,
     "height": 93,
@@ -10,7 +10,7 @@
     "split_z": 56,
     "front_wall": 2.4
   },
-  "source_root": "/workspace/scratch/abc8258751a2/carbonmirror-socket",
+  "source_root": "D:\\code\\github\\hicancan\\carbentra-smart-plug",
   "status": "Engineering development; verification pending",
   "annotation_language": "zh"
 }

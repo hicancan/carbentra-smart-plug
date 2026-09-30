@@ -3,7 +3,7 @@
 import os,sys,json,hashlib
 BASE=os.path.dirname(os.path.abspath(__file__));sys.path.extend(['/usr/lib/freecad-python3/lib',BASE])
 import FreeCAD as A,Part,MeshPart,socket_b_features as m
-D=A.openDocument(BASE+'/CM_S16_B_base_provisional.FCStd');objs=[o for o in D.Objects if hasattr(o,'PartKind')]
+D=A.openDocument(BASE+'/CARBENTRA-P16-B-base-provisional.FCStd');objs=[o for o in D.Objects if hasattr(o,'PartKind')]
 for sub in ['meshes','parts']:os.makedirs(BASE+'/'+sub,exist_ok=True)
 def bbox(s):b=s.BoundBox;return [b.XMin,b.YMin,b.ZMin,b.XMax,b.YMax,b.ZMax]
 def meshbox(s):
@@ -23,19 +23,19 @@ def style(n):
  if n.startswith('RF'):group='rf';explode=[0,10,15];color=[.06,.065,.07]
  if n=='StatusLightGuide':mat='Optical PC candidate';color=[.10,.72,.50]
  return color,mat,group,explode
-manifest={'brand':'CARBENTRA','revision':'CM-S16-EVT-B','status':'Engineering development geometry; qualification and certification pending','units':'mm','front_axis':'+Z','origin':'rear housing center','parts':[]}
+manifest={'brand':'CARBENTRA','revision':'CARBENTRA-P16-EVT-B','status':'Engineering development geometry; qualification and certification pending','units':'mm','front_axis':'+Z','origin':'rear housing center','parts':[]}
 for o in objs:
  n=o.Name;s=o.Shape;color,mat,group,exp=style(n)
  mesh=MeshPart.meshFromShape(Shape=s,LinearDeflection=.003 if 'Spring' in n else .005,AngularDeflection=.08,Relative=False);mesh.write(BASE+'/meshes/'+n+'.stl')
  Part.export([o],BASE+'/parts/'+n+'.step')
  manifest['parts'].append({'id':n,'name':n,'geometry_role':'clearance_envelope' if n=='RFServiceSlackEnvelope' else 'physical_part','render_default':n!='RFServiceSlackEnvelope','file':'meshes/'+n+'.stl','material':mat,'color':color,'group':group,'explode':exp,'volume_mm3':s.Volume,'solids':len(s.Solids),'bbox_mm':meshbox(s),'brep_bbox_mm':bbox(s),'valid':s.isValid()})
-D.saveAs(BASE+'/CM-S16-EVT-B.FCStd');Part.export([o for o in objs if o.Name!='RFServiceSlackEnvelope'],BASE+'/CM-S16-EVT-B_mechanical.step')
+D.saveAs(BASE+'/CARBENTRA-P16-EVT-B.FCStd');Part.export([o for o in objs if o.Name!='RFServiceSlackEnvelope'],BASE+'/CARBENTRA-P16-EVT-B_mechanical.step')
 from artifacts_metadata import decorate
 manifest=decorate(manifest)
 json.dump(manifest,open(BASE+'/parts_manifest.json','w'),indent=2)
 json.dump(m.links.manifest(),open(BASE+'/power_link_manifest.json','w'),indent=2)
 E=A.openDocument(BASE+'/../../electronics/rev_b/integrated/exports/placement_assembly.FCStd')
-C=A.newDocument('CARBENTRA_CM_S16_B_System');bounds={'units':'mm','main_translation_mm':[0,0,11.5],'mechanical':{},'MainB':{},'HeadB':{}}
+C=A.newDocument('CARBENTRA_P16_EVT_B_System');bounds={'units':'mm','main_translation_mm':[0,0,11.5],'mechanical':{},'MainB':{},'HeadB':{}}
 for o in objs:
  q=C.addObject('Part::Feature','Mech_'+o.Name);q.Label=o.Label;q.Shape=o.Shape;bounds['mechanical'][o.Name]=meshbox(q.Shape)
 for o in E.Objects:
@@ -44,7 +44,7 @@ for o in E.Objects:
 hs=Part.Shape();hs.read(BASE+'/../../electronics/rev_b/integrated/exports/remote_head_assembled.step')
 for i,sh in enumerate(hs.Solids):
  n='HeadB_'+str(i);q=C.addObject('Part::Feature',n);q.Shape=sh;q.Placement=sh.Placement;bounds['HeadB'][n]=meshbox(q.Shape)
-C.recompute();C.saveAs(BASE+'/CM-S16-EVT-B_system_assembly.FCStd');Part.export([o for o in C.Objects if hasattr(o,'Shape') and o.Name!='Mech_RFServiceSlackEnvelope'],BASE+'/CM-S16-EVT-B_system_assembly.step')
+C.recompute();C.saveAs(BASE+'/CARBENTRA-P16-EVT-B_system_assembly.FCStd');Part.export([o for o in C.Objects if hasattr(o,'Shape') and o.Name!='Mech_RFServiceSlackEnvelope'],BASE+'/CARBENTRA-P16-EVT-B_system_assembly.step')
 for group in ['MainB','HeadB']:
  vals=list(bounds[group].values());bounds[group+'_aggregate']=[min(v[i] for v in vals) for i in range(3)]+[max(v[i] for v in vals) for i in range(3,6)]
 json.dump(bounds,open(BASE+'/assembly_world_bounds.json','w'),indent=2)

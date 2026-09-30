@@ -4,7 +4,7 @@ import re,json,uuid,copy,csv,math,sys
 from pathlib import Path
 import pcbnew as p
 ROOT=Path(__file__).resolve().parents[1]; OUT=ROOT/'exports'; OUT.mkdir(exist_ok=True)
-def uid(s): return str(uuid.uuid5(uuid.NAMESPACE_URL,'carbonmirror/'+s))
+def uid(s): return str(uuid.uuid5(uuid.NAMESPACE_URL,'carbentra/'+s))
 def parse(s):
  t=re.findall(r'"(?:\\.|[^"\\])*"|\(|\)|[^\s()]+',s); stack=[]; root=None
  for x in t:
@@ -77,16 +77,16 @@ if '--schematic-only' not in sys.argv:
   f=p.FootprintLoad('/usr/share/kicad/footprints/MountingHole.pretty','MountingHole_3.2mm_M3');f.SetReference('H'+str(i+1));f.SetPosition(p.VECTOR2I(p.FromMM(x),p.FromMM(y)));b.Add(f)
  for a,z in [((0,0),(72,0)),((72,0),(72,68)),((72,68),(0,68)),((0,68),(0,0))]:
   s=p.PCB_SHAPE();s.SetShape(p.SHAPE_T_SEGMENT);s.SetStart(p.VECTOR2I(p.FromMM(a[0]),p.FromMM(a[1])));s.SetEnd(p.VECTOR2I(p.FromMM(z[0]),p.FromMM(z[1])));s.SetLayer(p.Edge_Cuts);s.SetWidth(p.FromMM(.05));b.Add(s)
- for txt,x,y,size in [('CARBONMIRROR DEV-A',35,65,1),('FABRICATION HOLD',23,2,1),('MAINS / UNROUTED',18,41,.8),('SELV CANDIDATE',59,34,.7),('NO PE ON PCB',19,33,.8)]:
+ for txt,x,y,size in [('CARBENTRA DEV-A',35,65,1),('FABRICATION HOLD',23,2,1),('MAINS / UNROUTED',18,41,.8),('SELV CANDIDATE',59,34,.7),('NO PE ON PCB',19,33,.8)]:
   t=p.PCB_TEXT(b);t.SetText(txt);t.SetPosition(p.VECTOR2I(p.FromMM(x),p.FromMM(y)));t.SetTextSize(p.VECTOR2I(p.FromMM(size),p.FromMM(size)));t.SetTextThickness(p.FromMM(.13));t.SetLayer(p.Dwgs_User);b.Add(t)
- p.SaveBoard(str(ROOT/'carbonmirror.kicad_pcb'),b)
+ p.SaveBoard(str(ROOT/'carbentra.kicad_pcb'),b)
  # Omit J5's clipped decorative silk, retaining Fab/courtyard/pads unchanged.
- tree=parse((ROOT/'carbonmirror.kicad_pcb').read_text())
+ tree=parse((ROOT/'carbentra.kicad_pcb').read_text())
  for fp in children(tree,'footprint'):
   ref=next((atom(v[2]) for v in children(fp,'property') if atom(v[1])=='Reference'),'')
   if ref=='J5':fp[:]=[v for v in fp if not(isinstance(v,list) and v[0] in ('fp_line','fp_poly','fp_circle','fp_arc') and child(v,'layer') and atom(child(v,'layer')[1])=='F.SilkS')]
- (ROOT/'carbonmirror.kicad_pcb').write_text(ser(tree))
- project=ROOT/'carbonmirror.kicad_pro'
+ (ROOT/'carbentra.kicad_pcb').write_text(ser(tree))
+ project=ROOT/'carbentra.kicad_pro'
  if project.exists():
   conf=json.loads(project.read_text());conf['board']['design_settings']['rules']['min_through_hole_diameter']=.2;project.write_text(json.dumps(conf,indent=2))
 # Functional schematic arrangement (A3); placements do not alter PCB.
@@ -95,12 +95,12 @@ for c in parts:c['sch']=positions[c['ref']]
 # Schematic embeds upstream library symbol geometry and true pin numbers.
 symbols={};items=[];ends={}
 for c in parts:
- key='CarbonMirror:'+c['name'];s=copy.deepcopy(c['sym']);s[1]=q(key);symbols[key]=ser(s)
+ key='CARBENTRA:'+c['name'];s=copy.deepcopy(c['sym']);s[1]=q(key);symbols[key]=ser(s)
  x,y=[round(v/1.27)*1.27 for v in c['sch']];inst=f'(symbol (lib_id {q(key)}) (at {x} {y} 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid {uid(c["ref"])})'
  top=max((pp['at'][1] for pp in c['pins']),default=0);
  for name,value,dy,hide in [('Reference',c['ref'],-top-7,False),('Value',c['value'],-top-4,False),('Footprint',c['fp'],0,True),('Datasheet',c['url'],0,True)]:inst+=f'(property {q(name)} {q(value)} (at {x+(-20 if c["ref"]=="K1" else 20 if c["ref"]=="Q1" else 15 if c["ref"].startswith("U") else 6 if c["name"] in ("R","C","L") else 0)} {y+((-2 if name=="Reference" else 2) if (c["name"] in ("R","C","L") or c["ref"] in ("K1","Q1")) and name in ("Reference","Value") else dy)} 0) (effects (font (size 1.27 1.27))'+(' (hide yes)' if hide else '')+'))'
  for pin in c['pins']:inst+=f'(pin {q(pin["number"])} (uuid {uid(c["ref"]+pin["number"])}))'
- inst+=f'(instances (project "carbonmirror" (path "/{uid("sheet")}" (reference {q(c["ref"])}) (unit 1)))))';items.append(inst)
+ inst+=f'(instances (project "carbentra" (path "/{uid("sheet")}" (reference {q(c["ref"])}) (unit 1)))))';items.append(inst)
  for pin in c['pins']:
   px,py,ang=pin['at'];sx=x+px;sy=y-py;n=c['nets'].get(pin['number'])
   if not n:items.append(f'(no_connect (at {sx} {sy}) (uuid {uid(c["ref"]+pin["number"]+"nc")}))');continue
@@ -124,12 +124,12 @@ for py in [-8.89,8.89]:
  x1=round(115/1.27)*1.27;x2=round(135/1.27)*1.27;y=round(160/1.27)*1.27+py
  items.append(f'(wire (pts (xy {x1} {y}) (xy {x2} {y})) (stroke (width 0) (type default)) (uuid {uid("caprail"+str(py))}))')
 for j,n in enumerate(['L_AUX_FUSED','N','+3V3_ISO','L_NC_UNUSED']):
- key='CarbonMirror:PWR_FLAG';ss=libsym('power','PWR_FLAG');ss[1]=q(key);symbols[key]=ser(ss);x=round(90/1.27)*1.27+j*25.4;y=265.43;ref='#FLG0'+str(j+1)
- items.append(f'(symbol (lib_id "{key}") (at {x} {y} 0) (unit 1) (in_bom no) (on_board yes) (uuid {uid(ref)}) (property "Reference" "{ref}" (at {x} {y} 0) (effects (font (size 1 1)) (hide yes))) (property "Value" "PWR_FLAG" (at {x} {y-5.08} 0) (effects (font (size 1 1)))) (instances (project "carbonmirror" (path "/{uid("sheet")}" (reference "{ref}") (unit 1)))))')
+ key='CARBENTRA:PWR_FLAG';ss=libsym('power','PWR_FLAG');ss[1]=q(key);symbols[key]=ser(ss);x=round(90/1.27)*1.27+j*25.4;y=265.43;ref='#FLG0'+str(j+1)
+ items.append(f'(symbol (lib_id "{key}") (at {x} {y} 0) (unit 1) (in_bom no) (on_board yes) (uuid {uid(ref)}) (property "Reference" "{ref}" (at {x} {y} 0) (effects (font (size 1 1)) (hide yes))) (property "Value" "PWR_FLAG" (at {x} {y-5.08} 0) (effects (font (size 1 1)))) (instances (project "carbentra" (path "/{uid("sheet")}" (reference "{ref}") (unit 1)))))')
  items.append(f'(label "{n}" (at {x} {y} 0) (effects (font (size 1 1)) (justify left bottom)) (uuid {uid(ref+"label")}))')
-(ROOT/'carbonmirror.kicad_sch').write_text(f'(kicad_sch (version 20250114) (generator "eeschema") (uuid {uid("sheet")}) (paper "A3") (title_block (title "CarbonMirror - single socket controller") (rev "DEV-A / FAB HOLD")) (lib_symbols '+''.join(symbols.values())+')'+''.join(items)+')')
-(ROOT/'CarbonMirror.kicad_sym').write_text('(kicad_symbol_lib (version 20241209) (generator \"kicad_symbol_editor\") '+''.join(v.replace(q(k),q(k.split(':')[1]),1) for k,v in symbols.items())+')')
-(ROOT/'sym-lib-table').write_text('(sym_lib_table (lib (name \"CarbonMirror\") (type \"KiCad\") (uri \"${KIPRJMOD}/CarbonMirror.kicad_sym\") (options \"\") (descr \"Vendored upstream KiCad symbol geometry\")))')
+(ROOT/'carbentra.kicad_sch').write_text(f'(kicad_sch (version 20250114) (generator "eeschema") (uuid {uid("sheet")}) (paper "A3") (title_block (title "CARBENTRA - single socket controller") (rev "DEV-A / FAB HOLD")) (lib_symbols '+''.join(symbols.values())+')'+''.join(items)+')')
+(ROOT/'CARBENTRA.kicad_sym').write_text('(kicad_symbol_lib (version 20241209) (generator \"kicad_symbol_editor\") '+''.join(v.replace(q(k),q(k.split(':')[1]),1) for k,v in symbols.items())+')')
+(ROOT/'sym-lib-table').write_text('(sym_lib_table (lib (name \"CARBENTRA\") (type \"KiCad\") (uri \"${KIPRJMOD}/CARBENTRA.kicad_sym\") (options \"\") (descr \"Vendored upstream KiCad symbol geometry\")))')
 (ROOT/'circuit_manifest.json').write_text(json.dumps([{k:v for k,v in c.items() if k!='sym'} for c in parts],indent=2))
 with (ROOT/'bom.csv').open('w') as f:
  w=csv.writer(f);w.writerow(['Reference','Value','Manufacturer part candidate','Footprint','Source URL','Status']);

@@ -3,7 +3,7 @@
 import json,uuid
 from pathlib import Path
 R=Path(__file__).resolve().parents[1];M=json.loads((R/'electrical_manifest.json').read_text());P={c['ref']:c for c in M['components']}
-def uid(s):return str(uuid.uuid5(uuid.NAMESPACE_URL,'carbonmirror/revb/integrated/'+s))
+def uid(s):return str(uuid.uuid5(uuid.NAMESPACE_URL,'carbentra/revb/integrated/'+s))
 def q(s):return json.dumps(str(s))
 ROOT=uid('root');SHEET=uid('sheet-instance-assembly');DOC=uid('document-assembly')
 def pin(n,name,x,y,ang):return {'number':str(n),'name':name,'type':'passive','at':[x,y,ang]}

@@ -3,7 +3,7 @@ import os,sys,json
 BASE=os.path.dirname(os.path.abspath(__file__));sys.path.extend(['/usr/lib/freecad-python3/lib',BASE])
 import FreeCAD as App,Part,socket_b_features as m
 V=App.Vector
-D=App.openDocument(BASE+'/CM_S16_B_base_provisional.FCStd')
+D=App.openDocument(BASE+'/CARBENTRA-P16-B-base-provisional.FCStd')
 parts=[o for o in D.Objects if hasattr(o,'PartKind')]
 manifest=json.load(open(BASE+'/../../electronics/rev_b/integrated/exports/component_envelopes.json'))
 allow={frozenset(['PEBus','Blade_PE']),frozenset(['PEBus','Contact_PE']),frozenset(['Contact_L','ThermalSleeve']),frozenset(['MainFuseCap1','MainFuseLead1']),frozenset(['MainFuseCap2','MainFuseLead2']),frozenset(['ThermalBody','ThermalLead1']),frozenset(['ThermalBody','ThermalLead2'])}

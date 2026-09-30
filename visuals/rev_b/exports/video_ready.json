@@ -1,6 +1,6 @@
 {
   "status": "READY — encoded MP4 fully decoded without errors and sampled frames visually reviewed",
-  "file": "animation/carbonmirror_exploded.mp4",
+  "file": "animation/carbentra_exploded.mp4",
   "bytes": 1098532,
   "sha256": "819613b8f59d86eda9998e2ac80e9e9406e48efb03af68be05245358d7bb1138",
   "probe": {

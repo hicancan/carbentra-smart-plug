@@ -3,7 +3,7 @@ import os,sys,json
 B=os.path.dirname(os.path.abspath(__file__));sys.path.extend(['/usr/lib/freecad-python3/lib',B])
 import FreeCAD as App,Part,socket_b_features as m
 V=App.Vector
-d=App.openDocument(B+'/CM_S16_B_base_provisional.FCStd')
+d=App.openDocument(B+'/CARBENTRA-P16-B-base-provisional.FCStd')
 a=[o for o in d.Objects if hasattr(o,'PartKind')]
 pcb=m.rr(100,85,10,11,1.6)
 for x,y in m.F:pcb=pcb.cut(Part.makeCylinder(1.6,2,V(x,y,10.9)))

@@ -16,7 +16,7 @@ visuals/animation/frames/
 visuals/renders/00_*
 visuals/*.log
 release/*DRAFT*
-release/CarbonMirror_Exterior_Preview.png
+release/CARBENTRA_Exterior_Preview.png
 firmware/build/
 firmware/build-host/
 firmware/sdkconfig.old
@@ -45,6 +45,6 @@ electronics/rev_b/integrated/integrated_power_candidate.*
 visuals/rev_b/_*/
 visuals/**/animation/frames/
 # Native base builds are intermediate; the named EVT-B release remains tracked.
-mechanical/rev_b/CM_S16_B_base_provisional*
+mechanical/rev_b/CARBENTRA-P16-B-base-provisional*
 
-!mechanical/rev_b/CM_S16_B_base_provisional.FCStd
+!mechanical/rev_b/CARBENTRA-P16-B-base-provisional.FCStd

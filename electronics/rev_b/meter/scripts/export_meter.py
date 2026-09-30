@@ -4,7 +4,7 @@ sys.path.append('/usr/lib/freecad/lib')
 import FreeCAD as A,Part
 import pcbnew as p
 R=Path(__file__).resolve().parents[1];b=p.LoadBoard(str(R/'meter.kicad_pcb'));cs={c['ref']:c for c in json.loads((R/'circuit_manifest.json').read_text())}
-doc=A.newDocument('CarbonMirror_Meter_Rev_B');objects=[];manifest=[]
+doc=A.newDocument('CARBENTRA_Meter_Rev_B');objects=[];manifest=[]
 def obj(name,shape):
  o=doc.addObject('Part::Feature','MeterB_'+name);o.Label=o.Name;o.Shape=shape;objects.append(o);return o
 board=Part.makeBox(75,45,1.6,A.Vector(-37.5,-22.5,0))

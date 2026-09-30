@@ -1,4 +1,4 @@
-# CARBENTRA · CM-S16-EVT-B electronics
+# CARBENTRA · CARBENTRA-P16-EVT-B electronics
 
 **Routed engineering development candidate. Fabrication and energization remain on hold.**
 

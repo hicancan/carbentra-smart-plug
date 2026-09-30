@@ -8,7 +8,7 @@ def block(x,y,w,h,title,rows,col='#142d35'):
  rect(x,y,w,h,col);text(x+22,y+40,title,25,'#ffffff',700)
  for i,row in enumerate(rows):text(x+22,y+78+i*29,row,20)
 p.append('<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1190" viewBox="0 0 1800 1190"><defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#61d9c8"/></marker></defs>')
-rect(0,0,1800,1190,'#0b1a22','#0b1a22',0);text(60,73,'CARBONMIRROR / ELECTRICAL ARCHITECTURE',38,'#ffffff',700);text(60,115,'DEV-A   •   220 VAC nominal / 16 A-class target   •   FABRICATION HOLD',24,'#ffbc69')
+rect(0,0,1800,1190,'#0b1a22','#0b1a22',0);text(60,73,'CARBENTRA / ELECTRICAL ARCHITECTURE',38,'#ffffff',700);text(60,115,'DEV-A   •   220 VAC nominal / 16 A-class target   •   FABRICATION HOLD',24,'#ffbc69')
 rect(40,155,750,590,'#2c2421','#9c693c');rect(835,155,925,590,'#102c33','#2a6d70');text(65,197,'HAZARDOUS MAINS DOMAIN',24,'#ffbc69',700);text(860,197,'ISOLATED CONTROL CANDIDATE',24,'#6ae0cd',700)
 block(70,230,315,160,'INPUT / PROTECTION',['Single polarized socket','Fuse + thermal cutoff REQUIRED','Candidates; coordination OPEN'],'#382b24');block(435,230,320,160,'RELAY CONTACTS',['K1: 11 → 14 normally open','TE RT314005 candidate','Motor / inrush rating OPEN'],'#382b24');line(385,310,435,310,'#ffbc69')
 block(70,445,315,180,'METERING: NOT BUILT',['ADE9153A hot-domain IC','0.5 mΩ Kelvin-shunt concept','Voltage-divider/filter concept','See pin-level metering design'],'#382b24');block(435,455,320,155,'ISOLATION REQUIRED',['ADuM3151 SPI candidate','Separate isolated meter power','No completed daughterboard'],'#382b24');line(385,530,435,530)

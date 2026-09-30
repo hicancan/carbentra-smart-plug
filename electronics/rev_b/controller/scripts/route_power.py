@@ -1,6 +1,6 @@
 from pathlib import Path
 import pcbnew as p
-R=Path(__file__).resolve().parents[1];b=p.LoadBoard(str(R/'carbonmirror.kicad_pcb'))
+R=Path(__file__).resolve().parents[1];b=p.LoadBoard(str(R/'carbentra.kicad_pcb'))
 def line(n,pts,w,layer=p.F_Cu):
  for a,z in zip(pts,pts[1:]):
   t=p.PCB_TRACK(b);t.SetStart(p.VECTOR2I(p.FromMM(a[0]),p.FromMM(a[1])));t.SetEnd(p.VECTOR2I(p.FromMM(z[0]),p.FromMM(z[1])));t.SetWidth(p.FromMM(w));t.SetLayer(layer);t.SetNetCode(b.FindNet(n).GetNetCode());b.Add(t)
@@ -26,4 +26,4 @@ line('N',[(19.08,55.5),(19.08,60)],2.4,p.B_Cu)
 line('N',[(15.08,44.8),(15.08,38),(9,38),(9,23.2),(4.6,23.2)],.4,p.B_Cu)
 line('N',[(4.6,23.2),(.75,23.2),(.75,1.5),(23.08,1.5),(23.08,5.5)],.4,p.B_Cu)
 line('L_AUX_FUSED',[(18,5.5),(18,10),(13,10),(13,28),(4.6,28),(4.6,33.95)],.6)
-p.SaveBoard(str(R/'carbonmirror.kicad_pcb'),b)
+p.SaveBoard(str(R/'carbentra.kicad_pcb'),b)

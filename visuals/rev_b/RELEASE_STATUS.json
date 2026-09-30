@@ -2,11 +2,11 @@
   "status": "READY — complete frozen-source visual deliverables validated",
   "final_promotable": [
     "renders/*.png",
-    "exports/carbonmirror_twin_light.glb",
-    "exports/carbonmirror_assembly.glb",
-    "carbonmirror_studio.blend",
-    "carbonmirror_animation.blend",
-    "animation/carbonmirror_exploded.mp4"
+    "exports/carbentra_twin_light.glb",
+    "exports/carbentra_assembly.glb",
+    "carbentra_studio.blend",
+    "carbentra_animation.blend",
+    "animation/carbentra_exploded.mp4"
   ],
   "superseded_pending_regeneration": [],
   "reason": "All digital checks handed off; non-physical RF service reservation excluded from product renders",

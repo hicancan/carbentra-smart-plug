@@ -1,4 +1,4 @@
-# CARBENTRA · CM-S16-EVT-B electrical source
+# CARBENTRA · CARBENTRA-P16-EVT-B electrical source
 
 **Development candidate. No fabrication, energization, product-rating or certification release.** This document defines the consolidated electrical source and its physical-board boundaries.
 

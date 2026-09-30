@@ -1,15 +1,15 @@
 # CARBENTRA Rev B：从这里开始
 
-本交付服务于“碳镜校园”平台，是统一自适应智能插座的数字工程开发包。机械、电气、固件和边缘参考实现均附可检查证据；尚未制作并验证实物，不能直接据此接入 220 V。
+本交付服务于“碳迹未来”平台，是统一自适应智能插座的数字工程开发包。机械、电气、固件和边缘参考实现均附可检查证据；尚未制作并验证实物，不能直接据此接入 220 V。
 
 ## 推荐查看顺序
 
 1. `release/CARBENTRA_RevB_Design_Review_CN.pdf`：最终中文图文审阅册（最终发布时提供）
 2. `visuals/rev_b/renders/`：外观、内部、透明、剖切、爆炸与六视图
-3. `visuals/rev_b/animation/carbonmirror_exploded.mp4`：装配爆炸动画
-4. `mechanical/rev_b/CM-S16-EVT-B_system_assembly.FCStd` / `.step`：轻量工程装配
-5. `mechanical/rev_b/CM-S16-EVT-B_system_detailed.step`：包含详细 PCB 几何的补充装配
-6. `visuals/rev_b/carbonmirror_studio.blend`：可编辑展示场景
+3. `visuals/rev_b/animation/carbentra_exploded.mp4`：装配爆炸动画
+4. `mechanical/rev_b/CARBENTRA-P16-EVT-B_system_assembly.FCStd` / `.step`：轻量工程装配
+5. `mechanical/rev_b/CARBENTRA-P16-EVT-B_system_detailed.step`：包含详细 PCB 几何的补充装配
+6. `visuals/rev_b/carbentra_studio.blend`：可编辑展示场景
 7. `electronics/rev_b/integrated/integrated.kicad_pro`：整合电路工程，先读同目录 README
 8. `docs/firmware/README.md`、`edge/README.md` 和 `docs/system/`：固件、边缘与云边端架构
 9. `docs/ENGINEERING_RELEASE_GATES.md`：进入样机阶段之前的阻断项
@@ -18,10 +18,10 @@
 
 - 当前修订为 Rev B；Rev A 目录为历史基线，不能混用尺寸或检查结论
 - FreeCAD 1.0：打开 FCStd，或导入 STEP。71 个物理机械零件；射频余线预留体为非物理辅助几何，默认隐藏
-- Blender 4.3.2：打开 `.blend`；动画源场景为同目录 `carbonmirror_animation.blend`
+- Blender 4.3.2：打开 `.blend`；动画源场景为同目录 `carbentra_animation.blend`
 - KiCad 9：打开整合项目，保留本地符号库、封装库和设计规则
-- `visuals/rev_b/exports/carbonmirror_twin_light.glb`：优化的显示模型，可用于数字孪生应用开发；它没有自动连接真实遥测
-- `visuals/rev_b/exports/carbonmirror_assembly.glb`：详细显示导出。显示网格不替代 CAD 精确几何
+- `visuals/rev_b/exports/carbentra_twin_light.glb`：优化的显示模型，可用于数字孪生应用开发；它没有自动连接真实遥测
+- `visuals/rev_b/exports/carbentra_assembly.glb`：详细显示导出。显示网格不替代 CAD 精确几何
 - 脚本按 Linux 构建环境编写；Windows 打开源文件可使用对应跨平台软件，执行重建脚本时需调整软件和字体路径
 
 ## 已实现及证据
@@ -34,9 +34,7 @@
 
 ## Git 与交付
 
-本次采用原生文件包交付。完整历史包将附 Git bundle；恢复示例为 `git clone CARBENTRA-history.bundle carbentra-smart-plug`（文件名以交付清单为准）。普通工程 ZIP 不应被误认为自带完整 `.git`。
-
-目标远端为 https://github.com/hicancan/carbentra-smart-plug 。此前仅确认远端 README；SSH 网络测试在认证前受阻，未完成工程 push，因此远端不能视为完整交付。后续只使用标准 Git SSH 工作流。包中不包含 SSH 私钥、个人凭据或本地认证配置。
+当前规范远端为 `https://github.com/hicancan/carbentra-smart-plug`。仓库保留完整 Git 历史；离线交付可继续使用 Git bundle 作为可验证备份，但 GitHub `main` 是当前协作与审阅入口。发布包不包含个人凭据、SSH 私钥或本地认证配置。
 
 ## 实物阶段仍未完成
 

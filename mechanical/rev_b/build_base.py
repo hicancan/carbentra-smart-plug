@@ -5,7 +5,7 @@ BASE=os.path.dirname(os.path.abspath(__file__))
 sys.path.extend(['/usr/lib/freecad-python3/lib',BASE])
 import FreeCAD as App,Part
 from socket_b_features import SocketBPart,P
-D=App.newDocument('CarbonMirror_S16_EVT_B')
+D=App.newDocument('CARBENTRA_P16_EVT_B')
 s=D.addObject('Spreadsheet::Sheet','Parameters')
 for i,(n,v) in enumerate([('Width',108),('Height',93),('Depth',65),('ShutterTravel',0),('LeftPawlStroke',0),('RightPawlStroke',0),('ContactGap',1.7)],1):s.set('A'+str(i),n);s.set('B'+str(i),str(v)+' mm');s.setAlias('B'+str(i),n)
 ids=['RearShell','FrontLid','SeamRing','RearFinish','Carrier','ThermalPad','PEChannel','PEBus','ShutterGuide','ShutterSlider','Pawl_L','Pawl_N','PawlSpring_L','PawlSpring_N','ShutterReturnSpring','LocalButton','RearmButton','StatusLightGuide','BladeSleeve_L','BladeSleeve_N']+[a+b for a in ['Blade_','Contact_'] for b in ['L','N','PE']]+['Screw_'+str(i) for i in range(4)]
@@ -20,6 +20,6 @@ for k in extra:
  o=D.addObject('Part::FeaturePython',k);SocketBPart(o,k)
  for n in ['Width','Height','Depth','ShutterTravel','LeftPawlStroke','RightPawlStroke','ContactGap']:o.setExpression(n,'Parameters.'+n)
  D.recompute();report.append({'id':k,'valid':o.Shape.isValid(),'solids':len(o.Shape.Solids),'volume_mm3':o.Shape.Volume})
-D.saveAs(BASE+'/CM_S16_B_base_provisional.FCStd')
+D.saveAs(BASE+'/CARBENTRA-P16-B-base-provisional.FCStd')
 json.dump({'status':'PROVISIONAL BASE; NOT FROZEN FINAL ASSEMBLY','parts':report},open(BASE+'/base_geometry_report.json','w'),indent=2)
 print(json.dumps(report,indent=2))

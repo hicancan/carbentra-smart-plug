@@ -3,7 +3,7 @@
 import pcbnew as p,json,math
 from pathlib import Path
 from sexpr_util import parse,ser,ch
-R=Path(__file__).resolve().parents[1];path=R/'carbonmirror.kicad_pcb';tree=parse(path.read_text());vias=[];remove=[]
+R=Path(__file__).resolve().parents[1];path=R/'carbentra.kicad_pcb';tree=parse(path.read_text());vias=[];remove=[]
 for fp in tree:
  if not isinstance(fp,list) or fp[0]!='footprint':continue
  ref=next((v[2].strip('\"') for v in fp if isinstance(v,list) and v[0]=='property' and v[1]=='\"Reference\"'),'')
@@ -35,4 +35,4 @@ for layer in(p.F_Cu,p.B_Cu):
  for x,y in [(31,1),(71,1),(71,67),(31,67),(31,63),(42,63),(42,7),(31,7)]:poly.Append(p.FromMM(x),p.FromMM(y))
  b.Add(z)
 p.ZONE_FILLER(b).Fill(b.Zones());p.SaveBoard(str(path),b)
-j=json.loads((R/'carbonmirror.kicad_pro').read_text());j['board']['design_settings']['rules']['min_through_hole_diameter']=.2;(R/'carbonmirror.kicad_pro').write_text(json.dumps(j,indent=2))
+j=json.loads((R/'carbentra.kicad_pro').read_text());j['board']['design_settings']['rules']['min_through_hole_diameter']=.2;(R/'carbentra.kicad_pro').write_text(json.dumps(j,indent=2))

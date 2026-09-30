@@ -4,7 +4,7 @@ from pathlib import Path
 import json, uuid, math, csv, itertools
 import pcbnew as p
 ROOT=Path(__file__).resolve().parents[1]
-def uid(s): return str(uuid.uuid5(uuid.NAMESPACE_URL,'carbonmirror/revb/feedback/'+s))
+def uid(s): return str(uuid.uuid5(uuid.NAMESPACE_URL,'carbentra/revb/feedback/'+s))
 def q(s): return json.dumps(str(s))
 def mm(x,y): return p.VECTOR2I(p.FromMM(x),p.FromMM(y))
 URLU='https://docs.broadcom.com/doc/AV02-2153EN'
@@ -92,7 +92,7 @@ for i,(net,x) in enumerate([('+3V3_ISO',55.88),('GND_ISO',86.36)]):
  items.append(f'(symbol (lib_id "Feedback:SupplyFlag") (at {x} 119.38 0) (unit 1) (in_bom no) (on_board no) (uuid {uid(net+"flag")}) (property "Reference" "#FLG0{i+1}" (at {x} 119.38 0) (effects (font (size 1 1)) (hide yes))) (property "Value" "External supply" (at {x} 116.38 0) (effects (font (size 1 1)))) (instances (project "output_feedback" (path "/{uid("sheet")}" (reference "#FLG0{i+1}") (unit 1)))))')
  label(net,(x,119.38),net+'flaglabel')
 for text,x,y,size in [('REV B OUTPUT PRESENCE / DEVELOPMENT ONLY',17.78,15.24,2),('198-264 VAC, 50/60 Hz | NO FABRICATION / NO ENERGIZATION RELEASE',17.78,22.86,1.3),('MAINS INPUT: tap the ACTUAL socket contacts after all switched poles',17.78,33.02,1.3),('ISOLATED 3.3 V: active-low pulses, 100/120 Hz when AC is present',147.32,106.68,1.1),('DC+ / DC- / NC intentionally open. Do not bridge either isolation domain.',17.78,132.08,1.2),('No safety isolation proof, no proof of absence of voltage, no physical contact-position feedback.',17.78,139.7,1.2),('132k total series resistance; built-in bridge/threshold controller inside U1.',17.78,147.32,1.2),('Use a separate hardware thermal interlock AND a qualified series thermal cutoff.',17.78,154.94,1.2)]:items.append(f'(text {q(text)} (at {x} {y} 0) (effects (font (size {size} {size})) (justify left)) (uuid {uid(text)}))')
-(ROOT/'output_feedback.kicad_sch').write_text(f'(kicad_sch (version 20250114) (generator "eeschema") (uuid {uid("sheet")}) (paper "A4") (title_block (title "CarbonMirror Rev B output detector") (rev "B-CANDIDATE / HOLD")) (lib_symbols '+''.join(syms.values())+')'+''.join(items)+')')
+(ROOT/'output_feedback.kicad_sch').write_text(f'(kicad_sch (version 20250114) (generator "eeschema") (uuid {uid("sheet")}) (paper "A4") (title_block (title "CARBENTRA Rev B output detector") (rev "B-CANDIDATE / HOLD")) (lib_symbols '+''.join(syms.values())+')'+''.join(items)+')')
 (ROOT/'Feedback.kicad_sym').write_text('(kicad_symbol_lib (version 20241209) (generator "kicad_symbol_editor")'+''.join(v.replace('Feedback:','') for v in syms.values())+')')
 (ROOT/'sym-lib-table').write_text('(sym_lib_table (lib (name "Feedback") (type "KiCad") (uri "${KIPRJMOD}/Feedback.kicad_sym") (options "") (descr "Pin-verified custom detector symbols")))')
 # 35 x 25 mm board, whole-width two domains; blank barrier has no copper on either layer.
@@ -138,7 +138,7 @@ for txt,x,y,size in [('REV B / FAB HOLD',11,12.5,.75),('NO PE ON PCB',11,24,.65)
  t=p.PCB_TEXT(b);t.SetText(txt);t.SetPosition(mm(x,y));t.SetTextSize(mm(size,size));t.SetTextThickness(p.FromMM(.1));t.SetLayer(p.Dwgs_User);b.Add(t)
 p.SaveBoard(str(ROOT/'output_feedback.kicad_pcb'),b)
 # Explicit net classes plus physical distance rule; component NC pads 2/3 are also primary, 7 secondary.
-proj=json.loads((ROOT.parents[1]/'carbonmirror.kicad_pro').read_text())
+proj=json.loads((ROOT.parents[1]/'carbentra.kicad_pro').read_text())
 proj['meta']={'filename':'output_feedback.kicad_pro','version':1}
 proj['net_settings']={'classes':[{'name':'Default','clearance':.2,'track_width':.25,'via_diameter':.65,'via_drill':.3,'microvia_diameter':.3,'microvia_drill':.1,'diff_pair_width':.2,'diff_pair_gap':.25,'diff_pair_via_gap':.25},{'name':'MAINS','clearance':.25,'track_width':.35,'via_diameter':.65,'via_drill':.3,'microvia_diameter':.3,'microvia_drill':.1,'diff_pair_width':.2,'diff_pair_gap':.25,'diff_pair_via_gap':.25},{'name':'SELV','clearance':.2,'track_width':.25,'via_diameter':.65,'via_drill':.3,'microvia_diameter':.3,'microvia_drill':.1,'diff_pair_width':.2,'diff_pair_gap':.25,'diff_pair_via_gap':.25}], 'netclass_assignments':{n:('MAINS' if n in ['L_POST','N_POST','L_MID','N_MID','AC1','AC2'] else 'SELV') for n in names},'netclass_patterns':[], 'meta':{'version':4}}
 proj['board']['design_settings']['rules']['min_through_hole_diameter']=.3

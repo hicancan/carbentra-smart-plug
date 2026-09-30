@@ -1,9 +1,9 @@
 # Rev A visual baseline
 
-These assets document the 88 × 88 × 55 mm CM-S16-EVT-A engineering baseline. The expanded request now targets a separate Rev B implementation; these images are not presented as final Rev B hardware.
+This directory preserves the **CARBENTRA-P16-EVT-A** engineering baseline as historical design evidence. Rev B is the canonical current product revision.
 
-Final Rev A stills, editable Blender sources, GLBs, source manifests and rendering scripts are retained here for comparison. The Rev A animation scene contains the complete motion setup, but its MP4 rendering was stopped early when the scope changed. Partial frames are checkpoints, not a finished animation.
+Editable Blender sources, GLB exports, source snapshots, manifests and reproduction scripts are retained so the design evolution remains inspectable. Pre-consolidation raster renders and partial animation frames are not part of the canonical current media set; they can be recovered from Git history or regenerated from the archived source when an explicit Rev A comparison is needed.
 
-To replay the archived rendering script against its matching full source repository, set `CM_PROJECT_ROOT` to the Rev A source snapshot and `CM_OUTPUT_DIR` to a fresh output directory. The archived manifests record the exact source hashes. The full native CAD/PCB source is maintained in the project's matching Rev A archive, outside this visual-only folder.
+To replay the archived pipeline, use the matching source snapshot and write into a fresh output directory. Do not mix Rev A dimensions, checks or screenshots with Rev B release evidence.
 
 Engineering development only. Interface gauges, electrical safety, material qualification, manufacturing and certification remain verification gates.

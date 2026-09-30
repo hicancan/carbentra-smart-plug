@@ -4,7 +4,7 @@ from pathlib import Path
 import pcbnew as p,numpy as np,heapq,math,json,shutil,sys,re
 R=Path(__file__).resolve().parents[1];P=R/'candidate_lv.kicad_pcb'
 if '--reset' in sys.argv or not P.exists():
- for ext in ('kicad_pcb','kicad_pro','kicad_dru'):shutil.copy2(R/('carbonmirror.'+ext),R/('candidate_lv.'+ext))
+ for ext in ('kicad_pcb','kicad_pro','kicad_dru'):shutil.copy2(R/('carbentra.'+ext),R/('candidate_lv.'+ext))
 b=p.LoadBoard(str(P)); S=.1;W=.15;D=.5;DR=.3;C=.155;NX=731;NY=691
 xx,yy=np.meshgrid(np.arange(NX)*S,np.arange(NY)*S,indexing='ij');mains=('L_FUSED','L_AUX_FUSED','L_SWITCHED','N','L_NC_UNUSED')
 def xy(q):return(p.ToMM(q.x),p.ToMM(q.y))

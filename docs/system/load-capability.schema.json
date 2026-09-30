@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "urn:carbonmirror:load-capability:0.1",
+  "$id": "urn:carbentra:load-capability:0.1",
   "title": "Load capability design contract (not safety certification)",
   "type": "object",
   "additionalProperties": false,

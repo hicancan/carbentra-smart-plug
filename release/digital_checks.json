@@ -159,12 +159,12 @@
       "detail": ""
     },
     {
-      "check": "GLB header carbonmirror_assembly.glb",
+      "check": "GLB header carbentra_assembly.glb",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "GLB named meshes carbonmirror_assembly.glb",
+      "check": "GLB named meshes carbentra_assembly.glb",
       "passed": true,
       "detail": "1032 meshes"
     },

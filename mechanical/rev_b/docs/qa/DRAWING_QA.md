@@ -1,7 +1,7 @@
 # Drawing presentation QA
 
-Document: CARBENTRA CM-S16-EVT-B face-view polarity control  
-Date: 2026-09-30  
+Document: CARBENTRA CARBENTRA-P16-EVT-B face-view polarity control
+Date: 2026-09-30
 Scope: drawing and documentation presentation only; not mechanical, electrical or product validation
 
 - Rendered the one-page A3 PDF at 2000 px width, then checked the final refresh at 1600 px width and inspected the final image

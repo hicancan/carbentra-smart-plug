@@ -23,5 +23,7 @@ jobs:
         run: bash firmware/tests/run_host_tests.sh
       - name: Verify delivered development build evidence
         run: python3 scripts/validate_firmware_evidence.py
+      - name: Brand naming hygiene
+        run: python3 scripts/check_brand_hygiene.py
       - name: Known credential-pattern check
         run: python3 scripts/check_publish_hygiene.py

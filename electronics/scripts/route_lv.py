@@ -2,7 +2,7 @@
 """Deterministic grid route experiment for isolated LV nets only, subject to KiCad DRC."""
 import pcbnew as p, math,heapq,json,sys
 from pathlib import Path
-R=Path(__file__).resolve().parents[1];b=p.LoadBoard(str(R/'carbonmirror.kicad_pcb'))
+R=Path(__file__).resolve().parents[1];b=p.LoadBoard(str(R/'carbentra.kicad_pcb'))
 S=.125; CLEAR=.16; WIDTH=.15;PADM=CLEAR+WIDTH/2+.04
 pads=[];groups={};holes=[];madevias=set()
 for f in b.GetFootprints():
@@ -92,5 +92,5 @@ for t in list(b.GetTracks()):
   key=(t.GetPosition().x,t.GetPosition().y)
   if key in seen:b.Remove(t)
   else:seen.add(key)
-p.SaveBoard(str(R/'carbonmirror.kicad_pcb'),b)
+p.SaveBoard(str(R/'carbentra.kicad_pcb'),b)
 (R/'validation/routing.json').write_text(json.dumps(routes,indent=2))

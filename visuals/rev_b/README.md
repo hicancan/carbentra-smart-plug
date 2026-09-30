@@ -1,14 +1,14 @@
-# CARBENTRA · 碳镜校园｜CM-S16-EVT-B 可视化
+# CARBENTRA · 碳迹未来｜CARBENTRA-P16-EVT-B 可视化
 
 本目录使用共同的机械、主板和远置温度传感头工程源。外壳标称 108 × 93 × 65 mm，单一三孔 16 A 级接口工程目标。数字检查不等于实物装配、量规合格、电气安全认证或可通电许可。
 
 ## 文件
 
-- `carbonmirror_studio.blend`：可编辑完整物理零件场景，保持源网格分件与名称，字体内嵌，使用 Blender 原生压缩保存
-- `carbonmirror_animation.blend`：动画专用刚性分组场景，原零件名称保存在各组 `source_members` 中
-- `exports/carbonmirror_assembly.glb`：完整物理几何，可选择零件
-- `exports/carbonmirror_twin_light.glb`：平台展示轻量模型；保留外观全精度网格与功能零件名，内部使用同一原生 CAD 的 0.04 mm 弦差 / 0.3 rad 角度公差显示网格，铜箔、焊盘和过孔按材质合并。因此不宣称它与完整网格逐顶点相同
-- `animation/carbonmirror_exploded.mp4`：1280 × 1280、24 fps、6 秒的分解／停留／重组动画。动画使用 0.04 mm 显示网格；工程源不受影响
+- `carbentra_studio.blend`：可编辑完整物理零件场景，保持源网格分件与名称，字体内嵌，使用 Blender 原生压缩保存
+- `carbentra_animation.blend`：动画专用刚性分组场景，原零件名称保存在各组 `source_members` 中
+- `exports/carbentra_assembly.glb`：完整物理几何，可选择零件
+- `exports/carbentra_twin_light.glb`：平台展示轻量模型；保留外观全精度网格与功能零件名，内部使用同一原生 CAD 的 0.04 mm 弦差 / 0.3 rad 角度公差显示网格，铜箔、焊盘和过孔按材质合并。因此不宣称它与完整网格逐顶点相同
+- `animation/carbentra_exploded.mp4`：1280 × 1280、24 fps、6 秒的分解／停留／重组动画。动画使用 0.04 mm 显示网格；工程源不受影响
 - `renders/`：两张 2400 × 2000 工作室外观图、背面接口、内部结构、透明检查、爆炸图、六视图、剖切图、主板检查
 - `exports/deliverables_validation.json`：完成后生成的文件尺寸、哈希、视频参数与源一致性检查
 
@@ -22,11 +22,11 @@
 
 ## 复现
 
-脚本在 `../scripts/`。设置 `CM_MECHANICAL_DIR=mechanical/rev_b`、`CM_PCB_OBJ=electronics/rev_b/integrated/exports/integrated_assembly.obj`、`CM_PCB_Z_MM=11.5`、`CM_HEAD_OBJ=electronics/rev_b/integrated/exports/remote_head_assembled.obj`、`CM_EXPECTED_ASSEMBLY_BOUNDS=mechanical/rev_b/assembly_world_bounds.json`，并令 `CM_OUTPUT_DIR` 指向本目录。实际运行时使用绝对路径。
+脚本在 `../scripts/`。设置 `CARBENTRA_MECHANICAL_DIR=mechanical/rev_b`、`CARBENTRA_PCB_OBJ=electronics/rev_b/integrated/exports/integrated_assembly.obj`、`CARBENTRA_PCB_Z_MM=11.5`、`CARBENTRA_HEAD_OBJ=electronics/rev_b/integrated/exports/remote_head_assembled.obj`、`CARBENTRA_EXPECTED_ASSEMBLY_BOUNDS=mechanical/rev_b/assembly_world_bounds.json`，并令 `CARBENTRA_OUTPUT_DIR` 指向本目录。实际运行时使用绝对路径。
 
 - Blender 后台运行 `build_studio.py -- technical` 渲染技术图；`hero` 渲染两张外观图；`views` 渲染六视图
-- 运行 `prepare_animation_lod.py`，再以 `CM_ANIMATION_LOD_DIR` 指向输出目录，执行 `build_studio.py -- animation`
-- 在完整 studio 场景上运行 `export_twin_light.py`，`CM_TWIN_LOD_DIR` 指向同一动画显示网格目录
+- 运行 `prepare_animation_lod.py`，再以 `CARBENTRA_ANIMATION_LOD_DIR` 指向输出目录，执行 `build_studio.py -- animation`
+- 在完整 studio 场景上运行 `export_twin_light.py`，`CARBENTRA_TWIN_LOD_DIR` 指向同一动画显示网格目录
 - 运行 `compose_sheets_zh.py` 生成中文注释图，最后运行 `validate_deliverables.py`
 
 `_preview/`、`_staged_*`、`_animation_benchmark/` 是过程材料，不应作为验证通过的最终工程源交付。实际完成状态以 `RELEASE_STATUS.json` 和最终验证报告为准。

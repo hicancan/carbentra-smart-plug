@@ -1,11 +1,11 @@
 (export (version "E")
   (design
-    (source "/workspace/scratch/abc8258751a2/carbonmirror-socket/electronics/rev_b/feedback/output_feedback.kicad_sch")
+    (source "/workspace/scratch/abc8258751a2/carbentra-smart-plug/electronics/rev_b/feedback/output_feedback.kicad_sch")
     (date "2026-09-30T02:25:41-0700")
     (tool "Eeschema 9.0.2+dfsg-1")
     (sheet (number "1") (name "/") (tstamps "/")
       (title_block
-        (title "CarbonMirror Rev B output detector")
+        (title "CARBENTRA Rev B output detector")
         (company)
         (rev "B-CANDIDATE / HOLD")
         (date)
@@ -207,7 +207,7 @@
         (pin (num "1") (name "1") (type "passive")))))
   (libraries
     (library (logical "Feedback")
-      (uri "/workspace/scratch/abc8258751a2/carbonmirror-socket/electronics/rev_b/feedback/Feedback.kicad_sym")))
+      (uri "/workspace/scratch/abc8258751a2/carbentra-smart-plug/electronics/rev_b/feedback/Feedback.kicad_sym")))
   (nets
     (net (code "1") (name "/+3V3_ISO") (class "Default")
       (node (ref "C1") (pin "1") (pinfunction "1") (pintype "passive"))

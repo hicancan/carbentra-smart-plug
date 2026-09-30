@@ -3,7 +3,7 @@ BASE=os.path.dirname(os.path.abspath(__file__))
 sys.path.extend(['/usr/lib/freecad-python3/lib',BASE])
 import FreeCAD as App,Part,socket_features
 b=BASE+'/'
-d=App.openDocument(b+'CarbonMirror_S16_SystemAssembly.FCStd');e=d.ElectronicsAssembly.Shape
+d=App.openDocument(b+'CARBENTRA-P16-SystemAssembly.FCStd');e=d.ElectronicsAssembly.Shape
 out=[]
 for o in d.Objects:
  if not hasattr(o,'PartKind'):continue

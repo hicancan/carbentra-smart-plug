@@ -1,4 +1,4 @@
-"""CarbonMirror studio. All geometry imported from the common engineering assembly.
+"""CARBENTRA studio. All geometry imported from the common engineering assembly.
 Usage: blender -b --python visuals/scripts/build_studio.py -- preview|stills|animation|all
 Units: source mm, Blender meters. Mesh source manifests remain authority.
 """
@@ -6,14 +6,25 @@ import bpy, math, json, sys, os, subprocess, hashlib
 from pathlib import Path
 from mathutils import Vector
 from bpy_extras.object_utils import world_to_camera_view
-ROOT=Path(os.environ.get('CM_PROJECT_ROOT',str(Path(__file__).resolve().parents[2]))); OUT=Path(os.environ.get('CM_OUTPUT_DIR',str(ROOT/'visuals'))); MODE=sys.argv[-1] if '--' in sys.argv else 'preview'
-MECH=Path(os.environ.get('CM_MECHANICAL_DIR',str(ROOT/'mechanical')));PCB_OBJ=Path(os.environ.get('CM_PCB_OBJ',str(ROOT/'electronics/exports/pcb_assembly.obj')))
+ROOT=Path(os.environ.get('CARBENTRA_PROJECT_ROOT',str(Path(__file__).resolve().parents[2]))); OUT=Path(os.environ.get('CARBENTRA_OUTPUT_DIR',str(ROOT/'visuals'))); MODE=sys.argv[-1] if '--' in sys.argv else 'preview'
+MECH=Path(os.environ.get('CARBENTRA_MECHANICAL_DIR',str(ROOT/'mechanical')));PCB_OBJ=Path(os.environ.get('CARBENTRA_PCB_OBJ',str(ROOT/'electronics/exports/pcb_assembly.obj')))
 for d in ['renders','exports','animation']: (OUT/d).mkdir(parents=True,exist_ok=True)
 bpy.ops.object.select_all(action='SELECT'); bpy.ops.object.delete(use_global=False)
 for d in bpy.data.materials: bpy.data.materials.remove(d)
 scene=bpy.context.scene;bpy.context.preferences.filepaths.save_version=0
 scene.unit_settings.system='METRIC'; scene.unit_settings.scale_length=1
-scene.render.engine='CYCLES';scene.cycles.samples=96;scene.cycles.use_denoising=False;scene.cycles.adaptive_threshold=.025
+scene.render.engine='CYCLES';
+if os.environ.get('CARBENTRA_USE_GPU','0') == '1':
+ try:
+  prefs=bpy.context.preferences.addons['cycles'].preferences
+  for backend in ('OPTIX','CUDA'):
+   try:
+    prefs.compute_device_type=backend;prefs.get_devices();break
+   except Exception:pass
+  for dev in prefs.devices:dev.use=dev.type in {'OPTIX','CUDA'}
+  scene.cycles.device='GPU'
+ except Exception as exc:print('GPU setup fallback:',exc)
+scene.cycles.samples=96;scene.cycles.use_denoising=False;scene.cycles.adaptive_threshold=.025
 scene.render.resolution_percentage=100; scene.render.image_settings.file_format='PNG'
 scene.view_settings.view_transform='AgX';scene.view_settings.exposure=-3.5;scene.view_settings.look='AgX - Medium High Contrast'
 scene.world.color=(.25,.25,.25)
@@ -32,7 +43,7 @@ M['wirebrown']=mat('13 • L conductor jacket',(.18,.05,.018),rough=.38);M['wire
 M['ceramic']=mat('12 • Ceramic packages',(.30,.17,.075),rough=.4)
 parts=[]; meta={}; electronics=[]
 params=json.loads((MECH/'design_parameters.json').read_text()); front_z=params['enclosure']['depth']/1000
-(OUT/'exports/render_context.json').write_text(json.dumps({'revision':params.get('revision','Engineering development'),'enclosure_mm':params['enclosure'],'source_root':str(ROOT),'status':'Engineering development; verification pending','annotation_language':os.environ.get('CM_LABEL_LANGUAGE','zh')},indent=2))
+(OUT/'exports/render_context.json').write_text(json.dumps({'revision':params.get('revision','Engineering development'),'enclosure_mm':params['enclosure'],'source_root':str(ROOT),'status':'Engineering development; verification pending','annotation_language':os.environ.get('CARBENTRA_LABEL_LANGUAGE','zh')},indent=2))
 STAGE_SCALE=max(params['enclosure']['width']/88,params['enclosure']['height']/88,(params['enclosure']['depth']+20)/75)
 STAGE_CENTER=(front_z-.02)/2
 def stage_point(p):return Vector((p[0]*STAGE_SCALE,p[1]*STAGE_SCALE,(p[2]-.0175)*STAGE_SCALE+STAGE_CENTER))
@@ -79,8 +90,8 @@ for entry in entries:
  if o.name not in ['RearAccent','RearFinish','SeamRing','Button','LocalButton','RearmButton','LightGuide','StatusLightGuide']:
   mod=o.modifiers.new('Tooling edge highlight','BEVEL');mod.width=.00012;mod.segments=3;mod.limit_method='ANGLE';mod.angle_limit=.55
  mod=o.modifiers.new('Area weighted normals','WEIGHTED_NORMAL');mod.keep_sharp=True
-pcb_inputs=[(PCB_OBJ,float(os.environ.get('CM_PCB_Z_MM','0')))]
-if os.environ.get('CM_HEAD_OBJ'):pcb_inputs.append((Path(os.environ['CM_HEAD_OBJ']),0))
+pcb_inputs=[(PCB_OBJ,float(os.environ.get('CARBENTRA_PCB_Z_MM','0')))]
+if os.environ.get('CARBENTRA_HEAD_OBJ'):pcb_inputs.append((Path(os.environ['CARBENTRA_HEAD_OBJ']),0))
 for p,z_mm in pcb_inputs:
  bpy.ops.wm.obj_import(filepath=str(p),forward_axis='Y',up_axis='Z')
  imported=[o for o in bpy.context.selected_objects if o.type=='MESH']
@@ -107,24 +118,25 @@ validation['electronic_aggregate_bounds_mm']={}
 for prefix in ('MainB_','HeadB_'):
  pts=[o.matrix_world@v.co for o in electronics if o.type=='MESH' and o.name.startswith(prefix) for v in o.data.vertices]
  if pts:validation['electronic_aggregate_bounds_mm'][prefix]=[1000*min(v[i] for v in pts) for i in range(3)]+[1000*max(v[i] for v in pts) for i in range(3)]
-if os.environ.get('CM_EXPECTED_ASSEMBLY_BOUNDS'):
- expected=json.loads(Path(os.environ['CM_EXPECTED_ASSEMBLY_BOUNDS']).read_text())
+if os.environ.get('CARBENTRA_EXPECTED_ASSEMBLY_BOUNDS'):
+ expected=json.loads(Path(os.environ['CARBENTRA_EXPECTED_ASSEMBLY_BOUNDS']).read_text())
  expected_groups=expected.get('electronic_aggregate_bounds_mm',{prefix:expected[prefix.rstrip('_')+'_aggregate'] for prefix in ('MainB_','HeadB_') if prefix.rstrip('_')+'_aggregate' in expected})
  for prefix,bb in expected_groups.items():
   actual=validation['electronic_aggregate_bounds_mm'][prefix];error=max(abs(a-b) for a,b in zip(actual,bb))
   if error>expected.get('tolerance_mm',0.08):raise RuntimeError('Independent common-frame bounds mismatch '+prefix+': '+str(error)+' mm')
  validation['independent_assembly_bounds_pass']=True
 validation['electronic_inputs']=[{'file':str(p),'source_units':'mm','source_frame':'board-local' if z else 'assembly-common-frame','already_transformed':not bool(z),'applied_source_to_assembly_mm':[[1,0,0,0],[0,1,0,0],[0,0,1,z],[0,0,0,1]],'blender_unit_scale':0.001,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p,z in pcb_inputs]
-if os.environ.get('CM_HEAD_OBJ'):
- sidecar=Path(os.environ['CM_HEAD_OBJ']).with_suffix('.json')
+if os.environ.get('CARBENTRA_HEAD_OBJ'):
+ sidecar=Path(os.environ['CARBENTRA_HEAD_OBJ']).with_suffix('.json')
  if sidecar.exists():validation['head_pretransform_provenance']=json.loads(sidecar.read_text())
 (OUT/'exports/import_validation.json').write_text(json.dumps(validation,indent=2))
 
-font=bpy.data.fonts.load('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf')
-cn=bpy.data.fonts.load('/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc')
+FONT_FILE=ROOT/'assets/fonts/NotoSansSC-Regular.ttf'
+font=bpy.data.fonts.load(str(FONT_FILE))
+cn=font
 def text(body,name,size,loc,material='ink',fontob=font):
  c=bpy.data.curves.new(name,'FONT');c.body=body;c.align_x='CENTER';c.size=size;c.extrude=.000008;c.font=fontob;o=bpy.data.objects.new(name,c);scene.collection.objects.link(o);o.location=loc;assign(o,material);return o
-branding=[text(os.environ.get('CM_PRODUCT_BRAND','CARBENTRA'),'Brand / front pad print',.0034,(0,-.020,front_z+.00004)),text('碳镜校园','Brand / Chinese',.0034,(0,-.025,front_z+.00004),fontob=cn)]
+branding=[text(os.environ.get('CARBENTRA_PRODUCT_BRAND','CARBENTRA'),'Brand / front pad print',.0034,(0,-.020,front_z+.00004)),text('碳迹未来','Brand / Chinese',.0034,(0,-.025,front_z+.00004),fontob=cn)]
 # Rev B labels follow the actual control coordinates and fail-off/rearm functions.
 if 'local' in params.get('controls',{}):
  controls=params['controls'];x,y=controls['local'];branding.append(text('OFF','Control marking / local OFF',.0015,(x/1000,(y-6)/1000,front_z+.00004)))
@@ -204,17 +216,17 @@ def save_export():
  reset();scene.render.film_transparent=False;scene.render.engine='CYCLES';scene.view_settings.view_transform='AgX';scene.view_settings.look='AgX - Medium High Contrast';scene.view_settings.exposure=-3.5;camera((.145,-.185,.215));
  bpy.ops.object.select_all(action='DESELECT')
  for o in parts:o.select_set(True)
- bpy.ops.export_scene.gltf(filepath=str(OUT/'exports/carbonmirror_assembly.glb'),export_format='GLB',use_selection=True,export_apply=False,export_extras=True)
+ bpy.ops.export_scene.gltf(filepath=str(OUT/'exports/carbentra_assembly.glb'),export_format='GLB',use_selection=True,export_apply=False,export_extras=True)
  for screen in bpy.data.screens:
   for ar in screen.areas:
    if ar.type=='VIEW_3D':
     ar.spaces.active.region_3d.view_perspective='CAMERA';ar.spaces.active.region_3d.view_location=Vector((0,0,STAGE_CENTER));ar.spaces.active.region_3d.view_distance=.22*STAGE_SCALE;ar.spaces.active.clip_start=.01;ar.spaces.active.clip_end=1
- scene.render.resolution_x=2400;scene.render.resolution_y=2000;scene.cycles.samples=256;scene.render.filepath=str(OUT/'renders/01_hero_ivory.png');bpy.ops.file.pack_all();bpy.ops.wm.save_as_mainfile(filepath=str(OUT/'carbonmirror_studio.blend'),compress=True)
+ scene.render.resolution_x=2400;scene.render.resolution_y=2000;scene.cycles.samples=256;scene.render.filepath=str(OUT/'renders/01_hero_ivory.png');bpy.ops.file.pack_all();bpy.ops.wm.save_as_mainfile(filepath=str(OUT/'carbentra_studio.blend'),compress=True)
 
 if MODE!='animation':save_export()
 if MODE=='views':
  if MODE=='technical_preview':sys.exit(0)
- if os.environ.get('CM_SKIP_VIEWS'):save_export();sys.exit(0)
+ if os.environ.get('CARBENTRA_SKIP_VIEWS'):save_export();sys.exit(0)
  reset();floor.hide_render=True;scene.render.film_transparent=True;scene.render.engine='CYCLES'
  for name,pos in [('front',(0,0,.3)),('rear',(0,0,-.3)),('left',(-.3,0,.0175)),('right',(.3,0,.0175)),('top',(0,.3,.0175)),('bottom',(0,-.3,.0175))]:
   camera(pos,(0,0,.0175),.13);rear_light.hide_render=name=='front';render('view_'+name,(1400,1400),96);rear_light.hide_render=True
@@ -262,15 +274,15 @@ if MODE in ('stills','all','hero','hero_detail','technical','technical_preview')
  for o in section+[cutter]:bpy.data.objects.remove(o,do_unlink=True)
  reset();explode();floor.hide_render=True;scene.render.film_transparent=True;camera((.17,-.27,.2),(0,0,.04),.28);render('06_exploded_raw',(2400,2600),128)
  if MODE=='technical_preview':sys.exit(0)
- if os.environ.get('CM_SKIP_VIEWS'):save_export();sys.exit(0)
+ if os.environ.get('CARBENTRA_SKIP_VIEWS'):save_export();sys.exit(0)
  reset();floor.hide_render=True;scene.render.film_transparent=True;scene.render.engine='CYCLES'
  for name,pos in [('front',(0,0,.3)),('rear',(0,0,-.3)),('left',(-.3,0,.0175)),('right',(.3,0,.0175)),('top',(0,.3,.0175)),('bottom',(0,-.3,.0175))]:
   camera(pos,(0,0,.0175),.13);rear_light.hide_render=name=='front';render('view_'+name,(1400,1400),96);rear_light.hide_render=True
  save_export()
 if MODE in ('animation','all'):
  reset()
- if os.environ.get('CM_ANIMATION_LOD_DIR'):
-  lod=Path(os.environ['CM_ANIMATION_LOD_DIR']);scene['animation_display_tessellation_chord_mm']=.04;scene['animation_display_tessellation_angular_rad']=.3;scene['animation_lod_manifest']=str(lod/'lod_manifest.json')
+ if os.environ.get('CARBENTRA_ANIMATION_LOD_DIR'):
+  lod=Path(os.environ['CARBENTRA_ANIMATION_LOD_DIR']);scene['animation_display_tessellation_chord_mm']=.04;scene['animation_display_tessellation_angular_rad']=.3;scene['animation_lod_manifest']=str(lod/'lod_manifest.json')
   for o in parts:
    p=lod/(o.name+'.stl')
    if o.name in meta and p.exists():
@@ -307,10 +319,10 @@ if MODE in ('animation','all'):
  if any(min(v['min_xy'])<.025 or max(v['max_xy'])>.975 for v in framing.values()):raise RuntimeError('Animation framing guard: part would approach edge')
  frames=OUT/'animation/frames';frames.mkdir(parents=True,exist_ok=True)
  scene.render.image_settings.file_format='PNG';scene.render.filepath=str(frames/'frame_')
- scene.frame_set(1);bpy.ops.file.pack_all();bpy.ops.wm.save_as_mainfile(filepath=str(OUT/'carbonmirror_animation.blend'),compress=True)
- if os.environ.get('CM_ANIMATION_BENCHMARK'):scene.frame_start=60;scene.frame_end=62
+ scene.frame_set(1);bpy.ops.file.pack_all();bpy.ops.wm.save_as_mainfile(filepath=str(OUT/'carbentra_animation.blend'),compress=True)
+ if os.environ.get('CARBENTRA_ANIMATION_BENCHMARK'):scene.frame_start=60;scene.frame_end=62
  bpy.ops.render.render(animation=True)
- if os.environ.get('CM_ANIMATION_BENCHMARK'):sys.exit(0)
- subprocess.run(['ffmpeg','-y','-framerate','24','-i',str(frames/'frame_%04d.png'),'-vf',"drawtext=fontfile=/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc:text='CARBENTRA · 碳镜校园  /  分层结构演示':fontsize=32:fontcolor=0x173c40:x=55:y=45,drawtext=fontfile=/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc:text='工程开发版本  •  待实物与安全验证':fontsize=19:fontcolor=0x526d6e:x=55:y=1220",'-c:v','libx264','-crf','18','-pix_fmt','yuv420p','-movflags','+faststart',str(OUT/'animation/carbonmirror_exploded.mp4')],check=True)
+ if os.environ.get('CARBENTRA_ANIMATION_BENCHMARK'):sys.exit(0)
+ subprocess.run(['ffmpeg','-y','-framerate','24','-i',str(frames/'frame_%04d.png'),'-c:v','libx264','-crf','18','-pix_fmt','yuv420p','-movflags','+faststart',str(OUT/'animation/carbentra_exploded.mp4')],check=True)
 
 print('STUDIO COMPLETE',MODE)

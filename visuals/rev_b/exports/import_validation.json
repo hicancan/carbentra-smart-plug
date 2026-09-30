@@ -4,8 +4,8 @@
   ],
   "units": "metres",
   "parts": 3223,
-  "mechanical_source": "/workspace/scratch/abc8258751a2/carbonmirror-socket/mechanical/rev_b/parts_manifest.json",
-  "electronic_source": "/workspace/scratch/abc8258751a2/carbonmirror-socket/electronics/rev_b/integrated/exports/integrated_assembly.obj",
+  "mechanical_source": "D:\\code\\github\\hicancan\\carbentra-smart-plug\\mechanical\\rev_b\\parts_manifest.json",
+  "electronic_source": "D:\\code\\github\\hicancan\\carbentra-smart-plug\\electronics\\rev_b\\integrated\\exports\\integrated_assembly.obj",
   "bounds": {
     "RearShell": [
       -0.05400000140070915,
@@ -25793,7 +25793,7 @@
     ]
   },
   "source_sha256": {
-    "mechanical_manifest": "96a1d2484ba95db6da390857e27b1714b69518533d7c76078a82927e1d9c15c3",
+    "mechanical_manifest": "fce8535ae8296786cdea301009c68c3c095e77439747ddb0c140939b5af782ae",
     "electronics_obj": "9d3e1927e47a9dcc366539ead8625b44891f5d1dd604cf80476d45d9db83803d"
   },
   "electronic_aggregate_bounds_mm": {
@@ -25817,7 +25817,7 @@
   "independent_assembly_bounds_pass": true,
   "electronic_inputs": [
     {
-      "file": "/workspace/scratch/abc8258751a2/carbonmirror-socket/electronics/rev_b/integrated/exports/integrated_assembly.obj",
+      "file": "D:\\code\\github\\hicancan\\carbentra-smart-plug\\electronics\\rev_b\\integrated\\exports\\integrated_assembly.obj",
       "source_units": "mm",
       "source_frame": "board-local",
       "already_transformed": false,
@@ -25851,7 +25851,7 @@
       "sha256": "9d3e1927e47a9dcc366539ead8625b44891f5d1dd604cf80476d45d9db83803d"
     },
     {
-      "file": "/workspace/scratch/abc8258751a2/carbonmirror-socket/electronics/rev_b/integrated/exports/remote_head_assembled.obj",
+      "file": "D:\\code\\github\\hicancan\\carbentra-smart-plug\\electronics\\rev_b\\integrated\\exports\\remote_head_assembled.obj",
       "source_units": "mm",
       "source_frame": "assembly-common-frame",
       "already_transformed": true,

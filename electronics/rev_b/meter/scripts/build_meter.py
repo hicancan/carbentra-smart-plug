@@ -6,7 +6,7 @@ import pcbnew as p
 ROOT=Path(__file__).resolve().parents[1]; BASE=ROOT.parents[1]; OUT=ROOT/'exports'; OUT.mkdir(exist_ok=True)
 # Reuse the transparent upstream-library parser, not the baseline generator.
 s= (BASE/'scripts/build_electronics.py').read_text(); start=s.index('def uid(');end=s.index('parts=[]');exec(s[start:end]);
-def uid(s):return str(uuid.uuid5(uuid.NAMESPACE_URL,'carbonmirror/rev-b-meter/'+s))
+def uid(s):return str(uuid.uuid5(uuid.NAMESPACE_URL,'carbentra/rev-b-meter/'+s))
 parts=[]
 def add(ref,lib,name,value,fp,nets,pos,sch,mpn,url,height=1,body=None):
  sym=libsym(lib,name);pins=[]
@@ -108,8 +108,8 @@ for j,n in enumerate(['ISO_3V3','ISO_5V','ISO_GND','HOT_AVDD']):
  key='RevB:PWR_FLAG';ss=libsym('power','PWR_FLAG');ss[1]=q(key);symbols[key]=ser(ss);x=285.75+j*30.48;y=265.43;ref='#FLG0'+str(j+1)
  items.append(f'(symbol (lib_id "{key}") (at {x} {y} 0) (unit 1) (in_bom no) (on_board no) (uuid {uid(ref)}) (property "Reference" "{ref}" (at {x} {y} 0) (effects (font (size 1 1)) (hide yes))) (property "Value" "PWR_FLAG" (at {x} {y-3.81} 0) (effects (font (size 1 1)))) (instances (project "meter" (path "/{uid("sheet")}" (reference "{ref}") (unit 1)))))')
  items.append(f'(label "{n}" (at {x} {y} 0) (effects (font (size 1 1)) (justify left bottom)) (uuid {uid(ref+"label")}))')
-for txt,x,y in [('CARBONMIRROR REV B - METER - DEVELOPMENT / ENERGIZATION HOLD',15,15),('HOT_* = LIVE LINE REFERENCED. Never connect hot ground to PE, USB, isolated ground or accessible metal.',15,23),('Protected line -> Kelvin shunt -> relay COM. Voltage samples input L-N; separate ACPL-K376 senses switched output.',15,30),('01  LOAD SHUNT + MATCHED RC',15,43),('02  VOLTAGE DIVIDER + FILTER',15,120),('03  ATM90E26 AFE',170,43),('04  REINFORCED SPI BARRIER',280,38),('05  ISOLATED POWER 5V -> 3.3V',280,155),('06  CLOCK / RESET / DECOUPLING',15,202)]:items.append(f'(text {q(txt)} (at {x} {y} 0) (effects (font (size 1.2 1.2)) (justify left)) (uuid {uid(txt)}))')
-(ROOT/'meter.kicad_sch').write_text(f'(kicad_sch (version 20250114) (generator "eeschema") (uuid {uid("sheet")}) (paper "A3") (title_block (title "CarbonMirror REV B isolated metering") (rev "ENGINEERING CANDIDATE")) (lib_symbols '+''.join(symbols.values())+')'+''.join(items)+')')
+for txt,x,y in [('CARBENTRA REV B - METER - DEVELOPMENT / ENERGIZATION HOLD',15,15),('HOT_* = LIVE LINE REFERENCED. Never connect hot ground to PE, USB, isolated ground or accessible metal.',15,23),('Protected line -> Kelvin shunt -> relay COM. Voltage samples input L-N; separate ACPL-K376 senses switched output.',15,30),('01  LOAD SHUNT + MATCHED RC',15,43),('02  VOLTAGE DIVIDER + FILTER',15,120),('03  ATM90E26 AFE',170,43),('04  REINFORCED SPI BARRIER',280,38),('05  ISOLATED POWER 5V -> 3.3V',280,155),('06  CLOCK / RESET / DECOUPLING',15,202)]:items.append(f'(text {q(txt)} (at {x} {y} 0) (effects (font (size 1.2 1.2)) (justify left)) (uuid {uid(txt)}))')
+(ROOT/'meter.kicad_sch').write_text(f'(kicad_sch (version 20250114) (generator "eeschema") (uuid {uid("sheet")}) (paper "A3") (title_block (title "CARBENTRA REV B isolated metering") (rev "ENGINEERING CANDIDATE")) (lib_symbols '+''.join(symbols.values())+')'+''.join(items)+')')
 (ROOT/'RevB.kicad_sym').write_text('(kicad_symbol_lib (version 20241209) (generator "kicad_symbol_editor") '+''.join(v.replace(q(k),q(k.split(':')[1]),1) for k,v in symbols.items())+')')
 (ROOT/'sym-lib-table').write_text('(sym_lib_table (lib (name "RevB") (type "KiCad") (uri "${KIPRJMOD}/RevB.kicad_sym") (options "") (descr "Rev B symbols")))')
 (ROOT/'fp-lib-table').write_text('(fp_lib_table (lib (name "RevB") (type "KiCad") (uri "${KIPRJMOD}/RevB.pretty") (options "") (descr "Datasheet-derived candidate footprints")))')
