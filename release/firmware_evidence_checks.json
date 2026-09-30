@@ -1,0 +1,201 @@
+{
+  "scope": "Hash and development evidence consistency only; not hardware verification",
+  "passed": true,
+  "checks": [
+    {
+      "check": "source edge/accounting.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source edge/service.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source edge/tests/test_accounting.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source edge/tests/test_edge.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source edge/tests/test_forecast.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/CMakeLists.txt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/core/cm_command_json.c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/core/cm_command_json.h",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/core/cm_feedback.c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/core/cm_feedback.h",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/core/cm_meter_decode.c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/core/cm_meter_decode.h",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/core/cm_policy.c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/core/cm_policy.h",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/main/CMakeLists.txt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/main/Kconfig.projbuild",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/main/app_main.c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/main/cm_meter.c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/main/cm_meter.h",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/main/cm_network.c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/main/cm_network.h",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/partitions.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/sdkconfig",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/sdkconfig.defaults",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/run_host_tests.sh",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/test_feedback.c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/test_policy.c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/test_protocol.c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tools/calibration_template.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tools/make_calibration_record.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tools/record_validation.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "binary bootloader_DEV.bin",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "binary partition-table_DEV.bin",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "binary carbonmirror_endpoint_DEV_ACTUATION_DISABLED.bin",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "recorded target build",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "actuation disabled",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "actual build log",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "host regression evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "edge evidence",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}
