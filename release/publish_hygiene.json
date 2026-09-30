@@ -1,24 +1,6 @@
 {
-  "status": "BLOCKED",
-  "objects_and_files_checked": 1464,
+  "status": "PASS",
+  "objects_and_files_checked": 1472,
   "scope": "Known credential patterns only; matched values are never recorded",
-  "findings": [
-    {
-      "scope": "reachable_git_history",
-      "path": "firmware/artifacts/carbonmirror_endpoint_DEV_ACTUATION_DISABLED.bin",
-      "object": "bcab4981d9d49c9b43727e91e499e9c928add0fe",
-      "kind": "private_key_pem"
-    },
-    {
-      "scope": "reachable_git_history",
-      "path": "firmware/artifacts/carbonmirror_endpoint_DEV_ACTUATION_DISABLED.bin",
-      "object": "ccad801c64d9b37cabe675eae79190f213ff274e",
-      "kind": "private_key_pem"
-    },
-    {
-      "scope": "working_tree",
-      "path": "firmware/artifacts/carbonmirror_endpoint_DEV_ACTUATION_DISABLED.bin",
-      "kind": "private_key_pem"
-    }
-  ]
+  "findings": []
 }

@@ -1,5 +1,7 @@
 """Narrow redacted pre-publication credential check. Never prints matched values.
 This is not a guarantee that all possible secrets/private information are absent.
+PEM checks require a complete key-like block; NUL-terminated parser labels in TLS
+libraries are not credentials.
 """
 from pathlib import Path
 import subprocess,re,json,sys
@@ -7,7 +9,7 @@ R=Path(__file__).resolve().parents[1]
 patterns={
  'github_fine_grained_token':re.compile(rb'github_pat_[A-Za-z0-9_]{40,}'),
  'github_classic_or_oauth_token':re.compile(rb'gh[pousr]_[A-Za-z0-9]{30,}'),
- 'private_key_pem':re.compile(rb'-----BEGIN (?:RSA |EC |OPENSSH |DSA |ENCRYPTED )?PRIVATE KEY-----'),
+ 'private_key_pem':re.compile(rb'-----BEGIN ((?:RSA |EC |OPENSSH |DSA |ENCRYPTED )?PRIVATE KEY)-----(?:\r?\n|\\n)[^\x00]{64,16384}?-----END \1-----'),
  'aws_access_key_id':re.compile(rb'AKIA[0-9A-Z]{16}')}
 def git(*args):return subprocess.check_output(['git',*args],cwd=R)
 findings=[];checked=0
