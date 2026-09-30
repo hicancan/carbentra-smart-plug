@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.blend1
+*.FCStd1
+*.bak
+*.lck
+*-backups/
+release/*.zip
+release/*.bundle
+.cache/
+tmp/
