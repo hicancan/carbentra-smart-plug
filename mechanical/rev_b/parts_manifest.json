@@ -1,0 +1,2818 @@
+{
+  "brand": "CARBENTRA",
+  "revision": "CM-S16-EVT-B",
+  "status": "Engineering development geometry; qualification and certification pending",
+  "units": "mm",
+  "front_axis": "+Z",
+  "origin": "rear housing center",
+  "parts": [
+    {
+      "id": "RearShell",
+      "name": "Rear housing with PCB and fuse supports",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/RearShell.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.84,
+        0.86,
+        0.85
+      ],
+      "group": "rear",
+      "explode": [
+        0,
+        0,
+        -22
+      ],
+      "volume_mm3": 78790.58879407388,
+      "solids": 1,
+      "bbox_mm": [
+        -54.0,
+        -46.5,
+        0.0,
+        54.0,
+        46.5,
+        55.70000000000001
+      ],
+      "brep_bbox_mm": [
+        -54.0,
+        -46.5,
+        0.0,
+        54.0,
+        46.5,
+        55.70000000000001
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "FrontLid",
+      "name": "Front housing with button/LED guides",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/FrontLid.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.94,
+        0.96,
+        0.95
+      ],
+      "group": "front",
+      "explode": [
+        0,
+        0,
+        65
+      ],
+      "volume_mm3": 35891.41188026035,
+      "solids": 1,
+      "bbox_mm": [
+        -54.0,
+        -46.5,
+        13.5,
+        54.0,
+        46.5,
+        65.0
+      ],
+      "brep_bbox_mm": [
+        -54.0,
+        -46.5,
+        13.5,
+        54.0,
+        46.5,
+        65.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "SeamRing",
+      "name": "SeamRing",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/SeamRing.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.94,
+        0.96,
+        0.95
+      ],
+      "group": "front",
+      "explode": [
+        0,
+        0,
+        65
+      ],
+      "volume_mm3": 255.59309263300736,
+      "solids": 1,
+      "bbox_mm": [
+        -53.95,
+        -46.45,
+        55.69999999999998,
+        53.95000000000001,
+        46.45,
+        56.0
+      ],
+      "brep_bbox_mm": [
+        -53.95,
+        -46.45,
+        55.69999999999998,
+        53.95000000000001,
+        46.45,
+        56.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "RearFinish",
+      "name": "RearFinish",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/RearFinish.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.035,
+        0.045,
+        0.045
+      ],
+      "group": "rear",
+      "explode": [
+        0,
+        0,
+        -22
+      ],
+      "volume_mm3": 36.2966647686394,
+      "solids": 1,
+      "bbox_mm": [
+        -54.04,
+        -46.54,
+        3.5,
+        54.04,
+        46.54,
+        5.900000000000001
+      ],
+      "brep_bbox_mm": [
+        -54.04,
+        -46.54,
+        3.5,
+        54.04,
+        46.54,
+        5.900000000000001
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "Carrier",
+      "name": "Insulating contact and thermal-pickup carrier",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/Carrier.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.84,
+        0.86,
+        0.85
+      ],
+      "group": "contact_carrier",
+      "explode": [
+        0,
+        0,
+        25
+      ],
+      "volume_mm3": 37989.951688910034,
+      "solids": 1,
+      "bbox_mm": [
+        -30.0,
+        -25.75,
+        38.5,
+        30.0,
+        25.0,
+        62.6
+      ],
+      "brep_bbox_mm": [
+        -30.0,
+        -25.75,
+        38.5,
+        30.0,
+        25.0,
+        62.6
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "ThermalPad",
+      "name": "0.5 mm isolated sensor pickup pad",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/ThermalPad.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.84,
+        0.86,
+        0.85
+      ],
+      "group": "thermal",
+      "explode": [
+        18,
+        0,
+        25
+      ],
+      "volume_mm3": 359.68,
+      "solids": 1,
+      "bbox_mm": [
+        -4.772758664047831,
+        -18.75,
+        43.5,
+        21.22724133595217,
+        9.25,
+        44.0
+      ],
+      "brep_bbox_mm": [
+        -4.772758664047831,
+        -18.75,
+        43.5,
+        21.22724133595217,
+        9.25,
+        44.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "PEChannel",
+      "name": "Retained protective-earth routing channel",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/PEChannel.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.84,
+        0.86,
+        0.85
+      ],
+      "group": "contact_carrier",
+      "explode": [
+        0,
+        0,
+        25
+      ],
+      "volume_mm3": 1656.6295889359217,
+      "solids": 1,
+      "bbox_mm": [
+        45.0,
+        12.5,
+        3.0,
+        51.0,
+        21.5,
+        41.0
+      ],
+      "brep_bbox_mm": [
+        45.0,
+        12.5,
+        3.0,
+        51.0,
+        21.5,
+        41.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "PEBus",
+      "name": "Continuous protective-earth copper link",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/PEBus.stl",
+      "material": "Cu-ETP candidate; forming/joint qualification pending",
+      "color": [
+        0.64,
+        0.37,
+        0.18
+      ],
+      "group": "contact_carrier",
+      "explode": [
+        0,
+        0,
+        25
+      ],
+      "volume_mm3": 414.57484626502026,
+      "solids": 1,
+      "bbox_mm": [
+        -1.49978627147539,
+        9.6,
+        4.5,
+        49.5,
+        18.500000000000004,
+        42.0
+      ],
+      "brep_bbox_mm": [
+        -1.49978627147539,
+        9.6,
+        4.5,
+        49.5,
+        18.500000000000004,
+        42.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "ShutterGuide",
+      "name": "ShutterGuide",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/ShutterGuide.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.84,
+        0.86,
+        0.85
+      ],
+      "group": "shutter",
+      "explode": [
+        0,
+        0,
+        43
+      ],
+      "volume_mm3": 1345.8081366129447,
+      "solids": 1,
+      "bbox_mm": [
+        -18.82724133595217,
+        -15.75,
+        57.0,
+        23.72724133595217,
+        18.25,
+        62.2
+      ],
+      "brep_bbox_mm": [
+        -18.82724133595217,
+        -15.75,
+        57.0,
+        23.72724133595217,
+        18.25,
+        62.2
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "ShutterSlider",
+      "name": "ShutterSlider",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/ShutterSlider.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.84,
+        0.86,
+        0.85
+      ],
+      "group": "shutter",
+      "explode": [
+        0,
+        0,
+        43
+      ],
+      "volume_mm3": 685.5001484665812,
+      "solids": 1,
+      "bbox_mm": [
+        -14.227241335952169,
+        -12.75,
+        57.95013756672634,
+        22.377120525309643,
+        3.25,
+        62.1
+      ],
+      "brep_bbox_mm": [
+        -14.227241335952169,
+        -12.75,
+        57.95013756672634,
+        22.377120525309643,
+        3.25,
+        62.1
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "Pawl_L",
+      "name": "Left mechanical pawl at N aperture",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/Pawl_L.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.84,
+        0.86,
+        0.85
+      ],
+      "group": "shutter",
+      "explode": [
+        0,
+        0,
+        43
+      ],
+      "volume_mm3": 29.96617251235194,
+      "solids": 1,
+      "bbox_mm": [
+        -17.02724133595217,
+        -7.75,
+        59.0,
+        -6.827241335952169,
+        -1.75,
+        61.875
+      ],
+      "brep_bbox_mm": [
+        -17.02724133595217,
+        -7.75,
+        59.0,
+        -6.827241335952169,
+        -1.75,
+        61.875
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "Pawl_N",
+      "name": "Right mechanical pawl at L aperture",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/Pawl_N.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.84,
+        0.86,
+        0.85
+      ],
+      "group": "shutter",
+      "explode": [
+        0,
+        0,
+        43
+      ],
+      "volume_mm3": 29.966172512351942,
+      "solids": 1,
+      "bbox_mm": [
+        6.827241335952168,
+        -7.75,
+        59.0,
+        17.027241335952166,
+        -1.75,
+        61.875
+      ],
+      "brep_bbox_mm": [
+        6.827241335952168,
+        -7.75,
+        59.0,
+        17.027241335952166,
+        -1.75,
+        61.875
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "PawlSpring_L",
+      "name": "PawlSpring_L",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/PawlSpring_L.stl",
+      "material": "Spring/fastener metal candidate",
+      "color": [
+        0.42,
+        0.46,
+        0.48
+      ],
+      "group": "shutter",
+      "explode": [
+        0,
+        0,
+        43
+      ],
+      "volume_mm3": 0.23879320936946533,
+      "solids": 1,
+      "bbox_mm": [
+        -8.957244589868331,
+        -5.480001590133294,
+        58.22018787529128,
+        -7.497241335952166,
+        -4.0199992668454545,
+        59.99980783978932
+      ],
+      "brep_bbox_mm": [
+        -8.957244589868331,
+        -5.480001590133294,
+        58.22018787529128,
+        -7.497241335952166,
+        -4.0199992668454545,
+        59.99980783978932
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "PawlSpring_N",
+      "name": "PawlSpring_N",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/PawlSpring_N.stl",
+      "material": "Spring/fastener metal candidate",
+      "color": [
+        0.42,
+        0.46,
+        0.48
+      ],
+      "group": "shutter",
+      "explode": [
+        0,
+        0,
+        43
+      ],
+      "volume_mm3": 0.23879320936946544,
+      "solids": 1,
+      "bbox_mm": [
+        7.497238082036007,
+        -5.480001590133294,
+        58.22018787529128,
+        8.95724133595217,
+        -4.0199992668454545,
+        59.99980783978932
+      ],
+      "brep_bbox_mm": [
+        7.497238082036007,
+        -5.480001590133294,
+        58.22018787529128,
+        8.95724133595217,
+        -4.0199992668454545,
+        59.99980783978932
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "ShutterReturnSpring",
+      "name": "ShutterReturnSpring",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/ShutterReturnSpring.stl",
+      "material": "Spring/fastener metal candidate",
+      "color": [
+        0.42,
+        0.46,
+        0.48
+      ],
+      "group": "shutter",
+      "explode": [
+        0,
+        0,
+        43
+      ],
+      "volume_mm3": 3.5159024822515144,
+      "solids": 1,
+      "bbox_mm": [
+        19.62724412124468,
+        -9.740955706131118,
+        58.10000490926052,
+        22.22724205341117,
+        17.24095467595943,
+        60.69999669388673
+      ],
+      "brep_bbox_mm": [
+        19.62724412124468,
+        -9.740955706131118,
+        58.10000490926052,
+        22.22724205341117,
+        17.24095467595943,
+        60.69999669388673
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "LocalButton",
+      "name": "Local operating-button plunger",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/LocalButton.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.94,
+        0.96,
+        0.95
+      ],
+      "group": "front",
+      "explode": [
+        0,
+        0,
+        65
+      ],
+      "volume_mm3": 435.7263346822899,
+      "solids": 1,
+      "bbox_mm": [
+        20.05,
+        -37.94921920259176,
+        17.4,
+        27.95,
+        -30.05078079740824,
+        64.8
+      ],
+      "brep_bbox_mm": [
+        20.05,
+        -37.94921920259176,
+        17.4,
+        27.95,
+        -30.05078079740824,
+        64.8
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "RearmButton",
+      "name": "Recessed independent thermal-latch rearm plunger",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/RearmButton.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.94,
+        0.96,
+        0.95
+      ],
+      "group": "front",
+      "explode": [
+        0,
+        0,
+        65
+      ],
+      "volume_mm3": 341.1015639561653,
+      "solids": 1,
+      "bbox_mm": [
+        36.05,
+        -26.949614543051627,
+        17.4,
+        39.95,
+        -23.050385456948373,
+        64.0
+      ],
+      "brep_bbox_mm": [
+        36.05,
+        -26.949614543051627,
+        17.4,
+        39.95,
+        -23.050385456948373,
+        64.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "StatusLightGuide",
+      "name": "Status LED optical guide",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/StatusLightGuide.stl",
+      "material": "Optical PC candidate",
+      "color": [
+        0.1,
+        0.72,
+        0.5
+      ],
+      "group": "front",
+      "explode": [
+        0,
+        0,
+        65
+      ],
+      "volume_mm3": 210.81343342648944,
+      "solids": 1,
+      "bbox_mm": [
+        32.8,
+        32.80023720427592,
+        18.4,
+        35.2,
+        35.19976279572408,
+        65.0
+      ],
+      "brep_bbox_mm": [
+        32.8,
+        32.80023720427592,
+        18.4,
+        35.2,
+        35.19976279572408,
+        65.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "BladeSleeve_L",
+      "name": "BladeSleeve_L",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/BladeSleeve_L.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.84,
+        0.86,
+        0.85
+      ],
+      "group": "rear",
+      "explode": [
+        0,
+        0,
+        -22
+      ],
+      "volume_mm3": 50.22000000000001,
+      "solids": 1,
+      "bbox_mm": [
+        5.422818472546174,
+        -8.707402885326976,
+        -9.0,
+        11.031664199358163,
+        -0.792597114673022,
+        0.0
+      ],
+      "brep_bbox_mm": [
+        5.422818472546174,
+        -8.707402885326976,
+        -9.0,
+        11.031664199358163,
+        -0.792597114673022,
+        0.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "BladeSleeve_N",
+      "name": "BladeSleeve_N",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/BladeSleeve_N.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.84,
+        0.86,
+        0.85
+      ],
+      "group": "rear",
+      "explode": [
+        0,
+        0,
+        -22
+      ],
+      "volume_mm3": 50.21999999999998,
+      "solids": 1,
+      "bbox_mm": [
+        -11.031664199358163,
+        -8.707402885326976,
+        -9.0,
+        -5.422818472546174,
+        -0.792597114673023,
+        0.0
+      ],
+      "brep_bbox_mm": [
+        -11.031664199358163,
+        -8.707402885326976,
+        -9.0,
+        -5.422818472546174,
+        -0.792597114673022,
+        0.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "Blade_L",
+      "name": "Blade_L",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/Blade_L.stl",
+      "material": "Conductive copper-alloy rear-blade candidate; interface and joint qualification pending",
+      "color": [
+        0.64,
+        0.37,
+        0.18
+      ],
+      "group": "rear",
+      "explode": [
+        0,
+        0,
+        -22
+      ],
+      "volume_mm3": 316.5400000000004,
+      "solids": 1,
+      "bbox_mm": [
+        3.620190528383291,
+        -10.729646071760524,
+        -18.0,
+        12.834292143521047,
+        1.229646071760524,
+        5.0
+      ],
+      "brep_bbox_mm": [
+        3.620190528383291,
+        -10.729646071760524,
+        -18.0,
+        12.834292143521047,
+        1.2296460717605253,
+        5.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "Blade_N",
+      "name": "Blade_N",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/Blade_N.stl",
+      "material": "Conductive copper-alloy rear-blade candidate; interface and joint qualification pending",
+      "color": [
+        0.64,
+        0.37,
+        0.18
+      ],
+      "group": "rear",
+      "explode": [
+        0,
+        0,
+        -22
+      ],
+      "volume_mm3": 305.35540207500463,
+      "solids": 1,
+      "bbox_mm": [
+        -12.834292143521047,
+        -10.729646071760524,
+        -18.0,
+        -3.620190528383291,
+        1.229646071760524,
+        6.5
+      ],
+      "brep_bbox_mm": [
+        -12.834292143521047,
+        -10.729646071760524,
+        -18.0,
+        -3.620190528383291,
+        1.2296460717605253,
+        6.5
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "Blade_PE",
+      "name": "Blade_PE",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/Blade_PE.stl",
+      "material": "Conductive copper-alloy rear-blade candidate; interface and joint qualification pending",
+      "color": [
+        0.64,
+        0.37,
+        0.18
+      ],
+      "group": "rear",
+      "explode": [
+        0,
+        0,
+        -22
+      ],
+      "volume_mm3": 410.50000000000006,
+      "solids": 1,
+      "bbox_mm": [
+        -2.0,
+        5.35,
+        -21.0,
+        2.0,
+        16.85,
+        5.0
+      ],
+      "brep_bbox_mm": [
+        -2.0,
+        5.35,
+        -21.0,
+        2.0,
+        16.85,
+        5.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "Contact_L",
+      "name": "Dual-leaf L receptacle spring candidate",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/Contact_L.stl",
+      "material": "Spring-temper copper-alloy candidate; 0.4 mm leaves, temper/plating unqualified",
+      "color": [
+        0.64,
+        0.37,
+        0.18
+      ],
+      "group": "contact_carrier",
+      "explode": [
+        0,
+        0,
+        25
+      ],
+      "volume_mm3": 345.01092968400286,
+      "solids": 1,
+      "bbox_mm": [
+        -0.7727586640478306,
+        -24.749537565218557,
+        44.0,
+        16.22724133595217,
+        1.25,
+        55.3
+      ],
+      "brep_bbox_mm": [
+        -0.7727586640478306,
+        -24.749537565218557,
+        44.0,
+        16.22724133595217,
+        1.25,
+        55.3
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "Contact_N",
+      "name": "Dual-leaf N receptacle spring candidate",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/Contact_N.stl",
+      "material": "Spring-temper copper-alloy candidate; 0.4 mm leaves, temper/plating unqualified",
+      "color": [
+        0.64,
+        0.37,
+        0.18
+      ],
+      "group": "contact_carrier",
+      "explode": [
+        0,
+        0,
+        25
+      ],
+      "volume_mm3": 145.00000000000003,
+      "solids": 1,
+      "bbox_mm": [
+        -12.892304845413271,
+        -10.330127018922196,
+        44.0,
+        -3.562177826491075,
+        0.8301270189221954,
+        55.3
+      ],
+      "brep_bbox_mm": [
+        -12.892304845413271,
+        -10.330127018922196,
+        44.0,
+        -3.562177826491075,
+        0.8301270189221954,
+        55.3
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "Contact_PE",
+      "name": "Dual-leaf E receptacle spring candidate",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/Contact_PE.stl",
+      "material": "Spring-temper copper-alloy candidate; 0.4 mm leaves, temper/plating unqualified",
+      "color": [
+        0.64,
+        0.37,
+        0.18
+      ],
+      "group": "contact_carrier",
+      "explode": [
+        0,
+        0,
+        25
+      ],
+      "volume_mm3": 172.99999999999986,
+      "solids": 1,
+      "bbox_mm": [
+        -2.5,
+        6.1,
+        40.5,
+        2.5,
+        16.1,
+        55.3
+      ],
+      "brep_bbox_mm": [
+        -2.5,
+        6.1,
+        40.5,
+        2.5,
+        16.1,
+        55.3
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "Screw_0",
+      "name": "Screw_0",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/Screw_0.stl",
+      "material": "Spring/fastener metal candidate",
+      "color": [
+        0.42,
+        0.46,
+        0.48
+      ],
+      "group": "contact_carrier",
+      "explode": [
+        0,
+        0,
+        25
+      ],
+      "volume_mm3": 234.70728087230626,
+      "solids": 1,
+      "bbox_mm": [
+        -46.2,
+        -38.199565125494146,
+        0.2,
+        -41.8,
+        -33.800434874505854,
+        59.2
+      ],
+      "brep_bbox_mm": [
+        -46.2,
+        -38.199565125494146,
+        0.2,
+        -41.8,
+        -33.800434874505854,
+        59.2
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "Screw_1",
+      "name": "Screw_1",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/Screw_1.stl",
+      "material": "Spring/fastener metal candidate",
+      "color": [
+        0.42,
+        0.46,
+        0.48
+      ],
+      "group": "contact_carrier",
+      "explode": [
+        0,
+        0,
+        25
+      ],
+      "volume_mm3": 234.70728087230626,
+      "solids": 1,
+      "bbox_mm": [
+        -46.2,
+        33.800434874505854,
+        0.2,
+        -41.8,
+        38.199565125494146,
+        59.2
+      ],
+      "brep_bbox_mm": [
+        -46.2,
+        33.800434874505854,
+        0.2,
+        -41.8,
+        38.199565125494146,
+        59.2
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "Screw_2",
+      "name": "Screw_2",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/Screw_2.stl",
+      "material": "Spring/fastener metal candidate",
+      "color": [
+        0.42,
+        0.46,
+        0.48
+      ],
+      "group": "contact_carrier",
+      "explode": [
+        0,
+        0,
+        25
+      ],
+      "volume_mm3": 234.70728087230626,
+      "solids": 1,
+      "bbox_mm": [
+        41.8,
+        -38.199565125494146,
+        0.2,
+        46.2,
+        -33.800434874505854,
+        59.2
+      ],
+      "brep_bbox_mm": [
+        41.8,
+        -38.199565125494146,
+        0.2,
+        46.2,
+        -33.800434874505854,
+        59.2
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "Screw_3",
+      "name": "Screw_3",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/Screw_3.stl",
+      "material": "Spring/fastener metal candidate",
+      "color": [
+        0.42,
+        0.46,
+        0.48
+      ],
+      "group": "contact_carrier",
+      "explode": [
+        0,
+        0,
+        25
+      ],
+      "volume_mm3": 234.70728087230626,
+      "solids": 1,
+      "bbox_mm": [
+        41.8,
+        33.800434874505854,
+        0.2,
+        46.2,
+        38.199565125494146,
+        59.2
+      ],
+      "brep_bbox_mm": [
+        41.8,
+        33.800434874505854,
+        0.2,
+        46.2,
+        38.199565125494146,
+        59.2
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "RFServiceSlackEnvelope",
+      "name": "Non-physical44mm coax service-slack reservation",
+      "geometry_role": "clearance_envelope",
+      "render_default": false,
+      "file": "meshes/RFServiceSlackEnvelope.stl",
+      "material": "NON-PHYSICAL ROUTING RESERVATION; exclude from mass/procurement and default renders",
+      "color": [
+        0.9,
+        0.55,
+        0.04
+      ],
+      "group": "rf",
+      "explode": [
+        0,
+        10,
+        15
+      ],
+      "volume_mm3": 326.631388193731,
+      "solids": 1,
+      "bbox_mm": [
+        15.05,
+        27.851571478327976,
+        46.5,
+        30.95,
+        43.74842852167202,
+        50.5
+      ],
+      "brep_bbox_mm": [
+        15.05,
+        27.851571478327976,
+        46.5,
+        30.95,
+        43.74842852167202,
+        50.5
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "RFAntenna",
+      "name": "Taoglas FXP73.07.0100A antenna envelope",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/RFAntenna.stl",
+      "material": "Flexible RF antenna laminate and adhesive envelope",
+      "color": [
+        0.06,
+        0.065,
+        0.07
+      ],
+      "group": "rf",
+      "explode": [
+        0,
+        10,
+        15
+      ],
+      "volume_mm3": 32.900000000000375,
+      "solids": 1,
+      "bbox_mm": [
+        -23.5,
+        44.0,
+        44.0,
+        23.5,
+        44.1,
+        51.0
+      ],
+      "brep_bbox_mm": [
+        -23.5,
+        44.0,
+        44.0,
+        23.5,
+        44.1,
+        51.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "RFCoax",
+      "name": "1.13 mm coax nominal routed segment",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/RFCoax.stl",
+      "material": "Insulated coax routed segment; remaining44mm allocated in retained service-loop reservation",
+      "color": [
+        0.06,
+        0.065,
+        0.07
+      ],
+      "group": "rf",
+      "explode": [
+        0,
+        10,
+        15
+      ],
+      "volume_mm3": 56.02653631726922,
+      "solids": 1,
+      "bbox_mm": [
+        20.000000000000007,
+        24.035111683679915,
+        18.15,
+        36.815,
+        44.015,
+        48.064888316320086
+      ],
+      "brep_bbox_mm": [
+        20.000000000000007,
+        24.035111683679915,
+        18.15,
+        36.815,
+        44.015,
+        48.064888316320086
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "RFConnectorEnvelope",
+      "name": "Mated RF connector clearance envelope",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/RFConnectorEnvelope.stl",
+      "material": "Provisional mating/strain-relief envelope, not vendor detailed CAD",
+      "color": [
+        0.06,
+        0.065,
+        0.07
+      ],
+      "group": "rf",
+      "explode": [
+        0,
+        10,
+        15
+      ],
+      "volume_mm3": 21.20575041173109,
+      "solids": 1,
+      "bbox_mm": [
+        34.75,
+        23.100296505344904,
+        15.15,
+        37.75,
+        26.0997034946551,
+        18.15
+      ],
+      "brep_bbox_mm": [
+        34.75,
+        23.100296505344904,
+        15.15,
+        37.75,
+        26.0997034946551,
+        18.15
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "HeadConnectorEnvelope",
+      "name": "Sensor-header mating-housing clearance envelope",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/HeadConnectorEnvelope.stl",
+      "material": "Provisional mating/strain-relief envelope, not vendor detailed CAD",
+      "color": [
+        0.84,
+        0.86,
+        0.85
+      ],
+      "group": "thermal",
+      "explode": [
+        18,
+        0,
+        25
+      ],
+      "volume_mm3": 253.44000000000023,
+      "solids": 1,
+      "bbox_mm": [
+        42.4,
+        -3.44,
+        18.4,
+        45.6,
+        5.360000000000001,
+        27.4
+      ],
+      "brep_bbox_mm": [
+        42.4,
+        -3.44,
+        18.4,
+        45.6,
+        5.360000000000001,
+        27.4
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "HeadPigtail_0",
+      "name": "Isolated sensor pigtail 0",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/HeadPigtail_0.stl",
+      "material": "Insulated low-current copper lead envelope",
+      "color": [
+        0.65,
+        0.07,
+        0.045
+      ],
+      "group": "thermal",
+      "explode": [
+        18,
+        0,
+        25
+      ],
+      "volume_mm3": 47.94816240417109,
+      "solids": 1,
+      "bbox_mm": [
+        13.2772413,
+        -8.299891281373537,
+        27.4,
+        44.55,
+        4.049891281373538,
+        39.864999999999995
+      ],
+      "brep_bbox_mm": [
+        13.2772413,
+        -8.299891281373537,
+        27.4,
+        44.55,
+        4.049891281373538,
+        39.864999999999995
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "HeadPigtail_1",
+      "name": "Isolated sensor pigtail 1",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/HeadPigtail_1.stl",
+      "material": "Insulated low-current copper lead envelope",
+      "color": [
+        0.025,
+        0.03,
+        0.03
+      ],
+      "group": "thermal",
+      "explode": [
+        18,
+        0,
+        25
+      ],
+      "volume_mm3": 47.94816240417111,
+      "solids": 1,
+      "bbox_mm": [
+        13.2772413,
+        -5.759891281373537,
+        27.4,
+        44.55,
+        6.5898912813735375,
+        39.864999999999995
+      ],
+      "brep_bbox_mm": [
+        13.2772413,
+        -5.759891281373537,
+        27.4,
+        44.55,
+        6.5898912813735375,
+        39.864999999999995
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "HeadPigtail_2",
+      "name": "Isolated sensor pigtail 2",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/HeadPigtail_2.stl",
+      "material": "Insulated low-current copper lead envelope",
+      "color": [
+        0.04,
+        0.4,
+        0.18
+      ],
+      "group": "thermal",
+      "explode": [
+        18,
+        0,
+        25
+      ],
+      "volume_mm3": 47.9481624041711,
+      "solids": 1,
+      "bbox_mm": [
+        13.2772413,
+        -3.2198912813735365,
+        27.4,
+        44.55,
+        9.129891281373538,
+        39.864999999999995
+      ],
+      "brep_bbox_mm": [
+        13.2772413,
+        -3.2198912813735365,
+        27.4,
+        44.55,
+        9.129891281373538,
+        39.864999999999995
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "AuxFuseCradle",
+      "name": "Underside 1 A auxiliary-fuse two-saddle cradle",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/AuxFuseCradle.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.84,
+        0.86,
+        0.85
+      ],
+      "group": "rear",
+      "explode": [
+        0,
+        0,
+        -22
+      ],
+      "volume_mm3": 140.60669951562932,
+      "solids": 1,
+      "bbox_mm": [
+        -38.4,
+        -31.9,
+        3.0,
+        -29.1,
+        -18.9,
+        10.0
+      ],
+      "brep_bbox_mm": [
+        -38.4,
+        -31.9,
+        3.0,
+        -29.1,
+        -18.9,
+        10.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "AuxFuseRetainer",
+      "name": "Auxiliary-fuse retaining bridge",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/AuxFuseRetainer.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.84,
+        0.86,
+        0.85
+      ],
+      "group": "rear",
+      "explode": [
+        0,
+        0,
+        -22
+      ],
+      "volume_mm3": 42.4199999999999,
+      "solids": 1,
+      "bbox_mm": [
+        -37.5,
+        -31.9,
+        8.8,
+        -28.700000000000003,
+        -18.9,
+        10.850000000000001
+      ],
+      "brep_bbox_mm": [
+        -37.5,
+        -31.9,
+        8.8,
+        -28.700000000000003,
+        -18.9,
+        10.850000000000001
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "PowerCore_L_RAW",
+      "name": "PowerCore_L_RAW",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/PowerCore_L_RAW.stl",
+      "material": "Cu-ETP candidate; forming/joint qualification pending",
+      "color": [
+        0.64,
+        0.37,
+        0.18
+      ],
+      "group": "supported_power_links",
+      "explode": [
+        0,
+        0,
+        15
+      ],
+      "volume_mm3": 312.09246109621216,
+      "solids": 1,
+      "bbox_mm": [
+        -43.99999999999997,
+        -20.499802329770073,
+        4.700197670229935,
+        9.227241335952169,
+        -3.75,
+        39.0
+      ],
+      "brep_bbox_mm": [
+        -43.99999999999997,
+        -20.499802329770073,
+        4.700197670229935,
+        9.227241335952169,
+        -3.75,
+        39.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "PowerCarrier_L_RAW",
+      "name": "PowerCarrier_L_RAW",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/PowerCarrier_L_RAW.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.26,
+        0.1,
+        0.045
+      ],
+      "group": "supported_power_links",
+      "explode": [
+        0,
+        0,
+        15
+      ],
+      "volume_mm3": 1020.9392879512184,
+      "solids": 1,
+      "bbox_mm": [
+        -45.199999999999974,
+        -21.699565125494154,
+        3.500038652002909,
+        9.975888295733018,
+        -4.993376366720275,
+        38.36959469576502
+      ],
+      "brep_bbox_mm": [
+        -45.199999999999974,
+        -21.699565125494154,
+        3.500038652002909,
+        9.975888295733018,
+        -4.993376366720275,
+        38.36959469576502
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "PowerCore_N_RAW",
+      "name": "PowerCore_N_RAW",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/PowerCore_N_RAW.stl",
+      "material": "Cu-ETP candidate; forming/joint qualification pending",
+      "color": [
+        0.64,
+        0.37,
+        0.18
+      ],
+      "group": "supported_power_links",
+      "explode": [
+        0,
+        0,
+        15
+      ],
+      "volume_mm3": 290.0850140585603,
+      "solids": 1,
+      "bbox_mm": [
+        -50.0,
+        -12.87980232977007,
+        4.700197670229935,
+        -7.227241335952169,
+        3.0,
+        21.6
+      ],
+      "brep_bbox_mm": [
+        -50.0,
+        -12.87980232977007,
+        4.700197670229935,
+        -7.227241335952169,
+        3.0,
+        21.6
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "PowerCarrier_N_RAW",
+      "name": "PowerCarrier_N_RAW",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/PowerCarrier_N_RAW.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.025,
+        0.18,
+        0.42
+      ],
+      "group": "supported_power_links",
+      "explode": [
+        0,
+        0,
+        15
+      ],
+      "volume_mm3": 871.0381339466674,
+      "solids": 1,
+      "bbox_mm": [
+        -51.2,
+        -14.079565125494149,
+        3.5000300177193635,
+        -6.204550023251389,
+        4.200000000000001,
+        22.8
+      ],
+      "brep_bbox_mm": [
+        -51.2,
+        -14.079565125494149,
+        3.5000300177193635,
+        -6.204550023251389,
+        4.200000000000001,
+        22.8
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "PowerCore_L_FUSE_THERMAL",
+      "name": "PowerCore_L_FUSE_THERMAL",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/PowerCore_L_FUSE_THERMAL.stl",
+      "material": "Cu-ETP candidate; forming/joint qualification pending",
+      "color": [
+        0.64,
+        0.37,
+        0.18
+      ],
+      "group": "supported_power_links",
+      "explode": [
+        0,
+        0,
+        15
+      ],
+      "volume_mm3": 270.1819169028366,
+      "solids": 1,
+      "bbox_mm": [
+        -41.0,
+        7.25,
+        38.00019767022994,
+        17.22704366572224,
+        22.999802329770066,
+        52.0
+      ],
+      "brep_bbox_mm": [
+        -41.0,
+        7.25,
+        38.00019767022994,
+        17.22704366572224,
+        22.999802329770066,
+        52.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "PowerCarrier_L_FUSE_THERMAL",
+      "name": "PowerCarrier_L_FUSE_THERMAL",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/PowerCarrier_L_FUSE_THERMAL.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.26,
+        0.1,
+        0.045
+      ],
+      "group": "supported_power_links",
+      "explode": [
+        0,
+        0,
+        15
+      ],
+      "volume_mm3": 811.8043672475911,
+      "solids": 1,
+      "bbox_mm": [
+        -42.2,
+        8.25,
+        38.77286312725957,
+        18.42680646144632,
+        24.199565125494146,
+        53.2
+      ],
+      "brep_bbox_mm": [
+        -42.2,
+        8.25,
+        38.77286312725957,
+        18.42680646144632,
+        24.199565125494146,
+        53.2
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "PowerCore_L_PROTECTED",
+      "name": "PowerCore_L_PROTECTED",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/PowerCore_L_PROTECTED.stl",
+      "material": "Cu-ETP candidate; forming/joint qualification pending",
+      "color": [
+        0.64,
+        0.37,
+        0.18
+      ],
+      "group": "supported_power_links",
+      "explode": [
+        0,
+        0,
+        15
+      ],
+      "volume_mm3": 335.7233838898267,
+      "solids": 1,
+      "bbox_mm": [
+        -38.99980232977006,
+        -28.0,
+        19.600197670229935,
+        17.227241335952172,
+        -16.75,
+        51.99980232977006
+      ],
+      "brep_bbox_mm": [
+        -38.99980232977006,
+        -28.0,
+        19.600197670229935,
+        17.227241335952172,
+        -16.75,
+        51.99980232977006
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "PowerCarrier_L_PROTECTED",
+      "name": "PowerCarrier_L_PROTECTED",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/PowerCarrier_L_PROTECTED.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.26,
+        0.1,
+        0.045
+      ],
+      "group": "supported_power_links",
+      "explode": [
+        0,
+        0,
+        15
+      ],
+      "volume_mm3": 1043.1904870211235,
+      "solids": 1,
+      "bbox_mm": [
+        -40.199565125494146,
+        -29.2,
+        18.40043487450586,
+        18.427241335952168,
+        -17.3,
+        53.199565125494146
+      ],
+      "brep_bbox_mm": [
+        -40.199565125494146,
+        -29.2,
+        18.40043487450586,
+        18.427241335952168,
+        -17.3,
+        53.199565125494146
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "PowerCore_L_OUTPUT",
+      "name": "PowerCore_L_OUTPUT",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/PowerCore_L_OUTPUT.stl",
+      "material": "Cu-ETP candidate; forming/joint qualification pending",
+      "color": [
+        0.64,
+        0.37,
+        0.18
+      ],
+      "group": "supported_power_links",
+      "explode": [
+        0,
+        0,
+        15
+      ],
+      "volume_mm3": 287.8135183540208,
+      "solids": 1,
+      "bbox_mm": [
+        -45.0,
+        -22.749802329770063,
+        19.6,
+        3.227241335952169,
+        -2.260197670229934,
+        44.800000000000004
+      ],
+      "brep_bbox_mm": [
+        -45.0,
+        -22.749802329770063,
+        19.6,
+        3.227241335952169,
+        -2.260197670229934,
+        44.800000000000004
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "PowerCarrier_L_OUTPUT",
+      "name": "PowerCarrier_L_OUTPUT",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/PowerCarrier_L_OUTPUT.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.26,
+        0.1,
+        0.045
+      ],
+      "group": "supported_power_links",
+      "explode": [
+        0,
+        0,
+        15
+      ],
+      "volume_mm3": 877.0925196927205,
+      "solids": 1,
+      "bbox_mm": [
+        -46.2,
+        -23.94956512549414,
+        18.400000000000002,
+        4.235520894938521,
+        -1.0604348745058547,
+        43.98309338415836
+      ],
+      "brep_bbox_mm": [
+        -46.2,
+        -23.94956512549414,
+        18.400000000000002,
+        4.235520894938521,
+        -1.0604348745058547,
+        43.98309338415836
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "PowerCore_N_OUTPUT",
+      "name": "PowerCore_N_OUTPUT",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/PowerCore_N_OUTPUT.stl",
+      "material": "Cu-ETP candidate; forming/joint qualification pending",
+      "color": [
+        0.64,
+        0.37,
+        0.18
+      ],
+      "group": "supported_power_links",
+      "explode": [
+        0,
+        0,
+        15
+      ],
+      "volume_mm3": 245.25325851322611,
+      "solids": 1,
+      "bbox_mm": [
+        -45.0,
+        -5.749802329770064,
+        19.6,
+        -7.227241335952172,
+        5.3598023297700665,
+        44.800000000000004
+      ],
+      "brep_bbox_mm": [
+        -45.0,
+        -5.749802329770064,
+        19.6,
+        -7.227241335952172,
+        5.3598023297700665,
+        44.800000000000004
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "PowerCarrier_N_OUTPUT",
+      "name": "PowerCarrier_N_OUTPUT",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/PowerCarrier_N_OUTPUT.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.025,
+        0.18,
+        0.42
+      ],
+      "group": "supported_power_links",
+      "explode": [
+        0,
+        0,
+        15
+      ],
+      "volume_mm3": 732.3876362340187,
+      "solids": 1,
+      "bbox_mm": [
+        -46.2,
+        -6.949565125494143,
+        18.400000000000002,
+        -6.218961776965815,
+        6.559565125494146,
+        43.98309338415837
+      ],
+      "brep_bbox_mm": [
+        -46.2,
+        -6.949565125494143,
+        18.400000000000002,
+        -6.218961776965815,
+        6.559565125494146,
+        43.98309338415837
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "MainFuseHolder",
+      "name": "Custom insulating carrier for CQP clips",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/MainFuseHolder.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.84,
+        0.86,
+        0.85
+      ],
+      "group": "main_fuse",
+      "explode": [
+        -18,
+        0,
+        25
+      ],
+      "volume_mm3": 1310.0199217169052,
+      "solids": 1,
+      "bbox_mm": [
+        -48.0,
+        -22.5,
+        41.0,
+        -32.0,
+        22.5,
+        43.0
+      ],
+      "brep_bbox_mm": [
+        -48.0,
+        -22.5,
+        41.0,
+        -32.0,
+        22.5,
+        43.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "MainFuseCeramic",
+      "name": "SHF main-fuse cartridge ceramic envelope",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/MainFuseCeramic.stl",
+      "material": "Ceramic cartridge envelope",
+      "color": [
+        0.82,
+        0.82,
+        0.76
+      ],
+      "group": "main_fuse",
+      "explode": [
+        -18,
+        0,
+        25
+      ],
+      "volume_mm3": 604.8820531726378,
+      "solids": 1,
+      "bbox_mm": [
+        -43.17437239701996,
+        -9.55,
+        46.675000000000004,
+        -36.82562760298004,
+        9.55,
+        53.025
+      ],
+      "brep_bbox_mm": [
+        -43.17437239701996,
+        -9.55,
+        46.675000000000004,
+        -36.82562760298004,
+        9.55,
+        53.025
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "MainFuseCap1",
+      "name": "SHF8020.5080 cartridge end-cap envelope",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/MainFuseCap1.stl",
+      "material": "Conductive metal candidate",
+      "color": [
+        0.68,
+        0.7,
+        0.71
+      ],
+      "group": "main_fuse",
+      "explode": [
+        -18,
+        0,
+        25
+      ],
+      "volume_mm3": 201.09953076681936,
+      "solids": 1,
+      "bbox_mm": [
+        -43.17437239701996,
+        -15.9,
+        46.675000000000004,
+        -36.82562760298004,
+        -9.55,
+        53.025
+      ],
+      "brep_bbox_mm": [
+        -43.17437239701996,
+        -15.9,
+        46.675000000000004,
+        -36.82562760298004,
+        -9.55,
+        53.025
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "MainFuseCap2",
+      "name": "SHF8020.5080 cartridge end-cap envelope",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/MainFuseCap2.stl",
+      "material": "Conductive metal candidate",
+      "color": [
+        0.68,
+        0.7,
+        0.71
+      ],
+      "group": "main_fuse",
+      "explode": [
+        -18,
+        0,
+        25
+      ],
+      "volume_mm3": 201.09953076681936,
+      "solids": 1,
+      "bbox_mm": [
+        -43.17437239701996,
+        9.55,
+        46.675000000000004,
+        -36.82562760298004,
+        15.9,
+        53.025
+      ],
+      "brep_bbox_mm": [
+        -43.17437239701996,
+        9.55,
+        46.675000000000004,
+        -36.82562760298004,
+        15.9,
+        53.025
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "MainFuseClip1",
+      "name": "SCHURTER CQP8040.0003 clip envelope",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/MainFuseClip1.stl",
+      "material": "Silver-plated conductive spring clip",
+      "color": [
+        0.66,
+        0.69,
+        0.7
+      ],
+      "group": "main_fuse",
+      "explode": [
+        -18,
+        0,
+        25
+      ],
+      "volume_mm3": 139.69445137639445,
+      "solids": 1,
+      "bbox_mm": [
+        -43.925,
+        -17.95,
+        39.4,
+        -36.074999999999996,
+        -9.350000000000001,
+        53.3
+      ],
+      "brep_bbox_mm": [
+        -43.925,
+        -17.95,
+        39.4,
+        -36.074999999999996,
+        -9.350000000000001,
+        53.3
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "MainFuseClip2",
+      "name": "SCHURTER CQP8040.0003 clip envelope",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/MainFuseClip2.stl",
+      "material": "Silver-plated conductive spring clip",
+      "color": [
+        0.66,
+        0.69,
+        0.7
+      ],
+      "group": "main_fuse",
+      "explode": [
+        -18,
+        0,
+        25
+      ],
+      "volume_mm3": 139.69445137639474,
+      "solids": 1,
+      "bbox_mm": [
+        -43.925,
+        9.350000000000001,
+        39.4,
+        -36.074999999999996,
+        17.95,
+        53.3
+      ],
+      "brep_bbox_mm": [
+        -43.925,
+        9.350000000000001,
+        39.4,
+        -36.074999999999996,
+        17.95,
+        53.3
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "MainFuseCollector1",
+      "name": "MainFuseCollector1",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/MainFuseCollector1.stl",
+      "material": "Cu-ETP candidate; forming/joint qualification pending",
+      "color": [
+        0.64,
+        0.37,
+        0.18
+      ],
+      "group": "main_fuse",
+      "explode": [
+        -18,
+        0,
+        25
+      ],
+      "volume_mm3": 52.48000000000002,
+      "solids": 1,
+      "bbox_mm": [
+        -42.0,
+        -17.95,
+        39.0,
+        -38.0,
+        -9.35,
+        41.6
+      ],
+      "brep_bbox_mm": [
+        -42.0,
+        -17.95,
+        39.0,
+        -38.0,
+        -9.35,
+        41.6
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "MainFuseCollector2",
+      "name": "MainFuseCollector2",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/MainFuseCollector2.stl",
+      "material": "Cu-ETP candidate; forming/joint qualification pending",
+      "color": [
+        0.64,
+        0.37,
+        0.18
+      ],
+      "group": "main_fuse",
+      "explode": [
+        -18,
+        0,
+        25
+      ],
+      "volume_mm3": 52.48000000000009,
+      "solids": 1,
+      "bbox_mm": [
+        -42.0,
+        9.350000000000001,
+        39.0,
+        -38.0,
+        17.950000000000003,
+        41.6
+      ],
+      "brep_bbox_mm": [
+        -42.0,
+        9.350000000000001,
+        39.0,
+        -38.0,
+        17.950000000000003,
+        41.6
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "MainFuseRetainer",
+      "name": "Main-fuse retaining frame",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/MainFuseRetainer.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.84,
+        0.86,
+        0.85
+      ],
+      "group": "main_fuse",
+      "explode": [
+        -18,
+        0,
+        25
+      ],
+      "volume_mm3": 178.42611743079794,
+      "solids": 1,
+      "bbox_mm": [
+        -48.0,
+        -12.25,
+        43.0,
+        -32.0,
+        12.25,
+        56.0
+      ],
+      "brep_bbox_mm": [
+        -48.0,
+        -12.25,
+        43.0,
+        -32.0,
+        12.25,
+        56.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "FuseRetainerScrew_0",
+      "name": "FuseRetainerScrew_0",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/FuseRetainerScrew_0.stl",
+      "material": "Spring/fastener metal candidate",
+      "color": [
+        0.42,
+        0.46,
+        0.48
+      ],
+      "group": "main_fuse",
+      "explode": [
+        -18,
+        0,
+        25
+      ],
+      "volume_mm3": 26.51504199629785,
+      "solids": 1,
+      "bbox_mm": [
+        -47.4,
+        -12.649723261678092,
+        38.0,
+        -44.6,
+        -9.850276738321908,
+        57.0
+      ],
+      "brep_bbox_mm": [
+        -47.4,
+        -12.649723261678092,
+        38.0,
+        -44.6,
+        -9.850276738321908,
+        57.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "FuseRetainerScrew_1",
+      "name": "FuseRetainerScrew_1",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/FuseRetainerScrew_1.stl",
+      "material": "Spring/fastener metal candidate",
+      "color": [
+        0.42,
+        0.46,
+        0.48
+      ],
+      "group": "main_fuse",
+      "explode": [
+        -18,
+        0,
+        25
+      ],
+      "volume_mm3": 26.51504199629785,
+      "solids": 1,
+      "bbox_mm": [
+        -47.4,
+        9.850276738321908,
+        38.0,
+        -44.6,
+        12.649723261678092,
+        57.0
+      ],
+      "brep_bbox_mm": [
+        -47.4,
+        9.850276738321908,
+        38.0,
+        -44.6,
+        12.649723261678092,
+        57.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "FuseRetainerScrew_2",
+      "name": "FuseRetainerScrew_2",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/FuseRetainerScrew_2.stl",
+      "material": "Spring/fastener metal candidate",
+      "color": [
+        0.42,
+        0.46,
+        0.48
+      ],
+      "group": "main_fuse",
+      "explode": [
+        -18,
+        0,
+        25
+      ],
+      "volume_mm3": 26.515041996297857,
+      "solids": 1,
+      "bbox_mm": [
+        -35.4,
+        -12.649723261678092,
+        38.0,
+        -32.6,
+        -9.850276738321908,
+        57.0
+      ],
+      "brep_bbox_mm": [
+        -35.4,
+        -12.649723261678092,
+        38.0,
+        -32.6,
+        -9.850276738321908,
+        57.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "FuseRetainerScrew_3",
+      "name": "FuseRetainerScrew_3",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/FuseRetainerScrew_3.stl",
+      "material": "Spring/fastener metal candidate",
+      "color": [
+        0.42,
+        0.46,
+        0.48
+      ],
+      "group": "main_fuse",
+      "explode": [
+        -18,
+        0,
+        25
+      ],
+      "volume_mm3": 26.515041996297857,
+      "solids": 1,
+      "bbox_mm": [
+        -35.4,
+        9.850276738321908,
+        38.0,
+        -32.6,
+        12.649723261678092,
+        57.0
+      ],
+      "brep_bbox_mm": [
+        -35.4,
+        9.850276738321908,
+        38.0,
+        -32.6,
+        12.649723261678092,
+        57.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "ThermalBody",
+      "name": "TF1 independent one-shot thermal cutoff envelope",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/ThermalBody.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.84,
+        0.86,
+        0.85
+      ],
+      "group": "thermal",
+      "explode": [
+        18,
+        0,
+        25
+      ],
+      "volume_mm3": 184.7256480310798,
+      "solids": 1,
+      "bbox_mm": [
+        14.227636676412036,
+        -12.1,
+        49.0,
+        18.226845995492297,
+        2.6,
+        53.0
+      ],
+      "brep_bbox_mm": [
+        14.227636676412036,
+        -12.1,
+        49.0,
+        18.226845995492297,
+        2.6,
+        53.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "ThermalLead1",
+      "name": "ThermalLead1",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/ThermalLead1.stl",
+      "material": "Conductive metal candidate",
+      "color": [
+        0.64,
+        0.37,
+        0.18
+      ],
+      "group": "thermal",
+      "explode": [
+        18,
+        0,
+        25
+      ],
+      "volume_mm3": 3.7699111843077557,
+      "solids": 1,
+      "bbox_mm": [
+        15.727340171067134,
+        -16.75,
+        50.5,
+        16.7271425008372,
+        -11.95,
+        51.5
+      ],
+      "brep_bbox_mm": [
+        15.727340171067134,
+        -16.75,
+        50.5,
+        16.7271425008372,
+        -11.95,
+        51.5
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "ThermalLead2",
+      "name": "ThermalLead2",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/ThermalLead2.stl",
+      "material": "Conductive metal candidate",
+      "color": [
+        0.64,
+        0.37,
+        0.18
+      ],
+      "group": "thermal",
+      "explode": [
+        18,
+        0,
+        25
+      ],
+      "volume_mm3": 3.7699111843077553,
+      "solids": 1,
+      "bbox_mm": [
+        15.727340171067134,
+        2.45,
+        50.5,
+        16.7271425008372,
+        7.25,
+        51.5
+      ],
+      "brep_bbox_mm": [
+        15.727340171067134,
+        2.45,
+        50.5,
+        16.7271425008372,
+        7.25,
+        51.5
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "ThermalSleeve",
+      "name": "TF1 0.5 mm radial dielectric thermal sleeve",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/ThermalSleeve.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.84,
+        0.86,
+        0.85
+      ],
+      "group": "thermal",
+      "explode": [
+        18,
+        0,
+        25
+      ],
+      "volume_mm3": 148.44025288211768,
+      "solids": 1,
+      "bbox_mm": [
+        13.727735511527005,
+        -15.25,
+        48.5,
+        18.726747160377332,
+        5.75,
+        53.5
+      ],
+      "brep_bbox_mm": [
+        13.727735511527005,
+        -15.25,
+        48.5,
+        18.726747160377332,
+        5.75,
+        53.5
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "ThermalRetainer",
+      "name": "TF1 insulated retaining saddle",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/ThermalRetainer.stl",
+      "material": "PC-FR insulating resin candidate",
+      "color": [
+        0.84,
+        0.86,
+        0.85
+      ],
+      "group": "thermal",
+      "explode": [
+        18,
+        0,
+        25
+      ],
+      "volume_mm3": 186.09651337359065,
+      "solids": 1,
+      "bbox_mm": [
+        16.22724133595217,
+        -13.75,
+        47.6,
+        22.72724133595217,
+        6.25,
+        54.4
+      ],
+      "brep_bbox_mm": [
+        16.22724133595217,
+        -13.75,
+        47.6,
+        22.72724133595217,
+        6.25,
+        54.4
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "ThermalRetainerScrew_0",
+      "name": "ThermalRetainerScrew_0",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/ThermalRetainerScrew_0.stl",
+      "material": "Spring/fastener metal candidate",
+      "color": [
+        0.42,
+        0.46,
+        0.48
+      ],
+      "group": "thermal",
+      "explode": [
+        18,
+        0,
+        25
+      ],
+      "volume_mm3": 12.37787505514378,
+      "solids": 1,
+      "bbox_mm": [
+        19.82724133595217,
+        -13.149723261678092,
+        48.5,
+        22.627241335952167,
+        -10.350276738321908,
+        55.0
+      ],
+      "brep_bbox_mm": [
+        19.82724133595217,
+        -13.149723261678092,
+        48.5,
+        22.627241335952167,
+        -10.350276738321908,
+        55.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    },
+    {
+      "id": "ThermalRetainerScrew_1",
+      "name": "ThermalRetainerScrew_1",
+      "geometry_role": "physical_part",
+      "render_default": true,
+      "file": "meshes/ThermalRetainerScrew_1.stl",
+      "material": "Spring/fastener metal candidate",
+      "color": [
+        0.42,
+        0.46,
+        0.48
+      ],
+      "group": "thermal",
+      "explode": [
+        18,
+        0,
+        25
+      ],
+      "volume_mm3": 12.37787505514378,
+      "solids": 1,
+      "bbox_mm": [
+        19.82724133595217,
+        2.850276738321908,
+        48.5,
+        22.627241335952167,
+        5.6497232616780915,
+        55.0
+      ],
+      "brep_bbox_mm": [
+        19.82724133595217,
+        2.850276738321908,
+        48.5,
+        22.627241335952167,
+        5.6497232616780915,
+        55.0
+      ],
+      "valid": true,
+      "qualification": "Engineering development; no production or energizing release"
+    }
+  ]
+}

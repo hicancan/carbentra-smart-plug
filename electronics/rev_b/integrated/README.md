@@ -46,7 +46,7 @@ A negative-control investigation found that earlier JavaScript-style `NetName.st
 ## Physical exports
 
 - `exports/placement_assembly.step`: 144 valid solids for component/body/lead fit checking
-- `exports/integrated_assembly.step`, `.FCStd`, `.obj`: 3052 valid solids including actual native pads, traces and vias
+- `exports/integrated_assembly.step`, `.FCStd`, `.obj`: 3133 valid solids including actual native pads, traces and vias
 - `exports/component_envelopes.json`: component and lead bounds
 - `exports/remote_head_assembled.step`, `.obj`, `.json`: 19 valid head solids in final assembly coordinates, with an explicit proper rigid transform and source hash
 
@@ -68,3 +68,7 @@ Power restoration starts de-energized and requires the defined thermal rearm/com
 ## Rebuild
 
 Use `bash scripts/rebuild.sh --no-geometry` for a source/copper/verification rebuild, or omit the option to regenerate geometry. KiCad 9, its standard libraries, system Python with pcbnew/NumPy, FreeCAD, Inkscape, ReportLab and pypdf are required. The script validates geometry against `routing_recipe.json` before applying copper and then reruns the independent checks. Local vendor-PDF research caches are not required deliverables; official URLs remain in the BOM and authored notes.
+
+## Rear termination integration correction
+
+The corrected front/rear polarity exposed an assembly-level clearance problem that native PCB-domain DRC could not detect. The rear L tail was lowered by the mechanical design, the nearby +5 V and +3.3 V branches were rerouted, and the internal GND plane was recessed. All component placements remain fixed. `validation/rear_termination.json` independently checks the resulting rear metal against native isolated copper, including the conservative entire plane outline. The nominal minimum is 8.5166 mm, versus an 8.4 mm design check. This is not a tolerance-qualified clearance or creepage result. The complete mechanical insulation-domain report remains a separate release gate.

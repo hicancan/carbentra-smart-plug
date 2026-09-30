@@ -46,3 +46,5 @@ visuals/rev_b/_*/
 visuals/**/animation/frames/
 # Native base builds are intermediate; the named EVT-B release remains tracked.
 mechanical/rev_b/CM_S16_B_base_provisional*
+
+!mechanical/rev_b/CM_S16_B_base_provisional.FCStd

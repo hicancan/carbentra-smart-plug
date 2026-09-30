@@ -1,0 +1,96 @@
+{
+  "status": "nominal engineering geometry only; fabrication and insulation qualification remain held",
+  "inputs": {
+    "electronics/rev_b/integrated/integrated.kicad_pcb": "4d7e9873a8ee5407c3d85fe8441672f0e26eebc90ed07c9dd3c443b68b161660",
+    "mechanical/rev_b/CM_S16_B_base_provisional.FCStd": "2b84036646ef4fd68a75ea46cda82e0c52e991d0b498a6b9426c4c5025c39d60",
+    "mechanical/rev_b/power_links.py": "84e30c9fce812364d92e0ece2ed3ebb02e8bb5b98365e9c333a67c141e07b069"
+  },
+  "pcb_bottom_z_mm": 11.5,
+  "target_mm": 8.4,
+  "minimums": [
+    {
+      "source": "Blade_L",
+      "minimum_mm": 8.516644687799777,
+      "target": "SPI_CS:copper2159",
+      "closest_points_mm": [
+        [
+          [
+            11.031664199358163,
+            -1.692597114673022,
+            5.0
+          ],
+          [
+            16.224999999999998,
+            -1.6925971146730205,
+            11.75
+          ]
+        ]
+      ]
+    },
+    {
+      "source": "Blade_N",
+      "minimum_mm": 19.64033067902496,
+      "target": "U301.5:F.Cu",
+      "closest_points_mm": [
+        [
+          [
+            -7.115631439478694,
+            -4.297978498230193,
+            6.5
+          ],
+          [
+            10.020000000000003,
+            2.6700000000000017,
+            13.1
+          ]
+        ]
+      ]
+    },
+    {
+      "source": "L_RAW_bare_start",
+      "minimum_mm": 9.028292160101445,
+      "target": "SPI_CS:copper2159",
+      "closest_points_mm": [
+        [
+          [
+            9.024760847386798,
+            -3.75,
+            6.303293153351727
+          ],
+          [
+            16.224999999999998,
+            -3.75,
+            11.75
+          ]
+        ]
+      ]
+    },
+    {
+      "source": "N_RAW_bare_start",
+      "minimum_mm": 19.54421110521796,
+      "target": "U301.5:F.Cu",
+      "closest_points_mm": [
+        [
+          [
+            -7.444664454288024,
+            -2.566158644056005,
+            6.06122696212394
+          ],
+          [
+            10.020000000000003,
+            2.6700000000000017,
+            13.1
+          ]
+        ]
+      ]
+    }
+  ],
+  "pairs_below_8p4_mm": [],
+  "pass_nominal_margin": true,
+  "limitations": [
+    "Nominal direct 3D distance, not creepage or qualified free-air clearance.",
+    "Rear blades and bare input-link starts only; complete assembly audit is separate.",
+    "Conservative whole zone-outline fill and solid full via-land column.",
+    "No fabrication/assembly tolerance, thermal motion or material qualification."
+  ]
+}

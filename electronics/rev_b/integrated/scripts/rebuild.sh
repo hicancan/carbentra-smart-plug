@@ -9,6 +9,9 @@ bash "$R/scripts/rebuild_schematic.sh"
 /usr/bin/python3 "$R/scripts/patch_schematic_paths.py" --apply
 /usr/bin/python3 "$R/scripts/test_native_rules.py"
 /usr/bin/python3 "$R/scripts/test_projected_isolation.py"
+if [[ -f "$R/../../../mechanical/rev_b/CM_S16_B_base_provisional.FCStd" ]]; then
+ /usr/bin/python3 "$R/scripts/audit_rear_termination.py"
+fi
 /usr/bin/python3 "$R/scripts/finalize_validation.py"
 kicad-cli sch export pdf "$R/integrated.kicad_sch" -o "$R/exports/schematic.pdf"
 python "$R/scripts/plot_review.py"

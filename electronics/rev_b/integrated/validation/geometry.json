@@ -1,9 +1,7 @@
 {
-  "object_count": 3052,
+  "board_sha256": "4d7e9873a8ee5407c3d85fe8441672f0e26eebc90ed07c9dd3c443b68b161660",
+  "object_count": 3133,
   "body_count": 99,
   "lead_count": 44,
-  "all_valid_positive_volume": true,
-  "board_sha256": "54485373c84268d072b8abb9a73405d867b58622657f3cf49976cbcab7c0f40a",
-  "product": "CARBENTRA",
-  "technical_revision": "CM-S16-EVT-B"
+  "all_valid_positive_volume": true
 }

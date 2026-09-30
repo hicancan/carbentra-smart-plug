@@ -1,0 +1,217 @@
+{
+  "status": "PROVISIONAL fit audit against exported nominal/max envelopes, explicit terminal/fuse lead volumes; not manufacturer detailed CAD or safety approval",
+  "head_intersections": [],
+  "geometry_objects": 72,
+  "physical_mechanical_parts": 71,
+  "mechanical_parts": 72,
+  "mechanical_all_valid": true,
+  "mechanical_all_single_solids": true,
+  "mechanical_intersections": [
+    {
+      "a": "RearShell",
+      "b": "FuseRetainerScrew_0",
+      "volume_mm3": 1.0367255756846343,
+      "intentional_interface": true
+    },
+    {
+      "a": "RearShell",
+      "b": "FuseRetainerScrew_1",
+      "volume_mm3": 1.0367255756846343,
+      "intentional_interface": true
+    },
+    {
+      "a": "RearShell",
+      "b": "FuseRetainerScrew_2",
+      "volume_mm3": 1.0367255756846232,
+      "intentional_interface": true
+    },
+    {
+      "a": "RearShell",
+      "b": "FuseRetainerScrew_3",
+      "volume_mm3": 1.036725575684623,
+      "intentional_interface": true
+    },
+    {
+      "a": "FrontLid",
+      "b": "Screw_0",
+      "volume_mm3": 5.026548245743662,
+      "intentional_interface": true
+    },
+    {
+      "a": "FrontLid",
+      "b": "Screw_1",
+      "volume_mm3": 5.026548245743662,
+      "intentional_interface": true
+    },
+    {
+      "a": "FrontLid",
+      "b": "Screw_2",
+      "volume_mm3": 5.026548245743662,
+      "intentional_interface": true
+    },
+    {
+      "a": "FrontLid",
+      "b": "Screw_3",
+      "volume_mm3": 5.026548245743662,
+      "intentional_interface": true
+    },
+    {
+      "a": "Carrier",
+      "b": "ThermalRetainerScrew_0",
+      "volume_mm3": 1.105840614063609,
+      "intentional_interface": true
+    },
+    {
+      "a": "Carrier",
+      "b": "ThermalRetainerScrew_1",
+      "volume_mm3": 1.1058406140636086,
+      "intentional_interface": true
+    },
+    {
+      "a": "PEBus",
+      "b": "Blade_PE",
+      "volume_mm3": 2.6240987577979302,
+      "intentional_interface": true
+    },
+    {
+      "a": "PEBus",
+      "b": "Contact_PE",
+      "volume_mm3": 9.067433388230809,
+      "intentional_interface": true
+    },
+    {
+      "a": "Blade_L",
+      "b": "PowerCore_L_RAW",
+      "volume_mm3": 1.4918701870557085,
+      "intentional_interface": true
+    },
+    {
+      "a": "Blade_N",
+      "b": "PowerCore_N_RAW",
+      "volume_mm3": 3.214044323241533,
+      "intentional_interface": true
+    },
+    {
+      "a": "Contact_L",
+      "b": "PowerCore_L_OUTPUT",
+      "volume_mm3": 2.5209439685566366,
+      "intentional_interface": true
+    },
+    {
+      "a": "Contact_N",
+      "b": "PowerCore_N_OUTPUT",
+      "volume_mm3": 2.5209440750865237,
+      "intentional_interface": true
+    },
+    {
+      "a": "RFServiceSlackEnvelope",
+      "b": "RFCoax",
+      "volume_mm3": 2.969734083496511,
+      "intentional_interface": true
+    },
+    {
+      "a": "RFAntenna",
+      "b": "RFCoax",
+      "volume_mm3": 0.009294593282498428,
+      "intentional_interface": true
+    },
+    {
+      "a": "PowerCore_L_FUSE_THERMAL",
+      "b": "MainFuseClip2",
+      "volume_mm3": 0.5315987107319533,
+      "intentional_interface": true
+    },
+    {
+      "a": "PowerCore_L_FUSE_THERMAL",
+      "b": "MainFuseCollector2",
+      "volume_mm3": 1.5707963267948957,
+      "intentional_interface": true
+    },
+    {
+      "a": "MainFuseCap1",
+      "b": "MainFuseClip1",
+      "volume_mm3": 2.5861690895633274,
+      "intentional_interface": true
+    },
+    {
+      "a": "MainFuseCap2",
+      "b": "MainFuseClip2",
+      "volume_mm3": 2.586169089563299,
+      "intentional_interface": true
+    },
+    {
+      "a": "MainFuseClip1",
+      "b": "MainFuseCollector1",
+      "volume_mm3": 1.8000000000000034,
+      "intentional_interface": true
+    },
+    {
+      "a": "MainFuseClip2",
+      "b": "MainFuseCollector2",
+      "volume_mm3": 1.8000000000000047,
+      "intentional_interface": true
+    },
+    {
+      "a": "ThermalBody",
+      "b": "ThermalLead1",
+      "volume_mm3": 0.11780972450961719,
+      "intentional_interface": true
+    },
+    {
+      "a": "ThermalBody",
+      "b": "ThermalLead2",
+      "volume_mm3": 0.11780972450961695,
+      "intentional_interface": true
+    }
+  ],
+  "component_and_lead_intersections": [
+    {
+      "ref": "J102",
+      "object": "MainB_J102",
+      "role": "component",
+      "part": "PowerCore_L_OUTPUT",
+      "volume_mm3": 25.132741228718345,
+      "intentional_terminal_entry": true
+    },
+    {
+      "ref": "J102",
+      "object": "MainB_J102",
+      "role": "component",
+      "part": "PowerCore_N_OUTPUT",
+      "volume_mm3": 25.132741228718345,
+      "intentional_terminal_entry": true
+    },
+    {
+      "ref": "U101",
+      "object": "MainB_U101",
+      "role": "component",
+      "part": "RFConnectorEnvelope",
+      "volume_mm3": 9.189158511750135,
+      "intentional_terminal_entry": true
+    },
+    {
+      "ref": "J403",
+      "object": "MainB_J403",
+      "role": "component",
+      "part": "HeadConnectorEnvelope",
+      "volume_mm3": 62.7728639999997,
+      "intentional_terminal_entry": true
+    },
+    {
+      "ref": "J201",
+      "object": "MainB_J201",
+      "role": "component",
+      "part": "PowerCore_N_RAW",
+      "volume_mm3": 25.132741228718366,
+      "intentional_terminal_entry": true
+    },
+    {
+      "ref": "J201",
+      "object": "MainB_J201",
+      "role": "component",
+      "part": "PowerCore_L_PROTECTED",
+      "volume_mm3": 25.132741228718324,
+      "intentional_terminal_entry": true
+    }
+  ]
+}

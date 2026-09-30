@@ -1,0 +1,28 @@
+{
+  "scope": "Actual Blender GLB import and world bounding-box check; not a manufacturing check",
+  "file": "carbonmirror_twin_light.glb",
+  "sha256": "dc25e3965a9e653eb5c91a4514fcc1a3e051ffa47593778d7e70a71071e439d0",
+  "imported_meshes": 227,
+  "vertices": 1003407,
+  "faces": 666556,
+  "world_bounds_m": [
+    [
+      -0.054040003567934036,
+      -0.04654000326991081,
+      -0.021000001579523087
+    ],
+    [
+      0.054040003567934036,
+      0.04654000326991081,
+      0.06504800170660019
+    ]
+  ],
+  "dimensions_m": [
+    0.10808000713586807,
+    0.09308000653982162,
+    0.08604800328612328
+  ],
+  "import_pass": true,
+  "expected_product_scale_pass": true,
+  "passed": true
+}

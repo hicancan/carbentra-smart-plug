@@ -1,0 +1,53 @@
+{
+  "brand": "CARBENTRA",
+  "revision": "CM-S16-EVT-B",
+  "created_utc": "2026-09-30T12:30:51.411995+00:00",
+  "scope": "Export-only supplement to the frozen digital review snapshot. Detailed PCB copper/lead/package geometry, not new physical qualification or vendor-internal CAD. RF slack reservation deliberately excluded as non-physical.",
+  "source_sha256": {
+    "mechanical": {
+      "path": "mechanical/rev_b/CM-S16-EVT-B.FCStd",
+      "sha256": "45cfa343b0a7dc74c4e8bd6ff6a016bdb83c3e152dcf93402c634cf8199dda04"
+    },
+    "main": {
+      "path": "electronics/rev_b/integrated/exports/integrated_assembly.FCStd",
+      "sha256": "a28df7e62dfeff4ce9c5e17d7602dab50c3784fa136d581dd954fea68957c963"
+    },
+    "head": {
+      "path": "electronics/rev_b/integrated/exports/remote_head_assembled.step",
+      "sha256": "86c4ae0043990e8524e627eb34ec557a1ce723f986d46241531c243e0a07a68b"
+    }
+  },
+  "frame": "World mm; MainB translated+11.5Z once; HeadB already assembled",
+  "counts": {
+    "mechanical": {
+      "objects": 71,
+      "solids": 71
+    },
+    "main": {
+      "objects": 3133,
+      "solids": 3133
+    },
+    "head": {
+      "objects": 19,
+      "solids": 19
+    }
+  },
+  "all_input_solids_valid": true,
+  "input_valid_by_group": {
+    "mechanical": true,
+    "main": true,
+    "head": true
+  },
+  "native_object_count": 3223,
+  "native_solid_count": 3223,
+  "step_roundtrip_solid_count": 3223,
+  "step_roundtrip_all_valid": true,
+  "native_summed_volume_mm3": 230213.09048764769,
+  "step_summed_volume_mm3": 230213.0856079955,
+  "relative_summed_volume_difference": 2.119624111262338e-08,
+  "output": {
+    "path": "mechanical/rev_b/CM-S16-EVT-B_system_detailed.step",
+    "bytes": 36490894,
+    "sha256": "76a282c5c0acb60a52f61dbe29d4a0f8c6038d64d0ca48cc2e8fb402eb77e8ab"
+  }
+}

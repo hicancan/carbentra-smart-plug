@@ -1,0 +1,142 @@
+{
+  "brand": "CARBENTRA",
+  "front_view": "Look from+Z toward origin; +Y up, +X right; L right,N left,PE top",
+  "rear_view": "Look from\u2212Z toward origin; +Y up,\u2212X viewer right; L left,N right,PE top",
+  "interface_world": [
+    {
+      "name": "PE",
+      "x": 0,
+      "y": 11.1,
+      "angle": 0
+    },
+    {
+      "name": "L",
+      "x": 8.227241335952169,
+      "y": -4.749999999999999,
+      "angle": -30
+    },
+    {
+      "name": "N",
+      "x": -8.227241335952169,
+      "y": -4.749999999999999,
+      "angle": 30
+    }
+  ],
+  "main_line_chain": [
+    "Blade_L",
+    "PowerCore_L_RAW",
+    "MainFuseCollector1",
+    "MainFuseClip1",
+    "F_MAIN_SHF8020.5080",
+    "MainFuseClip2",
+    "MainFuseCollector2",
+    "PowerCore_L_FUSE_THERMAL",
+    "TF1",
+    "PowerCore_L_PROTECTED",
+    "J201.1",
+    "RS201",
+    "K101",
+    "J102.1",
+    "PowerCore_L_OUTPUT",
+    "Contact_L"
+  ],
+  "neutral_chain": [
+    "Blade_N",
+    "PowerCore_N_RAW",
+    "J201.2",
+    "PCB neutral path",
+    "J102.2",
+    "PowerCore_N_OUTPUT",
+    "Contact_N"
+  ],
+  "PE_geometric_fused_solid_count": 1,
+  "PE_geometric_valid": true,
+  "modeled_joint_interfaces": [
+    {
+      "a": "Blade_PE",
+      "b": "PEBus",
+      "overlap_mm3": 2.6240987577979302,
+      "surface_distance_mm": 0.0
+    },
+    {
+      "a": "PEBus",
+      "b": "Contact_PE",
+      "overlap_mm3": 9.067433388230809,
+      "surface_distance_mm": 0.0
+    },
+    {
+      "a": "Blade_L",
+      "b": "PowerCore_L_RAW",
+      "overlap_mm3": 1.4918701870557085,
+      "surface_distance_mm": 0.0
+    },
+    {
+      "a": "PowerCore_L_RAW",
+      "b": "MainFuseCollector1",
+      "overlap_mm3": 0.0,
+      "surface_distance_mm": 0.0
+    },
+    {
+      "a": "MainFuseCollector1",
+      "b": "MainFuseClip1",
+      "overlap_mm3": 1.8000000000000034,
+      "surface_distance_mm": 0.0
+    },
+    {
+      "a": "MainFuseClip1",
+      "b": "MainFuseCap1",
+      "overlap_mm3": 2.5861690895632954,
+      "surface_distance_mm": 0.0
+    },
+    {
+      "a": "MainFuseCap2",
+      "b": "MainFuseClip2",
+      "overlap_mm3": 2.586169089563299,
+      "surface_distance_mm": 0.0
+    },
+    {
+      "a": "MainFuseClip2",
+      "b": "MainFuseCollector2",
+      "overlap_mm3": 1.8000000000000047,
+      "surface_distance_mm": 0.0
+    },
+    {
+      "a": "MainFuseCollector2",
+      "b": "PowerCore_L_FUSE_THERMAL",
+      "overlap_mm3": 1.5707963267948957,
+      "surface_distance_mm": 0.0
+    },
+    {
+      "a": "PowerCore_L_FUSE_THERMAL",
+      "b": "ThermalLead2",
+      "overlap_mm3": 0.0,
+      "surface_distance_mm": 8.881784197001252e-16
+    },
+    {
+      "a": "ThermalLead1",
+      "b": "PowerCore_L_PROTECTED",
+      "overlap_mm3": 0.0,
+      "surface_distance_mm": 0.0
+    },
+    {
+      "a": "PowerCore_L_OUTPUT",
+      "b": "Contact_L",
+      "overlap_mm3": 2.5209439685566366,
+      "surface_distance_mm": 0.0
+    },
+    {
+      "a": "Blade_N",
+      "b": "PowerCore_N_RAW",
+      "overlap_mm3": 3.214044323241533,
+      "surface_distance_mm": 0.0
+    },
+    {
+      "a": "PowerCore_N_OUTPUT",
+      "b": "Contact_N",
+      "overlap_mm3": 2.5209440750865237,
+      "surface_distance_mm": 8.881784197001252e-16
+    }
+  ],
+  "joint_geometry_pass": true,
+  "scope": "Geometry connectivity of represented external joints only. Fuse/thermal cutoff/relay/terminal internal conduction and joint processes are component/electrical assumptions. No resistance, fault, pullout or safety approval claim."
+}

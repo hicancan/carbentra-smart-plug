@@ -1,0 +1,66 @@
+{
+  "scope": "Original dual formed-leaf geometric candidate. Inserted shape is a prescribed displacement, not FEA or measured force. Stamping bend radii, copper-alloy temper/plating, contact pressure, resistance, fatigue and temperature remain qualification gates.",
+  "states": [
+    {
+      "pin": "PE",
+      "blade_thickness_mm": 1.8,
+      "free_gap_mm": 1.7,
+      "required_leaf_displacement_each_mm": 0.050000000000000044,
+      "unloaded_interference_is_intended_elastic_engagement_mm3": 1.319374285714275,
+      "inserted_contact_intersection_mm3": 0.0,
+      "rigid_or_other_part_intersections": [],
+      "inserted_shape_valid": true
+    },
+    {
+      "pin": "L",
+      "blade_thickness_mm": 1.8,
+      "free_gap_mm": 1.7,
+      "required_leaf_displacement_each_mm": 0.050000000000000044,
+      "unloaded_interference_is_intended_elastic_engagement_mm3": 1.2626742857142534,
+      "inserted_contact_intersection_mm3": 0.0,
+      "rigid_or_other_part_intersections": [],
+      "inserted_shape_valid": true
+    },
+    {
+      "pin": "N",
+      "blade_thickness_mm": 1.8,
+      "free_gap_mm": 1.7,
+      "required_leaf_displacement_each_mm": 0.050000000000000044,
+      "unloaded_interference_is_intended_elastic_engagement_mm3": 1.262674285714262,
+      "inserted_contact_intersection_mm3": 0.0,
+      "rigid_or_other_part_intersections": [],
+      "inserted_shape_valid": true
+    },
+    {
+      "pin": "PE",
+      "blade_thickness_mm": 1.95,
+      "free_gap_mm": 1.7,
+      "required_leaf_displacement_each_mm": 0.125,
+      "unloaded_interference_is_intended_elastic_engagement_mm3": 4.297339285714277,
+      "inserted_contact_intersection_mm3": 0.0,
+      "rigid_or_other_part_intersections": [],
+      "inserted_shape_valid": true
+    },
+    {
+      "pin": "L",
+      "blade_thickness_mm": 1.95,
+      "free_gap_mm": 1.7,
+      "required_leaf_displacement_each_mm": 0.125,
+      "unloaded_interference_is_intended_elastic_engagement_mm3": 3.9429642857142566,
+      "inserted_contact_intersection_mm3": 0.0,
+      "rigid_or_other_part_intersections": [],
+      "inserted_shape_valid": true
+    },
+    {
+      "pin": "N",
+      "blade_thickness_mm": 1.95,
+      "free_gap_mm": 1.7,
+      "required_leaf_displacement_each_mm": 0.125,
+      "unloaded_interference_is_intended_elastic_engagement_mm3": 3.942964285714245,
+      "inserted_contact_intersection_mm3": 0.0,
+      "rigid_or_other_part_intersections": [],
+      "inserted_shape_valid": true
+    }
+  ],
+  "geometric_engagement_pass": true
+}

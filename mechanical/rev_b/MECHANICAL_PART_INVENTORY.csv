@@ -1,0 +1,73 @@
+CAD_ID,Description,Assembly_group,Material_or_envelope,Volume_mm3,Solid_count,Status
+RearShell,Rear housing with PCB and fuse supports,rear,PC-FR insulating resin candidate,78790.588794,1,Engineering development; no production or energizing release
+FrontLid,Front housing with button/LED guides,front,PC-FR insulating resin candidate,35891.41188,1,Engineering development; no production or energizing release
+SeamRing,SeamRing,front,PC-FR insulating resin candidate,255.593093,1,Engineering development; no production or energizing release
+RearFinish,RearFinish,rear,PC-FR insulating resin candidate,36.296665,1,Engineering development; no production or energizing release
+Carrier,Insulating contact and thermal-pickup carrier,contact_carrier,PC-FR insulating resin candidate,37989.951689,1,Engineering development; no production or energizing release
+ThermalPad,0.5 mm isolated sensor pickup pad,thermal,PC-FR insulating resin candidate,359.68,1,Engineering development; no production or energizing release
+PEChannel,Retained protective-earth routing channel,contact_carrier,PC-FR insulating resin candidate,1656.629589,1,Engineering development; no production or energizing release
+PEBus,Continuous protective-earth copper link,contact_carrier,Cu-ETP candidate; forming/joint qualification pending,414.574846,1,Engineering development; no production or energizing release
+ShutterGuide,ShutterGuide,shutter,PC-FR insulating resin candidate,1345.808137,1,Engineering development; no production or energizing release
+ShutterSlider,ShutterSlider,shutter,PC-FR insulating resin candidate,685.500148,1,Engineering development; no production or energizing release
+Pawl_L,Left mechanical pawl at N aperture,shutter,PC-FR insulating resin candidate,29.966173,1,Engineering development; no production or energizing release
+Pawl_N,Right mechanical pawl at L aperture,shutter,PC-FR insulating resin candidate,29.966173,1,Engineering development; no production or energizing release
+PawlSpring_L,PawlSpring_L,shutter,Spring/fastener metal candidate,0.238793,1,Engineering development; no production or energizing release
+PawlSpring_N,PawlSpring_N,shutter,Spring/fastener metal candidate,0.238793,1,Engineering development; no production or energizing release
+ShutterReturnSpring,ShutterReturnSpring,shutter,Spring/fastener metal candidate,3.515902,1,Engineering development; no production or energizing release
+LocalButton,Local operating-button plunger,front,PC-FR insulating resin candidate,435.726335,1,Engineering development; no production or energizing release
+RearmButton,Recessed independent thermal-latch rearm plunger,front,PC-FR insulating resin candidate,341.101564,1,Engineering development; no production or energizing release
+StatusLightGuide,Status LED optical guide,front,Optical PC candidate,210.813433,1,Engineering development; no production or energizing release
+BladeSleeve_L,BladeSleeve_L,rear,PC-FR insulating resin candidate,50.22,1,Engineering development; no production or energizing release
+BladeSleeve_N,BladeSleeve_N,rear,PC-FR insulating resin candidate,50.22,1,Engineering development; no production or energizing release
+Blade_L,Blade_L,rear,Conductive copper-alloy rear-blade candidate; interface and joint qualification pending,316.54,1,Engineering development; no production or energizing release
+Blade_N,Blade_N,rear,Conductive copper-alloy rear-blade candidate; interface and joint qualification pending,305.355402,1,Engineering development; no production or energizing release
+Blade_PE,Blade_PE,rear,Conductive copper-alloy rear-blade candidate; interface and joint qualification pending,410.5,1,Engineering development; no production or energizing release
+Contact_L,Dual-leaf L receptacle spring candidate,contact_carrier,"Spring-temper copper-alloy candidate; 0.4 mm leaves, temper/plating unqualified",345.01093,1,Engineering development; no production or energizing release
+Contact_N,Dual-leaf N receptacle spring candidate,contact_carrier,"Spring-temper copper-alloy candidate; 0.4 mm leaves, temper/plating unqualified",145.0,1,Engineering development; no production or energizing release
+Contact_PE,Dual-leaf E receptacle spring candidate,contact_carrier,"Spring-temper copper-alloy candidate; 0.4 mm leaves, temper/plating unqualified",173.0,1,Engineering development; no production or energizing release
+Screw_0,Screw_0,contact_carrier,Spring/fastener metal candidate,234.707281,1,Engineering development; no production or energizing release
+Screw_1,Screw_1,contact_carrier,Spring/fastener metal candidate,234.707281,1,Engineering development; no production or energizing release
+Screw_2,Screw_2,contact_carrier,Spring/fastener metal candidate,234.707281,1,Engineering development; no production or energizing release
+Screw_3,Screw_3,contact_carrier,Spring/fastener metal candidate,234.707281,1,Engineering development; no production or energizing release
+RFServiceSlackEnvelope,Non-physical44mm coax service-slack reservation,rf,NON-PHYSICAL ROUTING RESERVATION; exclude from mass/procurement and default renders,326.631388,1,Engineering development; no production or energizing release
+RFAntenna,Taoglas FXP73.07.0100A antenna envelope,rf,Flexible RF antenna laminate and adhesive envelope,32.9,1,Engineering development; no production or energizing release
+RFCoax,1.13 mm coax nominal routed segment,rf,Insulated coax routed segment; remaining44mm allocated in retained service-loop reservation,56.026536,1,Engineering development; no production or energizing release
+RFConnectorEnvelope,Mated RF connector clearance envelope,rf,"Provisional mating/strain-relief envelope, not vendor detailed CAD",21.20575,1,Engineering development; no production or energizing release
+HeadConnectorEnvelope,Sensor-header mating-housing clearance envelope,thermal,"Provisional mating/strain-relief envelope, not vendor detailed CAD",253.44,1,Engineering development; no production or energizing release
+HeadPigtail_0,Isolated sensor pigtail 0,thermal,Insulated low-current copper lead envelope,47.948162,1,Engineering development; no production or energizing release
+HeadPigtail_1,Isolated sensor pigtail 1,thermal,Insulated low-current copper lead envelope,47.948162,1,Engineering development; no production or energizing release
+HeadPigtail_2,Isolated sensor pigtail 2,thermal,Insulated low-current copper lead envelope,47.948162,1,Engineering development; no production or energizing release
+AuxFuseCradle,Underside 1 A auxiliary-fuse two-saddle cradle,rear,PC-FR insulating resin candidate,140.6067,1,Engineering development; no production or energizing release
+AuxFuseRetainer,Auxiliary-fuse retaining bridge,rear,PC-FR insulating resin candidate,42.42,1,Engineering development; no production or energizing release
+PowerCore_L_RAW,PowerCore_L_RAW,supported_power_links,Cu-ETP candidate; forming/joint qualification pending,312.092461,1,Engineering development; no production or energizing release
+PowerCarrier_L_RAW,PowerCarrier_L_RAW,supported_power_links,PC-FR insulating resin candidate,1020.939288,1,Engineering development; no production or energizing release
+PowerCore_N_RAW,PowerCore_N_RAW,supported_power_links,Cu-ETP candidate; forming/joint qualification pending,290.085014,1,Engineering development; no production or energizing release
+PowerCarrier_N_RAW,PowerCarrier_N_RAW,supported_power_links,PC-FR insulating resin candidate,871.038134,1,Engineering development; no production or energizing release
+PowerCore_L_FUSE_THERMAL,PowerCore_L_FUSE_THERMAL,supported_power_links,Cu-ETP candidate; forming/joint qualification pending,270.181917,1,Engineering development; no production or energizing release
+PowerCarrier_L_FUSE_THERMAL,PowerCarrier_L_FUSE_THERMAL,supported_power_links,PC-FR insulating resin candidate,811.804367,1,Engineering development; no production or energizing release
+PowerCore_L_PROTECTED,PowerCore_L_PROTECTED,supported_power_links,Cu-ETP candidate; forming/joint qualification pending,335.723384,1,Engineering development; no production or energizing release
+PowerCarrier_L_PROTECTED,PowerCarrier_L_PROTECTED,supported_power_links,PC-FR insulating resin candidate,1043.190487,1,Engineering development; no production or energizing release
+PowerCore_L_OUTPUT,PowerCore_L_OUTPUT,supported_power_links,Cu-ETP candidate; forming/joint qualification pending,287.813518,1,Engineering development; no production or energizing release
+PowerCarrier_L_OUTPUT,PowerCarrier_L_OUTPUT,supported_power_links,PC-FR insulating resin candidate,877.09252,1,Engineering development; no production or energizing release
+PowerCore_N_OUTPUT,PowerCore_N_OUTPUT,supported_power_links,Cu-ETP candidate; forming/joint qualification pending,245.253259,1,Engineering development; no production or energizing release
+PowerCarrier_N_OUTPUT,PowerCarrier_N_OUTPUT,supported_power_links,PC-FR insulating resin candidate,732.387636,1,Engineering development; no production or energizing release
+MainFuseHolder,Custom insulating carrier for CQP clips,main_fuse,PC-FR insulating resin candidate,1310.019922,1,Engineering development; no production or energizing release
+MainFuseCeramic,SHF main-fuse cartridge ceramic envelope,main_fuse,Ceramic cartridge envelope,604.882053,1,Engineering development; no production or energizing release
+MainFuseCap1,SHF8020.5080 cartridge end-cap envelope,main_fuse,Conductive metal candidate,201.099531,1,Engineering development; no production or energizing release
+MainFuseCap2,SHF8020.5080 cartridge end-cap envelope,main_fuse,Conductive metal candidate,201.099531,1,Engineering development; no production or energizing release
+MainFuseClip1,SCHURTER CQP8040.0003 clip envelope,main_fuse,Silver-plated conductive spring clip,139.694451,1,Engineering development; no production or energizing release
+MainFuseClip2,SCHURTER CQP8040.0003 clip envelope,main_fuse,Silver-plated conductive spring clip,139.694451,1,Engineering development; no production or energizing release
+MainFuseCollector1,MainFuseCollector1,main_fuse,Cu-ETP candidate; forming/joint qualification pending,52.48,1,Engineering development; no production or energizing release
+MainFuseCollector2,MainFuseCollector2,main_fuse,Cu-ETP candidate; forming/joint qualification pending,52.48,1,Engineering development; no production or energizing release
+MainFuseRetainer,Main-fuse retaining frame,main_fuse,PC-FR insulating resin candidate,178.426117,1,Engineering development; no production or energizing release
+FuseRetainerScrew_0,FuseRetainerScrew_0,main_fuse,Spring/fastener metal candidate,26.515042,1,Engineering development; no production or energizing release
+FuseRetainerScrew_1,FuseRetainerScrew_1,main_fuse,Spring/fastener metal candidate,26.515042,1,Engineering development; no production or energizing release
+FuseRetainerScrew_2,FuseRetainerScrew_2,main_fuse,Spring/fastener metal candidate,26.515042,1,Engineering development; no production or energizing release
+FuseRetainerScrew_3,FuseRetainerScrew_3,main_fuse,Spring/fastener metal candidate,26.515042,1,Engineering development; no production or energizing release
+ThermalBody,TF1 independent one-shot thermal cutoff envelope,thermal,PC-FR insulating resin candidate,184.725648,1,Engineering development; no production or energizing release
+ThermalLead1,ThermalLead1,thermal,Conductive metal candidate,3.769911,1,Engineering development; no production or energizing release
+ThermalLead2,ThermalLead2,thermal,Conductive metal candidate,3.769911,1,Engineering development; no production or energizing release
+ThermalSleeve,TF1 0.5 mm radial dielectric thermal sleeve,thermal,PC-FR insulating resin candidate,148.440253,1,Engineering development; no production or energizing release
+ThermalRetainer,TF1 insulated retaining saddle,thermal,PC-FR insulating resin candidate,186.096513,1,Engineering development; no production or energizing release
+ThermalRetainerScrew_0,ThermalRetainerScrew_0,thermal,Spring/fastener metal candidate,12.377875,1,Engineering development; no production or energizing release
+ThermalRetainerScrew_1,ThermalRetainerScrew_1,thermal,Spring/fastener metal candidate,12.377875,1,Engineering development; no production or energizing release

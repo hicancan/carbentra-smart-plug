@@ -1,0 +1,231 @@
+{
+  "revision": "CM-S16-EVT-B",
+  "status": "Integrated engineering development; physical and certification validation pending",
+  "units": "mm",
+  "coordinate_system": "Rear housing center z0; +Z toward front; +X right in front view; +Y up",
+  "enclosure": {
+    "width": 108,
+    "height": 93,
+    "depth": 65,
+    "corner_radius": 14,
+    "wall": 2.4,
+    "rear_floor": 3,
+    "split_z": 56,
+    "front_wall": 2.4
+  },
+  "pcb": {
+    "width": 100,
+    "height": 85,
+    "corner_radius": 10,
+    "bottom_z": 11.5,
+    "thickness": 1.6,
+    "max_component_height": 23,
+    "terminal_underside_projection": 3.5,
+    "mount_hole_diameter": 3.2,
+    "mount_centers": [
+      [
+        -44,
+        -36
+      ],
+      [
+        -44,
+        36
+      ],
+      [
+        44,
+        -36
+      ],
+      [
+        44,
+        36
+      ]
+    ],
+    "mount_keepout_diameter": 7,
+    "edge_notches_provisional": [
+      {
+        "name": "LN_RISERS",
+        "bounds_xy": [
+          -50,
+          -22,
+          -38,
+          -8
+        ]
+      },
+      {
+        "name": "PE_CHANNEL",
+        "bounds_xy": [
+          44,
+          12,
+          50,
+          22
+        ]
+      }
+    ]
+  },
+  "interface": {
+    "target": "Single three-pin16A class220VAC development target; not10A/universal compatible",
+    "standard_review_target": "GB1002-2024; gauge dimensions not yet verified",
+    "slots": [
+      {
+        "name": "PE",
+        "x": 0,
+        "y": 11.1,
+        "angle": 0
+      },
+      {
+        "name": "L",
+        "x": 8.227241335952169,
+        "y": -4.749999999999999,
+        "angle": -30
+      },
+      {
+        "name": "N",
+        "x": -8.227241335952169,
+        "y": -4.749999999999999,
+        "angle": 30
+      }
+    ],
+    "slot_width": 2.4,
+    "slot_length": 8.8,
+    "blade_thickness": 1.8,
+    "blade_width": 8.1,
+    "reference_source": "Volex2025 catalogue GB16C dimensional drawing: standard mating interface cross-check only; own housing and internal design",
+    "reference_url": "https://www.volex.com/media/0dodxec5/volex-power-cords-catalogue-august-2025.pdf",
+    "datum_derivation": "Lower dashed datum:PE(0,A=11.1);L/N=(\u00b1F*cos30,-F*sin30),F=9.5. The2.2mm upper dashed line is a separate supplier-body reference, not copied.",
+    "blade_width_tolerance": [
+      -0.22,
+      0
+    ],
+    "blade_thickness_tolerance": [
+      -0.05,
+      0.15
+    ],
+    "blade_projection_PE": 21,
+    "blade_projection_LN": 18,
+    "live_sleeve_length": 9,
+    "live_sleeve_length_tolerance": [
+      0,
+      0.5
+    ],
+    "contact_gap_unmated": 1.7,
+    "status": "Manufacturer-referenced nominal mating interface, not full standard/gauge verification; sleeve outer envelope and female go/no-go remain open",
+    "polarity": "Front +Z view, +X right, +Y up: L right / N left / PE top. Rear \u2212Z view reverses horizontal appearance. Datum unchanged.",
+    "contact_candidate": {
+      "material": "Spring-temper copper alloy candidate; exact alloy/temper/plating unqualified",
+      "leaf_thickness_mm": 0.4,
+      "nominal_inserted_gap_mm": 1.8,
+      "maximum_reference_blade_gap_mm": 1.95,
+      "nominal_deflection_per_leaf_mm": 0.05,
+      "maximum_reference_deflection_per_leaf_mm": 0.125,
+      "status": "Geometric spring candidate only. Forming radii, force, wear, temperature and fatigue require design verification and tests."
+    },
+    "rear_internal_L_tail_top_z": 5,
+    "rear_internal_N_tail": "Wide blade endsz3.2; central\u00d82.4 Cu termination stud reachesz6.5. Formed/joined internal tail process unqualified."
+  },
+  "carrier": {
+    "width": 60,
+    "height": 50,
+    "bottom_z": 41,
+    "contact_seat_z": 44,
+    "top_z": 57,
+    "clamping_lug_top_z": 62.6
+  },
+  "controls": {
+    "local": [
+      24,
+      -34
+    ],
+    "rearm": [
+      38,
+      -25
+    ],
+    "led": [
+      34,
+      34
+    ],
+    "local_diameter": 8,
+    "rearm_diameter": 4,
+    "led_diameter": 2.4,
+    "switch_top_z_provisional": 17.4,
+    "led_top_z_provisional": 18.4
+  },
+  "thermal_interface": {
+    "head_center": [
+      10.82724133595,
+      -4.75
+    ],
+    "head_back_face_z": 43.5,
+    "pad_center": [
+      8.22724133595,
+      -4.75
+    ],
+    "pad_size": [
+      26,
+      28,
+      0.5
+    ],
+    "pad_bottom_z": 43.5,
+    "pad_candidate": "KERATHERM86/60; material data is not product insulation approval",
+    "status": "Actual remote head exported with rigid180deg X rotation; copper pickupface43.5; thermal qualification pending",
+    "head_rotation_deg_X": 180,
+    "head_substrate_back_z": 43.465
+  },
+  "harness": {
+    "main_conductor_area_mm2": 3.141592653589793,
+    "main_conductor_diameter": 2,
+    "minimum_forming_radius": 6,
+    "carrier_outer_diameter": 4.4,
+    "carrier_inner_diameter": 2.4,
+    "installation_tolerance_radial": 0.25,
+    "candidate": "Custom annealed Cu-ETP links; qualified forming, solid terminal acceptance and resin insulation required"
+  },
+  "shutter": {
+    "travel_closed": 0,
+    "travel_open": 12.5,
+    "plate_z": 58,
+    "plate_thickness": 1.4,
+    "cam_height": 2.7,
+    "status": "Mechanism geometry and travel study; single-pin anti-defeat and endurance require physical validation",
+    "mechanism": "Two independently depressed pawls, common12.5mm slider, compression return spring; digital travel/single-pin obstruction tests required"
+  },
+  "brand": "CARBENTRA",
+  "fasteners": {
+    "case": {
+      "count": 4,
+      "major_envelope_diameter_mm": 2.2,
+      "pilot_diameter_mm": 1.8,
+      "engagement_length_mm": 4,
+      "status": "Thread-forming candidate, exact series/length/drive/pilot tolerance and torque not qualified"
+    },
+    "fuse_and_thermal": {
+      "count": 6,
+      "major_envelope_diameter_mm": 1.2,
+      "pilot_diameter_mm": 1.0,
+      "engagement_length_mm": 3,
+      "status": "Nominal thread engagement envelope only; source and torque/retention to qualify"
+    }
+  },
+  "rf_service_slack": {
+    "selected_cable_length_mm": 100,
+    "nominal_drawn_segment_mm": 55.8659265359,
+    "remaining_mm": 44.1340734641,
+    "reservation_center_xy": [
+      23,
+      35.8
+    ],
+    "annular_radius_inner_outer_mm": [
+      6.1,
+      7.95
+    ],
+    "z_range_mm": [
+      46.5,
+      50.5
+    ],
+    "nominal_loop_centerline_radius_mm": 7.016939905300584,
+    "minimum_assumed_bend_radius_mm": 6,
+    "retention": "Two integral front-cover snap-guide supports; exact cable shape and connector strain relief remain qualification gates",
+    "status": "Non-physical routing reservation, not an additional purchased solid or a completed vendor cable model",
+    "nominal_helix_pitch_mm": 2,
+    "radial_assembly_allowance_mm": 0.3
+  }
+}

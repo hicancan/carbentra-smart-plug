@@ -1,0 +1,70 @@
+{
+  "status": "Base study only; electronics/components/wires not yet present",
+  "intersections": [
+    {
+      "a": "PEBus",
+      "b": "Blade_PE",
+      "volume": 1.2000000000000006,
+      "intentional": true
+    },
+    {
+      "a": "PEBus",
+      "b": "Contact_PE",
+      "volume": 0.8999999999999918,
+      "intentional": true
+    },
+    {
+      "a": "ShutterGuide",
+      "b": "ShutterSlider",
+      "volume": 2.51999999999999,
+      "intentional": false
+    }
+  ],
+  "pcb_intersections": [],
+  "shutter_travel_study": {
+    "0": {
+      "solid_interferences": [
+        {
+          "part": "ShutterGuide",
+          "volume": 2.519999999999989
+        }
+      ],
+      "insertion_paths": [
+        {
+          "pin": "PE",
+          "blocked_volume": 0.0
+        },
+        {
+          "pin": "L",
+          "blocked_volume": 17.280573962331495
+        },
+        {
+          "pin": "N",
+          "blocked_volume": 17.280573962331502
+        }
+      ]
+    },
+    "12": {
+      "solid_interferences": [
+        {
+          "part": "ShutterReturnSpring",
+          "volume": 0.1436698403123296
+        }
+      ],
+      "insertion_paths": [
+        {
+          "pin": "PE",
+          "blocked_volume": 0.0
+        },
+        {
+          "pin": "L",
+          "blocked_volume": 0.0
+        },
+        {
+          "pin": "N",
+          "blocked_volume": 0.0
+        }
+      ]
+    }
+  }
+}

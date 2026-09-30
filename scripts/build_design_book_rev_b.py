@@ -1,5 +1,5 @@
 from pathlib import Path
-import json, sys
+import json, sys, io
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
@@ -11,7 +11,7 @@ R=Path(__file__).resolve().parents[1]; O=R/'release'; O.mkdir(exist_ok=True)
 pdfmetrics.registerFont(TTFont('NotoSansSC', str(R/'assets/fonts/NotoSansSC-Regular.ttf')))
 W,H=595.28,841.89
 DRAFT='--draft' in sys.argv
-TARGET=O/('CarbonMirror_RevB_Review_DRAFT.pdf' if DRAFT else 'CarbonMirror_RevB_Design_Review_CN.pdf')
+TARGET=O/('CARBENTRA_RevB_Review_DRAFT.pdf' if DRAFT else 'CARBENTRA_RevB_Design_Review_CN.pdf')
 C=canvas.Canvas(str(TARGET),pagesize=(W,H))
 C.setTitle('CARBENTRA 智能插座设计审阅册');C.setAuthor('CARBENTRA project')
 style=ParagraphStyle('body',fontName='NotoSansSC',fontSize=11,leading=18,textColor='#213a3c',wordWrap='CJK')
@@ -32,9 +32,18 @@ def para(s,x,y,w,st=style):
 def image(path,x,y,w,h):
  p=Path(path)
  if not p.exists() and DRAFT: p=p.with_name('00_'+p.name)
- if not p.exists():raise FileNotFoundError(p)
+ if not p.exists():
+  if DRAFT:
+   C.setFillColorRGB(.91,.94,.93);C.rect(x,y,w,h,fill=1,stroke=0);C.setFont('NotoSansSC',11);C.setFillColorRGB(.25,.4,.38);C.drawString(x+12,y+h/2,'图待最终渲染：'+p.name);return
+  raise FileNotFoundError(p)
  iw,ih=Image.open(p).size;scale=min(w/iw,h/ih);ww=iw*scale;hh=ih*scale
- C.drawImage(ImageReader(str(p)),x+(w-ww)/2,y+(h-hh)/2,width=ww,height=hh,mask='auto')
+ im=Image.open(p)
+ if im.mode=='RGBA':
+  bg=Image.new('RGBA',im.size,(246,248,247,255));im=Image.alpha_composite(bg,im).convert('RGB')
+ else:im=im.convert('RGB')
+ im.thumbnail((2200,2200),Image.Resampling.LANCZOS)
+ embedded=io.BytesIO();im.save(embedded,format='JPEG',quality=92,optimize=True);embedded.seek(0)
+ C.drawImage(ImageReader(embedded),x+(w-ww)/2,y+(h-hh)/2,width=ww,height=hh)
 
 def end():C.showPage()
 def bullet(title,text,y):
@@ -100,11 +109,12 @@ base('验证状态与真实完成程度','数字检查、工程审查和物理�
 manifest_path=R/'release/rev_b_review_manifest.json'
 if not manifest_path.exists():raise FileNotFoundError('Final review requires verified release/rev_b_review_manifest.json')
 m=json.loads(manifest_path.read_text())
+if not DRAFT and m.get('status')!='FINAL_DIGITAL_REVIEW':raise RuntimeError('Final review manifest is not frozen')
 y=690
 y=bullet('机械数字检查',m['mechanical_review'],y)
 y=bullet('电路与 PCB 检查',m['electronics_review'],y)
 y=bullet('固件与边缘测试','ESP32-C3 实际交叉编译成功；37 项控制策略、10000 次故障优先不变量、脉冲反馈与计量协议回归通过，边缘服务 24 项测试通过。主机测试不替代实际硬件互通。',y)
-y=bullet('可视化与文件检查','审查 Blender 场景、关键渲染与爆炸动画，检查 GLB 文件结构和具名部件。数字交付自动检查见 release/digital_checks.json。',y)
+y=bullet('可视化与文件检查','审查 Blender 场景、关键渲染与爆炸动画，检查 GLB 文件结构和具名部件。数字交付自动检查见 release/digital_checks_rev_b.json。',y)
 y=bullet('未完成的物理验证','没有实物加工、装配、计量标定、温升、耐压、漏电、接地、EMC、浪涌、异常工况或寿命测试结果。不得将其写入作品报告作为已取得成果。',y)
 y=bullet('继续推进条件','下一轮由专业电气人员关闭电路与接口问题，结合选定供应件修订机械结构，再决定打样。真实 220V 测试须在合适的实验条件下执行。',y)
 end()

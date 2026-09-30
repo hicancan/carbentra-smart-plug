@@ -1,7 +1,7 @@
 (export (version "E")
   (design
     (source "/workspace/scratch/abc8258751a2/carbonmirror-socket/electronics/rev_b/integrated/integrated.kicad_sch")
-    (date "2026-09-30T04:44:37-0700")
+    (date "2026-09-30T05:00:59-0700")
     (tool "Eeschema 9.0.2+dfsg-1")
     (sheet (number "1") (name "/1 controller/") (tstamps "/3a308576-487f-5c45-8bb5-214ebe46dd88/")
       (title_block

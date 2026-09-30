@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "board_sha256": "54485373c84268d072b8abb9a73405d867b58622657f3cf49976cbcab7c0f40a",
+  "board_sha256": "4d7e9873a8ee5407c3d85fe8441672f0e26eebc90ed07c9dd3c443b68b161660",
   "scope": "101 integrated main-board parts only; remote head/offboard/harness excluded",
   "main_footprints": 101,
   "mechanical_NPTH_footprints": [

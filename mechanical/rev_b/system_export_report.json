@@ -1,0 +1,9 @@
+{
+  "physical_mechanical_parts": 71,
+  "nonphysical_routing_reservations": 1,
+  "mechanical_parts": 72,
+  "main_placement_objects": 144,
+  "head_solids": 19,
+  "all_valid": true,
+  "scope": "Mechanical BRep with nominal/max PCB body envelopes and explicit lead reservations; detailed PCB copper available separately in electronics exports"
+}

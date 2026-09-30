@@ -1,0 +1,445 @@
+{
+  "mechanical_source_to_delivery": [
+    {
+      "part": "RearShell",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "FrontLid",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "SeamRing",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "RearFinish",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "Carrier",
+      "brep_serialization_equal": false,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "ThermalPad",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "PEChannel",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "PEBus",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "ShutterGuide",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "ShutterSlider",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "Pawl_L",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "Pawl_N",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "PawlSpring_L",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "PawlSpring_N",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "ShutterReturnSpring",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "LocalButton",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "RearmButton",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "StatusLightGuide",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "BladeSleeve_L",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "BladeSleeve_N",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "Blade_L",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "Blade_N",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "Blade_PE",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "Contact_L",
+      "brep_serialization_equal": false,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "Contact_N",
+      "brep_serialization_equal": false,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "Contact_PE",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "Screw_0",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "Screw_1",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "Screw_2",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "Screw_3",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "RFServiceSlackEnvelope",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "RFAntenna",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "RFCoax",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "RFConnectorEnvelope",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "HeadConnectorEnvelope",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "HeadPigtail_0",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "HeadPigtail_1",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "HeadPigtail_2",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "AuxFuseCradle",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "AuxFuseRetainer",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "PowerCore_L_RAW",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "PowerCarrier_L_RAW",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "PowerCore_N_RAW",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "PowerCarrier_N_RAW",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "PowerCore_L_FUSE_THERMAL",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "PowerCarrier_L_FUSE_THERMAL",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "PowerCore_L_PROTECTED",
+      "brep_serialization_equal": false,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "PowerCarrier_L_PROTECTED",
+      "brep_serialization_equal": false,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "PowerCore_L_OUTPUT",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "PowerCarrier_L_OUTPUT",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "PowerCore_N_OUTPUT",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "PowerCarrier_N_OUTPUT",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "MainFuseHolder",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "MainFuseCeramic",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "MainFuseCap1",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "MainFuseCap2",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "MainFuseClip1",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "MainFuseClip2",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "MainFuseCollector1",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "MainFuseCollector2",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "MainFuseRetainer",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "FuseRetainerScrew_0",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "FuseRetainerScrew_1",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "FuseRetainerScrew_2",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "FuseRetainerScrew_3",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "ThermalBody",
+      "brep_serialization_equal": false,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "ThermalLead1",
+      "brep_serialization_equal": false,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "ThermalLead2",
+      "brep_serialization_equal": false,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "ThermalSleeve",
+      "brep_serialization_equal": false,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "ThermalRetainer",
+      "brep_serialization_equal": false,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "ThermalRetainerScrew_0",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    },
+    {
+      "part": "ThermalRetainerScrew_1",
+      "brep_serialization_equal": true,
+      "brep_geometry_numeric_equivalent_1e_10": true,
+      "volume_difference_mm3": 0.0
+    }
+  ],
+  "all_mechanical_brep_equal": false,
+  "all_mechanical_geometry_numeric_equivalent": true,
+  "numeric_serialization_comparison_tolerance": 1e-10,
+  "system_native_objects": 234,
+  "step_roundtrip_solids": 234,
+  "step_roundtrip_all_valid": true,
+  "native_volume_mm3": 230096.12913471484,
+  "step_volume_mm3": 230096.12425506266,
+  "relative_volume_difference": 2.1207015483521953e-08
+}

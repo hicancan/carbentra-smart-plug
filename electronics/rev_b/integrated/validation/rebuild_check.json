@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "method": "Fresh copied source tree: build manifest and six-sheet schematic, regenerate placement, require exact pad/net geometry before replaying saved copper, patch actual schematic paths, rerun ERC/DRC/pin/projection and negative controls",
+  "method": "Fresh copied source tree rebuilt six schematic sheets, placement and saved copper recipe; reran native ERC/DRC, pin/net audit, projected-domain negative controls, and the independent rear-termination 3D check using copied mechanical native geometry.",
   "native_DRC": {
     "violations": 0,
     "unconnected": 0,
@@ -12,7 +12,12 @@
     "warnings": 0
   },
   "main_numbered_pad_keys": 321,
-  "recipe_sha256": "2fe082beaeb8d29daf18bdf0ef617160b129e9d1f5817aa3f3fa1693621efbc2",
-  "rebuild_output_board_sha256": "dd4130c3457d9bfddbb4108512352c8cb86057d72b3d66b278c0c0cec88f37f1",
-  "note": "The final cosmetic footer shortening and review-PDF plot wrapper were exercised on the canonical tree afterward; they do not change circuit or copper geometry. Final canonical source checks are in final_summary.json."
+  "recipe_sha256": "9b4dcdac04286d41399bf56e140ea3b86cc6bc16784abe4fe52750a41e2e16bb",
+  "rebuild_output_board_sha256": "f6b697c5e8793dec317a4b4b24ed0717d64a79e81374f51c3e63fff38f82eed8",
+  "rear_termination_3D": {
+    "report": "rear_termination.json",
+    "minimum_mm": 8.516644687799777,
+    "target_mm": 8.4,
+    "scope": "Rear L/N blades and bare input-link starts versus isolated pads, tracks, vias and conservative plane outline; full assembly audit is separate"
+  }
 }

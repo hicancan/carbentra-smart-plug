@@ -1,35 +1,48 @@
-# 从这里开始
+# CARBENTRA Rev B：从这里开始
 
-本交付是碳镜校园统一自适应智能插座的数字工程开发包，不是可直接制造或接入 220 V 的成品方案。
+本交付服务于“碳镜校园”平台，是统一自适应智能插座的数字工程开发包。机械、电气、固件和边缘参考实现均附可检查证据；尚未制作并验证实物，不能直接据此接入 220 V。
 
 ## 推荐查看顺序
 
-1. `release/CarbonMirror_Design_Review_CN.pdf`：中文图文审阅册
-2. `visuals/renders/`：外观、内部、透明、剖切、爆炸与六视图
-3. `visuals/animation/carbonmirror_exploded.mp4`：装配爆炸动画
-4. `mechanical/CarbonMirror_S16_SystemAssembly.FCStd` / `.step`：完整机械与板件装配
-5. `visuals/carbonmirror_studio.blend`：可继续编辑的可视化场景
-6. `electronics/carbonmirror.kicad_pro`：电路开发工程，先读其 README
-7. `docs/system/`：云边端、无线与传感器、策略及验证说明
+1. `release/CARBENTRA_RevB_Design_Review_CN.pdf`：最终中文图文审阅册（最终发布时提供）
+2. `visuals/rev_b/renders/`：外观、内部、透明、剖切、爆炸与六视图
+3. `visuals/rev_b/animation/carbonmirror_exploded.mp4`：装配爆炸动画
+4. `mechanical/rev_b/CM-S16-EVT-B_system_assembly.FCStd` / `.step`：轻量工程装配
+5. `mechanical/rev_b/CM-S16-EVT-B_system_detailed.step`：包含详细 PCB 几何的补充装配
+6. `visuals/rev_b/carbonmirror_studio.blend`：可编辑展示场景
+7. `electronics/rev_b/integrated/integrated.kicad_pro`：整合电路工程，先读同目录 README
+8. `docs/firmware/README.md`、`edge/README.md` 和 `docs/system/`：固件、边缘与云边端架构
+9. `docs/ENGINEERING_RELEASE_GATES.md`：进入样机阶段之前的阻断项
 
-## 打开和继续设计
+## 修订与打开方式
 
-- Blender 4.3.2：打开 `.blend`，场景中有独立部件和相机，字体已打包。最终动画场景另存于 `visuals/carbonmirror_animation.blend`。
-- FreeCAD 1.0：STEP 可直接导入；原生参数化特征重算按 `mechanical/README.md` 操作，附本地宏与脚本。
-- KiCad 9：打开项目，保留最终原理图、板文件及本地符号库；不要把无几何 DRC 错误等同于可用电路。
-- GLB：`visuals/exports/carbonmirror_assembly.glb` 用于支持 glTF 2.0 的查看器或后续数字孪生应用。静态模型本身未连接设备数据。
+- 当前修订为 Rev B；Rev A 目录为历史基线，不能混用尺寸或检查结论
+- FreeCAD 1.0：打开 FCStd，或导入 STEP。71 个物理机械零件；射频余线预留体为非物理辅助几何，默认隐藏
+- Blender 4.3.2：打开 `.blend`；动画源场景为同目录 `carbonmirror_animation.blend`
+- KiCad 9：打开整合项目，保留本地符号库、封装库和设计规则
+- `visuals/rev_b/exports/carbonmirror_twin_light.glb`：优化的显示模型，可用于数字孪生应用开发；它没有自动连接真实遥测
+- `visuals/rev_b/exports/carbonmirror_assembly.glb`：详细显示导出。显示网格不替代 CAD 精确几何
+- 脚本按 Linux 构建环境编写；Windows 打开源文件可使用对应跨平台软件，执行重建脚本时需调整软件和字体路径
 
-脚本按此构建环境编写；在 Windows 上需调整本地软件调用与字体路径。源文件本身可用相应跨平台软件打开。未安装任何远程服务或自动开机程序。
+## 已实现及证据
 
-## Git
+- 机械：原创外壳、插接与保护门、接触簧片、接地路径、端接、保护器件安装、无线与温度拾取布局；冻结清单及几何检查位于 `mechanical/rev_b/`
+- 电气：四层整合 PCB、六张原理图页、BOM、布局/布线与独立规则负控；最终 ERC、DRC 和未连接项均为 0，详见 `electronics/rev_b/integrated/validation/`
+- 固件：ESP32-C3 开发构建、计量链路诊断、Wi-Fi/BLE 配置路径、认证通信及策略保护；默认禁止执行器动作，需真实凭据、标定和硬件验证
+- 边缘：SQLite 接收持久化、重复数据冲突检测、建议型削峰、预测基线和有来源的能碳核算边界；并非完整部署的校园平台
+- 最终数字交付状态：`release/digital_checks_rev_b.json`；固件证据：`firmware/validation.json` 和 `release/firmware_evidence_checks.json`
 
-交付压缩包保留本地 Git 仓库与历史，没有远程地址，没有推送 GitHub，也没有公开发布。解压后可在项目目录运行 `git log --oneline` 查看阶段提交。
+## Git 与交付
 
-## 当前最重要的未完成项
+本次采用原生文件包交付。完整历史包将附 Git bundle；恢复示例为 `git clone CARBENTRA-history.bundle carbentra-smart-plug`（文件名以交付清单为准）。普通工程 ZIP 不应被误认为自带完整 `.git`。
 
-- 市电部分的 9 处连接未布线，完整计量子板和实际输出状态检测仍需设计
-- 插脚/插孔量规、保护门运动和真实端接、线径、公差与材料工艺需确认
-- 没有制作实物，没有热、电、机械耐久、无线或计量认证测试
-- 策略参考是离线模拟，不是设备固件；配网、认证、升级和校园实际部署未实现
+目标远端为 https://github.com/hicancan/carbentra-smart-plug 。此前仅确认远端 README；SSH 网络测试在认证前受阻，未完成工程 push，因此远端不能视为完整交付。后续只使用标准 Git SSH 工作流。包中不包含 SSH 私钥、个人凭据或本地认证配置。
 
-优先完成专业电气审查与上述数字设计缺口，再决定样机与实测。不能跳过放行门槛直接通电。
+## 实物阶段仍未完成
+
+- 16 A 等级与插接规格仍是设计目标；标准量规、公差、插拔力、接触力、寿命和材料工艺需实测
+- 市电绝缘、保护接地、温升、异常故障、保护配合与空调浪涌能力需专业审查和试验
+- 计量需逐台标定，无线、EMC、网络安全与真实校园部署尚未验证
+- 自动升级、安全启动生产配置、实际预测模型训练和平台端到端验收尚未完成
+
+几何距离、软件测试及 ERC/DRC 通过均不构成安全认证。必须完成相关工程放行流程后，才能决定样机通电与现场试用。

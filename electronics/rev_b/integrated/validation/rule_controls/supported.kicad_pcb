@@ -84,72 +84,12 @@
 	(net 2 "ISO_TEST")
 	(footprint ""
 		(layer "F.Cu")
-		(uuid "0fbc7cb9-e30b-4d88-9d1f-9918fe209deb")
-		(at 17 10)
-		(property "Reference" "TP2"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(uuid "2c9292b8-f08f-4f95-ae89-cd5977244ee3")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" ""
-			(at 0 0 0)
-			(layer "F.Fab")
-			(uuid "7d2e5345-02e1-480d-9511-fa6ee69ac553")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "76b0aa43-d315-4599-8c57-f58cf32f980c")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "0f832cde-efef-4b3b-b528-a012e85d372f")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(pad "1" smd rect
-			(at 0 0)
-			(size 1 1)
-			(layers "F.Cu")
-			(net 2 "ISO_TEST")
-			(thermal_bridge_angle 45)
-			(uuid "b7e8e96c-abc8-4d28-98e2-0e7eae206d70")
-		)
-		(embedded_fonts no)
-	)
-	(footprint ""
-		(layer "F.Cu")
-		(uuid "1aa543b1-1c7c-4ca9-9589-a5da178e714d")
+		(uuid "0cdb24c5-50dc-444a-b5b2-27753d681a89")
 		(at 10 10)
 		(property "Reference" "TP1"
 			(at 0 0 0)
 			(layer "F.SilkS")
-			(uuid "1172b650-8bf2-472d-80d9-40cea787fdc0")
+			(uuid "298c82a1-417f-4c13-a155-7019579321a0")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -160,7 +100,7 @@
 		(property "Value" ""
 			(at 0 0 0)
 			(layer "F.Fab")
-			(uuid "d3db91ff-a7e8-47e5-9dab-b53eb9f777c6")
+			(uuid "61a40368-55fa-4c6a-9554-1dfc70e57db6")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -172,7 +112,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "36d22376-021b-4580-9aa4-7ca4c7b9a6cf")
+			(uuid "80426c0c-523e-4901-bcf5-c10553cc0101")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -184,7 +124,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "820a06a4-f557-4715-b631-59925060fc03")
+			(uuid "3b9eff69-d2f3-4c69-9974-5446b6244f88")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -198,19 +138,69 @@
 			(layers "F.Cu")
 			(net 1 "HOT_TEST")
 			(thermal_bridge_angle 45)
-			(uuid "e6e06ffc-b3ad-4021-9c24-4b1504eb3bbd")
+			(uuid "6994c613-3048-4f2c-80a9-73d130c12e42")
 		)
 		(embedded_fonts no)
 	)
-	(gr_line
-		(start 25 5)
-		(end 25 20)
-		(stroke
-			(width 0.05)
-			(type default)
+	(footprint ""
+		(layer "F.Cu")
+		(uuid "3b46331a-d526-4bfd-8716-ed9fccd78318")
+		(at 17 10)
+		(property "Reference" "TP2"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(uuid "0d1993aa-5d8f-4007-b6c4-cca059cc7895")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
 		)
-		(layer "Edge.Cuts")
-		(uuid "2014be58-aca8-4b7f-8cdd-bcd2c155d20a")
+		(property "Value" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "5e938b47-c4c3-4d4e-95e4-cc4ea6476959")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "83a542e0-c3f7-48a1-b9d8-c6c819dbd55c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ab3f6e6b-d383-4146-bf83-22d2e6c207a0")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" smd rect
+			(at 0 0)
+			(size 1 1)
+			(layers "F.Cu")
+			(net 2 "ISO_TEST")
+			(thermal_bridge_angle 45)
+			(uuid "c253574d-a03d-4c6b-8b26-96263d52dcec")
+		)
+		(embedded_fonts no)
 	)
 	(gr_line
 		(start 5 5)
@@ -220,7 +210,17 @@
 			(type default)
 		)
 		(layer "Edge.Cuts")
-		(uuid "5b77cb9b-9886-460d-8cb6-6a7fb536b6c5")
+		(uuid "36762269-d7c2-453a-9ad9-6e68786f3d35")
+	)
+	(gr_line
+		(start 25 5)
+		(end 25 20)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "69a9782d-de85-4eaa-ac67-a3004a1a6a07")
 	)
 	(gr_line
 		(start 25 20)
@@ -230,7 +230,7 @@
 			(type default)
 		)
 		(layer "Edge.Cuts")
-		(uuid "8230eb6f-fa28-402f-bc06-a7eaff132bd2")
+		(uuid "d21ebe11-ec6b-4be6-b3d1-a4440c4aa9a0")
 	)
 	(gr_line
 		(start 5 20)
@@ -240,7 +240,7 @@
 			(type default)
 		)
 		(layer "Edge.Cuts")
-		(uuid "f3a6d695-d4cb-4cbc-a021-92b871fdbb36")
+		(uuid "f98652e6-7bd1-4fb3-b788-5d6ba404d974")
 	)
 	(embedded_fonts no)
 )

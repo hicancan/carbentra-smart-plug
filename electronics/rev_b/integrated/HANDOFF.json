@@ -12,8 +12,8 @@
       "bytes": 25215
     },
     "integrated.kicad_pcb": {
-      "sha256": "54485373c84268d072b8abb9a73405d867b58622657f3cf49976cbcab7c0f40a",
-      "bytes": 804587
+      "sha256": "4d7e9873a8ee5407c3d85fe8441672f0e26eebc90ed07c9dd3c443b68b161660",
+      "bytes": 928231
     },
     "electrical_manifest.json": {
       "sha256": "f2e8f6e336a5a5863f1e5e8b8ca86a6c38358e462ed8fe0c1c87b070d35e1c37",
@@ -24,23 +24,23 @@
       "bytes": 16380
     },
     "routing_recipe.json": {
-      "sha256": "2fe082beaeb8d29daf18bdf0ef617160b129e9d1f5817aa3f3fa1693621efbc2",
-      "bytes": 1484330
+      "sha256": "9b4dcdac04286d41399bf56e140ea3b86cc6bc16784abe4fe52750a41e2e16bb",
+      "bytes": 1506998
     },
     "exports/integrated_assembly.step": {
-      "sha256": "c19e720dd180cba6511bc2c33636019c476f798bcbadd80c5e7f0369393a1b9b",
-      "bytes": 33237729
+      "sha256": "e905f5349fb9d0d61e37de324c576ff20d9daa049597b2e55db5b4ee22d92214",
+      "bytes": 33773949
     },
     "exports/integrated_assembly.obj": {
-      "sha256": "463e345f8ae7c8822a247d311e7f1d641d9fb3d55ba0e64cff227436a01e4850",
-      "bytes": 15082891
+      "sha256": "9d3e1927e47a9dcc366539ead8625b44891f5d1dd604cf80476d45d9db83803d",
+      "bytes": 15155271
     },
     "exports/placement_assembly.step": {
-      "sha256": "74339093fef4e7acbb29564c82143a76c839053c468b03cf6c8c9ec65b46ec5b",
+      "sha256": "968200157721f31ed6526938d0047be8611491fe51d546bd37ced6baad1d6fb3",
       "bytes": 836826
     },
     "exports/component_envelopes.json": {
-      "sha256": "0a47aee6a889de7e4f43787afc16a503a3aab1895bad6d13c4057f2bbed82106",
+      "sha256": "d045b547cb7fcf4fb7b30e1ccebe7240e63b737f26e7a74cf996ef59aef4c551",
       "bytes": 46509
     },
     "exports/remote_head_assembled.step": {
@@ -60,12 +60,48 @@
       "bytes": 1007287
     },
     "exports/copper_review.pdf": {
-      "sha256": "e4c010b33eeba86e1d789c83d9d61575d0cdfd311bbbbc3faeae133f56b401ad",
-      "bytes": 859379
+      "sha256": "075e30ba47668f9434a01923ffddb34543d8860d2ecc0a3b2bf403deb0ebdafb",
+      "bytes": 864798
     },
     "validation/final_summary.json": {
-      "sha256": "256b7ae64cc38e9ec25c8060f11bc12f634f39028d3b4b29eac1a1b218cc96a9",
-      "bytes": 2427
+      "sha256": "74995be6be0abe1ceb12f545b7ce7daf90918eccb411febb73fa48deea638351",
+      "bytes": 2743
+    },
+    "validation/rear_termination.json": {
+      "sha256": "04e452a2bbcd4787cb5b7609057a63b5480829d32ffdc35617a425ad8715b008",
+      "bytes": 2500
+    },
+    "validation/rebuild_check.json": {
+      "sha256": "598340dfe304678df6853d2eda8669398435efc971fa7ebcc1555c90c9714545",
+      "bytes": 958
+    },
+    "validation/final_drc.rpt": {
+      "sha256": "3664cee4cb41cdc44f5601c0914c922dbb3eadb1c789bfbac8143406f1e5a5ca",
+      "bytes": 199
+    },
+    "validation/final_erc.rpt": {
+      "sha256": "106694225aacdf19ab848f8313b5c9512117755b36e80e5f20f83b5b5176463c",
+      "bytes": 250
+    },
+    "validation/final_pin_audit.json": {
+      "sha256": "5bdfd8aa9e4049f860095469cee38d6907cd86ea925b74558f20aa42b2ba1638",
+      "bytes": 666
+    },
+    "validation/final_isolation.json": {
+      "sha256": "eae49918ee1cbf7d698a50c2b729e0b06f5f22c71f5163d34525e738ba4dac45",
+      "bytes": 540
+    },
+    "validation/geometry.json": {
+      "sha256": "c77659dc69f523ee3fe6ae05b085cbe4e87e683a647c874c101dcf1e892773b2",
+      "bytes": 189
+    },
+    "scripts/audit_rear_termination.py": {
+      "sha256": "6c6049893639f15892877148c49cc6cb84c85b82af4ed2bd75d5a60ef72783e5",
+      "bytes": 4072
+    },
+    "scripts/correct_rear_clearance.py": {
+      "sha256": "8341b15cab2ffa2dbbcd65c4fd6307edf9e038a39d70f6302f87c226901ae60a",
+      "bytes": 2012
     }
   }
 }

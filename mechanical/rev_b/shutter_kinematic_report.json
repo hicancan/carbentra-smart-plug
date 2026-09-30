@@ -1,0 +1,270 @@
+{
+  "scope": "Provisional digital geometry. Pawl labels L/N in CAD are legacy mechanical side IDs; test left/right strokes are physical sides, not line/neutral nets. Single-pin states must be mechanically blocked; both-released travel must be clear. No force, abuse, tolerance or certification claim.",
+  "states": [
+    {
+      "state": "closed",
+      "travel_mm": 0,
+      "pawl_strokes_mm": [
+        0,
+        0
+      ],
+      "intersections": [],
+      "insertion_paths": [
+        {
+          "pin": "PE",
+          "blocked_volume_mm3": 0.0
+        },
+        {
+          "pin": "L",
+          "blocked_volume_mm3": 42.8219156558482
+        },
+        {
+          "pin": "N",
+          "blocked_volume_mm3": 42.82191565584821
+        }
+      ]
+    },
+    {
+      "state": "both_released",
+      "travel_mm": 0,
+      "pawl_strokes_mm": [
+        0.8,
+        0.8
+      ],
+      "intersections": [],
+      "insertion_paths": [
+        {
+          "pin": "PE",
+          "blocked_volume_mm3": 0.0
+        },
+        {
+          "pin": "L",
+          "blocked_volume_mm3": 42.82137514083569
+        },
+        {
+          "pin": "N",
+          "blocked_volume_mm3": 42.8213751408357
+        }
+      ]
+    },
+    {
+      "state": "single_L_attempt",
+      "travel_mm": 2,
+      "pawl_strokes_mm": [
+        0.8,
+        0
+      ],
+      "intersections": [
+        {
+          "a": "Pawl_N",
+          "b": "ShutterGuide",
+          "volume_mm3": 0.6933333333333377
+        }
+      ],
+      "insertion_paths": [
+        {
+          "pin": "PE",
+          "blocked_volume_mm3": 0.0
+        },
+        {
+          "pin": "L",
+          "blocked_volume_mm3": 37.48258646741638
+        },
+        {
+          "pin": "N",
+          "blocked_volume_mm3": 37.48229037037469
+        }
+      ]
+    },
+    {
+      "state": "single_N_attempt",
+      "travel_mm": 2,
+      "pawl_strokes_mm": [
+        0,
+        0.8
+      ],
+      "intersections": [
+        {
+          "a": "Pawl_L",
+          "b": "ShutterGuide",
+          "volume_mm3": 0.6933333333333384
+        }
+      ],
+      "insertion_paths": [
+        {
+          "pin": "PE",
+          "blocked_volume_mm3": 0.0
+        },
+        {
+          "pin": "L",
+          "blocked_volume_mm3": 37.482290377249875
+        },
+        {
+          "pin": "N",
+          "blocked_volume_mm3": 37.482586459273975
+        }
+      ]
+    },
+    {
+      "state": "travel_2",
+      "travel_mm": 2,
+      "pawl_strokes_mm": [
+        0.8,
+        0.8
+      ],
+      "intersections": [],
+      "insertion_paths": [
+        {
+          "pin": "PE",
+          "blocked_volume_mm3": 0.0
+        },
+        {
+          "pin": "L",
+          "blocked_volume_mm3": 37.482290377249875
+        },
+        {
+          "pin": "N",
+          "blocked_volume_mm3": 37.48229037037469
+        }
+      ]
+    },
+    {
+      "state": "travel_4",
+      "travel_mm": 4,
+      "pawl_strokes_mm": [
+        0.8,
+        0.8
+      ],
+      "intersections": [],
+      "insertion_paths": [
+        {
+          "pin": "PE",
+          "blocked_volume_mm3": 0.0
+        },
+        {
+          "pin": "L",
+          "blocked_volume_mm3": 35.69357028599876
+        },
+        {
+          "pin": "N",
+          "blocked_volume_mm3": 35.69357028599876
+        }
+      ]
+    },
+    {
+      "state": "travel_6",
+      "travel_mm": 6,
+      "pawl_strokes_mm": [
+        0.8,
+        0.8
+      ],
+      "intersections": [],
+      "insertion_paths": [
+        {
+          "pin": "PE",
+          "blocked_volume_mm3": 0.0
+        },
+        {
+          "pin": "L",
+          "blocked_volume_mm3": 27.309378387822132
+        },
+        {
+          "pin": "N",
+          "blocked_volume_mm3": 27.309378387822143
+        }
+      ]
+    },
+    {
+      "state": "travel_8",
+      "travel_mm": 8,
+      "pawl_strokes_mm": [
+        0.8,
+        0.8
+      ],
+      "intersections": [],
+      "insertion_paths": [
+        {
+          "pin": "PE",
+          "blocked_volume_mm3": 0.0
+        },
+        {
+          "pin": "L",
+          "blocked_volume_mm3": 16.593405413465746
+        },
+        {
+          "pin": "N",
+          "blocked_volume_mm3": 16.593405413465756
+        }
+      ]
+    },
+    {
+      "state": "travel_10",
+      "travel_mm": 10,
+      "pawl_strokes_mm": [
+        0.8,
+        0.8
+      ],
+      "intersections": [],
+      "insertion_paths": [
+        {
+          "pin": "PE",
+          "blocked_volume_mm3": 0.0
+        },
+        {
+          "pin": "L",
+          "blocked_volume_mm3": 6.586197488725164
+        },
+        {
+          "pin": "N",
+          "blocked_volume_mm3": 6.586197488725162
+        }
+      ]
+    },
+    {
+      "state": "travel_12.5",
+      "travel_mm": 12.5,
+      "pawl_strokes_mm": [
+        0.8,
+        0.8
+      ],
+      "intersections": [],
+      "insertion_paths": [
+        {
+          "pin": "PE",
+          "blocked_volume_mm3": 0.0
+        },
+        {
+          "pin": "L",
+          "blocked_volume_mm3": 0.0
+        },
+        {
+          "pin": "N",
+          "blocked_volume_mm3": 0.0
+        }
+      ]
+    },
+    {
+      "state": "open_rest",
+      "travel_mm": 12.5,
+      "pawl_strokes_mm": [
+        0,
+        0
+      ],
+      "intersections": [],
+      "insertion_paths": [
+        {
+          "pin": "PE",
+          "blocked_volume_mm3": 0.0
+        },
+        {
+          "pin": "L",
+          "blocked_volume_mm3": 0.0
+        },
+        {
+          "pin": "N",
+          "blocked_volume_mm3": 0.0
+        }
+      ]
+    }
+  ]
+}

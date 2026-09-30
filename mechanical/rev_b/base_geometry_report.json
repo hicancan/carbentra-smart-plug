@@ -1,0 +1,437 @@
+{
+  "status": "PROVISIONAL BASE; NOT FROZEN FINAL ASSEMBLY",
+  "parts": [
+    {
+      "id": "RearShell",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 78790.58879407386
+    },
+    {
+      "id": "FrontLid",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 35891.41188026035
+    },
+    {
+      "id": "SeamRing",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 255.59309263300787
+    },
+    {
+      "id": "RearFinish",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 36.29666476863895
+    },
+    {
+      "id": "Carrier",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 37989.951688910034
+    },
+    {
+      "id": "ThermalPad",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 359.68
+    },
+    {
+      "id": "PEChannel",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1656.6295889359217
+    },
+    {
+      "id": "PEBus",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 414.57484626502105
+    },
+    {
+      "id": "ShutterGuide",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1345.8081366129443
+    },
+    {
+      "id": "ShutterSlider",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 685.5001484665812
+    },
+    {
+      "id": "Pawl_L",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 29.96617251235194
+    },
+    {
+      "id": "Pawl_N",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 29.966172512351942
+    },
+    {
+      "id": "PawlSpring_L",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.23879320936946571
+    },
+    {
+      "id": "PawlSpring_N",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.23879320936946563
+    },
+    {
+      "id": "ShutterReturnSpring",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3.515902482251543
+    },
+    {
+      "id": "LocalButton",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 435.7263346822899
+    },
+    {
+      "id": "RearmButton",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 341.1015639561653
+    },
+    {
+      "id": "StatusLightGuide",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 210.81343342648944
+    },
+    {
+      "id": "BladeSleeve_L",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 50.21999999999999
+    },
+    {
+      "id": "BladeSleeve_N",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 50.219999999999956
+    },
+    {
+      "id": "Blade_L",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 316.53999999999996
+    },
+    {
+      "id": "Blade_N",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 305.35540207500435
+    },
+    {
+      "id": "Blade_PE",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 410.50000000000006
+    },
+    {
+      "id": "Contact_L",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 345.01092968400275
+    },
+    {
+      "id": "Contact_N",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 144.9999999999999
+    },
+    {
+      "id": "Contact_PE",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 172.99999999999986
+    },
+    {
+      "id": "Screw_0",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 234.70728087230623
+    },
+    {
+      "id": "Screw_1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 234.70728087230623
+    },
+    {
+      "id": "Screw_2",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 234.70728087230623
+    },
+    {
+      "id": "Screw_3",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 234.70728087230623
+    },
+    {
+      "id": "RFServiceSlackEnvelope",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 326.631388193731
+    },
+    {
+      "id": "RFAntenna",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 32.90000000000046
+    },
+    {
+      "id": "RFCoax",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 56.02653631726922
+    },
+    {
+      "id": "RFConnectorEnvelope",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 21.20575041173109
+    },
+    {
+      "id": "HeadConnectorEnvelope",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 253.44000000000023
+    },
+    {
+      "id": "HeadPigtail_0",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 47.94816240417109
+    },
+    {
+      "id": "HeadPigtail_1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 47.94816240417111
+    },
+    {
+      "id": "HeadPigtail_2",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 47.9481624041711
+    },
+    {
+      "id": "AuxFuseCradle",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 140.6066995156294
+    },
+    {
+      "id": "AuxFuseRetainer",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 42.4199999999999
+    },
+    {
+      "id": "PowerCore_L_RAW",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 312.09246109621216
+    },
+    {
+      "id": "PowerCarrier_L_RAW",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1020.9392879512184
+    },
+    {
+      "id": "PowerCore_N_RAW",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 290.0850140585603
+    },
+    {
+      "id": "PowerCarrier_N_RAW",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 871.0381339466674
+    },
+    {
+      "id": "PowerCore_L_FUSE_THERMAL",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 270.1819169028366
+    },
+    {
+      "id": "PowerCarrier_L_FUSE_THERMAL",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 811.8043672475911
+    },
+    {
+      "id": "PowerCore_L_PROTECTED",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 335.7233838898267
+    },
+    {
+      "id": "PowerCarrier_L_PROTECTED",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1043.1904870211235
+    },
+    {
+      "id": "PowerCore_L_OUTPUT",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 287.8135183540208
+    },
+    {
+      "id": "PowerCarrier_L_OUTPUT",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 877.0925196927205
+    },
+    {
+      "id": "PowerCore_N_OUTPUT",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 245.25325851322611
+    },
+    {
+      "id": "PowerCarrier_N_OUTPUT",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 732.3876362340187
+    },
+    {
+      "id": "MainFuseHolder",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1310.0199217169052
+    },
+    {
+      "id": "MainFuseCeramic",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 604.8820531726378
+    },
+    {
+      "id": "MainFuseCap1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 201.09953076681936
+    },
+    {
+      "id": "MainFuseCap2",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 201.09953076681936
+    },
+    {
+      "id": "MainFuseClip1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 139.69445137639445
+    },
+    {
+      "id": "MainFuseClip2",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 139.6944513763948
+    },
+    {
+      "id": "MainFuseCollector1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 52.48000000000002
+    },
+    {
+      "id": "MainFuseCollector2",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 52.48000000000009
+    },
+    {
+      "id": "MainFuseRetainer",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 178.42611743079794
+    },
+    {
+      "id": "FuseRetainerScrew_0",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 26.51504199629785
+    },
+    {
+      "id": "FuseRetainerScrew_1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 26.51504199629785
+    },
+    {
+      "id": "FuseRetainerScrew_2",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 26.515041996297857
+    },
+    {
+      "id": "FuseRetainerScrew_3",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 26.515041996297857
+    },
+    {
+      "id": "ThermalBody",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 184.7256480310798
+    },
+    {
+      "id": "ThermalLead1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3.7699111843077566
+    },
+    {
+      "id": "ThermalLead2",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3.769911184307756
+    },
+    {
+      "id": "ThermalSleeve",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 148.4402528821177
+    },
+    {
+      "id": "ThermalRetainer",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 186.09651337359065
+    },
+    {
+      "id": "ThermalRetainerScrew_0",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 12.37787505514378
+    },
+    {
+      "id": "ThermalRetainerScrew_1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 12.37787505514378
+    }
+  ]
+}

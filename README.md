@@ -30,11 +30,11 @@ CARBENTRA Smart Plug — 碳镜校园终端工程开发项目
 
 首先阅读发布说明和各模块 README。机械尺寸以同一参数源与装配坐标为准。修改 PCB 包络或器件高度后，应重新进行机械装配与视图检查。渲染与动画用于展示，不替代尺寸图及电气审查。
 
-用户指定远程仓库：https://github.com/hicancan/carbentra-smart-plug 。账号与目标仓库权限已验证，首次工程同步正在进行；完整同步状态以实际远端文件及最终核验记录为准。
+用户指定远程仓库：https://github.com/hicancan/carbentra-smart-plug 。远端此前仅确认收到 README；SSH 网络连接未通过，因此未完成工程 push。本次采用文件包交付，保留本地 Git 历史。后续同步只使用标准 Git SSH 工作流。
 
 ## 修订导航
 
-根目录 mechanical/ 与 electronics/ 下的第一版文件为 Rev A 历史基线。升级设计位于 mechanical/rev_b/、electronics/rev_b/ 和 visuals/rev_b/，不得混用两版的尺寸或验收结论。Rev B 正在进行主板整合与装配核验；在 release 发布清单冻结之前，不将中间布局视为最终设计。
+根目录 mechanical/ 与 electronics/ 下的第一版文件为 Rev A 历史基线。升级设计位于 mechanical/rev_b/、electronics/rev_b/ 和 visuals/rev_b/，不得混用两版的尺寸或验收结论。Rev B 机械与电气设计已冻结，证据见 mechanical/rev_b/freeze_manifest.json 与 electronics/rev_b/integrated/HANDOFF.json。最终视觉和交付检查状态见 release/digital_checks_rev_b.json；不得把数字检查通过理解为实物安全认证。
 
 完整数字验收及进入实物阶段的阻断项见 docs/ENGINEERING_RELEASE_GATES.md。开发固件的实际构建和测试证据见 firmware/validation.json；所有网络部署、计量标定与真实硬件测试仍需单独开展。
 

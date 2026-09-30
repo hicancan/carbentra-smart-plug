@@ -1,0 +1,34 @@
+{
+  "document_revision": "CM-S16-EVT-B",
+  "title": "CARBENTRA Face-view polarity control",
+  "status": "Drawing QA only; not final model validation",
+  "source_files": {
+    "design_parameters.json": "e6b42dedae5380c615d54bbe1dfb333dc490dc494e3cd10f783d8381a56d1130",
+    "socket_b_features.py": "08ee1d239867098693be98989d287a39c0c064f862c43edf60e79100c7391320",
+    "power_links.py": "84e30c9fce812364d92e0ece2ed3ebb02e8bb5b98365e9c333a67c141e07b069"
+  },
+  "coordinate_check": [
+    {
+      "name": "PE",
+      "x": 0,
+      "y": 11.1,
+      "angle": 0
+    },
+    {
+      "name": "L",
+      "x": 8.227241335952169,
+      "y": -4.749999999999999,
+      "angle": -30
+    },
+    {
+      "name": "N",
+      "x": -8.227241335952169,
+      "y": -4.749999999999999,
+      "angle": 30
+    }
+  ],
+  "output_files": [
+    "CM-S16-EVT-B_face_view_polarity.pdf",
+    "CM-S16-EVT-B_face_view_polarity.svg"
+  ]
+}

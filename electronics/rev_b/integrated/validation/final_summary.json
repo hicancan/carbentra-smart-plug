@@ -1,7 +1,7 @@
 {
   "status": "DIGITAL CHECKS PASS / DEVELOPMENT HOLD",
-  "generated_utc": "2026-09-30T11:44:44.464087+00:00",
-  "board_sha256": "54485373c84268d072b8abb9a73405d867b58622657f3cf49976cbcab7c0f40a",
+  "generated_utc": "2026-09-30T12:01:01.424355+00:00",
+  "board_sha256": "4d7e9873a8ee5407c3d85fe8441672f0e26eebc90ed07c9dd3c443b68b161660",
   "rules_sha256": "11144295aff979f5f97726d49437094a17201b2f0f324db7bca6da21a7a276a0",
   "schematic_files_sha256": {
     "integrated.kicad_sch": "841782003493d17101422e651f251dc6aa98c9142d778b4e310fc2fc656ae532",
@@ -47,7 +47,8 @@
     "final_erc.rpt",
     "final_pin_audit.json",
     "final_isolation.json",
-    "final_source_graph.json"
+    "final_source_graph.json",
+    "rear_termination.json"
   ],
   "not_proven": [
     "manufactured clearances/creepage and insulation",
@@ -56,5 +57,11 @@
     "measurement accuracy/calibration, EMC, RF, production reliability",
     "physical thermal response and sensor/fault coverage",
     "certification or permission to fabricate/energize"
-  ]
+  ],
+  "rear_termination_3D": {
+    "report": "rear_termination.json",
+    "minimum_mm": 8.516644687799777,
+    "target_mm": 8.4,
+    "scope": "Rear L/N blades and bare input-link starts versus isolated pads, tracks, vias and conservative plane outline; full assembly audit is separate"
+  }
 }

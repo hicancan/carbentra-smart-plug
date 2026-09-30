@@ -1,7 +1,7 @@
 {
-  "board_sha256": "54485373c84268d072b8abb9a73405d867b58622657f3cf49976cbcab7c0f40a",
+  "board_sha256": "4d7e9873a8ee5407c3d85fe8441672f0e26eebc90ed07c9dd3c443b68b161660",
   "basis": "all-layer XY projection, conservative pad bounding rectangles; vias/NC pins included; copper-zone outlines included as completely filled conservative regions",
-  "copper_items": 2741,
+  "copper_items": 2822,
   "minimum_mm": 8.099999999999994,
   "minimum_pair": [
     "PS201.9",
