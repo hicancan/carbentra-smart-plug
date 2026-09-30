@@ -11,3 +11,4 @@ release/*.bundle
 tmp/
 
 *.kicad_prl
+*.FCBak

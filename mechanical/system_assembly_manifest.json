@@ -1,0 +1,7 @@
+{
+  "mechanical_bodies": 54,
+  "electronics_step_solids": 156,
+  "electronics_shape_valid": true,
+  "source": "electronics/exports/pcb_assembly.step",
+  "status": "Combined digital assembly; does not supersede qualification holds"
+}

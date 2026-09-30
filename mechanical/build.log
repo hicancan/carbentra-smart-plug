@@ -1,0 +1,148 @@
+[1790757878.198521] [c3b2dda14fd0:5    :f]        vfs_fuse.c:413  UCX  ERROR failed to create VFS socket: Operation not permitted
+{
+  "engine": "FreeCAD 1.0.0",
+  "parts": 54,
+  "all_shapes_valid": true,
+  "all_single_solid": true,
+  "intersections": [
+    {
+      "a": "PEBus",
+      "b": "Blade_PE",
+      "volume_mm3": 1.1999999999999997,
+      "intentional": true
+    },
+    {
+      "a": "PEBus",
+      "b": "Contact_PE",
+      "volume_mm3": 0.8999999999999915,
+      "intentional": true
+    },
+    {
+      "a": "Blade_L",
+      "b": "WireCore_L_IN_PRE",
+      "volume_mm3": 0.9991404524008309,
+      "intentional": true
+    },
+    {
+      "a": "Contact_L",
+      "b": "WireCore_L_OUT",
+      "volume_mm3": 0.9733701238372341,
+      "intentional": true
+    },
+    {
+      "a": "Blade_N",
+      "b": "WireCore_N_IN",
+      "volume_mm3": 1.056752323602986,
+      "intentional": true
+    },
+    {
+      "a": "Contact_N",
+      "b": "WireCore_N_OUT",
+      "volume_mm3": 0.9733701238372341,
+      "intentional": true
+    },
+    {
+      "a": "AntennaFPC",
+      "b": "AntennaCoax",
+      "volume_mm3": 0.00039584067100286536,
+      "intentional": true
+    },
+    {
+      "a": "FuseCap1",
+      "b": "FuseLead1",
+      "volume_mm3": 0.6544984694978738,
+      "intentional": true
+    },
+    {
+      "a": "FuseCap2",
+      "b": "FuseLead2",
+      "volume_mm3": 0.6544984694978739,
+      "intentional": true
+    },
+    {
+      "a": "FuseLead1",
+      "b": "WireCore_L_IN_PRE",
+      "volume_mm3": 0.6869204788965917,
+      "intentional": true
+    },
+    {
+      "a": "FuseLead2",
+      "b": "WireCore_L_FUSE_THERMAL",
+      "volume_mm3": 0.7089813618237883,
+      "intentional": true
+    },
+    {
+      "a": "ThermalBody",
+      "b": "ThermalLead1",
+      "volume_mm3": 0.11780972450961688,
+      "intentional": true
+    },
+    {
+      "a": "ThermalBody",
+      "b": "ThermalLead2",
+      "volume_mm3": 0.11780972450961688,
+      "intentional": true
+    },
+    {
+      "a": "ThermalLead1",
+      "b": "WireCore_L_IN_POST",
+      "volume_mm3": 0.43525197611995003,
+      "intentional": true
+    },
+    {
+      "a": "ThermalLead2",
+      "b": "WireCore_L_FUSE_THERMAL",
+      "volume_mm3": 2.017977617053258,
+      "intentional": true
+    },
+    {
+      "a": "AuxFuseCap1",
+      "b": "AuxFuseLead1",
+      "volume_mm3": 0.0995492172106265,
+      "intentional": true
+    },
+    {
+      "a": "AuxFuseCap2",
+      "b": "AuxFuseLead2",
+      "volume_mm3": 0.09954921721062648,
+      "intentional": true
+    },
+    {
+      "a": "AuxFuseLead1",
+      "b": "WireCore_AUX_L_IN",
+      "volume_mm3": 0.07213243406078726,
+      "intentional": true
+    },
+    {
+      "a": "AuxFuseLead2",
+      "b": "WireCore_AUX_L_OUT",
+      "volume_mm3": 0.07189665687434134,
+      "intentional": true
+    },
+    {
+      "a": "WireCore_L_IN_POST",
+      "b": "WireCore_AUX_L_IN",
+      "volume_mm3": 0.2799556155461622,
+      "intentional": true
+    },
+    {
+      "a": "WireJacket_L_IN_POST",
+      "b": "WireJacket_AUX_L_IN",
+      "volume_mm3": 3.5574052594984127,
+      "intentional": true
+    },
+    {
+      "a": "WireCore_N_IN",
+      "b": "WireCore_AUX_N",
+      "volume_mm3": 0.28062071295698127,
+      "intentional": true
+    },
+    {
+      "a": "WireJacket_N_IN",
+      "b": "WireJacket_AUX_N",
+      "volume_mm3": 3.5097558718395914,
+      "intentional": true
+    }
+  ],
+  "note": "Interference audit is geometric only. Electrical safety, creepage, contact force, shutter operation, tolerances, standards and certification are NOT validated."
+}

@@ -1,0 +1,12 @@
+# Open from FreeCAD's Macro dialog. Keep this file beside socket_features.py.
+import os,sys,FreeCAD as App,FreeCADGui as Gui,json
+base=os.path.dirname(__file__)
+if base not in sys.path:sys.path.insert(0,base)
+import socket_features
+doc=App.openDocument(os.path.join(base,'CarbonMirror_S16_EVT_A.FCStd'))
+for p in json.load(open(os.path.join(base,'parts_manifest.json')))['parts']:
+ obj=doc.getObject(p['id'])
+ obj.ViewObject.ShapeColor=tuple(p['color'])
+ obj.ViewObject.LineColor=(0.12,0.16,0.17)
+Gui.activeDocument().activeView().viewAxonometric()
+Gui.activeDocument().activeView().fitAll()

@@ -1,0 +1,61 @@
+{
+  "fcstd_reload_valid": true,
+  "native_parameter_edit_88_90_88": true,
+  "pe_union_solid_count": 1,
+  "pe_union_valid": true,
+  "pcb_body_interferences": [],
+  "component_envelope_interferences": [
+    {
+      "component": "J2",
+      "part": "WireCore_L_OUT",
+      "volume_mm3": 0.5751732549947308,
+      "intentional_terminal_entry": true
+    },
+    {
+      "component": "J2",
+      "part": "WireCore_N_OUT",
+      "volume_mm3": 0.5751732549947308,
+      "intentional_terminal_entry": true
+    },
+    {
+      "component": "J5",
+      "part": "WireCore_AUX_L_OUT",
+      "volume_mm3": 0.07189665687434137,
+      "intentional_terminal_entry": true
+    },
+    {
+      "component": "J5",
+      "part": "WireCore_AUX_N",
+      "volume_mm3": 0.07189665687434138,
+      "intentional_terminal_entry": true
+    },
+    {
+      "component": "J1",
+      "part": "WireCore_L_IN_POST",
+      "volume_mm3": 0.5751732549947309,
+      "intentional_terminal_entry": true
+    },
+    {
+      "component": "J1",
+      "part": "WireCore_N_IN",
+      "volume_mm3": 0.5751732549947309,
+      "intentional_terminal_entry": true
+    }
+  ],
+  "component_envelope_count": 33,
+  "insertion_keepout_interferences": [
+    {
+      "opening": "L",
+      "part": "ShutterSlider",
+      "volume_mm3": 19.03999999999998,
+      "intentional_closed_shutter": true
+    },
+    {
+      "opening": "N",
+      "part": "ShutterSlider",
+      "volume_mm3": 19.039999999999978,
+      "intentional_closed_shutter": true
+    }
+  ],
+  "scope": "BRep, provisional insertion keepouts and envelope fit only. No electrical, tooling or physical verification."
+}

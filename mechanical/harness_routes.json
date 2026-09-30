@@ -1,0 +1,410 @@
+{
+  "status": "Geometric routing envelope only; wire gauge, insulation system, bend radii and terminals unqualified",
+  "units": "mm",
+  "conductor_radius": 0.65,
+  "insulated_radius": 1.4,
+  "routes": [
+    {
+      "id": "L_IN_PRE",
+      "from": "Blade_L",
+      "to": "FuseLead1",
+      "points": [
+        [
+          -14,
+          -7,
+          4.7
+        ],
+        [
+          -14,
+          -7,
+          5.5
+        ],
+        [
+          -39,
+          -7,
+          5.5
+        ],
+        [
+          -39,
+          -7,
+          27
+        ],
+        [
+          -34,
+          -11.25,
+          27
+        ],
+        [
+          -34,
+          -11.25,
+          28.5
+        ]
+      ]
+    },
+    {
+      "id": "L_IN_POST",
+      "from": "ThermalLead1",
+      "to": "J1 pin1 L_FUSED",
+      "points": [
+        [
+          33,
+          -12,
+          40
+        ],
+        [
+          36,
+          -14,
+          50.2
+        ],
+        [
+          36,
+          17,
+          50.2
+        ],
+        [
+          31,
+          23,
+          50.2
+        ],
+        [
+          31,
+          27,
+          50.2
+        ],
+        [
+          -33,
+          27,
+          50.2
+        ],
+        [
+          -33,
+          27,
+          29.5
+        ],
+        [
+          -23,
+          27,
+          29.5
+        ],
+        [
+          -23,
+          -6,
+          29.5
+        ],
+        [
+          -26,
+          -6,
+          29.5
+        ],
+        [
+          -26,
+          -9.5,
+          29.5
+        ],
+        [
+          -26,
+          -9.5,
+          27.6
+        ]
+      ]
+    },
+    {
+      "id": "L_FUSE_THERMAL",
+      "from": "FuseLead2",
+      "to": "ThermalLead2",
+      "points": [
+        [
+          -34,
+          11.25,
+          28.5
+        ],
+        [
+          -39,
+          11.25,
+          28.5
+        ],
+        [
+          -39,
+          17,
+          28.5
+        ],
+        [
+          -39,
+          17,
+          48.5
+        ],
+        [
+          -39,
+          10,
+          48.5
+        ],
+        [
+          33,
+          10,
+          48.5
+        ],
+        [
+          33,
+          10,
+          40
+        ],
+        [
+          33,
+          12,
+          40
+        ]
+      ]
+    },
+    {
+      "id": "N_IN",
+      "from": "Blade_N",
+      "to": "J1 pin2 N",
+      "points": [
+        [
+          14,
+          -7,
+          4.7
+        ],
+        [
+          14,
+          -7,
+          5.5
+        ],
+        [
+          14,
+          -17,
+          5.5
+        ],
+        [
+          -39,
+          -17,
+          5.5
+        ],
+        [
+          -39,
+          -17,
+          29.5
+        ],
+        [
+          -20.92,
+          -17,
+          29.5
+        ],
+        [
+          -20.92,
+          -9.5,
+          29.5
+        ],
+        [
+          -20.92,
+          -9.5,
+          27.6
+        ]
+      ]
+    },
+    {
+      "id": "L_OUT",
+      "from": "Contact_L",
+      "to": "J2 pin1 switched L",
+      "points": [
+        [
+          -14,
+          -7,
+          34.3
+        ],
+        [
+          -14,
+          -7,
+          29.5
+        ],
+        [
+          -14,
+          -22,
+          29.5
+        ],
+        [
+          -22,
+          -22,
+          29.5
+        ],
+        [
+          -22,
+          -26,
+          29.5
+        ],
+        [
+          -22,
+          -26,
+          27.6
+        ]
+      ]
+    },
+    {
+      "id": "N_OUT",
+      "from": "Contact_N",
+      "to": "J2 pin2 N",
+      "points": [
+        [
+          14,
+          -7,
+          34.3
+        ],
+        [
+          14,
+          -7,
+          29.5
+        ],
+        [
+          5,
+          -7,
+          29.5
+        ],
+        [
+          5,
+          -36,
+          29.5
+        ],
+        [
+          -16.92,
+          -36,
+          29.5
+        ],
+        [
+          -16.92,
+          -26,
+          29.5
+        ],
+        [
+          -16.92,
+          -26,
+          27.6
+        ]
+      ]
+    },
+    {
+      "id": "AUX_L_IN",
+      "from": "WireCore_L_IN_POST",
+      "to": "AuxFuseLead1",
+      "conductor_radius": 0.325,
+      "insulated_radius": 1.0,
+      "points": [
+        [
+          -33,
+          27,
+          29.5
+        ],
+        [
+          -33,
+          34,
+          29.5
+        ],
+        [
+          -25.75,
+          37,
+          27
+        ]
+      ]
+    },
+    {
+      "id": "AUX_L_OUT",
+      "from": "AuxFuseLead2",
+      "to": "J5 pin1 L_AUX_FUSED",
+      "conductor_radius": 0.325,
+      "insulated_radius": 1.0,
+      "points": [
+        [
+          1.75,
+          37,
+          27
+        ],
+        [
+          4,
+          37,
+          27
+        ],
+        [
+          4,
+          37,
+          29.5
+        ],
+        [
+          4,
+          25,
+          29.5
+        ],
+        [
+          -18,
+          25,
+          29.5
+        ],
+        [
+          -18,
+          28,
+          29.5
+        ],
+        [
+          -18,
+          28,
+          27.6
+        ]
+      ]
+    },
+    {
+      "id": "AUX_N",
+      "from": "WireCore_N_IN",
+      "to": "J5 pin2 N",
+      "conductor_radius": 0.325,
+      "insulated_radius": 1.0,
+      "points": [
+        [
+          -5,
+          -17,
+          5.5
+        ],
+        [
+          -5,
+          24,
+          5.5
+        ],
+        [
+          -35,
+          24,
+          5.5
+        ],
+        [
+          -37,
+          30,
+          5.5
+        ],
+        [
+          -30,
+          38.5,
+          5.5
+        ],
+        [
+          -30,
+          38.5,
+          31.5
+        ],
+        [
+          -12.92,
+          38.5,
+          31.5
+        ],
+        [
+          -12.92,
+          28,
+          31.5
+        ],
+        [
+          -12.92,
+          28,
+          27.6
+        ]
+      ]
+    }
+  ],
+  "protection_gap": "Closed by selected candidate fuse/holder and thermal cutoff geometry. Component derating, actual order code, thermal coupling and fault coordination remain qualification holds.",
+  "auxiliary_feed": "Branch after F_MAIN and TF1 into selected0215001.MXEP1A time-lag axial F_AUX, thenJ5. Thermal cutoff also removes controller supply. SharedNbranch modeled; fuse/I2t and branch junction workmanship pending.",
+  "terminal_entry": "Candidate PhoenixContact1711725 J1/J2/J5top27.6mm; wire endpoints use top-face geometric entry envelopes, not verified clamping axes."
+}
