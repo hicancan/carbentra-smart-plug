@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker>
+    <style>
+      .t{font-family:Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .h{font-weight:700;font-size:30px}.s{font-size:23px}.m{font-size:18px;fill:#475569}
+      .box{fill:#fff;stroke:#94a3b8;stroke-width:2;rx:20}.focus{fill:#f8fafc;stroke:#0f766e;stroke-width:3;rx:20}
+      .line{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#a)}
+    </style>
+  </defs>
+  <rect width="1600" height="760" fill="#fff"/>
+  <text x="80" y="68" class="t h">From one CARBENTRA Plug to campus energy orchestration</text>
+  <text x="80" y="104" class="t m">The plug is the device-level execution point; coordination lives above it.</text>
+
+  <rect x="520" y="145" width="560" height="120" class="box"/>
+  <text x="800" y="195" text-anchor="middle" class="t s">CARBENTRA Cloud</text>
+  <text x="800" y="232" text-anchor="middle" class="t m">forecast · carbon-aware optimization · global dispatch</text>
+
+  <rect x="520" y="330" width="560" height="120" class="box"/>
+  <text x="800" y="380" text-anchor="middle" class="t s">CARBENTRA Edge</text>
+  <text x="800" y="417" text-anchor="middle" class="t m">aggregation · local coordination · policy filtering · offline continuity</text>
+
+  <rect x="90" y="535" width="370" height="120" class="focus"/>
+  <text x="275" y="585" text-anchor="middle" class="t s">CARBENTRA Plug</text>
+  <text x="275" y="622" text-anchor="middle" class="t m">sense · protect · execute · verify</text>
+
+  <rect x="615" y="535" width="370" height="120" class="focus"/>
+  <text x="800" y="585" text-anchor="middle" class="t s">CARBENTRA Plug</text>
+  <text x="800" y="622" text-anchor="middle" class="t m">ordinary load → controllable node</text>
+
+  <rect x="1140" y="535" width="370" height="120" class="focus"/>
+  <text x="1325" y="585" text-anchor="middle" class="t s">CARBENTRA Plug</text>
+  <text x="1325" y="622" text-anchor="middle" class="t m">N devices → orchestratable fleet</text>
+
+  <path d="M800 265 V330" class="line"/>
+  <path d="M800 450 V495 H275 V535" class="line"/>
+  <path d="M800 450 V535" class="line"/>
+  <path d="M800 450 V495 H1325 V535" class="line"/>
+  <path d="M275 535 V495 H760 V450" class="line"/>
+  <path d="M1325 535 V495 H840 V450" class="line"/>
+
+  <text x="800" y="710" text-anchor="middle" class="t s">One plug is a controllable load. Thousands of plugs become an orchestratable energy system.</text>
+</svg>

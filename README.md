@@ -1,98 +1,218 @@
 <div align="center">
 
-# 碳迹未来 · CARBENTRA
+# CARBENTRA Plug
 
-### 基于 AIoT 云边端协同的高校智慧能碳管理平台
+### AIoT Edge Smart Plug for Campus Energy Orchestration
 
-**CARBENTRA — AIoT Campus Energy Orchestration Platform**
+**A digitally engineered smart plug that turns ordinary electrical loads into measurable, controllable, and orchestratable energy nodes.**
 
-[![Digital checks](https://github.com/hicancan/carbentra-smart-plug/actions/workflows/digital-checks.yml/badge.svg)](https://github.com/hicancan/carbentra-smart-plug/actions/workflows/digital-checks.yml)
+[![Digital development checks](https://github.com/hicancan/carbentra-smart-plug/actions/workflows/digital-checks.yml/badge.svg)](https://github.com/hicancan/carbentra-smart-plug/actions/workflows/digital-checks.yml)
 ![Revision](https://img.shields.io/badge/revision-Rev%20B-0f766e)
-![Status](https://img.shields.io/badge/status-digital%20engineering-f59e0b)
-![Target](https://img.shields.io/badge/device-CARBENTRA%20Plug-2563eb)
+![MCU](https://img.shields.io/badge/MCU-ESP32--C3-2563eb)
+![ECAD](https://img.shields.io/badge/ECAD-KiCad%209-7c3aed)
+![CAD](https://img.shields.io/badge/CAD-FreeCAD-0284c7)
 
-**Sense · Decide · Orchestrate · Act · Verify**
-
-把校园里分散的负载，从“能看到”变成**可感知、可判断、可协同、可执行、可验证**的能源节点。
+[Mechanical](mechanical/rev_b/) · [Electronics](electronics/rev_b/integrated/) · [Firmware](firmware/) · [Edge](edge/) · [Release evidence](release/) · [Platform context](docs/PLATFORM_OVERVIEW.md)
 
 </div>
 
+<p align="center">
+  <a href="visuals/rev_b/renders/01_hero_ivory.png">
+    <img src="docs/assets/readme/hero.webp" alt="CARBENTRA Plug Rev B" width="900" />
+  </a>
+</p>
+
+<p align="center">
+  <sub>CARBENTRA Plug Rev B · digital engineering render · physical EVT and safety qualification are still pending</sub>
+</p>
+
 ---
 
-多数校园能耗系统止步于“采集 → 上云 → 看大屏”。
+## From an ordinary load to an energy node
 
-**碳迹未来**想继续往前走一步：如果每一个普通负载都能获得设备级感知能力、边缘自治能力和受约束的执行能力，那么校园能源系统就不再只是被动记录能耗，而可以形成从预测、优化、调度到反馈验证的闭环。
+Most smart plugs stop at **remote switching + basic metering**.
 
-**CARBENTRA** 是这套闭环背后的技术平台；**CARBENTRA Plug** 是它的第一个设备级终端。
+CARBENTRA Plug is designed around a stricter closed loop:
 
-> **The dashboard is not the destination. The closed loop is.**
+> **sense → validate → decide → execute → verify → report**
 
-## 从一个插座，到一套能源编排系统
+The device measures the load, enforces local safety and command boundaries, executes only permitted actions, verifies whether the physical output actually changed, and then reports the measured result upstream.
 
-CARBENTRA 不把“智能”理解成给插座加一个远程开关。设备只是闭环的最后一米。
+That makes the plug useful not only as a standalone IoT device, but as the **device-level execution point** of a larger energy orchestration system.
 
-```mermaid
-flowchart LR
-    A["CARBENTRA Plug / Sense<br/>感知 · 保护 · 执行"]
-    B["CARBENTRA Edge<br/>聚合 · 约束 · 本地自治"]
-    C["CARBENTRA Cloud<br/>预测 · 优化 · 全局调度"]
-    D["CARBENTRA Twin<br/>状态映射 · 可视化 · 追踪"]
-    F["Forecast<br/>负荷 / 场景预测"]
-    O["Optimization<br/>能耗 / 碳排 / 约束优化"]
-    X["Dispatch<br/>策略下发"]
-    V["Feedback<br/>执行回执与效果验证"]
+### What is inside
 
-    A --> B --> C
-    C --> F --> O --> X --> B
-    B --> A
-    A --> V --> B --> D
-    C <--> D
-```
+- **Energy metering** — isolated measurement path around ATM90E26 and a 1 mΩ shunt.
+- **Local control** — ESP32-C3-WROOM-02U, local button, status indication, secure network path.
+- **Bounded actuation** — requested state is filtered through local safety, dwell, freshness, identity, and load-profile rules.
+- **Physical feedback** — post-switch AC-presence feedback is treated as measured evidence, not assumed relay state.
+- **Thermal / protection path** — independent thermal permission chain and fuse/protection components remain explicit engineering domains.
+- **Edge integration** — MQTT, durable telemetry receipts, command sequencing, and local edge coordination.
 
-这条链路对应四个层次：
+> **Local safety is authoritative. Cloud intelligence never bypasses the device boundary.**
 
-- **Device**：测量真实设备状态，执行受约束动作，并始终让本地保护优先于云端策略。
-- **Edge**：完成设备聚合、数据质量判断、功率预算、策略过滤、离线缓存和局部自治。
-- **Cloud**：面向校园全局进行预测、优化和调度，不把设备安全边界交给远端算法。
-- **Twin**：把设备、空间、能耗、碳排、策略与执行结果映射到同一可追踪视图中。
+---
 
-## 为什么叫 CARBENTRA
+## Product at a glance
 
-**碳迹未来**是项目与竞赛叙事；**CARBENTRA** 是可持续演进的技术平台品牌。
+| Item | Rev B digital engineering baseline |
+| --- | --- |
+| Product | **CARBENTRA Plug** |
+| Engineering ID | **CARBENTRA-P16-EVT-B** |
+| Nominal enclosure | **108 × 93 × 65 mm** |
+| Main PCB | **100 × 85 mm, 4-layer** |
+| MCU | **ESP32-C3-WROOM-02U** |
+| Metering | **ATM90E26 + isolated SPI + 1 mΩ shunt** |
+| Mechanical model | **71 physical mechanical parts** |
+| Main-board electrical items | **101 electrical items + 4 mounting footprints** |
+| Network path | Wi-Fi + MQTT over mutual TLS reference implementation |
+| Target interface | Single 220 VAC / 16 A-class design target |
+| Current state | **Digital engineering baseline; physical EVT not yet qualified** |
 
-它不是某一个“智能插座”的名字，也不把系统锁死在碳核算、数字孪生或某一种校园场景。它承载的是一套可以继续扩展的云—边—端能源编排能力：
+<p align="center">
+  <a href="visuals/rev_b/renders/02_hero_detail.png">
+    <img src="docs/assets/readme/exterior.webp" alt="CARBENTRA Plug exterior and rear interface" width="900" />
+  </a>
+</p>
 
-```text
-碳迹未来
-└── CARBENTRA
-    ├── CARBENTRA Plug      设备级用能感知与执行终端
-    ├── CARBENTRA Sense     环境 / 占用 / 状态感知节点
-    ├── CARBENTRA Edge      楼宇与回路级边缘协调
-    ├── CARBENTRA Cloud     预测、优化与全局调度
-    └── CARBENTRA Twin      数字孪生与运行态势映射
-```
+The enclosure, receptacle, rear blades, local interface, internal board volume, protection elements, and sensing head are all modeled in a shared engineering coordinate frame. The design is original and is not presented as a reconstruction of any third-party product.
 
-当前仓库聚焦 **CARBENTRA Plug Rev B**，同时保留它接入 CARBENTRA Edge / Cloud / Twin 所需要的协议、能力模型与参考实现。
+---
 
-## 这不是一份概念图仓库
+## Mechanical architecture
 
-仓库把同一个设备从机械、电气、固件一路追到边缘服务和系统契约：
+A product render can show appearance. The mechanical package has to answer harder questions:
 
-| 层 | 当前工程资产 | 入口 |
-| --- | --- | --- |
-| Mechanical | FreeCAD 参数化机械、STEP、零件与装配检查 | [`mechanical/`](mechanical/) |
-| Electronics | KiCad 原理图、PCB、BOM、规则与验证记录 | [`electronics/`](electronics/) |
-| Firmware | ESP32-C3 固件、策略/反馈/协议主机测试 | [`firmware/`](firmware/) |
-| Edge | MQTT / SQLite 参考服务、预测与能碳核算基线 | [`edge/`](edge/) |
-| System | 云边端架构、负载能力模型、网络与传感契约 | [`docs/system/`](docs/system/) |
-| Twin & Visuals | Blender 场景、GLB、六视图、剖切与爆炸动画 | [`visuals/`](visuals/) |
-| Release Evidence | 数字工程检查、交付边界与审阅材料 | [`release/`](release/) |
+- How do the receptacle, shutter, contacts, protection parts, PCB, sensing head, and rear interface coexist?
+- Which interfaces are intentionally touching?
+- Which volumes must remain separated?
+- Can the same geometry be opened in native CAD and exported into the system assembly?
 
-**Rev B** 是当前主线；历史 Rev A 仅作为工程演进基线，不应与当前尺寸、检查结论或发布状态混用。
+### Six-view package
 
-## 快速验证
+<a href="visuals/rev_b/renders/07_six_view_sheet.png">
+  <img src="docs/assets/readme/six-view.webp" alt="CARBENTRA Plug six-view sheet" width="100%" />
+</a>
 
-软件侧检查不需要连接真实市电设备：
+The current Rev B package includes editable FreeCAD sources, STEP exports, individual parts, common-frame meshes, fit reports, contact-engagement checks, shutter-state checks, polarity/connectivity checks, and insulation-domain review artifacts.
+
+### Exploded architecture
+
+<a href="visuals/rev_b/renders/06_exploded_annotated.png">
+  <img src="docs/assets/readme/exploded.webp" alt="CARBENTRA Plug exploded architecture" width="100%" />
+</a>
+
+The exploded view separates the major physical domains: enclosure, shutter and receptacle mechanism, L/N/PE path, fuse and thermal elements, main PCB, remote sensing head, rear interface, and fastening structure.
+
+▶ [Open the 6-second exploded animation](visuals/rev_b/animation/carbentra_exploded.mp4)
+
+### Section view
+
+<a href="visuals/rev_b/renders/08_section_annotated.png">
+  <img src="docs/assets/readme/section.webp" alt="CARBENTRA Plug section view" width="100%" />
+</a>
+
+The section view closes the loop between “parts that exist” and “parts that actually fit inside the package.” Digital collision-free geometry is useful evidence, but it is **not** equivalent to tolerance-qualified manufacturing, creepage/clearance certification, thermal validation, or mechanical endurance.
+
+**Native sources**
+
+- [FreeCAD system assembly](mechanical/rev_b/CARBENTRA-P16-EVT-B_system_assembly.FCStd)
+- [Mechanical STEP](mechanical/rev_b/CARBENTRA-P16-EVT-B_mechanical.step)
+- [Detailed system STEP](mechanical/rev_b/CARBENTRA-P16-EVT-B_system_detailed.step)
+- [Mechanical validation summary](mechanical/rev_b/VALIDATION_SUMMARY.md)
+
+---
+
+## Electrical architecture
+
+The electrical design is structured so that metering, isolated logic, actuation, feedback, and protection remain distinguishable engineering domains instead of collapsing into “MCU + relay.”
+
+<p align="center">
+  <a href="electronics/exports/electrical_architecture.svg">
+    <img src="docs/assets/readme/electrical-architecture.svg" alt="CARBENTRA Plug electrical architecture" width="900" />
+  </a>
+</p>
+
+Key implemented domains include:
+
+- isolated 5 V supply and 3.3 V logic rail;
+- ESP32-C3 control, programming, local button, status LED, and board-temperature sensing;
+- ATM90E26 metering domain with isolation and explicit calibration requirements;
+- post-switch AC-presence feedback;
+- independent thermal permission / local rearm path;
+- defined line path through fuse, thermal element, shunt, relay, and output;
+- continuous unswitched PE path outside the PCB switching chain.
+
+### Schematic — six functional sheets
+
+<a href="electronics/rev_b/integrated/exports/schematic.pdf">
+  <img src="docs/assets/readme/schematic-overview.webp" alt="CARBENTRA Plug Rev B schematic overview" width="100%" />
+</a>
+
+**Click the overview to open the full schematic PDF.** The native KiCad project is in [`electronics/rev_b/integrated/`](electronics/rev_b/integrated/).
+
+Individual source sheets:
+
+[Overview](electronics/rev_b/integrated/exports/integrated.svg) ·
+[Controller](electronics/rev_b/integrated/exports/integrated-1%20controller.svg) ·
+[Metering](electronics/rev_b/integrated/exports/integrated-2%20meter.svg) ·
+[Feedback](electronics/rev_b/integrated/exports/integrated-3%20feedback.svg) ·
+[Thermal](electronics/rev_b/integrated/exports/integrated-4%20thermal.svg) ·
+[Assembly / protection](electronics/rev_b/integrated/exports/integrated-5%20assembly%20protection.svg)
+
+### PCB — schematic to routed board
+
+The Rev B main board is a **100 × 85 mm four-layer design**. The current digital evidence records zero native DRC violations, zero unconnected items, zero footprint errors, zero ERC errors/warnings, and an independent schematic-to-PCB pin comparison across all 321 numbered main-board pad keys.
+
+<a href="electronics/rev_b/integrated/exports/copper_review.pdf">
+  <img src="docs/assets/readme/pcb-layout.webp" alt="CARBENTRA Plug four-layer PCB layout" width="100%" />
+</a>
+
+The layout overview above shows the four copper layers. Click it to open the copper-review PDF; native copper remains authoritative in KiCad.
+
+### PCB assembly
+
+<a href="visuals/rev_b/renders/09_pcb_annotated.png">
+  <img src="docs/assets/readme/pcb-assembly.webp" alt="CARBENTRA Plug PCB assembly" width="100%" />
+</a>
+
+The visual assembly is derived from the ECAD export rather than a separately invented board. The repository also includes:
+
+- [Native KiCad project](electronics/rev_b/integrated/integrated.kicad_pro)
+- [Electrical BOM](electronics/rev_b/integrated/electrical_bom.csv)
+- [Electrical source definition](electronics/rev_b/integrated/ELECTRICAL_SOURCE.md)
+- [Power-current review](electronics/rev_b/integrated/POWER_CURRENT_REVIEW.md)
+- [Final electrical validation summary](electronics/rev_b/integrated/validation/final_summary.json)
+
+---
+
+## Firmware: local control before remote intelligence
+
+CARBENTRA Plug does not interpret a remote command as permission to energize a load.
+
+The firmware path validates device identity, time bounds, sequence, load profile, local fault state, metering validity, and actuation constraints before a request can become a physical action.
+
+<img src="docs/assets/readme/firmware-control.svg" alt="CARBENTRA Plug firmware control path" width="100%" />
+
+Three invariants define the control philosophy:
+
+1. **Local safety outranks remote command.**
+2. **Stale, replayed, malformed, or wrong-target commands are rejected.**
+3. **Unknown or unapproved loads remain monitor-only.**
+
+The current source includes:
+
+- C policy core aligned with the Python reference policy;
+- ATM90E26 acquisition and integrity checks;
+- TMP102 board-temperature acquisition;
+- qualified AC-presence feedback capture;
+- Wi-Fi reconnect logic;
+- BLE provisioning path that requires real per-device verifier material;
+- MQTT mutual TLS path with no plaintext fallback;
+- retained-command rejection, bounded payload handling, and sequence persistence;
+- RAM telemetry buffering plus edge-side durable receipt semantics.
+
+### Reproducible software checks
 
 ```bash
 python3 -m unittest discover -s tests/policy -v
@@ -102,80 +222,186 @@ python3 scripts/validate_firmware_evidence.py
 python3 scripts/check_brand_hygiene.py
 ```
 
-GitHub Actions 会在 push / pull request 时运行对应的数字开发检查。完整工程还包含机械、电气与可视化侧的验证记录；这些记录是**数字工程证据**，不是实物认证结论。
+Current host-side evidence includes:
 
-## 打开 Rev B 工程
+- **24 / 24** policy reference tests passing;
+- **24 / 24** edge unit tests passing;
+- **37** firmware policy cases passing;
+- **10,000** local-trip priority invariants passing;
+- protocol / meter-reset / stuck-link regressions passing;
+- feedback qualification tests passing.
 
-- **FreeCAD**：`mechanical/rev_b/CARBENTRA-P16-EVT-B_system_assembly.FCStd`
-- **Detailed STEP**：`mechanical/rev_b/CARBENTRA-P16-EVT-B_system_detailed.step`
-- **KiCad**：`electronics/rev_b/integrated/integrated.kicad_pro`
-- **Blender**：`visuals/rev_b/carbentra_studio.blend`
-- **Lightweight Twin GLB**：`visuals/rev_b/exports/carbentra_twin_light.glb`
-- **Exploded Animation**：`visuals/rev_b/animation/carbentra_exploded.mp4`
+The ESP32-C3 target remains the intended hardware target, but the previously generated binary artifacts were removed after the namespace migration rather than falsely relabeled. A fresh target build is intentionally required before publishing or flashing a new binary.
 
-从交付审阅开始，可先看 [`release/START_HERE.md`](release/START_HERE.md)。
+---
 
-## CARBENTRA Plug：设备侧真正负责什么
+## From one plug to CARBENTRA
 
-CARBENTRA Plug 的目标不是“猜出接上了什么电器然后随意控制”，而是把负载能力、控制权限、数据时效和安全约束显式化。设备侧只接受在本地能力边界内的动作；边缘与云端负责更高层的预测和协调。
+This repository is product-first: **CARBENTRA Plug is the thing being engineered here.**
 
-当前 Rev B 数字工程包含设备计量、执行反馈、热状态链路、网络时间与消息完整性约束、策略有效期与序列检查，以及面向失联和异常状态的 fail-safe 设计参考。具体实现与尚未闭环的问题以各子目录 README 和发布门禁为准。
+The wider CARBENTRA platform appears only after the device boundary is clear.
 
-## 能源闭环，而不是“碳排大屏”
+<img src="docs/assets/readme/system-integration.svg" alt="CARBENTRA cloud edge device integration" width="100%" />
 
-CARBENTRA 的控制对象首先是 **Energy**：负载、功率、时序和设备状态；**Carbon** 则进入核算、评价和优化目标。
+At system level:
 
-因此系统关注的是：
+- **CARBENTRA Plug** senses, protects, executes, and verifies.
+- **CARBENTRA Edge** aggregates devices, applies local coordination, filters policy, and keeps bounded functionality available when the cloud is absent.
+- **CARBENTRA Cloud** performs forecasting, carbon-aware optimization, and global dispatch.
+- **CARBENTRA Twin** can map devices, spaces, energy, carbon, policy, and execution state into a common operational view.
+
+> **One plug is a controllable load. Thousands of plugs become an orchestratable energy system.**
+
+The competition/project-level story — **碳迹未来——基于 AIoT 云边端协同的高校智慧能碳管理平台** — is documented separately in [Platform Overview](docs/PLATFORM_OVERVIEW.md). It is context for this product, not the subject of this README.
+
+---
+
+## Engineering status
+
+| Domain | Current status |
+| --- | --- |
+| Product definition | ✅ CARBENTRA Plug Rev B frozen as current digital baseline |
+| Mechanical CAD | ✅ Native CAD + STEP + fit / shutter / contact / connectivity evidence |
+| Electrical design | ✅ Six-sheet schematic + routed 4-layer PCB + digital ERC/DRC evidence |
+| Firmware host logic | ✅ Policy, protocol, feedback, and metering regressions passing |
+| Edge reference service | ✅ Durable telemetry / accounting / forecast baseline tests passing |
+| Visual / twin assets | ✅ Blender, GLB, renders, exploded animation |
+| ESP32-C3 fresh target binary | ⚠️ Rebuild required after current namespace migration |
+| Physical EVT prototype | ⏳ Not yet built and qualified |
+| Meter calibration | ⏳ Requires traceable per-unit physical calibration |
+| 16 A thermal / fault validation | ⏳ Physical test required |
+| Insulation / EMC / surge / safety compliance | ⏳ Qualified engineering review and test required |
+| Campus field deployment | ⏳ Not yet validated |
+
+The canonical release boundary lives in [`docs/ENGINEERING_RELEASE_GATES.md`](docs/ENGINEERING_RELEASE_GATES.md).
+
+---
+
+## Open the engineering sources
+
+### Mechanical
 
 ```text
-Energy sensing
-      ↓
-State & data quality
-      ↓
-Forecast
-      ↓
-Carbon-aware / constraint-aware optimization
-      ↓
-Dispatch
-      ↓
-Local safety gate
-      ↓
-Physical execution
-      ↓
-Measured feedback
+mechanical/rev_b/
+├── CARBENTRA-P16-EVT-B.FCStd
+├── CARBENTRA-P16-EVT-B_mechanical.step
+├── CARBENTRA-P16-EVT-B_system_assembly.FCStd
+├── CARBENTRA-P16-EVT-B_system_assembly.step
+├── CARBENTRA-P16-EVT-B_system_detailed.step
+├── parts/
+├── meshes/
+└── validation reports...
 ```
 
-“节能”只有在执行结果被重新测量并进入下一轮优化后，才真正构成闭环。
+### Electronics
 
-## 当前状态
+```text
+electronics/rev_b/integrated/
+├── integrated.kicad_pro
+├── integrated.kicad_sch
+├── integrated.kicad_pcb
+├── electrical_bom.csv
+├── electrical_manifest.json
+├── exports/
+└── validation/
+```
 
-当前版本是 **CARBENTRA Plug Rev B 数字工程基线**。机械、电气、固件、边缘参考实现和视觉资产已经形成可检查的统一仓库，但实物 EVT、型式试验与现场闭环仍属于后续阶段。
+### Firmware / edge
 
-接下来的主线是：实物样机 → 计量校准 → 温升 / 绝缘 / 保护 / EMC 验证 → 校园小规模接入 → 云边端闭环实验 → 量化节能与碳减排效果。
+```text
+firmware/
+├── core/
+├── main/
+├── tests/
+├── tools/
+└── validation.json
 
-## Safety / Engineering boundary
+edge/
+├── service.py
+├── accounting.py
+├── forecast.py
+└── tests/
+```
+
+### Visual / digital twin
+
+```text
+visuals/rev_b/
+├── carbentra_studio.blend
+├── carbentra_animation.blend
+├── exports/
+│   ├── carbentra_assembly.glb
+│   └── carbentra_twin_light.glb
+├── renders/
+└── animation/
+```
+
+---
+
+## Repository map
+
+```text
+carbentra-smart-plug/
+├── mechanical/      # CAD, STEP, parts, fit and mechanism evidence
+├── electronics/     # KiCad schematic, PCB, BOM, exports, electrical checks
+├── firmware/        # ESP32-C3 source, policy, metering, network, host tests
+├── edge/            # edge reference service, durable telemetry, accounting
+├── visuals/         # Blender scenes, renders, GLB, animation
+├── docs/            # product/system contracts, brand and platform context
+├── tests/           # reference policy tests
+├── scripts/         # validation and release helpers
+└── release/         # frozen digital-development evidence and review outputs
+```
+
+For an audit-oriented reading order, start at [`release/START_HERE.md`](release/START_HERE.md).
+
+---
+
+## Safety and engineering boundary
 
 > [!WARNING]
-> **本仓库不是 220 V 市电产品的安全认证或生产放行文件。**
+> **This repository is not a safety certification, manufacturing release, or authorization to energize a 220 V mains product.**
 >
-> 当前 `220 V AC / 16 A` 仅是设计目标与候选工程等级，尚未经过完整实物验证。任何市电接入、载流、温升、绝缘、异常工况、保护、EMC、校准和长期可靠性结论，都必须通过独立工程评审与合规测试获得。**不要把本仓库中的数字模型、仿真结果或开发固件直接作为通电依据。**
+> The 220 VAC / 16 A-class interface is a **design target**, not a verified product rating. Digital CAD fit, ERC/DRC success, software tests, rendered assemblies, and nominal geometric separation do not establish safe real-world operation.
 
-用户提供的视频与商品页面只用于外形和功能语境参考；CARBENTRA Plug 是独立工程设计，不宣称复原第三方产品内部结构。示例遥测与软件测试数据必须保持“模拟 / 测试”标记，不作为真实节能数据。
+Before any physical deployment, the design still requires qualified work covering, at minimum:
 
-## Repository principles
+- applicable plug/socket standard and market requirements;
+- real creepage / clearance and dielectric construction;
+- enclosure material and abnormal-operation behavior;
+- fault-current and protection coordination;
+- 16 A enclosed temperature rise and joint heating;
+- contact force, gauge compliance, endurance, retention, and shutter behavior;
+- relay switching duty for actual load classes and inrush;
+- traceable voltage/current/power/energy calibration;
+- surge / EFT / EMC / RF integration;
+- secure production provisioning, update, and device identity;
+- controlled physical EVT and field validation.
 
-这个仓库遵循三个简单原则：**安全边界先于智能策略，工程证据先于展示效果，真实反馈先于漂亮数字。**
+The repository intentionally keeps these open gates visible instead of turning digital evidence into a false claim of product readiness.
 
-如果 CARBENTRA 最终能够成立，它应该不是因为“做出了一个更酷的插座”，而是因为它证明了一件更重要的事：
+---
 
-> **校园中大量原本不可协同的普通负载，可以被组织成一个有边界、有反馈、可验证的能源系统。**
+## Project context
+
+**CARBENTRA Plug** is the first device product under **CARBENTRA**, the technology platform used by the project **碳迹未来**.
+
+- Product: **CARBENTRA Plug**
+- Platform: **CARBENTRA**
+- Project: **碳迹未来**
+- Project title: **碳迹未来——基于 AIoT 云边端协同的高校智慧能碳管理平台**
+- English platform description: **AIoT Campus Energy Orchestration Platform**
+
+Read the platform-level narrative in [`docs/PLATFORM_OVERVIEW.md`](docs/PLATFORM_OVERVIEW.md).
 
 ---
 
 <div align="center">
 
-**碳迹未来 · CARBENTRA**
+### CARBENTRA Plug
 
-*AIoT Campus Energy Orchestration Platform*
+**Sense · Protect · Execute · Verify**
+
+*The device-level edge of an orchestratable energy system.*
 
 </div>

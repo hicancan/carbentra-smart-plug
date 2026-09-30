@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="720" viewBox="0 0 1600 720">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker>
+    <style>
+      .t{font-family:Inter,Segoe UI,Arial,sans-serif;fill:#0f172a}
+      .h{font-weight:700;font-size:30px}.s{font-size:21px}.m{font-size:18px;fill:#475569}
+      .box{fill:#ffffff;stroke:#94a3b8;stroke-width:2;rx:18}
+      .guard{fill:#f8fafc;stroke:#0f766e;stroke-width:3;rx:18}
+      .line{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}
+      .prio{stroke:#0f766e;stroke-width:4;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1600" height="720" fill="#ffffff"/>
+  <text x="80" y="70" class="t h">Firmware control path</text>
+  <text x="80" y="105" class="t m">Local safety is authoritative. Remote orchestration is advisory and bounded.</text>
+
+  <rect x="70" y="190" width="210" height="110" class="box"/><text x="175" y="235" text-anchor="middle" class="t s">Metering</text><text x="175" y="270" text-anchor="middle" class="t m">voltage · current · power</text>
+  <rect x="330" y="190" width="220" height="110" class="box"/><text x="440" y="235" text-anchor="middle" class="t s">Sample validation</text><text x="440" y="270" text-anchor="middle" class="t m">freshness · sanity</text>
+  <rect x="600" y="190" width="220" height="110" class="box"/><text x="710" y="235" text-anchor="middle" class="t s">Local state</text><text x="710" y="270" text-anchor="middle" class="t m">device · load · clock</text>
+  <rect x="870" y="190" width="250" height="110" class="guard"/><text x="995" y="235" text-anchor="middle" class="t s">Safety gate</text><text x="995" y="270" text-anchor="middle" class="t m">trip · latch · dwell · limits</text>
+  <rect x="1170" y="190" width="260" height="110" class="box"/><text x="1300" y="235" text-anchor="middle" class="t s">Command arbitration</text><text x="1300" y="270" text-anchor="middle" class="t m">local &gt; edge &gt; cloud</text>
+
+  <path d="M280 245 H330" class="line"/><path d="M550 245 H600" class="line"/><path d="M820 245 H870" class="line"/><path d="M1120 245 H1170" class="line"/>
+
+  <rect x="1170" y="420" width="260" height="110" class="box"/><text x="1300" y="465" text-anchor="middle" class="t s">Actuator</text><text x="1300" y="500" text-anchor="middle" class="t m">bounded switching action</text>
+  <rect x="870" y="420" width="250" height="110" class="box"/><text x="995" y="465" text-anchor="middle" class="t s">Feedback qualification</text><text x="995" y="500" text-anchor="middle" class="t m">did the action occur?</text>
+  <rect x="600" y="420" width="220" height="110" class="box"/><text x="710" y="465" text-anchor="middle" class="t s">Telemetry</text><text x="710" y="500" text-anchor="middle" class="t m">state · measurements · ack</text>
+  <rect x="70" y="420" width="430" height="110" class="guard"/><text x="285" y="460" text-anchor="middle" class="t s">Remote command boundary</text><text x="285" y="495" text-anchor="middle" class="t m">auth · TTL · sequence · profile · target</text>
+
+  <path d="M1300 300 V420" class="line"/><path d="M1170 475 H1120" class="line"/><path d="M870 475 H820" class="line"/>
+  <path d="M500 475 H1170" class="line"/>
+  <path d="M285 420 V350 H1300 V300" class="line"/>
+  <path d="M995 300 V355 H1300 V420" class="prio"/>
+
+  <text x="80" y="620" class="t s">Core invariants</text>
+  <text x="80" y="660" class="t m">Local safety &gt; remote command · stale/replayed command → reject · unknown/unapproved load → monitor-only · feedback closes the loop</text>
+</svg>
