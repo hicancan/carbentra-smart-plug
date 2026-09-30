@@ -1,0 +1,3 @@
+PASS 37 policy cases and 10000 local-trip invariants
+PASS JSON boundaries, meter encodings/checksum/CRC, runtime reset and stuck-link regression
+PASS feedback qualification: 50/60Hz, startup, 3 periods, spikes, dropout, stuck LOW and time rollback

@@ -17,3 +17,9 @@ visuals/renders/00_*
 visuals/*.log
 release/*DRAFT*
 release/CarbonMirror_Exterior_Preview.png
+firmware/build/
+firmware/build-host/
+firmware/sdkconfig.old
+edge/data/
+*.pem
+*.key

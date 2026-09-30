@@ -1,0 +1,28 @@
+test_cycle (test_accounting.AccountingTests.test_cycle) ... ok
+test_missing_source (test_accounting.AccountingTests.test_missing_source) ... ok
+test_parent_overlap (test_accounting.AccountingTests.test_parent_overlap) ... ok
+test_partial_is_not_savings (test_accounting.AccountingTests.test_partial_is_not_savings) ... ok
+test_siblings (test_accounting.AccountingTests.test_siblings) ... ok
+test_bad_counter_type (test_edge.Tests.test_bad_counter_type) ... ok
+test_deep_structure (test_edge.Tests.test_deep_structure) ... ok
+test_dry_run_excludes_critical (test_edge.Tests.test_dry_run_excludes_critical) ... ok
+test_duplicate_json (test_edge.Tests.test_duplicate_json) ... ok
+test_durable_duplicate (test_edge.Tests.test_durable_duplicate) ... ok
+test_exponent_overflow (test_edge.Tests.test_exponent_overflow) ... ok
+test_huge_integer (test_edge.Tests.test_huge_integer) ... ok
+test_identity_mismatch (test_edge.Tests.test_identity_mismatch) ... ok
+test_missing_epoch (test_edge.Tests.test_missing_epoch) ... ok
+test_nan (test_edge.Tests.test_nan) ... ok
+test_new_boot (test_edge.Tests.test_new_boot) ... ok
+test_stale_excluded (test_edge.Tests.test_stale_excluded) ... ok
+test_time_nonce (test_edge.Tests.test_time_nonce) ... ok
+test_unknown_device (test_edge.Tests.test_unknown_device) ... ok
+test_constant (test_forecast.ForecastTests.test_constant) ... ok
+test_invalid_history (test_forecast.ForecastTests.test_invalid_history) ... ok
+test_linear (test_forecast.ForecastTests.test_linear) ... ok
+test_no_fake_confidence (test_forecast.ForecastTests.test_no_fake_confidence) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.014s
+
+OK
