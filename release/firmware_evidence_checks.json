@@ -143,6 +143,16 @@
       "detail": ""
     },
     {
+      "check": "source firmware/third_party/cJSON/cJSON.c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/third_party/cJSON/cJSON.h",
+      "passed": true,
+      "detail": ""
+    },
+    {
       "check": "source firmware/tools/calibration_template.json",
       "passed": true,
       "detail": ""

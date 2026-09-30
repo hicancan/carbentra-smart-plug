@@ -14,7 +14,7 @@ assert 'PASS feedback qualification:' in tests
 assert 'runtime reset and stuck-link regression' in tests
 assert 'Ran 24 tests' in edge and edge.rstrip().endswith('OK')
 assert '# CONFIG_CM_ALLOW_ACTUATION is not set' in config
-sources=[p for folder in ['core','main','tests','tools'] for p in (F/folder).rglob('*') if p.is_file() and p.suffix in ('.c','.h','.py','.sh','.json') and '__pycache__' not in p.parts]
+sources=[p for folder in ['core','main','tests','tools','third_party'] for p in (F/folder).rglob('*') if p.is_file() and p.suffix in ('.c','.h','.py','.sh','.json') and '__pycache__' not in p.parts]
 sources += [F/'sdkconfig',F/'sdkconfig.defaults',F/'CMakeLists.txt',F/'partitions.csv',F/'main/Kconfig.projbuild',F/'main/CMakeLists.txt']
 sources += [p for p in (R/'edge').rglob('*.py') if '__pycache__' not in p.parts]
 artifacts=F/'artifacts';artifacts.mkdir(exist_ok=True)

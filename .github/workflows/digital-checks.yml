@@ -1,0 +1,27 @@
+name: Digital development checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  software-evidence:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 verified 2026-09-30
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Python policy reference
+        run: python3 -m unittest discover -s tests/policy -v
+      - name: Edge reference tests
+        run: python3 -m unittest discover -s edge/tests -v
+      - name: C policy, feedback and protocol tests
+        run: bash firmware/tests/run_host_tests.sh
+      - name: Verify delivered development build evidence
+        run: python3 scripts/validate_firmware_evidence.py
+      - name: Known credential-pattern check
+        run: python3 scripts/check_publish_hygiene.py

@@ -24,6 +24,6 @@ test_linear (test_forecast.ForecastTests.test_linear) ... ok
 test_no_fake_confidence (test_forecast.ForecastTests.test_no_fake_confidence) ... ok
 
 ----------------------------------------------------------------------
-Ran 24 tests in 0.023s
+Ran 24 tests in 0.032s
 
 OK

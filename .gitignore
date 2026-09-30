@@ -23,3 +23,21 @@ firmware/sdkconfig.old
 edge/data/
 *.pem
 *.key
+# Local credentials and provisioning records are never project source.
+.env
+.env.*
+!.env.example
+*.p12
+*.pfx
+*credentials*.json
+*secrets*.json
+firmware/provisioning/
+# Vendor research caches and disposable preview/backup exports.
+electronics/rev_b/references/
+**/_preview/
+**/_interim/
+**/*.log
+**/*.FCBak
+electronics/rev_b/**/sources/
+electronics/rev_b/**/.xdg/
+electronics/rev_b/integrated/integrated_power_candidate.*

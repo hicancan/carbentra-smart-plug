@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc": "2026-09-30T10:47:57.902780+00:00",
+  "recorded_at_utc": "2026-09-30T11:46:02.525981+00:00",
   "scope": "Development digital evidence only; no connected hardware, no flashing, no mains validation",
   "idf_version": "5.4.3",
   "idf_commit": "ea1c174c1cbb7348bd8ba0ff1eb306246938dd80",
@@ -38,13 +38,15 @@
     "firmware/partitions.csv": "c852563ccb3b5d016656d71c3585b0744609d9e5348d7efbc3023eea121b5481",
     "firmware/sdkconfig": "865e46506170821402bab2259ce335be4ffb565393733ff2e3a05ec0d6bc8f7b",
     "firmware/sdkconfig.defaults": "d53544e1b454db276d7d83dc43722a14746e9126ae49f53dcba0d7b7f22bdb22",
-    "firmware/tests/run_host_tests.sh": "bad51e0521602b8daf5449febf6abe12172f4f312cf1eae51fcf5e0c06589c0f",
+    "firmware/tests/run_host_tests.sh": "4dff9a412a60715a6824a68bbbcf3297a84977abf1e7d21b174616a7dea12a9c",
     "firmware/tests/test_feedback.c": "26d851d87595e32fcd49d2f9bd5f3791cc64c36d85ecca8db1a7eac52a560bf5",
     "firmware/tests/test_policy.c": "19b00edf587c60f0d769d414b94ca9da495c48a368a8bbfdaf960f5c981c3951",
     "firmware/tests/test_protocol.c": "3b71b2b5fc52a31b794e405fcaf6b743fb0b4c6326386154aa5965615cdb7953",
+    "firmware/third_party/cJSON/cJSON.c": "298581a04a36c0165da4b0aade235c23088cb2faa58651d720ea2f3706ed0b0d",
+    "firmware/third_party/cJSON/cJSON.h": "25b0145150d500498e4d209cec69c18c42cf818bffcc54690be3b895a2a16dee",
     "firmware/tools/calibration_template.json": "a44b50df56666aec6254ad99dae7e8f93c306c9c598967ed2833512c6a80654b",
     "firmware/tools/make_calibration_record.py": "4d239aa6cda8d53b4ec1458daf869e2e536bc13839765afbdb459c768e6ca919",
-    "firmware/tools/record_validation.py": "dd890a714d870e1d0c717e4b1e05e901602537de698ba09117fcdd2202b7c6eb"
+    "firmware/tools/record_validation.py": "f0fbffb4660f0ac2095d5790227a3951c19d8986e4bdf5bd4d3d485a6f87220e"
   },
   "artifact_sha256": {
     "bootloader_DEV.bin": "e5911dc3c0cabd272c357cc075c3efee931c46143adac7d6c03d6937ed46f8a1",
