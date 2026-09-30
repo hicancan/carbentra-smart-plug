@@ -1,6 +1,6 @@
-# 碳镜校园统一自适应智能插座
+# CARBENTRA 统一自适应智能插座
 
-CarbonMirror Unified Adaptive Socket — engineering development release
+CARBENTRA Smart Plug — 碳镜校园终端工程开发项目
 
 这是面向校园设备级用能感知、端侧策略执行与云边端协同的单一硬件平台。不同负载通过能力描述和策略约束管理，不以软件“自适应”替代物理插接规格、额定电流与电气安全要求。
 
@@ -30,10 +30,14 @@ CarbonMirror Unified Adaptive Socket — engineering development release
 
 首先阅读发布说明和各模块 README。机械尺寸以同一参数源与装配坐标为准。修改 PCB 包络或器件高度后，应重新进行机械装配与视图检查。渲染与动画用于展示，不替代尺寸图及电气审查。
 
-Git 仓库仅在本地建立；未向任何远程仓库发布。
+用户指定远程仓库：https://github.com/hicancan/carbentra-smart-plug 。首次远程同步正在等待安全授权，尚未宣称推送成功。
 
 ## 修订导航
 
 根目录 mechanical/ 与 electronics/ 下的第一版文件为 Rev A 历史基线。升级设计位于 mechanical/rev_b/、electronics/rev_b/ 和 visuals/rev_b/，不得混用两版的尺寸或验收结论。Rev B 正在进行主板整合与装配核验；在 release 发布清单冻结之前，不将中间布局视为最终设计。
 
 完整数字验收及进入实物阶段的阻断项见 docs/ENGINEERING_RELEASE_GATES.md。开发固件的实际构建和测试证据见 firmware/validation.json；所有网络部署、计量标定与真实硬件测试仍需单独开展。
+
+## 命名与兼容性
+
+产品名称为 **CARBENTRA**，服务于“碳镜校园”平台。已有 CM-S16-EVT-B 修订号、carbonmirror/v1 通信命名空间及部分源文件名保持稳定，以免破坏可追溯性；它们不代表另一个硬件版本。Rev A 历史材料保留原始标记。

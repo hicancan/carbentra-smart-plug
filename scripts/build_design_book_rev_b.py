@@ -13,7 +13,7 @@ W,H=595.28,841.89
 DRAFT='--draft' in sys.argv
 TARGET=O/('CarbonMirror_RevB_Review_DRAFT.pdf' if DRAFT else 'CarbonMirror_RevB_Design_Review_CN.pdf')
 C=canvas.Canvas(str(TARGET),pagesize=(W,H))
-C.setTitle('碳镜校园统一自适应智能插座设计审阅册');C.setAuthor('CarbonMirror project')
+C.setTitle('CARBENTRA 智能插座设计审阅册');C.setAuthor('CARBENTRA project')
 style=ParagraphStyle('body',fontName='NotoSansSC',fontSize=11,leading=18,textColor='#213a3c',wordWrap='CJK')
 small=ParagraphStyle('small',parent=style,fontSize=9,leading=14,textColor='#566868')
 page=0
@@ -21,7 +21,7 @@ page=0
 def base(title,sub):
  global page
  page+=1;C.setFillColorRGB(.965,.973,.969);C.rect(0,0,W,H,fill=1,stroke=0)
- C.setFillColorRGB(.05,.18,.17);C.setFont('Helvetica-Bold',10);C.drawString(42,H-40,'CARBONMIRROR / ENGINEERING DEVELOPMENT')
+ C.setFillColorRGB(.05,.18,.17);C.setFont('Helvetica-Bold',10);C.drawString(42,H-40,'CARBENTRA / ENGINEERING DEVELOPMENT')
  C.setFont('NotoSansSC',23);C.drawString(42,H-80,title)
  para(sub,42,H-110,W-84,small)
  C.setFillColorRGB(.3,.4,.4);C.setFont('Helvetica',8);C.drawString(42,28,'CM-S16-EVT-B   |   2026-09-30   |   NOT FOR ENERGIZATION');C.drawRightString(W-42,28,f'{page:02d}')
@@ -41,7 +41,7 @@ def bullet(title,text,y):
  C.setFillColorRGB(.02,.18,.16);C.setFont('NotoSansSC',14);C.drawString(42,y,title)
  return para(text,42,y-12,W-84)-9
 
-base('统一自适应智能插座设计审阅册','一款硬件平台，以负载能力模型连接端侧感知、边缘自治与校园级能源协同。')
+base('CARBENTRA 智能插座设计审阅册','一款硬件平台，以负载能力模型连接端侧感知、边缘自治与校园级能源协同。')
 image(R/'visuals/rev_b/renders/01_hero_ivory.png',28,248,W-56,450)
 y=para('本册配合完整 Git 工程使用，重点展示外观、装配、内部板件与数字孪生交付，并说明真实完成的数字检查和仍需关闭的工程问题。',42,230,W-84)
 y=para('发布状态：工程开发设计。产品尚未制造、标定或通过市电安全验证；电路放行条件以 electronics 与发布说明为准。禁止据此直接接入 220V。',42,y,W-84)
