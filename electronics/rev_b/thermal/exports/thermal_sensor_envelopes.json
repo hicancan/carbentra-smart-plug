@@ -1,0 +1,74 @@
+{
+  "status": "DEVELOPMENT / HOLD",
+  "coordinate_system": "Local mm, board lower-left=(0,0,0), top copper z=1.6, +y upward (mirrored KiCad y)",
+  "board_mm": [
+    12,
+    12,
+    1.6
+  ],
+  "height_reservation_above_PCB_mm": 2,
+  "height_reservation_below_PCB_mm": 0.1,
+  "mating_harness_actuator_and_insulation_not_included": true,
+  "components": [
+    {
+      "ref": "U1",
+      "mpn": "TMP302BDRLR",
+      "min_xyz_mm": [
+        2.75,
+        5.15,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.2999999999999998,
+        1.6999999999999993,
+        0.6
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "J4",
+      "mpn": "Soldered insulated pigtail / strain relief HOLD",
+      "min_xyz_mm": [
+        7.85,
+        2.7699999999999996,
+        1.6
+      ],
+      "size_xyz_mm": [
+        2.3000000000000007,
+        7.380000000000001,
+        2.0
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "R1",
+      "mpn": "RC0603FR-0710KL",
+      "min_xyz_mm": [
+        4.65,
+        8.537500000000001,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.6999999999999993,
+        0.9249999999999998,
+        0.55
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "C1",
+      "mpn": "GRM188R71C104KA01D",
+      "min_xyz_mm": [
+        1.65,
+        9.25,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.7000000000000002,
+        0.8999999999999999,
+        0.9
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    }
+  ]
+}

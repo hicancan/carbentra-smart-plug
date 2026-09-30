@@ -1,0 +1,285 @@
+{
+  "status": "PASS",
+  "expected_operations": 16,
+  "actual_master_sha256": "1d2be4895bf0e2f179c04f29877229a6f9206d3580245d41187b5ce474bef808",
+  "operations": [
+    {
+      "operation": {
+        "action": "width",
+        "net": "HOT_GND",
+        "layer": "F.Cu",
+        "start": [
+          28.5,
+          62.0
+        ],
+        "end": [
+          32.5,
+          62.0
+        ],
+        "old_width_mm": 2.4,
+        "new_width_mm": 4.8
+      },
+      "matching_objects": 1
+    },
+    {
+      "operation": {
+        "action": "width",
+        "net": "HOT_N",
+        "layer": "B.Cu",
+        "start": [
+          32.0,
+          38.14
+        ],
+        "end": [
+          35.5,
+          40.5
+        ],
+        "old_width_mm": 2.4,
+        "new_width_mm": 4.8
+      },
+      "matching_objects": 1
+    },
+    {
+      "operation": {
+        "action": "width",
+        "net": "HOT_N",
+        "layer": "B.Cu",
+        "start": [
+          28.5,
+          38.14
+        ],
+        "end": [
+          32.0,
+          38.14
+        ],
+        "old_width_mm": 2.4,
+        "new_width_mm": 4.8
+      },
+      "matching_objects": 1
+    },
+    {
+      "operation": {
+        "action": "width",
+        "net": "HOT_N",
+        "layer": "B.Cu",
+        "start": [
+          35.5,
+          50.5
+        ],
+        "end": [
+          28.5,
+          54.38
+        ],
+        "old_width_mm": 2.4,
+        "new_width_mm": 4.8
+      },
+      "matching_objects": 1
+    },
+    {
+      "operation": {
+        "action": "width",
+        "net": "HOT_N",
+        "layer": "B.Cu",
+        "start": [
+          35.5,
+          48.0
+        ],
+        "end": [
+          35.5,
+          50.5
+        ],
+        "old_width_mm": 2.4,
+        "new_width_mm": 4.8
+      },
+      "matching_objects": 1
+    },
+    {
+      "operation": {
+        "action": "add_track",
+        "net": "HOT_LOAD",
+        "layer": "F.Cu",
+        "start": [
+          49.2,
+          47.5
+        ],
+        "end": [
+          49.2,
+          55
+        ],
+        "width_mm": 2.4
+      },
+      "matching_objects": 1
+    },
+    {
+      "operation": {
+        "action": "add_track",
+        "net": "HOT_SWITCHED",
+        "layer": "B.Cu",
+        "start": [
+          44.16,
+          47.5
+        ],
+        "end": [
+          44.16,
+          55
+        ],
+        "width_mm": 2.4
+      },
+      "matching_objects": 1
+    },
+    {
+      "operation": {
+        "action": "add_track",
+        "net": "HOT_GND",
+        "layer": "B.Cu",
+        "start": [
+          28.5,
+          62
+        ],
+        "end": [
+          32.5,
+          62
+        ],
+        "width_mm": 2.4
+      },
+      "matching_objects": 1
+    },
+    {
+      "operation": {
+        "action": "add_track",
+        "net": "HOT_GND",
+        "layer": "B.Cu",
+        "start": [
+          32.5,
+          62
+        ],
+        "end": [
+          35,
+          59.9
+        ],
+        "width_mm": 2.4
+      },
+      "matching_objects": 1
+    },
+    {
+      "operation": {
+        "action": "add_track",
+        "net": "HOT_GND",
+        "layer": "B.Cu",
+        "start": [
+          35,
+          59.9
+        ],
+        "end": [
+          39.15,
+          59.9
+        ],
+        "width_mm": 2.4
+      },
+      "matching_objects": 1
+    },
+    {
+      "operation": {
+        "action": "add_via",
+        "net": "HOT_GND",
+        "at": [
+          36.8,
+          59.65
+        ],
+        "diameter_mm": 0.8,
+        "drill_mm": 0.4,
+        "layers": [
+          "F.Cu",
+          "B.Cu"
+        ]
+      },
+      "matching_objects": 1
+    },
+    {
+      "operation": {
+        "action": "add_via",
+        "net": "HOT_GND",
+        "at": [
+          37.5,
+          59.65
+        ],
+        "diameter_mm": 0.8,
+        "drill_mm": 0.4,
+        "layers": [
+          "F.Cu",
+          "B.Cu"
+        ]
+      },
+      "matching_objects": 1
+    },
+    {
+      "operation": {
+        "action": "add_via",
+        "net": "HOT_GND",
+        "at": [
+          38.2,
+          59.65
+        ],
+        "diameter_mm": 0.8,
+        "drill_mm": 0.4,
+        "layers": [
+          "F.Cu",
+          "B.Cu"
+        ]
+      },
+      "matching_objects": 1
+    },
+    {
+      "operation": {
+        "action": "add_via",
+        "net": "HOT_GND",
+        "at": [
+          38.9,
+          59.65
+        ],
+        "diameter_mm": 0.8,
+        "drill_mm": 0.4,
+        "layers": [
+          "F.Cu",
+          "B.Cu"
+        ]
+      },
+      "matching_objects": 1
+    },
+    {
+      "operation": {
+        "action": "add_via",
+        "net": "HOT_GND",
+        "at": [
+          39.6,
+          59.65
+        ],
+        "diameter_mm": 0.8,
+        "drill_mm": 0.4,
+        "layers": [
+          "F.Cu",
+          "B.Cu"
+        ]
+      },
+      "matching_objects": 1
+    },
+    {
+      "operation": {
+        "action": "add_via",
+        "net": "HOT_GND",
+        "at": [
+          40.3,
+          59.65
+        ],
+        "diameter_mm": 0.8,
+        "drill_mm": 0.4,
+        "layers": [
+          "F.Cu",
+          "B.Cu"
+        ]
+      },
+      "matching_objects": 1
+    }
+  ],
+  "master_modified": false
+}

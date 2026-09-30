@@ -1,0 +1,722 @@
+[
+  {
+    "net": "COIL_5V",
+    "start": [
+      3.0,
+      11.62
+    ],
+    "end": [
+      12.9375,
+      8.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "CT_SELECT",
+    "start": [
+      17.825,
+      27.0
+    ],
+    "end": [
+      20.1375,
+      20.95
+    ],
+    "routed": true
+  },
+  {
+    "net": "HEALTH_VALID",
+    "start": [
+      11.1375,
+      22.95
+    ],
+    "end": [
+      17.8625,
+      20.95
+    ],
+    "routed": true
+  },
+  {
+    "net": "REARM_CLK",
+    "start": [
+      25.5,
+      18.5
+    ],
+    "end": [
+      23.1375,
+      5.95
+    ],
+    "routed": true
+  },
+  {
+    "net": "THERM_RETURN",
+    "start": [
+      3.0,
+      27.08
+    ],
+    "end": [
+      7.175,
+      29.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "THERM_RETURN",
+    "start": [
+      7.175,
+      29.0
+    ],
+    "end": [
+      8.8625,
+      22.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "COIL_GATE",
+    "start": [
+      11.0625,
+      7.05
+    ],
+    "end": [
+      10.825,
+      4.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "COIL_GATE",
+    "start": [
+      11.0625,
+      7.05
+    ],
+    "end": [
+      17.9375,
+      8.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "ARM_B",
+    "start": [
+      16.0625,
+      7.05
+    ],
+    "end": [
+      21.175,
+      13.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "ARM_B",
+    "start": [
+      21.175,
+      13.0
+    ],
+    "end": [
+      35.825,
+      20.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "SINK_MID",
+    "start": [
+      16.0625,
+      8.95
+    ],
+    "end": [
+      17.9375,
+      12.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "SINK_MID",
+    "start": [
+      17.9375,
+      12.0
+    ],
+    "end": [
+      22.825,
+      13.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "READY_B",
+    "start": [
+      16.0625,
+      11.05
+    ],
+    "end": [
+      23.825,
+      27.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "READY_B",
+    "start": [
+      23.825,
+      27.0
+    ],
+    "end": [
+      28.175,
+      29.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "COIL_ARMED",
+    "start": [
+      34.175,
+      20.0
+    ],
+    "end": [
+      31.5,
+      22
+    ],
+    "routed": true
+  },
+  {
+    "net": "COIL_ARMED",
+    "start": [
+      34.175,
+      20.0
+    ],
+    "end": [
+      39.0,
+      21.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "READY_RAW",
+    "start": [
+      23.825,
+      20.0
+    ],
+    "end": [
+      17.8625,
+      19.05
+    ],
+    "routed": true
+  },
+  {
+    "net": "READY_RAW",
+    "start": [
+      23.825,
+      20.0
+    ],
+    "end": [
+      32.8625,
+      26.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "MANUAL_RAW",
+    "start": [
+      28.175,
+      9.0
+    ],
+    "end": [
+      35.0,
+      7.5
+    ],
+    "routed": true
+  },
+  {
+    "net": "MANUAL_RAW",
+    "start": [
+      35.0,
+      7.5
+    ],
+    "end": [
+      41.5,
+      7.5
+    ],
+    "routed": true
+  },
+  {
+    "net": "REARM_RC",
+    "start": [
+      26.225,
+      5.0
+    ],
+    "end": [
+      20.8625,
+      5.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "REARM_RC",
+    "start": [
+      26.225,
+      5.0
+    ],
+    "end": [
+      29.825,
+      9.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "REARM_RC",
+    "start": [
+      20.8625,
+      5.0
+    ],
+    "end": [
+      23.175,
+      10.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "THERMAL_READY",
+    "start": [
+      22.175,
+      27.0
+    ],
+    "end": [
+      32.5,
+      20.25
+    ],
+    "routed": true
+  },
+  {
+    "net": "THERMAL_READY",
+    "start": [
+      32.5,
+      20.25
+    ],
+    "end": [
+      35.1375,
+      26.95
+    ],
+    "routed": true
+  },
+  {
+    "net": "THERMAL_READY",
+    "start": [
+      35.1375,
+      26.95
+    ],
+    "end": [
+      39.0,
+      27.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "+5V_ISO",
+    "start": [
+      3.0,
+      4.0
+    ],
+    "end": [
+      9.175,
+      4.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "+5V_ISO",
+    "start": [
+      9.175,
+      4.0
+    ],
+    "end": [
+      11.0625,
+      8.95
+    ],
+    "routed": true
+  },
+  {
+    "net": "GND_ISO",
+    "start": [
+      14.775,
+      25.0
+    ],
+    "end": [
+      17.8625,
+      20.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "GND_ISO",
+    "start": [
+      17.8625,
+      20.0
+    ],
+    "end": [
+      19.775,
+      15.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "GND_ISO",
+    "start": [
+      19.775,
+      15.0
+    ],
+    "end": [
+      16.0625,
+      12.95
+    ],
+    "routed": true
+  },
+  {
+    "net": "GND_ISO",
+    "start": [
+      14.775,
+      25.0
+    ],
+    "end": [
+      8.8625,
+      22.95
+    ],
+    "routed": true
+  },
+  {
+    "net": "GND_ISO",
+    "start": [
+      8.8625,
+      22.95
+    ],
+    "end": [
+      8.825,
+      29.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "GND_ISO",
+    "start": [
+      8.8625,
+      22.95
+    ],
+    "end": [
+      3.0,
+      24.54
+    ],
+    "routed": true
+  },
+  {
+    "net": "GND_ISO",
+    "start": [
+      19.775,
+      15.0
+    ],
+    "end": [
+      24.825,
+      10.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "GND_ISO",
+    "start": [
+      24.825,
+      10.0
+    ],
+    "end": [
+      20.8625,
+      5.95
+    ],
+    "routed": true
+  },
+  {
+    "net": "GND_ISO",
+    "start": [
+      20.8625,
+      5.95
+    ],
+    "end": [
+      18.775,
+      3.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "GND_ISO",
+    "start": [
+      24.825,
+      10.0
+    ],
+    "end": [
+      27.775,
+      5.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "GND_ISO",
+    "start": [
+      24.825,
+      10.0
+    ],
+    "end": [
+      29.775,
+      15.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "GND_ISO",
+    "start": [
+      29.775,
+      15.0
+    ],
+    "end": [
+      26.5,
+      22
+    ],
+    "routed": true
+  },
+  {
+    "net": "GND_ISO",
+    "start": [
+      26.5,
+      22
+    ],
+    "end": [
+      29.825,
+      29.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "GND_ISO",
+    "start": [
+      29.825,
+      29.0
+    ],
+    "end": [
+      32.8625,
+      26.95
+    ],
+    "routed": true
+  },
+  {
+    "net": "GND_ISO",
+    "start": [
+      32.8625,
+      26.95
+    ],
+    "end": [
+      34.775,
+      30.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "GND_ISO",
+    "start": [
+      16.0625,
+      12.95
+    ],
+    "end": [
+      3.0,
+      9.08
+    ],
+    "routed": true
+  },
+  {
+    "net": "+3V3_ISO",
+    "start": [
+      13.225,
+      25.0
+    ],
+    "end": [
+      16.175,
+      27.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "+3V3_ISO",
+    "start": [
+      13.225,
+      25.0
+    ],
+    "end": [
+      11.1375,
+      21.05
+    ],
+    "routed": true
+  },
+  {
+    "net": "+3V3_ISO",
+    "start": [
+      11.1375,
+      21.05
+    ],
+    "end": [
+      3.0,
+      22.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "+3V3_ISO",
+    "start": [
+      16.175,
+      27.0
+    ],
+    "end": [
+      22.175,
+      20.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "+3V3_ISO",
+    "start": [
+      22.175,
+      20.0
+    ],
+    "end": [
+      21.3,
+      18
+    ],
+    "routed": true
+  },
+  {
+    "net": "+3V3_ISO",
+    "start": [
+      22.175,
+      20.0
+    ],
+    "end": [
+      25.5,
+      19.75
+    ],
+    "routed": true
+  },
+  {
+    "net": "+3V3_ISO",
+    "start": [
+      21.3,
+      18
+    ],
+    "end": [
+      18.225,
+      15.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "+3V3_ISO",
+    "start": [
+      25.5,
+      19.75
+    ],
+    "end": [
+      28.225,
+      15.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "+3V3_ISO",
+    "start": [
+      28.225,
+      15.0
+    ],
+    "end": [
+      32.5,
+      18.5
+    ],
+    "routed": true
+  },
+  {
+    "net": "+3V3_ISO",
+    "start": [
+      32.5,
+      18.5
+    ],
+    "end": [
+      35.1375,
+      25.05
+    ],
+    "routed": true
+  },
+  {
+    "net": "+3V3_ISO",
+    "start": [
+      35.1375,
+      25.05
+    ],
+    "end": [
+      33.225,
+      30.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "+3V3_ISO",
+    "start": [
+      18.225,
+      15.0
+    ],
+    "end": [
+      23.1375,
+      4.05
+    ],
+    "routed": true
+  },
+  {
+    "net": "+3V3_ISO",
+    "start": [
+      23.1375,
+      4.05
+    ],
+    "end": [
+      17.225,
+      3.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "+3V3_ISO",
+    "start": [
+      23.1375,
+      4.05
+    ],
+    "end": [
+      35.0,
+      3.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "+3V3_ISO",
+    "start": [
+      35.0,
+      3.0
+    ],
+    "end": [
+      41.5,
+      3.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "+3V3_ISO",
+    "start": [
+      17.225,
+      3.0
+    ],
+    "end": [
+      3.0,
+      6.54
+    ],
+    "routed": true
+  }
+]

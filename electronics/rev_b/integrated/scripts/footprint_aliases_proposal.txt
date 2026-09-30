@@ -1,0 +1,6 @@
+This source task does not own the parent's footprint-library table. Required custom aliases:
+Integrated -> ${KIPRJMOD}/Integrated.pretty (parent-created F501 and terminal footprints)
+RevB -> ${KIPRJMOD}/../meter/RevB.pretty
+Feedback -> ${KIPRJMOD}/../feedback/Feedback.pretty
+Thermal -> ${KIPRJMOD}/../thermal/Thermal.pretty
+Standard KiCad libraries must also remain available through the global table.

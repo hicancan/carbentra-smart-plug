@@ -1,0 +1,142 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-30T04:14:35-0700",
+    "kicad_version": "9.0.2",
+    "schematic_parity": [],
+    "source": "integrated_power_candidate.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [+3V3_ISO] on F.Cu, length 3.8000 mm",
+                    "pos": {
+                        "x": 66.0,
+                        "y": 67.8
+                    },
+                    "uuid": "e7065466-68f0-44d3-b99b-05df67ac4605"
+                },
+                {
+                    "description": "Pad 7 [+3V3_ISO] of U202 on F.Cu",
+                    "pos": {
+                        "x": 63.875,
+                        "y": 61.325
+                    },
+                    "uuid": "28772e2d-68bb-468f-9727-7f4a74ab18e3"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Items shorting two nets (nets HOT_SENSE_DOWN and HOT_I1P)",
+            "items": [
+                {
+                    "description": "Pad 1 [HOT_SENSE_DOWN] of R201 on F.Cu",
+                    "pos": {
+                        "x": 36.175,
+                        "y": 70.95
+                    },
+                    "uuid": "a0d7e9e3-0f18-4e35-a925-b1dd23a6798d"
+                },
+                {
+                    "description": "Track [HOT_I1P] on F.Cu, length 1.3000 mm",
+                    "pos": {
+                        "x": 36.8,
+                        "y": 71.4
+                    },
+                    "uuid": "bd3ca3c9-b032-43ae-9949-fc9fdec2bc0a"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint R201",
+                    "pos": {
+                        "x": 37.0,
+                        "y": 70.95
+                    },
+                    "uuid": "0085f453-af53-4d0c-b220-e07f9915ca45"
+                },
+                {
+                    "description": "Footprint RS201",
+                    "pos": {
+                        "x": 40.0,
+                        "y": 64.5
+                    },
+                    "uuid": "26286422-f620-4878-83b3-729091f8a202"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint R201",
+                    "pos": {
+                        "x": 37.0,
+                        "y": 70.95
+                    },
+                    "uuid": "0085f453-af53-4d0c-b220-e07f9915ca45"
+                },
+                {
+                    "description": "Footprint U201",
+                    "pos": {
+                        "x": 39.5,
+                        "y": 76.25
+                    },
+                    "uuid": "ccee0896-bfa1-403b-a53d-2e2533f93de6"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Footprint 'Converter_ACDC_MeanWell_IRM-10-xx_THT' does not match copy in library 'Converter_ACDC'.",
+            "items": [
+                {
+                    "description": "Footprint PS101",
+                    "pos": {
+                        "x": 14.6,
+                        "y": 14.2
+                    },
+                    "uuid": "478b01ad-0846-49a4-b995-d569dc31d1dc"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Track [HOT_I1P] on F.Cu, length 1.3000 mm",
+                    "pos": {
+                        "x": 36.8,
+                        "y": 71.4
+                    },
+                    "uuid": "bd3ca3c9-b032-43ae-9949-fc9fdec2bc0a"
+                },
+                {
+                    "description": "Pad 1 [HOT_SENSE_DOWN] of R201 on F.Cu",
+                    "pos": {
+                        "x": 36.175,
+                        "y": 70.95
+                    },
+                    "uuid": "a0d7e9e3-0f18-4e35-a925-b1dd23a6798d"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        }
+    ]
+}

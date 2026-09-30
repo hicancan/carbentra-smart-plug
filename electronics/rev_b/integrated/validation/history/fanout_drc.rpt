@@ -1,0 +1,63 @@
+** Drc report for integrated.kicad_pcb **
+** Created on 2026-09-30T04:16:48-0700 **
+
+** Found 7 DRC violations **
+[via_dangling]: Via is not connected or connected on only one layer
+    Local override; warning
+    @(65.8000 mm, 61.3250 mm): Via [+3V3_ISO] on F.Cu - B.Cu
+[via_dangling]: Via is not connected or connected on only one layer
+    Local override; warning
+    @(65.8000 mm, 68.9450 mm): Via [+3V3_ISO] on F.Cu - B.Cu
+[track_dangling]: Track has unconnected end
+    Local override; warning
+    @(68.5000 mm, 70.0000 mm): Track [+3V3_ISO] on In1.Cu, length 1.5000 mm
+[track_dangling]: Track has unconnected end
+    Local override; warning
+    @(64.9000 mm, 73.0000 mm): Track [GND_ISO] on F.Cu, length 1.0000 mm
+[via_dangling]: Via is not connected or connected on only one layer
+    Local override; warning
+    @(65.8000 mm, 60.0550 mm): Via [GND_ISO] on F.Cu - B.Cu
+[via_dangling]: Via is not connected or connected on only one layer
+    Local override; warning
+    @(65.8000 mm, 67.6750 mm): Via [GND_ISO] on F.Cu - B.Cu
+[lib_footprint_mismatch]: Footprint 'Converter_ACDC_MeanWell_IRM-10-xx_THT' does not match copy in library 'Converter_ACDC'.
+    Local override; warning
+    @(14.6000 mm, 14.2000 mm): Footprint PS101
+
+** Found 8 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(67.0000 mm, 68.9125 mm): Pad 1 [+3V3_ISO] of R206 on F.Cu
+    @(68.5000 mm, 70.0000 mm): Track [+3V3_ISO] on In1.Cu, length 1.5000 mm
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(67.0000 mm, 68.9125 mm): Pad 1 [+3V3_ISO] of R206 on F.Cu
+    @(63.8750 mm, 68.9450 mm): Track [+3V3_ISO] on F.Cu, length 1.9250 mm
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(67.0000 mm, 63.9500 mm): Pad 1 [+3V3_ISO] of CI201 on F.Cu
+    @(63.8750 mm, 61.3250 mm): Track [+3V3_ISO] on F.Cu, length 1.9250 mm
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(67.0000 mm, 68.9125 mm): Pad 1 [+3V3_ISO] of R206 on F.Cu
+    @(67.0000 mm, 63.9500 mm): Pad 1 [+3V3_ISO] of CI201 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(67.0000 mm, 62.0500 mm): Pad 2 [GND_ISO] of CI201 on F.Cu
+    @(65.8000 mm, 60.0550 mm): Via [GND_ISO] on F.Cu - B.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(64.9000 mm, 73.0000 mm): Track [GND_ISO] on F.Cu, length 1.0000 mm
+    @(63.8750 mm, 67.6750 mm): Track [GND_ISO] on F.Cu, length 1.9250 mm
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(67.0000 mm, 62.0500 mm): Pad 2 [GND_ISO] of CI201 on F.Cu
+    @(65.8000 mm, 67.6750 mm): Via [GND_ISO] on F.Cu - B.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(67.0000 mm, 67.0875 mm): Pad 2 [SPI_CS] of R206 on F.Cu
+    @(65.8000 mm, 63.4000 mm): Track [SPI_CS] on B.Cu, length 0.5000 mm
+
+** Found 0 Footprint errors **
+
+** End of Report **

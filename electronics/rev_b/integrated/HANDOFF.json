@@ -1,0 +1,71 @@
+{
+  "product": "CARBENTRA",
+  "technical_id": "CM-S16-EVT-B",
+  "status": "DEVELOPMENT HOLD",
+  "files": {
+    "integrated.kicad_pro": {
+      "sha256": "d70e8311e41731d2150205190332a1b238d1cf6ec2da52f604d35d37c9c7c315",
+      "bytes": 8363
+    },
+    "integrated.kicad_sch": {
+      "sha256": "841782003493d17101422e651f251dc6aa98c9142d778b4e310fc2fc656ae532",
+      "bytes": 25215
+    },
+    "integrated.kicad_pcb": {
+      "sha256": "54485373c84268d072b8abb9a73405d867b58622657f3cf49976cbcab7c0f40a",
+      "bytes": 804587
+    },
+    "electrical_manifest.json": {
+      "sha256": "f2e8f6e336a5a5863f1e5e8b8ca86a6c38358e462ed8fe0c1c87b070d35e1c37",
+      "bytes": 173684
+    },
+    "electrical_bom.csv": {
+      "sha256": "fa0a991f831a5842bbf179987ea7eb53a47242b28de664934a5e7571cce2eeed",
+      "bytes": 16380
+    },
+    "routing_recipe.json": {
+      "sha256": "2fe082beaeb8d29daf18bdf0ef617160b129e9d1f5817aa3f3fa1693621efbc2",
+      "bytes": 1484330
+    },
+    "exports/integrated_assembly.step": {
+      "sha256": "c19e720dd180cba6511bc2c33636019c476f798bcbadd80c5e7f0369393a1b9b",
+      "bytes": 33237729
+    },
+    "exports/integrated_assembly.obj": {
+      "sha256": "463e345f8ae7c8822a247d311e7f1d641d9fb3d55ba0e64cff227436a01e4850",
+      "bytes": 15082891
+    },
+    "exports/placement_assembly.step": {
+      "sha256": "74339093fef4e7acbb29564c82143a76c839053c468b03cf6c8c9ec65b46ec5b",
+      "bytes": 836826
+    },
+    "exports/component_envelopes.json": {
+      "sha256": "0a47aee6a889de7e4f43787afc16a503a3aab1895bad6d13c4057f2bbed82106",
+      "bytes": 46509
+    },
+    "exports/remote_head_assembled.step": {
+      "sha256": "86c4ae0043990e8524e627eb34ec557a1ce723f986d46241531c243e0a07a68b",
+      "bytes": 119790
+    },
+    "exports/remote_head_assembled.obj": {
+      "sha256": "9a095a489fe6f757b3d6b6c02f4cf17ba14f680e3c856178e25173a6ed7094e1",
+      "bytes": 7868
+    },
+    "exports/remote_head_assembled.json": {
+      "sha256": "adca971e5902d33c6d41ad47bddb06b576a7fc5c56ea01deb9b978f787d3c367",
+      "bytes": 896
+    },
+    "exports/schematic.pdf": {
+      "sha256": "207a916559931998442575632f253c61bf7be305d3f3846caaa3f181cf644442",
+      "bytes": 1007287
+    },
+    "exports/copper_review.pdf": {
+      "sha256": "e4c010b33eeba86e1d789c83d9d61575d0cdfd311bbbbc3faeae133f56b401ad",
+      "bytes": 859379
+    },
+    "validation/final_summary.json": {
+      "sha256": "256b7ae64cc38e9ec25c8060f11bc12f634f39028d3b4b29eac1a1b218cc96a9",
+      "bytes": 2427
+    }
+  }
+}

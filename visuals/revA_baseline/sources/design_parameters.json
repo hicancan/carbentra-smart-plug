@@ -1,0 +1,123 @@
+{
+  "revision": "CM-S16-EVT-A",
+  "status": "Engineering development design; fabrication and energization hold",
+  "units": "mm",
+  "coordinate_system": "Origin at rear housing center; +Z toward front; +Y toward PE opening",
+  "enclosure": {
+    "width": 88,
+    "height": 88,
+    "depth": 55,
+    "corner_radius": 14,
+    "wall": 2.4,
+    "rear_floor": 3,
+    "split_z": 46,
+    "front_wall": 2.4
+  },
+  "pcb": {
+    "width": 72,
+    "height": 68,
+    "bottom_z": 8,
+    "thickness": 1.6,
+    "max_component_z": 28,
+    "mount_hole_diameter": 3.2,
+    "mount_centers": [
+      [
+        -31,
+        -29
+      ],
+      [
+        -31,
+        29
+      ],
+      [
+        31,
+        -29
+      ],
+      [
+        31,
+        29
+      ]
+    ]
+  },
+  "interface": {
+    "target": "Single three-pin 16 A class, 220 VAC development target; no 10 A compatibility claim",
+    "certified": false,
+    "geometry_source": "Provisional design values, NOT standard gauge dimensions. Replace after licensed standard and matched certified inlet/receptacle selection.",
+    "slots": [
+      {
+        "name": "PE",
+        "x": 0,
+        "y": 17,
+        "angle": 0
+      },
+      {
+        "name": "L",
+        "x": -14,
+        "y": -7,
+        "angle": 30
+      },
+      {
+        "name": "N",
+        "x": 14,
+        "y": -7,
+        "angle": -30
+      }
+    ],
+    "slot_width": 2.6,
+    "slot_length": 8.4,
+    "blade_thickness": 1.6,
+    "blade_width": 6.4,
+    "blade_projection": 20
+  },
+  "contact_carrier": {
+    "width": 54,
+    "height": 50,
+    "bottom_z": 31,
+    "top_z": 47,
+    "clamping_lug_top_z": 52.6
+  },
+  "controls": {
+    "button_center": [
+      0,
+      -32
+    ],
+    "button_diameter": 8,
+    "light_center": [
+      0,
+      33
+    ],
+    "light_diameter": 2.4,
+    "pcb_switch_endpoint": [
+      0,
+      -29,
+      13.9
+    ],
+    "pcb_led_endpoint": [
+      0,
+      31,
+      14.9
+    ]
+  },
+  "assembly_fasteners": {
+    "centers": [
+      [
+        -38,
+        -24
+      ],
+      [
+        -38,
+        24
+      ],
+      [
+        38,
+        -24
+      ],
+      [
+        38,
+        24
+      ]
+    ],
+    "nominal_diameter": 2.6,
+    "installation": "Rear-access; blind front threaded bosses. Thread engagement geometry is a representation, not a qualified fastening spec."
+  }
+}

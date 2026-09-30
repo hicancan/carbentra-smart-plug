@@ -1,0 +1,70 @@
+{
+  "status": "DESIGN RESERVATION ONLY / assembled thermal and transient validation HOLD",
+  "assumptions": {
+    "5V_high_V": 5.125,
+    "3V3_planning_high_V": 3.4,
+    "ESP_current_capacity_reservation_A": 0.5,
+    "other_3V3_plus_margin_A": 0.05,
+    "buck_efficiency_assumed_lower_bound": 0.8,
+    "buck_efficiency_is_manufacturer_guarantee": false,
+    "coil_current_reservation_A": 0.1,
+    "coil_reservation_scope": "nominal/warm enclosure operation; cold-soak coil/current tolerance check remains separate",
+    "R05CT_input_current_datasheet_max_A": 0.2
+  },
+  "loads_W": {
+    "AP63203_input_for_550mA_3V3_reservation_W": 2.3375,
+    "R05CT_200mA_input_W": 1.0250000000000001,
+    "relay_100mA_reservation_W": 0.5125000000000001,
+    "misc_5V_2mA_reservation_W": 0.01025
+  },
+  "total_5V_output_power_W": 3.88525,
+  "current_equivalent_at_4p875V_A": 0.796974358974359,
+  "hot_3V3_budget_mA": {
+    "ATM90E26_design_reservation": 15,
+    "ATM90E26_datasheet_typical_only": 5.8,
+    "ASV_8p192MHz_datasheet_max": 10,
+    "ISO6741_side2_50Mbps_15pF_max": 12.1,
+    "other_pullups_reserve": 2,
+    "total_reserved": 39.1,
+    "R05CT_low_input_4p5V_output_limit_mA": 110,
+    "hot_load_not_added_twice_to_5V": true
+  },
+  "ambient_cases": [
+    {
+      "module_ambient_C": 50,
+      "IRM05_available_W": 5,
+      "IRM10_available_W": 10,
+      "IRM05_margin_W": 1.11475,
+      "IRM10_margin_W": 6.11475
+    },
+    {
+      "module_ambient_C": 60,
+      "IRM05_available_W": 3.75,
+      "IRM10_available_W": 7.5,
+      "IRM05_margin_W": -0.1352500000000001,
+      "IRM10_margin_W": 3.61475
+    },
+    {
+      "module_ambient_C": 70,
+      "IRM05_available_W": 2.5,
+      "IRM10_available_W": 5,
+      "IRM05_margin_W": -1.38525,
+      "IRM10_margin_W": 1.11475
+    },
+    {
+      "module_ambient_C": 80,
+      "IRM05_available_W": 1,
+      "IRM10_available_W": 2.3,
+      "IRM05_margin_W": -2.88525,
+      "IRM10_margin_W": -1.5852500000000003
+    },
+    {
+      "module_ambient_C": 85,
+      "IRM05_available_W": 0.25,
+      "IRM10_available_W": 1,
+      "IRM05_margin_W": -3.63525,
+      "IRM10_margin_W": -2.88525
+    }
+  ],
+  "evidence": "RAIL_BUDGET.md"
+}

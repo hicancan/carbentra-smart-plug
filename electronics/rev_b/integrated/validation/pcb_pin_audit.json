@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "board_sha256": "54485373c84268d072b8abb9a73405d867b58622657f3cf49976cbcab7c0f40a",
+  "scope": "101 integrated main-board parts only; remote head/offboard/harness excluded",
+  "main_footprints": 101,
+  "mechanical_NPTH_footprints": [
+    "H1",
+    "H2",
+    "H3",
+    "H4"
+  ],
+  "numbered_pad_keys": 321,
+  "schematic_pin_keys": 321,
+  "manifest_vs_schematic_errors": [],
+  "schematic_vs_PCB_errors": [],
+  "extra_PCB_pads": [],
+  "duplicate_pad_net_disagreement": [],
+  "unexpected_footprints": [],
+  "missing_footprints": [],
+  "routing_continuity": "Not tested by pin-assignment audit; use PCB DRC separately",
+  "board_mutation": false
+}

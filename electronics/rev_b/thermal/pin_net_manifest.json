@@ -1,0 +1,1752 @@
+{
+  "status": "DEVELOPMENT_CANDIDATE_NOT_ENERGIZABLE",
+  "components": [
+    {
+      "ref": "U1",
+      "name": "TMP302B",
+      "value": "TMP302BDRLR",
+      "footprint": "Package_TO_SOT_SMD:SOT-563",
+      "pins": {
+        "1": "GND_HEAD",
+        "2": "GND_HEAD",
+        "3": "THERM_RETURN",
+        "4": "+3V3_HEAD",
+        "5": "+3V3_HEAD",
+        "6": "GND_HEAD"
+      },
+      "sch": [
+        50.8,
+        71.12
+      ],
+      "mpn": "TMP302BDRLR",
+      "datasheet": "https://www.ti.com/lit/gpn/TMP302",
+      "height_mm": 0.6,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "TRIPSET0",
+          "at": [
+            -12.7,
+            5.08,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "6",
+          "name": "TRIPSET1",
+          "at": [
+            -12.7,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "4",
+          "name": "HYSTSET",
+          "at": [
+            -12.7,
+            -5.08,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "3",
+          "name": "OUT_N",
+          "at": [
+            12.7,
+            0.0,
+            180.0
+          ],
+          "type": "open_collector"
+        },
+        {
+          "number": "5",
+          "name": "VS",
+          "at": [
+            0.0,
+            12.7,
+            270.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "2",
+          "name": "GND",
+          "at": [
+            0.0,
+            -12.7,
+            90.0
+          ],
+          "type": "power_in"
+        }
+      ]
+    },
+    {
+      "ref": "R1",
+      "name": "R",
+      "value": "10k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_HEAD",
+        "2": "THERM_RETURN"
+      },
+      "sch": [
+        83.82,
+        55.88
+      ],
+      "mpn": "RC0603FR-0710KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "C1",
+      "name": "C",
+      "value": "100nF 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_HEAD",
+        "2": "GND_HEAD"
+      },
+      "sch": [
+        22.86,
+        109.22
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "datasheet": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D",
+      "height_mm": 0.9,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "U2",
+      "name": "74LVC1G17",
+      "value": "SN74LVC1G17DBVR",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pins": {
+        "1": null,
+        "2": "THERM_RETURN",
+        "3": "GND_ISO",
+        "4": "HEALTH_VALID",
+        "5": "+3V3_ISO"
+      },
+      "sch": [
+        132.08,
+        71.12
+      ],
+      "mpn": "SN74LVC1G17DBVR",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/sn74lvc1g17.pdf",
+      "height_mm": 1.45,
+      "pin_geometry": [
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            -12.7,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "1",
+          "name": "NC",
+          "at": [
+            -7.62,
+            5.08,
+            180.0
+          ],
+          "type": "no_connect"
+        },
+        {
+          "number": "5",
+          "name": "VCC",
+          "at": [
+            -5.08,
+            10.16,
+            270.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "3",
+          "name": "GND",
+          "at": [
+            -5.08,
+            -10.16,
+            90.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "4",
+          "name": "~",
+          "at": [
+            10.16,
+            0.0,
+            180.0
+          ],
+          "type": "output"
+        }
+      ]
+    },
+    {
+      "ref": "R2",
+      "name": "R",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "THERM_RETURN",
+        "2": "GND_ISO"
+      },
+      "sch": [
+        111.76,
+        109.22
+      ],
+      "mpn": "RC0603FR-07100KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "C2",
+      "name": "C",
+      "value": "100nF 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "sch": [
+        152.4,
+        109.22
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "datasheet": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D",
+      "height_mm": 0.9,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "U3",
+      "name": "TPS3808DBV",
+      "value": "TPS3808G30DBVR",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "pins": {
+        "1": "READY_RAW",
+        "2": "GND_ISO",
+        "3": "HEALTH_VALID",
+        "4": "CT_SELECT",
+        "5": "+3V3_ISO",
+        "6": "+3V3_ISO"
+      },
+      "sch": [
+        228.6,
+        71.12
+      ],
+      "mpn": "TPS3808G30DBVR",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/tps3808.pdf",
+      "height_mm": 1.45,
+      "pin_geometry": [
+        {
+          "number": "5",
+          "name": "SENSE",
+          "at": [
+            -10.16,
+            2.54,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "3",
+          "name": "~{MR}",
+          "at": [
+            -10.16,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "4",
+          "name": "CT",
+          "at": [
+            -10.16,
+            -2.54,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "6",
+          "name": "VDD",
+          "at": [
+            0.0,
+            7.62,
+            270.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "2",
+          "name": "GND",
+          "at": [
+            0.0,
+            -7.62,
+            90.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "1",
+          "name": "~{RESET}",
+          "at": [
+            10.16,
+            0.0,
+            180.0
+          ],
+          "type": "output"
+        }
+      ]
+    },
+    {
+      "ref": "R3",
+      "name": "R",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "CT_SELECT"
+      },
+      "sch": [
+        190.5,
+        109.22
+      ],
+      "mpn": "RC0603FR-07100KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "R4",
+      "name": "R",
+      "value": "10k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "READY_RAW"
+      },
+      "sch": [
+        254,
+        109.22
+      ],
+      "mpn": "RC0603FR-0710KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "C3",
+      "name": "C",
+      "value": "100nF 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "sch": [
+        223.52,
+        109.22
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "datasheet": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D",
+      "height_mm": 0.9,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "U4",
+      "name": "SN74LVC1G74",
+      "value": "SN74LVC1G74DCUR",
+      "footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+      "pins": {
+        "1": "REARM_CLK",
+        "2": "+3V3_ISO",
+        "3": null,
+        "4": "GND_ISO",
+        "5": "COIL_ARMED",
+        "6": "THERMAL_READY",
+        "7": "+3V3_ISO",
+        "8": "+3V3_ISO"
+      },
+      "sch": [
+        335.28,
+        71.12
+      ],
+      "mpn": "SN74LVC1G74DCUR",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/sn74lvc1g74.pdf",
+      "height_mm": 1.1,
+      "pin_geometry": [
+        {
+          "number": "2",
+          "name": "D",
+          "at": [
+            -12.7,
+            5.08,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "1",
+          "name": "CLK",
+          "at": [
+            -12.7,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "6",
+          "name": "CLR_N",
+          "at": [
+            -12.7,
+            -5.08,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "5",
+          "name": "Q",
+          "at": [
+            12.7,
+            5.08,
+            180.0
+          ],
+          "type": "output"
+        },
+        {
+          "number": "3",
+          "name": "Q_N",
+          "at": [
+            12.7,
+            0.0,
+            180.0
+          ],
+          "type": "output"
+        },
+        {
+          "number": "7",
+          "name": "PRE_N",
+          "at": [
+            12.7,
+            -5.08,
+            180.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "8",
+          "name": "VCC",
+          "at": [
+            0.0,
+            12.7,
+            270.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "4",
+          "name": "GND",
+          "at": [
+            0.0,
+            -12.7,
+            90.0
+          ],
+          "type": "power_in"
+        }
+      ]
+    },
+    {
+      "ref": "C4",
+      "name": "C",
+      "value": "100nF 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "sch": [
+        304.8,
+        109.22
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "datasheet": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D",
+      "height_mm": 0.9,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "J3",
+      "name": "Conn_01x03",
+      "value": "SENSOR HARNESS",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO",
+        "3": "THERM_RETURN"
+      },
+      "sch": [
+        45.72,
+        142.24
+      ],
+      "mpn": "TSW-103-07-G-S",
+      "datasheet": "https://www.samtec.com/products/tsw-103-07-g-s",
+      "height_mm": 8.38,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "Pin_1",
+          "at": [
+            -5.08,
+            2.54,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "Pin_2",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "3",
+          "name": "Pin_3",
+          "at": [
+            -5.08,
+            -2.54,
+            0.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "J4",
+      "name": "Conn_01x03",
+      "value": "SENSOR PIGTAIL",
+      "footprint": "Thermal:Sensor_Pigtail_3xP2.54",
+      "pins": {
+        "1": "+3V3_HEAD",
+        "2": "GND_HEAD",
+        "3": "THERM_RETURN"
+      },
+      "sch": [
+        99.06,
+        142.24
+      ],
+      "mpn": "Soldered insulated pigtail / strain relief HOLD",
+      "datasheet": "",
+      "height_mm": 2.0,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "Pin_1",
+          "at": [
+            -5.08,
+            2.54,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "Pin_2",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "3",
+          "name": "Pin_3",
+          "at": [
+            -5.08,
+            -2.54,
+            0.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "W1",
+      "name": "R",
+      "value": "HARNESS: 3V3",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "+3V3_HEAD"
+      },
+      "sch": [
+        157.48,
+        137.16
+      ],
+      "mpn": "OFF-BOARD WIRE MODEL / NOT BOM",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "W2",
+      "name": "R",
+      "value": "HARNESS: GND",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "GND_ISO",
+        "2": "GND_HEAD"
+      },
+      "sch": [
+        195.58,
+        137.16
+      ],
+      "mpn": "OFF-BOARD WIRE MODEL / NOT BOM",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "SW1",
+      "name": "SW_Push",
+      "value": "MANUAL REARM",
+      "footprint": "Button_Switch_THT:SW_PUSH_6mm",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "MANUAL_RAW"
+      },
+      "sch": [
+        38.1,
+        195.58
+      ],
+      "mpn": "B3F-1000",
+      "datasheet": "https://components.omron.com/us-en/products/switches/B3F",
+      "height_mm": 4.3,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "1",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "at": [
+            5.08,
+            0.0,
+            180.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "R5",
+      "name": "R",
+      "value": "1k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "MANUAL_RAW",
+        "2": "REARM_RC"
+      },
+      "sch": [
+        63.5,
+        210.82
+      ],
+      "mpn": "RC0603FR-071KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "R7",
+      "name": "R",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "REARM_RC",
+        "2": "GND_ISO"
+      },
+      "sch": [
+        99.06,
+        210.82
+      ],
+      "mpn": "RC0603FR-07100KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "C5",
+      "name": "C",
+      "value": "100nF 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "REARM_RC",
+        "2": "GND_ISO"
+      },
+      "sch": [
+        129.54,
+        210.82
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "datasheet": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D",
+      "height_mm": 0.9,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "U5",
+      "name": "74LVC1G17",
+      "value": "SN74LVC1G17DBVR",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pins": {
+        "1": null,
+        "2": "REARM_RC",
+        "3": "GND_ISO",
+        "4": "REARM_CLK",
+        "5": "+3V3_ISO"
+      },
+      "sch": [
+        160.02,
+        185.42
+      ],
+      "mpn": "SN74LVC1G17DBVR",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/sn74lvc1g17.pdf",
+      "height_mm": 1.45,
+      "pin_geometry": [
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            -12.7,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "1",
+          "name": "NC",
+          "at": [
+            -7.62,
+            5.08,
+            180.0
+          ],
+          "type": "no_connect"
+        },
+        {
+          "number": "5",
+          "name": "VCC",
+          "at": [
+            -5.08,
+            10.16,
+            270.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "3",
+          "name": "GND",
+          "at": [
+            -5.08,
+            -10.16,
+            90.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "4",
+          "name": "~",
+          "at": [
+            10.16,
+            0.0,
+            180.0
+          ],
+          "type": "output"
+        }
+      ]
+    },
+    {
+      "ref": "C6",
+      "name": "C",
+      "value": "100nF 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "sch": [
+        165.1,
+        241.3
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "datasheet": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D",
+      "height_mm": 0.9,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "Q1",
+      "name": "AO3401A",
+      "value": "AO3401A",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "COIL_GATE",
+        "2": "+5V_ISO",
+        "3": "COIL_5V"
+      },
+      "sch": [
+        284.48,
+        180.34
+      ],
+      "mpn": "AO3401A",
+      "datasheet": "https://www.aosmd.com/res/data_sheets/AO3401A.pdf",
+      "height_mm": 1.12,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "G",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "3",
+          "name": "D",
+          "at": [
+            2.54,
+            5.08,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "S",
+          "at": [
+            2.54,
+            -5.08,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "R9",
+      "name": "R",
+      "value": "47k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_ISO",
+        "2": "COIL_GATE"
+      },
+      "sch": [
+        248.92,
+        180.34
+      ],
+      "mpn": "RC0603FR-0747KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "Q2",
+      "name": "MMBT3904",
+      "value": "MMBT3904",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "ARM_B",
+        "2": "SINK_MID",
+        "3": "COIL_GATE"
+      },
+      "sch": [
+        284.48,
+        213.36
+      ],
+      "mpn": "MMBT3904,215",
+      "datasheet": "https://assets.nexperia.com/documents/data-sheet/MMBT3904.pdf",
+      "height_mm": 1.1,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "B",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "3",
+          "name": "C",
+          "at": [
+            2.54,
+            5.08,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "E",
+          "at": [
+            2.54,
+            -5.08,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "Q3",
+      "name": "MMBT3904",
+      "value": "MMBT3904",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "READY_B",
+        "2": "GND_ISO",
+        "3": "SINK_MID"
+      },
+      "sch": [
+        284.48,
+        246.38
+      ],
+      "mpn": "MMBT3904,215",
+      "datasheet": "https://assets.nexperia.com/documents/data-sheet/MMBT3904.pdf",
+      "height_mm": 1.1,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "B",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "3",
+          "name": "C",
+          "at": [
+            2.54,
+            5.08,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "E",
+          "at": [
+            2.54,
+            -5.08,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "R10",
+      "name": "R",
+      "value": "10k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "COIL_ARMED",
+        "2": "ARM_B"
+      },
+      "sch": [
+        218.44,
+        210.82
+      ],
+      "mpn": "RC0603FR-0710KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "R11",
+      "name": "R",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "ARM_B",
+        "2": "SINK_MID"
+      },
+      "sch": [
+        248.92,
+        210.82
+      ],
+      "mpn": "RC0603FR-07100KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "R12",
+      "name": "R",
+      "value": "47k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "THERMAL_READY",
+        "2": "READY_B"
+      },
+      "sch": [
+        218.44,
+        246.38
+      ],
+      "mpn": "RC0603FR-0747KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "R13",
+      "name": "R",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "READY_B",
+        "2": "GND_ISO"
+      },
+      "sch": [
+        248.92,
+        246.38
+      ],
+      "mpn": "RC0603FR-07100KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "U6",
+      "name": "74LVC1G17",
+      "value": "SN74LVC1G17DBVR",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pins": {
+        "1": null,
+        "2": "READY_RAW",
+        "3": "GND_ISO",
+        "4": "THERMAL_READY",
+        "5": "+3V3_ISO"
+      },
+      "sch": [
+        335.28,
+        137.16
+      ],
+      "mpn": "SN74LVC1G17DBVR",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/sn74lvc1g17.pdf",
+      "height_mm": 1.45,
+      "pin_geometry": [
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            -12.7,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "1",
+          "name": "NC",
+          "at": [
+            -7.62,
+            5.08,
+            180.0
+          ],
+          "type": "no_connect"
+        },
+        {
+          "number": "5",
+          "name": "VCC",
+          "at": [
+            -5.08,
+            10.16,
+            270.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "3",
+          "name": "GND",
+          "at": [
+            -5.08,
+            -10.16,
+            90.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "4",
+          "name": "~",
+          "at": [
+            10.16,
+            0.0,
+            180.0
+          ],
+          "type": "output"
+        }
+      ]
+    },
+    {
+      "ref": "C7",
+      "name": "C",
+      "value": "100nF 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "sch": [
+        284.48,
+        137.16
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "datasheet": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D",
+      "height_mm": 0.9,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "J1",
+      "name": "Conn_01x04",
+      "value": "MAIN 4-WIRE COIL INTERLOCK",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical",
+      "pins": {
+        "1": "+5V_ISO",
+        "2": "+3V3_ISO",
+        "3": "GND_ISO",
+        "4": "COIL_5V"
+      },
+      "sch": [
+        365.76,
+        203.2
+      ],
+      "mpn": "TSW-104-07-G-S",
+      "datasheet": "https://www.samtec.com/products/tsw",
+      "height_mm": 8.38,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "Pin_1",
+          "at": [
+            -5.08,
+            2.54,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "Pin_2",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "3",
+          "name": "Pin_3",
+          "at": [
+            -5.08,
+            -2.54,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "4",
+          "name": "Pin_4",
+          "at": [
+            -5.08,
+            -5.08,
+            0.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "TP1",
+      "name": "TestPoint",
+      "value": "COIL_ARMED",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "pins": {
+        "1": "COIL_ARMED"
+      },
+      "sch": [
+        43.18,
+        241.3
+      ],
+      "mpn": "PCB TEST PAD ONLY",
+      "datasheet": "",
+      "height_mm": 0,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "1",
+          "at": [
+            0.0,
+            0.0,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "ref": "TP2",
+      "name": "TestPoint",
+      "value": "THERMAL_READY",
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "pins": {
+        "1": "THERMAL_READY"
+      },
+      "sch": [
+        104.14,
+        241.3
+      ],
+      "mpn": "PCB TEST PAD ONLY",
+      "datasheet": "",
+      "height_mm": 0,
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "1",
+          "at": [
+            0.0,
+            0.0,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ]
+    }
+  ],
+  "candidate_controller_reservation_mm": [
+    45,
+    35,
+    1.6
+  ],
+  "candidate_sensor_head_reservation_mm": [
+    12,
+    12,
+    1.6
+  ],
+  "board_geometry_verified": true,
+  "assembled_insulation_harness_qualified": false,
+  "sensor_head_assembly": {
+    "orientation": "component face rear; smooth B.Cu side to qualified insulating pad; rotate 180 degrees about local Y for case integration",
+    "pigtail_exit": "F.Cu SMD lands, rear-facing in installed orientation",
+    "contact_side_protrusion": "no solder/wire protrusions; via fill/tenting and flatness qualification HOLD",
+    "component_face_wire_reserve_mm": 2,
+    "contact_island_B_Cu_kicad_mm": [
+      1.2,
+      4.3,
+      4.5,
+      6.9
+    ],
+    "contact_island_net": "GND_HEAD",
+    "thermal_vias_mm": [
+      [
+        1.6,
+        4.7
+      ],
+      [
+        2.4,
+        4.7
+      ],
+      [
+        3.4,
+        4.7
+      ],
+      [
+        4.2,
+        4.7
+      ]
+    ],
+    "process_qualification": "HOLD"
+  },
+  "additional_controller_GPIO_required": 0,
+  "main_header_crossmap": {
+    "J1.1": "MAIN_J3.7",
+    "J1.2": "MAIN_J3.1",
+    "J1.3": "MAIN_J3.11",
+    "J1.4": "MAIN_J3.10"
+  },
+  "supply_assumptions": {
+    "logic_V": [
+      3.135,
+      3.465
+    ],
+    "coil_V": [
+      4.75,
+      5.25
+    ],
+    "coil_current_upper_A": 0.15
+  },
+  "host_pins": {
+    "J1.1": "+5V_ISO",
+    "J1.2": "+3V3_ISO",
+    "J1.3": "GND_ISO",
+    "TP1": "COIL_ARMED",
+    "TP2": "THERMAL_READY",
+    "J1.4": "COIL_5V"
+  },
+  "latched_permission": "!READY => Q=0 asynchronously; READY && fresh REARM edge => Q=1; else hold",
+  "coil_permission": "Q1 ON only when Q2 (Q) AND Q3 (READY) sink gate; original low-side RELAY_CMD remains required",
+  "rearm_policy": "Local physical button only; no MCU rearm connection. Requires press after every power restoration.",
+  "wire_open_coverage": "THERM_RETURN open goes low at R2; +3V3_HEAD open removes head pullup. Sensor ground opening/internal stuck-high not covered."
+}

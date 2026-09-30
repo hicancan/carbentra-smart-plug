@@ -1,0 +1,36 @@
+{
+  "board_mm": [
+    12,
+    12,
+    1.6
+  ],
+  "components": [
+    "U1",
+    "R1",
+    "C1",
+    "J4"
+  ],
+  "positions": {
+    "U1": [
+      3.4,
+      6,
+      0
+    ],
+    "R1": [
+      5.5,
+      3,
+      0
+    ],
+    "C1": [
+      2.5,
+      2.3,
+      0
+    ],
+    "J4": [
+      9,
+      3,
+      0
+    ]
+  },
+  "status": "SOURCE_PLACEMENT_RECORD; final checks are independent_checks.json"
+}

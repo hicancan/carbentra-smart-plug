@@ -1,0 +1,16 @@
+{
+  "full": {
+    "bytes": 11778140,
+    "nodes": 1032,
+    "meshes": 1032
+  },
+  "light": {
+    "bytes": 11488932,
+    "nodes": 92,
+    "meshes": 92
+  },
+  "node_reduction_percent": 91.1,
+  "byte_reduction_percent": 2.5,
+  "all_mechanical_part_names_preserved": true,
+  "method": "Batch actual copper and pad/via meshes by material; omit redundant ref-designator glyph annotations; no decimation and no functional geometry changes"
+}

@@ -100,8 +100,8 @@ base('验证状态与真实完成程度','数字检查、工程审查和物理�
 v=json.loads((R/'mechanical/validation.json').read_text())
 digital=json.loads((R/'release/digital_checks.json').read_text()) if (R/'release/digital_checks.json').exists() else {}
 y=690
-y=bullet('机械数字检查',f'当前机械检查记录包含 {v.get("parts",20)} 个零件。实体有效性、独立实体和几何干涉结果见 mechanical/validation.json；有意连接接口与非预期相交分开记录。',y)
-y=bullet('电路与 PCB 检查','ERC、DRC 及未布线统计由 KiCad 输出，完整保留于 electronics/validation。没有把未布线板或未验证计量接口标成可直接制造的电路。',y)
+y=bullet('机械数字检查',f'当前机械检查记录包含 {v.get("parts",20)} 个零件。与 970 个电气导出实体的整合检查，仅发现 6 处预期端子导体接入。插入通道与参数重算均有独立记录；这些是数字几何检查。',y)
+y=bullet('电路与 PCB 检查','最终 ERC 为 0 错误、0 警告；几何 DRC 为 0 违规，低压部分无未连接项。仍有 9 处市电连接未布线。33 个电气元件的 104 个引脚网络已核对；计量子板和实际输出反馈尚未实现。',y)
 y=bullet('可视化与文件检查','审查 Blender 场景、关键渲染与爆炸动画，检查 GLB 文件结构和具名部件。数字交付自动检查见 release/digital_checks.json。',y)
 y=bullet('未完成的物理验证','没有实物加工、装配、计量标定、温升、耐压、漏电、接地、EMC、浪涌、异常工况或寿命测试结果。不得将其写入作品报告作为已取得成果。',y)
 y=bullet('继续推进条件','下一轮由专业电气人员关闭电路与接口问题，结合选定供应件修订机械结构，再决定打样。真实 220V 测试须在合适的实验条件下执行。',y)

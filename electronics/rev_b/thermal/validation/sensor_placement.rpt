@@ -1,0 +1,62 @@
+** Drc report for thermal_sensor.kicad_pcb **
+** Created on 2026-09-30T02:44:07-0700 **
+
+** Found 3 DRC violations **
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1500 mm)
+    Rule: netclass 'Default'; error
+    @(2.6875 mm, 6.0000 mm): Pad 2 [GND_HEAD] of U1 on F.Cu
+    @(2.6875 mm, 6.5000 mm): Pad 3 [THERM_RETURN] of U1 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1500 mm)
+    Rule: netclass 'Default'; error
+    @(4.1125 mm, 6.0000 mm): Pad 5 [+3V3_HEAD] of U1 on F.Cu
+    @(4.1125 mm, 5.5000 mm): Pad 6 [GND_HEAD] of U1 on F.Cu
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(9.0000 mm, 3.0000 mm): Footprint J4
+    @(6.0000 mm, 3.0000 mm): Footprint R1
+
+** Found 10 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(4.1125 mm, 6.5000 mm): Pad 4 [+3V3_HEAD] of U1 on F.Cu
+    @(4.1125 mm, 6.0000 mm): Pad 5 [+3V3_HEAD] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(5.1750 mm, 3.0000 mm): Pad 1 [+3V3_HEAD] of R1 on F.Cu
+    @(4.1125 mm, 6.0000 mm): Pad 5 [+3V3_HEAD] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(1.7250 mm, 2.3000 mm): Pad 1 [+3V3_HEAD] of C1 on F.Cu
+    @(5.1750 mm, 3.0000 mm): Pad 1 [+3V3_HEAD] of R1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(9.0000 mm, 3.0000 mm): PTH pad 1 [+3V3_HEAD] of J4
+    @(5.1750 mm, 3.0000 mm): Pad 1 [+3V3_HEAD] of R1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(2.6875 mm, 5.5000 mm): Pad 1 [GND_HEAD] of U1 on F.Cu
+    @(2.6875 mm, 6.0000 mm): Pad 2 [GND_HEAD] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(4.1125 mm, 5.5000 mm): Pad 6 [GND_HEAD] of U1 on F.Cu
+    @(2.6875 mm, 5.5000 mm): Pad 1 [GND_HEAD] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(3.2750 mm, 2.3000 mm): Pad 2 [GND_HEAD] of C1 on F.Cu
+    @(2.6875 mm, 5.5000 mm): Pad 1 [GND_HEAD] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(4.1125 mm, 5.5000 mm): Pad 6 [GND_HEAD] of U1 on F.Cu
+    @(9.0000 mm, 5.5400 mm): PTH pad 2 [GND_HEAD] of J4
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(6.8250 mm, 3.0000 mm): Pad 2 [THERM_RETURN] of R1 on F.Cu
+    @(2.6875 mm, 6.5000 mm): Pad 3 [THERM_RETURN] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(9.0000 mm, 8.0800 mm): PTH pad 3 [THERM_RETURN] of J4
+    @(6.8250 mm, 3.0000 mm): Pad 2 [THERM_RETURN] of R1 on F.Cu
+
+** Found 0 Footprint errors **
+
+** End of Report **

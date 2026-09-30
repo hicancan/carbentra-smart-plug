@@ -1,0 +1,2581 @@
+[
+  {
+    "ref": "U1",
+    "lib": "Sensor_Energy",
+    "name": "ATM90E26-YU",
+    "value": "ATM90E26-YU",
+    "fp": "Package_SO:SSOP-28_5.3x10.2mm_P0.65mm",
+    "nets": {
+      "1": "HOT_GND",
+      "2": "HOT_GND",
+      "3": "HOT_3V3",
+      "4": "HOT_RESET",
+      "5": "HOT_AVDD",
+      "6": "HOT_GND",
+      "7": "HOT_GND",
+      "8": "HOT_GND",
+      "9": "HOT_GND",
+      "10": "HOT_I1P",
+      "11": "HOT_I1N",
+      "12": "HOT_GND",
+      "13": "HOT_VREF",
+      "14": "HOT_GND",
+      "15": "HOT_VN",
+      "16": "HOT_VP",
+      "22": "HOT_XIN",
+      "23": "HOT_XOUT",
+      "24": "HOT_CS",
+      "25": "HOT_SCLK",
+      "26": "HOT_MISO",
+      "27": "HOT_MOSI",
+      "28": "HOT_3V3"
+    },
+    "pos": [
+      36,
+      25,
+      0
+    ],
+    "sch": [
+      210,
+      90
+    ],
+    "mpn": "ATM90E26-YU",
+    "url": "https://ww1.microchip.com/downloads/aemDocuments/documents/OTH/ProductDocuments/DataSheets/Atmel-46002-SE-M90E26-Datasheet.pdf",
+    "height": 2.0,
+    "body": [
+      5.3,
+      10.2
+    ],
+    "pins": [
+      {
+        "number": "28",
+        "name": "MMD0",
+        "at": [
+          -15.24,
+          15.24,
+          0.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "1",
+        "name": "MMD1",
+        "at": [
+          -15.24,
+          12.7,
+          0.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "4",
+        "name": "~{Reset}",
+        "at": [
+          -15.24,
+          7.62,
+          0.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "7",
+        "name": "I2P",
+        "at": [
+          -15.24,
+          0.0,
+          0.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "8",
+        "name": "I2N",
+        "at": [
+          -15.24,
+          -2.54,
+          0.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "10",
+        "name": "I1P",
+        "at": [
+          -15.24,
+          -5.08,
+          0.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "11",
+        "name": "I1N",
+        "at": [
+          -15.24,
+          -7.62,
+          0.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "12",
+        "name": "USEL",
+        "at": [
+          -15.24,
+          -10.16,
+          0.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "13",
+        "name": "Vref",
+        "at": [
+          -15.24,
+          -12.7,
+          0.0
+        ],
+        "type": "output"
+      },
+      {
+        "number": "5",
+        "name": "AVDD",
+        "at": [
+          -2.54,
+          22.86,
+          270.0
+        ],
+        "type": "power_in"
+      },
+      {
+        "number": "14",
+        "name": "AGND",
+        "at": [
+          -2.54,
+          -22.86,
+          90.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "6",
+        "name": "AGND",
+        "at": [
+          -2.54,
+          -22.86,
+          90.0
+        ],
+        "type": "power_in"
+      },
+      {
+        "number": "3",
+        "name": "DVDD",
+        "at": [
+          2.54,
+          22.86,
+          270.0
+        ],
+        "type": "power_in"
+      },
+      {
+        "number": "2",
+        "name": "DGND",
+        "at": [
+          2.54,
+          -22.86,
+          90.0
+        ],
+        "type": "power_in"
+      },
+      {
+        "number": "9",
+        "name": "DGND",
+        "at": [
+          2.54,
+          -22.86,
+          90.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "27",
+        "name": "SDI/URX",
+        "at": [
+          15.24,
+          15.24,
+          180.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "26",
+        "name": "SDO/UTX",
+        "at": [
+          15.24,
+          12.7,
+          180.0
+        ],
+        "type": "output"
+      },
+      {
+        "number": "25",
+        "name": "SCLK",
+        "at": [
+          15.24,
+          10.16,
+          180.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "24",
+        "name": "~{CS}",
+        "at": [
+          15.24,
+          7.62,
+          180.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "23",
+        "name": "OSCO",
+        "at": [
+          15.24,
+          5.08,
+          180.0
+        ],
+        "type": "output"
+      },
+      {
+        "number": "22",
+        "name": "OSCI",
+        "at": [
+          15.24,
+          2.54,
+          180.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "21",
+        "name": "ZX",
+        "at": [
+          15.24,
+          0.0,
+          180.0
+        ],
+        "type": "output"
+      },
+      {
+        "number": "20",
+        "name": "IRQ",
+        "at": [
+          15.24,
+          -2.54,
+          180.0
+        ],
+        "type": "output"
+      },
+      {
+        "number": "19",
+        "name": "CF2",
+        "at": [
+          15.24,
+          -5.08,
+          180.0
+        ],
+        "type": "output"
+      },
+      {
+        "number": "18",
+        "name": "CF1",
+        "at": [
+          15.24,
+          -7.62,
+          180.0
+        ],
+        "type": "output"
+      },
+      {
+        "number": "17",
+        "name": "WarnOut",
+        "at": [
+          15.24,
+          -10.16,
+          180.0
+        ],
+        "type": "output"
+      },
+      {
+        "number": "16",
+        "name": "VP",
+        "at": [
+          15.24,
+          -12.7,
+          180.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "15",
+        "name": "VN",
+        "at": [
+          15.24,
+          -15.24,
+          180.0
+        ],
+        "type": "input"
+      }
+    ]
+  },
+  {
+    "ref": "U2",
+    "lib": "Isolator",
+    "name": "ISO6741",
+    "value": "ISO6741DWR",
+    "fp": "RevB:ISO6741_DW_8p1",
+    "nets": {
+      "1": "ISO_3V3",
+      "2": "ISO_GND",
+      "3": "ISO_SCLK",
+      "4": "ISO_MOSI",
+      "5": "ISO_CS",
+      "6": "ISO_MISO",
+      "7": "ISO_3V3",
+      "8": "ISO_GND",
+      "9": "HOT_GND",
+      "10": "HOT_3V3",
+      "11": "HOT_MISO",
+      "12": "HOT_CS",
+      "13": "HOT_MOSI",
+      "14": "HOT_SCLK",
+      "15": "HOT_GND",
+      "16": "HOT_3V3"
+    },
+    "pos": [
+      56,
+      28,
+      180
+    ],
+    "sch": [
+      320,
+      85
+    ],
+    "mpn": "ISO6741DWR",
+    "url": "https://www.ti.com/lit/ds/symlink/iso6741.pdf",
+    "height": 2.65,
+    "body": [
+      7.5,
+      10.3
+    ],
+    "pins": [
+      {
+        "number": "3",
+        "name": "INA",
+        "at": [
+          -10.16,
+          5.08,
+          0.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "4",
+        "name": "INB",
+        "at": [
+          -10.16,
+          2.54,
+          0.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "5",
+        "name": "INC",
+        "at": [
+          -10.16,
+          0.0,
+          0.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "6",
+        "name": "OUTD",
+        "at": [
+          -10.16,
+          -2.54,
+          0.0
+        ],
+        "type": "output"
+      },
+      {
+        "number": "7",
+        "name": "EN1",
+        "at": [
+          -10.16,
+          -5.08,
+          0.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "1",
+        "name": "V_{CC1}",
+        "at": [
+          -5.08,
+          15.24,
+          270.0
+        ],
+        "type": "power_in"
+      },
+      {
+        "number": "2",
+        "name": "GND1",
+        "at": [
+          -5.08,
+          -15.24,
+          90.0
+        ],
+        "type": "power_in"
+      },
+      {
+        "number": "8",
+        "name": "GND1",
+        "at": [
+          -5.08,
+          -15.24,
+          90.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "16",
+        "name": "V_{CC2}",
+        "at": [
+          5.08,
+          15.24,
+          270.0
+        ],
+        "type": "power_in"
+      },
+      {
+        "number": "15",
+        "name": "GND2",
+        "at": [
+          5.08,
+          -15.24,
+          90.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "9",
+        "name": "GND2",
+        "at": [
+          5.08,
+          -15.24,
+          90.0
+        ],
+        "type": "power_in"
+      },
+      {
+        "number": "14",
+        "name": "OUTA",
+        "at": [
+          10.16,
+          5.08,
+          180.0
+        ],
+        "type": "output"
+      },
+      {
+        "number": "13",
+        "name": "OUTB",
+        "at": [
+          10.16,
+          2.54,
+          180.0
+        ],
+        "type": "output"
+      },
+      {
+        "number": "12",
+        "name": "OUTC",
+        "at": [
+          10.16,
+          0.0,
+          180.0
+        ],
+        "type": "output"
+      },
+      {
+        "number": "11",
+        "name": "IND",
+        "at": [
+          10.16,
+          -2.54,
+          180.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "10",
+        "name": "EN2",
+        "at": [
+          10.16,
+          -5.08,
+          180.0
+        ],
+        "type": "input"
+      }
+    ]
+  },
+  {
+    "ref": "PS1",
+    "lib": "RevB",
+    "name": "R05CT05S",
+    "value": "R05CT05S-R / 3.3V",
+    "fp": "RevB:R05CT05S_8p1",
+    "nets": {
+      "1": "ISO_5V",
+      "2": "ISO_GND",
+      "3": "ISO_5V",
+      "13": "HOT_GND",
+      "14": "HOT_3V3",
+      "9": "HOT_GND",
+      "15": "HOT_GND",
+      "16": "HOT_GND"
+    },
+    "pos": [
+      56,
+      11,
+      180
+    ],
+    "sch": [
+      320,
+      185
+    ],
+    "mpn": "R05CT05S-R",
+    "url": "https://recom-power.com/pdf/Econoline/RxxCTxx.pdf",
+    "height": 2.65,
+    "body": [
+      7.5,
+      10.3
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "CTRL",
+        "at": [
+          -12.7,
+          10.16,
+          0.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "2",
+        "name": "VIN-",
+        "at": [
+          -12.7,
+          5.08,
+          0.0
+        ],
+        "type": "power_in"
+      },
+      {
+        "number": "3",
+        "name": "VIN+",
+        "at": [
+          -12.7,
+          7.62,
+          0.0
+        ],
+        "type": "power_in"
+      },
+      {
+        "number": "4",
+        "name": "SYNC",
+        "at": [
+          -12.7,
+          2.54,
+          0.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "5",
+        "name": "SYNC_OK",
+        "at": [
+          -12.7,
+          0.0,
+          0.0
+        ],
+        "type": "open_collector"
+      },
+      {
+        "number": "6",
+        "name": "NC",
+        "at": [
+          -12.7,
+          -2.54,
+          0.0
+        ],
+        "type": "no_connect"
+      },
+      {
+        "number": "7",
+        "name": "NC",
+        "at": [
+          -12.7,
+          -5.08,
+          0.0
+        ],
+        "type": "no_connect"
+      },
+      {
+        "number": "8",
+        "name": "NC",
+        "at": [
+          -12.7,
+          -7.62,
+          0.0
+        ],
+        "type": "no_connect"
+      },
+      {
+        "number": "9",
+        "name": "VOUT-",
+        "at": [
+          12.7,
+          -7.62,
+          180.0
+        ],
+        "type": "power_out"
+      },
+      {
+        "number": "10",
+        "name": "NC",
+        "at": [
+          12.7,
+          -5.08,
+          180.0
+        ],
+        "type": "no_connect"
+      },
+      {
+        "number": "11",
+        "name": "NC",
+        "at": [
+          12.7,
+          -2.54,
+          180.0
+        ],
+        "type": "no_connect"
+      },
+      {
+        "number": "12",
+        "name": "NC",
+        "at": [
+          12.7,
+          0.0,
+          180.0
+        ],
+        "type": "no_connect"
+      },
+      {
+        "number": "13",
+        "name": "TRIM",
+        "at": [
+          12.7,
+          2.54,
+          180.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "14",
+        "name": "VOUT+",
+        "at": [
+          12.7,
+          5.08,
+          180.0
+        ],
+        "type": "power_out"
+      },
+      {
+        "number": "15",
+        "name": "VOUT-",
+        "at": [
+          12.7,
+          7.62,
+          180.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "16",
+        "name": "VOUT-",
+        "at": [
+          12.7,
+          10.16,
+          180.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "RS1",
+    "lib": "Device",
+    "name": "R_Shunt",
+    "value": "1mR / 1% / 8W",
+    "fp": "RevB:CSS4J_4026",
+    "nets": {
+      "1": "HOT_GND",
+      "2": "HOT_SENSE_UP",
+      "3": "HOT_SENSE_DOWN",
+      "4": "HOT_LOAD"
+    },
+    "pos": [
+      18,
+      25,
+      270
+    ],
+    "sch": [
+      80,
+      75
+    ],
+    "mpn": "CSS4J-4026R-1L00FE",
+    "url": "https://www.bourns.com/docs/product-datasheets/css4j-4026.pdf",
+    "height": 2.92,
+    "body": [
+      10.31,
+      6.9
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "1",
+        "at": [
+          0.0,
+          5.08,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "4",
+        "name": "4",
+        "at": [
+          0.0,
+          -5.08,
+          90.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "2",
+        "at": [
+          3.81,
+          2.54,
+          180.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "3",
+        "name": "3",
+        "at": [
+          3.81,
+          -2.54,
+          180.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "J1",
+    "lib": "Connector_Generic",
+    "name": "Conn_01x02",
+    "value": "PROTECTED L / TO RELAY",
+    "fp": "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal",
+    "nets": {
+      "1": "HOT_LOAD",
+      "2": "HOT_GND"
+    },
+    "pos": [
+      7,
+      29,
+      90
+    ],
+    "sch": [
+      35,
+      75
+    ],
+    "mpn": "1711725",
+    "url": "https://www.phoenixcontact.com/en-pc/products/pcb-terminal-block-mkds-3-2-508-1711725",
+    "height": 18,
+    "body": [
+      10.16,
+      11.2
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "Pin_1",
+        "at": [
+          -5.08,
+          0.0,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "Pin_2",
+        "at": [
+          -5.08,
+          -2.54,
+          0.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "J2",
+    "lib": "Connector_Generic",
+    "name": "Conn_01x02",
+    "value": "N SENSE / NC",
+    "fp": "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal",
+    "nets": {
+      "1": "HOT_N"
+    },
+    "pos": [
+      8,
+      12,
+      0
+    ],
+    "sch": [
+      35,
+      150
+    ],
+    "mpn": "1711725",
+    "url": "https://www.phoenixcontact.com/en-pc/products/pcb-terminal-block-mkds-3-2-508-1711725",
+    "height": 18,
+    "body": [
+      10.16,
+      11.2
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "Pin_1",
+        "at": [
+          -5.08,
+          0.0,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "Pin_2",
+        "at": [
+          -5.08,
+          -2.54,
+          0.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "J3",
+    "lib": "Connector_Generic",
+    "name": "Conn_01x08",
+    "value": "CONTROLLER - ISOLATED",
+    "fp": "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical",
+    "nets": {
+      "1": "ISO_3V3",
+      "2": "ISO_GND",
+      "3": "ISO_SCLK",
+      "4": "ISO_MOSI",
+      "5": "ISO_MISO",
+      "6": "ISO_CS",
+      "7": "ISO_5V",
+      "8": "ISO_GND"
+    },
+    "pos": [
+      70,
+      11,
+      0
+    ],
+    "sch": [
+      385,
+      90
+    ],
+    "mpn": "TSW-108-07-G-S",
+    "url": "https://www.samtec.com/products/tsw",
+    "height": 8,
+    "body": [
+      2.54,
+      20.32
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "Pin_1",
+        "at": [
+          -5.08,
+          7.62,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "Pin_2",
+        "at": [
+          -5.08,
+          5.08,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "3",
+        "name": "Pin_3",
+        "at": [
+          -5.08,
+          2.54,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "4",
+        "name": "Pin_4",
+        "at": [
+          -5.08,
+          0.0,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "5",
+        "name": "Pin_5",
+        "at": [
+          -5.08,
+          -2.54,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "6",
+        "name": "Pin_6",
+        "at": [
+          -5.08,
+          -5.08,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "7",
+        "name": "Pin_7",
+        "at": [
+          -5.08,
+          -7.62,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "8",
+        "name": "Pin_8",
+        "at": [
+          -5.08,
+          -10.16,
+          0.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "R1",
+    "lib": "Device",
+    "name": "R",
+    "value": "100R",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "nets": {
+      "1": "HOT_SENSE_DOWN",
+      "2": "HOT_I1P"
+    },
+    "pos": [
+      24,
+      25,
+      0
+    ],
+    "sch": [
+      120,
+      65
+    ],
+    "mpn": "TNPW0805100RBEEA",
+    "url": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+    "height": 0.65,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "R2",
+    "lib": "Device",
+    "name": "R",
+    "value": "100R",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "nets": {
+      "1": "HOT_SENSE_UP",
+      "2": "HOT_I1N"
+    },
+    "pos": [
+      24,
+      21,
+      0
+    ],
+    "sch": [
+      120,
+      90
+    ],
+    "mpn": "TNPW0805100RBEEA",
+    "url": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+    "height": 0.65,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "C1",
+    "lib": "Device",
+    "name": "C",
+    "value": "330nF 16V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "HOT_I1P",
+      "2": "HOT_GND"
+    },
+    "pos": [
+      28,
+      25,
+      90
+    ],
+    "sch": [
+      150,
+      65
+    ],
+    "mpn": "GRM21-series 330nF 16V candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "C2",
+    "lib": "Device",
+    "name": "C",
+    "value": "330nF 16V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "HOT_I1N",
+      "2": "HOT_GND"
+    },
+    "pos": [
+      28,
+      21,
+      90
+    ],
+    "sch": [
+      150,
+      90
+    ],
+    "mpn": "GRM21-series 330nF 16V candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "RV1",
+    "lib": "Device",
+    "name": "R",
+    "value": "249k",
+    "fp": "Resistor_SMD:R_1206_3216Metric",
+    "nets": {
+      "1": "HOT_N",
+      "2": "HOT_DIV1"
+    },
+    "pos": [
+      20.0,
+      8,
+      0
+    ],
+    "sch": [
+      65,
+      150
+    ],
+    "mpn": "TNPW1206249KBEEA",
+    "url": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+    "height": 0.65,
+    "body": [
+      3.2,
+      1.6
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "RV2",
+    "lib": "Device",
+    "name": "R",
+    "value": "249k",
+    "fp": "Resistor_SMD:R_1206_3216Metric",
+    "nets": {
+      "1": "HOT_DIV1",
+      "2": "HOT_DIV2"
+    },
+    "pos": [
+      25.5,
+      8,
+      0
+    ],
+    "sch": [
+      95,
+      150
+    ],
+    "mpn": "TNPW1206249KBEEA",
+    "url": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+    "height": 0.65,
+    "body": [
+      3.2,
+      1.6
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "RV3",
+    "lib": "Device",
+    "name": "R",
+    "value": "249k",
+    "fp": "Resistor_SMD:R_1206_3216Metric",
+    "nets": {
+      "1": "HOT_DIV2",
+      "2": "HOT_DIV3"
+    },
+    "pos": [
+      31.0,
+      8,
+      0
+    ],
+    "sch": [
+      125,
+      150
+    ],
+    "mpn": "TNPW1206249KBEEA",
+    "url": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+    "height": 0.65,
+    "body": [
+      3.2,
+      1.6
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "RV4",
+    "lib": "Device",
+    "name": "R",
+    "value": "249k",
+    "fp": "Resistor_SMD:R_1206_3216Metric",
+    "nets": {
+      "1": "HOT_DIV3",
+      "2": "HOT_DIV4"
+    },
+    "pos": [
+      36.5,
+      8,
+      0
+    ],
+    "sch": [
+      155,
+      150
+    ],
+    "mpn": "TNPW1206249KBEEA",
+    "url": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+    "height": 0.65,
+    "body": [
+      3.2,
+      1.6
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "RV5",
+    "lib": "Device",
+    "name": "R",
+    "value": "1k",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "nets": {
+      "1": "HOT_DIV4",
+      "2": "HOT_GND"
+    },
+    "pos": [
+      40,
+      8,
+      90
+    ],
+    "sch": [
+      185,
+      150
+    ],
+    "mpn": "TNPW08051K00BEEA",
+    "url": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+    "height": 0.65,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "RV6",
+    "lib": "Device",
+    "name": "R",
+    "value": "1k",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "nets": {
+      "1": "HOT_DIV4",
+      "2": "HOT_VP"
+    },
+    "pos": [
+      39,
+      13,
+      0
+    ],
+    "sch": [
+      210,
+      150
+    ],
+    "mpn": "TNPW08051K00BEEA",
+    "url": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+    "height": 0.65,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "RV7",
+    "lib": "Device",
+    "name": "R",
+    "value": "1k",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "nets": {
+      "1": "HOT_GND",
+      "2": "HOT_VN"
+    },
+    "pos": [
+      39,
+      17,
+      0
+    ],
+    "sch": [
+      210,
+      180
+    ],
+    "mpn": "TNPW08051K00BEEA",
+    "url": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+    "height": 0.65,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "CV1",
+    "lib": "Device",
+    "name": "C",
+    "value": "33nF 16V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "HOT_VP",
+      "2": "HOT_GND"
+    },
+    "pos": [
+      44,
+      13,
+      90
+    ],
+    "sch": [
+      245,
+      150
+    ],
+    "mpn": "GRM21-series 33nF 16V candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "CV2",
+    "lib": "Device",
+    "name": "C",
+    "value": "33nF 16V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "HOT_VN",
+      "2": "HOT_GND"
+    },
+    "pos": [
+      44,
+      17,
+      90
+    ],
+    "sch": [
+      245,
+      180
+    ],
+    "mpn": "GRM21-series 33nF 16V candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "R3",
+    "lib": "Device",
+    "name": "R",
+    "value": "0R",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "nets": {
+      "1": "HOT_3V3",
+      "2": "HOT_AVDD"
+    },
+    "pos": [
+      29,
+      32,
+      0
+    ],
+    "sch": [
+      175,
+      220
+    ],
+    "mpn": "RC0805JR-070RL",
+    "url": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+    "height": 0.65,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "C3",
+    "lib": "Device",
+    "name": "C",
+    "value": "100nF 16V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "HOT_AVDD",
+      "2": "HOT_GND"
+    },
+    "pos": [
+      29,
+      35,
+      0
+    ],
+    "sch": [
+      200,
+      220
+    ],
+    "mpn": "GRM21-series 100nF 16V candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "C4",
+    "lib": "Device",
+    "name": "C",
+    "value": "100nF 16V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "HOT_3V3",
+      "2": "HOT_GND"
+    },
+    "pos": [
+      29,
+      28,
+      0
+    ],
+    "sch": [
+      225,
+      220
+    ],
+    "mpn": "GRM21-series 100nF 16V candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "C5",
+    "lib": "Device",
+    "name": "C",
+    "value": "10uF 10V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "HOT_3V3",
+      "2": "HOT_GND"
+    },
+    "pos": [
+      27,
+      39,
+      0
+    ],
+    "sch": [
+      250,
+      220
+    ],
+    "mpn": "GRM21-series 10uF 10V candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "C6",
+    "lib": "Device",
+    "name": "C",
+    "value": "1uF 16V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "HOT_VREF",
+      "2": "HOT_GND"
+    },
+    "pos": [
+      40,
+      34,
+      0
+    ],
+    "sch": [
+      200,
+      255
+    ],
+    "mpn": "GRM21-series 1uF 16V candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "C7",
+    "lib": "Device",
+    "name": "C",
+    "value": "1nF C0G",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "HOT_VREF",
+      "2": "HOT_GND"
+    },
+    "pos": [
+      44,
+      34,
+      0
+    ],
+    "sch": [
+      230,
+      255
+    ],
+    "mpn": "GRM21-series 1nF C0G candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "R4",
+    "lib": "Device",
+    "name": "R",
+    "value": "10k",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "nets": {
+      "1": "HOT_3V3",
+      "2": "HOT_RESET"
+    },
+    "pos": [
+      20,
+      35,
+      90
+    ],
+    "sch": [
+      100,
+      235
+    ],
+    "mpn": "TNPW080510K0BEEA",
+    "url": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+    "height": 0.65,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "C8",
+    "lib": "Device",
+    "name": "C",
+    "value": "100nF 16V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "HOT_RESET",
+      "2": "HOT_GND"
+    },
+    "pos": [
+      23,
+      36,
+      90
+    ],
+    "sch": [
+      130,
+      235
+    ],
+    "mpn": "GRM21-series 100nF 16V candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "Y1",
+    "lib": "Device",
+    "name": "Crystal",
+    "value": "8.192MHz CL18pF",
+    "fp": "Crystal:Crystal_SMD_HC49-SD",
+    "nets": {
+      "1": "HOT_XIN",
+      "2": "HOT_XOUT"
+    },
+    "pos": [
+      38,
+      40,
+      0
+    ],
+    "sch": [
+      60,
+      230
+    ],
+    "mpn": "ABLS-8.192MHZ-B2-T",
+    "url": "https://abracon.com/Resonators/abls.pdf",
+    "height": 4.9,
+    "body": [
+      11.4,
+      4.7
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "1",
+        "at": [
+          -3.81,
+          0.0,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "2",
+        "at": [
+          3.81,
+          0.0,
+          180.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "CX1",
+    "lib": "Device",
+    "name": "C",
+    "value": "27pF C0G",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "HOT_XIN",
+      "2": "HOT_GND"
+    },
+    "pos": [
+      33,
+      35,
+      90
+    ],
+    "sch": [
+      35,
+      255
+    ],
+    "mpn": "GRM21-series 27pF C0G candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "CX2",
+    "lib": "Device",
+    "name": "C",
+    "value": "27pF C0G",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "HOT_XOUT",
+      "2": "HOT_GND"
+    },
+    "pos": [
+      36,
+      35,
+      90
+    ],
+    "sch": [
+      65,
+      255
+    ],
+    "mpn": "GRM21-series 27pF C0G candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "CP1",
+    "lib": "Device",
+    "name": "C",
+    "value": "10uF 16V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "ISO_5V",
+      "2": "ISO_GND"
+    },
+    "pos": [
+      65,
+      6,
+      0
+    ],
+    "sch": [
+      280,
+      235
+    ],
+    "mpn": "GRM21-series 10uF 16V candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "CP2",
+    "lib": "Device",
+    "name": "C",
+    "value": "100nF 16V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "ISO_5V",
+      "2": "ISO_GND"
+    },
+    "pos": [
+      65,
+      9,
+      0
+    ],
+    "sch": [
+      310,
+      235
+    ],
+    "mpn": "GRM21-series 100nF 16V candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "CP3",
+    "lib": "Device",
+    "name": "C",
+    "value": "10uF 10V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "HOT_3V3",
+      "2": "HOT_GND"
+    },
+    "pos": [
+      47,
+      6,
+      0
+    ],
+    "sch": [
+      350,
+      235
+    ],
+    "mpn": "GRM21-series 10uF 10V candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "CP4",
+    "lib": "Device",
+    "name": "C",
+    "value": "100nF 16V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "HOT_3V3",
+      "2": "HOT_GND"
+    },
+    "pos": [
+      47,
+      9,
+      0
+    ],
+    "sch": [
+      380,
+      235
+    ],
+    "mpn": "GRM21-series 100nF 16V candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "CI1",
+    "lib": "Device",
+    "name": "C",
+    "value": "100nF 16V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "ISO_3V3",
+      "2": "ISO_GND"
+    },
+    "pos": [
+      65,
+      22,
+      90
+    ],
+    "sch": [
+      285,
+      125
+    ],
+    "mpn": "GRM21-series 100nF 16V candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "CI2",
+    "lib": "Device",
+    "name": "C",
+    "value": "100nF 16V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "HOT_3V3",
+      "2": "HOT_GND"
+    },
+    "pos": [
+      47,
+      25,
+      90
+    ],
+    "sch": [
+      350,
+      125
+    ],
+    "mpn": "GRM21-series 100nF 16V candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "R5",
+    "lib": "Device",
+    "name": "R",
+    "value": "10k",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "nets": {
+      "1": "HOT_3V3",
+      "2": "HOT_CS"
+    },
+    "pos": [
+      45,
+      30,
+      0
+    ],
+    "sch": [
+      280,
+      50
+    ],
+    "mpn": "TNPW080510K0BEEA",
+    "url": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+    "height": 0.65,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "R6",
+    "lib": "Device",
+    "name": "R",
+    "value": "10k",
+    "fp": "Resistor_SMD:R_0805_2012Metric",
+    "nets": {
+      "1": "ISO_3V3",
+      "2": "ISO_CS"
+    },
+    "pos": [
+      65,
+      28,
+      90
+    ],
+    "sch": [
+      350,
+      50
+    ],
+    "mpn": "TNPW080510K0BEEA",
+    "url": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+    "height": 0.65,
+    "body": [
+      2,
+      1.25
+    ],
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  }
+]

@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "basis": "Both official case222A bottom-view mechanical drawings visually compared; both installed KiCad footprint pad geometries exactly compared",
+  "case_mm": [
+    45.7,
+    25.4,
+    21.5
+  ],
+  "pin_functions": {
+    "1": "AC/N",
+    "2": "AC/L",
+    "3": "-V",
+    "4": "+V"
+  },
+  "identical_native_footprint_pads": {
+    "1": {
+      "at": [
+        "0",
+        "0"
+      ],
+      "size": [
+        "3",
+        "3"
+      ],
+      "drill": [
+        "1.5"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    "2": {
+      "at": [
+        "0",
+        "10.75"
+      ],
+      "size": [
+        "3",
+        "3"
+      ],
+      "drill": [
+        "1.5"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    "3": {
+      "at": [
+        "38.5",
+        "10.75"
+      ],
+      "size": [
+        "3",
+        "3"
+      ],
+      "drill": [
+        "1.5"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    },
+    "4": {
+      "at": [
+        "38.5",
+        "2.75"
+      ],
+      "size": [
+        "3",
+        "3"
+      ],
+      "drill": [
+        "1.5"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ]
+    }
+  },
+  "datasheets": [
+    "https://www.meanwell.com/Upload/PDF/IRM-05/IRM-05-SPEC.PDF",
+    "https://www.meanwell.com/Upload/PDF/IRM-10/IRM-10-SPEC.PDF"
+  ],
+  "symbol_numbering_note": "Manufacturer drawing names functions; KiCad numeric pins mapped against physical positions, not inferred from package similarity"
+}

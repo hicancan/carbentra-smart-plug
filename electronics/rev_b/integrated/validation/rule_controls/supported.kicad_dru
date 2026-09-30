@@ -1,0 +1,2 @@
+(version 1)
+(rule "DOMAIN NEGATIVE CONTROL" (condition "(A.NetName == 'HOT_*' && B.NetName == 'ISO_TEST') || (B.NetName == 'HOT_*' && A.NetName == 'ISO_TEST')") (constraint clearance (min 8mm)))

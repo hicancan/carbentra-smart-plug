@@ -1,0 +1,11 @@
+{
+  "unsupported": {
+    "gap_mm": 6,
+    "expected_rule_reported": false
+  },
+  "supported": {
+    "gap_mm": 6,
+    "expected_rule_reported": true
+  },
+  "pass": true
+}

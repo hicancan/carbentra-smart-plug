@@ -1,0 +1,14 @@
+** Drc report for supported.kicad_pcb **
+** Created on 2026-09-30T04:01:44-0700 **
+
+** Found 1 DRC violations **
+[clearance]: Clearance violation (rule 'DOMAIN NEGATIVE CONTROL' clearance 8.0000 mm; actual 6.0000 mm)
+    Rule: DOMAIN NEGATIVE CONTROL; error
+    @(17.0000 mm, 10.0000 mm): Pad 1 [ISO_TEST] of TP2 on F.Cu
+    @(10.0000 mm, 10.0000 mm): Pad 1 [HOT_TEST] of TP1 on F.Cu
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** End of Report **

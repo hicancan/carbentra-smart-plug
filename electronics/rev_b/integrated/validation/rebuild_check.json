@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "method": "Fresh copied source tree: build manifest and six-sheet schematic, regenerate placement, require exact pad/net geometry before replaying saved copper, patch actual schematic paths, rerun ERC/DRC/pin/projection and negative controls",
+  "native_DRC": {
+    "violations": 0,
+    "unconnected": 0,
+    "footprint_errors": 0
+  },
+  "ERC": {
+    "messages": 0,
+    "errors": 0,
+    "warnings": 0
+  },
+  "main_numbered_pad_keys": 321,
+  "recipe_sha256": "2fe082beaeb8d29daf18bdf0ef617160b129e9d1f5817aa3f3fa1693621efbc2",
+  "rebuild_output_board_sha256": "dd4130c3457d9bfddbb4108512352c8cb86057d72b3d66b278c0c0cec88f37f1",
+  "note": "The final cosmetic footer shortening and review-PDF plot wrapper were exercised on the canonical tree afterward; they do not change circuit or copper geometry. Final canonical source checks are in final_summary.json."
+}

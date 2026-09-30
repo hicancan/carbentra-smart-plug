@@ -1,0 +1,21 @@
+** Drc report for integrated.kicad_pcb **
+** Created on 2026-09-30T04:11:58-0700 **
+
+** Found 2 DRC violations **
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(37.0000 mm, 70.6500 mm): Footprint R201
+    @(40.0000 mm, 64.5000 mm): Footprint RS201
+[lib_footprint_mismatch]: Footprint 'Converter_ACDC_MeanWell_IRM-10-xx_THT' does not match copy in library 'Converter_ACDC'.
+    Local override; warning
+    @(14.6000 mm, 14.2000 mm): Footprint PS101
+
+** Found 1 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(66.0000 mm, 67.8000 mm): Track [+3V3_ISO] on F.Cu, length 3.8000 mm
+    @(63.8750 mm, 61.3250 mm): Pad 7 [+3V3_ISO] of U202 on F.Cu
+
+** Found 0 Footprint errors **
+
+** End of Report **

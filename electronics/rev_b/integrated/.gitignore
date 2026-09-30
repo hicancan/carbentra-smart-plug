@@ -1,0 +1,4 @@
+.xdg/
+*.kicad_prl
+*.lck
+*.FCBak

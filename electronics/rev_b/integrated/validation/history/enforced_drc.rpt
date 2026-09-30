@@ -1,0 +1,42 @@
+** Drc report for integrated.kicad_pcb **
+** Created on 2026-09-30T04:02:08-0700 **
+
+** Found 5 DRC violations **
+[shorting_items]: Items shorting two nets (nets HOT_N and HOT_FB_N_MID)
+    Local override; error
+    @(35.5000 mm, 38.1400 mm): Track [HOT_N] on B.Cu, length 9.8600 mm
+    @(36.0000 mm, 35.0000 mm): PTH pad 1 [HOT_FB_N_MID] of R303
+[shorting_items]: Items shorting two nets (nets HOT_N and HOT_FB_N_MID)
+    Local override; error
+    @(33.0000 mm, 38.1400 mm): Track [HOT_N] on B.Cu, length 2.5000 mm
+    @(36.0000 mm, 35.0000 mm): PTH pad 1 [HOT_FB_N_MID] of R303
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.4000 mm)
+    Rule: board setup constraints edge; error
+    @(90.0000 mm, 85.0000 mm): Segment on Edge.Cuts
+    @(21.0000 mm, 76.0000 mm): Track [HOT_GND] on B.Cu, length 8.4599 mm
+[solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(35.5000 mm, 38.1400 mm): Track [HOT_N] on B.Cu, length 9.8600 mm
+    @(36.0000 mm, 35.0000 mm): PTH pad 1 [HOT_FB_N_MID] of R303
+[solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(33.0000 mm, 38.1400 mm): Track [HOT_N] on B.Cu, length 2.5000 mm
+    @(36.0000 mm, 35.0000 mm): PTH pad 1 [HOT_FB_N_MID] of R303
+
+** Found 3 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(51.0000 mm, 62.0500 mm): Pad 2 [HOT_GND] of CI202 on F.Cu
+    @(54.1250 mm, 60.0550 mm): Pad 9 [HOT_GND] of U202 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(51.0000 mm, 62.0500 mm): Pad 2 [HOT_GND] of CI202 on F.Cu
+    @(50.6000 mm, 66.5000 mm): Track [HOT_GND] on F.Cu, length 0.0500 mm
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(7.0000 mm, 31.0000 mm): PTH pad 1 [HOT_SWITCHED] of R301
+    @(32.5000 mm, 45.7600 mm): Track [HOT_SWITCHED] on F.Cu, length 4.0000 mm
+
+** Found 0 Footprint errors **
+
+** End of Report **

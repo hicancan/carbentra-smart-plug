@@ -1,0 +1,501 @@
+{
+  "coordinate_system": "millimetres; common mechanics frame; PCB lower-left(-36,-34,8), top9.6; y positive up",
+  "status": "DEV-A / FABRICATION HOLD",
+  "components": [
+    {
+      "ref": "C2",
+      "label": "100nF 16V",
+      "min_xyz_mm": [
+        14.325000000000003,
+        4.949999999999999,
+        9.6
+      ],
+      "size_xyz_mm": [
+        1.3499999999999943,
+        2.1000000000000014,
+        1.25
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "K1",
+      "label": "RT314005 / 5V",
+      "min_xyz_mm": [
+        -10.7,
+        -16.15,
+        9.6
+      ],
+      "size_xyz_mm": [
+        29.099999999999998,
+        12.799999999999997,
+        15.7
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "SW1",
+      "label": "LOCAL BUTTON",
+      "min_xyz_mm": [
+        -3.049999999999997,
+        -32.05,
+        9.6
+      ],
+      "size_xyz_mm": [
+        6.099999999999994,
+        6.099999999999994,
+        4.3
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "J2",
+      "label": "SWITCHED OUT - HOLD",
+      "min_xyz_mm": [
+        -24.59,
+        -31.349999999999994,
+        9.6
+      ],
+      "size_xyz_mm": [
+        10.260000000000002,
+        11.299999999999997,
+        18
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "D1",
+      "label": "SS14",
+      "min_xyz_mm": [
+        22.65,
+        -4.549999999999997,
+        9.6
+      ],
+      "size_xyz_mm": [
+        4.700000000000003,
+        3.0999999999999943,
+        2.4
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "C3",
+      "label": "22uF 10V",
+      "min_xyz_mm": [
+        22.325000000000003,
+        2.9499999999999993,
+        9.6
+      ],
+      "size_xyz_mm": [
+        1.3499999999999943,
+        2.1000000000000014,
+        1.25
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "J5",
+      "label": "FUSED AUXILIARY INPUT",
+      "min_xyz_mm": [
+        -20.59,
+        22.650000000000006,
+        9.6
+      ],
+      "size_xyz_mm": [
+        10.260000000000002,
+        11.299999999999999,
+        18
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "C6",
+      "label": "1uF 10V",
+      "min_xyz_mm": [
+        10.325000000000003,
+        14.95,
+        9.6
+      ],
+      "size_xyz_mm": [
+        1.3499999999999943,
+        2.1000000000000014,
+        1.25
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "J1",
+      "label": "LINE IN - terminal HOLD",
+      "min_xyz_mm": [
+        -28.59,
+        -14.850000000000001,
+        9.6
+      ],
+      "size_xyz_mm": [
+        10.260000000000002,
+        11.300000000000004,
+        18
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "R3",
+      "label": "10k",
+      "min_xyz_mm": [
+        10.537500000000001,
+        19.150000000000002,
+        9.6
+      ],
+      "size_xyz_mm": [
+        0.9249999999999972,
+        1.6999999999999993,
+        0.5
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "R1",
+      "label": "100R",
+      "min_xyz_mm": [
+        28.537499999999994,
+        -8.850000000000001,
+        9.6
+      ],
+      "size_xyz_mm": [
+        0.9250000000000114,
+        1.7000000000000028,
+        0.5
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "C4",
+      "label": "22uF 10V",
+      "min_xyz_mm": [
+        26.325000000000003,
+        2.9499999999999993,
+        9.6
+      ],
+      "size_xyz_mm": [
+        1.3499999999999943,
+        2.1000000000000014,
+        1.25
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "U3",
+      "label": "TMP102AIDRLR",
+      "min_xyz_mm": [
+        21.35,
+        -21.85,
+        9.6
+      ],
+      "size_xyz_mm": [
+        1.2999999999999972,
+        1.7000000000000028,
+        0.6
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "R8",
+      "label": "4.7k",
+      "min_xyz_mm": [
+        26.5375,
+        -23.85,
+        9.6
+      ],
+      "size_xyz_mm": [
+        0.9249999999999972,
+        1.7000000000000028,
+        0.5
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "C5",
+      "label": "100nF 10V",
+      "min_xyz_mm": [
+        10.325000000000003,
+        22.95,
+        9.6
+      ],
+      "size_xyz_mm": [
+        1.3499999999999943,
+        2.1000000000000014,
+        1.25
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "R10",
+      "label": "10k",
+      "min_xyz_mm": [
+        24.15,
+        -27.4625,
+        9.6
+      ],
+      "size_xyz_mm": [
+        1.7000000000000028,
+        0.9249999999999972,
+        0.5
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "PS1",
+      "label": "IRM-03-5",
+      "min_xyz_mm": [
+        -29.259999999999998,
+        -2.1099999999999994,
+        9.6
+      ],
+      "size_xyz_mm": [
+        37,
+        24,
+        15
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "U2",
+      "label": "AP63203WU-7",
+      "min_xyz_mm": [
+        11.149999999999999,
+        -0.5,
+        9.6
+      ],
+      "size_xyz_mm": [
+        1.7000000000000028,
+        3.0,
+        1
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "R7",
+      "label": "4.7k",
+      "min_xyz_mm": [
+        26.5375,
+        -19.85,
+        9.6
+      ],
+      "size_xyz_mm": [
+        0.9249999999999972,
+        1.7000000000000028,
+        0.5
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "Q1",
+      "label": "AO3400A",
+      "min_xyz_mm": [
+        22.299999999999997,
+        -12.5,
+        9.6
+      ],
+      "size_xyz_mm": [
+        1.4000000000000057,
+        3.0,
+        1.1
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "R11",
+      "label": "1k",
+      "min_xyz_mm": [
+        5.149999999999999,
+        29.537499999999998,
+        9.6
+      ],
+      "size_xyz_mm": [
+        1.7000000000000028,
+        0.9250000000000003,
+        0.5
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "C1",
+      "label": "10uF 16V",
+      "min_xyz_mm": [
+        10.325000000000003,
+        5.949999999999999,
+        9.6
+      ],
+      "size_xyz_mm": [
+        1.3499999999999943,
+        2.1000000000000014,
+        1.25
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "R2",
+      "label": "100k",
+      "min_xyz_mm": [
+        26.5375,
+        -10.850000000000001,
+        9.6
+      ],
+      "size_xyz_mm": [
+        0.9249999999999972,
+        1.7000000000000028,
+        0.5
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "R6",
+      "label": "10k",
+      "min_xyz_mm": [
+        10.149999999999999,
+        11.537500000000001,
+        9.6
+      ],
+      "size_xyz_mm": [
+        1.7000000000000028,
+        0.9249999999999972,
+        0.5
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "U1",
+      "label": "ESP32-C3-WROOM-02U-N4",
+      "min_xyz_mm": [
+        13.950000000000003,
+        10.05,
+        9.6
+      ],
+      "size_xyz_mm": [
+        18.099999999999994,
+        14.399999999999999,
+        2.4
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "C7",
+      "label": "100nF 10V",
+      "min_xyz_mm": [
+        23.325000000000003,
+        -25.049999999999997,
+        9.6
+      ],
+      "size_xyz_mm": [
+        1.3499999999999943,
+        2.0999999999999943,
+        1.25
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "R9",
+      "label": "10k",
+      "min_xyz_mm": [
+        24.5375,
+        -16.85,
+        9.6
+      ],
+      "size_xyz_mm": [
+        0.9249999999999972,
+        1.7000000000000028,
+        0.5
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "L1",
+      "label": "3.9uH",
+      "min_xyz_mm": [
+        15.950000000000003,
+        -1.0499999999999972,
+        9.6
+      ],
+      "size_xyz_mm": [
+        4.099999999999994,
+        4.099999999999998,
+        1.8
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "R5",
+      "label": "10k",
+      "min_xyz_mm": [
+        32.150000000000006,
+        2.5375000000000014,
+        9.6
+      ],
+      "size_xyz_mm": [
+        1.6999999999999886,
+        0.9249999999999972,
+        0.5
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "LED1",
+      "label": "STATUS LED GREEN",
+      "min_xyz_mm": [
+        -1.5499999999999972,
+        29.050000000000004,
+        9.6
+      ],
+      "size_xyz_mm": [
+        3.5,
+        3.9000000000000004,
+        5.3
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "J4",
+      "label": "DEBUG - MAINS DISCONNECTED",
+      "min_xyz_mm": [
+        8.68,
+        -29.32,
+        9.6
+      ],
+      "size_xyz_mm": [
+        12.799999999999997,
+        2.6400000000000006,
+        8
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "R4",
+      "label": "10k",
+      "min_xyz_mm": [
+        32.150000000000006,
+        6.537500000000001,
+        9.6
+      ],
+      "size_xyz_mm": [
+        1.6999999999999886,
+        0.9249999999999972,
+        0.5
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    },
+    {
+      "ref": "J3",
+      "label": "ISOLATED METER PORT",
+      "min_xyz_mm": [
+        31.680000000000007,
+        -16.020000000000003,
+        9.6
+      ],
+      "size_xyz_mm": [
+        2.6399999999999864,
+        15.340000000000003,
+        8
+      ],
+      "representation": "simplified package body from footprint F.Fab and candidate height; not vendor detailed solid"
+    }
+  ]
+}

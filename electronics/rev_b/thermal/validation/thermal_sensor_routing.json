@@ -1,0 +1,122 @@
+[
+  {
+    "net": "THERM_RETURN",
+    "start": [
+      2.6875,
+      6.5
+    ],
+    "end": [
+      6.825,
+      3.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "THERM_RETURN",
+    "start": [
+      6.825,
+      3.0
+    ],
+    "end": [
+      9.0,
+      8.08
+    ],
+    "routed": true
+  },
+  {
+    "net": "GND_HEAD",
+    "start": [
+      2.6875,
+      5.5
+    ],
+    "end": [
+      2.6875,
+      6.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "GND_HEAD",
+    "start": [
+      2.6875,
+      5.5
+    ],
+    "end": [
+      4.1125,
+      5.5
+    ],
+    "routed": true
+  },
+  {
+    "net": "GND_HEAD",
+    "start": [
+      2.6875,
+      5.5
+    ],
+    "end": [
+      3.275,
+      2.3
+    ],
+    "routed": true
+  },
+  {
+    "net": "GND_HEAD",
+    "start": [
+      4.1125,
+      5.5
+    ],
+    "end": [
+      9.0,
+      5.54
+    ],
+    "routed": true
+  },
+  {
+    "net": "+3V3_HEAD",
+    "start": [
+      4.1125,
+      6.5
+    ],
+    "end": [
+      4.1125,
+      6.0
+    ],
+    "routed": true
+  },
+  {
+    "net": "+3V3_HEAD",
+    "start": [
+      4.1125,
+      6.0
+    ],
+    "end": [
+      5.175,
+      3.0
+    ],
+    "routed": false
+  },
+  {
+    "net": "+3V3_HEAD",
+    "start": [
+      5.175,
+      3.0
+    ],
+    "end": [
+      1.725,
+      2.3
+    ],
+    "routed": false
+  },
+  {
+    "net": "+3V3_HEAD",
+    "start": [
+      5.175,
+      3.0
+    ],
+    "end": [
+      9.0,
+      3.0
+    ],
+    "routed": false
+  }
+]

@@ -1,0 +1,271 @@
+{
+  "status": "DEVELOPMENT_CANDIDATE_NO_ENERGIZATION",
+  "board_mm": [
+    35,
+    25,
+    1.6
+  ],
+  "envelope_height_above_pcb_mm": 9.0,
+  "envelope_height_below_pcb_mm": 3.0,
+  "components": [
+    {
+      "ref": "R1",
+      "symbol": "R_H",
+      "value": "33k 1% 1W",
+      "footprint": "Feedback:PR01_P10.16",
+      "pins": {
+        "1": "L_POST",
+        "2": "L_MID"
+      },
+      "board": [
+        5,
+        3,
+        0
+      ],
+      "schematic": [
+        55.88,
+        50.8
+      ],
+      "mpn": "PR01000103302FA100",
+      "datasheet": "https://www.vishay.com/docs/28729/pr010203.pdf",
+      "height_mm": 4.5
+    },
+    {
+      "ref": "R2",
+      "symbol": "R_H",
+      "value": "33k 1% 1W",
+      "footprint": "Feedback:PR01_P10.16",
+      "pins": {
+        "1": "L_MID",
+        "2": "AC1"
+      },
+      "board": [
+        15.16,
+        8,
+        180
+      ],
+      "schematic": [
+        81.28,
+        50.8
+      ],
+      "mpn": "PR01000103302FA100",
+      "datasheet": "https://www.vishay.com/docs/28729/pr010203.pdf",
+      "height_mm": 4.5
+    },
+    {
+      "ref": "R3",
+      "symbol": "R_H",
+      "value": "33k 1% 1W",
+      "footprint": "Feedback:PR01_P10.16",
+      "pins": {
+        "1": "N_MID",
+        "2": "AC2"
+      },
+      "board": [
+        15.16,
+        17,
+        180
+      ],
+      "schematic": [
+        81.28,
+        91.44
+      ],
+      "mpn": "PR01000103302FA100",
+      "datasheet": "https://www.vishay.com/docs/28729/pr010203.pdf",
+      "height_mm": 4.5
+    },
+    {
+      "ref": "R4",
+      "symbol": "R_H",
+      "value": "33k 1% 1W",
+      "footprint": "Feedback:PR01_P10.16",
+      "pins": {
+        "1": "N_POST",
+        "2": "N_MID"
+      },
+      "board": [
+        5,
+        22,
+        0
+      ],
+      "schematic": [
+        55.88,
+        91.44
+      ],
+      "mpn": "PR01000103302FA100",
+      "datasheet": "https://www.vishay.com/docs/28729/pr010203.pdf",
+      "height_mm": 4.5
+    },
+    {
+      "ref": "U1",
+      "symbol": "ACPL_K376",
+      "value": "ACPL-K376-560E",
+      "footprint": "Feedback:SSO8_ACPL_K376",
+      "pins": {
+        "1": "AC1",
+        "2": null,
+        "3": null,
+        "4": "AC2",
+        "5": "GND_ISO",
+        "6": "OUTPUT_PRESENT_N",
+        "7": null,
+        "8": "+3V3_ISO"
+      },
+      "board": [
+        24.6,
+        12.5,
+        0
+      ],
+      "schematic": [
+        127,
+        63.5
+      ],
+      "mpn": "ACPL-K376-560E",
+      "datasheet": "https://docs.broadcom.com/doc/AV02-2153EN",
+      "height_mm": 3.307
+    },
+    {
+      "ref": "R5",
+      "symbol": "R_H",
+      "value": "1.8k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "OUTPUT_PRESENT_N"
+      },
+      "board": [
+        31.2,
+        4.7,
+        0
+      ],
+      "schematic": [
+        175.26,
+        43.18
+      ],
+      "mpn": "RC0603FR-071K8L",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55
+    },
+    {
+      "ref": "C1",
+      "symbol": "C_V",
+      "value": "100nF 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "board": [
+        31.2,
+        20,
+        0
+      ],
+      "schematic": [
+        170.18,
+        83.82
+      ],
+      "mpn": "GRM188R71C104KA01D",
+      "datasheet": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D",
+      "height_mm": 0.9
+    },
+    {
+      "ref": "J1",
+      "symbol": "WIRE",
+      "value": "POST-SWITCH L",
+      "footprint": "Feedback:Wire_Pad_1.2mm",
+      "pins": {
+        "1": "L_POST"
+      },
+      "board": [
+        1.8,
+        3,
+        0
+      ],
+      "schematic": [
+        30.48,
+        50.8
+      ],
+      "mpn": "Internal harness solder land; wire/strain relief HOLD",
+      "datasheet": "",
+      "height_mm": 4
+    },
+    {
+      "ref": "J2",
+      "symbol": "WIRE",
+      "value": "POST-SWITCH N",
+      "footprint": "Feedback:Wire_Pad_1.2mm",
+      "pins": {
+        "1": "N_POST"
+      },
+      "board": [
+        1.8,
+        22,
+        0
+      ],
+      "schematic": [
+        30.48,
+        91.44
+      ],
+      "mpn": "Internal harness solder land; wire/strain relief HOLD",
+      "datasheet": "",
+      "height_mm": 4
+    },
+    {
+      "ref": "J3",
+      "symbol": "HEADER3",
+      "value": "3V3 / GND / OUT_N",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO",
+        "3": "OUTPUT_PRESENT_N"
+      },
+      "board": [
+        33,
+        9,
+        0
+      ],
+      "schematic": [
+        215.9,
+        63.5
+      ],
+      "mpn": "TSW-103-07-G-S",
+      "datasheet": "https://www.samtec.com/products/tsw",
+      "height_mm": 8.38
+    }
+  ],
+  "U1_verified_pin_names": {
+    "1": "AC1",
+    "2": "DC+",
+    "3": "DC-",
+    "4": "AC2",
+    "5": "GND",
+    "6": "VO",
+    "7": "NC",
+    "8": "VCC"
+  },
+  "unconnected_pads": {
+    "U1": [
+      "2",
+      "3",
+      "7"
+    ]
+  },
+  "isolation": {
+    "minimum_design_copper_clearance_mm": 8,
+    "opto_nominal_pad_edge_clearance_mm": 8.84,
+    "slot_mm": [
+      24.1,
+      2,
+      25.1,
+      23
+    ]
+  },
+  "host_interface": {
+    "J3.1": "+3V3_ISO",
+    "J3.2": "GND_ISO",
+    "J3.3": "OUTPUT_PRESENT_N",
+    "GPIO_required": 1,
+    "logic": "active-low pulses, not a static relay-position state"
+  }
+}

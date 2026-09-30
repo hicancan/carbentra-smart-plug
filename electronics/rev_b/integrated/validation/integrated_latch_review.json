@@ -1,0 +1,9 @@
+{
+  "ideal_logic_tests": 13,
+  "actual_integrated_pin_topology": "PASS",
+  "MCU_rearm_path": "ABSENT",
+  "held_button_fault_recovery": "No new rising edge in ideal powered logic; fault clear alone cannot arm",
+  "hardware_trip_dominance": "DFF async clear and independent series NPN gate-sink block",
+  "physical_robustness": "UNPROVEN at sub-threshold supply ramps, component faults, actual thermal coupling, and contact welds",
+  "board_linkage": "Independent PCB pin audit separately covers all321 main-board pin keys"
+}

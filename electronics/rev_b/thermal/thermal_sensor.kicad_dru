@@ -1,0 +1,2 @@
+(version 1)
+(rule "Isolated LV fine-pitch clearance" (constraint clearance (min 0.15mm)))

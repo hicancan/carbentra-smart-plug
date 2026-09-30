@@ -1,0 +1,60 @@
+{
+  "status": "DIGITAL CHECKS PASS / DEVELOPMENT HOLD",
+  "generated_utc": "2026-09-30T11:44:44.464087+00:00",
+  "board_sha256": "54485373c84268d072b8abb9a73405d867b58622657f3cf49976cbcab7c0f40a",
+  "rules_sha256": "11144295aff979f5f97726d49437094a17201b2f0f324db7bca6da21a7a276a0",
+  "schematic_files_sha256": {
+    "integrated.kicad_sch": "841782003493d17101422e651f251dc6aa98c9142d778b4e310fc2fc656ae532",
+    "integrated_assembly.kicad_sch": "8d70c062c6873e2ca9b980f5c69169dac8f411cce44aee2997f146242cf13adf",
+    "integrated_controller.kicad_sch": "c474bcbdca4896b058759f779ebba08a704f4543de996b96d6d625dfee6f62f5",
+    "integrated_feedback.kicad_sch": "94de99781f408c4038f8f4ecfcc7280f97a5fce837df0cd551ac9cc33ebdf5c5",
+    "integrated_meter.kicad_sch": "5e735097e1448d56c75ec46196912366e17f9fae5b13fda493b75b1ec9164892",
+    "integrated_thermal.kicad_sch": "83b12289d65c14bfb8d201804e8df82ee629f77acbe5004c8fb4c017b5182186"
+  },
+  "main_electrical_items": 101,
+  "physical_component_bodies": 99,
+  "zero_height_test_pads": 2,
+  "mechanical_mounting_footprints": 4,
+  "main_numbered_pad_keys": 321,
+  "assembly_numbered_terminals": 348,
+  "layer_count": 4,
+  "native_DRC": {
+    "violations": 0,
+    "unconnected": 0,
+    "footprint_errors": 0
+  },
+  "ERC": {
+    "messages": 0,
+    "errors": 0,
+    "warnings": 0
+  },
+  "projected_isolation": {
+    "minimum_mm": 8.099999999999994,
+    "limiting_pair": [
+      "PS201.9",
+      "PS201.8"
+    ],
+    "routing_items_below_8p4_mm": 0,
+    "scope": "all-layer XY projection, conservative pad bounding rectangles; vias/NC pins included; copper-zone outlines included as completely filled conservative regions"
+  },
+  "negative_controls": {
+    "native_supported_rule_rejects_6mm_gap": true,
+    "old_unsupported_rule_did_not_reject_6mm_gap": true,
+    "independent_checker_rejects_shifted_hot_pad": true
+  },
+  "authoritative_reports": [
+    "final_drc.rpt",
+    "final_erc.rpt",
+    "final_pin_audit.json",
+    "final_isolation.json",
+    "final_source_graph.json"
+  ],
+  "not_proven": [
+    "manufactured clearances/creepage and insulation",
+    "16 A continuous thermal rating or motor/inrush switching suitability",
+    "fuse total-clearing coordination and fault containment",
+    "measurement accuracy/calibration, EMC, RF, production reliability",
+    "physical thermal response and sensor/fault coverage",
+    "certification or permission to fabricate/energize"
+  ]
+}

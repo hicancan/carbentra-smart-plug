@@ -1,0 +1,7 @@
+{
+  "candidate_added_violations": 0,
+  "inherited_baseline_violations": 5,
+  "inherited_unconnected": 1,
+  "new_short_or_clearance_errors": 0,
+  "release": "HOLD; baseline was captured during parent routing, final merged full DRC required"
+}

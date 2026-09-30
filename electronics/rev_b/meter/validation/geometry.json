@@ -1,0 +1,10 @@
+{
+  "objects": 930,
+  "valid": true,
+  "component_envelopes": 39,
+  "limitations": [
+    "Package envelopes only; lead and paste geometry not vendor detailed",
+    "Pads shown as conservative rectangular bounds",
+    "Native PCB drawing authoritative for copper zones; OBJ traces are inspection overlay"
+  ]
+}

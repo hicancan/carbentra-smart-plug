@@ -1,0 +1,25 @@
+** Drc report for negative_control.kicad_pcb **
+** Created on 2026-09-30T02:25:42-0700 **
+
+** Found 3 DRC violations **
+[track_dangling]: Track has unconnected end
+    Local override; warning
+    @(22.0000 mm, 10.0000 mm): Track [L_POST] on F.Cu, length 0.2000 mm
+[clearance]: Clearance violation (rule 'Primary to isolated logic copper' clearance 8.0000 mm; actual 7.5452 mm)
+    Rule: Primary to isolated logic copper; error
+    @(22.0000 mm, 10.0000 mm): Track [L_POST] on F.Cu, length 0.2000 mm
+    @(29.9725 mm, 10.5950 mm): Track [+3V3_ISO] on F.Cu, length 1.1275 mm
+[clearance]: Clearance violation (rule 'Primary to isolated logic copper' clearance 8.0000 mm; actual 6.7003 mm)
+    Rule: Primary to isolated logic copper; error
+    @(29.9725 mm, 10.5950 mm): Pad 8 [+3V3_ISO] of U1 on F.Cu
+    @(22.0000 mm, 10.0000 mm): Track [L_POST] on F.Cu, length 0.2000 mm
+
+** Found 1 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(22.0000 mm, 10.0000 mm): Track [L_POST] on F.Cu, length 0.2000 mm
+    @(1.8000 mm, 3.0000 mm): Track [L_POST] on F.Cu, length 3.2000 mm
+
+** Found 0 Footprint errors **
+
+** End of Report **

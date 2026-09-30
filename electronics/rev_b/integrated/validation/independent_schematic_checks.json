@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "ERC": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "numbered_pins_checked": 334,
+  "physical_component_count": 109,
+  "off_board_assembly_components": 4,
+  "main_components": 101,
+  "remote_sensor_components": 4,
+  "critical_connections_checked": 23,
+  "ASV_pin_map": {
+    "1": "HOT_3V3",
+    "2": "HOT_GND",
+    "3": "HOT_XIN",
+    "4": "HOT_3V3"
+  },
+  "scoped_named_nets": {},
+  "footprint_and_PCB_verification": "Parent owns integrated PCB; not evaluated by this script",
+  "fabrication_release": "HOLD",
+  "full_assembly_graph_pins_checked": 348,
+  "off_board_terminals_checked": 10,
+  "harness_model_pins_checked": 4,
+  "PE_direct_no_PCB_nodes": "PASS",
+  "assembly_scoped_nets": {
+    "HOT_TF_IN": "/5 assembly protection/HOT_TF_IN",
+    "PE": "/5 assembly protection/PE",
+    "RAW_L": "/5 assembly protection/RAW_L"
+  }
+}

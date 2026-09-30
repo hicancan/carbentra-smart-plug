@@ -1,0 +1,1 @@
+(sym_lib_table (lib (name "Thermal") (type "KiCad") (uri "${KIPRJMOD}/Thermal.kicad_sym") (options "") (descr "Manufacturer-pin-checked thermal logic")))

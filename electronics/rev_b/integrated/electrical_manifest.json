@@ -1,0 +1,7785 @@
+{
+  "schema_version": 1,
+  "status": "ELECTRICAL SOURCE VERIFIED: ERC 0/0; PCB/head and full assembly netlists match; release HOLD",
+  "target_main_board_mm": [
+    100,
+    85,
+    1.6
+  ],
+  "components": [
+    {
+      "ref": "PS101",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "PS1",
+      "source_symbol": "Converter_ACDC:IRM-10-5",
+      "symbol_name": "IRM-10-5",
+      "pins": {
+        "2": "HOT_AUX_FUSED",
+        "1": "HOT_N",
+        "4": "+5V_ISO",
+        "3": "GND_ISO"
+      },
+      "source_pins": {
+        "2": "L_AUX_FUSED",
+        "1": "N",
+        "4": "+5V_ISO",
+        "3": "GND_ISO"
+      },
+      "netmap": {
+        "N": "HOT_N",
+        "L_AUX_FUSED": "HOT_AUX_FUSED",
+        "GND_ISO": "GND_ISO",
+        "+5V_ISO": "+5V_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "2",
+          "name": "AC/L",
+          "at": [
+            -10.16,
+            2.54,
+            0.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "1",
+          "name": "AC/N",
+          "at": [
+            -10.16,
+            -2.54,
+            0.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "4",
+          "name": "+Vo",
+          "at": [
+            10.16,
+            2.54,
+            180.0
+          ],
+          "type": "power_out"
+        },
+        {
+          "number": "3",
+          "name": "-Vo",
+          "at": [
+            10.16,
+            -2.54,
+            180.0
+          ],
+          "type": "power_out"
+        }
+      ],
+      "footprint": "Integrated:IRM10_Controller_Candidate",
+      "value": "IRM-10-5",
+      "mpn": "IRM-10-5",
+      "datasheet": "https://www.meanwell.com/Upload/PDF/IRM-10/IRM-10-SPEC.PDF",
+      "height_mm": 21.5,
+      "source_schematic_position": [
+        95,
+        65
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true,
+      "source_symbol_original": "Converter_ACDC:IRM-05-5",
+      "body_mm": [
+        45.7,
+        25.4,
+        21.5
+      ],
+      "symbol_override": true,
+      "pin_compatibility": "Official case222A bottom-view comparison and exactKiCad footprint pad-coordinate equality checked againstIRM-05"
+    },
+    {
+      "ref": "K101",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "K1",
+      "source_symbol": "Relay:RT314A03",
+      "symbol_name": "RT314A03",
+      "pins": {
+        "A1": "COIL_5V",
+        "A2": "COIL_LOW",
+        "12": "HOT_NC",
+        "11": "HOT_LOAD",
+        "14": "HOT_SWITCHED"
+      },
+      "source_pins": {
+        "A1": "COIL_5V",
+        "A2": "COIL_LOW",
+        "12": "L_NC_UNUSED",
+        "11": "L_FUSED",
+        "14": "L_SWITCHED"
+      },
+      "netmap": {
+        "COIL_5V": "COIL_5V",
+        "COIL_LOW": "COIL_LOW",
+        "L_FUSED": "HOT_LOAD",
+        "L_NC_UNUSED": "HOT_NC",
+        "L_SWITCHED": "HOT_SWITCHED"
+      },
+      "pin_geometry": [
+        {
+          "number": "A1",
+          "name": "~",
+          "at": [
+            -5.08,
+            7.62,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "A2",
+          "name": "~",
+          "at": [
+            -5.08,
+            -7.62,
+            90.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "12",
+          "name": "~",
+          "at": [
+            2.54,
+            7.62,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "11",
+          "name": "~",
+          "at": [
+            5.08,
+            -7.62,
+            90.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "14",
+          "name": "~",
+          "at": [
+            7.62,
+            7.62,
+            270.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Relay_THT:Relay_SPDT_Schrack-RT1-16A-FormC_RM5mm",
+      "value": "RT314005 / 5V",
+      "mpn": "RT314005 / 1-1649328-0",
+      "datasheet": "https://www.te.com/en/product-1-1649328-0.html",
+      "height_mm": 15.7,
+      "source_schematic_position": [
+        180,
+        65
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "U101",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "U1",
+      "source_symbol": "RF_Module:ESP32-C3-WROOM-02U",
+      "symbol_name": "ESP32-C3-WROOM-02U",
+      "pins": {
+        "2": "EN",
+        "18": "I2C_SDA",
+        "17": "I2C_SCL",
+        "16": "BOOT2",
+        "15": "OUTPUT_PRESENT_N",
+        "3": "SPI_SCLK",
+        "4": "SPI_MISO",
+        "5": "SPI_MOSI",
+        "6": "SPI_CS",
+        "7": "BOOT8",
+        "8": "BOOT9",
+        "10": "RELAY_CMD",
+        "13": "BUTTON",
+        "14": "LED_CMD",
+        "1": "+3V3_ISO",
+        "19": "GND_ISO",
+        "9": "GND_ISO",
+        "11": "UART_RX",
+        "12": "UART_TX"
+      },
+      "source_pins": {
+        "2": "EN",
+        "18": "I2C_SDA",
+        "17": "I2C_SCL",
+        "16": "BOOT2",
+        "15": "OUTPUT_PRESENT_N",
+        "3": "SPI_SCLK",
+        "4": "SPI_MISO",
+        "5": "SPI_MOSI",
+        "6": "SPI_CS",
+        "7": "BOOT8",
+        "8": "BOOT9",
+        "10": "RELAY_CMD",
+        "13": "BUTTON",
+        "14": "LED_CMD",
+        "1": "+3V3_ISO",
+        "19": "GND_ISO",
+        "9": "GND_ISO",
+        "11": "UART_RX",
+        "12": "UART_TX"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "EN": "EN",
+        "SPI_SCLK": "SPI_SCLK",
+        "SPI_MISO": "SPI_MISO",
+        "SPI_MOSI": "SPI_MOSI",
+        "SPI_CS": "SPI_CS",
+        "BOOT8": "BOOT8",
+        "BOOT9": "BOOT9",
+        "GND_ISO": "GND_ISO",
+        "RELAY_CMD": "RELAY_CMD",
+        "UART_RX": "UART_RX",
+        "UART_TX": "UART_TX",
+        "BUTTON": "BUTTON",
+        "LED_CMD": "LED_CMD",
+        "OUTPUT_PRESENT_N": "OUTPUT_PRESENT_N",
+        "BOOT2": "BOOT2",
+        "I2C_SCL": "I2C_SCL",
+        "I2C_SDA": "I2C_SDA"
+      },
+      "pin_geometry": [
+        {
+          "number": "2",
+          "name": "EN",
+          "at": [
+            -15.24,
+            17.78,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "18",
+          "name": "IO0",
+          "at": [
+            -15.24,
+            12.7,
+            0.0
+          ],
+          "type": "bidirectional"
+        },
+        {
+          "number": "17",
+          "name": "IO1",
+          "at": [
+            -15.24,
+            10.16,
+            0.0
+          ],
+          "type": "bidirectional"
+        },
+        {
+          "number": "16",
+          "name": "IO2",
+          "at": [
+            -15.24,
+            7.62,
+            0.0
+          ],
+          "type": "bidirectional"
+        },
+        {
+          "number": "15",
+          "name": "IO3",
+          "at": [
+            -15.24,
+            5.08,
+            0.0
+          ],
+          "type": "bidirectional"
+        },
+        {
+          "number": "3",
+          "name": "IO4",
+          "at": [
+            -15.24,
+            2.54,
+            0.0
+          ],
+          "type": "bidirectional"
+        },
+        {
+          "number": "4",
+          "name": "IO5",
+          "at": [
+            -15.24,
+            0.0,
+            0.0
+          ],
+          "type": "bidirectional"
+        },
+        {
+          "number": "5",
+          "name": "IO6",
+          "at": [
+            -15.24,
+            -2.54,
+            0.0
+          ],
+          "type": "bidirectional"
+        },
+        {
+          "number": "6",
+          "name": "IO7",
+          "at": [
+            -15.24,
+            -5.08,
+            0.0
+          ],
+          "type": "bidirectional"
+        },
+        {
+          "number": "7",
+          "name": "IO8",
+          "at": [
+            -15.24,
+            -7.62,
+            0.0
+          ],
+          "type": "bidirectional"
+        },
+        {
+          "number": "8",
+          "name": "IO9",
+          "at": [
+            -15.24,
+            -10.16,
+            0.0
+          ],
+          "type": "bidirectional"
+        },
+        {
+          "number": "10",
+          "name": "IO10",
+          "at": [
+            -15.24,
+            -12.7,
+            0.0
+          ],
+          "type": "bidirectional"
+        },
+        {
+          "number": "13",
+          "name": "IO18",
+          "at": [
+            -15.24,
+            -15.24,
+            0.0
+          ],
+          "type": "bidirectional"
+        },
+        {
+          "number": "14",
+          "name": "IO19",
+          "at": [
+            -15.24,
+            -17.78,
+            0.0
+          ],
+          "type": "bidirectional"
+        },
+        {
+          "number": "1",
+          "name": "3V3",
+          "at": [
+            0.0,
+            22.86,
+            270.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "19",
+          "name": "GND",
+          "at": [
+            0.0,
+            -22.86,
+            90.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "9",
+          "name": "GND",
+          "at": [
+            0.0,
+            -22.86,
+            90.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "11",
+          "name": "IO20/RXD",
+          "at": [
+            15.24,
+            17.78,
+            180.0
+          ],
+          "type": "bidirectional"
+        },
+        {
+          "number": "12",
+          "name": "IO21/TXD",
+          "at": [
+            15.24,
+            15.24,
+            180.0
+          ],
+          "type": "bidirectional"
+        }
+      ],
+      "footprint": "RF_Module:ESP32-C3-WROOM-02U",
+      "value": "ESP32-C3-WROOM-02U-N4",
+      "mpn": "ESP32-C3-WROOM-02U-N4",
+      "datasheet": "https://www.espressif.com/sites/default/files/documentation/esp32-c3-wroom-02_datasheet_en.pdf",
+      "height_mm": 3.35,
+      "source_schematic_position": [
+        320,
+        85
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true,
+      "body_mm": [
+        18,
+        14.3,
+        3.2
+      ],
+      "height_basis": "Espressif v1.7 Figure10-2:3.2mm total module height plus0.15mm tolerance; includes0.8mm substrate",
+      "rf_axis_local_pcb_mm": [
+        6.25,
+        -5.1
+      ],
+      "rf_axis_source": "Figure10-2:2.75mm from rightedge,2.30mm from topedge"
+    },
+    {
+      "ref": "U102",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "U2",
+      "source_symbol": "Regulator_Switching:AP63203WU",
+      "symbol_name": "AP63203WU",
+      "pins": {
+        "3": "+5V_ISO",
+        "2": "+5V_ISO",
+        "4": "GND_ISO",
+        "5": "SW",
+        "6": "BST",
+        "1": "+3V3_ISO"
+      },
+      "source_pins": {
+        "3": "+5V_ISO",
+        "2": "+5V_ISO",
+        "4": "GND_ISO",
+        "5": "SW",
+        "6": "BST",
+        "1": "+3V3_ISO"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "+5V_ISO": "+5V_ISO",
+        "GND_ISO": "GND_ISO",
+        "SW": "SW",
+        "BST": "BST"
+      },
+      "pin_geometry": [
+        {
+          "number": "3",
+          "name": "IN",
+          "at": [
+            -10.16,
+            2.54,
+            0.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "2",
+          "name": "EN",
+          "at": [
+            -10.16,
+            -2.54,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "4",
+          "name": "GND",
+          "at": [
+            0.0,
+            -7.62,
+            90.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "5",
+          "name": "SW",
+          "at": [
+            10.16,
+            2.54,
+            180.0
+          ],
+          "type": "output"
+        },
+        {
+          "number": "6",
+          "name": "BST",
+          "at": [
+            10.16,
+            0.0,
+            180.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "1",
+          "name": "FB",
+          "at": [
+            10.16,
+            -2.54,
+            180.0
+          ],
+          "type": "input"
+        }
+      ],
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "value": "AP63203WU-7",
+      "mpn": "AP63203WU-7",
+      "datasheet": "https://www.diodes.com/datasheet/download/AP63200-AP63201-AP63203-AP63205.pdf",
+      "height_mm": 1,
+      "source_schematic_position": [
+        65,
+        140
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "L101",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "L1",
+      "source_symbol": "Device:L",
+      "symbol_name": "L",
+      "pins": {
+        "1": "SW",
+        "2": "+3V3_ISO"
+      },
+      "source_pins": {
+        "1": "SW",
+        "2": "+3V3_ISO"
+      },
+      "netmap": {
+        "SW": "SW",
+        "+3V3_ISO": "+3V3_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "1",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Inductor_SMD:L_Bourns-SRN4018",
+      "value": "3.9uH",
+      "mpn": "SRN4018-3R9M",
+      "datasheet": "https://www.bourns.com/docs/product-datasheets/srn4018.pdf",
+      "height_mm": 1.8,
+      "source_schematic_position": [
+        100,
+        140
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C101",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "C1",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "+5V_ISO",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "+5V_ISO",
+        "2": "GND_ISO"
+      },
+      "netmap": {
+        "+5V_ISO": "+5V_ISO",
+        "GND_ISO": "GND_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "10uF 16V",
+      "mpn": "GRM21-series candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        35,
+        140
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C102",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "C2",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "BST",
+        "2": "SW"
+      },
+      "source_pins": {
+        "1": "BST",
+        "2": "SW"
+      },
+      "netmap": {
+        "BST": "BST",
+        "SW": "SW"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "100nF 16V",
+      "mpn": "GRM21-series candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        85,
+        115
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C103",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "C3",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "GND_ISO": "GND_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "22uF 10V",
+      "mpn": "GRM21-series candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        115,
+        160
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C104",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "C4",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "GND_ISO": "GND_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "22uF 10V",
+      "mpn": "GRM21-series candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        135,
+        160
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C105",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "C5",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "GND_ISO": "GND_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "100nF 10V",
+      "mpn": "GRM21-series candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        295,
+        42
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "Q101",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "Q1",
+      "source_symbol": "Transistor_FET:AO3400A",
+      "symbol_name": "AO3400A",
+      "pins": {
+        "1": "GATE",
+        "3": "COIL_LOW",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "GATE",
+        "3": "COIL_LOW",
+        "2": "GND_ISO"
+      },
+      "netmap": {
+        "GATE": "GATE",
+        "GND_ISO": "GND_ISO",
+        "COIL_LOW": "COIL_LOW"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "G",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "3",
+          "name": "D",
+          "at": [
+            2.54,
+            5.08,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "S",
+          "at": [
+            2.54,
+            -5.08,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "value": "AO3400A",
+      "mpn": "AO3400A",
+      "datasheet": "https://www.aosmd.com/res/data_sheets/AO3400A.pdf",
+      "height_mm": 1.1,
+      "source_schematic_position": [
+        180,
+        120
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "D101",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "D1",
+      "source_symbol": "Device:D_Schottky",
+      "symbol_name": "D_Schottky",
+      "pins": {
+        "1": "COIL_5V",
+        "2": "COIL_LOW"
+      },
+      "source_pins": {
+        "1": "COIL_5V",
+        "2": "COIL_LOW"
+      },
+      "netmap": {
+        "COIL_5V": "COIL_5V",
+        "COIL_LOW": "COIL_LOW"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "K",
+          "at": [
+            -3.81,
+            0.0,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "A",
+          "at": [
+            3.81,
+            0.0,
+            180.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Diode_SMD:D_SMA",
+      "value": "SS14",
+      "mpn": "SS14",
+      "datasheet": "https://www.vishay.com/docs/88746/ss12.pdf",
+      "height_mm": 2.4,
+      "source_schematic_position": [
+        215,
+        65
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R101",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "R1",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "RELAY_CMD",
+        "2": "GATE"
+      },
+      "source_pins": {
+        "1": "RELAY_CMD",
+        "2": "GATE"
+      },
+      "netmap": {
+        "RELAY_CMD": "RELAY_CMD",
+        "GATE": "GATE"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "100R",
+      "mpn": "RC0603FR-07100RL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.5,
+      "source_schematic_position": [
+        150,
+        120
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R102",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "R2",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "GATE",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "GATE",
+        "2": "GND_ISO"
+      },
+      "netmap": {
+        "GATE": "GATE",
+        "GND_ISO": "GND_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "100k",
+      "mpn": "RC0603FR-07100KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.5,
+      "source_schematic_position": [
+        160,
+        145
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R103",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "R3",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "EN"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "EN"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "EN": "EN"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "10k",
+      "mpn": "RC0603FR-0710KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.5,
+      "source_schematic_position": [
+        260,
+        65
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C106",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "C6",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "EN",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "EN",
+        "2": "GND_ISO"
+      },
+      "netmap": {
+        "EN": "EN",
+        "GND_ISO": "GND_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "1uF 10V",
+      "mpn": "GRM21-series candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        260,
+        95
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R104",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "R4",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "BOOT9"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "BOOT9"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "BOOT9": "BOOT9"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "10k",
+      "mpn": "RC0603FR-0710KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.5,
+      "source_schematic_position": [
+        340,
+        142
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R105",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "R5",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "BOOT8"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "BOOT8"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "BOOT8": "BOOT8"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "10k",
+      "mpn": "RC0603FR-0710KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.5,
+      "source_schematic_position": [
+        365,
+        142
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R106",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "R6",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "BOOT2"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "BOOT2"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "BOOT2": "BOOT2"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "10k",
+      "mpn": "RC0603FR-0710KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.5,
+      "source_schematic_position": [
+        390,
+        142
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "U103",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "U3",
+      "source_symbol": "Sensor_Temperature:TMP102xxDRL",
+      "symbol_name": "TMP102xxDRL",
+      "pins": {
+        "6": "I2C_SDA",
+        "1": "I2C_SCL",
+        "4": "GND_ISO",
+        "5": "+3V3_ISO",
+        "2": "GND_ISO",
+        "3": null
+      },
+      "source_pins": {
+        "6": "I2C_SDA",
+        "1": "I2C_SCL",
+        "4": "GND_ISO",
+        "5": "+3V3_ISO",
+        "2": "GND_ISO",
+        "3": null
+      },
+      "netmap": {
+        "I2C_SCL": "I2C_SCL",
+        "GND_ISO": "GND_ISO",
+        "+3V3_ISO": "+3V3_ISO",
+        "I2C_SDA": "I2C_SDA"
+      },
+      "pin_geometry": [
+        {
+          "number": "6",
+          "name": "SDA",
+          "at": [
+            -10.16,
+            5.08,
+            0.0
+          ],
+          "type": "bidirectional"
+        },
+        {
+          "number": "1",
+          "name": "SCL",
+          "at": [
+            -10.16,
+            2.54,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "4",
+          "name": "ADD0",
+          "at": [
+            -10.16,
+            -2.54,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "5",
+          "name": "V+",
+          "at": [
+            0.0,
+            10.16,
+            270.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "2",
+          "name": "GND",
+          "at": [
+            0.0,
+            -10.16,
+            90.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "3",
+          "name": "ALERT",
+          "at": [
+            10.16,
+            5.08,
+            180.0
+          ],
+          "type": "open_collector"
+        }
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-563",
+      "value": "TMP102AIDRLR",
+      "mpn": "TMP102AIDRLR",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/tmp102.pdf",
+      "height_mm": 0.6,
+      "source_schematic_position": [
+        320,
+        205
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R107",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "R7",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "I2C_SCL"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "I2C_SCL"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "I2C_SCL": "I2C_SCL"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "4.7k",
+      "mpn": "RC0603FR-074K7L",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.5,
+      "source_schematic_position": [
+        280,
+        180
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R108",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "R8",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "I2C_SDA"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "I2C_SDA"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "I2C_SDA": "I2C_SDA"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "4.7k",
+      "mpn": "RC0603FR-074K7L",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.5,
+      "source_schematic_position": [
+        270,
+        210
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C107",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "C7",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "GND_ISO": "GND_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "100nF 10V",
+      "mpn": "GRM21-series candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        355,
+        218
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "J102",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "J2",
+      "source_symbol": "Connector_Generic:Conn_01x02",
+      "symbol_name": "Conn_01x02",
+      "pins": {
+        "1": "HOT_SWITCHED",
+        "2": "HOT_N"
+      },
+      "source_pins": {
+        "1": "L_SWITCHED",
+        "2": "N"
+      },
+      "netmap": {
+        "L_SWITCHED": "HOT_SWITCHED",
+        "N": "HOT_N"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "Pin_1",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "Pin_2",
+          "at": [
+            -5.08,
+            -2.54,
+            0.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Integrated:MKDS5_2_7p62",
+      "value": "SWITCHED OUT - HOLD",
+      "mpn": "1868076",
+      "datasheet": "https://www.phoenixcontact.com/us/products/1868076/pdf",
+      "height_mm": 21.5,
+      "source_schematic_position": [
+        225,
+        42
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true,
+      "body_mm": [
+        15.24,
+        12.5,
+        21.5
+      ],
+      "lead_pitch_mm": 7.62,
+      "drill_mm": 1.3,
+      "pin_cross_section_mm": [
+        0.9,
+        0.9
+      ],
+      "pin_length_mm": 5.1
+    },
+    {
+      "ref": "J104",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "J4",
+      "source_symbol": "Connector_Generic:Conn_01x05",
+      "symbol_name": "Conn_01x05",
+      "pins": {
+        "1": "GND_ISO",
+        "2": "UART_TX",
+        "3": "UART_RX",
+        "4": "BOOT9",
+        "5": "EN"
+      },
+      "source_pins": {
+        "1": "GND_ISO",
+        "2": "UART_TX",
+        "3": "UART_RX",
+        "4": "BOOT9",
+        "5": "EN"
+      },
+      "netmap": {
+        "GND_ISO": "GND_ISO",
+        "UART_TX": "UART_TX",
+        "UART_RX": "UART_RX",
+        "BOOT9": "BOOT9",
+        "EN": "EN"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "Pin_1",
+          "at": [
+            -5.08,
+            5.08,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "Pin_2",
+          "at": [
+            -5.08,
+            2.54,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "3",
+          "name": "Pin_3",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "4",
+          "name": "Pin_4",
+          "at": [
+            -5.08,
+            -2.54,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "5",
+          "name": "Pin_5",
+          "at": [
+            -5.08,
+            -5.08,
+            0.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical",
+      "value": "DEBUG - MAINS DISCONNECTED",
+      "mpn": "Samtec TSW-1xx-07 candidate",
+      "datasheet": "https://www.samtec.com/products/tsw",
+      "height_mm": 8,
+      "source_schematic_position": [
+        380,
+        75
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "SW101",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "SW1",
+      "source_symbol": "Switch:SW_Push",
+      "symbol_name": "SW_Push",
+      "pins": {
+        "1": "BUTTON",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "BUTTON",
+        "2": "GND_ISO"
+      },
+      "netmap": {
+        "BUTTON": "BUTTON",
+        "GND_ISO": "GND_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "1",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "at": [
+            5.08,
+            0.0,
+            180.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Button_Switch_THT:SW_PUSH_6mm",
+      "value": "LOCAL BUTTON",
+      "mpn": "B3F-1000 candidate",
+      "datasheet": "https://components.omron.com/us-en/products/switches/B3F",
+      "height_mm": 4.3,
+      "source_schematic_position": [
+        185,
+        215
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "LED101",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "LED1",
+      "source_symbol": "Device:LED",
+      "symbol_name": "LED",
+      "pins": {
+        "1": "GND_ISO",
+        "2": "LED_A"
+      },
+      "source_pins": {
+        "1": "GND_ISO",
+        "2": "LED_A"
+      },
+      "netmap": {
+        "GND_ISO": "GND_ISO",
+        "LED_A": "LED_A"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "K",
+          "at": [
+            -3.81,
+            0.0,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "A",
+          "at": [
+            3.81,
+            0.0,
+            180.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "LED_THT:LED_D3.0mm",
+      "value": "STATUS LED GREEN",
+      "mpn": "WP710A10GD candidate",
+      "datasheet": "https://www.kingbrightusa.com/",
+      "height_mm": 5.3,
+      "source_schematic_position": [
+        215,
+        250
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R110",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "R10",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "BUTTON"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "BUTTON"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "BUTTON": "BUTTON"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "10k",
+      "mpn": "RC0603FR-0710KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.5,
+      "source_schematic_position": [
+        155,
+        195
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R111",
+      "source_module": "controller",
+      "source_folder": "../controller",
+      "source_ref": "R11",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "LED_CMD",
+        "2": "LED_A"
+      },
+      "source_pins": {
+        "1": "LED_CMD",
+        "2": "LED_A"
+      },
+      "netmap": {
+        "LED_CMD": "LED_CMD",
+        "LED_A": "LED_A"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "1k",
+      "mpn": "RC0603FR-071KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.5,
+      "source_schematic_position": [
+        180,
+        250
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "U201",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "U1",
+      "source_symbol": "Sensor_Energy:ATM90E26-YU",
+      "symbol_name": "ATM90E26-YU",
+      "pins": {
+        "28": "HOT_3V3",
+        "1": "HOT_GND",
+        "4": "HOT_RESET",
+        "7": "HOT_GND",
+        "8": "HOT_GND",
+        "10": "HOT_I1P",
+        "11": "HOT_I1N",
+        "12": "HOT_GND",
+        "13": "HOT_VREF",
+        "5": "HOT_AVDD",
+        "14": "HOT_GND",
+        "6": "HOT_GND",
+        "3": "HOT_3V3",
+        "2": "HOT_GND",
+        "9": "HOT_GND",
+        "27": "HOT_MOSI",
+        "26": "HOT_MISO",
+        "25": "HOT_SCLK",
+        "24": "HOT_CS",
+        "23": null,
+        "22": "HOT_XIN",
+        "21": null,
+        "20": null,
+        "19": null,
+        "18": null,
+        "17": null,
+        "16": "HOT_VP",
+        "15": "HOT_VN"
+      },
+      "source_pins": {
+        "28": "HOT_3V3",
+        "1": "HOT_GND",
+        "4": "HOT_RESET",
+        "7": "HOT_GND",
+        "8": "HOT_GND",
+        "10": "HOT_I1P",
+        "11": "HOT_I1N",
+        "12": "HOT_GND",
+        "13": "HOT_VREF",
+        "5": "HOT_AVDD",
+        "14": "HOT_GND",
+        "6": "HOT_GND",
+        "3": "HOT_3V3",
+        "2": "HOT_GND",
+        "9": "HOT_GND",
+        "27": "HOT_MOSI",
+        "26": "HOT_MISO",
+        "25": "HOT_SCLK",
+        "24": "HOT_CS",
+        "23": "HOT_XOUT",
+        "22": "HOT_XIN",
+        "21": null,
+        "20": null,
+        "19": null,
+        "18": null,
+        "17": null,
+        "16": "HOT_VP",
+        "15": "HOT_VN"
+      },
+      "netmap": {
+        "HOT_GND": "HOT_GND",
+        "HOT_3V3": "HOT_3V3",
+        "HOT_RESET": "HOT_RESET",
+        "HOT_AVDD": "HOT_AVDD",
+        "HOT_I1P": "HOT_I1P",
+        "HOT_I1N": "HOT_I1N",
+        "HOT_VREF": "HOT_VREF",
+        "HOT_VN": "HOT_VN",
+        "HOT_VP": "HOT_VP",
+        "HOT_XIN": "HOT_XIN",
+        "HOT_XOUT": "HOT_XOUT",
+        "HOT_CS": "HOT_CS",
+        "HOT_SCLK": "HOT_SCLK",
+        "HOT_MISO": "HOT_MISO",
+        "HOT_MOSI": "HOT_MOSI"
+      },
+      "pin_geometry": [
+        {
+          "number": "28",
+          "name": "MMD0",
+          "at": [
+            -15.24,
+            15.24,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "1",
+          "name": "MMD1",
+          "at": [
+            -15.24,
+            12.7,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "4",
+          "name": "~{Reset}",
+          "at": [
+            -15.24,
+            7.62,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "7",
+          "name": "I2P",
+          "at": [
+            -15.24,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "8",
+          "name": "I2N",
+          "at": [
+            -15.24,
+            -2.54,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "10",
+          "name": "I1P",
+          "at": [
+            -15.24,
+            -5.08,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "11",
+          "name": "I1N",
+          "at": [
+            -15.24,
+            -7.62,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "12",
+          "name": "USEL",
+          "at": [
+            -15.24,
+            -10.16,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "13",
+          "name": "Vref",
+          "at": [
+            -15.24,
+            -12.7,
+            0.0
+          ],
+          "type": "output"
+        },
+        {
+          "number": "5",
+          "name": "AVDD",
+          "at": [
+            -2.54,
+            22.86,
+            270.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "14",
+          "name": "AGND",
+          "at": [
+            -2.54,
+            -22.86,
+            90.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "6",
+          "name": "AGND",
+          "at": [
+            -2.54,
+            -22.86,
+            90.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "3",
+          "name": "DVDD",
+          "at": [
+            2.54,
+            22.86,
+            270.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "2",
+          "name": "DGND",
+          "at": [
+            2.54,
+            -22.86,
+            90.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "9",
+          "name": "DGND",
+          "at": [
+            2.54,
+            -22.86,
+            90.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "27",
+          "name": "SDI/URX",
+          "at": [
+            15.24,
+            15.24,
+            180.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "26",
+          "name": "SDO/UTX",
+          "at": [
+            15.24,
+            12.7,
+            180.0
+          ],
+          "type": "output"
+        },
+        {
+          "number": "25",
+          "name": "SCLK",
+          "at": [
+            15.24,
+            10.16,
+            180.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "24",
+          "name": "~{CS}",
+          "at": [
+            15.24,
+            7.62,
+            180.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "23",
+          "name": "OSCO",
+          "at": [
+            15.24,
+            5.08,
+            180.0
+          ],
+          "type": "output"
+        },
+        {
+          "number": "22",
+          "name": "OSCI",
+          "at": [
+            15.24,
+            2.54,
+            180.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "21",
+          "name": "ZX",
+          "at": [
+            15.24,
+            0.0,
+            180.0
+          ],
+          "type": "output"
+        },
+        {
+          "number": "20",
+          "name": "IRQ",
+          "at": [
+            15.24,
+            -2.54,
+            180.0
+          ],
+          "type": "output"
+        },
+        {
+          "number": "19",
+          "name": "CF2",
+          "at": [
+            15.24,
+            -5.08,
+            180.0
+          ],
+          "type": "output"
+        },
+        {
+          "number": "18",
+          "name": "CF1",
+          "at": [
+            15.24,
+            -7.62,
+            180.0
+          ],
+          "type": "output"
+        },
+        {
+          "number": "17",
+          "name": "WarnOut",
+          "at": [
+            15.24,
+            -10.16,
+            180.0
+          ],
+          "type": "output"
+        },
+        {
+          "number": "16",
+          "name": "VP",
+          "at": [
+            15.24,
+            -12.7,
+            180.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "15",
+          "name": "VN",
+          "at": [
+            15.24,
+            -15.24,
+            180.0
+          ],
+          "type": "input"
+        }
+      ],
+      "footprint": "Package_SO:SSOP-28_5.3x10.2mm_P0.65mm",
+      "value": "ATM90E26-YU",
+      "mpn": "ATM90E26-YU",
+      "datasheet": "https://ww1.microchip.com/downloads/aemDocuments/documents/OTH/ProductDocuments/DataSheets/Atmel-46002-SE-M90E26-Datasheet.pdf",
+      "height_mm": 2.0,
+      "source_schematic_position": [
+        210,
+        90
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "U202",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "U2",
+      "source_symbol": "Isolator:ISO6741",
+      "symbol_name": "ISO6741",
+      "pins": {
+        "3": "SPI_SCLK",
+        "4": "SPI_MOSI",
+        "5": "SPI_CS",
+        "6": "SPI_MISO",
+        "7": "+3V3_ISO",
+        "1": "+3V3_ISO",
+        "2": "GND_ISO",
+        "8": "GND_ISO",
+        "16": "HOT_3V3",
+        "15": "HOT_GND",
+        "9": "HOT_GND",
+        "14": "HOT_SCLK",
+        "13": "HOT_MOSI",
+        "12": "HOT_CS",
+        "11": "HOT_MISO",
+        "10": "HOT_3V3"
+      },
+      "source_pins": {
+        "3": "ISO_SCLK",
+        "4": "ISO_MOSI",
+        "5": "ISO_CS",
+        "6": "ISO_MISO",
+        "7": "ISO_3V3",
+        "1": "ISO_3V3",
+        "2": "ISO_GND",
+        "8": "ISO_GND",
+        "16": "HOT_3V3",
+        "15": "HOT_GND",
+        "9": "HOT_GND",
+        "14": "HOT_SCLK",
+        "13": "HOT_MOSI",
+        "12": "HOT_CS",
+        "11": "HOT_MISO",
+        "10": "HOT_3V3"
+      },
+      "netmap": {
+        "ISO_3V3": "+3V3_ISO",
+        "ISO_GND": "GND_ISO",
+        "ISO_SCLK": "SPI_SCLK",
+        "ISO_MOSI": "SPI_MOSI",
+        "ISO_CS": "SPI_CS",
+        "ISO_MISO": "SPI_MISO",
+        "HOT_GND": "HOT_GND",
+        "HOT_3V3": "HOT_3V3",
+        "HOT_MISO": "HOT_MISO",
+        "HOT_CS": "HOT_CS",
+        "HOT_MOSI": "HOT_MOSI",
+        "HOT_SCLK": "HOT_SCLK"
+      },
+      "pin_geometry": [
+        {
+          "number": "3",
+          "name": "INA",
+          "at": [
+            -10.16,
+            5.08,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "4",
+          "name": "INB",
+          "at": [
+            -10.16,
+            2.54,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "5",
+          "name": "INC",
+          "at": [
+            -10.16,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "6",
+          "name": "OUTD",
+          "at": [
+            -10.16,
+            -2.54,
+            0.0
+          ],
+          "type": "output"
+        },
+        {
+          "number": "7",
+          "name": "EN1",
+          "at": [
+            -10.16,
+            -5.08,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "1",
+          "name": "V_{CC1}",
+          "at": [
+            -5.08,
+            15.24,
+            270.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "2",
+          "name": "GND1",
+          "at": [
+            -5.08,
+            -15.24,
+            90.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "8",
+          "name": "GND1",
+          "at": [
+            -5.08,
+            -15.24,
+            90.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "16",
+          "name": "V_{CC2}",
+          "at": [
+            5.08,
+            15.24,
+            270.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "15",
+          "name": "GND2",
+          "at": [
+            5.08,
+            -15.24,
+            90.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "9",
+          "name": "GND2",
+          "at": [
+            5.08,
+            -15.24,
+            90.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "14",
+          "name": "OUTA",
+          "at": [
+            10.16,
+            5.08,
+            180.0
+          ],
+          "type": "output"
+        },
+        {
+          "number": "13",
+          "name": "OUTB",
+          "at": [
+            10.16,
+            2.54,
+            180.0
+          ],
+          "type": "output"
+        },
+        {
+          "number": "12",
+          "name": "OUTC",
+          "at": [
+            10.16,
+            0.0,
+            180.0
+          ],
+          "type": "output"
+        },
+        {
+          "number": "11",
+          "name": "IND",
+          "at": [
+            10.16,
+            -2.54,
+            180.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "10",
+          "name": "EN2",
+          "at": [
+            10.16,
+            -5.08,
+            180.0
+          ],
+          "type": "input"
+        }
+      ],
+      "footprint": "RevB:ISO6741_DW_8p1",
+      "value": "ISO6741DWR",
+      "mpn": "ISO6741DWR",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/iso6741.pdf",
+      "height_mm": 2.65,
+      "source_schematic_position": [
+        320,
+        85
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "PS201",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "PS1",
+      "source_symbol": "RevB:R05CT05S",
+      "symbol_name": "R05CT05S",
+      "pins": {
+        "1": "+5V_ISO",
+        "2": "GND_ISO",
+        "3": "+5V_ISO",
+        "4": null,
+        "5": null,
+        "6": null,
+        "7": null,
+        "8": null,
+        "9": "HOT_GND",
+        "10": null,
+        "11": null,
+        "12": null,
+        "13": "HOT_GND",
+        "14": "HOT_3V3",
+        "15": "HOT_GND",
+        "16": "HOT_GND"
+      },
+      "source_pins": {
+        "1": "ISO_5V",
+        "2": "ISO_GND",
+        "3": "ISO_5V",
+        "4": null,
+        "5": null,
+        "6": null,
+        "7": null,
+        "8": null,
+        "9": "HOT_GND",
+        "10": null,
+        "11": null,
+        "12": null,
+        "13": "HOT_GND",
+        "14": "HOT_3V3",
+        "15": "HOT_GND",
+        "16": "HOT_GND"
+      },
+      "netmap": {
+        "ISO_5V": "+5V_ISO",
+        "ISO_GND": "GND_ISO",
+        "HOT_GND": "HOT_GND",
+        "HOT_3V3": "HOT_3V3"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "CTRL",
+          "at": [
+            -12.7,
+            10.16,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "2",
+          "name": "VIN-",
+          "at": [
+            -12.7,
+            5.08,
+            0.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "3",
+          "name": "VIN+",
+          "at": [
+            -12.7,
+            7.62,
+            0.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "4",
+          "name": "SYNC",
+          "at": [
+            -12.7,
+            2.54,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "5",
+          "name": "SYNC_OK",
+          "at": [
+            -12.7,
+            0.0,
+            0.0
+          ],
+          "type": "open_collector"
+        },
+        {
+          "number": "6",
+          "name": "NC",
+          "at": [
+            -12.7,
+            -2.54,
+            0.0
+          ],
+          "type": "no_connect"
+        },
+        {
+          "number": "7",
+          "name": "NC",
+          "at": [
+            -12.7,
+            -5.08,
+            0.0
+          ],
+          "type": "no_connect"
+        },
+        {
+          "number": "8",
+          "name": "NC",
+          "at": [
+            -12.7,
+            -7.62,
+            0.0
+          ],
+          "type": "no_connect"
+        },
+        {
+          "number": "9",
+          "name": "VOUT-",
+          "at": [
+            12.7,
+            -7.62,
+            180.0
+          ],
+          "type": "power_out"
+        },
+        {
+          "number": "10",
+          "name": "NC",
+          "at": [
+            12.7,
+            -5.08,
+            180.0
+          ],
+          "type": "no_connect"
+        },
+        {
+          "number": "11",
+          "name": "NC",
+          "at": [
+            12.7,
+            -2.54,
+            180.0
+          ],
+          "type": "no_connect"
+        },
+        {
+          "number": "12",
+          "name": "NC",
+          "at": [
+            12.7,
+            0.0,
+            180.0
+          ],
+          "type": "no_connect"
+        },
+        {
+          "number": "13",
+          "name": "TRIM",
+          "at": [
+            12.7,
+            2.54,
+            180.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "14",
+          "name": "VOUT+",
+          "at": [
+            12.7,
+            5.08,
+            180.0
+          ],
+          "type": "power_out"
+        },
+        {
+          "number": "15",
+          "name": "VOUT-",
+          "at": [
+            12.7,
+            7.62,
+            180.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "16",
+          "name": "VOUT-",
+          "at": [
+            12.7,
+            10.16,
+            180.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "RevB:R05CT05S_8p1",
+      "value": "R05CT05S-R / 3.3V",
+      "mpn": "R05CT05S-R",
+      "datasheet": "https://recom-power.com/pdf/Econoline/RxxCTxx.pdf",
+      "height_mm": 2.65,
+      "source_schematic_position": [
+        320,
+        185
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "RS201",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "RS1",
+      "source_symbol": "Device:R_Shunt",
+      "symbol_name": "R_Shunt",
+      "pins": {
+        "1": "HOT_GND",
+        "4": "HOT_LOAD",
+        "2": "HOT_SENSE_UP",
+        "3": "HOT_SENSE_DOWN"
+      },
+      "source_pins": {
+        "1": "HOT_GND",
+        "4": "HOT_LOAD",
+        "2": "HOT_SENSE_UP",
+        "3": "HOT_SENSE_DOWN"
+      },
+      "netmap": {
+        "HOT_GND": "HOT_GND",
+        "HOT_SENSE_UP": "HOT_SENSE_UP",
+        "HOT_SENSE_DOWN": "HOT_SENSE_DOWN",
+        "HOT_LOAD": "HOT_LOAD"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "1",
+          "at": [
+            0.0,
+            5.08,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "4",
+          "name": "4",
+          "at": [
+            0.0,
+            -5.08,
+            90.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "at": [
+            3.81,
+            2.54,
+            180.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "3",
+          "name": "3",
+          "at": [
+            3.81,
+            -2.54,
+            180.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "RevB:CSS4J_4026",
+      "value": "1mR / 1% / 8W",
+      "mpn": "CSS4J-4026R-1L00FE",
+      "datasheet": "https://www.bourns.com/docs/product-datasheets/css4j-4026.pdf",
+      "height_mm": 2.92,
+      "source_schematic_position": [
+        80,
+        75
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "J201",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "J1",
+      "source_symbol": "Connector_Generic:Conn_01x02",
+      "symbol_name": "Conn_01x02",
+      "pins": {
+        "1": "HOT_GND",
+        "2": "HOT_N"
+      },
+      "source_pins": {
+        "1": "HOT_LOAD",
+        "2": "HOT_GND"
+      },
+      "netmap": {
+        "HOT_LOAD": "HOT_GND",
+        "HOT_GND": "HOT_N"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "Pin_1",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "Pin_2",
+          "at": [
+            -5.08,
+            -2.54,
+            0.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Integrated:MKDS5_2_7p62",
+      "value": "PROTECTED LINE + NEUTRAL INPUT",
+      "mpn": "1868076",
+      "datasheet": "https://www.phoenixcontact.com/us/products/1868076/pdf",
+      "height_mm": 21.5,
+      "source_schematic_position": [
+        35,
+        75
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true,
+      "body_mm": [
+        15.24,
+        12.5,
+        21.5
+      ],
+      "lead_pitch_mm": 7.62,
+      "drill_mm": 1.3,
+      "pin_cross_section_mm": [
+        0.9,
+        0.9
+      ],
+      "pin_length_mm": 5.1
+    },
+    {
+      "ref": "R201",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "R1",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "HOT_SENSE_DOWN",
+        "2": "HOT_I1P"
+      },
+      "source_pins": {
+        "1": "HOT_SENSE_DOWN",
+        "2": "HOT_I1P"
+      },
+      "netmap": {
+        "HOT_SENSE_DOWN": "HOT_SENSE_DOWN",
+        "HOT_I1P": "HOT_I1P"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "100R",
+      "mpn": "TNPW0603100RBEEA",
+      "datasheet": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+      "height_mm": 0.55,
+      "source_schematic_position": [
+        120,
+        65
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true,
+      "body_mm": [
+        1.6,
+        0.8
+      ],
+      "tolerance_percent": 0.1,
+      "tcr_ppm_per_K": 25
+    },
+    {
+      "ref": "R202",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "R2",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "HOT_SENSE_UP",
+        "2": "HOT_I1N"
+      },
+      "source_pins": {
+        "1": "HOT_SENSE_UP",
+        "2": "HOT_I1N"
+      },
+      "netmap": {
+        "HOT_SENSE_UP": "HOT_SENSE_UP",
+        "HOT_I1N": "HOT_I1N"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "100R",
+      "mpn": "TNPW0603100RBEEA",
+      "datasheet": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+      "height_mm": 0.55,
+      "source_schematic_position": [
+        120,
+        90
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true,
+      "body_mm": [
+        1.6,
+        0.8
+      ],
+      "tolerance_percent": 0.1,
+      "tcr_ppm_per_K": 25
+    },
+    {
+      "ref": "C201",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "C1",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "HOT_I1P",
+        "2": "HOT_GND"
+      },
+      "source_pins": {
+        "1": "HOT_I1P",
+        "2": "HOT_GND"
+      },
+      "netmap": {
+        "HOT_I1P": "HOT_I1P",
+        "HOT_GND": "HOT_GND"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "330nF 16V",
+      "mpn": "GRM21-series 330nF 16V candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        150,
+        65
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C202",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "C2",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "HOT_I1N",
+        "2": "HOT_GND"
+      },
+      "source_pins": {
+        "1": "HOT_I1N",
+        "2": "HOT_GND"
+      },
+      "netmap": {
+        "HOT_I1N": "HOT_I1N",
+        "HOT_GND": "HOT_GND"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "330nF 16V",
+      "mpn": "GRM21-series 330nF 16V candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        150,
+        90
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "RV201",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "RV1",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "HOT_N",
+        "2": "HOT_DIV1"
+      },
+      "source_pins": {
+        "1": "HOT_N",
+        "2": "HOT_DIV1"
+      },
+      "netmap": {
+        "HOT_N": "HOT_N",
+        "HOT_DIV1": "HOT_DIV1"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_1206_3216Metric",
+      "value": "249k",
+      "mpn": "TNPW1206249KBEEA",
+      "datasheet": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+      "height_mm": 0.65,
+      "source_schematic_position": [
+        65,
+        150
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "RV202",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "RV2",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "HOT_DIV1",
+        "2": "HOT_DIV2"
+      },
+      "source_pins": {
+        "1": "HOT_DIV1",
+        "2": "HOT_DIV2"
+      },
+      "netmap": {
+        "HOT_DIV1": "HOT_DIV1",
+        "HOT_DIV2": "HOT_DIV2"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_1206_3216Metric",
+      "value": "249k",
+      "mpn": "TNPW1206249KBEEA",
+      "datasheet": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+      "height_mm": 0.65,
+      "source_schematic_position": [
+        95,
+        150
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "RV203",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "RV3",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "HOT_DIV2",
+        "2": "HOT_DIV3"
+      },
+      "source_pins": {
+        "1": "HOT_DIV2",
+        "2": "HOT_DIV3"
+      },
+      "netmap": {
+        "HOT_DIV2": "HOT_DIV2",
+        "HOT_DIV3": "HOT_DIV3"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_1206_3216Metric",
+      "value": "249k",
+      "mpn": "TNPW1206249KBEEA",
+      "datasheet": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+      "height_mm": 0.65,
+      "source_schematic_position": [
+        125,
+        150
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "RV204",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "RV4",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "HOT_DIV3",
+        "2": "HOT_DIV4"
+      },
+      "source_pins": {
+        "1": "HOT_DIV3",
+        "2": "HOT_DIV4"
+      },
+      "netmap": {
+        "HOT_DIV3": "HOT_DIV3",
+        "HOT_DIV4": "HOT_DIV4"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_1206_3216Metric",
+      "value": "249k",
+      "mpn": "TNPW1206249KBEEA",
+      "datasheet": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+      "height_mm": 0.65,
+      "source_schematic_position": [
+        155,
+        150
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "RV205",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "RV5",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "HOT_DIV4",
+        "2": "HOT_GND"
+      },
+      "source_pins": {
+        "1": "HOT_DIV4",
+        "2": "HOT_GND"
+      },
+      "netmap": {
+        "HOT_DIV4": "HOT_DIV4",
+        "HOT_GND": "HOT_GND"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "value": "1k",
+      "mpn": "TNPW08051K00BEEA",
+      "datasheet": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+      "height_mm": 0.65,
+      "source_schematic_position": [
+        185,
+        150
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "RV206",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "RV6",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "HOT_DIV4",
+        "2": "HOT_VP"
+      },
+      "source_pins": {
+        "1": "HOT_DIV4",
+        "2": "HOT_VP"
+      },
+      "netmap": {
+        "HOT_DIV4": "HOT_DIV4",
+        "HOT_VP": "HOT_VP"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "value": "1k",
+      "mpn": "TNPW08051K00BEEA",
+      "datasheet": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+      "height_mm": 0.65,
+      "source_schematic_position": [
+        210,
+        150
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "RV207",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "RV7",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "HOT_GND",
+        "2": "HOT_VN"
+      },
+      "source_pins": {
+        "1": "HOT_GND",
+        "2": "HOT_VN"
+      },
+      "netmap": {
+        "HOT_GND": "HOT_GND",
+        "HOT_VN": "HOT_VN"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "value": "1k",
+      "mpn": "TNPW08051K00BEEA",
+      "datasheet": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+      "height_mm": 0.65,
+      "source_schematic_position": [
+        210,
+        180
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "CV201",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "CV1",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "HOT_VP",
+        "2": "HOT_GND"
+      },
+      "source_pins": {
+        "1": "HOT_VP",
+        "2": "HOT_GND"
+      },
+      "netmap": {
+        "HOT_VP": "HOT_VP",
+        "HOT_GND": "HOT_GND"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "33nF 16V",
+      "mpn": "GRM21-series 33nF 16V candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        245,
+        150
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "CV202",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "CV2",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "HOT_VN",
+        "2": "HOT_GND"
+      },
+      "source_pins": {
+        "1": "HOT_VN",
+        "2": "HOT_GND"
+      },
+      "netmap": {
+        "HOT_VN": "HOT_VN",
+        "HOT_GND": "HOT_GND"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "33nF 16V",
+      "mpn": "GRM21-series 33nF 16V candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        245,
+        180
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R203",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "R3",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "HOT_3V3",
+        "2": "HOT_AVDD"
+      },
+      "source_pins": {
+        "1": "HOT_3V3",
+        "2": "HOT_AVDD"
+      },
+      "netmap": {
+        "HOT_3V3": "HOT_3V3",
+        "HOT_AVDD": "HOT_AVDD"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "value": "0R",
+      "mpn": "RC0805JR-070RL",
+      "datasheet": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+      "height_mm": 0.65,
+      "source_schematic_position": [
+        175,
+        220
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C203",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "C3",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "HOT_AVDD",
+        "2": "HOT_GND"
+      },
+      "source_pins": {
+        "1": "HOT_AVDD",
+        "2": "HOT_GND"
+      },
+      "netmap": {
+        "HOT_AVDD": "HOT_AVDD",
+        "HOT_GND": "HOT_GND"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "100nF 16V",
+      "mpn": "GRM21-series 100nF 16V candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        200,
+        220
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C204",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "C4",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "HOT_3V3",
+        "2": "HOT_GND"
+      },
+      "source_pins": {
+        "1": "HOT_3V3",
+        "2": "HOT_GND"
+      },
+      "netmap": {
+        "HOT_3V3": "HOT_3V3",
+        "HOT_GND": "HOT_GND"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "100nF 16V",
+      "mpn": "GRM21-series 100nF 16V candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        225,
+        220
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C205",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "C5",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "HOT_3V3",
+        "2": "HOT_GND"
+      },
+      "source_pins": {
+        "1": "HOT_3V3",
+        "2": "HOT_GND"
+      },
+      "netmap": {
+        "HOT_3V3": "HOT_3V3",
+        "HOT_GND": "HOT_GND"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "10uF 10V",
+      "mpn": "GRM21-series 10uF 10V candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        250,
+        220
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C206",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "C6",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "HOT_VREF",
+        "2": "HOT_GND"
+      },
+      "source_pins": {
+        "1": "HOT_VREF",
+        "2": "HOT_GND"
+      },
+      "netmap": {
+        "HOT_VREF": "HOT_VREF",
+        "HOT_GND": "HOT_GND"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "1uF 16V",
+      "mpn": "GRM21-series 1uF 16V candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        200,
+        255
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C207",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "C7",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "HOT_VREF",
+        "2": "HOT_GND"
+      },
+      "source_pins": {
+        "1": "HOT_VREF",
+        "2": "HOT_GND"
+      },
+      "netmap": {
+        "HOT_VREF": "HOT_VREF",
+        "HOT_GND": "HOT_GND"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "1nF C0G",
+      "mpn": "GRM21-series 1nF C0G candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        230,
+        255
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R204",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "R4",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "HOT_3V3",
+        "2": "HOT_RESET"
+      },
+      "source_pins": {
+        "1": "HOT_3V3",
+        "2": "HOT_RESET"
+      },
+      "netmap": {
+        "HOT_3V3": "HOT_3V3",
+        "HOT_RESET": "HOT_RESET"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "value": "10k",
+      "mpn": "TNPW080510K0BEEA",
+      "datasheet": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+      "height_mm": 0.65,
+      "source_schematic_position": [
+        100,
+        235
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C208",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "C8",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "HOT_RESET",
+        "2": "HOT_GND"
+      },
+      "source_pins": {
+        "1": "HOT_RESET",
+        "2": "HOT_GND"
+      },
+      "netmap": {
+        "HOT_RESET": "HOT_RESET",
+        "HOT_GND": "HOT_GND"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "100nF 16V",
+      "mpn": "GRM21-series 100nF 16V candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        130,
+        235
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "Y201",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "Y1",
+      "source_symbol": "Oscillator:ASV-xxxMHz",
+      "symbol_name": "ASV-xxxMHz",
+      "pins": {
+        "1": "HOT_3V3",
+        "2": "HOT_GND",
+        "3": "HOT_XIN",
+        "4": "HOT_3V3"
+      },
+      "source_pins": {
+        "1": "HOT_XIN",
+        "2": "HOT_XOUT"
+      },
+      "netmap": {
+        "HOT_XIN": "HOT_XIN",
+        "HOT_XOUT": "HOT_XOUT"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "EN",
+          "at": [
+            -7.62,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "4",
+          "name": "Vdd",
+          "at": [
+            0.0,
+            7.62,
+            270.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "2",
+          "name": "GND",
+          "at": [
+            0.0,
+            -7.62,
+            90.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "3",
+          "name": "OUT",
+          "at": [
+            7.62,
+            0.0,
+            180.0
+          ],
+          "type": "output"
+        }
+      ],
+      "footprint": "Oscillator:Oscillator_SMD_Abracon_ASV-4Pin_7.0x5.1mm",
+      "value": "ASV-8.192MHZ-LC-S-T / candidate",
+      "mpn": "ASV-8.192MHZ-LC-S-T",
+      "datasheet": "https://abracon.com/Oscillators/ASV.pdf",
+      "height_mm": 1.8,
+      "source_schematic_position": [
+        60,
+        230
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true,
+      "body_mm": [
+        7,
+        5.1
+      ],
+      "symbol_override": true,
+      "procurement_gate": "Exact-frequency orderability confirmation required"
+    },
+    {
+      "ref": "CX201",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "CX1",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "HOT_3V3",
+        "2": "HOT_GND"
+      },
+      "source_pins": {
+        "1": "HOT_XIN",
+        "2": "HOT_GND"
+      },
+      "netmap": {
+        "HOT_XIN": "HOT_XIN",
+        "HOT_GND": "HOT_GND"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "100nF 16V X7R",
+      "mpn": "GRM188R71C104KA01D",
+      "datasheet": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D",
+      "height_mm": 0.9,
+      "source_schematic_position": [
+        35,
+        255
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "CP201",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "CP1",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "+5V_ISO",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "ISO_5V",
+        "2": "ISO_GND"
+      },
+      "netmap": {
+        "ISO_5V": "+5V_ISO",
+        "ISO_GND": "GND_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "10uF 16V",
+      "mpn": "GRM21-series 10uF 16V candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        280,
+        235
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "CP202",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "CP2",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "+5V_ISO",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "ISO_5V",
+        "2": "ISO_GND"
+      },
+      "netmap": {
+        "ISO_5V": "+5V_ISO",
+        "ISO_GND": "GND_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "100nF 16V",
+      "mpn": "GRM21-series 100nF 16V candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        310,
+        235
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "CP203",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "CP3",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "HOT_3V3",
+        "2": "HOT_GND"
+      },
+      "source_pins": {
+        "1": "HOT_3V3",
+        "2": "HOT_GND"
+      },
+      "netmap": {
+        "HOT_3V3": "HOT_3V3",
+        "HOT_GND": "HOT_GND"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "10uF 10V",
+      "mpn": "GRM21-series 10uF 10V candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        350,
+        235
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "CP204",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "CP4",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "HOT_3V3",
+        "2": "HOT_GND"
+      },
+      "source_pins": {
+        "1": "HOT_3V3",
+        "2": "HOT_GND"
+      },
+      "netmap": {
+        "HOT_3V3": "HOT_3V3",
+        "HOT_GND": "HOT_GND"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "100nF 16V",
+      "mpn": "GRM21-series 100nF 16V candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        380,
+        235
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "CI201",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "CI1",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "ISO_3V3",
+        "2": "ISO_GND"
+      },
+      "netmap": {
+        "ISO_3V3": "+3V3_ISO",
+        "ISO_GND": "GND_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "100nF 16V",
+      "mpn": "GRM21-series 100nF 16V candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        285,
+        125
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "CI202",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "CI2",
+      "source_symbol": "Device:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "HOT_3V3",
+        "2": "HOT_GND"
+      },
+      "source_pins": {
+        "1": "HOT_3V3",
+        "2": "HOT_GND"
+      },
+      "netmap": {
+        "HOT_3V3": "HOT_3V3",
+        "HOT_GND": "HOT_GND"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "value": "100nF 16V",
+      "mpn": "GRM21-series 100nF 16V candidate",
+      "datasheet": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+      "height_mm": 1.25,
+      "source_schematic_position": [
+        350,
+        125
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R205",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "R5",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "HOT_3V3",
+        "2": "HOT_CS"
+      },
+      "source_pins": {
+        "1": "HOT_3V3",
+        "2": "HOT_CS"
+      },
+      "netmap": {
+        "HOT_3V3": "HOT_3V3",
+        "HOT_CS": "HOT_CS"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "value": "10k",
+      "mpn": "TNPW080510K0BEEA",
+      "datasheet": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+      "height_mm": 0.65,
+      "source_schematic_position": [
+        280,
+        50
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R206",
+      "source_module": "meter",
+      "source_folder": "../meter",
+      "source_ref": "R6",
+      "source_symbol": "Device:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "SPI_CS"
+      },
+      "source_pins": {
+        "1": "ISO_3V3",
+        "2": "ISO_CS"
+      },
+      "netmap": {
+        "ISO_3V3": "+3V3_ISO",
+        "ISO_CS": "SPI_CS"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "value": "10k",
+      "mpn": "TNPW080510K0BEEA",
+      "datasheet": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+      "height_mm": 0.65,
+      "source_schematic_position": [
+        350,
+        50
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R301",
+      "source_module": "feedback",
+      "source_folder": "../feedback",
+      "source_ref": "R1",
+      "source_symbol": "Feedback:R_H",
+      "symbol_name": "R_H",
+      "pins": {
+        "1": "HOT_SWITCHED",
+        "2": "HOT_FB_L_MID"
+      },
+      "source_pins": {
+        "1": "L_POST",
+        "2": "L_MID"
+      },
+      "netmap": {
+        "L_POST": "HOT_SWITCHED",
+        "L_MID": "HOT_FB_L_MID"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "1",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "at": [
+            5.08,
+            0.0,
+            180.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Feedback:PR01_P10.16",
+      "value": "33k 1% 1W",
+      "mpn": "PR01000103302FA100",
+      "datasheet": "https://www.vishay.com/docs/28729/pr010203.pdf",
+      "height_mm": 4.5,
+      "source_schematic_position": [
+        55.88,
+        50.8
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R302",
+      "source_module": "feedback",
+      "source_folder": "../feedback",
+      "source_ref": "R2",
+      "source_symbol": "Feedback:R_H",
+      "symbol_name": "R_H",
+      "pins": {
+        "1": "HOT_FB_L_MID",
+        "2": "HOT_FB_AC1"
+      },
+      "source_pins": {
+        "1": "L_MID",
+        "2": "AC1"
+      },
+      "netmap": {
+        "L_MID": "HOT_FB_L_MID",
+        "AC1": "HOT_FB_AC1"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "1",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "at": [
+            5.08,
+            0.0,
+            180.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Feedback:PR01_P10.16",
+      "value": "33k 1% 1W",
+      "mpn": "PR01000103302FA100",
+      "datasheet": "https://www.vishay.com/docs/28729/pr010203.pdf",
+      "height_mm": 4.5,
+      "source_schematic_position": [
+        81.28,
+        50.8
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R303",
+      "source_module": "feedback",
+      "source_folder": "../feedback",
+      "source_ref": "R3",
+      "source_symbol": "Feedback:R_H",
+      "symbol_name": "R_H",
+      "pins": {
+        "1": "HOT_FB_N_MID",
+        "2": "HOT_FB_AC2"
+      },
+      "source_pins": {
+        "1": "N_MID",
+        "2": "AC2"
+      },
+      "netmap": {
+        "N_MID": "HOT_FB_N_MID",
+        "AC2": "HOT_FB_AC2"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "1",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "at": [
+            5.08,
+            0.0,
+            180.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Feedback:PR01_P10.16",
+      "value": "33k 1% 1W",
+      "mpn": "PR01000103302FA100",
+      "datasheet": "https://www.vishay.com/docs/28729/pr010203.pdf",
+      "height_mm": 4.5,
+      "source_schematic_position": [
+        81.28,
+        91.44
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R304",
+      "source_module": "feedback",
+      "source_folder": "../feedback",
+      "source_ref": "R4",
+      "source_symbol": "Feedback:R_H",
+      "symbol_name": "R_H",
+      "pins": {
+        "1": "HOT_N",
+        "2": "HOT_FB_N_MID"
+      },
+      "source_pins": {
+        "1": "N_POST",
+        "2": "N_MID"
+      },
+      "netmap": {
+        "N_POST": "HOT_N",
+        "N_MID": "HOT_FB_N_MID"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "1",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "at": [
+            5.08,
+            0.0,
+            180.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Feedback:PR01_P10.16",
+      "value": "33k 1% 1W",
+      "mpn": "PR01000103302FA100",
+      "datasheet": "https://www.vishay.com/docs/28729/pr010203.pdf",
+      "height_mm": 4.5,
+      "source_schematic_position": [
+        55.88,
+        91.44
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "U301",
+      "source_module": "feedback",
+      "source_folder": "../feedback",
+      "source_ref": "U1",
+      "source_symbol": "Feedback:ACPL_K376",
+      "symbol_name": "ACPL_K376",
+      "pins": {
+        "1": "HOT_FB_AC1",
+        "2": null,
+        "3": null,
+        "4": "HOT_FB_AC2",
+        "5": "GND_ISO",
+        "6": "OUTPUT_PRESENT_N",
+        "7": null,
+        "8": "+3V3_ISO"
+      },
+      "source_pins": {
+        "1": "AC1",
+        "2": null,
+        "3": null,
+        "4": "AC2",
+        "5": "GND_ISO",
+        "6": "OUTPUT_PRESENT_N",
+        "7": null,
+        "8": "+3V3_ISO"
+      },
+      "netmap": {
+        "AC1": "HOT_FB_AC1",
+        "AC2": "HOT_FB_AC2",
+        "GND_ISO": "GND_ISO",
+        "OUTPUT_PRESENT_N": "OUTPUT_PRESENT_N",
+        "+3V3_ISO": "+3V3_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "AC1",
+          "at": [
+            -17.78,
+            7.62,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "DC+",
+          "at": [
+            -17.78,
+            2.54,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "3",
+          "name": "DC-",
+          "at": [
+            -17.78,
+            -2.54,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "4",
+          "name": "AC2",
+          "at": [
+            -17.78,
+            -7.62,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "5",
+          "name": "GND",
+          "at": [
+            17.78,
+            -7.62,
+            180.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "6",
+          "name": "VO",
+          "at": [
+            17.78,
+            -2.54,
+            180.0
+          ],
+          "type": "open_collector"
+        },
+        {
+          "number": "7",
+          "name": "NC",
+          "at": [
+            17.78,
+            2.54,
+            180.0
+          ],
+          "type": "no_connect"
+        },
+        {
+          "number": "8",
+          "name": "VCC",
+          "at": [
+            17.78,
+            7.62,
+            180.0
+          ],
+          "type": "power_in"
+        }
+      ],
+      "footprint": "Feedback:SSO8_ACPL_K376",
+      "value": "ACPL-K376-560E",
+      "mpn": "ACPL-K376-560E",
+      "datasheet": "https://docs.broadcom.com/doc/AV02-2153EN",
+      "height_mm": 3.307,
+      "source_schematic_position": [
+        127,
+        63.5
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R305",
+      "source_module": "feedback",
+      "source_folder": "../feedback",
+      "source_ref": "R5",
+      "source_symbol": "Feedback:R_H",
+      "symbol_name": "R_H",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "OUTPUT_PRESENT_N"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "OUTPUT_PRESENT_N"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "OUTPUT_PRESENT_N": "OUTPUT_PRESENT_N"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "1",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "at": [
+            5.08,
+            0.0,
+            180.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "1.8k 1%",
+      "mpn": "RC0603FR-071K8L",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "source_schematic_position": [
+        175.26,
+        43.18
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C301",
+      "source_module": "feedback",
+      "source_folder": "../feedback",
+      "source_ref": "C1",
+      "source_symbol": "Feedback:C_V",
+      "symbol_name": "C_V",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "GND_ISO": "GND_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "1",
+          "at": [
+            0.0,
+            5.08,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "at": [
+            0.0,
+            -5.08,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "value": "100nF 16V X7R",
+      "mpn": "GRM188R71C104KA01D",
+      "datasheet": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D",
+      "height_mm": 0.9,
+      "source_schematic_position": [
+        170.18,
+        83.82
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "U401",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "U1",
+      "source_symbol": "Thermal:TMP302B",
+      "symbol_name": "TMP302B",
+      "pins": {
+        "1": "TH_GND_HEAD",
+        "6": "TH_GND_HEAD",
+        "4": "TH_3V3_HEAD",
+        "3": "TH_THERM_RETURN",
+        "5": "TH_3V3_HEAD",
+        "2": "TH_GND_HEAD"
+      },
+      "source_pins": {
+        "1": "GND_HEAD",
+        "6": "GND_HEAD",
+        "4": "+3V3_HEAD",
+        "3": "THERM_RETURN",
+        "5": "+3V3_HEAD",
+        "2": "GND_HEAD"
+      },
+      "netmap": {
+        "GND_HEAD": "TH_GND_HEAD",
+        "THERM_RETURN": "TH_THERM_RETURN",
+        "+3V3_HEAD": "TH_3V3_HEAD"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "TRIPSET0",
+          "at": [
+            -12.7,
+            5.08,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "6",
+          "name": "TRIPSET1",
+          "at": [
+            -12.7,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "4",
+          "name": "HYSTSET",
+          "at": [
+            -12.7,
+            -5.08,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "3",
+          "name": "OUT_N",
+          "at": [
+            12.7,
+            0.0,
+            180.0
+          ],
+          "type": "open_collector"
+        },
+        {
+          "number": "5",
+          "name": "VS",
+          "at": [
+            0.0,
+            12.7,
+            270.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "2",
+          "name": "GND",
+          "at": [
+            0.0,
+            -12.7,
+            90.0
+          ],
+          "type": "power_in"
+        }
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-563",
+      "value": "TMP302BDRLR",
+      "mpn": "TMP302BDRLR",
+      "datasheet": "https://www.ti.com/lit/gpn/TMP302",
+      "height_mm": 0.6,
+      "source_schematic_position": [
+        50.8,
+        71.12
+      ],
+      "board_designation": "remote_sensor",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R401",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "R1",
+      "source_symbol": "Thermal:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "TH_3V3_HEAD",
+        "2": "TH_THERM_RETURN"
+      },
+      "source_pins": {
+        "1": "+3V3_HEAD",
+        "2": "THERM_RETURN"
+      },
+      "netmap": {
+        "+3V3_HEAD": "TH_3V3_HEAD",
+        "THERM_RETURN": "TH_THERM_RETURN"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "10k 1%",
+      "mpn": "RC0603FR-0710KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "source_schematic_position": [
+        83.82,
+        55.88
+      ],
+      "board_designation": "remote_sensor",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C401",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "C1",
+      "source_symbol": "Thermal:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "TH_3V3_HEAD",
+        "2": "TH_GND_HEAD"
+      },
+      "source_pins": {
+        "1": "+3V3_HEAD",
+        "2": "GND_HEAD"
+      },
+      "netmap": {
+        "+3V3_HEAD": "TH_3V3_HEAD",
+        "GND_HEAD": "TH_GND_HEAD"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "value": "100nF 16V X7R",
+      "mpn": "GRM188R71C104KA01D",
+      "datasheet": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D",
+      "height_mm": 0.9,
+      "source_schematic_position": [
+        22.86,
+        109.22
+      ],
+      "board_designation": "remote_sensor",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "U402",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "U2",
+      "source_symbol": "Thermal:74LVC1G17",
+      "symbol_name": "74LVC1G17",
+      "pins": {
+        "2": "TH_THERM_RETURN",
+        "1": null,
+        "5": "+3V3_ISO",
+        "3": "GND_ISO",
+        "4": "TH_HEALTH_VALID"
+      },
+      "source_pins": {
+        "2": "THERM_RETURN",
+        "1": null,
+        "5": "+3V3_ISO",
+        "3": "GND_ISO",
+        "4": "HEALTH_VALID"
+      },
+      "netmap": {
+        "THERM_RETURN": "TH_THERM_RETURN",
+        "GND_ISO": "GND_ISO",
+        "HEALTH_VALID": "TH_HEALTH_VALID",
+        "+3V3_ISO": "+3V3_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            -12.7,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "1",
+          "name": "NC",
+          "at": [
+            -7.62,
+            5.08,
+            180.0
+          ],
+          "type": "no_connect"
+        },
+        {
+          "number": "5",
+          "name": "VCC",
+          "at": [
+            -5.08,
+            10.16,
+            270.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "3",
+          "name": "GND",
+          "at": [
+            -5.08,
+            -10.16,
+            90.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "4",
+          "name": "~",
+          "at": [
+            10.16,
+            0.0,
+            180.0
+          ],
+          "type": "output"
+        }
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "value": "SN74LVC1G17DBVR",
+      "mpn": "SN74LVC1G17DBVR",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/sn74lvc1g17.pdf",
+      "height_mm": 1.45,
+      "source_schematic_position": [
+        132.08,
+        71.12
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R402",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "R2",
+      "source_symbol": "Thermal:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "TH_THERM_RETURN",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "THERM_RETURN",
+        "2": "GND_ISO"
+      },
+      "netmap": {
+        "THERM_RETURN": "TH_THERM_RETURN",
+        "GND_ISO": "GND_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "100k 1%",
+      "mpn": "RC0603FR-07100KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "source_schematic_position": [
+        111.76,
+        109.22
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C402",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "C2",
+      "source_symbol": "Thermal:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "GND_ISO": "GND_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "value": "100nF 16V X7R",
+      "mpn": "GRM188R71C104KA01D",
+      "datasheet": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D",
+      "height_mm": 0.9,
+      "source_schematic_position": [
+        152.4,
+        109.22
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "U403",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "U3",
+      "source_symbol": "Thermal:TPS3808DBV",
+      "symbol_name": "TPS3808DBV",
+      "pins": {
+        "5": "+3V3_ISO",
+        "3": "TH_HEALTH_VALID",
+        "4": "TH_CT_SELECT",
+        "6": "+3V3_ISO",
+        "2": "GND_ISO",
+        "1": "TH_READY_RAW"
+      },
+      "source_pins": {
+        "5": "+3V3_ISO",
+        "3": "HEALTH_VALID",
+        "4": "CT_SELECT",
+        "6": "+3V3_ISO",
+        "2": "GND_ISO",
+        "1": "READY_RAW"
+      },
+      "netmap": {
+        "READY_RAW": "TH_READY_RAW",
+        "GND_ISO": "GND_ISO",
+        "HEALTH_VALID": "TH_HEALTH_VALID",
+        "CT_SELECT": "TH_CT_SELECT",
+        "+3V3_ISO": "+3V3_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "5",
+          "name": "SENSE",
+          "at": [
+            -10.16,
+            2.54,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "3",
+          "name": "~{MR}",
+          "at": [
+            -10.16,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "4",
+          "name": "CT",
+          "at": [
+            -10.16,
+            -2.54,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "6",
+          "name": "VDD",
+          "at": [
+            0.0,
+            7.62,
+            270.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "2",
+          "name": "GND",
+          "at": [
+            0.0,
+            -7.62,
+            90.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "1",
+          "name": "~{RESET}",
+          "at": [
+            10.16,
+            0.0,
+            180.0
+          ],
+          "type": "output"
+        }
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "value": "TPS3808G30DBVR",
+      "mpn": "TPS3808G30DBVR",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/tps3808.pdf",
+      "height_mm": 1.45,
+      "source_schematic_position": [
+        228.6,
+        71.12
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R403",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "R3",
+      "source_symbol": "Thermal:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "TH_CT_SELECT"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "CT_SELECT"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "CT_SELECT": "TH_CT_SELECT"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "100k 1%",
+      "mpn": "RC0603FR-07100KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "source_schematic_position": [
+        190.5,
+        109.22
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R404",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "R4",
+      "source_symbol": "Thermal:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "TH_READY_RAW"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "READY_RAW"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "READY_RAW": "TH_READY_RAW"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "10k 1%",
+      "mpn": "RC0603FR-0710KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "source_schematic_position": [
+        254,
+        109.22
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C403",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "C3",
+      "source_symbol": "Thermal:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "GND_ISO": "GND_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "value": "100nF 16V X7R",
+      "mpn": "GRM188R71C104KA01D",
+      "datasheet": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D",
+      "height_mm": 0.9,
+      "source_schematic_position": [
+        223.52,
+        109.22
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "U404",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "U4",
+      "source_symbol": "Thermal:SN74LVC1G74",
+      "symbol_name": "SN74LVC1G74",
+      "pins": {
+        "2": "+3V3_ISO",
+        "1": "TH_REARM_CLK",
+        "6": "TH_THERMAL_READY",
+        "5": "TH_COIL_ARMED",
+        "3": null,
+        "7": "+3V3_ISO",
+        "8": "+3V3_ISO",
+        "4": "GND_ISO"
+      },
+      "source_pins": {
+        "2": "+3V3_ISO",
+        "1": "REARM_CLK",
+        "6": "THERMAL_READY",
+        "5": "COIL_ARMED",
+        "3": null,
+        "7": "+3V3_ISO",
+        "8": "+3V3_ISO",
+        "4": "GND_ISO"
+      },
+      "netmap": {
+        "REARM_CLK": "TH_REARM_CLK",
+        "+3V3_ISO": "+3V3_ISO",
+        "GND_ISO": "GND_ISO",
+        "COIL_ARMED": "TH_COIL_ARMED",
+        "THERMAL_READY": "TH_THERMAL_READY"
+      },
+      "pin_geometry": [
+        {
+          "number": "2",
+          "name": "D",
+          "at": [
+            -12.7,
+            5.08,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "1",
+          "name": "CLK",
+          "at": [
+            -12.7,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "6",
+          "name": "CLR_N",
+          "at": [
+            -12.7,
+            -5.08,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "5",
+          "name": "Q",
+          "at": [
+            12.7,
+            5.08,
+            180.0
+          ],
+          "type": "output"
+        },
+        {
+          "number": "3",
+          "name": "Q_N",
+          "at": [
+            12.7,
+            0.0,
+            180.0
+          ],
+          "type": "output"
+        },
+        {
+          "number": "7",
+          "name": "PRE_N",
+          "at": [
+            12.7,
+            -5.08,
+            180.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "8",
+          "name": "VCC",
+          "at": [
+            0.0,
+            12.7,
+            270.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "4",
+          "name": "GND",
+          "at": [
+            0.0,
+            -12.7,
+            90.0
+          ],
+          "type": "power_in"
+        }
+      ],
+      "footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+      "value": "SN74LVC1G74DCUR",
+      "mpn": "SN74LVC1G74DCUR",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/sn74lvc1g74.pdf",
+      "height_mm": 1.1,
+      "source_schematic_position": [
+        335.28,
+        71.12
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C404",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "C4",
+      "source_symbol": "Thermal:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "GND_ISO": "GND_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "value": "100nF 16V X7R",
+      "mpn": "GRM188R71C104KA01D",
+      "datasheet": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D",
+      "height_mm": 0.9,
+      "source_schematic_position": [
+        304.8,
+        109.22
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "J403",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "J3",
+      "source_symbol": "Thermal:Conn_01x03",
+      "symbol_name": "Conn_01x03",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO",
+        "3": "TH_THERM_RETURN"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO",
+        "3": "THERM_RETURN"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "GND_ISO": "GND_ISO",
+        "THERM_RETURN": "TH_THERM_RETURN"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "Pin_1",
+          "at": [
+            -5.08,
+            2.54,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "Pin_2",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "3",
+          "name": "Pin_3",
+          "at": [
+            -5.08,
+            -2.54,
+            0.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical",
+      "value": "SENSOR HARNESS",
+      "mpn": "TSW-103-07-G-S",
+      "datasheet": "https://www.samtec.com/products/tsw-103-07-g-s",
+      "height_mm": 8.38,
+      "source_schematic_position": [
+        45.72,
+        142.24
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "J404",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "J4",
+      "source_symbol": "Thermal:Conn_01x03",
+      "symbol_name": "Conn_01x03",
+      "pins": {
+        "1": "TH_3V3_HEAD",
+        "2": "TH_GND_HEAD",
+        "3": "TH_THERM_RETURN"
+      },
+      "source_pins": {
+        "1": "+3V3_HEAD",
+        "2": "GND_HEAD",
+        "3": "THERM_RETURN"
+      },
+      "netmap": {
+        "+3V3_HEAD": "TH_3V3_HEAD",
+        "GND_HEAD": "TH_GND_HEAD",
+        "THERM_RETURN": "TH_THERM_RETURN"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "Pin_1",
+          "at": [
+            -5.08,
+            2.54,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "Pin_2",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "3",
+          "name": "Pin_3",
+          "at": [
+            -5.08,
+            -2.54,
+            0.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Thermal:Sensor_Pigtail_3xP2.54",
+      "value": "SENSOR PIGTAIL",
+      "mpn": "Soldered insulated pigtail / strain relief HOLD",
+      "datasheet": "",
+      "height_mm": 2.0,
+      "source_schematic_position": [
+        99.06,
+        142.24
+      ],
+      "board_designation": "remote_sensor",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "W401",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "W1",
+      "source_symbol": "Thermal:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "TH_3V3_HEAD"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "+3V3_HEAD"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "+3V3_HEAD": "TH_3V3_HEAD"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "HARNESS: 3V3",
+      "mpn": "OFF-BOARD WIRE MODEL / NOT BOM",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "source_schematic_position": [
+        157.48,
+        137.16
+      ],
+      "board_designation": "harness_model",
+      "in_bom": false,
+      "on_board": false
+    },
+    {
+      "ref": "W402",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "W2",
+      "source_symbol": "Thermal:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "GND_ISO",
+        "2": "TH_GND_HEAD"
+      },
+      "source_pins": {
+        "1": "GND_ISO",
+        "2": "GND_HEAD"
+      },
+      "netmap": {
+        "GND_ISO": "GND_ISO",
+        "GND_HEAD": "TH_GND_HEAD"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "HARNESS: GND",
+      "mpn": "OFF-BOARD WIRE MODEL / NOT BOM",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "source_schematic_position": [
+        195.58,
+        137.16
+      ],
+      "board_designation": "harness_model",
+      "in_bom": false,
+      "on_board": false
+    },
+    {
+      "ref": "SW401",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "SW1",
+      "source_symbol": "Thermal:SW_Push",
+      "symbol_name": "SW_Push",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "TH_MANUAL_RAW"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "MANUAL_RAW"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "MANUAL_RAW": "TH_MANUAL_RAW"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "1",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "at": [
+            5.08,
+            0.0,
+            180.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Button_Switch_THT:SW_PUSH_6mm",
+      "value": "MANUAL REARM",
+      "mpn": "B3F-1000",
+      "datasheet": "https://components.omron.com/us-en/products/switches/B3F",
+      "height_mm": 4.3,
+      "source_schematic_position": [
+        38.1,
+        195.58
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R405",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "R5",
+      "source_symbol": "Thermal:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "TH_MANUAL_RAW",
+        "2": "TH_REARM_RC"
+      },
+      "source_pins": {
+        "1": "MANUAL_RAW",
+        "2": "REARM_RC"
+      },
+      "netmap": {
+        "MANUAL_RAW": "TH_MANUAL_RAW",
+        "REARM_RC": "TH_REARM_RC"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "1k 1%",
+      "mpn": "RC0603FR-071KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "source_schematic_position": [
+        63.5,
+        210.82
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R407",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "R7",
+      "source_symbol": "Thermal:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "TH_REARM_RC",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "REARM_RC",
+        "2": "GND_ISO"
+      },
+      "netmap": {
+        "REARM_RC": "TH_REARM_RC",
+        "GND_ISO": "GND_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "100k 1%",
+      "mpn": "RC0603FR-07100KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "source_schematic_position": [
+        99.06,
+        210.82
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C405",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "C5",
+      "source_symbol": "Thermal:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "TH_REARM_RC",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "REARM_RC",
+        "2": "GND_ISO"
+      },
+      "netmap": {
+        "REARM_RC": "TH_REARM_RC",
+        "GND_ISO": "GND_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "value": "100nF 16V X7R",
+      "mpn": "GRM188R71C104KA01D",
+      "datasheet": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D",
+      "height_mm": 0.9,
+      "source_schematic_position": [
+        129.54,
+        210.82
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "U405",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "U5",
+      "source_symbol": "Thermal:74LVC1G17",
+      "symbol_name": "74LVC1G17",
+      "pins": {
+        "2": "TH_REARM_RC",
+        "1": null,
+        "5": "+3V3_ISO",
+        "3": "GND_ISO",
+        "4": "TH_REARM_CLK"
+      },
+      "source_pins": {
+        "2": "REARM_RC",
+        "1": null,
+        "5": "+3V3_ISO",
+        "3": "GND_ISO",
+        "4": "REARM_CLK"
+      },
+      "netmap": {
+        "REARM_RC": "TH_REARM_RC",
+        "GND_ISO": "GND_ISO",
+        "REARM_CLK": "TH_REARM_CLK",
+        "+3V3_ISO": "+3V3_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            -12.7,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "1",
+          "name": "NC",
+          "at": [
+            -7.62,
+            5.08,
+            180.0
+          ],
+          "type": "no_connect"
+        },
+        {
+          "number": "5",
+          "name": "VCC",
+          "at": [
+            -5.08,
+            10.16,
+            270.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "3",
+          "name": "GND",
+          "at": [
+            -5.08,
+            -10.16,
+            90.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "4",
+          "name": "~",
+          "at": [
+            10.16,
+            0.0,
+            180.0
+          ],
+          "type": "output"
+        }
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "value": "SN74LVC1G17DBVR",
+      "mpn": "SN74LVC1G17DBVR",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/sn74lvc1g17.pdf",
+      "height_mm": 1.45,
+      "source_schematic_position": [
+        160.02,
+        185.42
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C406",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "C6",
+      "source_symbol": "Thermal:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "GND_ISO": "GND_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "value": "100nF 16V X7R",
+      "mpn": "GRM188R71C104KA01D",
+      "datasheet": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D",
+      "height_mm": 0.9,
+      "source_schematic_position": [
+        165.1,
+        241.3
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "Q401",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "Q1",
+      "source_symbol": "Thermal:AO3401A",
+      "symbol_name": "AO3401A",
+      "pins": {
+        "1": "TH_COIL_GATE",
+        "3": "COIL_5V",
+        "2": "+5V_ISO"
+      },
+      "source_pins": {
+        "1": "COIL_GATE",
+        "3": "COIL_5V",
+        "2": "+5V_ISO"
+      },
+      "netmap": {
+        "COIL_GATE": "TH_COIL_GATE",
+        "+5V_ISO": "+5V_ISO",
+        "COIL_5V": "COIL_5V"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "G",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "3",
+          "name": "D",
+          "at": [
+            2.54,
+            5.08,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "S",
+          "at": [
+            2.54,
+            -5.08,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "value": "AO3401A",
+      "mpn": "AO3401A",
+      "datasheet": "https://www.aosmd.com/res/data_sheets/AO3401A.pdf",
+      "height_mm": 1.12,
+      "source_schematic_position": [
+        284.48,
+        180.34
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R409",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "R9",
+      "source_symbol": "Thermal:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "+5V_ISO",
+        "2": "TH_COIL_GATE"
+      },
+      "source_pins": {
+        "1": "+5V_ISO",
+        "2": "COIL_GATE"
+      },
+      "netmap": {
+        "+5V_ISO": "+5V_ISO",
+        "COIL_GATE": "TH_COIL_GATE"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "47k 1%",
+      "mpn": "RC0603FR-0747KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "source_schematic_position": [
+        248.92,
+        180.34
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "Q402",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "Q2",
+      "source_symbol": "Thermal:MMBT3904",
+      "symbol_name": "MMBT3904",
+      "pins": {
+        "1": "TH_ARM_B",
+        "3": "TH_COIL_GATE",
+        "2": "TH_SINK_MID"
+      },
+      "source_pins": {
+        "1": "ARM_B",
+        "3": "COIL_GATE",
+        "2": "SINK_MID"
+      },
+      "netmap": {
+        "ARM_B": "TH_ARM_B",
+        "SINK_MID": "TH_SINK_MID",
+        "COIL_GATE": "TH_COIL_GATE"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "B",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "3",
+          "name": "C",
+          "at": [
+            2.54,
+            5.08,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "E",
+          "at": [
+            2.54,
+            -5.08,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "value": "MMBT3904",
+      "mpn": "MMBT3904,215",
+      "datasheet": "https://assets.nexperia.com/documents/data-sheet/MMBT3904.pdf",
+      "height_mm": 1.1,
+      "source_schematic_position": [
+        284.48,
+        213.36
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "Q403",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "Q3",
+      "source_symbol": "Thermal:MMBT3904",
+      "symbol_name": "MMBT3904",
+      "pins": {
+        "1": "TH_READY_B",
+        "3": "TH_SINK_MID",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "READY_B",
+        "3": "SINK_MID",
+        "2": "GND_ISO"
+      },
+      "netmap": {
+        "READY_B": "TH_READY_B",
+        "GND_ISO": "GND_ISO",
+        "SINK_MID": "TH_SINK_MID"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "B",
+          "at": [
+            -5.08,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "3",
+          "name": "C",
+          "at": [
+            2.54,
+            5.08,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "E",
+          "at": [
+            2.54,
+            -5.08,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "value": "MMBT3904",
+      "mpn": "MMBT3904,215",
+      "datasheet": "https://assets.nexperia.com/documents/data-sheet/MMBT3904.pdf",
+      "height_mm": 1.1,
+      "source_schematic_position": [
+        284.48,
+        246.38
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R410",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "R10",
+      "source_symbol": "Thermal:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "TH_COIL_ARMED",
+        "2": "TH_ARM_B"
+      },
+      "source_pins": {
+        "1": "COIL_ARMED",
+        "2": "ARM_B"
+      },
+      "netmap": {
+        "COIL_ARMED": "TH_COIL_ARMED",
+        "ARM_B": "TH_ARM_B"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "10k 1%",
+      "mpn": "RC0603FR-0710KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "source_schematic_position": [
+        218.44,
+        210.82
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R411",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "R11",
+      "source_symbol": "Thermal:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "TH_ARM_B",
+        "2": "TH_SINK_MID"
+      },
+      "source_pins": {
+        "1": "ARM_B",
+        "2": "SINK_MID"
+      },
+      "netmap": {
+        "ARM_B": "TH_ARM_B",
+        "SINK_MID": "TH_SINK_MID"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "100k 1%",
+      "mpn": "RC0603FR-07100KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "source_schematic_position": [
+        248.92,
+        210.82
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R412",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "R12",
+      "source_symbol": "Thermal:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "TH_THERMAL_READY",
+        "2": "TH_READY_B"
+      },
+      "source_pins": {
+        "1": "THERMAL_READY",
+        "2": "READY_B"
+      },
+      "netmap": {
+        "THERMAL_READY": "TH_THERMAL_READY",
+        "READY_B": "TH_READY_B"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "47k 1%",
+      "mpn": "RC0603FR-0747KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "source_schematic_position": [
+        218.44,
+        246.38
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "R413",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "R13",
+      "source_symbol": "Thermal:R",
+      "symbol_name": "R",
+      "pins": {
+        "1": "TH_READY_B",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "READY_B",
+        "2": "GND_ISO"
+      },
+      "netmap": {
+        "READY_B": "TH_READY_B",
+        "GND_ISO": "GND_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "100k 1%",
+      "mpn": "RC0603FR-07100KL",
+      "datasheet": "https://www.yageo.com/en/ProductSearch",
+      "height_mm": 0.55,
+      "source_schematic_position": [
+        248.92,
+        246.38
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "U406",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "U6",
+      "source_symbol": "Thermal:74LVC1G17",
+      "symbol_name": "74LVC1G17",
+      "pins": {
+        "2": "TH_READY_RAW",
+        "1": null,
+        "5": "+3V3_ISO",
+        "3": "GND_ISO",
+        "4": "TH_THERMAL_READY"
+      },
+      "source_pins": {
+        "2": "READY_RAW",
+        "1": null,
+        "5": "+3V3_ISO",
+        "3": "GND_ISO",
+        "4": "THERMAL_READY"
+      },
+      "netmap": {
+        "READY_RAW": "TH_READY_RAW",
+        "GND_ISO": "GND_ISO",
+        "THERMAL_READY": "TH_THERMAL_READY",
+        "+3V3_ISO": "+3V3_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            -12.7,
+            0.0,
+            0.0
+          ],
+          "type": "input"
+        },
+        {
+          "number": "1",
+          "name": "NC",
+          "at": [
+            -7.62,
+            5.08,
+            180.0
+          ],
+          "type": "no_connect"
+        },
+        {
+          "number": "5",
+          "name": "VCC",
+          "at": [
+            -5.08,
+            10.16,
+            270.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "3",
+          "name": "GND",
+          "at": [
+            -5.08,
+            -10.16,
+            90.0
+          ],
+          "type": "power_in"
+        },
+        {
+          "number": "4",
+          "name": "~",
+          "at": [
+            10.16,
+            0.0,
+            180.0
+          ],
+          "type": "output"
+        }
+      ],
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "value": "SN74LVC1G17DBVR",
+      "mpn": "SN74LVC1G17DBVR",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/sn74lvc1g17.pdf",
+      "height_mm": 1.45,
+      "source_schematic_position": [
+        335.28,
+        137.16
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "C407",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "C7",
+      "source_symbol": "Thermal:C",
+      "symbol_name": "C",
+      "pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "source_pins": {
+        "1": "+3V3_ISO",
+        "2": "GND_ISO"
+      },
+      "netmap": {
+        "+3V3_ISO": "+3V3_ISO",
+        "GND_ISO": "GND_ISO"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "value": "100nF 16V X7R",
+      "mpn": "GRM188R71C104KA01D",
+      "datasheet": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D",
+      "height_mm": 0.9,
+      "source_schematic_position": [
+        284.48,
+        137.16
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "TP401",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "TP1",
+      "source_symbol": "Thermal:TestPoint",
+      "symbol_name": "TestPoint",
+      "pins": {
+        "1": "TH_COIL_ARMED"
+      },
+      "source_pins": {
+        "1": "COIL_ARMED"
+      },
+      "netmap": {
+        "COIL_ARMED": "TH_COIL_ARMED"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "1",
+          "at": [
+            0.0,
+            0.0,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "value": "COIL_ARMED",
+      "mpn": "PCB TEST PAD ONLY",
+      "datasheet": "",
+      "height_mm": 0,
+      "source_schematic_position": [
+        43.18,
+        241.3
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "TP402",
+      "source_module": "thermal",
+      "source_folder": "../thermal",
+      "source_ref": "TP2",
+      "source_symbol": "Thermal:TestPoint",
+      "symbol_name": "TestPoint",
+      "pins": {
+        "1": "TH_THERMAL_READY"
+      },
+      "source_pins": {
+        "1": "THERMAL_READY"
+      },
+      "netmap": {
+        "THERMAL_READY": "TH_THERMAL_READY"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "1",
+          "at": [
+            0.0,
+            0.0,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+      "value": "THERMAL_READY",
+      "mpn": "PCB TEST PAD ONLY",
+      "datasheet": "",
+      "height_mm": 0,
+      "source_schematic_position": [
+        104.14,
+        241.3
+      ],
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true
+    },
+    {
+      "ref": "F501",
+      "source_module": "integrated",
+      "source_folder": ".",
+      "source_ref": null,
+      "source_symbol": "Device:Fuse",
+      "symbol_name": "Fuse",
+      "pins": {
+        "1": "HOT_GND",
+        "2": "HOT_AUX_FUSED"
+      },
+      "source_pins": {},
+      "netmap": {},
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "~",
+          "at": [
+            0.0,
+            3.81,
+            270.0
+          ],
+          "type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "~",
+          "at": [
+            0.0,
+            -3.81,
+            90.0
+          ],
+          "type": "passive"
+        }
+      ],
+      "footprint": "Integrated:Fuse_215_Axial_P30mm",
+      "value": "1A T 250VAC AUX FUSE / HOLD",
+      "mpn": "0215001.MXEP",
+      "datasheet": "https://www.littelfuse.com/assetdocs/littelfuse_fuse_215_datasheet.pdf?assetguid=990f7193-d9a2-48e4-b760-2b43514249cf",
+      "height_mm": 7.3,
+      "body_mm": [
+        21.5,
+        5.5
+      ],
+      "body_tolerance_mm": [
+        1,
+        0.3
+      ],
+      "lead_pitch_mm": 30,
+      "drill_mm": 0.9,
+      "standoff_mm": 1.5,
+      "board_designation": "integrated",
+      "in_bom": true,
+      "on_board": true,
+      "status": "exact footprint authored by parent; application voltage/interruption qualification HOLD"
+    },
+    {
+      "ref": "F601",
+      "source_module": "assembly",
+      "source_folder": ".",
+      "source_ref": "F601",
+      "source_symbol": "IntegratedAssembly:Fuse_Main",
+      "symbol_name": "Fuse_Main",
+      "pins": {
+        "1": "RAW_L",
+        "2": "HOT_TF_IN"
+      },
+      "source_pins": {
+        "1": "RAW_L",
+        "2": "HOT_TF_IN"
+      },
+      "netmap": {
+        "RAW_L": "RAW_L",
+        "HOT_TF_IN": "HOT_TF_IN"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "IN",
+          "type": "passive",
+          "at": [
+            -7.62,
+            0,
+            0
+          ]
+        },
+        {
+          "number": "2",
+          "name": "OUT",
+          "type": "passive",
+          "at": [
+            7.62,
+            0,
+            180
+          ]
+        }
+      ],
+      "footprint": "",
+      "value": "F_MAIN / 16A FAST 500VAC",
+      "mpn": "8020.5080",
+      "datasheet": "https://www.schurter.com/en/datasheet/typ_SHF_6.3x32.pdf",
+      "height_mm": null,
+      "board_designation": "off_board_assembly",
+      "in_bom": true,
+      "on_board": false,
+      "mechanical_status": "Mechanics confirms no shell growth;45x16x2 carrier and copper collectors; physical thermal/insulation/retention testing HOLD",
+      "pin_numbering": "Assembly wiring identifiers for contacts/thermal link; not a claim about unselected vendor contact numbering",
+      "manufacturer": "SCHURTER",
+      "family": "SHF 6.3x32",
+      "interrupting_rating": "1500 A at 250 VAC cos(phi)0.7-0.8; 1500 A at500 VAC cos(phi)0.99-1; footnote3; actual prospective-current coordination HOLD",
+      "nominal_melting_I2t_A2s": 760,
+      "I2t_definition": "Typical melting/pre-arcing at10xIn, NOT total clearing energy or downstream withstand bound",
+      "active_current_limit": false,
+      "body_nominal_mm": [
+        31.8,
+        6.35
+      ],
+      "holder": {
+        "manufacturer": "SCHURTER",
+        "mpn": "8040.0003",
+        "quantity": 2,
+        "family": "CQP",
+        "type": "silver plated heavy-duty6.3x32 fuse clip",
+        "datasheet": "https://www.schurter.com/en/datasheet/typ_CQP.pdf",
+        "nominal_current_A": 32,
+        "rated_voltage_VAC": 600,
+        "ambient_range_C": [
+          -55,
+          155
+        ],
+        "clip_width_mm": 7.85,
+        "clip_height_above_carrier_mm": 10.3,
+        "clip_height_including_pins_mm": 13.9,
+        "clip_center_spacing_mm": 27.3,
+        "outer_pin_span_mm": 34.9,
+        "pin_pitch_within_clip_mm": 7.6,
+        "drill_mm": 1.8,
+        "mechanical_status": "Two clips on separate45x16x2 insulating carrier, dedicated4x1.2mm copper collectors; fit accepted by mechanics, assembly qualification HOLD"
+      },
+      "duration_limits_at_16A": {
+        "16A": "240min minimum pre-arcing test duration, not lifetime endurance",
+        "33.6A": "30min maximum",
+        "44A": "0.1-5s",
+        "64A": "0.02-1s",
+        "160A": "0.05s maximum"
+      },
+      "supersedes": {
+        "fuse": "0216016.MXP",
+        "holder": "OGN0031.8201",
+        "reason": "OGN full-current heat acceptance~2.8W@50C/~2.4W@60C below old216 rated-current dissipation ceiling3.2W",
+        "old_nominal_melting_I2t_A2s": 462.5
+      },
+      "source_schematic_position": [
+        104.14,
+        63.5
+      ]
+    },
+    {
+      "ref": "TF601",
+      "source_module": "assembly",
+      "source_folder": ".",
+      "source_ref": "TF601",
+      "source_symbol": "IntegratedAssembly:Thermal_Link",
+      "symbol_name": "Thermal_Link",
+      "pins": {
+        "1": "HOT_TF_IN",
+        "2": "HOT_GND"
+      },
+      "source_pins": {
+        "1": "HOT_TF_IN",
+        "2": "HOT_GND"
+      },
+      "netmap": {
+        "HOT_TF_IN": "HOT_TF_IN",
+        "HOT_GND": "HOT_GND"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "CASE / IN",
+          "type": "passive",
+          "at": [
+            -7.62,
+            0,
+            0
+          ]
+        },
+        {
+          "number": "2",
+          "name": "INS / OUT",
+          "type": "passive",
+          "at": [
+            7.62,
+            0,
+            180
+          ]
+        }
+      ],
+      "footprint": "",
+      "value": "THERMAL LINK / Tf110C / SUFFIX HOLD",
+      "mpn": "MICROTEMP G5 Tf110C; exact suffix HOLD",
+      "datasheet": "https://www.sensience.com/wp-content/uploads/2022/12/Microtemp_Catalog.pdf",
+      "height_mm": null,
+      "board_designation": "off_board_assembly",
+      "in_bom": true,
+      "on_board": false,
+      "mechanical_status": "Off-PCB internal assembly; Custom contact geometry / installed holder support and wiring qualification HOLD",
+      "pin_numbering": "Assembly wiring identifiers for contacts/thermal link; not a claim about unselected vendor contact numbering",
+      "Tf_C": 110,
+      "Th_C": 95,
+      "Tm_C": 225,
+      "body_nominal_mm": [
+        14.7,
+        4.0
+      ],
+      "safety_status": "Distinct one-shot thermal device; assembly response and exact order suffix unqualified",
+      "source_schematic_position": [
+        172.72,
+        63.5
+      ]
+    },
+    {
+      "ref": "J601",
+      "source_module": "assembly",
+      "source_folder": ".",
+      "source_ref": "J601",
+      "source_symbol": "IntegratedAssembly:Plug_Contacts",
+      "symbol_name": "Plug_Contacts",
+      "pins": {
+        "1": "RAW_L",
+        "2": "HOT_N",
+        "3": "PE"
+      },
+      "source_pins": {
+        "1": "RAW_L",
+        "2": "HOT_N",
+        "3": "PE"
+      },
+      "netmap": {
+        "RAW_L": "RAW_L",
+        "HOT_N": "HOT_N",
+        "PE": "PE"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "L",
+          "type": "passive",
+          "at": [
+            7.62,
+            12.7,
+            180
+          ]
+        },
+        {
+          "number": "2",
+          "name": "N",
+          "type": "passive",
+          "at": [
+            7.62,
+            0,
+            180
+          ]
+        },
+        {
+          "number": "3",
+          "name": "PE",
+          "type": "passive",
+          "at": [
+            7.62,
+            -12.7,
+            180
+          ]
+        }
+      ],
+      "footprint": "",
+      "value": "PLUG BLADES / L N PE / ASSEMBLY HOLD",
+      "mpn": "Custom mechanical plug blade assembly",
+      "datasheet": "",
+      "height_mm": null,
+      "board_designation": "off_board_assembly",
+      "in_bom": true,
+      "on_board": false,
+      "mechanical_status": "Off-PCB internal assembly; Custom contact geometry / installed holder support and wiring qualification HOLD",
+      "pin_numbering": "Assembly wiring identifiers for contacts/thermal link; not a claim about unselected vendor contact numbering",
+      "source_schematic_position": [
+        35.56,
+        76.2
+      ]
+    },
+    {
+      "ref": "J602",
+      "source_module": "assembly",
+      "source_folder": ".",
+      "source_ref": "J602",
+      "source_symbol": "IntegratedAssembly:Socket_Contacts",
+      "symbol_name": "Socket_Contacts",
+      "pins": {
+        "1": "HOT_SWITCHED",
+        "2": "HOT_N",
+        "3": "PE"
+      },
+      "source_pins": {
+        "1": "HOT_SWITCHED",
+        "2": "HOT_N",
+        "3": "PE"
+      },
+      "netmap": {
+        "HOT_SWITCHED": "HOT_SWITCHED",
+        "HOT_N": "HOT_N",
+        "PE": "PE"
+      },
+      "pin_geometry": [
+        {
+          "number": "1",
+          "name": "L",
+          "type": "passive",
+          "at": [
+            -7.62,
+            12.7,
+            0
+          ]
+        },
+        {
+          "number": "2",
+          "name": "N",
+          "type": "passive",
+          "at": [
+            -7.62,
+            0,
+            0
+          ]
+        },
+        {
+          "number": "3",
+          "name": "PE",
+          "type": "passive",
+          "at": [
+            -7.62,
+            -12.7,
+            0
+          ]
+        }
+      ],
+      "footprint": "",
+      "value": "SOCKET CONTACTS / L N PE / ASSEMBLY HOLD",
+      "mpn": "Custom mechanical socket contact assembly",
+      "datasheet": "",
+      "height_mm": null,
+      "board_designation": "off_board_assembly",
+      "in_bom": true,
+      "on_board": false,
+      "mechanical_status": "Off-PCB internal assembly; Custom contact geometry / installed holder support and wiring qualification HOLD",
+      "pin_numbering": "Assembly wiring identifiers for contacts/thermal link; not a claim about unselected vendor contact numbering",
+      "source_schematic_position": [
+        368.3,
+        76.2
+      ]
+    }
+  ],
+  "removed_module_connectors": [
+    {
+      "source_module": "controller",
+      "source_ref": "J1",
+      "reason": "replaced by integrated wiring"
+    },
+    {
+      "source_module": "controller",
+      "source_ref": "J3",
+      "reason": "replaced by integrated wiring"
+    },
+    {
+      "source_module": "controller",
+      "source_ref": "J5",
+      "reason": "replaced by integrated wiring"
+    },
+    {
+      "source_module": "meter",
+      "source_ref": "J2",
+      "reason": "replaced by integrated wiring"
+    },
+    {
+      "source_module": "meter",
+      "source_ref": "J3",
+      "reason": "replaced by integrated wiring"
+    },
+    {
+      "source_module": "feedback",
+      "source_ref": "J1",
+      "reason": "replaced by integrated wiring"
+    },
+    {
+      "source_module": "feedback",
+      "source_ref": "J2",
+      "reason": "replaced by integrated wiring"
+    },
+    {
+      "source_module": "feedback",
+      "source_ref": "J3",
+      "reason": "replaced by integrated wiring"
+    },
+    {
+      "source_module": "thermal",
+      "source_ref": "J1",
+      "reason": "replaced by integrated wiring"
+    }
+  ],
+  "board_designations": {
+    "integrated": "place on main PCB",
+    "remote_sensor": "separate 12x12 sensor head; do not place on main PCB",
+    "harness_model": "off-board conductor models; not PCB/BOM",
+    "off_board_assembly": "Internal plug/socket/main-fuse/thermal-cutout assembly; not PCB-mounted"
+  },
+  "notes": [
+    "HOT_GND means protected line potential, never SELV or protective earth.",
+    "Reference designators are module-offset and true device pad numbers remain unchanged.",
+    "Provisional operating proposal is 220VAC +/-10% (198-242VAC), pending parent/user confirmation. 264VAC is measurement-analysis headroom only, not a product rating. F501 is a 250VAC component."
+  ],
+  "electrical_validation": {
+    "report": "validation/independent_schematic_checks.json",
+    "ERC_errors": 0,
+    "ERC_warnings": 0,
+    "numbered_pins_checked": 334,
+    "critical_connections_checked": 23,
+    "full_assembly_graph_pins_checked": 348,
+    "off_board_terminals_checked": 10,
+    "PE_direct_no_PCB_nodes": true
+  }
+}

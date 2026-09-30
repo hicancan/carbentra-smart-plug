@@ -1,0 +1,1 @@
+(sym_lib_table (lib (name "Feedback") (type "KiCad") (uri "${KIPRJMOD}/Feedback.kicad_sym") (options "") (descr "Pin-verified custom detector symbols")))

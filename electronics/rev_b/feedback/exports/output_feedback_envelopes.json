@@ -1,0 +1,134 @@
+{
+  "status": "DEVELOPMENT / HOLD",
+  "coordinate_system": "Local mm, board lower-left=(0,0,0), top copper z=1.6, +y upward (mirrored KiCad y)",
+  "board_mm": [
+    35,
+    25,
+    1.6
+  ],
+  "height_reservation_above_PCB_mm": 9,
+  "height_reservation_below_PCB_mm": 3,
+  "mating_harness_actuator_and_insulation_not_included": true,
+  "components": [
+    {
+      "ref": "R1",
+      "mpn": "PR01000103302FA100",
+      "min_xyz_mm": [
+        6.78,
+        20.700000000000003,
+        1.6
+      ],
+      "size_xyz_mm": [
+        6.6000000000000005,
+        2.5999999999999996,
+        4.5
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "U1",
+      "mpn": "ACPL-K376-560E",
+      "min_xyz_mm": [
+        21.083,
+        9.275,
+        1.6
+      ],
+      "size_xyz_mm": [
+        7.0340000000000025,
+        6.449999999999999,
+        3.307
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "R4",
+      "mpn": "PR01000103302FA100",
+      "min_xyz_mm": [
+        6.78,
+        1.6999999999999993,
+        1.6
+      ],
+      "size_xyz_mm": [
+        6.6000000000000005,
+        2.6000000000000014,
+        4.5
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "R2",
+      "mpn": "PR01000103302FA100",
+      "min_xyz_mm": [
+        6.78,
+        15.7,
+        1.6
+      ],
+      "size_xyz_mm": [
+        6.6000000000000005,
+        2.6000000000000005,
+        4.5
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "R5",
+      "mpn": "RC0603FR-071K8L",
+      "min_xyz_mm": [
+        30.35,
+        19.8375,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.6999999999999957,
+        0.9249999999999998,
+        0.55
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "C1",
+      "mpn": "GRM188R71C104KA01D",
+      "min_xyz_mm": [
+        30.35,
+        4.550000000000001,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.6999999999999957,
+        0.8999999999999986,
+        0.9
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "R3",
+      "mpn": "PR01000103302FA100",
+      "min_xyz_mm": [
+        6.78,
+        6.699999999999999,
+        1.6
+      ],
+      "size_xyz_mm": [
+        6.6000000000000005,
+        2.6000000000000014,
+        4.5
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "J3",
+      "mpn": "TSW-103-07-G-S",
+      "min_xyz_mm": [
+        31.68,
+        9.6,
+        1.6
+      ],
+      "size_xyz_mm": [
+        2.6400000000000006,
+        7.720000000000001,
+        8.38
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    }
+  ]
+}

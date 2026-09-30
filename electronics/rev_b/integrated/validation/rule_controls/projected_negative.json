@@ -1,0 +1,34 @@
+{
+  "board_sha256": "7d353e618bea503a21bc7719f8998571291beab747c25f657f2fcd49542de14d",
+  "basis": "all-layer XY projection, conservative pad bounding rectangles; vias/NC pins included; copper-zone outlines included as completely filled conservative regions",
+  "copper_items": 2741,
+  "minimum_mm": 7.599999999999994,
+  "minimum_pair": [
+    "PS201.9",
+    "PS201.8"
+  ],
+  "component_only_minimum": [
+    7.599999999999994,
+    "PS201.9",
+    "PS201.8"
+  ],
+  "routing_margin_below_8p4": [],
+  "violations_below_8mm": [
+    {
+      "distance_mm": 7.843698354730432,
+      "hot": "PS201.9",
+      "isolated": "PS201.6"
+    },
+    {
+      "distance_mm": 7.62947573559284,
+      "hot": "PS201.9",
+      "isolated": "PS201.7"
+    },
+    {
+      "distance_mm": 7.599999999999994,
+      "hot": "PS201.9",
+      "isolated": "PS201.8"
+    }
+  ],
+  "pass": false
+}

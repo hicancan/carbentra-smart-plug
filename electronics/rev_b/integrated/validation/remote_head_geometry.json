@@ -1,0 +1,56 @@
+{
+  "source": "electronics/rev_b/thermal/exports/thermal_sensor_envelope.FCStd",
+  "source_sha256": "152c9aa200f5f2d73c7ad0542e6f669d9dbbc07d67f17c50a0d9fe657be281c5",
+  "object_count": 19,
+  "all_valid": true,
+  "units": "mm",
+  "already_in_assembly_world_frame": true,
+  "board_id": "HeadB",
+  "proper_rotation_determinant": 1,
+  "matrix_local_to_world": [
+    [
+      1,
+      0,
+      0,
+      4.8272413
+    ],
+    [
+      0,
+      -1,
+      0,
+      1.25
+    ],
+    [
+      0,
+      0,
+      -1,
+      43.465
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ]
+  ],
+  "sensor_center_mm": [
+    8.2272413,
+    -4.75
+  ],
+  "board_center_xy_mm": [
+    10.8272413,
+    -4.75
+  ],
+  "board_substrate_back_z_mm": 43.465,
+  "pickup_copper_face_z_mm": 43.5,
+  "bounds_min_mm": [
+    4.8272413,
+    -10.75,
+    39.865
+  ],
+  "bounds_max_mm": [
+    16.8272413,
+    1.25,
+    43.50000000000001
+  ]
+}

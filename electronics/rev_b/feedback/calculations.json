@@ -1,0 +1,54 @@
+{
+  "0.01": {
+    "R_min_ohm": 130680.0,
+    "R_max_ohm": 133320.0,
+    "turn_on_max_instantaneous_V": 213.4792,
+    "turn_off_max_instantaneous_V": 111.07600000000001,
+    "turn_on_min_instantaneous_V": 117.9216,
+    "turn_off_min_instantaneous_V": 59.0624,
+    "sine_RMS_crest_threshold_max_V": 150.9525899622792,
+    "ideal_min_low_ms": 4.9515811816618225,
+    "ideal_min_high_ms": 1.2737955024243461,
+    "peak_threshold_margin_at_198Vac_V": 66.53508534987287,
+    "resistor_power_voltage": {
+      "4_active_resistors": {
+        "single_resistor_max_W": 0.13466326607913942,
+        "single_resistor_max_Vrms": 66.99497487437186,
+        "total_max_W": 0.5333333333333333,
+        "peak_current_upper_A": 0.0028569970957032223
+      },
+      "3_active_resistors": {
+        "single_resistor_max_W": 0.2386013579266451,
+        "single_resistor_max_Vrms": 89.17725752508362,
+        "total_max_W": 0.7111111111111111,
+        "peak_current_upper_A": 0.00380932946093763
+      }
+    }
+  },
+  "0.1": {
+    "R_min_ohm": 118800.0,
+    "R_max_ohm": 145200.0,
+    "turn_on_max_instantaneous_V": 232.012,
+    "turn_off_max_instantaneous_V": 120.58000000000001,
+    "turn_on_min_instantaneous_V": 107.586,
+    "turn_off_min_instantaneous_V": 53.95399999999999,
+    "sine_RMS_crest_threshold_max_V": 164.05725851665326,
+    "ideal_min_low_ms": 4.56206958024048,
+    "ideal_min_high_ms": 1.160045901289555,
+    "peak_threshold_margin_at_198Vac_V": 48.002285349872864,
+    "resistor_power_voltage": {
+      "4_active_resistors": {
+        "single_resistor_max_W": 0.16088642659279778,
+        "single_resistor_max_Vrms": 76.42105263157895,
+        "total_max_W": 0.5866666666666667,
+        "peak_current_upper_A": 0.0031426968052735444
+      },
+      "3_active_resistors": {
+        "single_resistor_max_W": 0.27624256837098693,
+        "single_resistor_max_Vrms": 100.13793103448276,
+        "total_max_W": 0.7822222222222223,
+        "peak_current_upper_A": 0.004190262407031393
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+(fp_lib_table (lib (name "RevB") (type "KiCad") (uri "${KIPRJMOD}/RevB.pretty") (options "") (descr "Datasheet-derived candidate footprints")))

@@ -1,0 +1,11 @@
+Reference,Value,MPN candidate,Footprint,Max height mm,Source,Status
+R1,33k 1% 1W,PR01000103302FA100,Feedback:PR01_P10.16,4.5,https://www.vishay.com/docs/28729/pr010203.pdf,DEVELOPMENT / VERIFY ASSEMBLY
+R2,33k 1% 1W,PR01000103302FA100,Feedback:PR01_P10.16,4.5,https://www.vishay.com/docs/28729/pr010203.pdf,DEVELOPMENT / VERIFY ASSEMBLY
+R3,33k 1% 1W,PR01000103302FA100,Feedback:PR01_P10.16,4.5,https://www.vishay.com/docs/28729/pr010203.pdf,DEVELOPMENT / VERIFY ASSEMBLY
+R4,33k 1% 1W,PR01000103302FA100,Feedback:PR01_P10.16,4.5,https://www.vishay.com/docs/28729/pr010203.pdf,DEVELOPMENT / VERIFY ASSEMBLY
+U1,ACPL-K376-560E,ACPL-K376-560E,Feedback:SSO8_ACPL_K376,3.307,https://docs.broadcom.com/doc/AV02-2153EN,DEVELOPMENT / VERIFY ASSEMBLY
+R5,1.8k 1%,RC0603FR-071K8L,Resistor_SMD:R_0603_1608Metric,0.55,https://www.yageo.com/en/ProductSearch,DEVELOPMENT / VERIFY ASSEMBLY
+C1,100nF 16V X7R,GRM188R71C104KA01D,Capacitor_SMD:C_0603_1608Metric,0.9,https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D,DEVELOPMENT / VERIFY ASSEMBLY
+J1,POST-SWITCH L,Internal harness solder land; wire/strain relief HOLD,Feedback:Wire_Pad_1.2mm,4,,DEVELOPMENT / VERIFY ASSEMBLY
+J2,POST-SWITCH N,Internal harness solder land; wire/strain relief HOLD,Feedback:Wire_Pad_1.2mm,4,,DEVELOPMENT / VERIFY ASSEMBLY
+J3,3V3 / GND / OUT_N,TSW-103-07-G-S,Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical,8.38,https://www.samtec.com/products/tsw,DEVELOPMENT / VERIFY ASSEMBLY

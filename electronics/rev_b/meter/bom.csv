@@ -1,0 +1,40 @@
+Reference,Value,MPN candidate,Footprint,Source,Release
+U1,ATM90E26-YU,ATM90E26-YU,Package_SO:SSOP-28_5.3x10.2mm_P0.65mm,https://ww1.microchip.com/downloads/aemDocuments/documents/OTH/ProductDocuments/DataSheets/Atmel-46002-SE-M90E26-Datasheet.pdf,engineering candidate / hold
+U2,ISO6741DWR,ISO6741DWR,RevB:ISO6741_DW_8p1,https://www.ti.com/lit/ds/symlink/iso6741.pdf,engineering candidate / hold
+PS1,R05CT05S-R / 3.3V,R05CT05S-R,RevB:R05CT05S_8p1,https://recom-power.com/pdf/Econoline/RxxCTxx.pdf,engineering candidate / hold
+RS1,1mR / 1% / 8W,CSS4J-4026R-1L00FE,RevB:CSS4J_4026,https://www.bourns.com/docs/product-datasheets/css4j-4026.pdf,engineering candidate / hold
+J1,PROTECTED L / TO RELAY,1711725,TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal,https://www.phoenixcontact.com/en-pc/products/pcb-terminal-block-mkds-3-2-508-1711725,engineering candidate / hold
+J2,N SENSE / NC,1711725,TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal,https://www.phoenixcontact.com/en-pc/products/pcb-terminal-block-mkds-3-2-508-1711725,engineering candidate / hold
+J3,CONTROLLER - ISOLATED,TSW-108-07-G-S,Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical,https://www.samtec.com/products/tsw,engineering candidate / hold
+R1,100R,TNPW0805100RBEEA,Resistor_SMD:R_0805_2012Metric,https://www.vishay.com/docs/28758/tnpw_e3.pdf,engineering candidate / hold
+R2,100R,TNPW0805100RBEEA,Resistor_SMD:R_0805_2012Metric,https://www.vishay.com/docs/28758/tnpw_e3.pdf,engineering candidate / hold
+C1,330nF 16V,GRM21-series 330nF 16V candidate,Capacitor_SMD:C_0805_2012Metric,https://www.murata.com/en-us/products/capacitor/ceramiccapacitor,engineering candidate / hold
+C2,330nF 16V,GRM21-series 330nF 16V candidate,Capacitor_SMD:C_0805_2012Metric,https://www.murata.com/en-us/products/capacitor/ceramiccapacitor,engineering candidate / hold
+RV1,249k,TNPW1206249KBEEA,Resistor_SMD:R_1206_3216Metric,https://www.vishay.com/docs/28758/tnpw_e3.pdf,engineering candidate / hold
+RV2,249k,TNPW1206249KBEEA,Resistor_SMD:R_1206_3216Metric,https://www.vishay.com/docs/28758/tnpw_e3.pdf,engineering candidate / hold
+RV3,249k,TNPW1206249KBEEA,Resistor_SMD:R_1206_3216Metric,https://www.vishay.com/docs/28758/tnpw_e3.pdf,engineering candidate / hold
+RV4,249k,TNPW1206249KBEEA,Resistor_SMD:R_1206_3216Metric,https://www.vishay.com/docs/28758/tnpw_e3.pdf,engineering candidate / hold
+RV5,1k,TNPW08051K00BEEA,Resistor_SMD:R_0805_2012Metric,https://www.vishay.com/docs/28758/tnpw_e3.pdf,engineering candidate / hold
+RV6,1k,TNPW08051K00BEEA,Resistor_SMD:R_0805_2012Metric,https://www.vishay.com/docs/28758/tnpw_e3.pdf,engineering candidate / hold
+RV7,1k,TNPW08051K00BEEA,Resistor_SMD:R_0805_2012Metric,https://www.vishay.com/docs/28758/tnpw_e3.pdf,engineering candidate / hold
+CV1,33nF 16V,GRM21-series 33nF 16V candidate,Capacitor_SMD:C_0805_2012Metric,https://www.murata.com/en-us/products/capacitor/ceramiccapacitor,engineering candidate / hold
+CV2,33nF 16V,GRM21-series 33nF 16V candidate,Capacitor_SMD:C_0805_2012Metric,https://www.murata.com/en-us/products/capacitor/ceramiccapacitor,engineering candidate / hold
+R3,0R,RC0805JR-070RL,Resistor_SMD:R_0805_2012Metric,https://www.vishay.com/docs/28758/tnpw_e3.pdf,engineering candidate / hold
+C3,100nF 16V,GRM21-series 100nF 16V candidate,Capacitor_SMD:C_0805_2012Metric,https://www.murata.com/en-us/products/capacitor/ceramiccapacitor,engineering candidate / hold
+C4,100nF 16V,GRM21-series 100nF 16V candidate,Capacitor_SMD:C_0805_2012Metric,https://www.murata.com/en-us/products/capacitor/ceramiccapacitor,engineering candidate / hold
+C5,10uF 10V,GRM21-series 10uF 10V candidate,Capacitor_SMD:C_0805_2012Metric,https://www.murata.com/en-us/products/capacitor/ceramiccapacitor,engineering candidate / hold
+C6,1uF 16V,GRM21-series 1uF 16V candidate,Capacitor_SMD:C_0805_2012Metric,https://www.murata.com/en-us/products/capacitor/ceramiccapacitor,engineering candidate / hold
+C7,1nF C0G,GRM21-series 1nF C0G candidate,Capacitor_SMD:C_0805_2012Metric,https://www.murata.com/en-us/products/capacitor/ceramiccapacitor,engineering candidate / hold
+R4,10k,TNPW080510K0BEEA,Resistor_SMD:R_0805_2012Metric,https://www.vishay.com/docs/28758/tnpw_e3.pdf,engineering candidate / hold
+C8,100nF 16V,GRM21-series 100nF 16V candidate,Capacitor_SMD:C_0805_2012Metric,https://www.murata.com/en-us/products/capacitor/ceramiccapacitor,engineering candidate / hold
+Y1,8.192MHz CL18pF,ABLS-8.192MHZ-B2-T,Crystal:Crystal_SMD_HC49-SD,https://abracon.com/Resonators/abls.pdf,engineering candidate / hold
+CX1,27pF C0G,GRM21-series 27pF C0G candidate,Capacitor_SMD:C_0805_2012Metric,https://www.murata.com/en-us/products/capacitor/ceramiccapacitor,engineering candidate / hold
+CX2,27pF C0G,GRM21-series 27pF C0G candidate,Capacitor_SMD:C_0805_2012Metric,https://www.murata.com/en-us/products/capacitor/ceramiccapacitor,engineering candidate / hold
+CP1,10uF 16V,GRM21-series 10uF 16V candidate,Capacitor_SMD:C_0805_2012Metric,https://www.murata.com/en-us/products/capacitor/ceramiccapacitor,engineering candidate / hold
+CP2,100nF 16V,GRM21-series 100nF 16V candidate,Capacitor_SMD:C_0805_2012Metric,https://www.murata.com/en-us/products/capacitor/ceramiccapacitor,engineering candidate / hold
+CP3,10uF 10V,GRM21-series 10uF 10V candidate,Capacitor_SMD:C_0805_2012Metric,https://www.murata.com/en-us/products/capacitor/ceramiccapacitor,engineering candidate / hold
+CP4,100nF 16V,GRM21-series 100nF 16V candidate,Capacitor_SMD:C_0805_2012Metric,https://www.murata.com/en-us/products/capacitor/ceramiccapacitor,engineering candidate / hold
+CI1,100nF 16V,GRM21-series 100nF 16V candidate,Capacitor_SMD:C_0805_2012Metric,https://www.murata.com/en-us/products/capacitor/ceramiccapacitor,engineering candidate / hold
+CI2,100nF 16V,GRM21-series 100nF 16V candidate,Capacitor_SMD:C_0805_2012Metric,https://www.murata.com/en-us/products/capacitor/ceramiccapacitor,engineering candidate / hold
+R5,10k,TNPW080510K0BEEA,Resistor_SMD:R_0805_2012Metric,https://www.vishay.com/docs/28758/tnpw_e3.pdf,engineering candidate / hold
+R6,10k,TNPW080510K0BEEA,Resistor_SMD:R_0805_2012Metric,https://www.vishay.com/docs/28758/tnpw_e3.pdf,engineering candidate / hold

@@ -1,0 +1,17 @@
+{
+  "basis": "all-layer XY projection, conservative pad bounding rectangles; vias/NC pins included; zones not included until final polygon audit",
+  "copper_items": 2687,
+  "minimum_mm": 8.099999999999994,
+  "minimum_pair": [
+    "PS201.9",
+    "PS201.8"
+  ],
+  "component_only_minimum": [
+    8.099999999999994,
+    "PS201.9",
+    "PS201.8"
+  ],
+  "routing_margin_below_8p4": [],
+  "violations_below_8mm": [],
+  "pass": true
+}

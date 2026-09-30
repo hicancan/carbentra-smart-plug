@@ -1,0 +1,815 @@
+{
+  "board_id": "MeterB",
+  "coordinate_system": "mm, standalone board center XY origin, bottom z0; PCBx mapsx-37.5, PCBy maps22.5-y",
+  "board_size_mm": [
+    75,
+    45,
+    1.6
+  ],
+  "mount_holes_mm": [
+    [
+      -34.5,
+      -19.5,
+      2.2
+    ],
+    [
+      -34.5,
+      19.5,
+      2.2
+    ],
+    [
+      34.5,
+      -19.5,
+      2.2
+    ],
+    [
+      34.5,
+      19.5,
+      2.2
+    ]
+  ],
+  "underside_terminal_lead_projection_mm": 3.4,
+  "status": "REV B DEVELOPMENT; assembly location not yet allocated",
+  "components": [
+    {
+      "ref": "RV3",
+      "board_id": "MeterB",
+      "label": "249k",
+      "min_xyz_mm": [
+        -8.100000000000001,
+        13.700000000000001,
+        1.6
+      ],
+      "size_xyz_mm": [
+        3.2,
+        1.6,
+        0.65
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        31.0,
+        8
+      ]
+    },
+    {
+      "ref": "CI1",
+      "board_id": "MeterB",
+      "label": "100nF 16V",
+      "min_xyz_mm": [
+        26.875,
+        -0.5,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.25,
+        2,
+        1.25
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        65,
+        22
+      ]
+    },
+    {
+      "ref": "RV5",
+      "board_id": "MeterB",
+      "label": "1k",
+      "min_xyz_mm": [
+        1.875,
+        13.5,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.25,
+        2,
+        0.65
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        40,
+        8
+      ]
+    },
+    {
+      "ref": "U1",
+      "board_id": "MeterB",
+      "label": "ATM90E26-YU",
+      "min_xyz_mm": [
+        -4.149999999999999,
+        -7.599999999999998,
+        1.6
+      ],
+      "size_xyz_mm": [
+        5.3,
+        10.2,
+        2.0
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        36,
+        25
+      ]
+    },
+    {
+      "ref": "C8",
+      "board_id": "MeterB",
+      "label": "100nF 16V",
+      "min_xyz_mm": [
+        -15.125,
+        -14.5,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.25,
+        2,
+        1.25
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        23,
+        36
+      ]
+    },
+    {
+      "ref": "CP1",
+      "board_id": "MeterB",
+      "label": "10uF 16V",
+      "min_xyz_mm": [
+        26.5,
+        15.875,
+        1.6
+      ],
+      "size_xyz_mm": [
+        2,
+        1.25,
+        1.25
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        65,
+        6
+      ]
+    },
+    {
+      "ref": "PS1",
+      "board_id": "MeterB",
+      "label": "R05CT05S-R / 3.3V",
+      "min_xyz_mm": [
+        14.75,
+        6.349999999999998,
+        1.6
+      ],
+      "size_xyz_mm": [
+        7.5,
+        10.3,
+        2.65
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        56,
+        11
+      ]
+    },
+    {
+      "ref": "CP4",
+      "board_id": "MeterB",
+      "label": "100nF 16V",
+      "min_xyz_mm": [
+        8.5,
+        12.875,
+        1.6
+      ],
+      "size_xyz_mm": [
+        2,
+        1.25,
+        1.25
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        47,
+        9
+      ]
+    },
+    {
+      "ref": "Y1",
+      "board_id": "MeterB",
+      "label": "8.192MHz CL18pF",
+      "min_xyz_mm": [
+        -5.200000000000003,
+        -19.849999999999998,
+        1.6
+      ],
+      "size_xyz_mm": [
+        11.4,
+        4.7,
+        4.9
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        38,
+        40
+      ]
+    },
+    {
+      "ref": "J2",
+      "board_id": "MeterB",
+      "label": "N SENSE / NC",
+      "min_xyz_mm": [
+        -32.09,
+        5.149999999999999,
+        1.6
+      ],
+      "size_xyz_mm": [
+        10.26,
+        11.3,
+        18
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        8,
+        12
+      ]
+    },
+    {
+      "ref": "CP3",
+      "board_id": "MeterB",
+      "label": "10uF 10V",
+      "min_xyz_mm": [
+        8.5,
+        15.875,
+        1.6
+      ],
+      "size_xyz_mm": [
+        2,
+        1.25,
+        1.25
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        47,
+        6
+      ]
+    },
+    {
+      "ref": "C7",
+      "board_id": "MeterB",
+      "label": "1nF C0G",
+      "min_xyz_mm": [
+        5.5,
+        -12.125,
+        1.6
+      ],
+      "size_xyz_mm": [
+        2,
+        1.25,
+        1.25
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        44,
+        34
+      ]
+    },
+    {
+      "ref": "CX1",
+      "board_id": "MeterB",
+      "label": "27pF C0G",
+      "min_xyz_mm": [
+        -5.125,
+        -13.5,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.25,
+        2,
+        1.25
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        33,
+        35
+      ]
+    },
+    {
+      "ref": "J1",
+      "board_id": "MeterB",
+      "label": "PROTECTED L / TO RELAY",
+      "min_xyz_mm": [
+        -36.45,
+        -9.09,
+        1.6
+      ],
+      "size_xyz_mm": [
+        11.299999999999999,
+        10.260000000000002,
+        18
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        7,
+        29
+      ]
+    },
+    {
+      "ref": "R3",
+      "board_id": "MeterB",
+      "label": "0R",
+      "min_xyz_mm": [
+        -9.5,
+        -10.125,
+        1.6
+      ],
+      "size_xyz_mm": [
+        2,
+        1.25,
+        0.65
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        29,
+        32
+      ]
+    },
+    {
+      "ref": "CX2",
+      "board_id": "MeterB",
+      "label": "27pF C0G",
+      "min_xyz_mm": [
+        -2.125,
+        -13.5,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.25,
+        2,
+        1.25
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        36,
+        35
+      ]
+    },
+    {
+      "ref": "J3",
+      "board_id": "MeterB",
+      "label": "CONTROLLER - ISOLATED",
+      "min_xyz_mm": [
+        31.230000000000004,
+        -7.550000000000001,
+        1.6
+      ],
+      "size_xyz_mm": [
+        2.54,
+        20.32,
+        8
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        70,
+        11
+      ]
+    },
+    {
+      "ref": "C6",
+      "board_id": "MeterB",
+      "label": "1uF 16V",
+      "min_xyz_mm": [
+        1.5,
+        -12.125,
+        1.6
+      ],
+      "size_xyz_mm": [
+        2,
+        1.25,
+        1.25
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        40,
+        34
+      ]
+    },
+    {
+      "ref": "R4",
+      "board_id": "MeterB",
+      "label": "10k",
+      "min_xyz_mm": [
+        -18.125,
+        -13.5,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.25,
+        2,
+        0.65
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        20,
+        35
+      ]
+    },
+    {
+      "ref": "C4",
+      "board_id": "MeterB",
+      "label": "100nF 16V",
+      "min_xyz_mm": [
+        -9.5,
+        -6.125,
+        1.6
+      ],
+      "size_xyz_mm": [
+        2,
+        1.25,
+        1.25
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        29,
+        28
+      ]
+    },
+    {
+      "ref": "RV7",
+      "board_id": "MeterB",
+      "label": "1k",
+      "min_xyz_mm": [
+        0.5,
+        4.875,
+        1.6
+      ],
+      "size_xyz_mm": [
+        2,
+        1.25,
+        0.65
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        39,
+        17
+      ]
+    },
+    {
+      "ref": "RS1",
+      "board_id": "MeterB",
+      "label": "1mR / 1% / 8W",
+      "min_xyz_mm": [
+        -22.95,
+        -7.654999999999999,
+        1.6
+      ],
+      "size_xyz_mm": [
+        6.9,
+        10.31,
+        2.92
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        18,
+        25
+      ]
+    },
+    {
+      "ref": "R6",
+      "board_id": "MeterB",
+      "label": "10k",
+      "min_xyz_mm": [
+        26.875,
+        -6.5,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.25,
+        2,
+        0.65
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        65,
+        28
+      ]
+    },
+    {
+      "ref": "CI2",
+      "board_id": "MeterB",
+      "label": "100nF 16V",
+      "min_xyz_mm": [
+        8.875,
+        -3.5,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.25,
+        2,
+        1.25
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        47,
+        25
+      ]
+    },
+    {
+      "ref": "RV4",
+      "board_id": "MeterB",
+      "label": "249k",
+      "min_xyz_mm": [
+        -2.6000000000000014,
+        13.700000000000001,
+        1.6
+      ],
+      "size_xyz_mm": [
+        3.2,
+        1.6,
+        0.65
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        36.5,
+        8
+      ]
+    },
+    {
+      "ref": "RV1",
+      "board_id": "MeterB",
+      "label": "249k",
+      "min_xyz_mm": [
+        -19.1,
+        13.700000000000001,
+        1.6
+      ],
+      "size_xyz_mm": [
+        3.2,
+        1.6,
+        0.65
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        20.0,
+        8
+      ]
+    },
+    {
+      "ref": "RV2",
+      "board_id": "MeterB",
+      "label": "249k",
+      "min_xyz_mm": [
+        -13.600000000000001,
+        13.700000000000001,
+        1.6
+      ],
+      "size_xyz_mm": [
+        3.2,
+        1.6,
+        0.65
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        25.5,
+        8
+      ]
+    },
+    {
+      "ref": "C3",
+      "board_id": "MeterB",
+      "label": "100nF 16V",
+      "min_xyz_mm": [
+        -9.5,
+        -13.125,
+        1.6
+      ],
+      "size_xyz_mm": [
+        2,
+        1.25,
+        1.25
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        29,
+        35
+      ]
+    },
+    {
+      "ref": "CV1",
+      "board_id": "MeterB",
+      "label": "33nF 16V",
+      "min_xyz_mm": [
+        5.875,
+        8.5,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.25,
+        2,
+        1.25
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        44,
+        13
+      ]
+    },
+    {
+      "ref": "R1",
+      "board_id": "MeterB",
+      "label": "100R",
+      "min_xyz_mm": [
+        -14.5,
+        -3.125,
+        1.6
+      ],
+      "size_xyz_mm": [
+        2,
+        1.25,
+        0.65
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        24,
+        25
+      ]
+    },
+    {
+      "ref": "R2",
+      "board_id": "MeterB",
+      "label": "100R",
+      "min_xyz_mm": [
+        -14.5,
+        0.875,
+        1.6
+      ],
+      "size_xyz_mm": [
+        2,
+        1.25,
+        0.65
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        24,
+        21
+      ]
+    },
+    {
+      "ref": "C1",
+      "board_id": "MeterB",
+      "label": "330nF 16V",
+      "min_xyz_mm": [
+        -10.125,
+        -3.5,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.25,
+        2,
+        1.25
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        28,
+        25
+      ]
+    },
+    {
+      "ref": "R5",
+      "board_id": "MeterB",
+      "label": "10k",
+      "min_xyz_mm": [
+        6.5,
+        -8.125,
+        1.6
+      ],
+      "size_xyz_mm": [
+        2,
+        1.25,
+        0.65
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        45,
+        30
+      ]
+    },
+    {
+      "ref": "CP2",
+      "board_id": "MeterB",
+      "label": "100nF 16V",
+      "min_xyz_mm": [
+        26.5,
+        12.875,
+        1.6
+      ],
+      "size_xyz_mm": [
+        2,
+        1.25,
+        1.25
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        65,
+        9
+      ]
+    },
+    {
+      "ref": "RV6",
+      "board_id": "MeterB",
+      "label": "1k",
+      "min_xyz_mm": [
+        0.5,
+        8.875,
+        1.6
+      ],
+      "size_xyz_mm": [
+        2,
+        1.25,
+        0.65
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        39,
+        13
+      ]
+    },
+    {
+      "ref": "U2",
+      "board_id": "MeterB",
+      "label": "ISO6741DWR",
+      "min_xyz_mm": [
+        14.75,
+        -10.650000000000002,
+        1.6
+      ],
+      "size_xyz_mm": [
+        7.5,
+        10.3,
+        2.65
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        56,
+        28
+      ]
+    },
+    {
+      "ref": "C5",
+      "board_id": "MeterB",
+      "label": "10uF 10V",
+      "min_xyz_mm": [
+        -11.5,
+        -17.125,
+        1.6
+      ],
+      "size_xyz_mm": [
+        2,
+        1.25,
+        1.25
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        27,
+        39
+      ]
+    },
+    {
+      "ref": "CV2",
+      "board_id": "MeterB",
+      "label": "33nF 16V",
+      "min_xyz_mm": [
+        5.875,
+        4.5,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.25,
+        2,
+        1.25
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        44,
+        17
+      ]
+    },
+    {
+      "ref": "C2",
+      "board_id": "MeterB",
+      "label": "330nF 16V",
+      "min_xyz_mm": [
+        -10.125,
+        0.5,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.25,
+        2,
+        1.25
+      ],
+      "representation": "candidate nominal package envelope, no detailed lead geometry",
+      "pcb_origin_mm": [
+        28,
+        21
+      ]
+    }
+  ]
+}

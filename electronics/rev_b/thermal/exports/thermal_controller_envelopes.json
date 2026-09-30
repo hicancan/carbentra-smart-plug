@@ -1,0 +1,419 @@
+{
+  "status": "DEVELOPMENT / HOLD",
+  "coordinate_system": "Local mm, board lower-left=(0,0,0), top copper z=1.6, +y upward (mirrored KiCad y)",
+  "board_mm": [
+    45,
+    35,
+    1.6
+  ],
+  "height_reservation_above_PCB_mm": 9,
+  "height_reservation_below_PCB_mm": 3,
+  "mating_harness_actuator_and_insulation_not_included": true,
+  "components": [
+    {
+      "ref": "U4",
+      "mpn": "SN74LVC1G74DCUR",
+      "min_xyz_mm": [
+        27.8,
+        13.95,
+        1.6
+      ],
+      "size_xyz_mm": [
+        2.3999999999999986,
+        2.1000000000000014,
+        1.1
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "C5",
+      "mpn": "GRM188R71C104KA01D",
+      "min_xyz_mm": [
+        26.15,
+        29.549999999999997,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.7000000000000028,
+        0.9000000000000004,
+        0.9
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "U3",
+      "mpn": "TPS3808G30DBVR",
+      "min_xyz_mm": [
+        18.15,
+        13.5,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.7000000000000028,
+        3.0,
+        1.45
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "U5",
+      "mpn": "SN74LVC1G17DBVR",
+      "min_xyz_mm": [
+        21.15,
+        28.5,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.7000000000000028,
+        3.0,
+        1.45
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "Q3",
+      "mpn": "MMBT3904,215",
+      "min_xyz_mm": [
+        16.3,
+        21.5,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.3999999999999986,
+        3.0,
+        1.1
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "J1",
+      "mpn": "TSW-104-07-G-S",
+      "min_xyz_mm": [
+        1.68,
+        22.060000000000002,
+        1.6
+      ],
+      "size_xyz_mm": [
+        2.6400000000000006,
+        10.26,
+        8.38
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "Q1",
+      "mpn": "AO3401A",
+      "min_xyz_mm": [
+        11.3,
+        25.5,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.3999999999999986,
+        3.0,
+        1.12
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "R5",
+      "mpn": "RC0603FR-071KL",
+      "min_xyz_mm": [
+        28.15,
+        25.537499999999998,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.7000000000000028,
+        0.9250000000000007,
+        0.55
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "C2",
+      "mpn": "GRM188R71C104KA01D",
+      "min_xyz_mm": [
+        13.15,
+        9.55,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.6999999999999993,
+        0.8999999999999986,
+        0.9
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "R12",
+      "mpn": "RC0603FR-0747KL",
+      "min_xyz_mm": [
+        22.15,
+        7.537500000000001,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.7000000000000028,
+        0.9249999999999972,
+        0.55
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "C7",
+      "mpn": "GRM188R71C104KA01D",
+      "min_xyz_mm": [
+        33.15,
+        4.550000000000001,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.7000000000000028,
+        0.8999999999999986,
+        0.9
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "C4",
+      "mpn": "GRM188R71C104KA01D",
+      "min_xyz_mm": [
+        28.15,
+        19.55,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.7000000000000028,
+        0.8999999999999986,
+        0.9
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "C6",
+      "mpn": "GRM188R71C104KA01D",
+      "min_xyz_mm": [
+        17.15,
+        31.550000000000004,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.7000000000000028,
+        0.9000000000000004,
+        0.9
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "Q2",
+      "mpn": "MMBT3904,215",
+      "min_xyz_mm": [
+        16.3,
+        25.5,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.3999999999999986,
+        3.0,
+        1.1
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "SW1",
+      "mpn": "B3F-1000",
+      "min_xyz_mm": [
+        35.2,
+        26.699999999999996,
+        1.6
+      ],
+      "size_xyz_mm": [
+        6.099999999999994,
+        6.1000000000000005,
+        4.3
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "U2",
+      "mpn": "SN74LVC1G17DBVR",
+      "min_xyz_mm": [
+        9.15,
+        11.5,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.6999999999999993,
+        3.0,
+        1.45
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "R2",
+      "mpn": "RC0603FR-07100KL",
+      "min_xyz_mm": [
+        7.15,
+        5.537500000000001,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.6999999999999993,
+        0.9249999999999972,
+        0.55
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "R9",
+      "mpn": "RC0603FR-0747KL",
+      "min_xyz_mm": [
+        9.15,
+        30.537499999999998,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.6999999999999993,
+        0.9250000000000003,
+        0.55
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "R7",
+      "mpn": "RC0603FR-07100KL",
+      "min_xyz_mm": [
+        23.15,
+        24.537499999999998,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.7000000000000028,
+        0.9250000000000007,
+        0.55
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "R3",
+      "mpn": "RC0603FR-07100KL",
+      "min_xyz_mm": [
+        16.15,
+        7.537500000000001,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.7000000000000028,
+        0.9249999999999972,
+        0.55
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "C3",
+      "mpn": "GRM188R71C104KA01D",
+      "min_xyz_mm": [
+        18.15,
+        19.55,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.7000000000000028,
+        0.8999999999999986,
+        0.9
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "R10",
+      "mpn": "RC0603FR-0710KL",
+      "min_xyz_mm": [
+        34.15,
+        14.537500000000001,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.7000000000000028,
+        0.9249999999999972,
+        0.55
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "R13",
+      "mpn": "RC0603FR-07100KL",
+      "min_xyz_mm": [
+        28.15,
+        5.537500000000001,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.7000000000000028,
+        0.9249999999999972,
+        0.55
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "J3",
+      "mpn": "TSW-103-07-G-S",
+      "min_xyz_mm": [
+        1.68,
+        6.600000000000001,
+        1.6
+      ],
+      "size_xyz_mm": [
+        2.6400000000000006,
+        7.719999999999999,
+        8.38
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "U6",
+      "mpn": "SN74LVC1G17DBVR",
+      "min_xyz_mm": [
+        33.15,
+        7.5,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.7000000000000028,
+        3.0,
+        1.45
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "R4",
+      "mpn": "RC0603FR-0710KL",
+      "min_xyz_mm": [
+        22.15,
+        14.537500000000001,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.7000000000000028,
+        0.9249999999999972,
+        0.55
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    },
+    {
+      "ref": "R11",
+      "mpn": "RC0603FR-07100KL",
+      "min_xyz_mm": [
+        21.15,
+        21.537499999999998,
+        1.6
+      ],
+      "size_xyz_mm": [
+        1.7000000000000028,
+        0.9250000000000007,
+        0.55
+      ],
+      "representation": "F.Fab-based envelope + declared component height, not detailed manufacturer solid"
+    }
+  ]
+}

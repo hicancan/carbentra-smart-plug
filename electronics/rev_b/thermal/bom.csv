@@ -1,0 +1,34 @@
+Reference,Value,MPN candidate,Footprint,Source,Status
+U1,TMP302BDRLR,TMP302BDRLR,Package_TO_SOT_SMD:SOT-563,https://www.ti.com/lit/gpn/TMP302,UNRELEASED / SCHEMATIC ONLY
+R1,10k 1%,RC0603FR-0710KL,Resistor_SMD:R_0603_1608Metric,https://www.yageo.com/en/ProductSearch,UNRELEASED / SCHEMATIC ONLY
+C1,100nF 16V X7R,GRM188R71C104KA01D,Capacitor_SMD:C_0603_1608Metric,https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D,UNRELEASED / SCHEMATIC ONLY
+U2,SN74LVC1G17DBVR,SN74LVC1G17DBVR,Package_TO_SOT_SMD:SOT-23-5,https://www.ti.com/lit/ds/symlink/sn74lvc1g17.pdf,UNRELEASED / SCHEMATIC ONLY
+R2,100k 1%,RC0603FR-07100KL,Resistor_SMD:R_0603_1608Metric,https://www.yageo.com/en/ProductSearch,UNRELEASED / SCHEMATIC ONLY
+C2,100nF 16V X7R,GRM188R71C104KA01D,Capacitor_SMD:C_0603_1608Metric,https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D,UNRELEASED / SCHEMATIC ONLY
+U3,TPS3808G30DBVR,TPS3808G30DBVR,Package_TO_SOT_SMD:SOT-23-6,https://www.ti.com/lit/ds/symlink/tps3808.pdf,UNRELEASED / SCHEMATIC ONLY
+R3,100k 1%,RC0603FR-07100KL,Resistor_SMD:R_0603_1608Metric,https://www.yageo.com/en/ProductSearch,UNRELEASED / SCHEMATIC ONLY
+R4,10k 1%,RC0603FR-0710KL,Resistor_SMD:R_0603_1608Metric,https://www.yageo.com/en/ProductSearch,UNRELEASED / SCHEMATIC ONLY
+C3,100nF 16V X7R,GRM188R71C104KA01D,Capacitor_SMD:C_0603_1608Metric,https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D,UNRELEASED / SCHEMATIC ONLY
+U4,SN74LVC1G74DCUR,SN74LVC1G74DCUR,Package_SO:VSSOP-8_2.3x2mm_P0.5mm,https://www.ti.com/lit/ds/symlink/sn74lvc1g74.pdf,UNRELEASED / SCHEMATIC ONLY
+C4,100nF 16V X7R,GRM188R71C104KA01D,Capacitor_SMD:C_0603_1608Metric,https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D,UNRELEASED / SCHEMATIC ONLY
+J3,SENSOR HARNESS,TSW-103-07-G-S,Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical,https://www.samtec.com/products/tsw-103-07-g-s,UNRELEASED / SCHEMATIC ONLY
+J4,SENSOR PIGTAIL,Soldered insulated pigtail / strain relief HOLD,Thermal:Sensor_Pigtail_3xP2.54,,UNRELEASED / SCHEMATIC ONLY
+SW1,MANUAL REARM,B3F-1000,Button_Switch_THT:SW_PUSH_6mm,https://components.omron.com/us-en/products/switches/B3F,UNRELEASED / SCHEMATIC ONLY
+R5,1k 1%,RC0603FR-071KL,Resistor_SMD:R_0603_1608Metric,https://www.yageo.com/en/ProductSearch,UNRELEASED / SCHEMATIC ONLY
+R7,100k 1%,RC0603FR-07100KL,Resistor_SMD:R_0603_1608Metric,https://www.yageo.com/en/ProductSearch,UNRELEASED / SCHEMATIC ONLY
+C5,100nF 16V X7R,GRM188R71C104KA01D,Capacitor_SMD:C_0603_1608Metric,https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D,UNRELEASED / SCHEMATIC ONLY
+U5,SN74LVC1G17DBVR,SN74LVC1G17DBVR,Package_TO_SOT_SMD:SOT-23-5,https://www.ti.com/lit/ds/symlink/sn74lvc1g17.pdf,UNRELEASED / SCHEMATIC ONLY
+C6,100nF 16V X7R,GRM188R71C104KA01D,Capacitor_SMD:C_0603_1608Metric,https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D,UNRELEASED / SCHEMATIC ONLY
+Q1,AO3401A,AO3401A,Package_TO_SOT_SMD:SOT-23,https://www.aosmd.com/res/data_sheets/AO3401A.pdf,UNRELEASED / SCHEMATIC ONLY
+R9,47k 1%,RC0603FR-0747KL,Resistor_SMD:R_0603_1608Metric,https://www.yageo.com/en/ProductSearch,UNRELEASED / SCHEMATIC ONLY
+Q2,MMBT3904,"MMBT3904,215",Package_TO_SOT_SMD:SOT-23,https://assets.nexperia.com/documents/data-sheet/MMBT3904.pdf,UNRELEASED / SCHEMATIC ONLY
+Q3,MMBT3904,"MMBT3904,215",Package_TO_SOT_SMD:SOT-23,https://assets.nexperia.com/documents/data-sheet/MMBT3904.pdf,UNRELEASED / SCHEMATIC ONLY
+R10,10k 1%,RC0603FR-0710KL,Resistor_SMD:R_0603_1608Metric,https://www.yageo.com/en/ProductSearch,UNRELEASED / SCHEMATIC ONLY
+R11,100k 1%,RC0603FR-07100KL,Resistor_SMD:R_0603_1608Metric,https://www.yageo.com/en/ProductSearch,UNRELEASED / SCHEMATIC ONLY
+R12,47k 1%,RC0603FR-0747KL,Resistor_SMD:R_0603_1608Metric,https://www.yageo.com/en/ProductSearch,UNRELEASED / SCHEMATIC ONLY
+R13,100k 1%,RC0603FR-07100KL,Resistor_SMD:R_0603_1608Metric,https://www.yageo.com/en/ProductSearch,UNRELEASED / SCHEMATIC ONLY
+U6,SN74LVC1G17DBVR,SN74LVC1G17DBVR,Package_TO_SOT_SMD:SOT-23-5,https://www.ti.com/lit/ds/symlink/sn74lvc1g17.pdf,UNRELEASED / SCHEMATIC ONLY
+C7,100nF 16V X7R,GRM188R71C104KA01D,Capacitor_SMD:C_0603_1608Metric,https://www.murata.com/en-us/products/productdetail?partno=GRM188R71C104KA01D,UNRELEASED / SCHEMATIC ONLY
+J1,MAIN 4-WIRE COIL INTERLOCK,TSW-104-07-G-S,Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical,https://www.samtec.com/products/tsw,UNRELEASED / SCHEMATIC ONLY
+TP1,COIL_ARMED,PCB TEST PAD ONLY,TestPoint:TestPoint_Pad_D1.0mm,,UNRELEASED / SCHEMATIC ONLY
+TP2,THERMAL_READY,PCB TEST PAD ONLY,TestPoint:TestPoint_Pad_D1.0mm,,UNRELEASED / SCHEMATIC ONLY

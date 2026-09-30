@@ -1,0 +1,60 @@
+{
+  "schematic_pin_net_match": "PASS",
+  "pins_checked": 94,
+  "critical_manufacturer_pin_maps": "PASS",
+  "no_MCU_rearm_net": "PASS",
+  "ideal_logic_tests_passed": 13,
+  "calculations": {
+    "healthy_return_min_V_with_5uA_input_leak": 2.7989505041246554,
+    "open_return_max_V_with_5uA_input_leak": 0.505,
+    "head_trip_sink_upper_mA": 0.35,
+    "READY_RAW_min_V_with_5uA_buffer_input_leak": 3.0845,
+    "THERMAL_READY_VOH_min_V_at_100uA": 3.0349999999999997,
+    "U6_output_load_upper_uA": 79.46808510638297,
+    "ready_pullup_max_mA": 0.35,
+    "G30_falling_min_V": 2.74815,
+    "G30_falling_max_V": 2.8318499999999998,
+    "G30_release_upper_V_conservative": 2.9015999999999997,
+    "supervisor_delay_min_ms": 180,
+    "supervisor_delay_max_ms": 420,
+    "sensor_startup_ms": 35,
+    "minimum_settling_excess_ms": 145,
+    "reset_pressed_RC_tau_ms": 0.09900990099009901,
+    "reset_released_RC_tau_ms": 10.0,
+    "coil_gate_sink_required_max_mA": 0.11283043197936815,
+    "PMOS_loss_upper_W_150mA_85mohm_25C": 0.0019125000000000001,
+    "PMOS_drop_upper_V_150mA_85mohm_25C": 0.012750000000000001
+  },
+  "ERC_report": "erc.rpt",
+  "PCB_status": "ROUTED DIGITAL CANDIDATES; no fabrication/energization release",
+  "physical_power_ramp_reset_and_thermal_tests": "NOT_RUN; required before claiming release",
+  "thermal_cutoff_and_load_break": "EXTERNAL integration required; this latch does not interrupt welded load contacts",
+  "physical_boards": [
+    {
+      "board": "thermal_controller",
+      "board_mm": [
+        45,
+        35,
+        1.6
+      ],
+      "component_count": 29,
+      "pins_checked": 81,
+      "duplicate_switch_pads_checked": 2,
+      "tracks_and_vias": 418,
+      "DRC": "0 violations / 0 unconnected"
+    },
+    {
+      "board": "thermal_sensor",
+      "board_mm": [
+        12,
+        12,
+        1.6
+      ],
+      "component_count": 4,
+      "pins_checked": 13,
+      "duplicate_switch_pads_checked": 0,
+      "tracks_and_vias": 44,
+      "DRC": "0 violations / 0 unconnected"
+    }
+  ]
+}

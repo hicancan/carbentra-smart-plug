@@ -1,0 +1,874 @@
+{
+  "assumptions": {
+    "resistivity_ohm_m_20C": 1.7241e-08,
+    "outer_copper_nominal_mm": 0.07,
+    "inner_copper_nominal_mm": 0.035,
+    "finished_copper_is_guaranteed": false,
+    "copper_temperature_coefficient_per_K": 0.00393,
+    "barrel_plating_model_um": 20,
+    "array_sharing": "ideal equal sharing; solder/pad spreading/contact resistance excluded",
+    "full_length_model": "16A along every series segment to far duplicated relay pads; actual internal relay/pin sharing unmeasured",
+    "near_pad_alternative": "omit7.5mm inter-pin trace legs; not a rigorous lower bound on complete assembly loss"
+  },
+  "baseline": {
+    "board_sha256": "ca4d5028ffcce702b242246c120d2792b3f516d2b43d0f97346b1bd6df5aee87",
+    "groups": {
+      "HOT_GND_F": {
+        "length_mm": 11.367238722880229,
+        "R20_mOhm": 0.7885314369677916,
+        "segments": [
+          {
+            "start": [
+              32.5,
+              62.0
+            ],
+            "end": [
+              35.0,
+              59.975
+            ],
+            "width_mm": 4.8,
+            "layer": "F.Cu",
+            "length_mm": 3.217238722880228,
+            "R20_mOhm": 0.16508456196779167
+          },
+          {
+            "start": [
+              35.0,
+              59.975
+            ],
+            "end": [
+              39.15,
+              59.975
+            ],
+            "width_mm": 4.8,
+            "layer": "F.Cu",
+            "length_mm": 4.15,
+            "R20_mOhm": 0.212946875
+          },
+          {
+            "start": [
+              28.5,
+              62.0
+            ],
+            "end": [
+              32.5,
+              62.0
+            ],
+            "width_mm": 2.4,
+            "layer": "F.Cu",
+            "length_mm": 4.0,
+            "R20_mOhm": 0.4105
+          }
+        ]
+      },
+      "HOT_GND_B_parallel": {
+        "length_mm": 0,
+        "R20_mOhm": 0,
+        "segments": []
+      },
+      "HOT_LOAD_B": {
+        "length_mm": 30.575000000000003,
+        "R20_mOhm": 2.1589734375,
+        "segments": [
+          {
+            "start": [
+              49.2,
+              55.0
+            ],
+            "end": [
+              49.2,
+              47.5
+            ],
+            "width_mm": 2.4,
+            "layer": "B.Cu",
+            "length_mm": 7.5,
+            "R20_mOhm": 0.7696874999999999
+          },
+          {
+            "start": [
+              39.15,
+              64.0
+            ],
+            "end": [
+              49.2,
+              64.0
+            ],
+            "width_mm": 4.8,
+            "layer": "B.Cu",
+            "length_mm": 10.05,
+            "R20_mOhm": 0.515690625
+          },
+          {
+            "start": [
+              39.15,
+              68.025
+            ],
+            "end": [
+              39.15,
+              64.0
+            ],
+            "width_mm": 4.8,
+            "layer": "B.Cu",
+            "length_mm": 4.025,
+            "R20_mOhm": 0.2065328125
+          },
+          {
+            "start": [
+              49.2,
+              59.0
+            ],
+            "end": [
+              49.2,
+              55.0
+            ],
+            "width_mm": 2.4,
+            "layer": "B.Cu",
+            "length_mm": 4.0,
+            "R20_mOhm": 0.4105
+          },
+          {
+            "start": [
+              49.2,
+              64.0
+            ],
+            "end": [
+              49.2,
+              59.0
+            ],
+            "width_mm": 4.8,
+            "layer": "B.Cu",
+            "length_mm": 5.0,
+            "R20_mOhm": 0.25656249999999997
+          }
+        ]
+      },
+      "HOT_LOAD_F_parallel": {
+        "length_mm": 0,
+        "R20_mOhm": 0,
+        "segments": []
+      },
+      "HOT_SWITCHED_F": {
+        "length_mm": 23.44898076049356,
+        "R20_mOhm": 1.939137386197323,
+        "segments": [
+          {
+            "start": [
+              32.5,
+              45.76
+            ],
+            "end": [
+              28.5,
+              45.76
+            ],
+            "width_mm": 2.4,
+            "layer": "F.Cu",
+            "length_mm": 4.0,
+            "R20_mOhm": 0.4105
+          },
+          {
+            "start": [
+              41.5,
+              46.5
+            ],
+            "end": [
+              39.0,
+              45.76
+            ],
+            "width_mm": 4.8,
+            "layer": "F.Cu",
+            "length_mm": 2.607220742476555,
+            "R20_mOhm": 0.1337830143483282
+          },
+          {
+            "start": [
+              44.16,
+              55.0
+            ],
+            "end": [
+              44.16,
+              47.5
+            ],
+            "width_mm": 2.4,
+            "layer": "F.Cu",
+            "length_mm": 7.5,
+            "R20_mOhm": 0.7696874999999999
+          },
+          {
+            "start": [
+              39.0,
+              45.76
+            ],
+            "end": [
+              32.5,
+              45.76
+            ],
+            "width_mm": 4.8,
+            "layer": "F.Cu",
+            "length_mm": 6.5,
+            "R20_mOhm": 0.33353125
+          },
+          {
+            "start": [
+              44.16,
+              47.5
+            ],
+            "end": [
+              41.5,
+              46.5
+            ],
+            "width_mm": 2.4,
+            "layer": "F.Cu",
+            "length_mm": 2.8417600180170033,
+            "R20_mOhm": 0.29163562184899494
+          }
+        ]
+      },
+      "HOT_SWITCHED_B_parallel": {
+        "length_mm": 0,
+        "R20_mOhm": 0,
+        "segments": []
+      },
+      "HOT_N_B": {
+        "length_mm": 25.724726083445145,
+        "R20_mOhm": 2.2551562643135576,
+        "segments": [
+          {
+            "start": [
+              35.5,
+              40.5
+            ],
+            "end": [
+              35.5,
+              48.0
+            ],
+            "width_mm": 4.8,
+            "layer": "B.Cu",
+            "length_mm": 7.5,
+            "R20_mOhm": 0.38484374999999993
+          },
+          {
+            "start": [
+              32.0,
+              38.14
+            ],
+            "end": [
+              35.5,
+              40.5
+            ],
+            "width_mm": 2.4,
+            "layer": "B.Cu",
+            "length_mm": 4.221326805638246,
+            "R20_mOhm": 0.433213663428625
+          },
+          {
+            "start": [
+              28.5,
+              38.14
+            ],
+            "end": [
+              32.0,
+              38.14
+            ],
+            "width_mm": 2.4,
+            "layer": "B.Cu",
+            "length_mm": 3.5,
+            "R20_mOhm": 0.35918749999999994
+          },
+          {
+            "start": [
+              35.5,
+              50.5
+            ],
+            "end": [
+              28.5,
+              54.38
+            ],
+            "width_mm": 2.4,
+            "layer": "B.Cu",
+            "length_mm": 8.0033992778069,
+            "R20_mOhm": 0.8213488508849329
+          },
+          {
+            "start": [
+              35.5,
+              48.0
+            ],
+            "end": [
+              35.5,
+              50.5
+            ],
+            "width_mm": 2.4,
+            "layer": "B.Cu",
+            "length_mm": 2.5,
+            "R20_mOhm": 0.25656249999999997
+          }
+        ]
+      },
+      "AUX_PREFUSE_B": {
+        "length_mm": 26.515031577200624,
+        "R20_mOhm": 2.7860108645851698,
+        "segments": [
+          {
+            "start": [
+              21.0,
+              76.0
+            ],
+            "end": [
+              17.5,
+              81.6
+            ],
+            "width_mm": 2.4,
+            "layer": "B.Cu",
+            "length_mm": 6.603786792439623,
+            "R20_mOhm": 0.6777136195741161
+          },
+          {
+            "start": [
+              17.5,
+              81.6
+            ],
+            "end": [
+              16.9,
+              83.4
+            ],
+            "width_mm": 1.8,
+            "layer": "B.Cu",
+            "length_mm": 1.8973665961010278,
+            "R20_mOhm": 0.2596229958998239
+          },
+          {
+            "start": [
+              28.5,
+              71.0
+            ],
+            "end": [
+              21.0,
+              76.0
+            ],
+            "width_mm": 2.4,
+            "layer": "B.Cu",
+            "length_mm": 9.013878188659973,
+            "R20_mOhm": 0.9250492491112297
+          },
+          {
+            "start": [
+              28.5,
+              62.0
+            ],
+            "end": [
+              28.5,
+              71.0
+            ],
+            "width_mm": 2.4,
+            "layer": "B.Cu",
+            "length_mm": 9.0,
+            "R20_mOhm": 0.9236249999999999
+          }
+        ]
+      }
+    },
+    "effective_path_R20_mOhm": {
+      "line_input_to_shunt": 0.7885314369677916,
+      "shunt_to_relay_far_pad": 2.2961729561923683,
+      "relay_far_pad_to_output": 1.939137386197323,
+      "neutral": 2.2551562643135576
+    },
+    "far_pad_total_R20_mOhm": 7.278998043671041,
+    "near_pad_alternative_R20_mOhm": 5.739623043671041,
+    "far_pad_total_loss_W_at16A": 1.8634234991797864,
+    "near_pad_alternative_loss_W_at16A": 1.4693434991797865,
+    "far_pad_voltage_drop_V_at16A": 0.11646396869873665,
+    "via_array_R20_mOhm_at20um": {
+      "output8vias": 0.13719951869236838,
+      "added_input6vias": null
+    },
+    "aux_prefuse_loss_W_at_0p1A": 2.7860108645851702e-05
+  },
+  "candidate": {
+    "board_sha256": "c1678acd93ef9d74af5b370c6f632eaf26315e96b3916fcf199c94c8ca3024af",
+    "groups": {
+      "HOT_GND_F": {
+        "length_mm": 11.367238722880229,
+        "R20_mOhm": 0.5832814369677917,
+        "segments": [
+          {
+            "start": [
+              32.5,
+              62.0
+            ],
+            "end": [
+              35.0,
+              59.975
+            ],
+            "width_mm": 4.8,
+            "layer": "F.Cu",
+            "length_mm": 3.217238722880228,
+            "R20_mOhm": 0.16508456196779167
+          },
+          {
+            "start": [
+              35.0,
+              59.975
+            ],
+            "end": [
+              39.15,
+              59.975
+            ],
+            "width_mm": 4.8,
+            "layer": "F.Cu",
+            "length_mm": 4.15,
+            "R20_mOhm": 0.212946875
+          },
+          {
+            "start": [
+              28.5,
+              62.0
+            ],
+            "end": [
+              32.5,
+              62.0
+            ],
+            "width_mm": 4.8,
+            "layer": "F.Cu",
+            "length_mm": 4.0,
+            "R20_mOhm": 0.20525
+          }
+        ]
+      },
+      "HOT_GND_B_parallel": {
+        "length_mm": 11.414965543462902,
+        "R20_mOhm": 1.1714608388978802,
+        "segments": [
+          {
+            "start": [
+              28.5,
+              62.0
+            ],
+            "end": [
+              32.5,
+              62.0
+            ],
+            "width_mm": 2.4,
+            "layer": "B.Cu",
+            "length_mm": 4.0,
+            "R20_mOhm": 0.4105
+          },
+          {
+            "start": [
+              32.5,
+              62.0
+            ],
+            "end": [
+              35.0,
+              59.9
+            ],
+            "width_mm": 2.4,
+            "layer": "B.Cu",
+            "length_mm": 3.2649655434629015,
+            "R20_mOhm": 0.3350670888978802
+          },
+          {
+            "start": [
+              35.0,
+              59.9
+            ],
+            "end": [
+              39.15,
+              59.9
+            ],
+            "width_mm": 2.4,
+            "layer": "B.Cu",
+            "length_mm": 4.15,
+            "R20_mOhm": 0.42589375
+          }
+        ]
+      },
+      "HOT_LOAD_B": {
+        "length_mm": 30.575000000000003,
+        "R20_mOhm": 2.1589734375,
+        "segments": [
+          {
+            "start": [
+              49.2,
+              55.0
+            ],
+            "end": [
+              49.2,
+              47.5
+            ],
+            "width_mm": 2.4,
+            "layer": "B.Cu",
+            "length_mm": 7.5,
+            "R20_mOhm": 0.7696874999999999
+          },
+          {
+            "start": [
+              39.15,
+              64.0
+            ],
+            "end": [
+              49.2,
+              64.0
+            ],
+            "width_mm": 4.8,
+            "layer": "B.Cu",
+            "length_mm": 10.05,
+            "R20_mOhm": 0.515690625
+          },
+          {
+            "start": [
+              39.15,
+              68.025
+            ],
+            "end": [
+              39.15,
+              64.0
+            ],
+            "width_mm": 4.8,
+            "layer": "B.Cu",
+            "length_mm": 4.025,
+            "R20_mOhm": 0.2065328125
+          },
+          {
+            "start": [
+              49.2,
+              59.0
+            ],
+            "end": [
+              49.2,
+              55.0
+            ],
+            "width_mm": 2.4,
+            "layer": "B.Cu",
+            "length_mm": 4.0,
+            "R20_mOhm": 0.4105
+          },
+          {
+            "start": [
+              49.2,
+              64.0
+            ],
+            "end": [
+              49.2,
+              59.0
+            ],
+            "width_mm": 4.8,
+            "layer": "B.Cu",
+            "length_mm": 5.0,
+            "R20_mOhm": 0.25656249999999997
+          }
+        ]
+      },
+      "HOT_LOAD_F_parallel": {
+        "length_mm": 7.5,
+        "R20_mOhm": 0.7696874999999999,
+        "segments": [
+          {
+            "start": [
+              49.2,
+              47.5
+            ],
+            "end": [
+              49.2,
+              55.0
+            ],
+            "width_mm": 2.4,
+            "layer": "F.Cu",
+            "length_mm": 7.5,
+            "R20_mOhm": 0.7696874999999999
+          }
+        ]
+      },
+      "HOT_SWITCHED_F": {
+        "length_mm": 23.44898076049356,
+        "R20_mOhm": 1.939137386197323,
+        "segments": [
+          {
+            "start": [
+              32.5,
+              45.76
+            ],
+            "end": [
+              28.5,
+              45.76
+            ],
+            "width_mm": 2.4,
+            "layer": "F.Cu",
+            "length_mm": 4.0,
+            "R20_mOhm": 0.4105
+          },
+          {
+            "start": [
+              41.5,
+              46.5
+            ],
+            "end": [
+              39.0,
+              45.76
+            ],
+            "width_mm": 4.8,
+            "layer": "F.Cu",
+            "length_mm": 2.607220742476555,
+            "R20_mOhm": 0.1337830143483282
+          },
+          {
+            "start": [
+              44.16,
+              55.0
+            ],
+            "end": [
+              44.16,
+              47.5
+            ],
+            "width_mm": 2.4,
+            "layer": "F.Cu",
+            "length_mm": 7.5,
+            "R20_mOhm": 0.7696874999999999
+          },
+          {
+            "start": [
+              39.0,
+              45.76
+            ],
+            "end": [
+              32.5,
+              45.76
+            ],
+            "width_mm": 4.8,
+            "layer": "F.Cu",
+            "length_mm": 6.5,
+            "R20_mOhm": 0.33353125
+          },
+          {
+            "start": [
+              44.16,
+              47.5
+            ],
+            "end": [
+              41.5,
+              46.5
+            ],
+            "width_mm": 2.4,
+            "layer": "F.Cu",
+            "length_mm": 2.8417600180170033,
+            "R20_mOhm": 0.29163562184899494
+          }
+        ]
+      },
+      "HOT_SWITCHED_B_parallel": {
+        "length_mm": 7.5,
+        "R20_mOhm": 0.7696874999999999,
+        "segments": [
+          {
+            "start": [
+              44.16,
+              47.5
+            ],
+            "end": [
+              44.16,
+              55.0
+            ],
+            "width_mm": 2.4,
+            "layer": "B.Cu",
+            "length_mm": 7.5,
+            "R20_mOhm": 0.7696874999999999
+          }
+        ]
+      },
+      "HOT_N_B": {
+        "length_mm": 25.724726083445145,
+        "R20_mOhm": 1.3200000071567788,
+        "segments": [
+          {
+            "start": [
+              35.5,
+              40.5
+            ],
+            "end": [
+              35.5,
+              48.0
+            ],
+            "width_mm": 4.8,
+            "layer": "B.Cu",
+            "length_mm": 7.5,
+            "R20_mOhm": 0.38484374999999993
+          },
+          {
+            "start": [
+              32.0,
+              38.14
+            ],
+            "end": [
+              35.5,
+              40.5
+            ],
+            "width_mm": 4.8,
+            "layer": "B.Cu",
+            "length_mm": 4.221326805638246,
+            "R20_mOhm": 0.2166068317143125
+          },
+          {
+            "start": [
+              28.5,
+              38.14
+            ],
+            "end": [
+              32.0,
+              38.14
+            ],
+            "width_mm": 4.8,
+            "layer": "B.Cu",
+            "length_mm": 3.5,
+            "R20_mOhm": 0.17959374999999997
+          },
+          {
+            "start": [
+              35.5,
+              50.5
+            ],
+            "end": [
+              28.5,
+              54.38
+            ],
+            "width_mm": 4.8,
+            "layer": "B.Cu",
+            "length_mm": 8.0033992778069,
+            "R20_mOhm": 0.41067442544246646
+          },
+          {
+            "start": [
+              35.5,
+              48.0
+            ],
+            "end": [
+              35.5,
+              50.5
+            ],
+            "width_mm": 4.8,
+            "layer": "B.Cu",
+            "length_mm": 2.5,
+            "R20_mOhm": 0.12828124999999999
+          }
+        ]
+      },
+      "AUX_PREFUSE_B": {
+        "length_mm": 26.515031577200624,
+        "R20_mOhm": 2.7860108645851698,
+        "segments": [
+          {
+            "start": [
+              21.0,
+              76.0
+            ],
+            "end": [
+              17.5,
+              81.6
+            ],
+            "width_mm": 2.4,
+            "layer": "B.Cu",
+            "length_mm": 6.603786792439623,
+            "R20_mOhm": 0.6777136195741161
+          },
+          {
+            "start": [
+              17.5,
+              81.6
+            ],
+            "end": [
+              16.9,
+              83.4
+            ],
+            "width_mm": 1.8,
+            "layer": "B.Cu",
+            "length_mm": 1.8973665961010278,
+            "R20_mOhm": 0.2596229958998239
+          },
+          {
+            "start": [
+              28.5,
+              71.0
+            ],
+            "end": [
+              21.0,
+              76.0
+            ],
+            "width_mm": 2.4,
+            "layer": "B.Cu",
+            "length_mm": 9.013878188659973,
+            "R20_mOhm": 0.9250492491112297
+          },
+          {
+            "start": [
+              28.5,
+              62.0
+            ],
+            "end": [
+              28.5,
+              71.0
+            ],
+            "width_mm": 2.4,
+            "layer": "B.Cu",
+            "length_mm": 9.0,
+            "R20_mOhm": 0.9236249999999999
+          }
+        ]
+      }
+    },
+    "effective_path_R20_mOhm": {
+      "line_input_to_shunt": 0.4077013007605432,
+      "shunt_to_relay_far_pad": 1.9113292061923683,
+      "relay_far_pad_to_output": 1.554293636197323,
+      "neutral": 1.3200000071567788
+    },
+    "far_pad_total_R20_mOhm": 5.1933241503070136,
+    "near_pad_alternative_R20_mOhm": 4.423636650307014,
+    "far_pad_total_loss_W_at16A": 1.3294909824785954,
+    "near_pad_alternative_loss_W_at16A": 1.1324509824785955,
+    "far_pad_voltage_drop_V_at16A": 0.08309318640491221,
+    "via_array_R20_mOhm_at20um": {
+      "output8vias": 0.13719951869236838,
+      "added_input6vias": 0.1829326915898245
+    },
+    "aux_prefuse_loss_W_at_0p1A": 2.7860108645851702e-05
+  },
+  "nominal_far_pad_reduction_percent": 28.65331026125888,
+  "temperature_sensitivity": [
+    {
+      "copper_C": 20,
+      "factor": 1.0,
+      "baseline_far_pad_W": 1.8634234991797864,
+      "candidate_far_pad_W": 1.3294909824785954
+    },
+    {
+      "copper_C": 60,
+      "factor": 1.1572,
+      "baseline_far_pad_W": 2.156353673250849,
+      "candidate_far_pad_W": 1.5384869649242305
+    },
+    {
+      "copper_C": 100,
+      "factor": 1.3144,
+      "baseline_far_pad_W": 2.449283847321911,
+      "candidate_far_pad_W": 1.7474829473698659
+    }
+  ],
+  "auxiliary_prefuse_is_not_protected_by_F501": true,
+  "fuse_total_clearing_I2t": "UNKNOWN:760A2s is typical melting at10xIn only; no clearing-energy bound inferred",
+  "via_array_plating_sensitivity": [
+    {
+      "plating_um": 15,
+      "output_8via_R_mOhm": 0.1829326915898245,
+      "input_6via_R_mOhm": 0.24391025545309936
+    },
+    {
+      "plating_um": 20,
+      "output_8via_R_mOhm": 0.13719951869236838,
+      "input_6via_R_mOhm": 0.1829326915898245
+    },
+    {
+      "plating_um": 25,
+      "output_8via_R_mOhm": 0.1097596149538947,
+      "input_6via_R_mOhm": 0.1463461532718596
+    }
+  ]
+}

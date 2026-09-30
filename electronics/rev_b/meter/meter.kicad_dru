@@ -1,0 +1,4 @@
+(version 1)
+(rule "minimum signal clearance" (constraint clearance (min 0.15mm)))
+(rule "HOT to ISO barrier 8mm" (condition "(A.NetName == 'HOT_*' && B.NetName == 'ISO_*') || (B.NetName == 'HOT_*' && A.NetName == 'ISO_*')") (constraint clearance (min 8mm)))
+(rule "Neutral sense to line referenced active circuitry 3mm" (condition "(A.NetName == 'HOT_N' && B.NetName == 'HOT_*' && B.NetName != 'HOT_N' && B.NetName != 'HOT_DIV1') || (B.NetName == 'HOT_N' && A.NetName == 'HOT_*' && A.NetName != 'HOT_N' && A.NetName != 'HOT_DIV1')") (constraint clearance (min 3mm)))
