@@ -6,7 +6,7 @@ CarbonMirror Unified Adaptive Socket — engineering development release
 
 ## 发布边界
 
-本仓库交付数字机械模型、电路设计配套、PCB/装配视图、Blender 可视化和可测试的策略参考。它不是实物合格证明、生产放行文件或完整校园调度系统。**不得据此直接接入市电或交付使用。** 所有尚未完成的器件选型确认、插接量规、绝缘、温升、EMC 与异常工况验证必须在工程发布说明中保留。
+本仓库交付数字机械模型、电路设计配套、PCB/装配视图、Blender 可视化、已交叉编译的 ESP32-C3 开发固件以及可测试的边缘参考服务。它不是实物合格证明、生产放行文件或完整校园调度系统。**不得据此直接接入市电或交付使用。** 所有尚未完成的器件选型确认、插接量规、绝缘、温升、EMC 与异常工况验证必须在工程发布说明中保留。
 
 - 额定设计目标：220 V AC 场景、16 A 等级候选规格；并非已经验证的额定能力
 - 连接约束：单一三极插接规格，不设计无边界的“万能孔”，不默认兼容其他电流规格插头
@@ -19,6 +19,8 @@ CarbonMirror Unified Adaptive Socket — engineering development release
 - `mechanical/` 参数化机械、零件、STEP、工程视图与几何检查
 - `electronics/` 电路、PCB、BOM、数据手册来源与电气验证状态
 - `visuals/` Blender 场景、渲染、爆炸动画和 GLB
+- `firmware/` ESP-IDF 源代码、默认禁止驱动的开发构建、测试和源摘要
+- `edge/` MQTT/SQLite 边缘参考、建议型削峰与预测基线、能碳核算边界
 - `docs/system/` 云边端架构、负载能力模型与系统验收
 - `tests/` 可重复检查和策略参考测试
 - `scripts/` 交付与构建辅助脚本
@@ -29,3 +31,9 @@ CarbonMirror Unified Adaptive Socket — engineering development release
 首先阅读发布说明和各模块 README。机械尺寸以同一参数源与装配坐标为准。修改 PCB 包络或器件高度后，应重新进行机械装配与视图检查。渲染与动画用于展示，不替代尺寸图及电气审查。
 
 Git 仓库仅在本地建立；未向任何远程仓库发布。
+
+## 修订导航
+
+根目录 mechanical/ 与 electronics/ 下的第一版文件为 Rev A 历史基线。升级设计位于 mechanical/rev_b/、electronics/rev_b/ 和 visuals/rev_b/，不得混用两版的尺寸或验收结论。Rev B 正在进行主板整合与装配核验；在 release 发布清单冻结之前，不将中间布局视为最终设计。
+
+完整数字验收及进入实物阶段的阻断项见 docs/ENGINEERING_RELEASE_GATES.md。开发固件的实际构建和测试证据见 firmware/validation.json；所有网络部署、计量标定与真实硬件测试仍需单独开展。
