@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100">
-<title>碳镜校园：云—边—端控制与数据架构</title><desc>云端目标下发、边缘聚合与能力过滤、端侧安全执行。遥测回传和原生空调接口独立显示。概念设计，未连接硬件。</desc>
+<title>碳镜校园：云—边—端控制与数据架构</title><desc>云端目标下发、边缘聚合与能力过滤、端侧安全执行。遥测回传和原生空调接口独立显示。Rev B 开发架构，云端为规划，未连接真实硬件。</desc>
 <defs><marker id="down" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#1a8179" stroke-width="1.5"/></marker><marker id="up" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#698296" stroke-width="1.5"/></marker></defs>
 <rect width="1600" height="1100" fill="#eef3f1"/>
 <g font-family="Noto Sans CJK SC, sans-serif" fill="#193f45">
@@ -35,5 +35,5 @@
 <path d="M1200 611 H1233" stroke="#1a8179" stroke-width="3" marker-end="url(#down)"/>
 <rect x="1240" y="846" width="290" height="160" rx="18" fill="#e5eae8"/>
 <text x="1265" y="889" font-size="21" font-weight="700">安全实现仍待完成</text><text x="1265" y="930" font-size="18">身份 / 签名 / 安全升级</text><text x="1265" y="967" font-size="18">独立保护 / 实测 / 认证</text>
-<text x="70" y="1055" font-size="18" fill="#617b80">概念评审版 v0.1　·　策略参考为模拟器，未连接硬件　·　箭头表示逻辑数据流，不代表已实现服务</text>
+<text x="70" y="1055" font-size="18" fill="#617b80">Rev B 开发设计　·　端侧固件与边缘参考已有代码　·　云端为系统规划，未连接真实设备</text>
 </g></svg>
