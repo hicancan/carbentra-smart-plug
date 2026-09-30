@@ -1,0 +1,33 @@
+{
+  "artifact": "exports/carbonmirror_twin_light.glb",
+  "status": "READY / final frozen-source lightweight display model",
+  "bytes": 30337768,
+  "sha256": "dc25e3965a9e653eb5c91a4514fcc1a3e051ffa47593778d7e70a71071e439d0",
+  "gltf_version": 2,
+  "nodes": 227,
+  "all_71_physical_mechanical_ids_present": true,
+  "nonphysical_rf_service_envelope_excluded": true,
+  "frozen_input_hashes_match": true,
+  "source_sha256": {
+    "mechanical_manifest": "96a1d2484ba95db6da390857e27b1714b69518533d7c76078a82927e1d9c15c3",
+    "electronics_obj": "9d3e1927e47a9dcc366539ead8625b44891f5d1dd604cf80476d45d9db83803d"
+  },
+  "head_source_sha256": "9a095a489fe6f757b3d6b6c02f4cf17ba14f680e3c856178e25173a6ed7094e1",
+  "optimization": {
+    "full": {
+      "bytes": 73559808,
+      "nodes": 3232,
+      "meshes": 3232
+    },
+    "light": {
+      "bytes": 30337768,
+      "nodes": 227,
+      "meshes": 227
+    },
+    "node_reduction_percent": 93.0,
+    "byte_reduction_percent": 58.8,
+    "all_mechanical_part_names_preserved": true,
+    "method": "Batch actual copper and pad/via meshes by material; omit redundant ref-designator glyph annotations; internal native-CAD display tessellation at 0.04 mm chord / 0.3 rad angular tolerance; full-resolution exterior preserved"
+  },
+  "qualification": "Engineering development; no fabrication or energization authorization"
+}

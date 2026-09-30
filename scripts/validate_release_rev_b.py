@@ -13,6 +13,9 @@ def pinned(base,path,meta):
 m=read('mechanical/rev_b/freeze_manifest.json')
 check('mechanical defined digital checks',m.get('all_defined_digital_checks_pass'))
 for f in m.get('files',[]):pinned(R,f['path'],f)
+detail=read('mechanical/rev_b/detailed_export_report.json')
+if detail.get('output'):pinned(R,detail['output']['path'],detail['output'])
+check('detailed STEP valid roundtrip',detail.get('step_roundtrip_all_valid') and detail.get('relative_summed_volume_difference',1)<1e-6)
 ebase=R/'electronics/rev_b/integrated'
 e=read('electronics/rev_b/integrated/HANDOFF.json')
 for path,meta in e.get('files',{}).items():pinned(ebase,path,meta)
@@ -62,6 +65,8 @@ else:check('actual animation',False)
 for cmd,label in [([sys.executable,'scripts/validate_firmware_evidence.py'],'firmware evidence'),([sys.executable,'-m','unittest','discover','-s','edge/tests'],'edge tests'),([sys.executable,'-m','unittest','discover','-s','tests/policy'],'policy reference tests')]:
  r=subprocess.run(cmd,cwd=R,capture_output=True,text=True);check(label,r.returncode==0,r.stdout+r.stderr)
 review=R/'release/CARBENTRA_RevB_Design_Review_CN.pdf';check('final Chinese review PDF',review.is_file() and review.stat().st_size>1000)
+pq=read('release/review_pdf_qa.json')
+check('final PDF visual QA and hash',pq.get('passed') and pq.get('all_pages_rendered_and_contact_sheet_visually_reviewed') and pq.get('sha256')==sha(review))
 out={'product':'CARBENTRA','revision':'CM-S16-EVT-B','scope':'Frozen digital consistency and software checks only; no physical/electrical certification','release_for_fabrication':False,'release_for_energization':False,'passed':all(c['passed'] for c in checks),'checks':checks}
 (R/'release/digital_checks_rev_b.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps({'passed':out['passed'],'check_count':len(checks),'failures':[c['check'] for c in checks if not c['passed']]},ensure_ascii=False,indent=2));sys.exit(0 if out['passed'] else 1)

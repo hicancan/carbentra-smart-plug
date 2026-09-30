@@ -1,0 +1,25 @@
+{
+  "scope": "Exterior-only frozen surface renders",
+  "brand": "CARBENTRA",
+  "source_scene": "_staged_exterior/carbonmirror_studio.blend",
+  "source_geometry_snapshot": "_preview/source",
+  "exterior_freeze_confirmation": "Mechanical engineer confirmed exterior unchanged through insulation-domain correction; parent explicitly confirmed exterior heroes remain valid",
+  "files": [
+    {
+      "file": "renders/01_hero_ivory.png",
+      "sha256": "8fcd15eb587e28f5b3cdbd539139724fa69c718fcb23039e7cbb0773fc9c01ed",
+      "pixels": [
+        2400,
+        2000
+      ]
+    },
+    {
+      "file": "renders/02_hero_detail.png",
+      "sha256": "160dc9bfb4b2d8861368c36c2b7a754fb83744d6ae5608ea4ebeaffa1ec8b096",
+      "pixels": [
+        2400,
+        2000
+      ]
+    }
+  ]
+}

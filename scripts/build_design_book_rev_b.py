@@ -121,5 +121,5 @@ end()
 
 base('文件使用与工程交接','保留原始设计、生成脚本和验证记录，使下一位设计者可以继续工作。')
 y=690
-for a,b in [('机械与装配','mechanical/rev_b：FreeCAD 参数化源文件、STEP 装配与零件、STL、参数表和检查记录。修改参数后重新生成并执行检查。'),('电气与 PCB','electronics/rev_b：KiCad 工程、原理图、PCB、物料清单、导出与检查。具体开放问题以模块 README 为准。'),('视觉与动画','visuals/rev_b：Blender 场景、渲染图、六视图、动画和 GLB。动画与源场景使用一致装配，不能当成实际制造过程证明。'),('系统与策略','docs/system、firmware、edge、tests/policy：架构、能力模型、真实交叉编译固件、边缘服务与策略参考。示例均不代表真实设备数据。'),('版本与校验','发布包保留 Git 历史的 bundle、文件清单与校验值。仓库未公开发布；修改后应新建提交并重新验证。'),('证据与引用','用户提供的参考图不作为器件内部证据。器件官方来源与选型限制见 electronics，平台核算与协议依据见 docs/system。')]:y=bullet(a,b,y)
+for a,b in [('机械与装配','mechanical/rev_b：FreeCAD 参数化源文件、STEP 装配与零件、STL、参数表和检查记录。修改参数后重新生成并执行检查。'),('电气与 PCB','electronics/rev_b：KiCad 工程、原理图、PCB、物料清单、导出与检查。具体开放问题以模块 README 为准。'),('视觉与动画','visuals/rev_b：Blender 场景、渲染图、六视图、动画和 GLB。动画与源场景使用一致装配，不能当成实际制造过程证明。'),('系统与策略','docs/system、firmware、edge、tests/policy：架构、能力模型、真实交叉编译固件、边缘服务与策略参考。示例均不代表真实设备数据。'),('版本与校验','发布包保留 Git 历史的 bundle、文件清单与校验值。工程尚未成功推送 GitHub；修改后应新建提交并重新验证。'),('证据与引用','用户提供的参考图不作为器件内部证据。器件官方来源与选型限制见 electronics，平台核算与协议依据见 docs/system。')]:y=bullet(a,b,y)
 end();C.save();print(TARGET)

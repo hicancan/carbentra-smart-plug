@@ -1,0 +1,16 @@
+{
+  "full": {
+    "bytes": 73559808,
+    "nodes": 3232,
+    "meshes": 3232
+  },
+  "light": {
+    "bytes": 30337768,
+    "nodes": 227,
+    "meshes": 227
+  },
+  "node_reduction_percent": 93.0,
+  "byte_reduction_percent": 58.8,
+  "all_mechanical_part_names_preserved": true,
+  "method": "Batch actual copper and pad/via meshes by material; omit redundant ref-designator glyph annotations; internal native-CAD display tessellation at 0.04 mm chord / 0.3 rad angular tolerance; full-resolution exterior preserved"
+}

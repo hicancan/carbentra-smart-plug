@@ -1,0 +1,17 @@
+{
+  "status": "READY — complete frozen-source visual deliverables validated",
+  "final_promotable": [
+    "renders/*.png",
+    "exports/carbonmirror_twin_light.glb",
+    "exports/carbonmirror_assembly.glb",
+    "carbonmirror_studio.blend",
+    "carbonmirror_animation.blend",
+    "animation/carbonmirror_exploded.mp4"
+  ],
+  "superseded_pending_regeneration": [],
+  "reason": "All digital checks handed off; non-physical RF service reservation excluded from product renders",
+  "mechanical_manifest_sha256": "96a1d2484ba95db6da390857e27b1714b69518533d7c76078a82927e1d9c15c3",
+  "freeze_manifest_sha256": "96fddaec786c32eaefd255091b565d8e133ffe1747e9f19807c481eaf1cdf10b",
+  "pending_completion": [],
+  "validation_report": "exports/deliverables_validation.json"
+}

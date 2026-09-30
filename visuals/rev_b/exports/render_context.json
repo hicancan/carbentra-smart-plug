@@ -1,0 +1,16 @@
+{
+  "revision": "CM-S16-EVT-B",
+  "enclosure_mm": {
+    "width": 108,
+    "height": 93,
+    "depth": 65,
+    "corner_radius": 14,
+    "wall": 2.4,
+    "rear_floor": 3,
+    "split_z": 56,
+    "front_wall": 2.4
+  },
+  "source_root": "/workspace/scratch/abc8258751a2/carbonmirror-socket",
+  "status": "Engineering development; verification pending",
+  "annotation_language": "zh"
+}

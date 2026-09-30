@@ -1,0 +1,168 @@
+{
+  "status": "READY — all final stills rendered and visually inspected",
+  "brand": "CARBENTRA",
+  "files": [
+    {
+      "file": "renders/01_hero_ivory.png",
+      "bytes": 6519041,
+      "pixels": [
+        2400,
+        2000
+      ],
+      "sha256": "8fcd15eb587e28f5b3cdbd539139724fa69c718fcb23039e7cbb0773fc9c01ed"
+    },
+    {
+      "file": "renders/02_hero_detail.png",
+      "bytes": 6294299,
+      "pixels": [
+        2400,
+        2000
+      ],
+      "sha256": "160dc9bfb4b2d8861368c36c2b7a754fb83744d6ae5608ea4ebeaffa1ec8b096"
+    },
+    {
+      "file": "renders/03_rear_interface.png",
+      "bytes": 5174681,
+      "pixels": [
+        2400,
+        2000
+      ],
+      "sha256": "1838d7d90096825e12320974c0c5a44f25ccfe92fe8979a011041dc7fe6436ec"
+    },
+    {
+      "file": "renders/04_internal_architecture.png",
+      "bytes": 7157475,
+      "pixels": [
+        2400,
+        2000
+      ],
+      "sha256": "3833c21aa5c7bf3592cfabe9e986e7588326e382406758ea3d426367a79340bc"
+    },
+    {
+      "file": "renders/05_transparent_inspection.png",
+      "bytes": 7448696,
+      "pixels": [
+        2400,
+        2000
+      ],
+      "sha256": "cca6f0a2da74caee9fa1bef2b75fc97c8e52c1b02ba42a5d257ffd3190c1c515"
+    },
+    {
+      "file": "renders/06_exploded_annotated.png",
+      "bytes": 1454899,
+      "pixels": [
+        3400,
+        3100
+      ],
+      "sha256": "e4c12243f5d06657064925e1b05a01ede9b96ea6415d7218fa0a585d1468eb78"
+    },
+    {
+      "file": "renders/06_exploded_raw.png",
+      "bytes": 4628987,
+      "pixels": [
+        2400,
+        2600
+      ],
+      "sha256": "f0370ccb71b410f5618db5fbca60c5fa5064cd584d7334b71cb188d393ce6b8a"
+    },
+    {
+      "file": "renders/07_six_view_sheet.png",
+      "bytes": 1861267,
+      "pixels": [
+        3400,
+        2800
+      ],
+      "sha256": "9dec34479446b0b40dd4af5fc333eb0f9a6fcf9928ff6f035738a538fa0c4ab1"
+    },
+    {
+      "file": "renders/08_section_annotated.png",
+      "bytes": 1540462,
+      "pixels": [
+        3000,
+        2800
+      ],
+      "sha256": "a2c7279946ec1b0ea41ad9d29e453d62bcf05764c53ac66b1f453e1b0f25fcc5"
+    },
+    {
+      "file": "renders/08_section_raw.png",
+      "bytes": 3580291,
+      "pixels": [
+        2400,
+        2000
+      ],
+      "sha256": "bd384eaf22dcc18150149744de6f39b35b3031c03b43b686d6ce38a84cfc2be3"
+    },
+    {
+      "file": "renders/09_pcb_annotated.png",
+      "bytes": 6263163,
+      "pixels": [
+        3000,
+        2800
+      ],
+      "sha256": "ac2d824befeec641bd4500d0789ce5cff3b5611a63608555a2547b75d25964d7"
+    },
+    {
+      "file": "renders/09_pcb_assembly.png",
+      "bytes": 7502032,
+      "pixels": [
+        2400,
+        2000
+      ],
+      "sha256": "c3e37cd77d78fc7cc5ee18278259e75c769f51727dcc60d1527677256704b9ae"
+    },
+    {
+      "file": "renders/view_bottom.png",
+      "bytes": 1502126,
+      "pixels": [
+        1400,
+        1400
+      ],
+      "sha256": "eff1b8ae56fb55449c52c60891460c4b4a12b3d8dadbdb8021ff9b61e4518a45"
+    },
+    {
+      "file": "renders/view_front.png",
+      "bytes": 1602376,
+      "pixels": [
+        1400,
+        1400
+      ],
+      "sha256": "a3f052ad479020564e485a2feb7cd5bd9e8ec4299d764b8361adee41f4f954a6"
+    },
+    {
+      "file": "renders/view_left.png",
+      "bytes": 1450352,
+      "pixels": [
+        1400,
+        1400
+      ],
+      "sha256": "be2fa749b57c05e7d87d10c0ec76f1ab1300885a104e6e6d86b6d5b906b46fbc"
+    },
+    {
+      "file": "renders/view_rear.png",
+      "bytes": 1450820,
+      "pixels": [
+        1400,
+        1400
+      ],
+      "sha256": "301581ac429093c90ea817c2899f3e8a3cf8457577be40757b649864885fb958"
+    },
+    {
+      "file": "renders/view_right.png",
+      "bytes": 1512790,
+      "pixels": [
+        1400,
+        1400
+      ],
+      "sha256": "ca0709e57c88d1417257e2dd52c9860e45eedfa3a77a930ddaab5d17ef22c7b3"
+    },
+    {
+      "file": "renders/view_top.png",
+      "bytes": 1519736,
+      "pixels": [
+        1400,
+        1400
+      ],
+      "sha256": "2e08c1a3968c5892e4f9e2c01d332f070dcbcda227b1e927abeff70c7223722e"
+    }
+  ]
+}

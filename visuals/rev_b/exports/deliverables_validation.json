@@ -1,0 +1,166 @@
+{
+  "status": "Engineering development; verification pending",
+  "deliverables": [
+    {
+      "file": "carbonmirror_studio.blend",
+      "bytes": 71934012,
+      "sha256": "312a35e62b5f1e2f8be96cc11e98d845fc1409c1abd836f56c3744d75f9c5d4d"
+    },
+    {
+      "file": "carbonmirror_animation.blend",
+      "bytes": 27581059,
+      "sha256": "8ad4790c931c87dc72491500a74c462d371f5a0f1896a9c89e2507bd3eafe877"
+    },
+    {
+      "file": "exports/carbonmirror_assembly.glb",
+      "bytes": 73559808,
+      "sha256": "9ada23dabb3b9b1bf728946e9adae17eb58f407cd4af545b2222740806d9a159"
+    },
+    {
+      "file": "exports/carbonmirror_twin_light.glb",
+      "bytes": 30337768,
+      "sha256": "dc25e3965a9e653eb5c91a4514fcc1a3e051ffa47593778d7e70a71071e439d0"
+    },
+    {
+      "file": "animation/carbonmirror_exploded.mp4",
+      "bytes": 1098532,
+      "sha256": "819613b8f59d86eda9998e2ac80e9e9406e48efb03af68be05245358d7bb1138"
+    },
+    {
+      "file": "renders/01_hero_ivory.png",
+      "bytes": 6519041,
+      "sha256": "8fcd15eb587e28f5b3cdbd539139724fa69c718fcb23039e7cbb0773fc9c01ed",
+      "pixels": [
+        2400,
+        2000
+      ]
+    },
+    {
+      "file": "renders/02_hero_detail.png",
+      "bytes": 6294299,
+      "sha256": "160dc9bfb4b2d8861368c36c2b7a754fb83744d6ae5608ea4ebeaffa1ec8b096",
+      "pixels": [
+        2400,
+        2000
+      ]
+    },
+    {
+      "file": "renders/03_rear_interface.png",
+      "bytes": 5174681,
+      "sha256": "1838d7d90096825e12320974c0c5a44f25ccfe92fe8979a011041dc7fe6436ec",
+      "pixels": [
+        2400,
+        2000
+      ]
+    },
+    {
+      "file": "renders/04_internal_architecture.png",
+      "bytes": 7157475,
+      "sha256": "3833c21aa5c7bf3592cfabe9e986e7588326e382406758ea3d426367a79340bc",
+      "pixels": [
+        2400,
+        2000
+      ]
+    },
+    {
+      "file": "renders/05_transparent_inspection.png",
+      "bytes": 7448696,
+      "sha256": "cca6f0a2da74caee9fa1bef2b75fc97c8e52c1b02ba42a5d257ffd3190c1c515",
+      "pixels": [
+        2400,
+        2000
+      ]
+    },
+    {
+      "file": "renders/06_exploded_annotated.png",
+      "bytes": 1454899,
+      "sha256": "e4c12243f5d06657064925e1b05a01ede9b96ea6415d7218fa0a585d1468eb78",
+      "pixels": [
+        3400,
+        3100
+      ]
+    },
+    {
+      "file": "renders/07_six_view_sheet.png",
+      "bytes": 1861267,
+      "sha256": "9dec34479446b0b40dd4af5fc333eb0f9a6fcf9928ff6f035738a538fa0c4ab1",
+      "pixels": [
+        3400,
+        2800
+      ]
+    },
+    {
+      "file": "renders/08_section_annotated.png",
+      "bytes": 1540462,
+      "sha256": "a2c7279946ec1b0ea41ad9d29e453d62bcf05764c53ac66b1f453e1b0f25fcc5",
+      "pixels": [
+        3000,
+        2800
+      ]
+    },
+    {
+      "file": "renders/09_pcb_annotated.png",
+      "bytes": 6263163,
+      "sha256": "ac2d824befeec641bd4500d0789ce5cff3b5611a63608555a2547b75d25964d7",
+      "pixels": [
+        3000,
+        2800
+      ]
+    }
+  ],
+  "glb_nodes": 3232,
+  "glb_meshes": 3232,
+  "all_mechanical_source_ids_present": true,
+  "video": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 1280,
+        "height": 1280,
+        "r_frame_rate": "24/1",
+        "nb_frames": "144"
+      }
+    ],
+    "format": {
+      "duration": "6.000000"
+    }
+  },
+  "current_source_hashes_match": true,
+  "nonphysical_envelopes_excluded": [
+    "RFServiceSlackEnvelope"
+  ],
+  "light_model_validation": {
+    "artifact": "exports/carbonmirror_twin_light.glb",
+    "status": "READY / final frozen-source lightweight display model",
+    "bytes": 30337768,
+    "sha256": "dc25e3965a9e653eb5c91a4514fcc1a3e051ffa47593778d7e70a71071e439d0",
+    "gltf_version": 2,
+    "nodes": 227,
+    "all_71_physical_mechanical_ids_present": true,
+    "nonphysical_rf_service_envelope_excluded": true,
+    "frozen_input_hashes_match": true,
+    "source_sha256": {
+      "mechanical_manifest": "96a1d2484ba95db6da390857e27b1714b69518533d7c76078a82927e1d9c15c3",
+      "electronics_obj": "9d3e1927e47a9dcc366539ead8625b44891f5d1dd604cf80476d45d9db83803d"
+    },
+    "head_source_sha256": "9a095a489fe6f757b3d6b6c02f4cf17ba14f680e3c856178e25173a6ed7094e1",
+    "optimization": {
+      "full": {
+        "bytes": 73559808,
+        "nodes": 3232,
+        "meshes": 3232
+      },
+      "light": {
+        "bytes": 30337768,
+        "nodes": 227,
+        "meshes": 227
+      },
+      "node_reduction_percent": 93.0,
+      "byte_reduction_percent": 58.8,
+      "all_mechanical_part_names_preserved": true,
+      "method": "Batch actual copper and pad/via meshes by material; omit redundant ref-designator glyph annotations; internal native-CAD display tessellation at 0.04 mm chord / 0.3 rad angular tolerance; full-resolution exterior preserved"
+    },
+    "qualification": "Engineering development; no fabrication or energization authorization"
+  }
+}

@@ -49,7 +49,8 @@ def material_for(n):
  if n.startswith('powercore'):return 'brass'
  if n.startswith(('powercarrier','bladesleeve','pechannel','rearfinish')):return 'dark'
  if n.startswith('fuselead'):return 'brass'
- if n.startswith('antenna'):return 'black'
+ if n.startswith(('antenna','rfantenna','rfcoax','headpigtail')):return 'black'
+ if n.startswith(('rfconnector','headconnector')):return 'steel'
  if n.startswith('wirecore'):return 'brass'
  if n.startswith('wirejacket'):return 'wireblue' if '_n_' in n or n.endswith('_n') else 'wirebrown'
  if any(x in n for x in ['led','light','lens']):return 'led'
@@ -68,6 +69,7 @@ entries=raw.get('parts',[]) if isinstance(raw,dict) else raw
 for e in entries:meta[e.get('id',e.get('name',''))]=e
 if not entries:raise RuntimeError('Mechanical manifest required')
 for entry in entries:
+ if entry.get('render_default',True) is False or entry.get('geometry_role')=='clearance_envelope':continue
  p=MECH/entry['file']
  o=import_stl(p,entry['id']);parts.append(o);assign(o,material_for(o.name))
  if o.name in ('LightGuide','StatusLightGuide'):
@@ -93,7 +95,7 @@ for p,z_mm in pcb_inputs:
 if not parts:raise RuntimeError('Common engineering meshes missing; no substitute geometry generated')
 for o in parts:o['source']='Common CAD/ECAD engineering model';o['development_status']='Engineering development; verification pending'
 bpy.context.view_layer.update()
-validation={'units':'metres','parts':len(parts),'mechanical_source':str(mf),'electronic_source':str(PCB_OBJ),'bounds':{},'source_sha256':{'mechanical_manifest':hashlib.sha256(mf.read_bytes()).hexdigest(),'electronics_obj':hashlib.sha256(PCB_OBJ.read_bytes()).hexdigest()}}
+validation={'excluded_nonphysical_envelopes':[e['id'] for e in entries if e.get('render_default',True) is False or e.get('geometry_role')=='clearance_envelope'],'units':'metres','parts':len(parts),'mechanical_source':str(mf),'electronic_source':str(PCB_OBJ),'bounds':{},'source_sha256':{'mechanical_manifest':hashlib.sha256(mf.read_bytes()).hexdigest(),'electronics_obj':hashlib.sha256(PCB_OBJ.read_bytes()).hexdigest()}}
 for o in parts:
  points=[o.matrix_world@v.co for v in o.data.vertices]
  bb=[min(v[i] for v in points) for i in range(3)]+[max(v[i] for v in points) for i in range(3)]
@@ -132,7 +134,7 @@ parts+=branding
 board_labels=[]
 for o in list(electronics):
  n=o.name.removeprefix('MainB_').removeprefix('HeadB_')
- if n.startswith(('Pad_','PCB_','Copper_','Via_')):continue
+ if n.startswith(('Pad_','PCB_','Copper_','Via_','GND_HEAD_')) or n.endswith('_FR4'):continue
  points=[o.matrix_world@Vector(c) for c in o.bound_box];lo=[min(v[i] for v in points) for i in range(3)];hi=[max(v[i] for v in points) for i in range(3)]
  if hi[0]-lo[0]<.008 or hi[1]-lo[1]<.006:continue
  ref=n.split('_')[0];label=text(ref,'PCB reference / '+ref,.00165,((lo[0]+hi[0])/2,(lo[1]+hi[1])/2,hi[2]+.000035),'white');label['representation']='Visual inspection reference designator';label['source_component']=o.name;board_labels.append(label)
@@ -186,9 +188,10 @@ def render(name,size=(2400,2000),samples=256):
 spacing={-40:-40,-35:-35,-25:-25,-24:-24,0:0,8:8,10:10,12:12,22:40,25:45,36:68,37:55,46:62,62:80,64:80}
 def explosion_vector_mm(o):
  if params.get('revision','').endswith('-B'):
-  if o in electronics:return (18,0,25) if o.name.startswith('HeadB_') or o.get('source_component','').startswith('HeadB_') else (0,0,8)
-  if o in branding:return (0,0,65)
-  return tuple(meta.get(o.name,{}).get('explode',[0,0,0]))
+  if o in electronics:return (25,0,35) if o.name.startswith('HeadB_') or o.get('source_component','').startswith('HeadB_') else (0,0,8)
+  if o in branding:return (0,0,90)
+  e=meta.get(o.name,{})
+  return {'front':(0,0,90),'rear':(0,0,-30),'shutter':(0,0,65),'contact_carrier':(0,0,35),'thermal':(25,0,35),'main_fuse':(-25,0,35)}.get(e.get('group'),tuple(e.get('explode',[0,0,0])))
  if o in electronics:return (0,0,20)
  if o in branding:return (0,0,80)
  z=meta.get(o.name,{}).get('presentation_explode_mm',spacing.get(meta.get(o.name,{}).get('explode',[0,0,0])[2],meta.get(o.name,{}).get('explode',[0,0,0])[2]))
@@ -211,6 +214,7 @@ def save_export():
 if MODE!='animation':save_export()
 if MODE=='views':
  if MODE=='technical_preview':sys.exit(0)
+ if os.environ.get('CM_SKIP_VIEWS'):save_export();sys.exit(0)
  reset();floor.hide_render=True;scene.render.film_transparent=True;scene.render.engine='CYCLES'
  for name,pos in [('front',(0,0,.3)),('rear',(0,0,-.3)),('left',(-.3,0,.0175)),('right',(.3,0,.0175)),('top',(0,.3,.0175)),('bottom',(0,-.3,.0175))]:
   camera(pos,(0,0,.0175),.13);rear_light.hide_render=name=='front';render('view_'+name,(1400,1400),96);rear_light.hide_render=True
@@ -233,7 +237,7 @@ if MODE in ('stills','all','hero','hero_detail','technical','technical_preview')
  reset();floor.hide_render=True;camera((.14,.145,-.17),(0,0,.02));rear_light.hide_render=False;render('03_rear_interface',samples=128);rear_light.hide_render=True
  reset()
  for o in parts:
-  if o not in electronics:o.hide_render=True
+  if o not in electronics or o.name.startswith('HeadB_') or o.get('source_component','').startswith('HeadB_'):o.hide_render=True
  camera((.09,-.12,.17),(0,0,.014),.12);render('09_pcb_assembly',samples=128)
  reset()
  for o in parts:
@@ -258,12 +262,24 @@ if MODE in ('stills','all','hero','hero_detail','technical','technical_preview')
  for o in section+[cutter]:bpy.data.objects.remove(o,do_unlink=True)
  reset();explode();floor.hide_render=True;scene.render.film_transparent=True;camera((.17,-.27,.2),(0,0,.04),.28);render('06_exploded_raw',(2400,2600),128)
  if MODE=='technical_preview':sys.exit(0)
+ if os.environ.get('CM_SKIP_VIEWS'):save_export();sys.exit(0)
  reset();floor.hide_render=True;scene.render.film_transparent=True;scene.render.engine='CYCLES'
  for name,pos in [('front',(0,0,.3)),('rear',(0,0,-.3)),('left',(-.3,0,.0175)),('right',(.3,0,.0175)),('top',(0,.3,.0175)),('bottom',(0,-.3,.0175))]:
   camera(pos,(0,0,.0175),.13);rear_light.hide_render=name=='front';render('view_'+name,(1400,1400),96);rear_light.hide_render=True
  save_export()
 if MODE in ('animation','all'):
  reset()
+ if os.environ.get('CM_ANIMATION_LOD_DIR'):
+  lod=Path(os.environ['CM_ANIMATION_LOD_DIR']);scene['animation_display_tessellation_chord_mm']=.04;scene['animation_display_tessellation_angular_rad']=.3;scene['animation_lod_manifest']=str(lod/'lod_manifest.json')
+  for o in parts:
+   p=lod/(o.name+'.stl')
+   if o.name in meta and p.exists():
+    oldm=list(o.data.materials);tmp=import_stl(p,'Temporary animation LOD');o.data=tmp.data.copy();bpy.data.objects.remove(tmp,do_unlink=True)
+    o.data.materials.clear()
+    for m in oldm:o.data.materials.append(m)
+    o['animation_lod_chord_mm']=.04
+   for mod in list(o.modifiers):
+    if mod.type=='BEVEL':o.modifiers.remove(mod)
  # Render-only rigid-layer batching keeps identical geometry and improves CPU viewport throughput.
  # Main .blend and GLB remain individually selectable. The animation source records every member.
  layers={}
@@ -277,21 +293,24 @@ if MODE in ('animation','all'):
   bpy.context.view_layer.objects.active=items[0];bpy.ops.object.convert(target='MESH');bpy.ops.object.join();o=bpy.context.object;o.name='Rigid layer / '+str(z)+' mm';o['source_members']=json.dumps(names);meta[o.name]={'explode':list(z),'presentation_explode_mm':z[2]};animated.append(o)
  parts=animated;electronics=[];branding=[];basepos={o.name:o.location.copy() for o in parts}
  floor.hide_render=True;workbench();scene.render.resolution_x=1280;scene.render.resolution_y=1280
- scene.render.fps=24;scene.frame_start=1;scene.frame_end=192
- for frame,f in [(1,0),(36,0),(90,1),(120,1),(174,0),(192,0)]:
+ scene.render.fps=24;scene.frame_start=1;scene.frame_end=144
+ for frame,f in [(1,0),(18,0),(60,1),(84,1),(126,0),(144,0)]:
   explode(f)
   for o in parts:o.keyframe_insert(data_path='location',frame=frame)
-  ang=math.radians(-50+(frame-1)*.45);camera((.22*math.cos(ang),.22*math.sin(ang),.23),(0,0,.022+.0155*f),.28)
+  ang=math.radians(-50+(frame-1)*.22);camera((.22*math.cos(ang),.22*math.sin(ang),.23),(0,0,.022+.0155*f),.28)
   cam.keyframe_insert(data_path='location',frame=frame);cam.keyframe_insert(data_path='rotation_euler',frame=frame)
  framing={}
- for frame in [1,36,60,90,120,150,174,192]:
+ for frame in [1,18,40,60,84,105,126,144]:
   scene.frame_set(frame);qs=[world_to_camera_view(scene,cam,o.matrix_world@Vector(c)) for o in parts for c in o.bound_box]
   framing[str(frame)]={'min_xy':[min(q[i] for q in qs) for i in range(2)],'max_xy':[max(q[i] for q in qs) for i in range(2)]}
  (OUT/'animation/framing_validation.json').write_text(json.dumps(framing,indent=2))
  if any(min(v['min_xy'])<.025 or max(v['max_xy'])>.975 for v in framing.values()):raise RuntimeError('Animation framing guard: part would approach edge')
  frames=OUT/'animation/frames';frames.mkdir(parents=True,exist_ok=True)
  scene.render.image_settings.file_format='PNG';scene.render.filepath=str(frames/'frame_')
- scene.frame_set(1);bpy.ops.file.pack_all();bpy.ops.wm.save_as_mainfile(filepath=str(OUT/'carbonmirror_animation.blend'),compress=True);bpy.ops.render.render(animation=True)
+ scene.frame_set(1);bpy.ops.file.pack_all();bpy.ops.wm.save_as_mainfile(filepath=str(OUT/'carbonmirror_animation.blend'),compress=True)
+ if os.environ.get('CM_ANIMATION_BENCHMARK'):scene.frame_start=60;scene.frame_end=62
+ bpy.ops.render.render(animation=True)
+ if os.environ.get('CM_ANIMATION_BENCHMARK'):sys.exit(0)
  subprocess.run(['ffmpeg','-y','-framerate','24','-i',str(frames/'frame_%04d.png'),'-vf',"drawtext=fontfile=/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc:text='CARBENTRA · 碳镜校园  /  分层结构演示':fontsize=32:fontcolor=0x173c40:x=55:y=45,drawtext=fontfile=/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc:text='工程开发版本  •  待实物与安全验证':fontsize=19:fontcolor=0x526d6e:x=55:y=1220",'-c:v','libx264','-crf','18','-pix_fmt','yuv420p','-movflags','+faststart',str(OUT/'animation/carbonmirror_exploded.mp4')],check=True)
 
 print('STUDIO COMPLETE',MODE)

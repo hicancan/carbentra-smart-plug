@@ -1,0 +1,177 @@
+{
+  "scope": "Digital artifact consistency only; no physical/electrical certification",
+  "release_for_fabrication": false,
+  "passed": false,
+  "checks": [
+    {
+      "check": "mechanical/*.FCStd",
+      "passed": true,
+      "detail": "2 files"
+    },
+    {
+      "check": "mechanical/step/*.step",
+      "passed": true,
+      "detail": "54 files"
+    },
+    {
+      "check": "mechanical/meshes/*.stl",
+      "passed": true,
+      "detail": "54 files"
+    },
+    {
+      "check": "electronics/*.kicad_sch",
+      "passed": true,
+      "detail": "1 files"
+    },
+    {
+      "check": "electronics/*.kicad_pcb",
+      "passed": true,
+      "detail": "2 files"
+    },
+    {
+      "check": "visuals/*.blend",
+      "passed": true,
+      "detail": "2 files"
+    },
+    {
+      "check": "visuals/exports/*.glb",
+      "passed": true,
+      "detail": "1 files"
+    },
+    {
+      "check": "visuals/animation/*.mp4",
+      "passed": false,
+      "detail": "0 files"
+    },
+    {
+      "check": "mechanical solid validity",
+      "passed": true,
+      "detail": "{\"engine\": \"FreeCAD 1.0.0\", \"parts\": 54, \"all_shapes_valid\": true, \"all_single_solid\": true, \"intersections\": [{\"a\": \"PEBus\", \"b\": \"Blade_PE\", \"volume_mm3\": 1.1999999999999997, \"intentional\": true}, {\"a\": \"PEBus\", \"b\": \"Contact_PE\", \"volume_mm3\": 0.8999999999999915, \"intentional\": true}, {\"a\": \"Blade_L\", \"b\": \"WireCore_L_IN_PRE\", \"volume_mm3\": 0.9991404524008309, \"intentional\": true}, {\"a\": \"Contact_L\", \"b\": \"WireCore_L_OUT\", \"volume_mm3\": 0.9733701238372341, \"intentional\": true}, {\"a\": \"Blade_N\", \"b\": \"WireCore_N_IN\", \"volume_mm3\": 1.056752323602986, \"intentional\": true}, {\"a\": \"Contact_N\", \"b\": \"WireCore_N_OUT\", \"volume_mm3\": 0.9733701238372341, \"intentional\": true}, {\"a\": \"AntennaFPC\", \"b\": \"AntennaCoax\", \"volume_mm3\": 0.00039584067100286536, \"intentional\": true}, {\"a\": \"FuseCap1\", \"b\": \"FuseLead1\", \"volume_mm3\": 0.6544984694978738, \"intentional\": true}, {\"a\": \"FuseCap2\", \"b\": \"FuseLead2\", \"volume_mm3\": 0.6544984694978739, \"intentional\": true}, {\"a\": \"FuseLead1\", \"b\": \"WireCore_L_IN_PRE\", \"volume_mm3\": 0.6869204788965917, \"intentional\": true}, {\"a\": \"FuseLead2\", \"b\": \"WireCore_L_FUSE_THERMAL\", \"volume_mm3\": 0.7089813618237883, \"intentional\": true}, {\"a\": \"ThermalBody\", \"b\": \"ThermalLead1\", \"volume_mm3\": 0.11780972450961688, \"intentional\": true}, {\"a\": \"ThermalBody\", \"b\": \"ThermalLead2\", \"volume_mm3\": 0.11780972450961688, \"intentional\": true}, {\"a\": \"ThermalLead1\", \"b\": \"WireCore_L_IN_POST\", \"volume_mm3\": 0.43525197611995003, \"intentional\": true}, {\"a\": \"ThermalLead2\", \"b\": \"WireCore_L_FUSE_THERMAL\", \"volume_mm3\": 2.017977617053258, \"intentional\": true}, {\"a\": \"AuxFuseCap1\", \"b\": \"AuxFuseLead1\", \"volume_mm3\": 0.0995492172106265, \"intentional\": true}, {\"a\": \"AuxFuseCap2\", \"b\": \"AuxFuseLead2\", \"volume_mm3\": 0.09954921721062648, \"intentional\": true}, {\"a\": \"AuxFuseLead1\", \"b\": \"WireCore_AUX_L_IN\", \"volume_mm3\": 0.07213243406078726, \"intentional\": true}, {\"a\": \"AuxFuseLead2\", \"b\": \"WireCore_AUX_L_OUT\", \"volume_mm3\": 0.07189665687434134, \"intentional\": true}, {\"a\": \"WireCore_L_IN_POST\", \"b\": \"WireCore_AUX_L_IN\", \"volume_mm3\": 0.2799556155461622, \"intentional\": true}, {\"a\": \"WireJacket_L_IN_POST\", \"b\": \"WireJacket_AUX_L_IN\", \"volume_mm3\": 3.5574052594984127, \"intentional\": true}, {\"a\": \"WireCore_N_IN\", \"b\": \"WireCore_AUX_N\", \"volume_mm3\": 0.28062071295698127, \"intentional\": true}, {\"a\": \"WireJacket_N_IN\", \"b\": \"WireJacket_AUX_N\", \"volume_mm3\": 3.5097558718395914, \"intentional\": true}], \"note\": \"Interference audit is geometric only. Electrical safety, creepage, contact force, shutter operation, tolerances, standards and certification are NOT validated.\"}"
+    },
+    {
+      "check": "no unintended mechanical intersections",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "native CAD reload",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "CAD parameter recompute",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "PCB body fit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "component envelope fit",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "check": "insertion corridors",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "KiCad ERC report",
+      "passed": true,
+      "detail": "ERC report (2026-09-30T02:02:20-0700, Encoding UTF8)\n\n***** Sheet /\n\n ** ERC messages: 0  Errors 0  Warnings 0\n"
+    },
+    {
+      "check": "KiCad geometric DRC",
+      "passed": true,
+      "detail": "Found 0 DRC violations"
+    },
+    {
+      "check": "fabrication hold retained",
+      "passed": true,
+      "detail": "Electrical completion not inferred from geometric DRC."
+    },
+    {
+      "check": "low-voltage connectivity",
+      "passed": true,
+      "detail": "Mains unconnected count: 9"
+    },
+    {
+      "check": "canonical board hash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "schematic to PCB pin-net consistency",
+      "passed": true,
+      "detail": "104 assigned pins"
+    },
+    {
+      "check": "full exported ECAD solid fit",
+      "passed": true,
+      "detail": "970 electronic solids"
+    },
+    {
+      "check": "required render 01_hero_ivory",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "required render 02_hero_detail",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "required render 03_rear_interface",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "required render 04_internal_architecture",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "check": "required render 05_transparent_inspection",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "check": "required render 06_exploded_raw",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "check": "required render 07_six_view_sheet",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "required render 08_section_raw",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "check": "required render 09_pcb_assembly",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "GLB header carbonmirror_assembly.glb",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "GLB named meshes carbonmirror_assembly.glb",
+      "passed": true,
+      "detail": "1032 meshes"
+    },
+    {
+      "check": "policy reference unit tests",
+      "passed": true,
+      "detail": "test_authentication_and_authorization (test_policy.PolicyTests.test_authentication_and_authorization) ... ok\ntest_critical_load (test_policy.PolicyTests.test_critical_load) ... ok\ntest_duplicate_cannot_suppress_local_trip (test_policy.PolicyTests.test_duplicate_cannot_suppress_local_trip) ... ok\ntest_duplicate_no_reactuation (test_policy.PolicyTests.test_duplicate_no_reactuation) ... ok\ntest_dwell (test_policy.PolicyTests.test_dwell) ... ok\ntest_expired (test_policy.PolicyTests.test_expired) ... ok\ntest_fault_latched_no_remote_restore (test_policy.PolicyTests.test_fault_latched_no_remote_restore) ... ok\ntest_future_command (test_policy.PolicyTests.test_future_command) ... ok\ntest_id_conflict (test_policy.PolicyTests.test_id_conflict) ... ok\ntest_local_idle (test_policy.PolicyTests.test_local_idle) ... ok\ntest_local_safety_outranks_everything (test_policy.PolicyTests.test_local_safety_outranks_everything) ... ok\ntest_normal_interface_ac_not_mains_chopped (test_policy.PolicyTests.test_normal_interface_ac_not_mains_chopped) ... ok\ntest_offline_holds_state (test_policy.PolicyTests.test_offline_holds_state) ... ok\ntest_overlong_ttl (test_policy.PolicyTests.test_overlong_ttl) ... ok\ntest_reconnected_old_command_rejected (test_policy.PolicyTests.test_reconnected_old_command_rejected) ... ok\ntest_replay_sequence (test_policy.PolicyTests.test_replay_sequence) ... ok\ntest_restore_after_dwell (test_policy.PolicyTests.test_restore_after_dwell) ... ok\ntest_stale_and_future_and_invalid_samples (test_policy.PolicyTests.test_stale_and_future_and_invalid_samples) ... ok\ntest_unapproved (test_policy.PolicyTests.test_unapproved) ... ok\ntest_unknown_monitor_only (test_policy.PolicyTests.test_unknown_monitor_only) ... ok\ntest_untrusted_clock (test_policy.PolicyTests.test_untrusted_clock) ... ok\ntest_valid_shed (test_policy.PolicyTests.test_valid_shed) ... ok\ntest_voltage_modulation_rejected (test_policy.PolicyTests.test_voltage_modulation_rejected) ... ok\ntest_wrong_device_and_profile (test_policy.PolicyTests.test_wrong_device_and_profile) ... ok\n\n----------------------------------------------------------------------\nRan 24 tests in 0.002s\n\nOK\n"
+    }
+  ]
+}

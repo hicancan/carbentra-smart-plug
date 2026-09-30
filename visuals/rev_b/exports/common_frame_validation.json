@@ -1,0 +1,733 @@
+{
+  "status": "Final frozen common-frame source comparison",
+  "mainboard_parts_checked": 144,
+  "all_pass": true,
+  "maximum_error_mm": 0.0008801311255979272,
+  "checks": [
+    {
+      "id": "MainB_PCB_100x85_R10_4layer",
+      "max_error_mm": 7.450580596923828e-07,
+      "pass": true
+    },
+    {
+      "id": "MainB_CX201",
+      "max_error_mm": 3.7550926208496094e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R201",
+      "max_error_mm": 1.752376554975399e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_J102",
+      "max_error_mm": 1.0937452330495034e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_J102_Pin1",
+      "max_error_mm": 8.970499045801716e-07,
+      "pass": true
+    },
+    {
+      "id": "MainB_J102_Pin2",
+      "max_error_mm": 8.970499045801716e-07,
+      "pass": true
+    },
+    {
+      "id": "MainB_R105",
+      "max_error_mm": 4.3272972050090175e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_C101",
+      "max_error_mm": 4.3660402582190727e-07,
+      "pass": true
+    },
+    {
+      "id": "MainB_R103",
+      "max_error_mm": 2.2441148743723716e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_C107",
+      "max_error_mm": 1.2904405579661216e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_U103",
+      "max_error_mm": 8.80658625135311e-07,
+      "pass": true
+    },
+    {
+      "id": "MainB_C203",
+      "max_error_mm": 1.463294026393669e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R101",
+      "max_error_mm": 2.676248556099381e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R202",
+      "max_error_mm": 2.1100044236277427e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R405",
+      "max_error_mm": 4.7147273960490566e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_J104",
+      "max_error_mm": 1.900196075155236e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_J104_Tail1",
+      "max_error_mm": 0.00011824020025841264,
+      "pass": true
+    },
+    {
+      "id": "MainB_J104_Tail2",
+      "max_error_mm": 0.00011824020025841264,
+      "pass": true
+    },
+    {
+      "id": "MainB_J104_Tail3",
+      "max_error_mm": 0.00011824020025841264,
+      "pass": true
+    },
+    {
+      "id": "MainB_J104_Tail4",
+      "max_error_mm": 0.00011824020025841264,
+      "pass": true
+    },
+    {
+      "id": "MainB_J104_Tail5",
+      "max_error_mm": 0.00011824020025841264,
+      "pass": true
+    },
+    {
+      "id": "MainB_CP203",
+      "max_error_mm": 2.804398533839958e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_RS201",
+      "max_error_mm": 2.579092978294284e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_CV201",
+      "max_error_mm": 3.5941600771138837e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_CI202",
+      "max_error_mm": 1.418590542812126e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R111",
+      "max_error_mm": 4.386901849784408e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R404",
+      "max_error_mm": 3.999471658744369e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_C205",
+      "max_error_mm": 1.8209218950460127e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_U101",
+      "max_error_mm": 2.5957822771260908e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_RV206",
+      "max_error_mm": 2.104043961281832e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R303",
+      "max_error_mm": 8.83638861637337e-07,
+      "pass": true
+    },
+    {
+      "id": "MainB_R303_Tail1",
+      "max_error_mm": 8.81064554896227e-05,
+      "pass": true
+    },
+    {
+      "id": "MainB_R303_Tail2",
+      "max_error_mm": 8.81064554896227e-05,
+      "pass": true
+    },
+    {
+      "id": "MainB_C102",
+      "max_error_mm": 8.687376968907756e-07,
+      "pass": true
+    },
+    {
+      "id": "MainB_C405",
+      "max_error_mm": 3.0159950199504237e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_PS101",
+      "max_error_mm": 2.3245811462402344e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_PS101_Tail1",
+      "max_error_mm": 0.0001578779056394808,
+      "pass": true
+    },
+    {
+      "id": "MainB_PS101_Tail2",
+      "max_error_mm": 0.00015658150461561604,
+      "pass": true
+    },
+    {
+      "id": "MainB_PS101_Tail3",
+      "max_error_mm": 0.00015658150461561604,
+      "pass": true
+    },
+    {
+      "id": "MainB_PS101_Tail4",
+      "max_error_mm": 0.00015789280680067463,
+      "pass": true
+    },
+    {
+      "id": "MainB_SW401",
+      "max_error_mm": 3.027915951747673e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_SW401_Tail1",
+      "max_error_mm": 0.00013776997042214134,
+      "pass": true
+    },
+    {
+      "id": "MainB_SW401_Tail002",
+      "max_error_mm": 0.00013776997042214134,
+      "pass": true
+    },
+    {
+      "id": "MainB_SW401_Tail2",
+      "max_error_mm": 0.00013757625532662132,
+      "pass": true
+    },
+    {
+      "id": "MainB_SW401_Tail003",
+      "max_error_mm": 0.00013757625532662132,
+      "pass": true
+    },
+    {
+      "id": "MainB_U402",
+      "max_error_mm": 3.343820566215072e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R304",
+      "max_error_mm": 1.1759996425553254e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R304_Tail1",
+      "max_error_mm": 8.8762106582152e-05,
+      "pass": true
+    },
+    {
+      "id": "MainB_R304_Tail2",
+      "max_error_mm": 8.8762106582152e-05,
+      "pass": true
+    },
+    {
+      "id": "MainB_C206",
+      "max_error_mm": 1.3589858980367353e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R302",
+      "max_error_mm": 2.49326228995983e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R302_Tail1",
+      "max_error_mm": 8.8762106582152e-05,
+      "pass": true
+    },
+    {
+      "id": "MainB_R302_Tail2",
+      "max_error_mm": 8.8762106582152e-05,
+      "pass": true
+    },
+    {
+      "id": "MainB_R104",
+      "max_error_mm": 3.6716461124797206e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_CV202",
+      "max_error_mm": 1.3113021850585938e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_RV201",
+      "max_error_mm": 2.6881694736857753e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_Q401",
+      "max_error_mm": 2.059340474147575e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R407",
+      "max_error_mm": 2.676248556099381e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_C204",
+      "max_error_mm": 1.463294026393669e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R409",
+      "max_error_mm": 1.722574239693131e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_J403",
+      "max_error_mm": 2.7489662102198054e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_J403_Tail1",
+      "max_error_mm": 0.00011741877374937815,
+      "pass": true
+    },
+    {
+      "id": "MainB_J403_Tail2",
+      "max_error_mm": 0.00011722828102933569,
+      "pass": true
+    },
+    {
+      "id": "MainB_J403_Tail3",
+      "max_error_mm": 0.0001172344463873376,
+      "pass": true
+    },
+    {
+      "id": "MainB_R410",
+      "max_error_mm": 4.386901849784408e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_Q101",
+      "max_error_mm": 1.2099742860982587e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_C403",
+      "max_error_mm": 4.7147273960490566e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_C402",
+      "max_error_mm": 3.343820566215072e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R110",
+      "max_error_mm": 1.3351440486530919e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R204",
+      "max_error_mm": 2.4318695039937666e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_PS201",
+      "max_error_mm": 2.65836715129808e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_U102",
+      "max_error_mm": 1.946091657600846e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_D101",
+      "max_error_mm": 1.201033597908463e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R102",
+      "max_error_mm": 2.676248556099381e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R107",
+      "max_error_mm": 1.5586614594553794e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R411",
+      "max_error_mm": 4.386901849784408e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_C406",
+      "max_error_mm": 2.378225332222428e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R205",
+      "max_error_mm": 6.645917949299474e-07,
+      "pass": true
+    },
+    {
+      "id": "MainB_C106",
+      "max_error_mm": 1.850724217433708e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_C207",
+      "max_error_mm": 2.5063753135157185e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_C404",
+      "max_error_mm": 4.386901849784408e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R305",
+      "max_error_mm": 9.84966760597672e-07,
+      "pass": true
+    },
+    {
+      "id": "MainB_C301",
+      "max_error_mm": 8.508563027476157e-07,
+      "pass": true
+    },
+    {
+      "id": "MainB_K101",
+      "max_error_mm": 4.947185523462849e-07,
+      "pass": true
+    },
+    {
+      "id": "MainB_K101_Tail11",
+      "max_error_mm": 0.00016582500320794225,
+      "pass": true
+    },
+    {
+      "id": "MainB_K101_Tail012",
+      "max_error_mm": 0.00016645830255868077,
+      "pass": true
+    },
+    {
+      "id": "MainB_K101_Tail12",
+      "max_error_mm": 0.00016582500320794225,
+      "pass": true
+    },
+    {
+      "id": "MainB_K101_Tail013",
+      "max_error_mm": 0.00016645830255868077,
+      "pass": true
+    },
+    {
+      "id": "MainB_K101_Tail14",
+      "max_error_mm": 0.00016582500320794225,
+      "pass": true
+    },
+    {
+      "id": "MainB_K101_Tail014",
+      "max_error_mm": 0.00016645830255868077,
+      "pass": true
+    },
+    {
+      "id": "MainB_K101_TailA1",
+      "max_error_mm": 0.00016645830255868077,
+      "pass": true
+    },
+    {
+      "id": "MainB_K101_TailA2",
+      "max_error_mm": 0.00016582500320794225,
+      "pass": true
+    },
+    {
+      "id": "MainB_RV202",
+      "max_error_mm": 2.6881694736857753e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R412",
+      "max_error_mm": 2.360343927421127e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R403",
+      "max_error_mm": 3.999471658744369e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_CI201",
+      "max_error_mm": 1.418590542812126e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R203",
+      "max_error_mm": 1.8209218950460127e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_RV205",
+      "max_error_mm": 2.118945126028393e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_RV207",
+      "max_error_mm": 1.388788206213576e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_CP204",
+      "max_error_mm": 2.28285789205529e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_U404",
+      "max_error_mm": 3.2067298860738447e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_C208",
+      "max_error_mm": 9.268522234151533e-07,
+      "pass": true
+    },
+    {
+      "id": "MainB_U403",
+      "max_error_mm": 3.343820566215072e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_LED101",
+      "max_error_mm": 2.3663044004251788e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_LED101_Tail1",
+      "max_error_mm": 0.00010894752783485728,
+      "pass": true
+    },
+    {
+      "id": "MainB_LED101_Tail2",
+      "max_error_mm": 0.00010894752783485728,
+      "pass": true
+    },
+    {
+      "id": "MainB_R413",
+      "max_error_mm": 2.2143125590901036e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_C103",
+      "max_error_mm": 2.148747441310661e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_Q403",
+      "max_error_mm": 1.8656253786275556e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_C105",
+      "max_error_mm": 2.402067185158785e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_RV203",
+      "max_error_mm": 2.6881694736857753e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R206",
+      "max_error_mm": 2.238154408473747e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_L101",
+      "max_error_mm": 2.2679567308614423e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_U201",
+      "max_error_mm": 1.7791986408610683e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_U406",
+      "max_error_mm": 1.6927719173054356e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_CP202",
+      "max_error_mm": 2.3424625368306806e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R402",
+      "max_error_mm": 3.999471658744369e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_U202",
+      "max_error_mm": 2.110004420075029e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_SW101",
+      "max_error_mm": 2.5957822771260908e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_SW101_Tail1",
+      "max_error_mm": 0.00013924518538033226,
+      "pass": true
+    },
+    {
+      "id": "MainB_SW101_Tail002",
+      "max_error_mm": 0.00013924518538033226,
+      "pass": true
+    },
+    {
+      "id": "MainB_SW101_Tail2",
+      "max_error_mm": 0.00013718882513558128,
+      "pass": true
+    },
+    {
+      "id": "MainB_SW101_Tail003",
+      "max_error_mm": 0.00013718882513558128,
+      "pass": true
+    },
+    {
+      "id": "MainB_R108",
+      "max_error_mm": 1.5586614594553794e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R106",
+      "max_error_mm": 1.1786818490122641e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_U405",
+      "max_error_mm": 4.05907630351976e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R301",
+      "max_error_mm": 1.912117006952485e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_R301_Tail1",
+      "max_error_mm": 8.8762106582152e-05,
+      "pass": true
+    },
+    {
+      "id": "MainB_R301_Tail2",
+      "max_error_mm": 8.8762106582152e-05,
+      "pass": true
+    },
+    {
+      "id": "MainB_CP201",
+      "max_error_mm": 1.6868114443013837e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_U301",
+      "max_error_mm": 6.332993507385254e-07,
+      "pass": true
+    },
+    {
+      "id": "MainB_Y201",
+      "max_error_mm": 2.9921531705667803e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_Q402",
+      "max_error_mm": 1.8656253786275556e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_C407",
+      "max_error_mm": 2.7298927278707197e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_C201",
+      "max_error_mm": 2.0563602447509766e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_C202",
+      "max_error_mm": 2.0563602447509766e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_RV204",
+      "max_error_mm": 2.6881694736857753e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_J201",
+      "max_error_mm": 1.0937452330495034e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_J201_Pin1",
+      "max_error_mm": 2.4318695039937666e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_J201_Pin2",
+      "max_error_mm": 8.970499045801716e-07,
+      "pass": true
+    },
+    {
+      "id": "MainB_C104",
+      "max_error_mm": 2.804398533839958e-06,
+      "pass": true
+    },
+    {
+      "id": "MainB_F501",
+      "max_error_mm": 0.0008801311255979272,
+      "pass": true
+    },
+    {
+      "id": "MainB_F501_FormedLead__1",
+      "max_error_mm": 9.796596294453508e-05,
+      "pass": true
+    },
+    {
+      "id": "MainB_F501_FormedLead_1",
+      "max_error_mm": 9.849569921982493e-05,
+      "pass": true
+    }
+  ],
+  "head_aggregate_pass": true,
+  "source_sha256": {
+    "mechanical_manifest": "96a1d2484ba95db6da390857e27b1714b69518533d7c76078a82927e1d9c15c3",
+    "electronics_obj": "9d3e1927e47a9dcc366539ead8625b44891f5d1dd604cf80476d45d9db83803d"
+  }
+}
