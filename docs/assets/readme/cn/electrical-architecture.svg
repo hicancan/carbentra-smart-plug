@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1180" viewBox="0 0 1800 1180">
+<defs>
+  <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#54d7c6"/></marker>
+  <style>
+    .t{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;fill:#eef7f8}
+    .h1{font-size:42px;font-weight:700}.h2{font-size:25px;font-weight:700}.b{font-size:21px}.s{font-size:18px;fill:#b7cdd2}
+    .box{fill:#132f38;stroke:#28545c;stroke-width:2;rx:16}.hot{fill:#352824;stroke:#91623c;stroke-width:2;rx:16}
+    .groupHot{fill:#2a211e;stroke:#9b6a3e;stroke-width:2;rx:18}.groupSafe{fill:#0f2b33;stroke:#2f7375;stroke-width:2;rx:18}
+    .line{stroke:#54d7c6;stroke-width:4;fill:none;marker-end:url(#a)}.hotline{stroke:#ffb75f;stroke-width:4;fill:none;marker-end:url(#a)}
+  </style>
+</defs>
+<rect width="1800" height="1180" fill="#0b1b23"/>
+<text x="60" y="72" class="t h1">CARBENTRA Plug · Rev B 电气架构</text>
+<text x="60" y="115" class="t b" fill="#ffbe6b">220 VAC / 16 A 级设计目标 · 四层主板 · 隔离计量 · 本地保护 · 受控执行 · 输出反馈</text>
+
+<rect x="45" y="155" width="800" height="680" class="groupHot"/>
+<rect x="885" y="155" width="870" height="680" class="groupSafe"/>
+<text x="75" y="202" class="t h2" fill="#ffc27a">市电与功率路径</text>
+<text x="915" y="202" class="t h2" fill="#68e0ce">隔离控制与感知域</text>
+
+<rect x="80" y="235" width="330" height="150" class="hot"/>
+<text x="105" y="278" class="t h2">输入与一级保护</text>
+<text x="105" y="316" class="t b">L / N / PE 极性固定</text>
+<text x="105" y="348" class="t b">主保险 + 热保护链</text>
+
+<rect x="475" y="235" width="330" height="150" class="hot"/>
+<text x="500" y="278" class="t h2">受控开断</text>
+<text x="500" y="316" class="t b">K1 功率继电器</text>
+<text x="500" y="348" class="t b">动作受本地许可链约束</text>
+<path d="M410 310 H475" class="hotline"/>
+
+<rect x="80" y="455" width="330" height="210" class="hot"/>
+<text x="105" y="498" class="t h2">电能计量</text>
+<text x="105" y="536" class="t b">ATM90E26 计量芯片</text>
+<text x="105" y="568" class="t b">1 mΩ 四端分流器</text>
+<text x="105" y="600" class="t b">电压采样网络 + 8.192 MHz 时钟</text>
+<text x="105" y="632" class="t b">逐台标定参数写入 NVS</text>
+
+<rect x="475" y="465" width="330" height="190" class="hot"/>
+<text x="500" y="508" class="t h2">计量隔离</text>
+<text x="500" y="546" class="t b">ISO6741 隔离 SPI</text>
+<text x="500" y="578" class="t b">R05CT 独立隔离电源</text>
+<text x="500" y="610" class="t b">HOT_GND 与逻辑地严格分离</text>
+<path d="M410 555 H475" class="line"/>
+
+<rect x="925" y="235" width="360" height="185" class="box"/>
+<text x="950" y="278" class="t h2">ESP32-C3 主控</text>
+<text x="950" y="316" class="t b">Wi-Fi / BLE · 策略执行</text>
+<text x="950" y="348" class="t b">本地按钮 · 状态指示</text>
+<text x="950" y="380" class="t b">外置天线接口</text>
+
+<rect x="1340" y="235" width="370" height="185" class="box"/>
+<text x="1365" y="278" class="t h2">本地感知与驱动</text>
+<text x="1365" y="316" class="t b">TMP102 板温采集</text>
+<text x="1365" y="348" class="t b">继电器线圈驱动 + 续流</text>
+<text x="1365" y="380" class="t b">本地按钮 / LED</text>
+<path d="M1285 325 H1340" class="line"/>
+
+<rect x="925" y="495" width="360" height="165" class="box"/>
+<text x="950" y="538" class="t h2">输出状态反馈</text>
+<text x="950" y="576" class="t b">ACPL-K376 交流存在检测</text>
+<text x="950" y="608" class="t b">请求状态与实测状态分离</text>
+
+<rect x="1340" y="475" width="370" height="205" class="box"/>
+<text x="1365" y="518" class="t h2">独立热保护许可链</text>
+<text x="1365" y="556" class="t b">远端 TMP302 阈值传感</text>
+<text x="1365" y="588" class="t b">电源监督 + 锁存</text>
+<text x="1365" y="620" class="t b">线圈供电硬件门控</text>
+<text x="1365" y="652" class="t b">本地物理复位</text>
+
+<path d="M805 555 H925" class="line"/>
+<path d="M1105 495 V420" class="line"/>
+<path d="M1340 575 H1285" class="line"/>
+
+<rect x="925" y="710" width="360" height="100" class="box"/>
+<text x="950" y="752" class="t h2">低压电源</text>
+<text x="950" y="786" class="t b">IRM-10-5 → 5 V · AP63203 → 3.3 V</text>
+<path d="M1105 710 V660" class="line"/>
+
+<text x="80" y="785" class="t b" fill="#ffd29a">PE：独立连续保护导体，不经过继电器，不与控制地连接。</text>
+
+<rect x="55" y="885" width="510" height="210" class="box"/>
+<text x="82" y="930" class="t h2">设备侧</text>
+<text x="82" y="970" class="t b">采集真实状态 · 执行本地允许动作</text>
+<text x="82" y="1005" class="t b">故障锁存 · 失联保持 · 物理反馈回读</text>
+<text x="82" y="1040" class="t b">任何远程策略都受本地边界约束</text>
+
+<rect x="645" y="885" width="510" height="210" class="box"/>
+<text x="672" y="930" class="t h2">边缘侧</text>
+<text x="672" y="970" class="t b">设备聚合 · 数据持久化 · 策略过滤</text>
+<text x="672" y="1005" class="t b">局部协调 · 超时处理 · 离线连续性</text>
+<text x="672" y="1040" class="t b">持久化回执进入闭环</text>
+
+<rect x="1235" y="885" width="510" height="210" class="box"/>
+<text x="1262" y="930" class="t h2">云端侧</text>
+<text x="1262" y="970" class="t b">负荷预测 · 碳感知优化 · 全局调度</text>
+<text x="1262" y="1005" class="t b">生成受约束策略与设备配置</text>
+<text x="1262" y="1040" class="t b">不改变设备物理额定能力</text>
+
+<text x="60" y="1140" class="t s">当前图对应 Rev B 数字工程架构；实物额定能力、温升、绝缘、EMC 与保护配合需在 Physical EVT 阶段完成验证。</text>
+</svg>

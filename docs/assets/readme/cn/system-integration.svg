@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="780" viewBox="0 0 1600 780">
+<defs>
+  <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#334155"/></marker>
+  <style>
+    .t{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;fill:#0f172a}
+    .h{font-weight:700;font-size:34px}.s{font-size:23px}.m{font-size:18px;fill:#475569}
+    .box{fill:#fff;stroke:#94a3b8;stroke-width:2;rx:20}.focus{fill:#f5fbfa;stroke:#0f766e;stroke-width:3;rx:20}
+    .line{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#a)}
+  </style>
+</defs>
+<rect width="1600" height="780" fill="#fff"/>
+<text x="75" y="70" class="t h">从一只 CARBENTRA Plug 到校园能源协同</text>
+<text x="75" y="110" class="t m">Plug 提供设备级感知与执行；Edge 负责局部协调；Cloud 完成预测、优化与全局调度。</text>
+
+<rect x="520" y="155" width="560" height="125" class="box"/>
+<text x="800" y="205" text-anchor="middle" class="t s">CARBENTRA Cloud · 云端</text>
+<text x="800" y="242" text-anchor="middle" class="t m">负荷预测 · 碳感知优化 · 全局调度 · 策略生成</text>
+
+<rect x="520" y="345" width="560" height="125" class="box"/>
+<text x="800" y="395" text-anchor="middle" class="t s">CARBENTRA Edge · 边缘</text>
+<text x="800" y="432" text-anchor="middle" class="t m">设备聚合 · 局部协调 · 策略过滤 · 离线连续性 · 持久化回执</text>
+
+<rect x="85" y="555" width="380" height="125" class="focus"/>
+<text x="275" y="605" text-anchor="middle" class="t s">CARBENTRA Plug</text>
+<text x="275" y="642" text-anchor="middle" class="t m">感知 · 保护 · 执行 · 验证</text>
+
+<rect x="610" y="555" width="380" height="125" class="focus"/>
+<text x="800" y="605" text-anchor="middle" class="t s">CARBENTRA Plug</text>
+<text x="800" y="642" text-anchor="middle" class="t m">普通负载 → 可控能源节点</text>
+
+<rect x="1135" y="555" width="380" height="125" class="focus"/>
+<text x="1325" y="605" text-anchor="middle" class="t s">CARBENTRA Plug × N</text>
+<text x="1325" y="642" text-anchor="middle" class="t m">分散负载 → 可协同设备群</text>
+
+<path d="M800 280 V345" class="line"/>
+<path d="M800 470 V510 H275 V555" class="line"/>
+<path d="M800 470 V555" class="line"/>
+<path d="M800 470 V510 H1325 V555" class="line"/>
+<path d="M275 555 V510 H755 V470" class="line"/>
+<path d="M1325 555 V510 H845 V470" class="line"/>
+
+<text x="800" y="735" text-anchor="middle" class="t s">一只 Plug 让一台设备可被控制；一组 Plug 让一片负载可以被协同。</text>
+</svg>

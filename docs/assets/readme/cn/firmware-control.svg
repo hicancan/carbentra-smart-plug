@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760">
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#334155"/></marker>
+  <style>
+    .t{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;fill:#0f172a}
+    .h{font-weight:700;font-size:34px}.s{font-size:22px}.m{font-size:18px;fill:#475569}
+    .box{fill:#fff;stroke:#94a3b8;stroke-width:2;rx:18}.guard{fill:#f5fbfa;stroke:#0f766e;stroke-width:3;rx:18}
+    .line{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}.prio{stroke:#0f766e;stroke-width:4;fill:none;marker-end:url(#arrow)}
+  </style>
+</defs>
+<rect width="1600" height="760" fill="#fff"/>
+<text x="70" y="72" class="t h">固件控制链：从测量到执行回执</text>
+<text x="70" y="112" class="t m">每一条远程命令都进入设备自身的安全上下文；本地保护拥有最终执行权。</text>
+
+<rect x="65" y="190" width="210" height="112" class="box"/><text x="170" y="235" text-anchor="middle" class="t s">计量采样</text><text x="170" y="270" text-anchor="middle" class="t m">电压 · 电流 · 功率</text>
+<rect x="320" y="190" width="220" height="112" class="box"/><text x="430" y="235" text-anchor="middle" class="t s">数据校验</text><text x="430" y="270" text-anchor="middle" class="t m">新鲜度 · 完整性 · 合法范围</text>
+<rect x="585" y="190" width="220" height="112" class="box"/><text x="695" y="235" text-anchor="middle" class="t s">本地状态</text><text x="695" y="270" text-anchor="middle" class="t m">设备 · 负载 · 时钟 · 故障</text>
+<rect x="850" y="190" width="240" height="112" class="guard"/><text x="970" y="235" text-anchor="middle" class="t s">安全门控</text><text x="970" y="270" text-anchor="middle" class="t m">锁存 · 间隔 · 许可 · 上限</text>
+<rect x="1135" y="190" width="270" height="112" class="box"/><text x="1270" y="235" text-anchor="middle" class="t s">命令仲裁</text><text x="1270" y="270" text-anchor="middle" class="t m">本地 ＞ 边缘 ＞ 云端</text>
+
+<path d="M275 246 H320" class="line"/><path d="M540 246 H585" class="line"/><path d="M805 246 H850" class="line"/><path d="M1090 246 H1135" class="line"/>
+
+<rect x="1135" y="430" width="270" height="112" class="box"/><text x="1270" y="475" text-anchor="middle" class="t s">执行器</text><text x="1270" y="510" text-anchor="middle" class="t m">受约束的物理开关动作</text>
+<rect x="850" y="430" width="240" height="112" class="box"/><text x="970" y="475" text-anchor="middle" class="t s">反馈判定</text><text x="970" y="510" text-anchor="middle" class="t m">输出侧是否真正发生变化</text>
+<rect x="585" y="430" width="220" height="112" class="box"/><text x="695" y="475" text-anchor="middle" class="t s">遥测回传</text><text x="695" y="510" text-anchor="middle" class="t m">状态 · 测量 · 回执</text>
+<rect x="65" y="430" width="430" height="112" class="guard"/><text x="280" y="472" text-anchor="middle" class="t s">远程命令边界</text><text x="280" y="508" text-anchor="middle" class="t m">认证 · TTL · 序列 · 负载档案 · 目标设备</text>
+
+<path d="M1270 302 V430" class="line"/><path d="M1135 486 H1090" class="line"/><path d="M850 486 H805" class="line"/>
+<path d="M495 486 H585" class="line"/><path d="M280 430 V355 H1270 V302" class="line"/>
+<path d="M970 302 V370 H1270 V430" class="prio"/>
+
+<text x="70" y="635" class="t s">核心约束</text>
+<text x="70" y="677" class="t m">本地故障锁存优先于远程命令 · 过期/重放/错目标命令直接拒绝 · 未批准负载仅监测 · 实测反馈进入下一控制周期</text>
+<text x="70" y="715" class="t m">目标：让“请求开关”变成可验证、可追踪、可回退的设备级控制闭环。</text>
+</svg>

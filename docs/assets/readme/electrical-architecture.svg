@@ -1,1 +1,99 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1190" viewBox="0 0 1800 1190"><defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#61d9c8"/></marker></defs><rect x="0" y="0" width="1800" height="1190" rx="0" fill="#0b1a22" stroke="#0b1a22" stroke-width="2"/><text x="60" y="73" font-family="DejaVu Sans,sans-serif" font-size="38" font-weight="700" fill="#ffffff">CARBENTRA / ELECTRICAL ARCHITECTURE</text><text x="60" y="115" font-family="DejaVu Sans,sans-serif" font-size="24" font-weight="400" fill="#ffbc69">DEV-A   •   220 VAC nominal / 16 A-class target   •   FABRICATION HOLD</text><rect x="40" y="155" width="750" height="590" rx="14" fill="#2c2421" stroke="#9c693c" stroke-width="2"/><rect x="835" y="155" width="925" height="590" rx="14" fill="#102c33" stroke="#2a6d70" stroke-width="2"/><text x="65" y="197" font-family="DejaVu Sans,sans-serif" font-size="24" font-weight="700" fill="#ffbc69">HAZARDOUS MAINS DOMAIN</text><text x="860" y="197" font-family="DejaVu Sans,sans-serif" font-size="24" font-weight="700" fill="#6ae0cd">ISOLATED CONTROL CANDIDATE</text><rect x="70" y="230" width="315" height="160" rx="14" fill="#382b24" stroke="#24424b" stroke-width="2"/><text x="92" y="270" font-family="DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#ffffff">INPUT / PROTECTION</text><text x="92" y="308" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">Single polarized socket</text><text x="92" y="337" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">Fuse + thermal cutoff REQUIRED</text><text x="92" y="366" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">Candidates; coordination OPEN</text><rect x="435" y="230" width="320" height="160" rx="14" fill="#382b24" stroke="#24424b" stroke-width="2"/><text x="457" y="270" font-family="DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#ffffff">RELAY CONTACTS</text><text x="457" y="308" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">K1: 11 → 14 normally open</text><text x="457" y="337" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">TE RT314005 candidate</text><text x="457" y="366" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">Motor / inrush rating OPEN</text><path d="M385 310 L435 310" fill="none" stroke="#ffbc69" stroke-width="4" marker-end="url(#a)"/><rect x="70" y="445" width="315" height="180" rx="14" fill="#382b24" stroke="#24424b" stroke-width="2"/><text x="92" y="485" font-family="DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#ffffff">METERING: NOT BUILT</text><text x="92" y="523" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">ADE9153A hot-domain IC</text><text x="92" y="552" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">0.5 mΩ Kelvin-shunt concept</text><text x="92" y="581" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">Voltage-divider/filter concept</text><text x="92" y="610" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">See pin-level metering design</text><rect x="435" y="455" width="320" height="155" rx="14" fill="#382b24" stroke="#24424b" stroke-width="2"/><text x="457" y="495" font-family="DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#ffffff">ISOLATION REQUIRED</text><text x="457" y="533" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">ADuM3151 SPI candidate</text><text x="457" y="562" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">Separate isolated meter power</text><text x="457" y="591" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">No completed daughterboard</text><path d="M385 530 L435 530" fill="none" stroke="#61d9c8" stroke-width="4" marker-end="url(#a)"/><rect x="870" y="230" width="340" height="180" rx="14" fill="#142d35" stroke="#24424b" stroke-width="2"/><text x="892" y="270" font-family="DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#ffffff">ESP32-C3-WROOM-02U</text><text x="892" y="308" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">RISC-V edge control + Wi-Fi/BLE</text><text x="892" y="337" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">GPIO10 relay / GPIO18 button</text><text x="892" y="366" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">GPIO19 status / I²C temperature</text><text x="892" y="395" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">External antenna RF review OPEN</text><rect x="1260" y="230" width="465" height="180" rx="14" fill="#142d35" stroke="#24424b" stroke-width="2"/><text x="1282" y="270" font-family="DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#ffffff">LOCAL HARDWARE</text><text x="1282" y="308" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">Q1 low-side coil driver + D1 flyback</text><text x="1282" y="337" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">SW1 pushbutton / LED1 indication</text><text x="1282" y="366" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">TMP102 board temperature only</text><text x="1282" y="395" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">Independent thermal cutoff REQUIRED</text><path d="M1210 310 L1260 310" fill="none" stroke="#61d9c8" stroke-width="4" marker-end="url(#a)"/><rect x="870" y="475" width="340" height="150" rx="14" fill="#142d35" stroke="#24424b" stroke-width="2"/><text x="892" y="515" font-family="DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#ffffff">J3 ISOLATED SPI</text><text x="892" y="553" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">1:3V3  2:GND  3:SCLK</text><text x="892" y="582" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">4:MOSI  5:MISO  6:CS</text><text x="892" y="611" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">Never connect HOT GND here</text><path d="M755 530 L870 530" fill="none" stroke="#61d9c8" stroke-width="4" marker-end="url(#a)"/><path d="M1040 475 L1040 410" fill="none" stroke="#61d9c8" stroke-width="4" marker-end="url(#a)"/><rect x="1260" y="475" width="465" height="150" rx="14" fill="#142d35" stroke="#24424b" stroke-width="2"/><text x="1282" y="515" font-family="DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#ffffff">POWER</text><text x="1282" y="553" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">PS1 IRM-03-5 isolated 5 V candidate</text><text x="1282" y="582" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">U2 AP63203 → 3.3 V buck</text><text x="1282" y="611" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">Coil + RF peaks / thermal derating OPEN</text><path d="M1260 550 L1210 550" fill="none" stroke="#61d9c8" stroke-width="4" marker-end="url(#a)"/><text x="70" y="695" font-family="DejaVu Sans,sans-serif" font-size="23" font-weight="400" fill="#ffcf8f">PE: continuous protective conductor outside PCB; never switched or bonded to control ground</text><rect x="55" y="790" width="530" height="250" rx="14" fill="#142d35" stroke="#24424b" stroke-width="2"/><text x="77" y="830" font-family="DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#ffffff">END / EDGE / CLOUD</text><text x="77" y="868" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">END: measure + actuate within hardware limits</text><text x="77" y="897" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">EDGE: local policy, timeout, watchdog, hold</text><text x="77" y="926" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">CLOUD: bounded profile and configuration</text><text x="77" y="955" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">Offline operation must not depend on cloud</text><text x="77" y="984" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">Profiles cannot increase physical current ratings</text><rect x="625" y="790" width="530" height="250" rx="14" fill="#142d35" stroke="#24424b" stroke-width="2"/><text x="647" y="830" font-family="DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#ffffff">WHAT IS REAL IN THIS RELEASE</text><text x="647" y="868" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">KiCad source, pin-connected schematic, BOM</text><text x="647" y="897" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">33 real footprints and package envelopes</text><text x="647" y="926" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">Low-voltage routing + actual ERC / DRC</text><text x="647" y="955" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">STEP / FCStd / OBJ review geometry</text><text x="647" y="984" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">Mains and remaining airwires UNROUTED</text><rect x="1195" y="790" width="550" height="250" rx="14" fill="#142d35" stroke="#24424b" stroke-width="2"/><text x="1217" y="830" font-family="DejaVu Sans,sans-serif" font-size="25" font-weight="700" fill="#ffffff">RELEASE GATES</text><text x="1217" y="868" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">Complete mains protection and metrology</text><text x="1217" y="897" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">Close routing / DRC / independent review</text><text x="1217" y="926" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">Qualify terminals, copper, PE, creepage</text><text x="1217" y="955" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">Test EMC, dielectric, thermal and endurance</text><text x="1217" y="984" font-family="DejaVu Sans,sans-serif" font-size="20" font-weight="400" fill="#e8f2f4">No Gerber / drill package; never energize</text><text x="60" y="1110" font-family="DejaVu Sans,sans-serif" font-size="23" font-weight="400" fill="#a1b9c1">Architecture diagram is a review aid, not a wiring instruction or a safety certification</text><text x="60" y="1150" font-family="DejaVu Sans,sans-serif" font-size="18" font-weight="400" fill="#a1b9c1">Sources: Mean Well IRM-03 • TE RT1 • Espressif C3-WROOM-02U • Diodes AP63203 • TI TMP102 • ADI metrology</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1180" viewBox="0 0 1800 1180">
+<defs>
+  <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#54d7c6"/></marker>
+  <style>
+    .t{font-family:Inter,"Segoe UI",Arial,sans-serif;fill:#eef7f8}
+    .h1{font-size:42px;font-weight:700}.h2{font-size:25px;font-weight:700}.b{font-size:21px}.s{font-size:18px;fill:#b7cdd2}
+    .box{fill:#132f38;stroke:#28545c;stroke-width:2;rx:16}.hot{fill:#352824;stroke:#91623c;stroke-width:2;rx:16}
+    .groupHot{fill:#2a211e;stroke:#9b6a3e;stroke-width:2;rx:18}.groupSafe{fill:#0f2b33;stroke:#2f7375;stroke-width:2;rx:18}
+    .line{stroke:#54d7c6;stroke-width:4;fill:none;marker-end:url(#a)}.hotline{stroke:#ffb75f;stroke-width:4;fill:none;marker-end:url(#a)}
+  </style>
+</defs>
+<rect width="1800" height="1180" fill="#0b1b23"/>
+<text x="60" y="72" class="t h1">CARBENTRA Plug · Rev B Electrical Architecture</text>
+<text x="60" y="115" class="t b" fill="#ffbe6b">220 VAC / 16 A-class design target · 4-layer PCB · isolated metering · local protection · verified actuation feedback</text>
+
+<rect x="45" y="155" width="800" height="680" class="groupHot"/>
+<rect x="885" y="155" width="870" height="680" class="groupSafe"/>
+<text x="75" y="202" class="t h2" fill="#ffc27a">Mains &amp; power path</text>
+<text x="915" y="202" class="t h2" fill="#68e0ce">Isolated control &amp; sensing domain</text>
+
+<rect x="80" y="235" width="330" height="150" class="hot"/>
+<text x="105" y="278" class="t h2">Input &amp; primary protection</text>
+<text x="105" y="316" class="t b">Fixed L / N / PE polarity</text>
+<text x="105" y="348" class="t b">Main fuse + thermal protection</text>
+
+<rect x="475" y="235" width="330" height="150" class="hot"/>
+<text x="500" y="278" class="t h2">Controlled switching</text>
+<text x="500" y="316" class="t b">K1 power relay</text>
+<text x="500" y="348" class="t b">Local permission chain gates actuation</text>
+<path d="M410 310 H475" class="hotline"/>
+
+<rect x="80" y="455" width="330" height="210" class="hot"/>
+<text x="105" y="498" class="t h2">Energy metering</text>
+<text x="105" y="536" class="t b">ATM90E26 metering IC</text>
+<text x="105" y="568" class="t b">1 mΩ four-terminal shunt</text>
+<text x="105" y="600" class="t b">Voltage sampling + 8.192 MHz clock</text>
+<text x="105" y="632" class="t b">Per-device calibration in NVS</text>
+
+<rect x="475" y="465" width="330" height="190" class="hot"/>
+<text x="500" y="508" class="t h2">Metering isolation</text>
+<text x="500" y="546" class="t b">ISO6741 isolated SPI</text>
+<text x="500" y="578" class="t b">R05CT isolated supply</text>
+<text x="500" y="610" class="t b">HOT_GND separated from logic GND</text>
+<path d="M410 555 H475" class="line"/>
+
+<rect x="925" y="235" width="360" height="185" class="box"/>
+<text x="950" y="278" class="t h2">ESP32-C3 controller</text>
+<text x="950" y="316" class="t b">Wi-Fi / BLE · policy execution</text>
+<text x="950" y="348" class="t b">Local button · status indication</text>
+<text x="950" y="380" class="t b">External antenna interface</text>
+
+<rect x="1340" y="235" width="370" height="185" class="box"/>
+<text x="1365" y="278" class="t h2">Local sensing &amp; drive</text>
+<text x="1365" y="316" class="t b">TMP102 board temperature</text>
+<text x="1365" y="348" class="t b">Relay coil drive + flyback</text>
+<text x="1365" y="380" class="t b">Local button / LED</text>
+<path d="M1285 325 H1340" class="line"/>
+
+<rect x="925" y="495" width="360" height="165" class="box"/>
+<text x="950" y="538" class="t h2">Output-state feedback</text>
+<text x="950" y="576" class="t b">ACPL-K376 AC-presence detection</text>
+<text x="950" y="608" class="t b">Requested vs measured state</text>
+
+<rect x="1340" y="475" width="370" height="205" class="box"/>
+<text x="1365" y="518" class="t h2">Independent thermal permission</text>
+<text x="1365" y="556" class="t b">Remote TMP302 threshold sensor</text>
+<text x="1365" y="588" class="t b">Supervisor + latch</text>
+<text x="1365" y="620" class="t b">Hardware coil-supply gate</text>
+<text x="1365" y="652" class="t b">Local physical rearm</text>
+
+<path d="M805 555 H925" class="line"/><path d="M1105 495 V420" class="line"/><path d="M1340 575 H1285" class="line"/>
+
+<rect x="925" y="710" width="360" height="100" class="box"/>
+<text x="950" y="752" class="t h2">Low-voltage supply</text>
+<text x="950" y="786" class="t b">IRM-10-5 → 5 V · AP63203 → 3.3 V</text>
+<path d="M1105 710 V660" class="line"/>
+
+<text x="80" y="785" class="t b" fill="#ffd29a">PE remains continuous and independent; it is never switched or bonded to control ground.</text>
+
+<rect x="55" y="885" width="510" height="210" class="box"/>
+<text x="82" y="930" class="t h2">Device</text>
+<text x="82" y="970" class="t b">Measure real state · execute locally permitted actions</text>
+<text x="82" y="1005" class="t b">Fault latch · offline hold · physical feedback</text>
+<text x="82" y="1040" class="t b">Remote policy stays inside local limits</text>
+
+<rect x="645" y="885" width="510" height="210" class="box"/>
+<text x="672" y="930" class="t h2">Edge</text>
+<text x="672" y="970" class="t b">Aggregation · durable storage · policy filtering</text>
+<text x="672" y="1005" class="t b">Local coordination · timeout · offline continuity</text>
+<text x="672" y="1040" class="t b">Durable receipts close the data loop</text>
+
+<rect x="1235" y="885" width="510" height="210" class="box"/>
+<text x="1262" y="930" class="t h2">Cloud</text>
+<text x="1262" y="970" class="t b">Load forecast · carbon-aware optimization · dispatch</text>
+<text x="1262" y="1005" class="t b">Bounded policies and configuration</text>
+<text x="1262" y="1040" class="t b">Never changes physical current ratings</text>
+
+<text x="60" y="1140" class="t s">Rev B digital engineering architecture. Physical rating, temperature rise, insulation, EMC and protection coordination remain EVT validation items.</text>
+</svg>

@@ -106,7 +106,13 @@ The current Rev B package includes editable FreeCAD sources, STEP exports, indiv
 
 The exploded view separates the major physical domains: enclosure, shutter and receptacle mechanism, L/N/PE path, fuse and thermal elements, main PCB, remote sensing head, rear interface, and fastening structure.
 
-▶ [Open the 6-second exploded animation](visuals/rev_b/animation/carbentra_exploded.mp4)
+### 6-second exploded animation
+
+<a href="visuals/rev_b/animation/carbentra_exploded.mp4">
+  <img src="docs/assets/readme/exploded-preview.gif" alt="CARBENTRA Plug exploded animation preview" width="760" />
+</a>
+
+<p align="center"><sub>Click the animated preview to open the original MP4.</sub></p>
 
 ### Section view
 
