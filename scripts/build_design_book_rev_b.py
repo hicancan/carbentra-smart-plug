@@ -2,19 +2,19 @@ from pathlib import Path
 import json, sys
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.cidfonts import UnicodeCIDFont
+from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import Paragraph
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.utils import ImageReader
 from PIL import Image
 R=Path(__file__).resolve().parents[1]; O=R/'release'; O.mkdir(exist_ok=True)
-pdfmetrics.registerFont(UnicodeCIDFont('STSong-Light'))
+pdfmetrics.registerFont(TTFont('NotoSansSC', str(R/'assets/fonts/NotoSansSC-Regular.ttf')))
 W,H=595.28,841.89
 DRAFT='--draft' in sys.argv
 TARGET=O/('CarbonMirror_RevB_Review_DRAFT.pdf' if DRAFT else 'CarbonMirror_RevB_Design_Review_CN.pdf')
 C=canvas.Canvas(str(TARGET),pagesize=(W,H))
 C.setTitle('碳镜校园统一自适应智能插座设计审阅册');C.setAuthor('CarbonMirror project')
-style=ParagraphStyle('body',fontName='STSong-Light',fontSize=11,leading=18,textColor='#213a3c',wordWrap='CJK')
+style=ParagraphStyle('body',fontName='NotoSansSC',fontSize=11,leading=18,textColor='#213a3c',wordWrap='CJK')
 small=ParagraphStyle('small',parent=style,fontSize=9,leading=14,textColor='#566868')
 page=0
 
@@ -22,7 +22,7 @@ def base(title,sub):
  global page
  page+=1;C.setFillColorRGB(.965,.973,.969);C.rect(0,0,W,H,fill=1,stroke=0)
  C.setFillColorRGB(.05,.18,.17);C.setFont('Helvetica-Bold',10);C.drawString(42,H-40,'CARBONMIRROR / ENGINEERING DEVELOPMENT')
- C.setFont('STSong-Light',23);C.drawString(42,H-80,title)
+ C.setFont('NotoSansSC',23);C.drawString(42,H-80,title)
  para(sub,42,H-110,W-84,small)
  C.setFillColorRGB(.3,.4,.4);C.setFont('Helvetica',8);C.drawString(42,28,'CM-S16-EVT-B   |   2026-09-30   |   NOT FOR ENERGIZATION');C.drawRightString(W-42,28,f'{page:02d}')
 
@@ -38,7 +38,7 @@ def image(path,x,y,w,h):
 
 def end():C.showPage()
 def bullet(title,text,y):
- C.setFillColorRGB(.02,.18,.16);C.setFont('STSong-Light',14);C.drawString(42,y,title)
+ C.setFillColorRGB(.02,.18,.16);C.setFont('NotoSansSC',14);C.drawString(42,y,title)
  return para(text,42,y-12,W-84)-9
 
 base('统一自适应智能插座设计审阅册','一款硬件平台，以负载能力模型连接端侧感知、边缘自治与校园级能源协同。')
@@ -79,7 +79,7 @@ names=[('front','正面'),('rear','背面'),('left','左侧'),('right','右侧')
 for i,(n,label) in enumerate(names):
  x=42+(i%2)*262;y=500-(i//2)*203
  image(R/f'visuals/rev_b/renders/view_{n}.png',x,y,249,183)
- C.setFont('STSong-Light',11);C.setFillColorRGB(.08,.19,.18);C.drawString(x,y-5,label)
+ C.setFont('NotoSansSC',11);C.setFillColorRGB(.08,.19,.18);C.drawString(x,y-5,label)
 para('详细尺寸与量规限制请查看 mechanical 中的尺寸图及说明。渲染视图不替代加工图纸。',42,73,W-84,small)
 end()
 
