@@ -1,0 +1,27 @@
+Digital build environment
+Blender 4.3.2
+9.0.2
+Python 3.12.14
+git version 2.52.0
+
+CAD engine
+{
+  "engine": "FreeCAD 1.0.0",
+  "parts": 20,
+  "all_shapes_valid": true,
+  "all_single_solid": true,
+  "intersections": [
+    {
+      "a": "PEBus",
+      "b": "Blade_PE",
+      "volume_mm3": 1.1999999999999997,
+      "intentional": true
+    },
+    {
+      "a": "PEBus",
+      "b": "Contact_PE",
+      "volume_mm3": 0.8999999999999915,
+      "intentional": true
+    }
+  ],
+  "note": "Interference audit is geometric only. Electrical safety, creepage, contact force, shutter operation, tolerances, standards and certification are NOT validated."

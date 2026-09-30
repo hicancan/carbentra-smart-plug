@@ -1,0 +1,50 @@
+[
+  {
+    "profile_id": "unknown",
+    "revision": 1,
+    "approved": false,
+    "critical": false,
+    "allow_mains_shed": false,
+    "control_interface": "none",
+    "min_on_s": 300,
+    "min_off_s": 300,
+    "approval_reference": null,
+    "notes": "SIMULATED example; dwell values require manufacturer validation"
+  },
+  {
+    "profile_id": "approved-switchable",
+    "revision": 1,
+    "approved": true,
+    "critical": false,
+    "allow_mains_shed": true,
+    "control_interface": "mains-relay",
+    "min_on_s": 300,
+    "min_off_s": 300,
+    "approval_reference": "SIMULATED-APPROVAL-ONLY",
+    "notes": "SIMULATED example; dwell values require manufacturer validation"
+  },
+  {
+    "profile_id": "hvac-normal-interface",
+    "revision": 1,
+    "approved": true,
+    "critical": false,
+    "allow_mains_shed": false,
+    "control_interface": "native-device-api",
+    "min_on_s": 300,
+    "min_off_s": 300,
+    "approval_reference": "SIMULATED-APPROVAL-ONLY",
+    "notes": "SIMULATED example; dwell values require manufacturer validation"
+  },
+  {
+    "profile_id": "critical-monitor",
+    "revision": 1,
+    "approved": true,
+    "critical": true,
+    "allow_mains_shed": false,
+    "control_interface": "none",
+    "min_on_s": 300,
+    "min_off_s": 300,
+    "approval_reference": "SIMULATED-APPROVAL-ONLY",
+    "notes": "SIMULATED example; dwell values require manufacturer validation"
+  }
+]

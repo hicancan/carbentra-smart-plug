@@ -1,0 +1,8 @@
+Validation date: 2026-09-30
+JSON Schema Draft 2020-12: valid
+Simulated profiles: 4/4 valid
+Invalid capability profiles: 3/3 rejected
+Telemetry JSON: parses; explicitly simulated
+Architecture SVG: valid XML, rendered with Inkscape to PNG; visually reviewed, no clipped text
+Policy reference: 24 unittest cases passed; see policy-test-log.txt
+Hardware, cryptography, firmware, metrology, compliance, native AC interface: not implemented or tested

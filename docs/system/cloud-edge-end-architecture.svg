@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100">
+<title>碳镜校园：云—边—端控制与数据架构</title><desc>云端目标下发、边缘聚合与能力过滤、端侧安全执行。遥测回传和原生空调接口独立显示。概念设计，未连接硬件。</desc>
+<defs><marker id="down" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#1a8179" stroke-width="1.5"/></marker><marker id="up" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#698296" stroke-width="1.5"/></marker></defs>
+<rect width="1600" height="1100" fill="#eef3f1"/>
+<g font-family="Noto Sans CJK SC, sans-serif" fill="#193f45">
+<text x="70" y="73" font-size="17" letter-spacing="3" fill="#1a8179">CARBONMIRROR / SYSTEM ARCHITECTURE</text>
+<text x="70" y="128" font-size="40" font-weight="700">碳镜校园 · 云—边—端协同</text>
+<text x="70" y="166" font-size="21" fill="#617b80">一个硬件平台，负载能力决定可执行动作；本地安全永远优先</text>
+<rect x="70" y="208" width="1130" height="212" rx="18" fill="#193f45"/>
+<text x="100" y="250" font-size="17" fill="#8dddd0">01 / CLOUD</text><text x="100" y="290" font-size="29" fill="white" font-weight="700">碳镜校园 · 数字孪生与优化目标</text>
+<text x="100" y="337" font-size="21" fill="#deeeea">空间 / 回路 / 资产拓扑　·　能耗与碳账本　·　教学与舒适度约束</text>
+<text x="100" y="376" font-size="21" fill="#deeeea">经批准的策略、目标与预算　｜　因子来源 + 基线版本 + 数据质量</text>
+<path d="M230 424 V484" stroke="#1a8179" stroke-width="3" marker-end="url(#down)"/>
+<text x="255" y="461" font-size="18">有界目标 / 版本 / 失效时间</text>
+<path d="M1045 485 V431" stroke="#698296" stroke-width="3" marker-end="url(#up)"/>
+<text x="743" y="461" font-size="18" fill="#617b80">聚合观测 / 异常 / 核算证据</text>
+<rect x="70" y="498" width="1130" height="195" rx="18" fill="white" stroke="#c5d7d2"/>
+<text x="100" y="538" font-size="17" fill="#1a8179">02 / EDGE</text><text x="100" y="578" font-size="29" font-weight="700">楼宇网关 · 聚合与约束分配</text>
+<text x="100" y="622" font-size="21">回路预算　·　负载能力过滤　·　消息去重　·　时钟 / 数据质量</text>
+<text x="100" y="660" font-size="21" fill="#617b80">断网缓存有上限；重连只请求新命令，不补执行旧动作</text>
+<path d="M230 699 V760" stroke="#1a8179" stroke-width="3" marker-end="url(#down)"/>
+<text x="255" y="735" font-size="18">认证命令 / TTL / 序列 / 档案</text>
+<path d="M1045 760 V705" stroke="#698296" stroke-width="3" marker-end="url(#up)"/>
+<text x="753" y="735" font-size="18" fill="#617b80">测量 / 状态 / 实际执行确认</text>
+<rect x="70" y="773" width="1130" height="233" rx="18" fill="#dcece5" stroke="#aacbbc"/>
+<text x="100" y="815" font-size="17" fill="#1a8179">03 / ENDPOINT</text><text x="100" y="855" font-size="29" font-weight="700">统一智能插座 · 本地受限执行</text>
+<text x="100" y="899" font-size="21">计量 + 档案守卫 + 最小通断间隔 + 执行反馈</text>
+<rect x="100" y="927" width="1067" height="48" rx="8" fill="#fff9ed"/>
+<text x="119" y="959" font-size="20" fill="#926424">独立本地保护优先　｜　故障锁存　｜　未知负载只监测　｜　关键负载排除优化切电</text>
+<rect x="1240" y="208" width="290" height="313" rx="18" fill="white" stroke="#c5d7d2"/>
+<text x="1265" y="252" font-size="23" font-weight="700">可信数据链</text>
+<text x="1265" y="299" font-size="20">设备 + 计量时代 + 序号</text><text x="1265" y="339" font-size="20">单位 / 校准 / 质量</text><text x="1265" y="379" font-size="20">总表与分表不重复相加</text><text x="1265" y="419" font-size="20">预测 ≠ 实测减排</text><text x="1265" y="479" font-size="17" fill="#617b80">缺测、未知因子均明确显示</text>
+<rect x="1240" y="556" width="290" height="257" rx="18" fill="white" stroke="#c5d7d2"/>
+<text x="1265" y="601" font-size="23" font-weight="700">空调原生接口</text><text x="1265" y="648" font-size="20">由网关授权适配</text><text x="1265" y="688" font-size="20">调节正常模式 / 设定值</text><text x="1265" y="728" font-size="20">不频繁切断市电</text><text x="1265" y="778" font-size="17" fill="#617b80">协议与设备兼容性待验证</text>
+<path d="M1200 611 H1233" stroke="#1a8179" stroke-width="3" marker-end="url(#down)"/>
+<rect x="1240" y="846" width="290" height="160" rx="18" fill="#e5eae8"/>
+<text x="1265" y="889" font-size="21" font-weight="700">安全实现仍待完成</text><text x="1265" y="930" font-size="18">身份 / 签名 / 安全升级</text><text x="1265" y="967" font-size="18">独立保护 / 实测 / 认证</text>
+<text x="70" y="1055" font-size="18" fill="#617b80">概念评审版 v0.1　·　策略参考为模拟器，未连接硬件　·　箭头表示逻辑数据流，不代表已实现服务</text>
+</g></svg>

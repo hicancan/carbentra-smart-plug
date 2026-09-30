@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:carbonmirror:load-capability:0.1",
+  "title": "Load capability design contract (not safety certification)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "profile_id",
+    "revision",
+    "approved",
+    "critical",
+    "allow_mains_shed",
+    "control_interface",
+    "min_on_s",
+    "min_off_s",
+    "approval_reference"
+  ],
+  "properties": {
+    "profile_id": {
+      "enum": [
+        "unknown",
+        "approved-switchable",
+        "hvac-normal-interface",
+        "critical-monitor"
+      ]
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "approved": {
+      "type": "boolean"
+    },
+    "critical": {
+      "type": "boolean"
+    },
+    "allow_mains_shed": {
+      "type": "boolean"
+    },
+    "control_interface": {
+      "enum": [
+        "none",
+        "mains-relay",
+        "native-device-api"
+      ]
+    },
+    "min_on_s": {
+      "type": "number",
+      "minimum": 0
+    },
+    "min_off_s": {
+      "type": "number",
+      "minimum": 0
+    },
+    "approval_reference": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "profile_id": {
+            "const": "unknown"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "approved": {
+            "const": false
+          },
+          "allow_mains_shed": {
+            "const": false
+          },
+          "control_interface": {
+            "const": "none"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "critical": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "allow_mains_shed": {
+            "const": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "allow_mains_shed": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "approved": {
+            "const": true
+          },
+          "critical": {
+            "const": false
+          },
+          "control_interface": {
+            "const": "mains-relay"
+          },
+          "approval_reference": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "profile_id": {
+            "const": "hvac-normal-interface"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "allow_mains_shed": {
+            "const": false
+          },
+          "control_interface": {
+            "const": "native-device-api"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "profile_id": {
+            "const": "critical-monitor"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "critical": {
+            "const": true
+          },
+          "allow_mains_shed": {
+            "const": false
+          },
+          "control_interface": {
+            "const": "none"
+          }
+        }
+      }
+    }
+  ]
+}

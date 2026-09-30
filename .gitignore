@@ -9,3 +9,5 @@ release/*.zip
 release/*.bundle
 .cache/
 tmp/
+
+*.kicad_prl

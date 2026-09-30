@@ -1,0 +1,68 @@
+{
+  "simulated": true,
+  "not_for_carbon_claims": true,
+  "schema_version": "0.1",
+  "device_id": "CM-SIM-001",
+  "meter_epoch": "SIM-EPOCH-1",
+  "sequence": 101,
+  "sampled_at": "2026-09-30T08:00:00Z",
+  "received_at": "2026-09-30T08:00:01Z",
+  "asset": {
+    "campus_id": "campus-demo",
+    "building_id": "building-A",
+    "room_id": "room-301",
+    "circuit_id": "circuit-A3",
+    "load_id": "load-demo-001"
+  },
+  "measurements": {
+    "voltage_rms": {
+      "value": 220.4,
+      "unit": "V"
+    },
+    "current_rms": {
+      "value": 0.12,
+      "unit": "A"
+    },
+    "active_power": {
+      "value": 21.2,
+      "unit": "W"
+    },
+    "power_factor": {
+      "value": 0.8016,
+      "unit": "1"
+    },
+    "energy_import_total": {
+      "value": 12.345,
+      "unit": "kWh"
+    },
+    "internal_temperature": {
+      "value": 34.2,
+      "unit": "degC"
+    }
+  },
+  "quality": {
+    "status": "simulated",
+    "calibration_id": "NONE-SIMULATION",
+    "missing": false,
+    "clock_uncertainty_ms": 100,
+    "measurement_uncertainty": null
+  },
+  "reported_state": {
+    "energized": true,
+    "fault_latched": false,
+    "online": true,
+    "profile_id": "approved-switchable",
+    "profile_revision": 1
+  },
+  "carbon": {
+    "value": null,
+    "unit": "kgCO2e",
+    "factor_id": null,
+    "reason": "No verified factor, baseline, or measured interval; do not infer savings"
+  },
+  "provenance": {
+    "generator": "hand-authored design fixture",
+    "hardware_connected": false,
+    "socket_self_consumption_in_meter_boundary": null
+  }
+}
