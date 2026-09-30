@@ -1,0 +1,10 @@
+{
+  "rebuild_status": "PASS",
+  "method": "Full placement/schematic regeneration + verified fixed-geometry copper replay in separate /tmp tree",
+  "erc_errors": 0,
+  "erc_warnings": 0,
+  "drc_geometric_violations": 0,
+  "mains_airwires": 9,
+  "pin_net_consistency": "PASS",
+  "note": "Tested before final annotation-only schematic label adjustment; final canonical ERC and pin/net checks were repeated afterward"
+}

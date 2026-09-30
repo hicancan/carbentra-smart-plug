@@ -1,0 +1,29 @@
+{
+  "release_status": "FABRICATION_HOLD",
+  "erc_errors": 0,
+  "erc_warnings": 0,
+  "drc_geometric_violations": 0,
+  "lv_unconnected": 0,
+  "mains_unconnected": 9,
+  "remaining_nets": {
+    "L_AUX_FUSED": 1,
+    "L_FUSED": 2,
+    "L_SWITCHED": 2,
+    "N": 3,
+    "L_NC_UNUSED": 1
+  },
+  "connected_components": 33,
+  "mounting_holes": 4,
+  "assigned_pins_verified": 104,
+  "copper_segments": 729,
+  "vias": 85,
+  "ground_zones": 2,
+  "board_sha256": "02ba07577731dc749c6db5fe8f9dfdbb08d1af2393fb29b63c8cbc8cb042a329",
+  "limitations": [
+    "Mains routing intentionally absent",
+    "Metering daughterboard not implemented",
+    "No energized bench test",
+    "No thermal/EMC/safety certification",
+    "DRC uses preliminary insulation constraints; not a safety certificate"
+  ]
+}

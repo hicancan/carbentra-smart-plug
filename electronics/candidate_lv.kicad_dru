@@ -1,0 +1,5 @@
+(version 1)
+(rule "LV fabrication candidate 0.15mm minimum" (constraint clearance (min 0.15mm)))
+(rule "MAINS to isolated circuits preliminary 8mm hold"
+ (condition "(A.NetName == 'L_FUSED' || A.NetName == 'L_SWITCHED' || A.NetName == 'L_AUX_FUSED' || A.NetName == 'N' || A.NetName == 'L_NC_UNUSED') && !(B.NetName == 'L_FUSED' || B.NetName == 'L_SWITCHED' || B.NetName == 'L_AUX_FUSED' || B.NetName == 'N' || B.NetName == 'L_NC_UNUSED' || B.NetName == '')")
+ (constraint clearance (min 8mm)))

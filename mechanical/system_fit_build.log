@@ -1,0 +1,32 @@
+[
+  {
+    "part": "WireCore_L_IN_POST",
+    "volume_mm3": 0.5751732549947309,
+    "intended_terminal_entry": true
+  },
+  {
+    "part": "WireCore_N_IN",
+    "volume_mm3": 0.5751732549947309,
+    "intended_terminal_entry": true
+  },
+  {
+    "part": "WireCore_L_OUT",
+    "volume_mm3": 0.5751732549947308,
+    "intended_terminal_entry": true
+  },
+  {
+    "part": "WireCore_N_OUT",
+    "volume_mm3": 0.5751732549947308,
+    "intended_terminal_entry": true
+  },
+  {
+    "part": "WireCore_AUX_L_OUT",
+    "volume_mm3": 0.07189665687434137,
+    "intended_terminal_entry": true
+  },
+  {
+    "part": "WireCore_AUX_N",
+    "volume_mm3": 0.07189665687434138,
+    "intended_terminal_entry": true
+  }
+]

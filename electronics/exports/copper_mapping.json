@@ -1,0 +1,19 @@
+{
+  "svg": "pcb_copper_top_cropped.svg",
+  "board_width_mm": 72,
+  "board_height_mm": 68,
+  "svg_viewbox": [
+    4.482100000000001,
+    1.7511999999999999,
+    72,
+    68
+  ],
+  "svg_top_left_common_xyz_mm": [
+    -36,
+    34,
+    9.64
+  ],
+  "svg_x_direction": "+X",
+  "svg_y_direction": "-Y",
+  "meaning": "Actual top copper incl zones; colors are KiCad plotting colors, not soldermask process"
+}

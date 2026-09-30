@@ -1,0 +1,8 @@
+Reference,Manufacturer,Part candidate,Status,Source
+FH1,SCHURTER,0031.8201,Holder selected for nominal geometry; thermal derating unqualified,https://www.schurter.com/en/datasheet/typ_ogn.pdf
+F_MAIN,Littelfuse,0216016.MXP,16 A fast 250 VAC development candidate; load and fault coordination open,https://www.littelfuse.com/assetdocs/littelfuse_fuse_216_datasheet.pdf?assetguid=69cb9c39-1497-4ecc-b09a-c0168520688e
+TF1,Sensience,MICROTEMP G5 110C / G5A01110C candidate,Family and nominal envelope verified; ordering suffix and trip temperature require confirmation,https://www.sensience.com/wp-content/uploads/2022/12/Microtemp_Catalog.pdf
+F_AUX,Littelfuse,0215001.MXEP,1 A time lag 250 VAC candidate; PS1 inrush coordination open,https://www.littelfuse.com/~/media/electronics/datasheets/fuses/littelfuse_fuse_215_datasheet.pdf.pdf
+ANT1,Taoglas,FXP73.07.0100A,Geometry selected; module approval and assembled RF tuning open,https://www.taoglas.com/datasheets/FXP73.07.0100A.pdf
+METER_IC,Analog Devices,ADE9153A,Architecture candidate only; no daughterboard implemented,https://www.analog.com/media/en/technical-documentation/data-sheets/ade9153a.pdf
+METER_ISOLATOR,Analog Devices,ADuM3151,Architecture candidate only; no daughterboard implemented,https://www.analog.com/media/en/technical-documentation/data-sheets/adum3151_3152_3153.pdf

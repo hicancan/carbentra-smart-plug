@@ -1,0 +1,1915 @@
+[
+  {
+    "ref": "PS1",
+    "lib": "Converter_ACDC",
+    "name": "IRM-03-5",
+    "value": "IRM-03-5",
+    "fp": "Converter_ACDC:Converter_ACDC_MeanWell_IRM-03-xx_THT",
+    "nets": {
+      "1": "L_AUX_FUSED",
+      "3": "N",
+      "14": "GND_ISO",
+      "16": "+5V_ISO"
+    },
+    "pos": [
+      10,
+      33,
+      90
+    ],
+    "sch": [
+      95,
+      65
+    ],
+    "mpn": "IRM-03-5",
+    "url": "https://www.meanwell.com/Upload/PDF/IRM-03/IRM-03-SPEC.PDF",
+    "height": 15,
+    "pins": [
+      {
+        "number": "1",
+        "name": "AC/L",
+        "at": [
+          -10.16,
+          2.54,
+          0.0
+        ],
+        "type": "power_in"
+      },
+      {
+        "number": "3",
+        "name": "AC/N",
+        "at": [
+          -10.16,
+          -2.54,
+          0.0
+        ],
+        "type": "power_in"
+      },
+      {
+        "number": "5",
+        "name": "NC",
+        "at": [
+          -7.62,
+          0.0,
+          0.0
+        ],
+        "type": "no_connect"
+      },
+      {
+        "number": "16",
+        "name": "+Vo",
+        "at": [
+          10.16,
+          2.54,
+          180.0
+        ],
+        "type": "power_out"
+      },
+      {
+        "number": "14",
+        "name": "-Vo",
+        "at": [
+          10.16,
+          -2.54,
+          180.0
+        ],
+        "type": "power_out"
+      }
+    ]
+  },
+  {
+    "ref": "K1",
+    "lib": "Relay",
+    "name": "RT314A03",
+    "value": "RT314005 / 5V",
+    "fp": "Relay_THT:Relay_SPDT_Schrack-RT1-16A-FormC_RM5mm",
+    "nets": {
+      "A1": "+5V_ISO",
+      "A2": "COIL_LOW",
+      "11": "L_FUSED",
+      "12": "L_NC_UNUSED",
+      "14": "L_SWITCHED"
+    },
+    "pos": [
+      52,
+      40,
+      180
+    ],
+    "sch": [
+      180,
+      65
+    ],
+    "mpn": "RT314005 / 1-1649328-0",
+    "url": "https://www.te.com/en/product-1-1649328-0.html",
+    "height": 15.7,
+    "pins": [
+      {
+        "number": "A1",
+        "name": "~",
+        "at": [
+          -5.08,
+          7.62,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "A2",
+        "name": "~",
+        "at": [
+          -5.08,
+          -7.62,
+          90.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "12",
+        "name": "~",
+        "at": [
+          2.54,
+          7.62,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "11",
+        "name": "~",
+        "at": [
+          5.08,
+          -7.62,
+          90.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "14",
+        "name": "~",
+        "at": [
+          7.62,
+          7.62,
+          270.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "U1",
+    "lib": "RF_Module",
+    "name": "ESP32-C3-WROOM-02U",
+    "value": "ESP32-C3-WROOM-02U-N4",
+    "fp": "RF_Module:ESP32-C3-WROOM-02U",
+    "nets": {
+      "1": "+3V3_ISO",
+      "2": "EN",
+      "3": "SPI_SCLK",
+      "4": "SPI_MISO",
+      "5": "SPI_MOSI",
+      "6": "SPI_CS",
+      "7": "BOOT8",
+      "8": "BOOT9",
+      "9": "GND_ISO",
+      "10": "RELAY_CMD",
+      "11": "UART_RX",
+      "12": "UART_TX",
+      "13": "BUTTON",
+      "14": "LED_CMD",
+      "15": "TEMP_ALERT",
+      "16": "BOOT2",
+      "17": "I2C_SCL",
+      "18": "I2C_SDA",
+      "19": "GND_ISO"
+    },
+    "pos": [
+      59,
+      17,
+      0
+    ],
+    "sch": [
+      320,
+      85
+    ],
+    "mpn": "ESP32-C3-WROOM-02U-N4",
+    "url": "https://www.espressif.com/sites/default/files/documentation/esp32-c3-wroom-02_datasheet_en.pdf",
+    "height": 2.4,
+    "pins": [
+      {
+        "number": "2",
+        "name": "EN",
+        "at": [
+          -15.24,
+          17.78,
+          0.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "18",
+        "name": "IO0",
+        "at": [
+          -15.24,
+          12.7,
+          0.0
+        ],
+        "type": "bidirectional"
+      },
+      {
+        "number": "17",
+        "name": "IO1",
+        "at": [
+          -15.24,
+          10.16,
+          0.0
+        ],
+        "type": "bidirectional"
+      },
+      {
+        "number": "16",
+        "name": "IO2",
+        "at": [
+          -15.24,
+          7.62,
+          0.0
+        ],
+        "type": "bidirectional"
+      },
+      {
+        "number": "15",
+        "name": "IO3",
+        "at": [
+          -15.24,
+          5.08,
+          0.0
+        ],
+        "type": "bidirectional"
+      },
+      {
+        "number": "3",
+        "name": "IO4",
+        "at": [
+          -15.24,
+          2.54,
+          0.0
+        ],
+        "type": "bidirectional"
+      },
+      {
+        "number": "4",
+        "name": "IO5",
+        "at": [
+          -15.24,
+          0.0,
+          0.0
+        ],
+        "type": "bidirectional"
+      },
+      {
+        "number": "5",
+        "name": "IO6",
+        "at": [
+          -15.24,
+          -2.54,
+          0.0
+        ],
+        "type": "bidirectional"
+      },
+      {
+        "number": "6",
+        "name": "IO7",
+        "at": [
+          -15.24,
+          -5.08,
+          0.0
+        ],
+        "type": "bidirectional"
+      },
+      {
+        "number": "7",
+        "name": "IO8",
+        "at": [
+          -15.24,
+          -7.62,
+          0.0
+        ],
+        "type": "bidirectional"
+      },
+      {
+        "number": "8",
+        "name": "IO9",
+        "at": [
+          -15.24,
+          -10.16,
+          0.0
+        ],
+        "type": "bidirectional"
+      },
+      {
+        "number": "10",
+        "name": "IO10",
+        "at": [
+          -15.24,
+          -12.7,
+          0.0
+        ],
+        "type": "bidirectional"
+      },
+      {
+        "number": "13",
+        "name": "IO18",
+        "at": [
+          -15.24,
+          -15.24,
+          0.0
+        ],
+        "type": "bidirectional"
+      },
+      {
+        "number": "14",
+        "name": "IO19",
+        "at": [
+          -15.24,
+          -17.78,
+          0.0
+        ],
+        "type": "bidirectional"
+      },
+      {
+        "number": "1",
+        "name": "3V3",
+        "at": [
+          0.0,
+          22.86,
+          270.0
+        ],
+        "type": "power_in"
+      },
+      {
+        "number": "19",
+        "name": "GND",
+        "at": [
+          0.0,
+          -22.86,
+          90.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "9",
+        "name": "GND",
+        "at": [
+          0.0,
+          -22.86,
+          90.0
+        ],
+        "type": "power_in"
+      },
+      {
+        "number": "11",
+        "name": "IO20/RXD",
+        "at": [
+          15.24,
+          17.78,
+          180.0
+        ],
+        "type": "bidirectional"
+      },
+      {
+        "number": "12",
+        "name": "IO21/TXD",
+        "at": [
+          15.24,
+          15.24,
+          180.0
+        ],
+        "type": "bidirectional"
+      }
+    ]
+  },
+  {
+    "ref": "U2",
+    "lib": "Regulator_Switching",
+    "name": "AP63203WU",
+    "value": "AP63203WU-7",
+    "fp": "Package_TO_SOT_SMD:TSOT-23-6",
+    "nets": {
+      "1": "+3V3_ISO",
+      "2": "+5V_ISO",
+      "3": "+5V_ISO",
+      "4": "GND_ISO",
+      "5": "SW",
+      "6": "BST"
+    },
+    "pos": [
+      48,
+      33,
+      0
+    ],
+    "sch": [
+      65,
+      140
+    ],
+    "mpn": "AP63203WU-7",
+    "url": "https://www.diodes.com/datasheet/download/AP63200-AP63201-AP63203-AP63205.pdf",
+    "height": 1,
+    "pins": [
+      {
+        "number": "3",
+        "name": "IN",
+        "at": [
+          -10.16,
+          2.54,
+          0.0
+        ],
+        "type": "power_in"
+      },
+      {
+        "number": "2",
+        "name": "EN",
+        "at": [
+          -10.16,
+          -2.54,
+          0.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "4",
+        "name": "GND",
+        "at": [
+          0.0,
+          -7.62,
+          90.0
+        ],
+        "type": "power_in"
+      },
+      {
+        "number": "5",
+        "name": "SW",
+        "at": [
+          10.16,
+          2.54,
+          180.0
+        ],
+        "type": "output"
+      },
+      {
+        "number": "6",
+        "name": "BST",
+        "at": [
+          10.16,
+          0.0,
+          180.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "1",
+        "name": "FB",
+        "at": [
+          10.16,
+          -2.54,
+          180.0
+        ],
+        "type": "input"
+      }
+    ]
+  },
+  {
+    "ref": "L1",
+    "lib": "Device",
+    "name": "L",
+    "value": "3.9uH",
+    "fp": "Inductor_SMD:L_Bourns-SRN4018",
+    "nets": {
+      "1": "SW",
+      "2": "+3V3_ISO"
+    },
+    "pos": [
+      54,
+      33,
+      0
+    ],
+    "sch": [
+      100,
+      140
+    ],
+    "mpn": "SRN4018-3R9M",
+    "url": "https://www.bourns.com/docs/product-datasheets/srn4018.pdf",
+    "height": 1.8,
+    "pins": [
+      {
+        "number": "1",
+        "name": "1",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "2",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "C1",
+    "lib": "Device",
+    "name": "C",
+    "value": "10uF 16V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "+5V_ISO",
+      "2": "GND_ISO"
+    },
+    "pos": [
+      47,
+      27,
+      90
+    ],
+    "sch": [
+      35,
+      140
+    ],
+    "mpn": "GRM21-series candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "C2",
+    "lib": "Device",
+    "name": "C",
+    "value": "100nF 16V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "BST",
+      "2": "SW"
+    },
+    "pos": [
+      51,
+      28,
+      90
+    ],
+    "sch": [
+      85,
+      115
+    ],
+    "mpn": "GRM21-series candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "C3",
+    "lib": "Device",
+    "name": "C",
+    "value": "22uF 10V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "+3V3_ISO",
+      "2": "GND_ISO"
+    },
+    "pos": [
+      59,
+      30,
+      90
+    ],
+    "sch": [
+      115,
+      160
+    ],
+    "mpn": "GRM21-series candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "C4",
+    "lib": "Device",
+    "name": "C",
+    "value": "22uF 10V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "+3V3_ISO",
+      "2": "GND_ISO"
+    },
+    "pos": [
+      63,
+      30,
+      90
+    ],
+    "sch": [
+      135,
+      160
+    ],
+    "mpn": "GRM21-series candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "C5",
+    "lib": "Device",
+    "name": "C",
+    "value": "100nF 10V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "+3V3_ISO",
+      "2": "GND_ISO"
+    },
+    "pos": [
+      47,
+      10,
+      90
+    ],
+    "sch": [
+      295,
+      42
+    ],
+    "mpn": "GRM21-series candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "Q1",
+    "lib": "Transistor_FET",
+    "name": "AO3400A",
+    "value": "AO3400A",
+    "fp": "Package_TO_SOT_SMD:SOT-23",
+    "nets": {
+      "1": "GATE",
+      "2": "GND_ISO",
+      "3": "COIL_LOW"
+    },
+    "pos": [
+      59,
+      45,
+      0
+    ],
+    "sch": [
+      180,
+      120
+    ],
+    "mpn": "AO3400A",
+    "url": "https://www.aosmd.com/res/data_sheets/AO3400A.pdf",
+    "height": 1.1,
+    "pins": [
+      {
+        "number": "1",
+        "name": "G",
+        "at": [
+          -5.08,
+          0.0,
+          0.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "3",
+        "name": "D",
+        "at": [
+          2.54,
+          5.08,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "S",
+        "at": [
+          2.54,
+          -5.08,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "D1",
+    "lib": "Device",
+    "name": "D_Schottky",
+    "value": "SS14",
+    "fp": "Diode_SMD:D_SMA",
+    "nets": {
+      "1": "+5V_ISO",
+      "2": "COIL_LOW"
+    },
+    "pos": [
+      61,
+      37,
+      0
+    ],
+    "sch": [
+      215,
+      65
+    ],
+    "mpn": "SS14",
+    "url": "https://www.vishay.com/docs/88746/ss12.pdf",
+    "height": 2.4,
+    "pins": [
+      {
+        "number": "1",
+        "name": "K",
+        "at": [
+          -3.81,
+          0.0,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "A",
+        "at": [
+          3.81,
+          0.0,
+          180.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "R1",
+    "lib": "Device",
+    "name": "R",
+    "value": "100R",
+    "fp": "Resistor_SMD:R_0603_1608Metric",
+    "nets": {
+      "1": "RELAY_CMD",
+      "2": "GATE"
+    },
+    "pos": [
+      65,
+      42,
+      90
+    ],
+    "sch": [
+      150,
+      120
+    ],
+    "mpn": "RC0603FR-07100RL",
+    "url": "https://www.yageo.com/en/ProductSearch",
+    "height": 0.5,
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "R2",
+    "lib": "Device",
+    "name": "R",
+    "value": "100k",
+    "fp": "Resistor_SMD:R_0603_1608Metric",
+    "nets": {
+      "1": "GATE",
+      "2": "GND_ISO"
+    },
+    "pos": [
+      63,
+      44,
+      90
+    ],
+    "sch": [
+      160,
+      145
+    ],
+    "mpn": "RC0603FR-07100KL",
+    "url": "https://www.yageo.com/en/ProductSearch",
+    "height": 0.5,
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "R3",
+    "lib": "Device",
+    "name": "R",
+    "value": "10k",
+    "fp": "Resistor_SMD:R_0603_1608Metric",
+    "nets": {
+      "1": "+3V3_ISO",
+      "2": "EN"
+    },
+    "pos": [
+      47,
+      14,
+      90
+    ],
+    "sch": [
+      260,
+      65
+    ],
+    "mpn": "RC0603FR-0710KL",
+    "url": "https://www.yageo.com/en/ProductSearch",
+    "height": 0.5,
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "C6",
+    "lib": "Device",
+    "name": "C",
+    "value": "1uF 10V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "EN",
+      "2": "GND_ISO"
+    },
+    "pos": [
+      47,
+      18,
+      90
+    ],
+    "sch": [
+      260,
+      95
+    ],
+    "mpn": "GRM21-series candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "R4",
+    "lib": "Device",
+    "name": "R",
+    "value": "10k",
+    "fp": "Resistor_SMD:R_0603_1608Metric",
+    "nets": {
+      "1": "+3V3_ISO",
+      "2": "BOOT9"
+    },
+    "pos": [
+      69,
+      27,
+      0
+    ],
+    "sch": [
+      340,
+      142
+    ],
+    "mpn": "RC0603FR-0710KL",
+    "url": "https://www.yageo.com/en/ProductSearch",
+    "height": 0.5,
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "R5",
+    "lib": "Device",
+    "name": "R",
+    "value": "10k",
+    "fp": "Resistor_SMD:R_0603_1608Metric",
+    "nets": {
+      "1": "+3V3_ISO",
+      "2": "BOOT8"
+    },
+    "pos": [
+      69,
+      31,
+      0
+    ],
+    "sch": [
+      365,
+      142
+    ],
+    "mpn": "RC0603FR-0710KL",
+    "url": "https://www.yageo.com/en/ProductSearch",
+    "height": 0.5,
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "R6",
+    "lib": "Device",
+    "name": "R",
+    "value": "10k",
+    "fp": "Resistor_SMD:R_0603_1608Metric",
+    "nets": {
+      "1": "+3V3_ISO",
+      "2": "BOOT2"
+    },
+    "pos": [
+      47,
+      22,
+      0
+    ],
+    "sch": [
+      390,
+      142
+    ],
+    "mpn": "RC0603FR-0710KL",
+    "url": "https://www.yageo.com/en/ProductSearch",
+    "height": 0.5,
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "U3",
+    "lib": "Sensor_Temperature",
+    "name": "TMP102xxDRL",
+    "value": "TMP102AIDRLR",
+    "fp": "Package_TO_SOT_SMD:SOT-563",
+    "nets": {
+      "1": "I2C_SCL",
+      "2": "GND_ISO",
+      "3": "TEMP_ALERT",
+      "4": "GND_ISO",
+      "5": "+3V3_ISO",
+      "6": "I2C_SDA"
+    },
+    "pos": [
+      58,
+      55,
+      0
+    ],
+    "sch": [
+      320,
+      205
+    ],
+    "mpn": "TMP102AIDRLR",
+    "url": "https://www.ti.com/lit/ds/symlink/tmp102.pdf",
+    "height": 0.6,
+    "pins": [
+      {
+        "number": "6",
+        "name": "SDA",
+        "at": [
+          -10.16,
+          5.08,
+          0.0
+        ],
+        "type": "bidirectional"
+      },
+      {
+        "number": "1",
+        "name": "SCL",
+        "at": [
+          -10.16,
+          2.54,
+          0.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "4",
+        "name": "ADD0",
+        "at": [
+          -10.16,
+          -2.54,
+          0.0
+        ],
+        "type": "input"
+      },
+      {
+        "number": "5",
+        "name": "V+",
+        "at": [
+          0.0,
+          10.16,
+          270.0
+        ],
+        "type": "power_in"
+      },
+      {
+        "number": "2",
+        "name": "GND",
+        "at": [
+          0.0,
+          -10.16,
+          90.0
+        ],
+        "type": "power_in"
+      },
+      {
+        "number": "3",
+        "name": "ALERT",
+        "at": [
+          10.16,
+          5.08,
+          180.0
+        ],
+        "type": "open_collector"
+      }
+    ]
+  },
+  {
+    "ref": "R7",
+    "lib": "Device",
+    "name": "R",
+    "value": "4.7k",
+    "fp": "Resistor_SMD:R_0603_1608Metric",
+    "nets": {
+      "1": "+3V3_ISO",
+      "2": "I2C_SCL"
+    },
+    "pos": [
+      63,
+      53,
+      90
+    ],
+    "sch": [
+      280,
+      180
+    ],
+    "mpn": "RC0603FR-074K7L",
+    "url": "https://www.yageo.com/en/ProductSearch",
+    "height": 0.5,
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "R8",
+    "lib": "Device",
+    "name": "R",
+    "value": "4.7k",
+    "fp": "Resistor_SMD:R_0603_1608Metric",
+    "nets": {
+      "1": "+3V3_ISO",
+      "2": "I2C_SDA"
+    },
+    "pos": [
+      63,
+      57,
+      90
+    ],
+    "sch": [
+      270,
+      210
+    ],
+    "mpn": "RC0603FR-074K7L",
+    "url": "https://www.yageo.com/en/ProductSearch",
+    "height": 0.5,
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "R9",
+    "lib": "Device",
+    "name": "R",
+    "value": "10k",
+    "fp": "Resistor_SMD:R_0603_1608Metric",
+    "nets": {
+      "1": "+3V3_ISO",
+      "2": "TEMP_ALERT"
+    },
+    "pos": [
+      61,
+      50,
+      90
+    ],
+    "sch": [
+      360,
+      180
+    ],
+    "mpn": "RC0603FR-0710KL",
+    "url": "https://www.yageo.com/en/ProductSearch",
+    "height": 0.5,
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "C7",
+    "lib": "Device",
+    "name": "C",
+    "value": "100nF 10V",
+    "fp": "Capacitor_SMD:C_0805_2012Metric",
+    "nets": {
+      "1": "+3V3_ISO",
+      "2": "GND_ISO"
+    },
+    "pos": [
+      60,
+      58,
+      90
+    ],
+    "sch": [
+      355,
+      218
+    ],
+    "mpn": "GRM21-series candidate",
+    "url": "https://www.murata.com/en-us/products/capacitor/ceramiccapacitor",
+    "height": 1.25,
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "J1",
+    "lib": "Connector_Generic",
+    "name": "Conn_01x02",
+    "value": "LINE IN - terminal HOLD",
+    "fp": "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal",
+    "nets": {
+      "1": "L_FUSED",
+      "2": "N"
+    },
+    "pos": [
+      10,
+      43.5,
+      0
+    ],
+    "sch": [
+      150,
+      42
+    ],
+    "mpn": "1711725",
+    "url": "https://www.phoenixcontact.com/en-pc/products/pcb-terminal-block-mkds-3-2-508-1711725",
+    "height": 18,
+    "pins": [
+      {
+        "number": "1",
+        "name": "Pin_1",
+        "at": [
+          -5.08,
+          0.0,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "Pin_2",
+        "at": [
+          -5.08,
+          -2.54,
+          0.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "J2",
+    "lib": "Connector_Generic",
+    "name": "Conn_01x02",
+    "value": "SWITCHED OUT - HOLD",
+    "fp": "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal",
+    "nets": {
+      "1": "L_SWITCHED",
+      "2": "N"
+    },
+    "pos": [
+      14,
+      60,
+      0
+    ],
+    "sch": [
+      225,
+      42
+    ],
+    "mpn": "1711725",
+    "url": "https://www.phoenixcontact.com/en-pc/products/pcb-terminal-block-mkds-3-2-508-1711725",
+    "height": 18,
+    "pins": [
+      {
+        "number": "1",
+        "name": "Pin_1",
+        "at": [
+          -5.08,
+          0.0,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "Pin_2",
+        "at": [
+          -5.08,
+          -2.54,
+          0.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "J3",
+    "lib": "Connector_Generic",
+    "name": "Conn_01x06",
+    "value": "ISOLATED METER PORT",
+    "fp": "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical",
+    "nets": {
+      "1": "+3V3_ISO",
+      "2": "GND_ISO",
+      "3": "SPI_SCLK",
+      "4": "SPI_MOSI",
+      "5": "SPI_MISO",
+      "6": "SPI_CS"
+    },
+    "pos": [
+      69,
+      36,
+      0
+    ],
+    "sch": [
+      60,
+      245
+    ],
+    "mpn": "Samtec TSW-1xx-07 candidate",
+    "url": "https://www.samtec.com/products/tsw",
+    "height": 8,
+    "pins": [
+      {
+        "number": "1",
+        "name": "Pin_1",
+        "at": [
+          -5.08,
+          5.08,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "Pin_2",
+        "at": [
+          -5.08,
+          2.54,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "3",
+        "name": "Pin_3",
+        "at": [
+          -5.08,
+          0.0,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "4",
+        "name": "Pin_4",
+        "at": [
+          -5.08,
+          -2.54,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "5",
+        "name": "Pin_5",
+        "at": [
+          -5.08,
+          -5.08,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "6",
+        "name": "Pin_6",
+        "at": [
+          -5.08,
+          -7.62,
+          0.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "J4",
+    "lib": "Connector_Generic",
+    "name": "Conn_01x05",
+    "value": "DEBUG - MAINS DISCONNECTED",
+    "fp": "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical",
+    "nets": {
+      "1": "GND_ISO",
+      "2": "UART_TX",
+      "3": "UART_RX",
+      "4": "BOOT9",
+      "5": "EN"
+    },
+    "pos": [
+      46,
+      62,
+      90
+    ],
+    "sch": [
+      380,
+      75
+    ],
+    "mpn": "Samtec TSW-1xx-07 candidate",
+    "url": "https://www.samtec.com/products/tsw",
+    "height": 8,
+    "pins": [
+      {
+        "number": "1",
+        "name": "Pin_1",
+        "at": [
+          -5.08,
+          5.08,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "Pin_2",
+        "at": [
+          -5.08,
+          2.54,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "3",
+        "name": "Pin_3",
+        "at": [
+          -5.08,
+          0.0,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "4",
+        "name": "Pin_4",
+        "at": [
+          -5.08,
+          -2.54,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "5",
+        "name": "Pin_5",
+        "at": [
+          -5.08,
+          -5.08,
+          0.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "J5",
+    "lib": "Connector_Generic",
+    "name": "Conn_01x02",
+    "value": "FUSED AUXILIARY INPUT",
+    "fp": "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal",
+    "nets": {
+      "1": "L_AUX_FUSED",
+      "2": "N"
+    },
+    "pos": [
+      18,
+      6,
+      0
+    ],
+    "sch": [
+      40,
+      65
+    ],
+    "mpn": "1711725",
+    "url": "https://www.phoenixcontact.com/en-pc/products/pcb-terminal-block-mkds-3-2-508-1711725",
+    "height": 18,
+    "pins": [
+      {
+        "number": "1",
+        "name": "Pin_1",
+        "at": [
+          -5.08,
+          0.0,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "Pin_2",
+        "at": [
+          -5.08,
+          -2.54,
+          0.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "SW1",
+    "lib": "Switch",
+    "name": "SW_Push",
+    "value": "LOCAL BUTTON",
+    "fp": "Button_Switch_THT:SW_PUSH_6mm",
+    "nets": {
+      "1": "BUTTON",
+      "2": "GND_ISO"
+    },
+    "pos": [
+      32.75,
+      60.75,
+      0
+    ],
+    "sch": [
+      185,
+      215
+    ],
+    "mpn": "B3F-1000 candidate",
+    "url": "https://components.omron.com/us-en/products/switches/B3F",
+    "height": 4.3,
+    "pins": [
+      {
+        "number": "1",
+        "name": "1",
+        "at": [
+          -5.08,
+          0.0,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "2",
+        "at": [
+          5.08,
+          0.0,
+          180.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "LED1",
+    "lib": "Device",
+    "name": "LED",
+    "value": "STATUS LED GREEN",
+    "fp": "LED_THT:LED_D3.0mm",
+    "nets": {
+      "1": "GND_ISO",
+      "2": "LED_A"
+    },
+    "pos": [
+      34.73,
+      3,
+      0
+    ],
+    "sch": [
+      215,
+      250
+    ],
+    "mpn": "WP710A10GD candidate",
+    "url": "https://www.kingbrightusa.com/",
+    "height": 5.3,
+    "pins": [
+      {
+        "number": "1",
+        "name": "K",
+        "at": [
+          -3.81,
+          0.0,
+          0.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "A",
+        "at": [
+          3.81,
+          0.0,
+          180.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "R10",
+    "lib": "Device",
+    "name": "R",
+    "value": "10k",
+    "fp": "Resistor_SMD:R_0603_1608Metric",
+    "nets": {
+      "1": "+3V3_ISO",
+      "2": "BUTTON"
+    },
+    "pos": [
+      61,
+      61,
+      180
+    ],
+    "sch": [
+      155,
+      195
+    ],
+    "mpn": "RC0603FR-0710KL",
+    "url": "https://www.yageo.com/en/ProductSearch",
+    "height": 0.5,
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  },
+  {
+    "ref": "R11",
+    "lib": "Device",
+    "name": "R",
+    "value": "1k",
+    "fp": "Resistor_SMD:R_0603_1608Metric",
+    "nets": {
+      "1": "LED_CMD",
+      "2": "LED_A"
+    },
+    "pos": [
+      42,
+      4,
+      0
+    ],
+    "sch": [
+      180,
+      250
+    ],
+    "mpn": "RC0603FR-071KL",
+    "url": "https://www.yageo.com/en/ProductSearch",
+    "height": 0.5,
+    "pins": [
+      {
+        "number": "1",
+        "name": "~",
+        "at": [
+          0.0,
+          3.81,
+          270.0
+        ],
+        "type": "passive"
+      },
+      {
+        "number": "2",
+        "name": "~",
+        "at": [
+          0.0,
+          -3.81,
+          90.0
+        ],
+        "type": "passive"
+      }
+    ]
+  }
+]

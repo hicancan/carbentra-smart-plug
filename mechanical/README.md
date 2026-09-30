@@ -6,6 +6,7 @@
 
 ## 文件与打开方式
 
+- `CarbonMirror_S16_SystemAssembly.FCStd` / `.step`：统一坐标的完整机械+KiCad板件装配（电子器件为候选包络）
 - `CarbonMirror_S16_EVT_A.FCStd`：54 个独立、命名、可检查的 FreeCAD 实体与参数表
 - `CarbonMirror_S16_EVT_A.step`：装配交换文件
 - `step/*.step`：单件 STEP；`meshes/*.stl`：对应单件可视化网格

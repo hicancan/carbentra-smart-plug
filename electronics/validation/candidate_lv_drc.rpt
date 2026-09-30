@@ -1,0 +1,46 @@
+** Drc report for candidate_lv.kicad_pcb **
+** Created on 2026-09-30T01:56:26-0700 **
+
+** Found 0 DRC violations **
+
+** Found 9 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(10.0000 mm, 33.0000 mm): PTH pad 1 [L_AUX_FUSED] of PS1
+    @(18.0000 mm, 6.0000 mm): PTH pad 1 [L_AUX_FUSED] of J5
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(31.7000 mm, 47.5000 mm): PTH pad 11 [L_FUSED] of K1
+    @(31.7000 mm, 40.0000 mm): PTH pad 11 [L_FUSED] of K1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(31.7000 mm, 40.0000 mm): PTH pad 11 [L_FUSED] of K1
+    @(10.0000 mm, 43.5000 mm): PTH pad 1 [L_FUSED] of J1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(26.6600 mm, 47.5000 mm): PTH pad 14 [L_SWITCHED] of K1
+    @(26.6600 mm, 40.0000 mm): PTH pad 14 [L_SWITCHED] of K1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(14.0000 mm, 60.0000 mm): PTH pad 1 [L_SWITCHED] of J2
+    @(26.6600 mm, 47.5000 mm): PTH pad 14 [L_SWITCHED] of K1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(15.0800 mm, 33.0000 mm): PTH pad 3 [N] of PS1
+    @(15.0800 mm, 43.5000 mm): PTH pad 2 [N] of J1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(15.0800 mm, 43.5000 mm): PTH pad 2 [N] of J1
+    @(19.0800 mm, 60.0000 mm): PTH pad 2 [N] of J2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(23.0800 mm, 6.0000 mm): PTH pad 2 [N] of J5
+    @(15.0800 mm, 33.0000 mm): PTH pad 3 [N] of PS1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(36.7400 mm, 40.0000 mm): PTH pad 12 [L_NC_UNUSED] of K1
+    @(36.7400 mm, 47.5000 mm): PTH pad 12 [L_NC_UNUSED] of K1
+
+** Found 0 Footprint errors **
+
+** End of Report **

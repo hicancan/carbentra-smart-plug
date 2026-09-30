@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "unchanged_footprints": 37,
+  "checked": [
+    "XY",
+    "orientation",
+    "footprint identifier"
+  ]
+}

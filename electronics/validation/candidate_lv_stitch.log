@@ -1,0 +1,14 @@
+01:51:25: Error: Directory '/home/agent/.config/kicad' couldn't be created (error 30: Read-only file system)
+01:51:25: Error: Directory '/home/agent/.config/kicad/9.0' couldn't be created (error 2: No such file or directory)
+STITCH 0 46.7 61.300000000000004
+STITCH 1 46.400000000000006 36.6
+STITCH 2 60.300000000000004 56.800000000000004
+NO STITCH LOCATION 3 (57.218783, 54.999288)
+STITCH 4 58.1 45.7
+STITCH 5 60.2 30.5
+STITCH 6 63.2 40.2
+STITCH 7 68.2 39.7
+STITCH 8 49.1 33.800000000000004
+STITCH 9 52.0 14.700000000000001
+STITCH 10 48.5 22.8
+STITCH 11 49.7 23.900000000000002

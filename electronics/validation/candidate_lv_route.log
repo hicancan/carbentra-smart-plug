@@ -1,0 +1,15 @@
+01:50:01: Error: Directory '/home/agent/.config/kicad' couldn't be created (error 30: Read-only file system)
+01:50:01: Error: Directory '/home/agent/.config/kicad/9.0' couldn't be created (error 2: No such file or directory)
+ROUTED GATE (63, 44.825) (65, 41.175) steps 63
+ROUTED GATE (58.0625, 44.05) (63, 44.825) steps 308
+ROUTED +3V3_ISO (61, 53.875) (58.7125, 55) steps 48
+ROUTED +3V3_ISO (55.5, 31) (46.8625, 32.05) steps 199
+ROUTED +3V3_ISO (46.8625, 32.05) (46.175, 22) steps 132
+ROUTED +3V3_ISO (61, 50.825) (68.125, 36) steps 250
+ROUTED +5V_ISO (46.875, 34) (52, 40) steps 264
+ROUTED BOOT8 (50.25, 20) (69.825, 31) steps 475
+ROUTED BOOT9 (69.825, 27) (50.25, 21.5) steps 498
+ROUTED BOOT9 (53.62, 62) (69.825, 27) steps 530
+ROUTED BUTTON (60.175, 61) (67.75, 18.5) steps 740
+ROUTED SPI_SCLK (50.25, 14) (69, 41.08) steps 485
+ROUTED GND_ISO (47, 17.05) (40.5, 15.25) steps 162

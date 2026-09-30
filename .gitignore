@@ -12,3 +12,8 @@ tmp/
 
 *.kicad_prl
 *.FCBak
+visuals/animation/frames/
+visuals/renders/00_*
+visuals/*.log
+release/*DRAFT*
+release/CarbonMirror_Exterior_Preview.png

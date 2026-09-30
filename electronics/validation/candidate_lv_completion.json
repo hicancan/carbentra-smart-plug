@@ -1,0 +1,23 @@
+{
+  "footprint_count": 37,
+  "footprint_geometry_unchanged": true,
+  "pad_net_changes": [
+    [
+      "K1",
+      "",
+      "L_NC_UNUSED"
+    ],
+    [
+      "K1",
+      "",
+      "L_NC_UNUSED"
+    ]
+  ],
+  "board_sha256": "02ba07577731dc749c6db5fe8f9dfdbb08d1af2393fb29b63c8cbc8cb042a329",
+  "drc_violations": 0,
+  "lv_unconnected": 0,
+  "mains_unconnected": 9,
+  "tracks": 729,
+  "vias": 85,
+  "zones": 2
+}

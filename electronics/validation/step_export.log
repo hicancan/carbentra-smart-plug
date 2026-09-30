@@ -1,0 +1,15 @@
+Determining PCB data
+Build STEP data
+Create PCB solid model
+Board outline: find 4 initial points
+Build board outlines (1 outlines) with 4 points.
+Build board cutouts and holes (189 hole(s)).
+Subtracting holes for shapes
+Subtracting holes for pads
+Subtracting holes for vias
+
+Generate board full shape.
+Writing STEP file
+STEP file 'exports/pcb_native.step' created.
+
+Export time 2.650 s
