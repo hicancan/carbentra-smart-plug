@@ -37,7 +37,7 @@ static unsigned dropped_telemetry;
 static char boot_epoch[33];
 static uint64_t last_sample_send_ms;
 static double energy_forward_wh,energy_reverse_wh;static unsigned energy_gaps;
-typedef struct {cm_measurement m;int64_t unix_s;bool desired_on,output_present,feedback_valid;uint64_t seq;cm_feedback_status feedback_status;bool calibrated;double forward_wh,reverse_wh;unsigned energy_gaps;} sample;
+typedef struct {cm_measurement m;int64_t unix_s;bool desired_on,output_present,feedback_valid;uint64_t seq;cm_feedback_status feedback_status;bool calibrated;double forward_wh,reverse_wh;unsigned energy_gaps,ram_dropped,command_dropped;} sample;
 static sample buffer[BUFFER_CAP];static size_t head,count;static uint64_t sample_seq;
 static void feedback_edge(void*arg){
  (void)arg;uint64_t now=esp_timer_get_time();bool level=gpio_get_level(FEEDBACK_GPIO);
@@ -81,7 +81,7 @@ static void load_profile(void){nvs_handle_t n;if(nvs_open("cm_factory",NVS_READO
  #endif
  nvs_close(n);
 }
-static void sample_append(uint64_t now){bool valid;sample s={.m=measurement,.unix_s=time(NULL),.desired_on=state.desired_on,.output_present=feedback_present(now,&valid),.seq=++sample_seq,.feedback_status=feedback_status(now),.calibrated=cm_meter_calibrated(),.forward_wh=energy_forward_wh,.reverse_wh=energy_reverse_wh,.energy_gaps=energy_gaps};s.feedback_valid=valid;
+static void sample_append(uint64_t now){bool valid;sample s={.m=measurement,.unix_s=time(NULL),.desired_on=state.desired_on,.output_present=feedback_present(now,&valid),.seq=++sample_seq,.feedback_status=feedback_status(now),.calibrated=cm_meter_calibrated(),.forward_wh=energy_forward_wh,.reverse_wh=energy_reverse_wh,.energy_gaps=energy_gaps,.ram_dropped=dropped_telemetry,.command_dropped=cm_network_dropped_commands()};s.feedback_valid=valid;
  if(count==BUFFER_CAP){head=(head+1)%BUFFER_CAP;count--;dropped_telemetry++;}
  buffer[(head+count)%BUFFER_CAP]=s;count++;
 }
@@ -98,7 +98,7 @@ static void sample_flush(void){
  if(s->m.valid){cJSON_AddNumberToObject(j,"voltage_v",s->m.volts);cJSON_AddNumberToObject(j,"current_a",s->m.amps);cJSON_AddNumberToObject(j,"active_w",s->m.watts);cJSON_AddNumberToObject(j,"reactive_var",s->m.vars);cJSON_AddNumberToObject(j,"apparent_va",s->m.va);cJSON_AddNumberToObject(j,"pf",s->m.pf);cJSON_AddNumberToObject(j,"frequency_hz",s->m.hz);}
  cJSON_AddBoolToObject(j,"board_temperature_valid",s->m.board_temperature_valid);if(s->m.board_temperature_valid)cJSON_AddNumberToObject(j,"board_temperature_c",s->m.board_c);
  cJSON_AddBoolToObject(j,"desired_on",s->desired_on);cJSON_AddBoolToObject(j,"feedback_valid",s->feedback_valid);cJSON_AddBoolToObject(j,"output_present",s->output_present);cJSON_AddStringToObject(j,"output_sensing",cm_feedback_name(s->feedback_status));cJSON_AddBoolToObject(j,"voltage_absence_proven",false);
- cJSON_AddNumberToObject(j,"ram_buffer_dropped",dropped_telemetry);cJSON_AddNumberToObject(j,"command_dropped",cm_network_dropped_commands());
+ cJSON_AddNumberToObject(j,"ram_buffer_dropped",s->ram_dropped);cJSON_AddNumberToObject(j,"command_dropped",s->command_dropped);
  cJSON_AddStringToObject(j,"energy_status",s->calibrated?"calibrated_counts_known_intervals_since_boot_not_billing_certified":"uncalibrated_no_energy_result");
  cJSON_AddNumberToObject(j,"known_forward_wh_since_boot",s->forward_wh);cJSON_AddNumberToObject(j,"known_reverse_wh_since_boot",s->reverse_wh);cJSON_AddNumberToObject(j,"energy_uncertain_intervals",s->energy_gaps);
  char*text=cJSON_PrintUnformatted(j);if(text){if(cm_network_publish("telemetry",text)>=0){last_sample_send_ms=now;}cJSON_free(text);}cJSON_Delete(j);

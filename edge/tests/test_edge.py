@@ -27,6 +27,16 @@ class Tests(unittest.TestCase):
   m={'device_id':'CM-TEST','boot_epoch':'f'*32,'sample_seq':'1','valid':False}
   for _ in range(2):self.e.accept('carbonmirror/v1/CM-TEST/telemetry',json.dumps(m))
   self.assertEqual(self.e.db.execute('select count(*) from telemetry').fetchone()[0],1)
+ def test_duplicate_conflict_and_canonical_sequence(self):
+  m={"device_id":"CM-TEST","boot_epoch":"f"*32,"sample_seq":"1","valid":False}
+  topic="carbonmirror/v1/CM-TEST/telemetry"
+  self.e.accept(topic,json.dumps(m))
+  self.e.accept(topic,json.dumps(dict(reversed(list(m.items())))))
+  m["valid"]=True
+  with self.assertRaises(ValueError):self.e.accept(topic,json.dumps(m))
+  m["sample_seq"]="01"
+  with self.assertRaises(ValueError):self.e.accept(topic,json.dumps(m))
+  self.assertEqual(self.e.db.execute("select count(*) from telemetry").fetchone()[0],1)
  def test_new_boot(self):
   for ch in 'ab':self.e.accept('carbonmirror/v1/CM-TEST/telemetry',json.dumps({'device_id':'CM-TEST','boot_epoch':ch*32,'sample_seq':'1'}))
   self.assertEqual(self.e.db.execute('select count(*) from telemetry').fetchone()[0],2)

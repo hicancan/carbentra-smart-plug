@@ -6,6 +6,7 @@ test_siblings (test_accounting.AccountingTests.test_siblings) ... ok
 test_bad_counter_type (test_edge.Tests.test_bad_counter_type) ... ok
 test_deep_structure (test_edge.Tests.test_deep_structure) ... ok
 test_dry_run_excludes_critical (test_edge.Tests.test_dry_run_excludes_critical) ... ok
+test_duplicate_conflict_and_canonical_sequence (test_edge.Tests.test_duplicate_conflict_and_canonical_sequence) ... ok
 test_duplicate_json (test_edge.Tests.test_duplicate_json) ... ok
 test_durable_duplicate (test_edge.Tests.test_durable_duplicate) ... ok
 test_exponent_overflow (test_edge.Tests.test_exponent_overflow) ... ok
@@ -23,6 +24,6 @@ test_linear (test_forecast.ForecastTests.test_linear) ... ok
 test_no_fake_confidence (test_forecast.ForecastTests.test_no_fake_confidence) ... ok
 
 ----------------------------------------------------------------------
-Ran 23 tests in 0.014s
+Ran 24 tests in 0.023s
 
 OK

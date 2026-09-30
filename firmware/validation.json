@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc": "2026-09-30T10:23:13.463640+00:00",
+  "recorded_at_utc": "2026-09-30T10:47:57.902780+00:00",
   "scope": "Development digital evidence only; no connected hardware, no flashing, no mains validation",
   "idf_version": "5.4.3",
   "idf_commit": "ea1c174c1cbb7348bd8ba0ff1eb306246938dd80",
@@ -8,16 +8,16 @@
   "actuation_enabled": false,
   "host_policy_cases": 37,
   "host_local_trip_invariants": 10000,
-  "edge_unit_tests": 23,
+  "edge_unit_tests": 24,
   "host_protocol_and_meter_reset_regressions": "PASS",
   "host_feedback_qualification_tests": "PASS",
   "asan_ubsan": true,
   "leak_sanitizer": false,
   "source_sha256": {
     "edge/accounting.py": "20d771b0d401547ecd6ff23b4442a9330c188871e8f93e3689c23f9c15611839",
-    "edge/service.py": "647cce7789425822d83df3a4ca6062c0de72830f1f2214d3d804089390a43518",
+    "edge/service.py": "67796fddaeb4745a5b3eefd799d3f9e1209ff5e719d4c3836dfb48434d8a0009",
     "edge/tests/test_accounting.py": "6c646051dc761c1bd2bee57ce52191410093f067519330fb6874c2218196775d",
-    "edge/tests/test_edge.py": "4052da4d66c34771d491e1075e5823303d8b62a6fb5eb91c686bf18892b6da7c",
+    "edge/tests/test_edge.py": "305898ddd36b0aefac290228387b3826e201c87f2bd0a3ba5ff6e9b478d2a27a",
     "edge/tests/test_forecast.py": "efa83f393605f77fbfe14fd5fb0cdd32ab648f003190ffbb56fdacb3e6f9ceef",
     "firmware/CMakeLists.txt": "9a1bd5f6a9b94a13bce4763f39c1cc54d810fc03c5da110a4f904aa75f544646",
     "firmware/core/cm_command_json.c": "b5dc1103035818062fb968219da60b41647e85e1856bfe4aaa4ea1be58433ebe",
@@ -30,7 +30,7 @@
     "firmware/core/cm_policy.h": "79844524ecc5378ff340c46063d48fca46dec8b8a1bf30410f06cada6f783b8f",
     "firmware/main/CMakeLists.txt": "10df8fb406fdaa737c1a718f313016e74377fd9c3dfe66b291916594f6b7546e",
     "firmware/main/Kconfig.projbuild": "8043e6dfb2f3f03622c7093049ca6e359a177e1f4305749d96923c28e4b7999c",
-    "firmware/main/app_main.c": "0f17b10e7da741ae697927b84e0cebe70a71930bcdccb25719db252963fc4c03",
+    "firmware/main/app_main.c": "7f40313c2977ed21ceb317215ebae68943aeab8bb37d7abcde20d06b82dcc53f",
     "firmware/main/cm_meter.c": "84ac88a8b81e98f7164555bae92b22584389800f4420f7e6be5024c6f7866dea",
     "firmware/main/cm_meter.h": "aab26daa2dee2e2dbf4fe335727df305ad417ba6d6a712533ed7f40f5749f90f",
     "firmware/main/cm_network.c": "47bc5f9e59ce1a55a1c96bae28a091eb6a28b3811ba3be714b983f4c824eb42d",
@@ -44,12 +44,12 @@
     "firmware/tests/test_protocol.c": "3b71b2b5fc52a31b794e405fcaf6b743fb0b4c6326386154aa5965615cdb7953",
     "firmware/tools/calibration_template.json": "a44b50df56666aec6254ad99dae7e8f93c306c9c598967ed2833512c6a80654b",
     "firmware/tools/make_calibration_record.py": "4d239aa6cda8d53b4ec1458daf869e2e536bc13839765afbdb459c768e6ca919",
-    "firmware/tools/record_validation.py": "eab0a0fff1feeea3a6ad33105a0b0671c53542b988516288093b83c4b7d2fd28"
+    "firmware/tools/record_validation.py": "dd890a714d870e1d0c717e4b1e05e901602537de698ba09117fcdd2202b7c6eb"
   },
   "artifact_sha256": {
     "bootloader_DEV.bin": "e5911dc3c0cabd272c357cc075c3efee931c46143adac7d6c03d6937ed46f8a1",
     "partition-table_DEV.bin": "9f9cde954696374258c4d1f40e3ce09a7131e1fee7bad5100dc6556983ea6e80",
-    "carbonmirror_endpoint_DEV_ACTUATION_DISABLED.bin": "a25048a87bbc6ac9c7ebf2bfc3fe281059326125dac2ac2323f18b8c519856fc"
+    "carbonmirror_endpoint_DEV_ACTUATION_DISABLED.bin": "689a0872721c46509d14076e48254fb0b6999428f6dba51c96da2596d76a78d6"
   },
   "limits": [
     "No actual MCU/radio/broker interoperability testing",

@@ -6,7 +6,7 @@ import argparse, json, math, re, sqlite3, ssl, time
 from pathlib import Path
 DEVICE = re.compile(r'^[A-Za-z0-9_-]{1,47}$')
 NONCE = re.compile(r'^[0-9a-f]{32}$')
-SEQ = re.compile(r'^[0-9]{1,20}$')
+SEQ = re.compile(r'^[1-9][0-9]{0,19}$')
 def reject_duplicate(pairs):
     out = {}
     for k, v in pairs:
@@ -82,9 +82,12 @@ class Edge:
                 if key in message and type(message[key]) is not bool: raise ValueError('bad boolean')
             for key in ['known_forward_wh_since_boot','known_reverse_wh_since_boot','energy_uncertain_intervals','ram_buffer_dropped','command_dropped']:
                 if key in message and message[key]<0: raise ValueError('negative accumulator')
+            canonical=json.dumps(message,ensure_ascii=False,separators=(',',':'),sort_keys=True,allow_nan=False)
             with self.db:
-                self.db.execute('INSERT OR IGNORE INTO telemetry VALUES(?,?,?,?,?)',
-                    (device,epoch,seq,now,json.dumps(message,ensure_ascii=False,separators=(',',':'),allow_nan=False)))
+                self.db.execute('INSERT OR IGNORE INTO telemetry VALUES(?,?,?,?,?)',(device,epoch,seq,now,canonical))
+                saved=self.db.execute('SELECT payload FROM telemetry WHERE device=? AND epoch=? AND seq=?',(device,epoch,seq)).fetchone()[0]
+                if json.dumps(strict_json(saved),ensure_ascii=False,separators=(',',':'),sort_keys=True,allow_nan=False)!=canonical:
+                    raise ValueError('conflicting duplicate sample')
             # Durable receipt is distinct from MQTT PUBACK.
             return f'carbonmirror/v1/{device}/receipt', {'boot_epoch':epoch,'sample_seq':seq}
         if kind == 'ack':

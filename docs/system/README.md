@@ -106,4 +106,4 @@ FAULT_LATCHED → 人工检修/本地受控复位 → BOOT（禁止云端自动�
 
 ## 开发证据索引
 
-本页中的 Python 模拟与 schema 验证仍保持参考用途。真实 C 固件实现见 firmware/，实际构建与 SHA-256 见 firmware/validation.json；边缘服务和23项测试见 edge/。纯策略通过不代表独立硬件保护、实机互通、计量或网络部署通过。发布门槛见 docs/ENGINEERING_RELEASE_GATES.md。
+本页中的 Python 模拟与 schema 验证仍保持参考用途。真实 C 固件实现见 firmware/，实际构建与 SHA-256 见 firmware/validation.json；边缘服务和24项测试见 edge/。纯策略通过不代表独立硬件保护、实机互通、计量或网络部署通过。发布门槛见 docs/ENGINEERING_RELEASE_GATES.md。
