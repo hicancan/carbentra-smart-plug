@@ -1,0 +1,50 @@
+{
+  "recorded_at_utc": "2026-10-01T15:25:29.632565+00:00",
+  "platform": "Linux x86_64, isolated Debian bookworm builder container",
+  "compiler": "cc (Debian 12.2.0-14+deb12u1) 12.2.0",
+  "address_sanitizer": true,
+  "undefined_behavior_sanitizer": true,
+  "static_sanitizer_runtime": true,
+  "leak_sanitizer": false,
+  "compiled": true,
+  "startup_scenarios": 7,
+  "switch_boundary_smoke": "48 accepted / 49 rejected",
+  "full_gate_tests": "Run separately by the shared Edge --release runner",
+  "binaries": {
+    "test_startup": {
+      "source_sha256": {
+        "/plug/firmware/main/carbentra_storage.c": "3fada337db4067c32bbc19fa4e99dd79205e0e3687c37e37d829c802eda91317",
+        "/plug/firmware/core/carbentra_policy.c": "59208d2f2df4c11afaa24b0b5af8f96ffce1f3cd69158c29237b34340e672664",
+        "/plug/firmware/core/carbentra_feedback.c": "c431d6ccc9ba292b45b004ebd02b6879e3ebe0f97c8de2940aca08a56b6c7dad",
+        "/plug/firmware/core/carbentra_execution.c": "64d49501be8816c4795489b363ee5d5f212dd482b2efbd5cc37cfff4dae7a1ed",
+        "/plug/firmware/tests/test_startup.c": "f507b0ed29168e212b2d5b3f1142884a42c83fa242b8c1d7e06f1fa21daedc8a",
+        "/sdk/components/json/cJSON/cJSON.c": "7d05ec953edbcff23f06b27f634839f95761b23cc784505b1294a130dfa20d26"
+      },
+      "binary_sha256": "a4b1c9125c00e96145751c81f4a746efbd11259bf00cff46a8f933bc18847ffa"
+    },
+    "test_time_signature": {
+      "source_sha256": {
+        "/plug/firmware/core/carbentra_time_signature.c": "f6dfd453aa36b401848b9eefb2e331269055149b05e57e731cf80bf770b882f2",
+        "/plug/firmware/core/carbentra_json.c": "7af17039f7c43a1ac768432a8f0a6973af11b38c066d6ae6e06a634f9ba9bc1f",
+        "/plug/firmware/tests/test_time_signature.c": "974fb3e2e1d09bbedfbb4fac49e5be65cdee3b91f499717dc855f3a481955554",
+        "/sdk/components/json/cJSON/cJSON.c": "7d05ec953edbcff23f06b27f634839f95761b23cc784505b1294a130dfa20d26"
+      },
+      "binary_sha256": "e2ef62e872470ca446467ad90ac5559f19344d129f6e4b7a14eea5be2a20b448"
+    },
+    "test_certificate_dates": {
+      "source_sha256": {
+        "/plug/firmware/tests/test_certificate_dates.c": "64817b8d460834f1d44e0188a93d70369b55faf9e83c6224931c34bd7fb93e07"
+      },
+      "binary_sha256": "57501ff11c306bfad2ecc9b982445415c549f544d968e0749caf34e5676469b7"
+    },
+    "switch_command_decoder": {
+      "source_sha256": {
+        "/platform/edge/tests/c/switch_command_decoder.c": "5284a390764808a5d3f764d1e2fc85513f7c798555bc5eea8082d42c1c5b8a13",
+        "/switch/firmware/core/switch_core.c": "2e804ab363d55fb6ececd78e3ab713485e4b15c0a4acbd093befefd76b192d4d",
+        "/switch/firmware/main/command_json.c": "ed28774717cde8991d1c060399a51babc33c367e2d9733b53be22e9d88e18ac6",
+        "/sdk/components/json/cJSON/cJSON.c": "7d05ec953edbcff23f06b27f634839f95761b23cc784505b1294a130dfa20d26"
+      },
+      "binary_sha256": "cbd62080b776243bec75125e09af79a98afd99ad5b606acba613a6ad67a8f239"
+    }
+  }
+}

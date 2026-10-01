@@ -2,9 +2,9 @@
 
 本仓负责Plug机械、电气、固件和物理放行事实。2026-10-01教室升级后，多产品Edge及合同已统一到carbentra-campus-platform；hardware/edge只留迁移与来源记录，不再有第二套运行实现。实物尚未制造/逐台标定/市电安全验证，制造与通电继续HOLD。
 
-本机可复现入口见 [Windows 开发说明](../docs/WINDOWS_DEVELOPMENT.md)：uv / Python 3.12、MSVC、ESP-IDF 5.4.3、KiCad 10.0.5、FreeCAD 1.1.4、Blender 5.2.2。当前总数字检查 290 项通过；Windows 与 Linux 互补验证明确记录 OS 专属排除。原生 CAD、三张用户修改的展示图和有依赖的源模块均保留。
+本机可复现入口见 [Windows 开发说明](../docs/WINDOWS_DEVELOPMENT.md)：uv / Python 3.12、MSVC、ESP-IDF 5.4.3、KiCad 10.0.5、FreeCAD 1.1.4、Blender 5.2.2。Windows 入口自动构建并执行四个真实 C 跨语言门禁；最新 Windows/Linux 软件结果与源码摘要见 `firmware/remediation-report.json`。历史 290 项数字设计检查不因本次软件维护自动更新，原生 CAD、三张用户修改的展示图和有依赖的源模块均保留。
 
-153 个已忽略备份/帧/旧 host 产物约 402.15 MiB 的磁盘删除被自动审批拦截；它们未进入公开包。`scripts/clean_local_outputs.ps1` 默认只读，用户显式 `-Apply` 才执行固化清单。详见 `release/windows-cleanup.json`。
+153 个已忽略备份/帧/旧 host 产物约 402.15 MiB 已由用户执行清理，并于 2026-10-01 逐项确认不存在；它们未进入公开包。`release/windows-cleanup.json` 保留审计清单，`scripts/clean_local_outputs.ps1` 默认只读，用户显式 `-Apply` 才处理仍存在且身份匹配的候选。
 
 ## 当前查看顺序
 

@@ -1,13 +1,29 @@
-============================= test session starts ==============================
-platform linux -- Python 3.12.14, pytest-9.1.1, pluggy-1.6.0 -- /tmp/carbentra-audit-platform-venv/bin/python
-cachedir: /workspace/scratch/abc8258751a2/firmware-toolchains/tmp/crypto-pytest
-rootdir: /workspace/scratch/abc8258751a2/current-github-audit/repos/carbentra-campus-platform
+**********************************************************************
+** Visual Studio 2022 Developer PowerShell v17.14.38
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+-- Configuring done (0.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: D:/Temp/codex/carbentra-fix-20261001/plug/crypto/mbedtls
+ninja: no work to do.
+test_time_signature.c
+carbentra_time_signature.c
+carbentra_json.c
+cJSON.c
+正在生成代码...
+  正在创建库 D:\Temp\codex\carbentra-fix-20261001\plug\crypto\time_signature\test_time_signature.lib 和对象 D:\Temp\codex\carbentra-fix-20261001\plug\crypto\time_signature\test_time_signature.exp
+test_certificate_dates.c
+============================= test session starts =============================
+platform win32 -- Python 3.12.13, pytest-9.1.1, pluggy-1.6.0 -- D:\code\github\hicancan\carbentra-suite\carbentra-campus-platform\.venv\Scripts\python.exe
+cachedir: D:\Temp\codex\carbentra-fix-20261001\plug\crypto\pytest-cache
+rootdir: D:\code\github\hicancan\carbentra-suite\carbentra-campus-platform
 configfile: pyproject.toml
 plugins: anyio-4.15.1
 collecting ... collected 3 items
 
-current-github-audit/repos/carbentra-campus-platform/edge/tests/test_time_bootstrap.py::SignedTimeTests::test_real_firmware_crypto PASSED [ 33%]
-current-github-audit/repos/carbentra-campus-platform/edge/tests/test_time_bootstrap.py::SignedTimeTests::test_signer_rejects_invalid_inputs PASSED [ 66%]
-current-github-audit/repos/carbentra-campus-platform/edge/tests/test_certificate_dates.py::CertificateTests::test_dates_ca_and_hostname PASSED [100%]
+..\carbentra-campus-platform\edge\tests\test_time_bootstrap.py::SignedTimeTests::test_real_firmware_crypto PASSED [ 33%]
+..\carbentra-campus-platform\edge\tests\test_time_bootstrap.py::SignedTimeTests::test_signer_rejects_invalid_inputs PASSED [ 66%]
+..\carbentra-campus-platform\edge\tests\test_certificate_dates.py::CertificateTests::test_dates_ca_and_hostname PASSED [100%]
 
-============================== 3 passed in 0.19s ===============================
+- generated xml file: D:\Temp\codex\carbentra-fix-20261001\plug\crypto\crypto-tests.xml -
+============================== 3 passed in 0.49s ==============================

@@ -1,11 +1,17 @@
 {
   "schema_version": 1,
-  "recorded_at_utc": "2026-10-01T14:22:45.697191+00:00",
-  "status": "FRESH_HOST_AND_TARGET_PASS_PHYSICAL_UNTESTED",
-  "scope": "Firmware software remediation and fresh MCU compilation; hardware and deployed network behavior untested",
-  "base_git_revision": "0866ff33fa489ebb8bf994b6d9eaa8d9b03f30e0",
-  "source_binding": "Current maintained firmware/build/test source byte inventory after the listed regressions. Target C/header inputs were rebuilt. Does not assert CAD/media were revalidated.",
+  "recorded_at_utc": "2026-10-01T15:32:06.3746855Z",
+  "status": "FRESH_WINDOWS_HOST_TARGET_AND_DUAL_OS_SHARED_EDGE_PASS_PHYSICAL_UNTESTED",
+  "scope": "Windows maintenance entry, current MCU compilation and four-real-C shared Edge gates on Windows/Linux; no CAD rerun or physical qualification",
+  "base_git_revision": "06511ffd992851302754fd9aaf41c68227e6a5eb",
+  "source_binding": "Current firmware/build/test source byte inventory. Native CAD/media validation remains historical and was not rerun.",
   "source_sha256": {
+    ".github/workflows/digital-checks.yml": "0e7abb02bc8bf99eace4b7fafbb59faa8f8fa809f6f989be9c8ab343a014fa63",
+    ".python-version": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d",
+    "contracts/device-capabilities.json": "8c26023d3bf063206a235f3d51c76222221eec699e18e1199c6953aab0bf1839",
+    "contracts/README.md": "d69232491a7e7ce03190942c121cdd9e8e96c91ac2d95af63c468de7f3a666a9",
+    "edge/PROVENANCE.json": "60daf0beac96f6351ceccc322b54772f76f9e5f392bebffa7575d27ec91b293a",
+    "edge/README.md": "e3f3b321578458c5e1abe5be7cfc6efa4345706f3b0fedbc9b73865dac97de27",
     "firmware/CMakeLists.txt": "a06f826883ed24f6f308f6e82c3ecd7a6f44ef5cf552fa543e74e78919a6b9cb",
     "firmware/core/carbentra_calibration.c": "c9efdda97a5f4bcb4d761a11b150c3f73f893ea50ddb51c8d569d7003bb8c75c",
     "firmware/core/carbentra_calibration.h": "44046130c3dce45450fafdead710e6fa20846eff4b49a7787e0ec84e23ab4659",
@@ -24,8 +30,6 @@
     "firmware/core/carbentra_storage_contract.h": "f2e3dc63621b03d1cc68b8c13de7a46bf553f54c8802aaffb9e05e196a770c61",
     "firmware/core/carbentra_time_signature.c": "f6dfd453aa36b401848b9eefb2e331269055149b05e57e731cf80bf770b882f2",
     "firmware/core/carbentra_time_signature.h": "74c2f3502774c74347620b6df8b43e4820030c603cf155bab013881c5aa0fb1e",
-    "firmware/main/CMakeLists.txt": "19a88a1d73d0a7f68f3a89b2448d34e614e48d80dd5c0871eaa6c99721fd3f53",
-    "firmware/main/Kconfig.projbuild": "66962c7f9654acbb0b89830f4a41ca331be3b1f8818219b4a280b9be8510bd1e",
     "firmware/main/app_main.c": "f38cdc9b763848bc796b65d83742075b376475ef364528be87ac4ac853eb99d8",
     "firmware/main/carbentra_meter.c": "e0445fdcb2278d69b0948f908861d1348a85399d7f37ad3ee58ef20195e05f5d",
     "firmware/main/carbentra_meter.h": "ceb726db3748b129cd24b585663aae8f0f8e84ce50ec14101ea486a5d6e88f90",
@@ -35,9 +39,12 @@
     "firmware/main/carbentra_storage.h": "b77d172950b7199684ed220cbab136e464db584776b96bb4eec62b349eee0f13",
     "firmware/main/carbentra_time_bootstrap.c": "445426ebad27ceeb6468ddf477ba0bee5faefaf9c076a87a45f1ae40ca268310",
     "firmware/main/carbentra_time_bootstrap.h": "9628599f956a02e858c30a7b8eecbe6fd442e9e4dea427de63111e08b691f7fa",
+    "firmware/main/CMakeLists.txt": "19a88a1d73d0a7f68f3a89b2448d34e614e48d80dd5c0871eaa6c99721fd3f53",
+    "firmware/main/Kconfig.projbuild": "66962c7f9654acbb0b89830f4a41ca331be3b1f8818219b4a280b9be8510bd1e",
     "firmware/partitions.csv": "c852563ccb3b5d016656d71c3585b0744609d9e5348d7efbc3023eea121b5481",
     "firmware/sdkconfig": "8381e95c0a65aeea902d85538fa22a12b614ba66ad610dfcc956c7288ceee1bc",
     "firmware/sdkconfig.defaults": "1955b63d2802d5e351e754e993d5e3bc2a02e634383a189a49668365db4df6ef",
+    "firmware/tests/build_switch_command_test.ps1": "7eb43176b969074aed523a225641c796a85066b537d919da13c10b547d2494f3",
     "firmware/tests/mocks/driver/gpio.h": "e5a702fe9d9038a24de3ff8938077148d13f79a005da0b57356e25e659169a8a",
     "firmware/tests/mocks/esp_err.h": "2dad282023d5d07530eb5f07774cbae9164cb3a7c360b58bfebc7af5b7bceb15",
     "firmware/tests/mocks/esp_log.h": "f16935e587cca7803035e7c91d158bf0916f95789690d6b0a2e8cbd3ee43684f",
@@ -47,7 +54,7 @@
     "firmware/tests/mocks/freertos/task.h": "d8a6c0ba04a4e6210e0bd89fdc740be254da3a31a12ccbfeaf9381058ebfed53",
     "firmware/tests/mocks/nvs.h": "2e00548da8426c4cedf67066779a3058834e2d4f66f58b739b78b404c4d85233",
     "firmware/tests/mocks/nvs_flash.h": "017a4024950b0eef1f0204ca68e9032d1e4e14676edd984b8bb211e45c4db460",
-    "firmware/tests/run_crypto_tests.ps1": "bad6a0fb67370fe88329bd65ddbd89a2c0d30ec2cb11be5be23f18651be49ae4",
+    "firmware/tests/run_crypto_tests.ps1": "f7de45312336af0a928b134208db77ed42273eb93a7a541fcfc4c878c57b3aca",
     "firmware/tests/run_crypto_tests.sh": "156b97d50f48c9339d15e28f974c544a54efd8a7def3dd882e160f23da978f60",
     "firmware/tests/run_development_checks.sh": "16d6204f13d4f30c9c7db888119ee1eec4ea5c69867a03a1e0a0489751cf60ad",
     "firmware/tests/run_host_tests.ps1": "90a7a167f0b2d68a88384edb7abe238855e283eac70567b487736009d857a7aa",
@@ -62,49 +69,53 @@
     "firmware/tests/test_time_signature.c": "974fb3e2e1d09bbedfbb4fac49e5be65cdee3b91f499717dc855f3a481955554",
     "firmware/third_party/cJSON/cJSON.c": "298581a04a36c0165da4b0aade235c23088cb2faa58651d720ea2f3706ed0b0d",
     "firmware/third_party/cJSON/cJSON.h": "25b0145150d500498e4d209cec69c18c42cf818bffcc54690be3b895a2a16dee",
+    "firmware/tools/calibration_template.json": "fbee197cd4735413b11c6349a01507e83bcb6f62dfb27a4bf46e24e7f64cbbe0",
     "firmware/tools/make_calibration_record.py": "153652d6395913f5d888ac31073e6e25d111d1529b2e6b743bb96faf578e36e2",
-    "firmware/tools/record_validation.py": "076401d5919a5f306792123793f3b98bcfba11f2ea92c33acba3c18f4154c78d",
-    "scripts/build_design_book.py": "8374141cabf4f8b22bca3b910f6f5bb123004277077cbf29d9aab829d4933c2a",
-    "scripts/build_design_book_rev_b.py": "e8a1e3a5c8f1913e423cae3a6a10680c057d818f1551d4fc8216f59f5c430ecb",
+    "firmware/tools/record_validation.py": "da7bb8c0282dd528e0708f378fa9db69fb372f33c91dd9a3f0813a47360e126b",
+    "pyproject.toml": "e69a5d9b8825a89f64c6e799f3a23f1a142dff81d8e5d91d8c7a96beb2b8e4bf",
     "scripts/build_firmware.ps1": "f55dcbc32100c210be2e1425484d556e4baa49f2c32db616ea8dcc311863ec4e",
-    "scripts/cad_equivalence.py": "167ce87b117550aed7ffc0888213370da2bf6677f43cdf366df7da8334387a9b",
-    "scripts/carbentra_pcb.py": "7856d3da58322358fe4b1176cc082b61a912e3f1f017a32e53288d2d556f107e",
-    "scripts/carbentra_tools.py": "4e50a4c46fe0b57f854d79d1f1787838ca925627d20900dc4dec08cb49a6dec0",
-    "scripts/check_brand_hygiene.py": "4f7d87817ccb3b3553b34a1da3b16e1156b652242d686b639c1b59369e43a723",
-    "scripts/check_publish_hygiene.py": "a68e97c0e99cd55872fd8402591fc0966d62e47db20e2ba5b9c0ce46d401ff47",
-    "scripts/check_windows.ps1": "8f4f6bcab16646f4dd7d93330371c0efb086158fc2fc889746c87f9e1728a5f7",
-    "scripts/clean_local_outputs.ps1": "d8a06d464357efff0f1b6bda8c6fcfe661af941529c866e1afd9af78f34e8b0b",
-    "scripts/engineering.ps1": "57377f803661d664cf09f1b50e2a9e51fd28ecd90b35668805005471570ed764",
-    "scripts/finalize_hardware_handoff.py": "6fccb42a148a0a9ad34bd812568fd4643dae16dc1bd0938c4eb0b31fdfc94f07",
-    "scripts/package_delivery.py": "bfd60652ef33e38e94807e88fd72480cb94a08166a8c6089370e082cd937d6f5",
-    "scripts/rebuild_windows.ps1": "81321992989ffab3a7e91e32f02d05d3c9987a89d1b5a2eabf6ed79318e8cc85",
-    "scripts/record_windows_hardware.py": "fb54e3d3d5cf84f87dd8422149a3a96675b7a9dd085ef8c71309c232d22cd975",
-    "scripts/run_engineering.py": "65592353e42db9ccc0b96ef6f15fb0d55a5fcba50d8f81c41fcbe1ad57f16372",
+    "scripts/check_windows.ps1": "3efd96dd90f69ef2638b03bd0ba9f17121e108d6e1e98cad7e7c169b1f34e75c",
     "scripts/validate_firmware_evidence.py": "68ed628179e45dfe69b74f54aaf92b49c0417beddd491ed0d98e18b33c5f47af",
-    "scripts/validate_hardware_evidence.py": "65aaf9382acfde4ad0446dbab4015939536955536408f8ba65ba4b776273f8e9",
-    "scripts/validate_release.py": "ecd0f318e5d86bea9e4da1692400111faffddcc57ec76a2e5912a4aaa3a9df02",
     "scripts/validate_release_rev_b.py": "eb6a85edf2f42a766eca638bf5ebcdb0e04120daca64bc5007a26de3017880ad",
-    "scripts/verify_glb_roundtrip.py": "6aff3cd721299657c74d1eddf067e393bec1dc38aa05213c18a46103a7201763",
-    "scripts/verify_hardware_rebuild.py": "854cfc413ec1ba312bf3a1b89d0d70e2f961c5e422fed016cd71b2a1bdbf436e",
-    "scripts/verify_rebuilt_ecad.py": "7030fa5cfc205d4a42e01872595d986b33b87831c9ca17c8e84078a0f632680e"
+    "uv.lock": "aa5dff76f2001a03a67a9aed51a8cdc4e790a495782bd813231bebf3f8300a07"
   },
-  "artifacts": {
-    "carbentra_endpoint.bin": {
-      "bytes": 1309760,
-      "sha256": "2dfce6f410c02492a86513009071e1f67d2f162c61b974663e0f7fcb5c5433e9"
+  "artifact_sha256": {
+    "bootloader_DEV.bin": "294911a986dfb0b143d42a5e6633d5b074beaf78ab9ca5d41e611c207f960505",
+    "carbentra_endpoint_DEV_ACTUATION_DISABLED.bin": "959dc84ec0ee83b80818544ab55491e3eada979a505fb5710da911b1b980f7a5",
+    "partition-table_DEV.bin": "9f9cde954696374258c4d1f40e3ce09a7131e1fee7bad5100dc6556983ea6e80"
+  },
+  "target": {
+    "board": "esp32c3",
+    "sdk": "ESP-IDF 5.4.3",
+    "sdk_commit": "ea1c174c1cbb7348bd8ba0ff1eb306246938dd80",
+    "compiler": "riscv32-esp-elf GCC 14.2.0 esp-14.2.0_20250730 on Windows",
+    "app_bytes": 1309760,
+    "physical_actuation_enabled": false,
+    "certificate_dates_enabled": true
+  },
+  "tests": {
+    "windows_host_groups": 6,
+    "policy_cases": 45,
+    "local_trip_invariants": 10000,
+    "startup_scenarios": 7,
+    "windows_address_sanitizer": true,
+    "windows_undefined_behavior_sanitizer": false,
+    "pinned_mbedtls_crypto_tests": "3/3 PASS",
+    "shared_edge_windows": "89 passed, 2 skipped, 47 subtests passed in 7.62s",
+    "shared_edge_linux": "90 passed, 1 skipped, 47 subtests passed in 27.87s",
+    "shared_edge_both_release": true,
+    "switch_decoder_automatically_compiled": true,
+    "switch_decoder_executable_sha256": "b2344e8a32f66cf8062962911d296dbbfa9df679144bf177365e00512a740341",
+    "windows_entry_negative_controls": {
+      "missing_explicit_gate_refused": true,
+      "process_environment_restored": true,
+      "repository_output_directory_refused": true,
+      "physical_actuation": false,
+      "success_process_environment_restored": true
     },
-    "bootloader.bin": {
-      "bytes": 20832,
-      "sha256": "839691bf87f5e630af0f3bd6efa15996c32ff2349feb840fe5487fd74a6ebc5b"
-    },
-    "partition-table.bin": {
-      "bytes": 3072,
-      "sha256": "9f9cde954696374258c4d1f40e3ce09a7131e1fee7bad5100dc6556983ea6e80"
-    },
-    "sdkconfig": {
-      "bytes": 72932,
-      "sha256": "8381e95c0a65aeea902d85538fa22a12b614ba66ad610dfcc956c7288ceee1bc"
-    }
+    "release_evidence_checks": 202,
+    "release_evidence_passed": true,
+    "shared_mqtt_current": true
   },
   "physical_validation": {
     "flashed": false,
@@ -114,32 +125,11 @@
     "deployment_ready": false
   },
   "limits": [
-    "No board flashing or physical actuation",
-    "No real BLE/RF/radar/relay/lamp/mains tests",
-    "No production credentials, calibration or safety qualification",
-    "Old Windows/CAD/media evidence remains historical; this report does not renew it"
+    "No board flashing, real RF/radar/relay/lamp/mains tests or production credentials",
+    "Windows host suites used MSVC ASan; Linux four C fixtures used GCC ASan/UBSan, with leak checks disabled",
+    "OS-specific exclusions are complementary tests, not executed passes",
+    "Native CAD/media and physical safety evidence was not renewed by this software run"
   ],
-  "target": {
-    "board": "esp32c3",
-    "sdk": "ESP-IDF 5.4.3",
-    "sdk_commit": "ea1c174c1cbb7348bd8ba0ff1eb306246938dd80",
-    "compiler": "riscv32-esp-elf GCC14.2.0 esp-14.2.0_20250730",
-    "app_bytes": 1309760,
-    "physical_actuation_enabled": false,
-    "certificate_dates_enabled": true
-  },
-  "tests": {
-    "host_groups": 6,
-    "policy_cases": 45,
-    "local_trip_invariants": 10000,
-    "startup_scenarios": 7,
-    "asan_ubsan": "PASS",
-    "pinned_mbedtls_crypto_tests": "3/3 PASS",
-    "shared_edge": "86 passed, 1 expected Non-POSIX guard skip, 47 subtests; all four actual C gates required",
-    "release_evidence_checker": "197/197 PASS",
-    "release_runner_missing_switch_binary": "expected fail-closed result verified",
-    "powershell_changed_entry_runtime": "NOT RUN on this Linux host; changed parameter/export reviewed, C/Edge behavior tested independently"
-  },
   "current_complete_firmware_evidence": "validation.json",
-  "evidence_bundle": "current-github-audit/evidence/remediation/firmware; build logs under external firmware-toolchains; release packaging owns binaries"
+  "evidence_bundle": "firmware/evidence plus tests/host_results.txt, tests/crypto_results.txt and target_build.log"
 }

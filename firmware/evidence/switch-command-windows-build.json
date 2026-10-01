@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-01T15:29:55.5787107Z",
+  "scope": "Compiled real Switch decoder for shared Edge tests; no network, GPIO or physical actuation",
+  "platform": "Windows MSVC x64",
+  "address_sanitizer": true,
+  "undefined_behavior_sanitizer": false,
+  "compiled": true,
+  "tests": "Executed by the shared Edge release runner, not by this build step",
+  "sdk_commit": "ea1c174c1cbb7348bd8ba0ff1eb306246938dd80",
+  "source_sha256": {
+    "platform/edge/tests/c/switch_command_decoder.c": "5284a390764808a5d3f764d1e2fc85513f7c798555bc5eea8082d42c1c5b8a13",
+    "switch/firmware/core/switch_core.c": "2e804ab363d55fb6ececd78e3ab713485e4b15c0a4acbd093befefd76b192d4d",
+    "switch/firmware/core/switch_core.h": "7be0725f6417e835560ed786cce40c19ec3fed93ebeb58be6cde939d93f266e1",
+    "switch/firmware/main/command_json.c": "ed28774717cde8991d1c060399a51babc33c367e2d9733b53be22e9d88e18ac6",
+    "switch/firmware/main/command_json.h": "3db1d133f46109be4cb24eb8c0952beac23ad4b9589825a9b2a70e8c1a891edc",
+    "esp-idf/components/json/cJSON/cJSON.c": "7d05ec953edbcff23f06b27f634839f95761b23cc784505b1294a130dfa20d26",
+    "esp-idf/components/json/cJSON/cJSON.h": "254db291898b17874be2503607afe483ecd80274effb427a88da9029b0a26e6b"
+  },
+  "executable": "D:\\Temp\\codex\\carbentra-fix-20261001\\plug\\switch-command\\switch_command_decoder.exe",
+  "executable_sha256": "b2344e8a32f66cf8062962911d296dbbfa9df679144bf177365e00512a740341",
+  "asan_runtime_sha256": "3aa742521e8cbd23252f0545aa51d5a15624a3e4430fbe2f81567afaeb3fc59b"
+}

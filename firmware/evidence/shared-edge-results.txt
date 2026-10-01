@@ -1,5 +1,6 @@
-....................................... [ 44%]
-...................................s............           [100%]
-=========================== short test summary info ============================
-SKIPPED [1] current-github-audit/repos/carbentra-campus-platform/edge/tests/test_presence_auth.py:93: Non-POSIX startup guard
-86 passed, 1 skipped, 47 subtests passed in 2.39s
+....................................... [ 42%]
+................................s.....s.............       [100%]
+=========================== short test summary info ===========================
+SKIPPED [1] ..\carbentra-campus-platform\edge\tests\test_presence_auth.py:79: Authenticated Sense enrollment uses POSIX private-key permissions
+SKIPPED [1] ..\carbentra-campus-platform\edge\tests\test_presence_auth.py:73: POSIX private-key permissions are verified in the Linux suite
+89 passed, 2 skipped, 47 subtests passed in 7.62s

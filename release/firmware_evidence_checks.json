@@ -13,12 +13,12 @@
       "detail": ""
     },
     {
-      "check": "source contracts/README.md",
+      "check": "source contracts/device-capabilities.json",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "source contracts/device-capabilities.json",
+      "check": "source contracts/README.md",
       "passed": true,
       "detail": ""
     },
@@ -123,16 +123,6 @@
       "detail": ""
     },
     {
-      "check": "source firmware/main/CMakeLists.txt",
-      "passed": true,
-      "detail": ""
-    },
-    {
-      "check": "source firmware/main/Kconfig.projbuild",
-      "passed": true,
-      "detail": ""
-    },
-    {
       "check": "source firmware/main/app_main.c",
       "passed": true,
       "detail": ""
@@ -178,6 +168,16 @@
       "detail": ""
     },
     {
+      "check": "source firmware/main/CMakeLists.txt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/main/Kconfig.projbuild",
+      "passed": true,
+      "detail": ""
+    },
+    {
       "check": "source firmware/partitions.csv",
       "passed": true,
       "detail": ""
@@ -189,6 +189,11 @@
     },
     {
       "check": "source firmware/sdkconfig.defaults",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/build_switch_command_test.ps1",
       "passed": true,
       "detail": ""
     },
@@ -394,6 +399,26 @@
     },
     {
       "check": "evidence firmware/evidence/shared-mqtt-integration.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "evidence firmware/evidence/host-windows-validation.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "evidence firmware/evidence/switch-command-windows-build.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "evidence firmware/evidence/linux-gates-build.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "evidence firmware/evidence/windows-entry-checks.json",
       "passed": true,
       "detail": ""
     },

@@ -40,5 +40,5 @@ foreach ($kind in @('time_signature','certificate_dates')) {
 }
 $env:CARBENTRA_TIME_TEST_BINARY=Join-Path $OutputDirectory 'time_signature\test_time_signature.exe'
 $env:CARBENTRA_CERT_TEST_BINARY=Join-Path $OutputDirectory 'certificate_dates\test_certificate_dates.exe'
-& $platformPython -m pytest (Join-Path $PlatformRoot 'edge\tests\test_time_bootstrap.py') (Join-Path $PlatformRoot 'edge\tests\test_certificate_dates.py') -o addopts= -v --junitxml (Join-Path $OutputDirectory 'crypto-tests.xml')
+& $platformPython -m pytest (Join-Path $PlatformRoot 'edge\tests\test_time_bootstrap.py') (Join-Path $PlatformRoot 'edge\tests\test_certificate_dates.py') -o addopts= -o "cache_dir=$OutputDirectory\pytest-cache" --tb=short -v --junitxml (Join-Path $OutputDirectory 'crypto-tests.xml')
 if ($LASTEXITCODE -ne 0) { throw 'Real firmware signature/certificate regressions failed' }

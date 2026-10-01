@@ -263,18 +263,22 @@ CARBENTRA Plug 会在设备端重新判断每一条控制请求。
 uv venv --python 3.12
 uv sync --locked
 $env:CARBENTRA_PLATFORM_ROOT='D:\code\github\hicancan\carbentra-suite\carbentra-campus-platform'
-pwsh -NoProfile -File scripts/check_windows.ps1 -SwitchCommandTestBinary 'D:\Temp\switch_command_decoder.exe' -BuildTarget -CheckNativeCAD -RenderGPU
+pwsh -NoProfile -File scripts/check_windows.ps1 -OutputDirectory 'D:\Temp\codex\carbentra-plug-check' -BuildTarget
 ```
 
 本机环境、原生 CAD 重建顺序与工具路径见 [Windows 开发说明](docs/WINDOWS_DEVELOPMENT.md)。
 
-共享 Edge 的 release 检查还要求真实 Switch C 解码器门禁：Windows 通过
-`-SwitchCommandTestBinary` 或环境变量 `CARBENTRA_SWITCH_COMMAND_TEST_BINARY`
-传入外部已编译程序；Linux `run_development_checks.sh` 和完整 release 验证器
-也要求同一环境变量。缺失时明确失败，不再只验证原有三个 Plug C 门禁。
-编译入口是共享平台的 `edge/tests/c/switch_command_decoder.c`，链接 Switch 的
+Windows 入口会自动编译真实 Switch C 解码器，并将它与三个 Plug C 验证器
+一起传入共享 Edge 的 `--release` 门禁。默认从同级的共享平台及 Switch 仓取源；
+不同目录可传 `-PlatformRoot`、`-SwitchRoot`。编译入口是共享平台的
+`edge/tests/c/switch_command_decoder.c`，链接 Switch 的
 `firmware/core/switch_core.c`、`firmware/main/command_json.c` 与 SDK 固定版本
-cJSON；该程序只解析命令行 JSON，退出码 0/1 分别表示接受/拒绝，没有设备或网络操作。
+cJSON，构建记录保存源文件及程序 SHA-256。该程序只解析命令行 JSON，
+退出码 0/1 分别表示接受/拒绝，没有设备或网络操作。需要复用已编译程序时，
+仍可显式传 `-SwitchCommandTestBinary`；缺失或失败不会降级为跳过。
+Linux `run_development_checks.sh` 和独立完整 release 验证器仍要求
+`CARBENTRA_SWITCH_COMMAND_TEST_BINARY`。CAD 或场景改变时，再加
+`-CheckNativeCAD -RenderGPU`；Windows 通过不会自动更新历史 Linux/CAD 证明。
 
 [本次固件复验](firmware/remediation-report.json)记录全新 ESP-IDF 5.4.3 目标构建、
 host 安全回归和新增共享解码器门禁的传递检查。它不修改原有实物 HOLD 状态，
