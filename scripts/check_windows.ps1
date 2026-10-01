@@ -1,6 +1,7 @@
 [CmdletBinding()]
 param(
     [string]$PlatformRoot=$env:CARBENTRA_PLATFORM_ROOT,
+    [string]$SwitchCommandTestBinary=$env:CARBENTRA_SWITCH_COMMAND_TEST_BINARY,
     [string]$OutputDirectory='D:\Temp\codex\carbentra-localize-20261001\plug',
     [switch]$BuildTarget,
     [switch]$CheckNativeCAD,
@@ -10,6 +11,10 @@ $ErrorActionPreference='Stop'
 $root=Split-Path $PSScriptRoot -Parent
 if (-not $PlatformRoot) { $PlatformRoot=Join-Path (Split-Path $root -Parent) 'carbentra-campus-platform' }
 $env:CARBENTRA_PLATFORM_ROOT=$PlatformRoot
+if (-not $SwitchCommandTestBinary -or -not (Test-Path -LiteralPath $SwitchCommandTestBinary -PathType Leaf)) {
+    throw 'Supply -SwitchCommandTestBinary (or CARBENTRA_SWITCH_COMMAND_TEST_BINARY): the actual Switch C decoder gate built from the shared Edge harness and Switch sources'
+}
+$env:CARBENTRA_SWITCH_COMMAND_TEST_BINARY=(Resolve-Path -LiteralPath $SwitchCommandTestBinary).Path
 $env:TEMP=$OutputDirectory; $env:TMP=$OutputDirectory; $env:PYTHONUTF8='1'
 New-Item -ItemType Directory -Path $OutputDirectory -Force | Out-Null
 function Run([string[]]$Command) {

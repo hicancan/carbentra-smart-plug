@@ -64,13 +64,17 @@ if movie.exists():
 else:check('actual animation',False)
 temp_root=Path(os.environ.get('CARBENTRA_TEMP_ROOT','D:/Temp/codex/carbentra-localize-20261001/plug'));temp_root.mkdir(parents=True,exist_ok=True)
 test_dir=tempfile.TemporaryDirectory(prefix='carbentra-release-tests-',dir=temp_root)
+switch_gate=os.environ.get('CARBENTRA_SWITCH_COMMAND_TEST_BINARY')
+if not switch_gate or not Path(switch_gate).is_file():
+ raise SystemExit('Set CARBENTRA_SWITCH_COMMAND_TEST_BINARY to the externally compiled actual Switch C decoder gate required by shared Edge release checks')
+os.environ['CARBENTRA_SWITCH_COMMAND_TEST_BINARY']=str(Path(switch_gate).resolve())
 for name,binary in [('CARBENTRA_STARTUP_TEST_BINARY','test_startup'),('CARBENTRA_TIME_TEST_BINARY','test_time_signature'),('CARBENTRA_CERT_TEST_BINARY','test_certificate_dates')]:os.environ.setdefault(name,str(Path(os.environ['TEMP'])/('host/test_startup/test_startup.exe' if binary=='test_startup' else 'crypto/'+binary.removeprefix('test_')+'/'+binary+'.exe')))
 platform=Path(os.environ.get('CARBENTRA_PLATFORM_ROOT','/nonexistent'))
 commands=[([sys.executable,'scripts/validate_hardware_evidence.py'],'hardware evidence'),([sys.executable,'scripts/validate_firmware_evidence.py'],'firmware evidence'),(['pwsh','-NoProfile','-File','firmware/tests/run_host_tests.ps1','-AddressSanitizer'],'canonical C core and startup tests'),(['pwsh','-NoProfile','-File','firmware/tests/run_crypto_tests.ps1'],'real cryptography and certificate tests')]
 if (platform/'edge/tools/run_checks.py').is_file():commands.append(([str(platform/'.venv/Scripts/python.exe'),str(platform/'edge/tools/run_checks.py'),'--release','--output',str(Path(test_dir.name)/'shared-edge.json')],'shared edge release tests; no unexpected skips'))
 else:check('explicit shared platform checkout',False,'Set CARBENTRA_PLATFORM_ROOT; missing shared source is not a pass')
 for cmd,label in commands:
- allowed={'PATH','PATHEXT','SYSTEMROOT','WINDIR','COMSPEC','TEMP','TMP','USERPROFILE','APPDATA','LOCALAPPDATA','PROGRAMFILES','PROGRAMFILES(X86)','PROGRAMDATA','HOMEDRIVE','HOMEPATH','PYTHONUTF8','PYTHONPATH','IDF_PATH','IDF_TOOLS_PATH','IDF_PYTHON_ENV_PATH','CARBENTRA_PLATFORM_ROOT','CARBENTRA_STARTUP_TEST_BINARY','CARBENTRA_TIME_TEST_BINARY','CARBENTRA_CERT_TEST_BINARY','CARBENTRA_TEMP_ROOT','UV_CACHE_DIR','UV_PYTHON_INSTALL_DIR','UV_TOOL_DIR','UV_INSTALL_DIR'}
+ allowed={'PATH','PATHEXT','SYSTEMROOT','WINDIR','COMSPEC','TEMP','TMP','USERPROFILE','APPDATA','LOCALAPPDATA','PROGRAMFILES','PROGRAMFILES(X86)','PROGRAMDATA','HOMEDRIVE','HOMEPATH','PYTHONUTF8','PYTHONPATH','IDF_PATH','IDF_TOOLS_PATH','IDF_PYTHON_ENV_PATH','CARBENTRA_PLATFORM_ROOT','CARBENTRA_STARTUP_TEST_BINARY','CARBENTRA_TIME_TEST_BINARY','CARBENTRA_CERT_TEST_BINARY','CARBENTRA_SWITCH_COMMAND_TEST_BINARY','CARBENTRA_TEMP_ROOT','UV_CACHE_DIR','UV_PYTHON_INSTALL_DIR','UV_TOOL_DIR','UV_INSTALL_DIR'}
  child_env={k:v for k,v in os.environ.items() if k.upper() in allowed}
  r=subprocess.run(cmd,cwd=R,capture_output=True,text=True,env=child_env);check(label,r.returncode==0,r.stdout+r.stderr)
 review=R/'release/CARBENTRA_RevB_Design_Review_CN.pdf';check('final Chinese review PDF',review.is_file() and review.stat().st_size>1000)

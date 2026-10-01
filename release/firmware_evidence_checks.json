@@ -13,12 +13,12 @@
       "detail": ""
     },
     {
-      "check": "source contracts/device-capabilities.json",
+      "check": "source contracts/README.md",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "source contracts/README.md",
+      "check": "source contracts/device-capabilities.json",
       "passed": true,
       "detail": ""
     },
@@ -123,6 +123,16 @@
       "detail": ""
     },
     {
+      "check": "source firmware/main/CMakeLists.txt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/main/Kconfig.projbuild",
+      "passed": true,
+      "detail": ""
+    },
+    {
       "check": "source firmware/main/app_main.c",
       "passed": true,
       "detail": ""
@@ -164,16 +174,6 @@
     },
     {
       "check": "source firmware/main/carbentra_time_bootstrap.h",
-      "passed": true,
-      "detail": ""
-    },
-    {
-      "check": "source firmware/main/CMakeLists.txt",
-      "passed": true,
-      "detail": ""
-    },
-    {
-      "check": "source firmware/main/Kconfig.projbuild",
       "passed": true,
       "detail": ""
     },
@@ -383,11 +383,6 @@
       "detail": ""
     },
     {
-      "check": "evidence firmware/evidence/host-windows-validation.json",
-      "passed": true,
-      "detail": ""
-    },
-    {
       "check": "evidence firmware/evidence/shared-edge-linux-validation.json",
       "passed": true,
       "detail": ""
@@ -493,6 +488,11 @@
       "detail": ""
     },
     {
+      "check": "shared source edge/freshness.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
       "check": "shared source edge/ingress.py",
       "passed": true,
       "detail": ""
@@ -539,6 +539,11 @@
     },
     {
       "check": "shared source edge/store.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tests/c/switch_command_decoder.c",
       "passed": true,
       "detail": ""
     },
@@ -594,6 +599,11 @@
     },
     {
       "check": "shared source edge/tests/test_legacy_migration.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tests/test_observation_freshness.py",
       "passed": true,
       "detail": ""
     },
@@ -824,6 +834,11 @@
     },
     {
       "check": "MQTT shared source edge/contract.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source edge/freshness.py",
       "passed": true,
       "detail": ""
     },
