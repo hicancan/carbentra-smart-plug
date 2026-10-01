@@ -1,5 +1,7 @@
 <div align="center">
 
+> 2026-10-01 classroom upgrade: the sole multi-device Edge and contract authority moved to `carbentra-campus-platform/edge` and `packages/iot-contract`. This repository owns Plug hardware, firmware and physical qualification facts. New local ON uses the same commissioning/load/feedback/dwell guards; actual presses establish a15-minute manual hold. The default target still disables actuation. Historical broker/PDF evidence does not automatically validate upgraded shared sources.
+
 # CARBENTRA Plug
 
 ### 面向校园能源编排的 AIoT 边缘智能插座
@@ -16,10 +18,12 @@
 [![Digital development checks](https://github.com/hicancan/carbentra-smart-plug/actions/workflows/digital-checks.yml/badge.svg)](https://github.com/hicancan/carbentra-smart-plug/actions/workflows/digital-checks.yml)
 ![Revision](https://img.shields.io/badge/revision-Rev%20B-0f766e)
 ![MCU](https://img.shields.io/badge/MCU-ESP32--C3-2563eb)
-![ECAD](https://img.shields.io/badge/ECAD-KiCad%209-7c3aed)
+![ECAD](https://img.shields.io/badge/ECAD-KiCad%2010-7c3aed)
 ![CAD](https://img.shields.io/badge/CAD-FreeCAD-0284c7)
 
 </div>
+
+本机数字验证与源码摘要见 [交付入口](release/START_HERE.md)。GitHub 徽章展示远端工作流状态；物理放行条件独立保留。
 
 <p align="center">
   <a href="visuals/rev_b/renders/01_hero_ivory.png">
@@ -28,7 +32,7 @@
 </p>
 
 <p align="center">
-  <sub>CARBENTRA Plug Rev B · 当前公开数字工程基线</sub>
+  <sub>CARBENTRA Plug Rev B · 本地数字验证快照 · 实物尚未验证</sub>
 </p>
 
 ---
@@ -41,7 +45,7 @@ CARBENTRA Plug 是 CARBENTRA 产品体系的第一个设备终端。
 
 > **感知 → 校验 → 判断 → 执行 → 验证 → 回传**
 
-电压、电流、功率、能量与温度构成设备状态；本地策略决定动作是否具备执行条件；输出反馈确认物理结果；边缘侧与云端在这条可信闭环上继续完成局部协调、预测优化与全局调度。
+电压、电流、功率、能量与温度构成设备状态；本地策略决定动作是否具备执行条件；输出反馈确认物理结果；边缘侧持久运输这些事实，平台统一完成资产绑定、预测、约束策略和能碳核算。
 
 当一台设备接入 CARBENTRA Plug，它同时获得联网能力、可观测状态、受约束执行能力，以及一个能够被上层能源系统持续理解的数字接口。
 
@@ -159,7 +163,7 @@ Rev B 已经整合以下功能域：
 - 主保险、热保护、继电器与输出路径；
 - 连续 PE 保护导体路径。
 
-## 六页原理图
+## 原理图
 
 <a href="electronics/rev_b/integrated/exports/schematic.pdf">
   <img src="docs/assets/readme/cn/schematic-overview.webp" alt="CARBENTRA Plug Rev B 六页原理图总览" width="100%" />
@@ -255,25 +259,25 @@ CARBENTRA Plug 会在设备端重新判断每一条控制请求。
 
 ## 可复现软件检查
 
-```bash
-python3 -m unittest discover -s tests/policy -v
-python3 -m unittest discover -s edge/tests -v
-bash firmware/tests/run_host_tests.sh
-python3 scripts/validate_firmware_evidence.py
-python3 scripts/check_brand_hygiene.py
+```powershell
+uv venv --python 3.12
+uv sync --locked
+$env:CARBENTRA_PLATFORM_ROOT='D:\code\github\hicancan\carbentra-suite\carbentra-campus-platform'
+pwsh -NoProfile -File scripts/check_windows.ps1 -BuildTarget -CheckNativeCAD -RenderGPU
 ```
+
+本机环境、原生 CAD 重建顺序与工具路径见 [Windows 开发说明](docs/WINDOWS_DEVELOPMENT.md)。
 
 当前仓库已验证：
 
-- **24 / 24** 策略参考测试；
-- **24 / 24** 边缘服务单元测试；
-- **37** 个固件策略用例；
+- 唯一 C 本地保护核心，**45** 个策略用例；
+- 边缘发布门禁记录 OS 专属排除与互补验证，当前测试数量见 firmware/evidence/shared-edge-validation.json；
 - **10,000** 次本地故障优先级不变量检查；
 - 协议 / 计量复位 / 链路卡滞回归；
 - 输出反馈判定测试；
-- GitHub Actions 数字工程检查。
+- 已配置 GitHub Actions Windows 主机门禁和 ESP32-C3 目标构建；远端执行状态以 Actions 记录为准。
 
-ESP32-C3 新版目标二进制将在当前 CARBENTRA 命名空间下完成重新构建后进入下一次发布。
+ESP32-C3 当前源码已使用官方 ESP-IDF 5.4.3 重新构建，默认继电器禁用、证书有效期校验启用；源码与产物摘要见 firmware/validation.json。真实硬件验证仍为 HOLD。
 
 ---
 
@@ -281,7 +285,7 @@ ESP32-C3 新版目标二进制将在当前 CARBENTRA 命名空间下完成重新
 
 设备把测量与执行结果交给边缘节点，边缘节点将它们组织成可以持续协调的楼宇侧状态。
 
-当前边缘参考服务已经提供：
+共享平台仓库中的边缘服务提供：
 
 - MQTT 设备适配；
 - 允许清单与设备身份校验；
@@ -289,9 +293,9 @@ ESP32-C3 新版目标二进制将在当前 CARBENTRA 命名空间下完成重新
 - 启动纪元 + 序号去重；
 - 持久化回执；
 - 控制回执保存；
-- 削峰建议基线；
-- 线性预测基线；
-- 带来源边界的能碳核算工具。
+- 带重试和冲突隔离的 HTTP outbox；
+- 持久命令 inbox、租约、过期/重放守卫和独立物理放行门；
+- 源摘要绑定的真实软件 broker / 平台联调。预测、调度和核算只有平台一份实现。
 
 一条设备遥测在成功落库后返回持久化回执，由此可以清晰区分“消息已到达 MQTT 消息代理”和“数据已进入边缘状态库”。
 
@@ -308,8 +312,8 @@ ESP32-C3 新版目标二进制将在当前 CARBENTRA 命名空间下完成重新
 系统分工：
 
 - **CARBENTRA Plug**：感知、保护、执行、验证；
-- **CARBENTRA Edge**：设备聚合、局部协调、策略过滤、离线连续性；
-- **CARBENTRA Cloud**：负荷预测、碳感知优化、全局调度；
+- **CARBENTRA Edge**：合同校验、持久收据、重试运输、命令网关；
+- **CARBENTRA Cloud**：负荷预测、约束策略评估、全局调度；
 - **CARBENTRA Twin**：映射设备、空间、能耗、碳排与执行状态。
 
 > **一只 Plug 让一台设备可被控制；一组 Plug 让一片负载可以被协同。**
@@ -326,9 +330,9 @@ CARBENTRA Plug 位于能源算法与真实物理设备之间，把调度策略�
 | 机械 CAD | ✅ 原生 CAD + STEP + 装配 / 机构 / 连通性证据 |
 | 电气设计 | ✅ 六页原理图 + 四层 PCB + ERC / DRC 数字检查 |
 | 固件主机逻辑 | ✅ 策略、协议、反馈、计量回归测试 |
-| 边缘参考服务 | ✅ 持久遥测、核算、预测基线测试 |
+| 边缘参考服务 | ✅ 严格合同、持久运输、mTLS 虚拟设备闭环 |
 | 视觉 / 数字孪生资产 | ✅ Blender、GLB、渲染、爆炸动画 |
-| ESP32-C3 新版目标二进制 | 🔄 CARBENTRA 命名空间下重新构建 |
+| ESP32-C3 新版目标二进制 | ✅ 官方 ESP-IDF 5.4.3 当前源码实际构建，继电器禁用 |
 | 实物 EVT（工程验证样机） | ⏳ 下一阶段 |
 | 逐台计量标定 | ⏳ 实物阶段 |
 | 16 A 温升 / 故障验证 | ⏳ 实物阶段 |
@@ -381,10 +385,8 @@ firmware/
 └── validation.json
 
 edge/
-├── service.py
-├── accounting.py
-├── forecast.py
-└── tests/
+├── README.md        # shared implementation: carbentra-campus-platform/edge
+└── PROVENANCE.json  # migration record
 ```
 
 ### 视觉与数字孪生
@@ -409,7 +411,7 @@ carbentra-smart-plug/
 ├── mechanical/      # CAD、STEP、零件、机构与装配检查
 ├── electronics/     # KiCad 原理图、PCB、BOM、电气验证
 ├── firmware/        # ESP32-C3 源码、策略、计量、网络与主机测试
-├── edge/            # 边缘服务、持久遥测、核算与预测基线
+├── edge/            # 平台共享 Edge 的迁移说明与来源记录
 ├── visuals/         # Blender、渲染、GLB、动画
 ├── docs/            # 系统契约、品牌体系与平台叙事
 ├── tests/           # 策略参考测试

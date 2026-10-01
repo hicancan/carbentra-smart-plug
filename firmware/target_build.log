@@ -1,0 +1,133 @@
+**********************************************************************
+** Visual Studio 2022 Developer PowerShell v17.14.38
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+carbentra_policy.c
+test_policy.c
+正在生成代码...
+PASS local input: commissioning/load/feedback/dwell guards, offline OFF, debounce, manual hold and maintenance
+PASS 45 policy cases and 10000 local-trip invariants
+carbentra_command_json.c
+carbentra_json.c
+carbentra_meter_decode.c
+cJSON.c
+test_protocol.c
+正在生成代码...
+  正在创建库 <VALIDATION_OUTPUT>\host\test_protocol\test_protocol.lib 和对象 <VALIDATION_OUTPUT>\host\test_protocol\test_protocol.exp
+PASS JSON boundaries, meter encodings/checksum/CRC, runtime reset and stuck-link regression
+carbentra_feedback.c
+test_feedback.c
+正在生成代码...
+PASS feedback qualification: 50/60Hz, startup, 3 periods, spikes, dropout, stuck LOW and time rollback
+carbentra_storage.c
+test_storage.c
+正在生成代码...
+PASS NVS startup: stable namespaces, replay preservation, six injected errors, fresh store and boot overflow; no erase API
+carbentra_calibration.c
+carbentra_meter_decode.c
+carbentra_execution.c
+test_calibration_execution.c
+正在生成代码...
+PASS calibration v3 exact board/revision/CRC and command correlated observed/failed/superseded/deadline terminal states
+carbentra_storage.c
+carbentra_policy.c
+carbentra_feedback.c
+carbentra_execution.c
+cJSON.c
+test_startup.c
+<PLUG_ROOT>\firmware\tests\test_startup.c(54): warning C4305: “=”: 从“double”到“float”截断
+正在生成代码...
+  正在创建库 <VALIDATION_OUTPUT>\host\test_startup\test_startup.lib 和对象 <VALIDATION_OUTPUT>\host\test_startup\test_startup.exp
+PASS app_main mocked startup failure=0: relay off, invalid measurements explicit, journal failure blocks networking; coherent ISR feedback snapshot
+PASS app_main mocked startup failure=1: relay off, invalid measurements explicit, journal failure blocks networking; coherent ISR feedback snapshot
+PASS app_main mocked startup failure=2: relay off, invalid measurements explicit, journal failure blocks networking; coherent ISR feedback snapshot
+PASS app_main mocked startup failure=3: relay off, invalid measurements explicit, journal failure blocks networking; coherent ISR feedback snapshot
+PASS app_main mocked startup failure=4: relay off, invalid measurements explicit, journal failure blocks networking; coherent ISR feedback snapshot
+PASS app_main mocked startup failure=5: relay off, invalid measurements explicit, journal failure blocks networking; coherent ISR feedback snapshot
+PASS app_main mocked startup failure=6: relay off, invalid measurements explicit, journal failure blocks networking; coherent ISR feedback snapshot
+**********************************************************************
+** Visual Studio 2022 Developer PowerShell v17.14.38
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+-- Configuring done (0.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: <VALIDATION_OUTPUT>/crypto/mbedtls
+ninja: no work to do.
+test_time_signature.c
+carbentra_time_signature.c
+carbentra_json.c
+cJSON.c
+正在生成代码...
+  正在创建库 <VALIDATION_OUTPUT>\crypto\time_signature\test_time_signature.lib 和对象 <VALIDATION_OUTPUT>\crypto\time_signature\test_time_signature.exp
+test_certificate_dates.c
+============================= test session starts =============================
+platform win32 -- Python 3.12.13, pytest-9.1.1, pluggy-1.6.0 -- <PLATFORM_ROOT>\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: <PLATFORM_ROOT>
+configfile: pyproject.toml
+plugins: anyio-4.15.1
+collecting ... collected 3 items
+
+..\carbentra-campus-platform\edge\tests\test_time_bootstrap.py::SignedTimeTests::test_real_firmware_crypto PASSED [ 33%]
+..\carbentra-campus-platform\edge\tests\test_time_bootstrap.py::SignedTimeTests::test_signer_rejects_invalid_inputs PASSED [ 66%]
+..\carbentra-campus-platform\edge\tests\test_certificate_dates.py::CertificateTests::test_dates_ca_and_hostname PASSED [100%]
+
+- generated xml file: <VALIDATION_OUTPUT>\crypto\crypto-tests.xml -
+============================== 3 passed in 0.42s ==============================
+test_empty_reports_never_claim_pass (test_evidence.HardwareEvidenceTests.test_empty_reports_never_claim_pass) ... ok
+test_external_path_is_rejected (test_evidence.HardwareEvidenceTests.test_external_path_is_rejected) ... ok
+test_incorrect_size_is_rejected (test_evidence.HardwareEvidenceTests.test_incorrect_size_is_rejected) ... ok
+test_matching_snapshot (test_evidence.HardwareEvidenceTests.test_matching_snapshot) ... ok
+test_missing_source_is_rejected (test_evidence.HardwareEvidenceTests.test_missing_source_is_rejected) ... ok
+test_same_size_source_change_is_rejected (test_evidence.HardwareEvidenceTests.test_same_size_source_change_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.006s
+
+OK
+Activating ESP-IDF 5.4
+Setting IDF_PATH to 'D:\Dev\esp-idf-v5.4.3'.
+* Checking python version ... 3.12.13
+* Checking python dependencies ... OK
+* Deactivating the current ESP-IDF environment (if any) ... OK
+* Establishing a new ESP-IDF environment ... OK
+* Identifying shell ... pwsh.exe
+* Detecting outdated tools in system ... OK - no outdated tools found
+
+Done! You can now compile ESP-IDF projects.
+Go to the project directory and run:
+
+  idf.py build
+
+Executing action: all (aliases: build)
+Running ninja in directory <VALIDATION_OUTPUT>\idf-build
+Executing "ninja all"...
+[1/4] C:\WINDOWS\system32\cmd.exe /C "cd /D <VALIDATION_OUTPUT>\idf-build\esp-idf\esptool_py && D:\Dev\esp-tools-v5.4.3\python_env\idf5.4_py3.12_env\Scripts\python.exe D:/Dev/esp-idf-v5.4.3/components/partition_table/check_sizes.py --offset 0x8000 partition --type app <VALIDATION_OUTPUT>/idf-build/partition_table/partition-table.bin <VALIDATION_OUTPUT>/idf-build/carbentra_endpoint.bin"
+
+carbentra_endpoint.bin binary size 0x13fc40 bytes. Smallest app partition is 0x280000 bytes. 0x1403c0 bytes (50%) free.
+
+
+[2/4] Performing build step for 'bootloader'
+
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D <VALIDATION_OUTPUT>\idf-build\bootloader\esp-idf\esptool_py && D:\Dev\esp-tools-v5.4.3\python_env\idf5.4_py3.12_env\Scripts\python.exe D:/Dev/esp-idf-v5.4.3/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 <VALIDATION_OUTPUT>/idf-build/bootloader/bootloader.bin"
+
+
+Bootloader binary size 0x5160 bytes. 0x2ea0 bytes (36%) free.
+
+
+
+[3/4] No install step for 'bootloader'
+
+[4/4] Completed 'bootloader'
+
+
+
+Project build complete. To flash, run:
+ idf.py flash
+or
+ idf.py -p PORT flash
+or
+ python -m esptool --chip esp32c3 -b 460800 --before default_reset --after hard_reset write_flash --flash_mode dio --flash_size 4MB --flash_freq 80m 0x0 ..\..\..\..\..\..\Temp\codex\carbentra-localize-20261001\plug\idf-build\bootloader\bootloader.bin 0x8000 ..\..\..\..\..\..\Temp\codex\carbentra-localize-20261001\plug\idf-build\partition_table\partition-table.bin 0x20000 ..\..\..\..\..\..\Temp\codex\carbentra-localize-20261001\plug\idf-build\carbentra_endpoint.bin
+or from the "<VALIDATION_OUTPUT>\idf-build" directory
+ python -m esptool --chip esp32c3 -b 460800 --before default_reset --after hard_reset write_flash "@flash_args"
+Selected Windows checks passed. Physical fabrication/energization gates remain HOLD.

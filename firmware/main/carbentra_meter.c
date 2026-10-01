@@ -1,5 +1,7 @@
 #include "carbentra_meter.h"
 #include "carbentra_meter_decode.h"
+#include "carbentra_calibration.h"
+#include "carbentra_storage_contract.h"
 #include <string.h>
 #include <stddef.h>
 #include <math.h>
@@ -20,10 +22,6 @@ static const char*TAG="carbentra_meter";
 /* Factory profile, externally calibrated; never filled with made-up gains.
    CRC detects accidental damage, not malicious modification. Secure storage and
    authorized commissioning are independent release requirements. */
-typedef struct __attribute__((packed)) {
- uint32_t magic,version; char board_revision[12],calibration_id[32];
- uint16_t calibration[11],adjustment[10];float meter_constant_pulses_per_kwh;uint32_t crc;
-} cal_record;
 static esp_err_t transfer(uint8_t addr,uint16_t *v,bool read){
  uint8_t tx[3]={(uint8_t)(addr|(read?0x80:0)),(uint8_t)(*v>>8),(uint8_t)*v},rx[3]={0};
  spi_transaction_t t={.length=24,.tx_buffer=tx,.rx_buffer=rx};
@@ -41,7 +39,7 @@ static esp_err_t write_checked(uint8_t a,uint16_t v){
  esp_err_t e=transfer(a,&v,false);if(e!=ESP_OK)return e;
  uint16_t last=0;e=transfer(0x06,&last,true);return e==ESP_OK&&last==v?ESP_OK:ESP_ERR_INVALID_RESPONSE;
 }
-static esp_err_t program_profile(const cal_record*r){
+static esp_err_t program_profile(const carbentra_calibration_record*r){
  esp_err_t e=write_checked(0x20,0x5678);if(e!=ESP_OK)return e;
  uint16_t words1[11],words2[10];memcpy(words1,r->calibration,sizeof(words1));memcpy(words2,r->adjustment,sizeof(words2));
  for(int i=0;i<11;i++)if((e=write_checked(0x21+i,words1[i]))!=ESP_OK)return e;
@@ -68,9 +66,9 @@ esp_err_t carbentra_meter_start(void){
  /* Reset write may invalidate immediate LastData; follow by reset-state checks. */
  uint16_t reset=0x789a;e=transfer(0,&reset,false);if(e!=ESP_OK)return e;vTaskDelay(pdMS_TO_TICKS(100));
  uint16_t a,bv;if(read_checked(0x20,&a)!=ESP_OK||read_checked(0x30,&bv)!=ESP_OK||a!=0x6886||bv!=0x6886)return ESP_ERR_INVALID_RESPONSE;
- nvs_handle_t n;e=nvs_open("carbentra_factory",NVS_READONLY,&n);if(e!=ESP_OK)return e;
- cal_record r;size_t size=sizeof(r);e=nvs_get_blob(n,"meter_cal",&r,&size);nvs_close(n);
- if(e!=ESP_OK||size!=sizeof(r)||r.magic!=0x434d4341||r.version!=2||memcmp(r.board_revision,"CARBENTRA-P16-EVT-B",12)||!memchr(r.calibration_id,0,32)||!r.calibration_id[0]||!isfinite(r.meter_constant_pulses_per_kwh)||r.meter_constant_pulses_per_kwh<=0||r.meter_constant_pulses_per_kwh>1000000||carbentra_crc32(&r,offsetof(cal_record,crc))!=r.crc){ESP_LOGW(TAG,"No valid per-unit calibration; measurement invalid, no actuation");return ESP_ERR_INVALID_STATE;}
+ nvs_handle_t n;e=nvs_open(CARBENTRA_NVS_FACTORY,NVS_READONLY,&n);if(e!=ESP_OK)return e;
+ carbentra_calibration_record r;size_t size=sizeof(r);e=nvs_get_blob(n,"meter_cal",&r,&size);nvs_close(n);
+ if(e!=ESP_OK||!carbentra_calibration_valid(&r,size)){ESP_LOGW(TAG,"No valid per-unit calibration; measurement invalid, no actuation");return ESP_ERR_INVALID_STATE;}
  e=program_profile(&r);calibrated=e==ESP_OK;
  if(calibrated){wh_per_count=100.0f/r.meter_constant_pulses_per_kwh;energy_poll_ms=esp_timer_get_time()/1000;}
  return e;

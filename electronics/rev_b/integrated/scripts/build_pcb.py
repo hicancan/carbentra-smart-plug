@@ -1,8 +1,9 @@
 #!/usr/bin/python3
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 """Integrated Rev B placement source. Regeneration discards copper unless --retain-copper recipe is replayed."""
 from pathlib import Path
 import pcbnew as p,json,math,uuid,sys
-R=Path(__file__).resolve().parents[1];m=json.loads((R/'electrical_manifest.json').read_text());parts=[c for c in m['components'] if c['board_designation']=='integrated']
+R=Path(__file__).resolve().parents[1];m=json.loads((R/'electrical_manifest.json').read_text(encoding='utf-8'));parts=[c for c in m['components'] if c['board_designation']=='integrated']
 def vec(x,y):return p.VECTOR2I(p.FromMM(x),p.FromMM(y))
 def uid(s):return str(uuid.uuid5(uuid.NAMESPACE_URL,'carbentra/integrated-b/'+s))
 def custom(name,body,origin,pads):
@@ -24,7 +25,7 @@ pos={
 }
 # A separately reviewable placement override allows routing iterations without changing the circuit generator.
 over=R/'placement_overrides.json'
-if over.exists():pos.update({k:tuple(v) for k,v in json.loads(over.read_text()).items()})
+if over.exists():pos.update({k:tuple(v) for k,v in json.loads(over.read_text(encoding='utf-8')).items()})
 missing=[c['ref'] for c in parts if c['ref'] not in pos]
 if missing:raise RuntimeError('Missing physical placement:'+str(missing))
 paths={'RevB':R.parent/'meter/RevB.pretty','Feedback':R.parent/'feedback/Feedback.pretty','Thermal':R.parent/'thermal/Thermal.pretty','Integrated':R/'Integrated.pretty'}
@@ -36,7 +37,11 @@ b=p.BOARD();b.GetDesignSettings().SetCopperLayerCount(4);b.GetDesignSettings().S
 for n in names:net=p.NETINFO_ITEM(b,n);b.Add(net);nets[n]=net
 for c in parts:
  print('Loading',c['ref'],c['footprint'],flush=True)
- lib,name=c['footprint'].split(':');root=paths.get(lib,Path('/usr/share/kicad/footprints')/(lib+'.pretty'));f=p.FootprintLoad(str(root),name) if root.exists() else None
+ lib,name=c['footprint'].split(':');root=paths.get(lib,Path(kicad_resource('footprints'))/(lib+'.pretty'))
+ # Reuse the reviewed embedded footprint before consulting newer system libraries.
+ # A KiCad upgrade must not silently alter pad dimensions under retained copper.
+ original=next((ff for ff in sources.get(c['source_module'],p.BOARD()).GetFootprints() if ff.GetReference()==c['source_ref'] and ff.GetFPID().GetLibItemName()==name),None)
+ f=p.FOOTPRINT(original) if original is not None else (p.FootprintLoad(str(root),name) if root.exists() else None)
  if not f:
   old=next(ff for ff in sources[c['source_module']].GetFootprints() if ff.GetReference()==c['source_ref']);f=p.FOOTPRINT(old)
   # Materialize the exact source footprint into a local library for offline editability.
@@ -58,16 +63,39 @@ def arc(a,m,z):
  g=p.PCB_SHAPE();g.SetShape(p.SHAPE_T_ARC);g.SetArcGeometry(vec(*a),vec(*m),vec(*z));g.SetLayer(p.Edge_Cuts);g.SetWidth(p.FromMM(.05));b.Add(g)
 line((10,0),(90,0));arc((90,0),(97.0710678,2.9289322),(100,10));line((100,10),(100,20.5));line((100,20.5),(95,20.5));arc((95,20.5),(94.2928932,20.7928932),(94,21.5));line((94,21.5),(94,29.5));arc((94,29.5),(94.2928932,30.2071068),(95,30.5));line((95,30.5),(100,30.5));line((100,30.5),(100,75));arc((100,75),(97.0710678,82.0710678),(90,85));line((90,85),(10,85));arc((10,85),(2.9289322,82.0710678),(0,75));line((0,75),(0,64.5));line((0,64.5),(11,64.5));arc((11,64.5),(11.7071068,64.2071068),(12,63.5));line((12,63.5),(12,51.5));arc((12,51.5),(11.7071068,50.7928932),(11,50.5));line((11,50.5),(0,50.5));line((0,50.5),(0,10));arc((0,10),(2.9289322,2.9289322),(10,0))
 for i,(x,y) in enumerate([(6,6.5),(94,6.5),(6,78.5),(94,78.5)]):
- f=p.FootprintLoad('/usr/share/kicad/footprints/MountingHole.pretty','MountingHole_3.2mm_M3');f.SetReference('H'+str(i+1));f.SetPosition(vec(x,y));f.Reference().SetLayer(p.F_Fab);b.Add(f)
+ f=p.FootprintLoad(kicad_resource('footprints/MountingHole.pretty'),'MountingHole_3.2mm_M3');f.SetReference('H'+str(i+1));f.SetPosition(vec(x,y));f.Reference().SetLayer(p.F_Fab);b.Add(f)
  for layer in (p.F_CrtYd,p.B_CrtYd):
   g=p.PCB_SHAPE();g.SetShape(p.SHAPE_T_CIRCLE);g.SetStart(vec(x,y));g.SetEnd(vec(x+3.5,y));g.SetLayer(layer);g.SetWidth(p.FromMM(.05));b.Add(g)
 for text,x,y,size in [('CARBENTRA INTEGRATED B',76,4,1),('DEVELOPMENT / NO ENERGIZATION',51,84,.7),('HOT: LINE REFERENCED',22,30,.7),('ISOLATED LOGIC',82,37,.8)]:
  t=p.PCB_TEXT(b);t.SetText(text);t.SetPosition(vec(x,y));t.SetTextSize(vec(size,size));t.SetTextThickness(p.FromMM(.12));t.SetLayer(p.Dwgs_User);b.Add(t)
 p.SaveBoard(str(R/'integrated.kicad_pcb'),b)
-(R/'placement.json').write_text(json.dumps({'status':'PLACEMENT CANDIDATE; no routing proof yet','board_mm':[100,85,1.6],'corner_radius_mm':10,'layer_count':4,'frame':'PCB upper-leftXY,mm; mechanics x=pcb_x-50,y=42.5-pcb_y; board bottom assembly z11.5','positions':pos,'bottom_components':['F501'],'holes_mm':[[6,6.5,3.2],[94,6.5,3.2],[6,78.5,3.2],[94,78.5,3.2]],'mount_keepout_diameter_mm':7,'left_notch_pcb_mm':[0,50.5,12,14],'right_notch_pcb_mm':[94,20.5,6,10]},indent=2))
+# KiCad 10's Windows serializer can omit mask flags from copied through-hole
+# padstacks. Preserve the native in-memory masks explicitly and verify reload.
+sys.path.insert(0,str(R.parents[1]/'scripts'))
+from sexpr_util import parse,ser,ch
+mask_flags={f.GetReference():[(d.GetNumber(),d.IsOnLayer(p.F_Mask),d.IsOnLayer(p.B_Mask) and not (f.GetReference()=='U101' and d.GetAttribute()==p.PAD_ATTRIB_PTH)) for d in f.Pads()] for f in b.GetFootprints()}
+# U101's thermal vias have a closed back mask in the reviewed integrated layout.
+tree=parse((R/'integrated.kicad_pcb').read_text(encoding='utf-8'))
+for footprint in tree:
+ if not(isinstance(footprint,list) and footprint[0]=='footprint'):continue
+ ref=next(v[2].strip('"') for v in footprint if isinstance(v,list) and v[:2]==['property','"Reference"'])
+ pads=[v for v in footprint if isinstance(v,list) and v[0]=='pad']
+ assert len(pads)==len(mask_flags[ref])
+ for pad,(number,front,back) in zip(pads,mask_flags[ref]):
+  assert pad[1].strip('"')==number
+  layers=ch(pad,'layers');layers[:]=[v for v in layers if v not in ['"*.Mask"','"F.Mask"','"B.Mask"']]
+  if front:layers.append('"F.Mask"')
+  if back:layers.append('"B.Mask"')
+(R/'integrated.kicad_pcb').write_text(ser(tree),encoding='utf-8',newline='\n')
+import subprocess
+probe="import pcbnew as p,json,sys; b=p.LoadBoard(sys.argv[1]); print(json.dumps({f.GetReference():sorted((d.GetNumber(),d.IsOnLayer(p.F_Mask),d.IsOnLayer(p.B_Mask)) for d in f.Pads()) for f in b.GetFootprints()}))"
+# A fresh process avoids the native IO cache returning a pre-patch board.
+roundtrip=json.loads(subprocess.check_output([sys.executable,'-c',probe,str(R/'integrated.kicad_pcb')],text=True).splitlines()[-1])
+assert {ref:sorted(list(flag) for flag in flags) for ref,flags in mask_flags.items()}==roundtrip,'Pad solder-mask roundtrip changed'
+(R/'placement.json').write_text(json.dumps({'status':'PLACEMENT CANDIDATE; no routing proof yet','board_mm':[100,85,1.6],'corner_radius_mm':10,'layer_count':4,'frame':'PCB upper-leftXY,mm; mechanics x=pcb_x-50,y=42.5-pcb_y; board bottom assembly z11.5','positions':pos,'bottom_components':['F501'],'holes_mm':[[6,6.5,3.2],[94,6.5,3.2],[6,78.5,3.2],[94,78.5,3.2]],'mount_keepout_diameter_mm':7,'left_notch_pcb_mm':[0,50.5,12,14],'right_notch_pcb_mm':[94,20.5,6,10]},indent=2), encoding='utf-8', newline='\n')
 # Library paths remain local and explicit, rather than relying on a user's global installation.
-(R/'fp-lib-table').write_text('(fp_lib_table '+''.join(f'(lib (name "{lib}") (type "KiCad") (uri "${{KIPRJMOD}}/{__import__("os").path.relpath(path,R)}") (options "") (descr "Revision B candidate"))' for lib,path in paths.items())+')')
-if not (R/'integrated.kicad_pro').exists():(R/'integrated.kicad_pro').write_text((R.parent/'controller/carbentra.kicad_pro').read_text())
-(R/'integrated.kicad_dru').write_text((R/'design_rules.kicad_dru').read_text())
-conf=json.loads((R/'integrated.kicad_pro').read_text());conf.setdefault('board',{}).setdefault('design_settings',{}).setdefault('rules',{}).update(min_through_hole_diameter=.2,min_via_diameter=.45);(R/'integrated.kicad_pro').write_text(json.dumps(conf,indent=2))
+(R/'fp-lib-table').write_text('(fp_lib_table '+''.join(f'(lib (name "{lib}") (type "KiCad") (uri "${{KIPRJMOD}}/{Path(__import__("os").path.relpath(path,R)).as_posix()}") (options "") (descr "Revision B candidate"))' for lib,path in paths.items())+')', encoding='utf-8', newline='\n')
+if not (R/'integrated.kicad_pro').exists():(R/'integrated.kicad_pro').write_text((R.parent/'controller/carbentra.kicad_pro').read_text(encoding='utf-8'), encoding='utf-8', newline='\n')
+(R/'integrated.kicad_dru').write_text((R/'design_rules.kicad_dru').read_text(encoding='utf-8'), encoding='utf-8', newline='\n')
+conf=json.loads((R/'integrated.kicad_pro').read_text(encoding='utf-8'));conf.setdefault('board',{}).setdefault('design_settings',{}).setdefault('rules',{}).update(min_through_hole_diameter=.2,min_via_diameter=.45);(R/'integrated.kicad_pro').write_text(json.dumps(conf,indent=2), encoding='utf-8', newline='\n')
 print('Placed',len(parts),'electrical components;',len(names),'nets')

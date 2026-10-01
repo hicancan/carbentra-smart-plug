@@ -16,10 +16,10 @@ def parse(s):
 def cs(x,k):return [v for v in x if isinstance(v,list) and v[0]==k]
 def ch(x,k):return next(iter(cs(x,k)),None)
 def prop(x,name):return next(v[2] for v in cs(x,'property') if v[1]==name)
-main={c['ref'] for c in json.loads((R/'electrical_manifest.json').read_text())['components'] if c['board_designation']=='integrated'}
+main={c['ref'] for c in json.loads((R/'electrical_manifest.json').read_text(encoding='utf-8'))['components'] if c['board_designation']=='integrated'}
 paths={}
 def walk(file,path=None):
- tree=parse(file.read_text());path=path or '/'+ch(tree,'uuid')[1]
+ tree=parse(file.read_text(encoding='utf-8'));path=path or '/'+ch(tree,'uuid')[1]
  for sym in cs(tree,'symbol'):
   ref=prop(sym,'Reference')
   if ref in main:
@@ -58,7 +58,7 @@ assert before==after,'Unexpected non-path PCB change'
 stable_snapshot=pcb.read_bytes()==raw
 if args.apply:assert stable_snapshot,'PCB changed while preparing paths; retry when routing is paused'
 report={'mode':'apply' if args.apply else 'dry-run','footprints_checked':len(refs),'path_changes':len(changes),'changes':changes,'input_sha256':hashlib.sha256(raw).hexdigest(),'output_sha256':hashlib.sha256(s.encode()).hexdigest(),'non_path_geometry_nets_routes_unchanged':True,'input_snapshot_still_current':stable_snapshot}
-if args.output:args.output.write_text(s)
+if args.output:args.output.write_text(s, encoding='utf-8', newline='\n')
 if args.apply:
- tmp=pcb.with_suffix('.pathfix.tmp');tmp.write_text(s);assert pcb.read_bytes()==raw,'Concurrent routing write detected';os.replace(tmp,pcb)
-(R/'validation/schematic_path_patch.json').write_text(json.dumps(report,indent=2));print(json.dumps({k:v for k,v in report.items() if k!='changes'},indent=2))
+ tmp=pcb.with_suffix('.pathfix.tmp');tmp.write_text(s, encoding='utf-8', newline='\n');assert pcb.read_bytes()==raw,'Concurrent routing write detected';os.replace(tmp,pcb)
+(R/'validation/schematic_path_patch.json').write_text(json.dumps(report,indent=2), encoding='utf-8', newline='\n');print(json.dumps({k:v for k,v in report.items() if k!='changes'},indent=2))

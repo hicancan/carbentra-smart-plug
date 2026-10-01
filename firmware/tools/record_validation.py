@@ -1,24 +1,39 @@
-"""Record actual locally produced build/test evidence; never certify hardware."""
+"""Record actual firmware build and explicitly selected shared-Edge evidence.
+Never equate a historical broker run, a virtual device, or compilation with hardware qualification.
+"""
 from pathlib import Path
-import hashlib, json, datetime, shutil
-R=Path(__file__).resolve().parents[2]
-F=R/'firmware'
-def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
-log=(F/'target_build.log').read_text()
-tests=(F/'tests/host_results.txt').read_text()
-edge=(R/'edge/test_results.txt').read_text()
-config=(F/'sdkconfig').read_text()
-assert 'Project build complete.' in log
-assert 'PASS 37 policy cases and 10000 local-trip invariants' in tests
-assert 'PASS feedback qualification:' in tests
-assert 'runtime reset and stuck-link regression' in tests
-assert 'Ran 24 tests' in edge and edge.rstrip().endswith('OK')
-assert '# CONFIG_CARBENTRA_ALLOW_ACTUATION is not set' in config
-sources=[p for folder in ['core','main','tests','tools','third_party'] for p in (F/folder).rglob('*') if p.is_file() and p.suffix in ('.c','.h','.py','.sh','.json') and '__pycache__' not in p.parts]
-sources += [F/'sdkconfig',F/'sdkconfig.defaults',F/'CMakeLists.txt',F/'partitions.csv',F/'main/Kconfig.projbuild',F/'main/CMakeLists.txt']
-sources += [p for p in (R/'edge').rglob('*.py') if '__pycache__' not in p.parts]
+import datetime,hashlib,json,os,re,shutil,subprocess
+R=Path(__file__).resolve().parents[2];F=R/'firmware';BUILD=Path(os.environ['CARBENTRA_IDF_BUILD_DIR']).resolve()
+def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+def git(directory,*args):return subprocess.check_output(['git','-C',str(directory),*args],text=True).strip()
+platform=Path(os.environ['CARBENTRA_PLATFORM_ROOT']).resolve()
+assert (platform/'packages/iot-contract').is_dir(),'Explicit shared contract checkout required'
+log=F/'target_build.log';tests=F/'tests/host_results.txt';crypto=F/'tests/crypto_results.txt'
+assert 'Project build complete.' in log.read_text(encoding='utf-8'),'Actual target build log required'
+policy_match=re.search(r'PASS (\d+) policy cases and 10000 local-trip invariants',tests.read_text(encoding='utf-8'));assert policy_match and int(policy_match[1])>=45
+for required in ['PASS local input:','PASS feedback qualification:','runtime reset and stuck-link regression','PASS NVS startup:','PASS calibration v3','PASS app_main mocked startup failure=6']:assert required in tests.read_text(encoding='utf-8'),required
+assert 'test_real_firmware_crypto' in crypto.read_text(encoding='utf-8') and 'test_dates_ca_and_hostname' in crypto.read_text(encoding='utf-8') and 'FAILED' not in crypto.read_text(encoding='utf-8')
+config=(F/'sdkconfig').read_text(encoding='utf-8');assert '# CONFIG_CARBENTRA_ALLOW_ACTUATION is not set' in config and 'CONFIG_MBEDTLS_HAVE_TIME_DATE=y' in config
+assert os.environ.get('CARBENTRA_ENABLE_PHYSICAL_DISPATCH','false')=='false'
+sdk=Path(os.environ['IDF_PATH']);sdk_commit=git(sdk,'rev-parse','HEAD');assert sdk_commit=='ea1c174c1cbb7348bd8ba0ff1eb306246938dd80' and not git(sdk,'status','--porcelain')
+project=json.loads((BUILD/'project_description.json').read_text(encoding='utf-8'));assert project['target']=='esp32c3'
+shared_path=F/'evidence/shared-edge-validation.json';shared=json.loads(shared_path.read_text(encoding='utf-8'));assert shared['success'] and shared.get('changed_during_run') is False and shared['release_gates_required'] and shared['direct_dependency_lock_matches'] and not shared.get('unexpected_skips',[])
+assert shared['source_sha256'] and all((platform/name).is_file() and sha(platform/name)==digest for name,digest in shared['source_sha256'].items()),'Shared source changed since suite; rerun it'
+allowed_skips=shared.get('platform_specific_skips',[])
+assert all('test_presence_auth.py' in item and 'POSIX' in item for item in allowed_skips),'Only explicit POSIX permission exclusions are allowed on Windows'
+linux_path=F/'evidence/shared-edge-linux-validation.json';linux=json.loads(linux_path.read_text(encoding='utf-8'))
+assert linux['success'] and linux['source_sha256']==shared['source_sha256'],'Complementary Linux proof must cover identical shared sources'
+shared_test_count=re.search(r'(\d+) passed',shared['summary']);assert shared_test_count
+sources=[p for folder in ['core','main','tests','tools','third_party'] for p in (F/folder).rglob('*') if p.is_file() and p.suffix in ('.c','.h','.py','.sh','.ps1','.json') and '__pycache__' not in p.parts]
+sources += [F/'sdkconfig',F/'sdkconfig.defaults',F/'CMakeLists.txt',F/'partitions.csv',F/'main/Kconfig.projbuild',F/'main/CMakeLists.txt',R/'scripts/validate_firmware_evidence.py',R/'.github/workflows/digital-checks.yml',R/'edge/README.md',R/'edge/PROVENANCE.json',R/'contracts/README.md',R/'contracts/device-capabilities.json']
+sources += [R/'scripts/validate_release_rev_b.py']
+sources += [R/name for name in ['scripts/build_firmware.ps1','scripts/check_windows.ps1','pyproject.toml','uv.lock','.python-version']]
+source_hash={p.relative_to(R).as_posix():sha(p) for p in sorted(set(sources))}
 artifacts=F/'artifacts';artifacts.mkdir(exist_ok=True)
-for src,dst in [('carbentra_endpoint.bin','carbentra_endpoint_DEV_ACTUATION_DISABLED.bin'),('bootloader/bootloader.bin','bootloader_DEV.bin'),('partition_table/partition-table.bin','partition-table_DEV.bin')]:shutil.copyfile(F/'build'/src,artifacts/dst)
-out={'recorded_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'Development digital evidence only; no connected hardware, no flashing, no mains validation','idf_version':'5.4.3','idf_commit':'ea1c174c1cbb7348bd8ba0ff1eb306246938dd80','target':'esp32c3','actual_target_build':'PASS','actuation_enabled':False,'host_policy_cases':37,'host_local_trip_invariants':10000,'edge_unit_tests':24,'host_protocol_and_meter_reset_regressions':'PASS','host_feedback_qualification_tests':'PASS','asan_ubsan':True,'leak_sanitizer':False,'source_sha256':{str(p.relative_to(R)):sha(p) for p in sorted(set(sources))},'artifact_sha256':{p.name:sha(p) for p in artifacts.glob('*.bin')},'limits':['No actual MCU/radio/broker interoperability testing','No per-unit measured calibration','No real 220V switching or safety qualification','No OTA implementation or provisioned secure boot/flash encryption','No stress test of MQTT task preemption','RAM telemetry can be lost at power failure']}
-(F/'validation.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
-print('Recorded real target build, host and edge test evidence with source/binary SHA-256.')
+for source,destination in [('carbentra_endpoint.bin','carbentra_endpoint_DEV_ACTUATION_DISABLED.bin'),('bootloader/bootloader.bin','bootloader_DEV.bin'),('partition_table/partition-table.bin','partition-table_DEV.bin')]:shutil.copyfile(BUILD/source,artifacts/destination)
+mqtt_path=F/'evidence/shared-mqtt-integration.json';mqtt=json.loads(mqtt_path.read_text(encoding='utf-8')) if mqtt_path.is_file() else {}
+mqtt_current=bool(mqtt.get('success')) and bool(mqtt.get('source_sha256')) and all((platform/name).is_file() and sha(platform/name)==digest for name,digest in mqtt['source_sha256'].items())
+record={'recorded_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'Current firmware digital build/host proof and explicitly selected shared Edge; no connected hardware, no flashing or mains validation','idf_version':'5.4.3','idf_commit':sdk_commit,'target':'esp32c3','actual_target_build':'PASS','source_git_base':git(R,'rev-parse','HEAD'),'source_snapshot_sha256':hashlib.sha256(json.dumps(source_hash,sort_keys=True,separators=(',',':')).encode()).hexdigest(),'actuation_enabled':False,'tls_certificate_dates_enabled':True,'calibration_record_version':3,'wire_schema_version':2,'host_policy_cases':int(policy_match[1]),'host_local_trip_invariants':10000,'host_startup_mock_scenarios':7,'host_protocol_and_meter_reset_regressions':'PASS','host_feedback_qualification_tests':'PASS','real_mbedtls_crypto_and_certificate_negative_tests':'PASS','firmware_wire_to_edge_schema_integration':'PASS','address_sanitizer':True,'undefined_behavior_sanitizer':False,'host_toolchain':'Windows MSVC x64','leak_sanitizer':False,'source_sha256':source_hash,'artifact_sha256':{p.name:sha(p) for p in sorted(artifacts.glob('*.bin'))},'test_evidence_sha256':{p.relative_to(R).as_posix():sha(p) for p in [log,tests,crypto,shared_path,F/'evidence/shared-edge-results.txt',F/'evidence/host-windows-validation.json',linux_path,F/'evidence/shared-backend-integration.json',mqtt_path]},'shared_edge':{'root_environment':'CARBENTRA_PLATFORM_ROOT','authority':'carbentra-campus-platform/edge + packages/iot-contract','tests':int(shared_test_count[1]),'summary':shared['summary'],'skipped':len(allowed_skips),'platform_specific_skips':allowed_skips,'unexpected_skips':shared.get('unexpected_skips',[]),'direct_dependency_lock_matches':True,'source_sha256':shared['source_sha256']},'shared_mqtt_integration':{'status':'CURRENT_SOURCE_PASS' if mqtt_current else 'STALE_OR_MISSING_REQUIRES_RERUN','scope':mqtt.get('scope'),'source_mode':'SIMULATED','proof_sha256':sha(mqtt_path) if mqtt_path.is_file() else None,'source_sha256':mqtt.get('source_sha256',{})},'full_release_evidence_current':mqtt_current,'cross_platform_coverage':{'windows_summary':shared['summary'],'linux_summary':linux['summary'],'linux_release_gates_required':linux['release_gates_required'],'scope':'Windows runs all three native C integration fixtures; Linux independently covers POSIX key permissions. Neither platform-specific exclusion is represented as an executed pass.'},'historical_broker_proof':{'path':'release/software_broker_integration.json','status':'HISTORICAL_RETIRED_EDGE_SOURCE_NOT_CURRENT','sha256':sha(R/'release/software_broker_integration.json')},'limits':['No actual MCU/radio or vendor-module interoperation test','No per-unit measured calibration or thermal/safety qualification','No live220V switching','No OTA or provisioned secure boot/flash encryption','RAM telemetry/ACK data can be lost on power failure','Shared MQTT fixture uses a contract HTTP sink unless its scope explicitly states actual backend','Signed-time key/service, clock, broker ACL and per-unit commissioning remain independent deployment inputs','Physical dispatch and firmware actuation remain disabled']}
+(F/'validation.json').write_text(json.dumps(record,ensure_ascii=False,indent=2)+'\n', encoding='utf-8', newline='\n')
+(F/'build_components.json').write_text(json.dumps({'idf_version':'5.4.3','idf_commit':sdk_commit,'components':project.get('build_components',[])},indent=2)+'\n', encoding='utf-8', newline='\n')
+print(f'Recorded actual target, C host and {shared_test_count[1]} shared Edge tests. Shared MQTT current: {mqtt_current}.')

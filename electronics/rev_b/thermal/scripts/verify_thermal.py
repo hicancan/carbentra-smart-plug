@@ -17,8 +17,8 @@ def children(x,k):return [v for v in x if isinstance(v,list) and v[0]==k]
 def child(x,k):return next(v for v in x if isinstance(v,list) and v[0]==k)
 for d in ['CONFIG','CACHE','DATA']:os.environ['XDG_'+d+'_HOME']=str(R/'.xdg'/d.lower())
 subprocess.run(['kicad-cli','sch','export','netlist',str(R/'thermal_interlock.kicad_sch'),'-o',str(R/'exports/thermal.net')],check=True)
-m=json.loads((R/'pin_net_manifest.json').read_text());expected={(c['ref'],pn):n for c in m['components'] if not c['ref'].startswith('W') for pn,n in c['pins'].items()};actual={}
-for n in children(child(parse((R/'exports/thermal.net').read_text()),'nets'),'net'):
+m=json.loads((R/'pin_net_manifest.json').read_text(encoding='utf-8'));expected={(c['ref'],pn):n for c in m['components'] if not c['ref'].startswith('W') for pn,n in c['pins'].items()};actual={}
+for n in children(child(parse((R/'exports/thermal.net').read_text(encoding='utf-8')),'nets'),'net'):
  name=child(n,'name')[1].lstrip('/');name=None if name.startswith('unconnected-') else name
  for nd in children(n,'node'):actual[(child(nd,'ref')[1],child(nd,'pin')[1])]=name
 assert expected==actual,[(k,expected[k],actual.get(k)) for k in expected if expected[k]!=actual.get(k)]
@@ -72,8 +72,8 @@ pg_no_vbe=(vddlo/10100-5e-6)/(1/10100+1/46530) # maximal load: Q3 base resistanc
 calc={'healthy_return_min_V_with_5uA_input_leak':head,'open_return_max_V_with_5uA_input_leak':5e-6*101000,'head_trip_sink_upper_mA':1000*vddhi/9900,'READY_RAW_min_V_with_5uA_buffer_input_leak':3.135-10100*5e-6,'THERMAL_READY_VOH_min_V_at_100uA':3.135-.1,'U6_output_load_upper_uA':1e6*(3.465/46530+5e-6),'ready_pullup_max_mA':1000*vddhi/9900,'G30_falling_min_V':2.79*(1-.015),'G30_falling_max_V':2.79*(1+.015),'G30_release_upper_V_conservative':2.79*1.015+2.79*.025,'supervisor_delay_min_ms':180,'supervisor_delay_max_ms':420,'sensor_startup_ms':35,'minimum_settling_excess_ms':180-35,'reset_pressed_RC_tau_ms':1000*(1000*100000/(101000))*100e-9,'reset_released_RC_tau_ms':1000*100000*100e-9,'coil_gate_sink_required_max_mA':1000*5.25/46530,'PMOS_loss_upper_W_150mA_85mohm_25C':.15*.15*.085,'PMOS_drop_upper_V_150mA_85mohm_25C':.15*.085}
 assert calc['G30_release_upper_V_conservative']<vddlo;assert pg_no_vbe>2.0
 out={'schematic_pin_net_match':'PASS','pins_checked':len(expected),'critical_manufacturer_pin_maps':'PASS','no_MCU_rearm_net':'PASS','ideal_logic_tests_passed':result.testsRun,'calculations':calc,'ERC_report':'erc.rpt','PCB_status':'Separate controller and sensor candidates; see physical verification','physical_power_ramp_reset_and_thermal_tests':'NOT_RUN; required before claiming release','thermal_cutoff_and_load_break':'EXTERNAL integration required; this latch does not interrupt welded load contacts'}
-(R/'validation/independent_checks.json').write_text(json.dumps(out,indent=2));print(json.dumps(out,indent=2))
-assert 'Errors 0  Warnings 0' in (R/'validation/erc.rpt').read_text()
+(R/'validation/independent_checks.json').write_text(json.dumps(out,indent=2), encoding='utf-8', newline='\n');print(json.dumps(out,indent=2))
+assert 'Errors 0  Warnings 0' in (R/'validation/erc.rpt').read_text(encoding='utf-8')
 # Board-to-manifest agreement, including duplicated through-hole switch pads with the same pin number.
 import pcbnew as pcb
 board_refs=set();physical=[]
@@ -85,7 +85,7 @@ for stem,board_mm in [('thermal_controller',[45,35,1.6]),('thermal_sensor',[12,1
    key=(fp.GetReference(),pd.GetNumber());net=pd.GetNetname() or None
    if key in pins:assert pins[key]==net;duplicates+=1
    pins[key]=net;assert expected[key]==net,(stem,key,expected[key],net)
- drc=(R/'validation'/('controller_drc.rpt' if stem=='thermal_controller' else 'sensor_drc.rpt')).read_text()
+ drc=(R/'validation'/('controller_drc.rpt' if stem=='thermal_controller' else 'sensor_drc.rpt')).read_text(encoding='utf-8')
  assert '** Found 0 DRC violations **' in drc and '** Found 0 unconnected pads **' in drc,drc
  if stem=='thermal_sensor':
   jf=next(f for f in board.GetFootprints() if f.GetReference()=='J4');assert all(pd.GetAttribute()==pcb.PAD_ATTRIB_SMD for pd in jf.Pads())
@@ -93,4 +93,4 @@ for stem,board_mm in [('thermal_controller',[45,35,1.6]),('thermal_sensor',[12,1
   tv=[v for v in board.GetTracks() if isinstance(v,pcb.PCB_VIA) and v.GetNetname()=='GND_HEAD'];assert len(tv)==4
  physical.append({'board':stem,'board_mm':board_mm,'component_count':len(list(board.GetFootprints())),'pins_checked':len(pins),'duplicate_switch_pads_checked':duplicates,'tracks_and_vias':len(list(board.GetTracks())),'DRC':'0 violations / 0 unconnected'})
 assert board_refs=={c['ref'] for c in m['components'] if not c['ref'].startswith('W')}
-out['physical_boards']=physical;out['PCB_status']='ROUTED DIGITAL CANDIDATES; no fabrication/energization release';(R/'validation/independent_checks.json').write_text(json.dumps(out,indent=2));print(json.dumps(physical,indent=2))
+out['physical_boards']=physical;out['PCB_status']='ROUTED DIGITAL CANDIDATES; no fabrication/energization release';(R/'validation/independent_checks.json').write_text(json.dumps(out,indent=2), encoding='utf-8', newline='\n');print(json.dumps(physical,indent=2))

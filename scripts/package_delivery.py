@@ -27,7 +27,7 @@ def main():
  ap=argparse.ArgumentParser();ap.add_argument('--output',required=True);a=ap.parse_args()
  out=Path(a.output).resolve()
  if out==R or R in out.parents:raise SystemExit('Output must be outside the Git repository')
- report=json.loads((R/'release/digital_checks_rev_b.json').read_text())
+ report=json.loads((R/'release/digital_checks_rev_b.json').read_text(encoding='utf-8'))
  if not report.get('passed'):raise SystemExit('Final digital checks have not passed')
  dirty=subprocess.check_output(['git','status','--porcelain'],cwd=R,text=True)
  if dirty.strip():raise SystemExit('Commit final project changes before packaging')
@@ -52,8 +52,8 @@ def main():
  subprocess.run(['git','bundle','create',str(bundle),'--all'],cwd=R,check=True)
  subprocess.run(['git','bundle','verify',str(bundle)],cwd=R,check=True)
  manifest['files'].append({'name':bundle.name,'bytes':bundle.stat().st_size,'sha256':digest(bundle),'parts':chunks(bundle)})
- (out/'DELIVERY_MANIFEST.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
- (out/'SHA256SUMS.txt').write_text(''.join(f"{x['sha256']}  {x['name']}\n" for x in manifest['files']))
+ (out/'DELIVERY_MANIFEST.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n', encoding='utf-8', newline='\n')
+ (out/'SHA256SUMS.txt').write_text(''.join(f"{x['sha256']}  {x['name']}\n" for x in manifest['files']), encoding='utf-8', newline='\n')
  # Streams all chunks; verifies each and the rebuilt whole before promoting it.
  ps=r'''$ErrorActionPreference = 'Stop'
 $root = $PSScriptRoot
@@ -80,6 +80,6 @@ foreach ($item in $m.files) {
   Write-Output "Verified: $($item.name)"
 }
 '''
- (out/'Reassemble-Windows.ps1').write_text(ps,encoding='utf-8-sig')
+ (out/'Reassemble-Windows.ps1').write_text(ps,encoding='utf-8-sig', newline='\n')
  print(json.dumps(manifest,ensure_ascii=False,indent=2))
 if __name__=='__main__':main()

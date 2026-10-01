@@ -1,7 +1,7 @@
 {
   "brand": "CARBENTRA",
   "revision": "CARBENTRA-P16-EVT-B",
-  "created_utc": "2026-09-30T12:30:51.411995+00:00",
+  "created_utc": "2026-09-30T19:47:40.397559+00:00",
   "scope": "Export-only supplement to the frozen digital review snapshot. Detailed PCB copper/lead/package geometry, not new physical qualification or vendor-internal CAD. RF slack reservation deliberately excluded as non-physical.",
   "source_sha256": {
     "mechanical": {

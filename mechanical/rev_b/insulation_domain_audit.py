@@ -1,36 +1,38 @@
 #!/usr/bin/python3
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 """Read-only nominal 3D insulation-domain proximity audit. NOT safety clearance certification.
 Only writes insulation_domain_report.json/.md; never recomputes/saves source CAD or PCB.
 """
 import sys,json,math,hashlib,re,time,zipfile
 from pathlib import Path
 BASE=Path(__file__).resolve().parent;ROOT=BASE.parents[1]
-sys.path.extend(['/usr/lib/freecad-python3/lib',str(BASE)])
-import FreeCAD as A,Part,pcbnew as pcb
+sys.path.extend([FREECAD_LIB,str(BASE)])
+import FreeCAD as A,Part
+from carbentra_pcb import pcbnew as pcb
 import socket_b_features as mech
 CONTACT_ONLY='--affected-contact' in sys.argv
 RF_ONLY='--rf-reservation' in sys.argv
 EXACT_MIRROR='--exact-mirror' in sys.argv
 INCREMENTAL='--affected-rear' in sys.argv or CONTACT_ONLY or RF_ONLY or EXACT_MIRROR
-PRIOR=json.loads((BASE/'insulation_domain_report.json').read_text()) if INCREMENTAL else None
-V=A.Vector;P=json.loads((BASE/'design_parameters.json').read_text());Z=P['pcb']['bottom_z'];E=ROOT/'electronics/rev_b/integrated'
+PRIOR=json.loads((BASE/'insulation_domain_report.json').read_text(encoding='utf-8')) if INCREMENTAL else None
+V=A.Vector;P=json.loads((BASE/'design_parameters.json').read_text(encoding='utf-8'));Z=P['pcb']['bottom_z'];E=ROOT/'electronics/rev_b/integrated'
 paths=[BASE/'CARBENTRA-P16-B-base-provisional.FCStd',BASE/'socket_b_features.py',BASE/'power_links.py',BASE/'design_parameters.json',E/'integrated.kicad_pcb',E/'exports/placement_assembly.FCStd',E/'exports/component_envelopes.json',E/'electrical_manifest.json',E/'exports/remote_head_assembled.step']
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
-snapshot={str(p.relative_to(ROOT)):{'sha256':sha(p),'mtime_ns':p.stat().st_mtime_ns}for p in paths if p.exists()}
-PCB_CHANGED=bool(INCREMENTAL and snapshot[str((E/'integrated.kicad_pcb').relative_to(ROOT))]['sha256']!=PRIOR['input_snapshot'][str((E/'integrated.kicad_pcb').relative_to(ROOT))]['sha256'])
+snapshot={p.relative_to(ROOT).as_posix():{'sha256':sha(p),'mtime_ns':p.stat().st_mtime_ns}for p in paths if p.exists()}
+PCB_CHANGED=bool(INCREMENTAL and snapshot[(E/'integrated.kicad_pcb').relative_to(ROOT).as_posix()]['sha256']!=PRIOR['input_snapshot'][(E/'integrated.kicad_pcb').relative_to(ROOT).as_posix()]['sha256'])
 fixed_input_reconciliation=[]
 if INCREMENTAL:
  for fixed in [E/'exports/placement_assembly.FCStd',E/'exports/component_envelopes.json',E/'electrical_manifest.json',E/'exports/remote_head_assembled.step']:
-  key=str(fixed.relative_to(ROOT))
+  key=fixed.relative_to(ROOT).as_posix()
   expected=PRIOR.get('postflight_metadata_reconciliation',{}).get('updated_json_hashes',{}).get(key,PRIOR['input_snapshot'][key]['sha256'])
   if snapshot[key]['sha256']!=expected:
    backups=[f for f in fixed.parent.glob(fixed.stem+'.*.FCBak')if sha(f)==expected]if fixed.suffix=='.FCStd'else []
    def breps(f):
     with zipfile.ZipFile(f)as z:return {n:hashlib.sha256(z.read(n)).hexdigest()for n in z.namelist()if n.lower().endswith('.brp')}
    if backups and breps(backups[0]) and breps(backups[0])==breps(fixed):
-    fixed_input_reconciliation.append({'file':key,'reason':'Re-export changed container metadata; every named embedded BRep is byte-identical to prior audit input','matching_backup':str(backups[0].relative_to(ROOT)),'brep_member_count':len(breps(fixed))})
+    fixed_input_reconciliation.append({'file':key,'reason':'Re-export changed container metadata; every named embedded BRep is byte-identical to prior audit input','matching_backup':backups[0].relative_to(ROOT).as_posix(),'brep_member_count':len(breps(fixed))})
    elif fixed.name=='component_envelopes.json':
-    jj=json.loads(fixed.read_text());dd=A.openDocument(str(E/'exports/placement_assembly.FCStd'));old_leads={q['id']:q for q in PRIOR['lead_assignments']};bad=[]
+    jj=json.loads(fixed.read_text(encoding='utf-8'));dd=A.openDocument(str(E/'exports/placement_assembly.FCStd'));old_leads={q['id']:q for q in PRIOR['lead_assignments']};bad=[]
     for q in jj['components']+jj['leads']:
      oo=dd.getObject(q['object']);bb=oo.Shape.BoundBox;vals=[bb.XMin,bb.YMin,bb.ZMin,bb.XLength,bb.YLength,bb.ZLength]
      if max(abs(x-y)for x,y in zip(vals,q['min_xyz_mm']+q['size_xyz_mm']))>1e-6 or not q['object'].startswith('MainB_'+q['ref']):bad.append(q['object'])
@@ -39,7 +41,7 @@ if INCREMENTAL:
     fixed_input_reconciliation.append({'file':key,'reason':'Updated metadata; all referenced envelopes match unchanged embedded native BRep geometry and prior lead roles/ref mapping','records_checked':len(jj['components'])+len(jj['leads'])})
    else:raise RuntimeError('Fixed electronics geometry input changed; full rerun required: '+key)
 D=A.openDocument(str(paths[0]));M={o.Name:o.Shape.copy() for o in D.Objects if hasattr(o,'PartKind')}
-ED=A.openDocument(str(E/'exports/placement_assembly.FCStd'));B=pcb.LoadBoard(str(E/'integrated.kicad_pcb'));env=json.loads((E/'exports/component_envelopes.json').read_text());em=json.loads((E/'electrical_manifest.json').read_text());byref={c['ref']:c for c in em['components']};fps={f.GetReference():f for f in B.GetFootprints()}
+ED=A.openDocument(str(E/'exports/placement_assembly.FCStd'));B=pcb.LoadBoard(str(E/'integrated.kicad_pcb'));env=json.loads((E/'exports/component_envelopes.json').read_text(encoding='utf-8'));em=json.loads((E/'electrical_manifest.json').read_text(encoding='utf-8'));byref={c['ref']:c for c in em['components']};fps={f.GetReference():f for f in B.GetFootprints()}
 def domain(net):return 'primary' if net.startswith('HOT') or net in ('RAW_L','RAW_N') else 'isolated' if net and net!='PE' else 'unclassified'
 def world(q,z):return V(pcb.ToMM(q.x)-50,42.5-pcb.ToMM(q.y),z)
 def item(name,shape,kind,net=None,**kw):return {'id':name,'shape':shape,'kind':kind,'net':net,**kw}
@@ -210,9 +212,9 @@ if groups['remote_sensor_assembly']and'ThermalPad'in M:
  for n in ['Contact_L','ThermalPad','ThermalBody','ThermalLead1','ThermalLead2']:
   thermal[n]=pair(item(n,M[n],'thermal_interface_member'),head)
  thermal['intent']='Nominal0.5mm thermal pad intentionally separates primary pickup and isolated head. Solid-insulation material/system qualification remains OPEN.'
-changed=[str(p.relative_to(ROOT))for p in paths if p.exists()and str(p.relative_to(ROOT))in snapshot and sha(p)!=snapshot[str(p.relative_to(ROOT))]['sha256']]
+changed=[p.relative_to(ROOT).as_posix()for p in paths if p.exists()and p.relative_to(ROOT).as_posix()in snapshot and sha(p)!=snapshot[p.relative_to(ROOT).as_posix()]['sha256']]
 report={'brand':'CARBENTRA','revision':'CARBENTRA-P16-EVT-B','status':'DEVELOPMENT AUDIT / NO INSULATION OR ENERGIZATION APPROVAL','scope':'Concrete nominal 3D proximity of exposed primary link ends, fuse metal, thermal-cutoff leads, contacts and primary solder tails to isolated circuitry and controls; covered-link/core distances separately identified','units':'mm','rf_geometry_reconciliation':(PRIOR.get('rf_geometry_reconciliation')if INCREMENTAL else None),'fixed_input_reconciliation':fixed_input_reconciliation,'filled_zone_metadata':fill_metadata,'incremental_scope':(('Exact-mirror export-fidelity correction: rechecked Contact_L,Contact_N,ThermalBody,ThermalLead1,ThermalLead2 against all targets and thermal head; added ThermalBody conservatively as potentially primary, total53 sources. Prior other sources/target layouts unchanged.'if EXACT_MIRROR else'Reconciled33 unchanged cleaned BReps; checked new non-physical RF service-loop reservation against all52 primary regions; retained verified prior distances for unchanged source/target geometry.'if RF_ONLY else'Recomputed reduced Contact_L against all target classes and all 52 primary regions against newly added case-screw metal envelopes; retained prior unaffected results against unchanged copper/body inputs.'if CONTACT_ONLY else 'Recomputed Blade_L/Blade_N and rear L_RAW/N_RAW bare/covered regions after rear termination revision; if PCB changed, recomputed both external/internal copper for all 52 sources; retained only unaffected body/control/tail distances whose placement/envelope/pin-manifest inputs are unchanged; checked native filled-zone geometry against all 52 sources.')if INCREMENTAL else 'Full source/target distance audit'),'prior_full_audit_input_snapshot':(PRIOR['input_snapshot']if INCREMENTAL else None),'input_snapshot':snapshot,'inputs_changed_during_run':changed,'source_count':len(src),'target_counts':{g:len(v)for g,v in groups.items()},'classification':{'primary':'Native pad nets HOT* and RAW_L/RAW_N; explicit off-board power sources','isolated':'Nonempty other non-PE nets on this reviewed board; not an automatic rule for arbitrary designs','mixed_domain_packages':'PS101,K101,U202,PS201,U301 are package bodies only; their actual pads/tails are individually classified','lead_pad_matching':'Nearest THT native pad point to actual exported tail shape, at main PCB topz13.1; avoids FreeCAD duplicate-name suffix ambiguity'},'lead_assignments':lead_assignments,'nearest_by_source_and_target_group':nearest,'smallest_pairs_by_group':summary,'volume_intersections':intersections,'thermal_interface':thermal,'limitations':['All distances are direct Euclidean geometry, not a solved free-air path or surface creepage path. Plastic may lie between nearest points.','Six covered links have1mm nominal carrier wall,0.2mm nominal radial copper-to-carrier bore gap and unqualified resin/joints. Proximity through that plastic is not an8mm air-gap pass.','Thermal pad0.5mm is an intentional primary/isolated solid-insulation interface, not certified insulation.','Component envelopes use nominal/max vendor dimensions or F.Fab rectangles, not manufacturer detailed CAD. lead_reserve geometries are conservative pin reservations.','Copper z/thickness are visualization inputs(.07outer/.035inner), not a released layer stack. Via columns are conservative annular envelopes.','Internal tracks/pads and native filled GND_ISO plane polygons are included in internal-copper results. Filled polygons are partitioned using exact KiCad integer clipping. Internal-layer separation is solid insulation, not an air-clearance result. Native PCB DRC remains necessary.','Accessible pusher and guide-envelope distances are to insulating geometry, not standardized access probes or touchable metal.','RFServiceSlackEnvelope is non-physical reference geometry, excluded from physical part count/mass; distances to it are conservative routing-reservation distances, not actual coax-shield clearance. About44mm service-loop allocation assumesR>=6mm/loopR~7mm; vendor bend and strain relief remain unqualified.','Four case screws are modeled metallic major/shaft/head envelopes; distance to an embedded shaft is not a certified touch path. Boss plastic and partial-withdrawal access require review.','ThermalBody is conservatively treated as a potentially-primary metal/body envelope until its exact construction and insulation status are qualified; it is separate from the actual exposed TF1 lead solids.','No tolerance, warpage, contamination, material CTI, impulse, working-voltage, dielectric, thermal, spring-force or fault-withstand qualification.','Source CAD is opened read-only and not recomputed/saved; exposed-link segmentation is reconstructed from current power_links.py. Input hash consistency is reported.']}
-(BASE/'insulation_domain_report.json').write_text(json.dumps(report,indent=2)+'\n')
+(BASE/'insulation_domain_report.json').write_text(json.dumps(report,indent=2)+'\n', encoding='utf-8', newline='\n')
 def name(q,k):return q[k]['id']+((' ['+q[k]['net']+']')if q[k].get('net')else'')
 md=['# CARBENTRA CARBENTRA-P16-EVT-B · Insulation-domain proximity audit','','**Engineering development only. No electrical insulation or energization approval.**','',f'- Primary source regions: {len(src)}',f'- Source files changed during this audit: {len(changed)}',f'- Native filled-zone partitions: {sum(v["query_partition_count"]for v in fill_metadata)}',f'- Positive-volume intersections against all target groups: {len(intersections)} (package/guide overlaps are not automatically electrical shorts)','- Main PCB bottom z11.5; actual native pad/track net names classify domains','- All tabulated distances are nominal Euclidean BRep separation, not qualified clearance or creepage','','## Smallest pairs by target group','']
 for g,qs in summary.items():
@@ -228,7 +230,7 @@ if intersections:
 else:md+=['No positive-volume intersections were found in these tested pairs. This does not prove electrical separation, safe access, or compliant solid insulation.']
 md+=['','## Interpretation and open gates','']+['- '+s for s in report['limitations']]
 md+=['','## Evidence and repeatability','','Run `/usr/bin/python3 mechanical/rev_b/insulation_domain_audit.py` from the repository. Full source hashes, exact closest-point coordinates, per-region minima and lead/pad assignments are in `insulation_domain_report.json`. No source geometry is modified.','', 'Primary references: [GB1002-2024 official record](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=F8C9E208891B7BB5AF1B3E64933693C2), [SHF fuse](https://www.schurter.com/en/datasheet/typ_SHF_6.3x32.pdf), [CQP clips](https://www.schurter.com/en/datasheet/typ_CQP.pdf). These sources do not certify the custom assembly.']
-(BASE/'insulation_domain_report.md').write_text('\n'.join(md)+'\n')
+(BASE/'insulation_domain_report.md').write_text('\n'.join(md)+'\n', encoding='utf-8', newline='\n')
 print('SUMMARY',json.dumps({g:[{'source':q['source']['id'],'target':q['target']['id'],'mm':round(q['distance_mm'],4),'volume':q['common_volume_mm3']}for q in qs[:3]]for g,qs in summary.items()}),flush=True)
 print('CHANGED',changed,'INTERSECTIONS',len(intersections),flush=True)
 # Compact engineering readout: keep exposed and covered minima distinct.
@@ -248,8 +250,8 @@ report['engineering_highlights']={n:min((q for q in nearest if f(q)),key=lambda 
 report['metal_to_metal_volume_intersections']=[q for q in intersections if q['target_group']in('isolated_external_copper','isolated_internal_copper','isolated_solder_tails')]
 report['nominal_geometric_screen']={'target_mm':8.4,'minimum_mm':report['engineering_highlights']['exposed_primary_to_any_isolated_copper']['distance_mm'],'met_nominally':report['engineering_highlights']['exposed_primary_to_any_isolated_copper']['distance_mm']>=8.4,'interpretation':'Project-only nominal 3D screen of exposed primary regions vs isolated main-board metal. Not actual free-air, creepage, solid-insulation or tolerance qualification; intentional remote thermal-head interface treated separately.'}
 report['eight_mm_project_review_target']={'status':'NOT a standard-derived or certified limit; project screening target only','exposed_primary_minimum_mm':report['engineering_highlights']['exposed_primary_to_isolated_external_copper']['distance_mm'],'met_by_exposed_pair':report['engineering_highlights']['exposed_primary_to_isolated_external_copper']['distance_mm']>=8,'note':'A nominal distance over8mm would still require actual clearance/creepage/tolerance and insulation coordination review. Covered cores are never classified as8mm-air passes.'}
-(BASE/'insulation_domain_report.json').write_text(json.dumps(report,indent=2)+'\n')
+(BASE/'insulation_domain_report.json').write_text(json.dumps(report,indent=2)+'\n', encoding='utf-8', newline='\n')
 readout=['## Key engineering findings','','| Region class | Source | Target | Nominal distance mm |','|---|---|---|---:|']
 for n,q in report['engineering_highlights'].items():readout.append(f"| {n} | {name(q,'source')} | {name(q,'target')} | {q['distance_mm']:.4f} |")
 readout+=['',('The exposed-primary minimum nominally meets the project 8.4 mm geometric screen.'if report['nominal_geometric_screen']['met_nominally']else'The exposed-primary minimum does NOT meet the project 8.4 mm geometric screen.')+' This is not a standard-derived acceptance criterion or a tolerance/insulation pass. Internal-layer distances include solid insulation. The thermal coupling is a separate 0.5 mm nominal solid-insulation interface.','',f"Metal-to-metal positive-volume crossings in the checked pairs: {len(report['metal_to_metal_volume_intersections'])}. No-crossing does not establish safe insulation.",'']
-text=(BASE/'insulation_domain_report.md').read_text();mark='## Smallest pairs by target group';text=text.replace(mark,'\n'.join(readout)+'\n'+mark,1);(BASE/'insulation_domain_report.md').write_text(text)
+text=(BASE/'insulation_domain_report.md').read_text(encoding='utf-8');mark='## Smallest pairs by target group';text=text.replace(mark,'\n'.join(readout)+'\n'+mark,1);(BASE/'insulation_domain_report.md').write_text(text, encoding='utf-8', newline='\n')

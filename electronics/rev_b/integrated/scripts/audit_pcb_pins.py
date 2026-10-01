@@ -16,9 +16,9 @@ def parse(s):
 def cs(x,k):return [v for v in x if isinstance(v,list) and v[0]==k]
 def ch(x,k):return next(iter(cs(x,k)),None)
 def norm(n):return None if not n or n.startswith('unconnected-') else n.lstrip('/')
-manifest=json.loads((R/'electrical_manifest.json').read_text());main={c['ref']:c for c in manifest['components'] if c['board_designation']=='integrated'}
+manifest=json.loads((R/'electrical_manifest.json').read_text(encoding='utf-8'));main={c['ref']:c for c in manifest['components'] if c['board_designation']=='integrated'}
 sch={}
-for net in cs(ch(parse((R/'exports/integrated.net').read_text()),'nets'),'net'):
+for net in cs(ch(parse((R/'exports/integrated.net').read_text(encoding='utf-8')),'nets'),'net'):
  n=norm(ch(net,'name')[1])
  for node in cs(net,'node'):
   ref=ch(node,'ref')[1]
@@ -34,7 +34,7 @@ for fp in cs(board,'footprint'):
  for pad in cs(fp,'pad'):
   pn=pad[1]
   if not pn:continue
-  nn=ch(pad,'net');n=norm(nn[2]) if nn else None
+  nn=ch(pad,'net');n=norm(nn[-1]) if nn else None  # KiCad 9 ID/name and KiCad 10 named nets.
   if (ref,pn) in pads and pads[ref,pn]!=n:dupes.append([ref,pn,pads[ref,pn],n])
   pads[ref,pn]=n
 wanted={(ref,pn):n for ref,c in main.items() for pn,n in c['pins'].items()}
@@ -42,4 +42,4 @@ scherrs=[{'ref':k[0],'pin':k[1],'manifest':v,'schematic':sch.get(k,'MISSING')} f
 errs=[{'ref':k[0],'pin':k[1],'schematic':v,'PCB':pads.get(k,'MISSING')} for k,v in sch.items() if pads.get(k,'MISSING')!=v]
 extra=[{'ref':k[0],'pin':k[1],'net':v} for k,v in pads.items() if k not in sch]
 report={'status':'PASS' if not any([scherrs,errs,extra,dupes,refs-set(main),set(main)-refs]) else 'FAIL','board_sha256':hashlib.sha256(raw).hexdigest(),'scope':'101 integrated main-board parts only; remote head/offboard/harness excluded','main_footprints':len(refs),'mechanical_NPTH_footprints':sorted(mechanical),'numbered_pad_keys':len(pads),'schematic_pin_keys':len(sch),'manifest_vs_schematic_errors':scherrs,'schematic_vs_PCB_errors':errs,'extra_PCB_pads':extra,'duplicate_pad_net_disagreement':dupes,'unexpected_footprints':sorted(refs-set(main)),'missing_footprints':sorted(set(main)-refs),'routing_continuity':'Not tested by pin-assignment audit; use PCB DRC separately','board_mutation':False}
-(R/'validation/pcb_pin_audit.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2));assert report['status']=='PASS'
+(R/'validation/pcb_pin_audit.json').write_text(json.dumps(report,indent=2), encoding='utf-8', newline='\n');print(json.dumps(report,indent=2));assert report['status']=='PASS'

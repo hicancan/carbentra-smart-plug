@@ -166,9 +166,3 @@ No positive-volume intersections were found in these tested pairs. This does not
 Run `/usr/bin/python3 mechanical/rev_b/insulation_domain_audit.py` from the repository. Full source hashes, exact closest-point coordinates, per-region minima and lead/pad assignments are in `insulation_domain_report.json`. No source geometry is modified.
 
 Primary references: [GB1002-2024 official record](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=F8C9E208891B7BB5AF1B3E64933693C2), [SHF fuse](https://www.schurter.com/en/datasheet/typ_SHF_6.3x32.pdf), [CQP clips](https://www.schurter.com/en/datasheet/typ_CQP.pdf). These sources do not certify the custom assembly.
-
-## Final representation and RF allocation
-
-The analytic world-space transform correction was rechecked for Contact_L, Contact_N, ThermalBody and both TF1 leads. The corrected Contact_N and TF1 package positions match the intended world coordinates; the contact-to-isolated-head interface remains 0.5000 mm. ThermalBody is a conservative potentially-primary package-envelope source, so this report now contains 53 source regions and 477 nearest-pair records.
-
-The RF service-loop reservation is NON-PHYSICAL and default-hidden. It allocates approximately 44 mm of the selected 100 mm coax with two integral lid guides, without increasing the 71 physical-part count or contributing mass. Minimum covered-primary-copper separation to the reservation is 8.6253 mm; this is a routing-space result, not a certified cable-shield clearance. Exact cable routing, vendor bend limits and strain relief remain open. The prior 33-part cleaned-BRep identity check records the RF-only change; the later analytic correction is covered by the five-source rerun above.

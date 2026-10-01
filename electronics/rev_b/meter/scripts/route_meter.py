@@ -99,4 +99,4 @@ for n,points in sorted(groups.items(),key=lambda kv:(kv[0] in ('HOT_GND','ISO_GN
   if n=='HOT_GND' and {a,z}=={pp('J1',2),pp('RS1',1)}:ok=True
   else:ok=route(n,a,z)
   results.append(dict(net=n,a=a,z=z,routed=ok));tree.append(z);p.SaveBoard(str(P),b)
-(R/'validation/routing.json').write_text(json.dumps(results,indent=2))
+(R/'validation/routing.json').write_text(json.dumps(results,indent=2), encoding='utf-8', newline='\n')

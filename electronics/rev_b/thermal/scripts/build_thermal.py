@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 """Concrete isolated-LV thermal rearm latch. Schematic/netlist only; not a physical release."""
 from pathlib import Path
 import re,json,uuid,copy,csv,math
@@ -21,7 +22,7 @@ def atom(s):return json.loads(s) if s.startswith('"') else s
 def ser(x):return '('+' '.join(map(ser,x))+')' if isinstance(x,list) else x
 cache={}
 def lib(lib,name):
- if lib not in cache:cache[lib]={atom(v[1]):v for v in cs(parse(Path('/usr/share/kicad/symbols',lib+'.kicad_sym').read_text()),'symbol')}
+ if lib not in cache:cache[lib]={atom(v[1]):v for v in cs(parse(Path(kicad_resource('symbols'),lib+'.kicad_sym').read_text(encoding='utf-8')),'symbol')}
  s=copy.deepcopy(cache[lib][name]);ext=ch(s,'extends')
  if ext:
   base=libsym=globals()['lib'](lib,atom(ext[1]));props={atom(v[1]):v for v in cs(base,'property')};props.update({atom(v[1]):v for v in cs(s,'property')});s=[s[0],s[1]]+list(props.values())+[v for v in base[2:] if not(isinstance(v,list) and v[0] in ['property','extends'])]
@@ -88,8 +89,8 @@ for c in parts:
 fpdir=R/'Thermal.pretty';fpdir.mkdir(exist_ok=True)
 sfp='(footprint "Sensor_Pigtail_3xP2.54" (version 20241229) (generator "pcbnew") (layer "F.Cu") (attr smd) (property "Reference" "REF**" (at 0 -2 0) (layer "F.SilkS") (effects (font (size .7 .7) (thickness .12)))) (property "Value" "PIGTAIL" (at 0 7 0) (layer "F.Fab") (effects (font (size .7 .7) (thickness .12)))) (fp_rect (start -1.1 -1.1) (end 1.1 6.18) (stroke (width .1) (type default)) (fill none) (layer "F.Fab")) (fp_rect (start -1.2 -1.2) (end 1.2 6.28) (stroke (width .05) (type default)) (fill none) (layer "F.CrtYd"))'
 for pn,y in [(1,0),(2,2.54),(3,5.08)]:sfp+=f'(pad "{pn}" smd rect (at 0 {y}) (size 2.0 1.4) (layers "F.Cu" "F.Paste" "F.Mask"))'
-(fpdir/'Sensor_Pigtail_3xP2.54.kicad_mod').write_text(sfp+')')
-(R/'fp-lib-table').write_text('(fp_lib_table (lib (name "Thermal") (type "KiCad") (uri "${KIPRJMOD}/Thermal.pretty") (options "") (descr "Sensor pigtail lands")))')
+(fpdir/'Sensor_Pigtail_3xP2.54.kicad_mod').write_text(sfp+')', encoding='utf-8', newline='\n')
+(R/'fp-lib-table').write_text('(fp_lib_table (lib (name "Thermal") (type "KiCad") (uri "${KIPRJMOD}/Thermal.pretty") (options "") (descr "Sensor pigtail lands")))', encoding='utf-8', newline='\n')
 # Embedded library and compact labeled schematic.
 syms={};items=[];ends={}
 for c in parts:
@@ -116,14 +117,14 @@ for i,(n,x) in enumerate([(S,22.86),(G,53.34),('+5V_ISO',83.82),(H,114.3),(HG,14
  items.append(f'(symbol (lib_id "Thermal:PWR_FLAG") (at {x} 121.92 0) (unit 1) (in_bom no) (on_board no) (uuid {uid(ref)}) (property "Reference" "{ref}" (at {x} 121.92 0) (effects (font (size 1 1)) (hide yes))) (property "Value" "PWR_FLAG" (at {x} 116.84 0) (effects (font (size 1 1)))) (instances (project "thermal_interlock" (path "/{uid("sheet")}" (reference "{ref}") (unit 1)))))')
  items.append(f'(label {q(n)} (at {x} 121.92 0) (effects (font (size 1 1)) (justify left bottom)) (uuid {uid(ref+"l")}))')
 for text,x,y,size in [('REV B HARDWARE THERMAL TRIP + LOCAL PHYSICAL REARM ONLY',12.7,15.24,2),('DEVELOPMENT CANDIDATE - NO ENERGIZATION OR FABRICATION RELEASE',12.7,22.86,1.4),('01  REMOTE TEMPERATURE HEAD',12.7,33.02,1.3),('02  WIRE-OPEN FAIL-LOW',106.68,33.02,1.3),('03  POWER + THERMAL SETTLING',195.58,33.02,1.3),('04  ASYNCHRONOUS TRIP LATCH',299.72,33.02,1.3),('05  FRESH REARM EDGE (DO NOT GATE CLOCK WITH READY)',12.7,162.56,1.3),('06  SERIES COIL FEED PERMISSION',223.52,152.4,1.3),('J1.4 replaces original relay-coil +5V feed. Flyback diode cathode MUST move to J1.4.',12.7,267.97,1.1),('A coil interlock cannot interrupt welded load contacts. Separate qualified line-series thermal cutoff remains required.',12.7,275.59,1.1)]:items.append(f'(text {q(text)} (at {x} {y} 0) (effects (font (size {size} {size})) (justify left)) (uuid {uid(text)}))')
-(R/'thermal_interlock.kicad_sch').write_text(f'(kicad_sch (version 20250114) (generator "eeschema") (uuid {uid("sheet")}) (paper "A3") (title_block (title "CARBENTRA Rev B hardware thermal interlock") (rev "B-CANDIDATE / HOLD")) (lib_symbols '+''.join(syms.values())+')'+''.join(items)+')')
-(R/'Thermal.kicad_sym').write_text('(kicad_symbol_lib (version 20241209) (generator "kicad_symbol_editor") '+''.join(v.replace(q(k),q(k.split(':')[1]),1) for k,v in syms.items())+')')
-(R/'sym-lib-table').write_text('(sym_lib_table (lib (name "Thermal") (type "KiCad") (uri "${KIPRJMOD}/Thermal.kicad_sym") (options "") (descr "Manufacturer-pin-checked thermal logic")))')
+(R/'thermal_interlock.kicad_sch').write_text(f'(kicad_sch (version 20250114) (generator "eeschema") (uuid {uid("sheet")}) (paper "A3") (title_block (title "CARBENTRA Rev B hardware thermal interlock") (rev "B-CANDIDATE / HOLD")) (lib_symbols '+''.join(syms.values())+')'+''.join(items)+')', encoding='utf-8', newline='\n')
+(R/'Thermal.kicad_sym').write_text('(kicad_symbol_lib (version 20241209) (generator "kicad_symbol_editor") '+''.join(v.replace(q(k),q(k.split(':')[1]),1) for k,v in syms.items())+')', encoding='utf-8', newline='\n')
+(R/'sym-lib-table').write_text('(sym_lib_table (lib (name "Thermal") (type "KiCad") (uri "${KIPRJMOD}/Thermal.kicad_sym") (options "") (descr "Manufacturer-pin-checked thermal logic")))', encoding='utf-8', newline='\n')
 manifest={'status':'DEVELOPMENT_CANDIDATE_NOT_ENERGIZABLE','components':[{k:v for k,v in c.items() if k!='symbol'} for c in parts],'candidate_controller_reservation_mm':[45,35,1.6],'candidate_sensor_head_reservation_mm':[12,12,1.6],'board_geometry_verified':True,'assembled_insulation_harness_qualified':False,'sensor_head_assembly':{'orientation':'component face rear; smooth B.Cu side to qualified insulating pad; rotate 180 degrees about local Y for case integration','pigtail_exit':'F.Cu SMD lands, rear-facing in installed orientation','contact_side_protrusion':'no solder/wire protrusions; via fill/tenting and flatness qualification HOLD','component_face_wire_reserve_mm':2,'contact_island_B_Cu_kicad_mm':[1.2,4.3,4.5,6.9],'contact_island_net':'GND_HEAD','thermal_vias_mm':[[1.6,4.7],[2.4,4.7],[3.4,4.7],[4.2,4.7]],'process_qualification':'HOLD'},'additional_controller_GPIO_required':0,'main_header_crossmap':{'J1.1':'MAIN_J3.7','J1.2':'MAIN_J3.1','J1.3':'MAIN_J3.11','J1.4':'MAIN_J3.10'},'supply_assumptions':{'logic_V':[3.135,3.465],'coil_V':[4.75,5.25],'coil_current_upper_A':.15},'host_pins':{'J1.1':'+5V_ISO','J1.2':S,'J1.3':G,'TP1':A,'TP2':PG,'J1.4':'COIL_5V'},'latched_permission':'!READY => Q=0 asynchronously; READY && fresh REARM edge => Q=1; else hold','coil_permission':'Q1 ON only when Q2 (Q) AND Q3 (READY) sink gate; original low-side RELAY_CMD remains required','rearm_policy':'Local physical button only; no MCU rearm connection. Requires press after every power restoration.', 'wire_open_coverage':'THERM_RETURN open goes low at R2; +3V3_HEAD open removes head pullup. Sensor ground opening/internal stuck-high not covered.'}
-(R/'pin_net_manifest.json').write_text(json.dumps(manifest,indent=2))
+(R/'pin_net_manifest.json').write_text(json.dumps(manifest,indent=2), encoding='utf-8', newline='\n')
 with (R/'bom.csv').open('w') as f:
  w=csv.writer(f);w.writerow(['Reference','Value','MPN candidate','Footprint','Source','Status'])
  for c in parts:
   if not c['ref'].startswith('W'):w.writerow([c['ref'],c['value'],c['mpn'],c['footprint'],c['datasheet'],'UNRELEASED / SCHEMATIC ONLY'])
-proj=json.loads((R.parents[1]/'carbentra.kicad_pro').read_text());proj['meta']={'filename':'thermal_interlock.kicad_pro','version':1};(R/'thermal_interlock.kicad_pro').write_text(json.dumps(proj,indent=2))
+proj=json.loads((R.parents[1]/'carbentra.kicad_pro').read_text(encoding='utf-8'));proj['meta']={'filename':'thermal_interlock.kicad_pro','version':1};(R/'thermal_interlock.kicad_pro').write_text(json.dumps(proj,indent=2), encoding='utf-8', newline='\n')
 print('Thermal schematic generated:',len(parts),'parts including off-board harness models')

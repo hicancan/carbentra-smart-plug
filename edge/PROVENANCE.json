@@ -1,0 +1,30 @@
+{
+  "retired_at_utc": "2026-10-01",
+  "reason": "One shared multi-product Edge and schema authority; old runtime is no longer deployed or tested as a second product.",
+  "historical_git_base": "eb8a2239341801c18563f42c696ff350c5e84e1c",
+  "migrated_to": "carbentra-campus-platform/edge",
+  "contract_authority": "carbentra-campus-platform/packages/iot-contract",
+  "retired_source_snapshot_sha256": {
+    "edge/platform_http.py": "ddafba60ea1e893ed66936fc6cfddd7b4b8a3844d83007977cb313d67374ae97",
+    "edge/wire.py": "0aa76094f84fbe8329c0dd6342e20305992c6d38ae20b0f283558325afc0b184",
+    "edge/service.py": "686a566fa4be9a321af31c3ab715e1f847c50c701e7e8b5f12dceca6c34379c1",
+    "edge/platform_forwarder.py": "417e04162ea3e4cecd2483bbe5115571fc3d2ace73879b4c43f6cb972eb29b83",
+    "edge/validation.json": "c4562ac7aeedddcdb80ba6f126e78a80245b9659fd4b47e51a0b99581caaf22a",
+    "edge/command_transport.py": "a7b11607358a50b8e77e6a2e95f5bd306921c0c780444b57ce58a69abce1ce1c",
+    "edge/requirements.txt": "cc776fd65e45a3a18281ee4e65fbed8fd525e52bf530bb9f84141bf3f1469e3a",
+    "edge/time_bootstrap.py": "9fe287d9c12709290ea66a879e7bc6c8958a63346b8e50072ff781445d1d7a62",
+    "edge/test_results.txt": "bd08314439dfd22e07c776086022668a677077cc1b2054d4bd576deceac9a24a",
+    "edge/requirements.lock": "efdba367822fb5d3ec87677d1a0406abaa93b0364f8d7c94be8e92be4f15a1ce",
+    "edge/README.md": "6a52d83628c3ec76aba057069b98c8a4042cf5506312e0f09bbbc42fe4e928f8",
+    "edge/tests/test_command_transport.py": "698abfb7a3749376a0eea3220338c15ff9da7fbe1d78842b98e629a914eb2f38",
+    "edge/tests/test_time_bootstrap.py": "f7732028b3d95543bc7b91c165a0a8bd95ae9b3336dc189d6909de2baebba909",
+    "edge/tests/test_certificate_dates.py": "fb23baf95ecf9b0cccbfe6cbdbb71e9f3c78b4d8c2bc48ac9b9314f1b7bbc643",
+    "edge/tests/test_forwarder.py": "968f0666579751b387b5205b19a9c8625db97bd0f903d6baece38e7c74634cd1",
+    "edge/tests/test_edge.py": "2060eb6315934d35f0a5a9b7fe79c8f969885f6139a4cda402540a05326a12d2",
+    "edge/tests/test_firmware_wire.py": "e2e863c320072262f52dbe7928ee1d41d71135fe3ddd5f9b4ab4b98fa90b2c0a",
+    "edge/tests/test_platform_tls.py": "e908c51da46e7c3880eab35dc1fe934b8429eb623d82766cd52f7fd0d108be34",
+    "edge/examples/devices.example.json": "4870264465ed076b7759ed707c9cc0108b02c92510af95035d0eadb8a80db57a"
+  },
+  "historical_broker_proof": "release/software_broker_integration.json (historical source only)",
+  "current_proof": "Run platform/edge/tools/run_checks.py and platform/edge/tools/check_mqtt_multidevice.py; firmware evidence records exact shared-source hashes"
+}

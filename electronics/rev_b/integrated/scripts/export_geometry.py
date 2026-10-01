@@ -1,9 +1,11 @@
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 import sys,json,math,hashlib
 from pathlib import Path
-sys.path.append('/usr/lib/freecad/lib')
+sys.path.append(FREECAD_LIB)
 import FreeCAD as A,Part
-import pcbnew as p
-R=Path(__file__).resolve().parents[1];bodies_only='--bodies-only' in sys.argv;stem='placement_assembly' if bodies_only else 'integrated_assembly';b=p.LoadBoard(str(R/'integrated.kicad_pcb'));m=json.loads((R/'electrical_manifest.json').read_text());cs={c['ref']:c for c in m['components'] if c['board_designation']=='integrated'};doc=A.newDocument('CARBENTRA_CARBENTRA_P16_EVT_B');objs=[];env=[];leads=[]
+from carbentra_pcb import pcbnew as p
+R=Path(__file__).resolve().parents[1];bodies_only='--bodies-only' in sys.argv;stem='placement_assembly' if bodies_only else 'integrated_assembly';b=p.LoadBoard(str(R/'integrated.kicad_pcb'));m=json.loads((R/'electrical_manifest.json').read_text(encoding='utf-8'));cs={c['ref']:c for c in m['components'] if c['board_designation']=='integrated'};doc=A.newDocument('CARBENTRA_CARBENTRA_P16_EVT_B');objs=[];env=[];leads=[]
+module_boards={key:p.LoadBoard(str(R.parent/path)) for key,path in {'controller':'controller/carbentra.kicad_pcb','meter':'meter/meter.kicad_pcb','feedback':'feedback/output_feedback.kicad_pcb','thermal':'thermal/thermal_controller.kicad_pcb'}.items()}
 def V(x,y,z=0):return A.Vector(x-50,42.5-y,z)
 def mm(v):return(p.ToMM(v.x),p.ToMM(v.y))
 def add(name,shape,group,ref=None):
@@ -59,7 +61,9 @@ for fp in b.GetFootprints():
  elif ref=='RS201':w,h=(6.9,10.31) if round(ang)%180==90 else (10.31,6.9);cx,cy=x,y;height=2.92
  else:
   # Factory F.Fab from a fresh library footprint avoids treating text/silks as package geometry.
-  lib,name=c['footprint'].split(':');paths={'Integrated':R/'Integrated.pretty','RevB':R.parent/'meter/RevB.pretty','Feedback':R.parent/'feedback/Feedback.pretty','Thermal':R.parent/'thermal/Thermal.pretty'};ff=p.FootprintLoad(str(paths.get(lib,Path('/usr/share/kicad/footprints')/(lib+'.pretty'))),name)
+  lib,name=c['footprint'].split(':');paths={'Integrated':R/'Integrated.pretty','RevB':R.parent/'meter/RevB.pretty','Feedback':R.parent/'feedback/Feedback.pretty','Thermal':R.parent/'thermal/Thermal.pretty'}
+  original=next((item for item in module_boards.get(c['source_module'],p.BOARD()).GetFootprints() if item.GetReference()==c['source_ref'] and item.GetFPID().GetLibItemName()==name),None)
+  ff=p.FOOTPRINT(original) if original is not None else p.FootprintLoad(str(paths.get(lib,Path(kicad_resource('footprints'))/(lib+'.pretty'))),name)
   if ff:ff.SetPosition(fp.GetPosition());ff.SetOrientationDegrees(ang)
   else:ff=fp
   for g in ff.GraphicalItems():
@@ -106,5 +110,5 @@ with (R/'exports'/f'{stem}.obj').open('w') as f:
   for v in vs:f.write(f'v {v.x:.5f} {v.y:.5f} {v.z:.5f}\n')
   for tri in fs:f.write('f '+' '.join(str(k+off) for k in tri)+'\n')
   off+=len(vs)
-(R/'exports/component_envelopes.json').write_text(json.dumps({'product':'CARBENTRA','technical_revision':'CARBENTRA-P16-EVT-B','board_sha256':hashlib.sha256((R/'integrated.kicad_pcb').read_bytes()).hexdigest(),'board_id':'MainB','status':'ROUTED DEVELOPMENT CANDIDATE / NO ENERGIZATION','coordinate_system':'mm, centeredXY,boardbottomz0,topz1.6; assemblytranslationz11.5 provisional','board_mm':[100,85,1.6],'corner_radius_mm':10,'mount_holes_mm':[[-44,36,3.2],[44,36,3.2],[-44,-36,3.2],[44,-36,3.2]],'components':env,'leads':leads,'fuse_forming':{'pin_pitch_mm':30,'straight_beyond_max_case_mm':1.5,'bend_radius_mm':2.25,'lead_diameter_mm':.65,'body_max_mm':[22.5,5.8],'underside_standoff_mm':1.5,'max_depth_below_pcb_mm':7.3,'solder_tail_above_top_mm':.6},'terminal_entry_height_mm_above_pcb':{'nominal':7.5,'uncertainty_plus_minus':1,'basis':'inferred from manufacturer section drawing; not a dimensioned/qualified interface'},'limitations':['Candidate nominal/max body envelopes, not full manufacturer solids','Lead reserves identified separately; terminal0.9square/PSU1mm/fuse0.65mm geometry from sources','Actual pads/tracks/vias exported; copper raised for inspection, not a manufacturing stack model; planes authoritative in native PCB','No material, thermal, strain-relief, creepage, fault or insulation approval']},indent=2))
-(R/'validation'/('placement_geometry.json' if bodies_only else 'geometry.json')).write_text(json.dumps({'board_sha256':hashlib.sha256((R/'integrated.kicad_pcb').read_bytes()).hexdigest(),'object_count':len(objs),'body_count':len(env),'lead_count':len(leads),'all_valid_positive_volume':all(o.Shape.isValid() and o.Shape.Volume>0 for o in objs)},indent=2));print('Exported',len(objs),'validobjects?',all(o.Shape.isValid() and o.Shape.Volume>0 for o in objs),'bodies',len(env))
+(R/'exports/component_envelopes.json').write_text(json.dumps({'product':'CARBENTRA','technical_revision':'CARBENTRA-P16-EVT-B','board_sha256':hashlib.sha256((R/'integrated.kicad_pcb').read_bytes()).hexdigest(),'board_id':'MainB','status':'ROUTED DEVELOPMENT CANDIDATE / NO ENERGIZATION','coordinate_system':'mm, centeredXY,boardbottomz0,topz1.6; assemblytranslationz11.5 provisional','board_mm':[100,85,1.6],'corner_radius_mm':10,'mount_holes_mm':[[-44,36,3.2],[44,36,3.2],[-44,-36,3.2],[44,-36,3.2]],'components':env,'leads':leads,'fuse_forming':{'pin_pitch_mm':30,'straight_beyond_max_case_mm':1.5,'bend_radius_mm':2.25,'lead_diameter_mm':.65,'body_max_mm':[22.5,5.8],'underside_standoff_mm':1.5,'max_depth_below_pcb_mm':7.3,'solder_tail_above_top_mm':.6},'terminal_entry_height_mm_above_pcb':{'nominal':7.5,'uncertainty_plus_minus':1,'basis':'inferred from manufacturer section drawing; not a dimensioned/qualified interface'},'limitations':['Candidate nominal/max body envelopes, not full manufacturer solids','Lead reserves identified separately; terminal0.9square/PSU1mm/fuse0.65mm geometry from sources','Actual pads/tracks/vias exported; copper raised for inspection, not a manufacturing stack model; planes authoritative in native PCB','No material, thermal, strain-relief, creepage, fault or insulation approval']},indent=2), encoding='utf-8', newline='\n')
+(R/'validation'/('placement_geometry.json' if bodies_only else 'geometry.json')).write_text(json.dumps({'board_sha256':hashlib.sha256((R/'integrated.kicad_pcb').read_bytes()).hexdigest(),'object_count':len(objs),'body_count':len(env),'lead_count':len(leads),'all_valid_positive_volume':all(o.Shape.isValid() and o.Shape.Volume>0 for o in objs)},indent=2), encoding='utf-8', newline='\n');print('Exported',len(objs),'validobjects?',all(o.Shape.isValid() and o.Shape.Volume>0 for o in objs),'bodies',len(env))

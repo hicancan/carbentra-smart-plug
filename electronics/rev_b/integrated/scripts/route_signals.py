@@ -107,4 +107,4 @@ if __name__=='__main__':
   while points:
    d,i,source=min((math.dist(a[0],z[0]),i,a) for a in tree for i,z in enumerate(points));target=points.pop(i)
    ok=route(n,source[0],target[0],source[1],target[1]);results.append(dict(net=n,a=source,b=target,routed=ok));tree.append(target);p.SaveBoard(str(P),b)
- (R/'validation/routing.json').write_text(json.dumps(results,indent=2))
+ (R/'validation/routing.json').write_text(json.dumps(results,indent=2), encoding='utf-8', newline='\n')

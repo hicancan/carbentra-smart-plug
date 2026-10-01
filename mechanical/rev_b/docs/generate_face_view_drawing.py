@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 """Original, dimensioned Rev B drawing only. Does not generate or modify CAD."""
 from pathlib import Path
 import math, json, html, hashlib
@@ -7,10 +8,10 @@ from reportlab.lib.units import mm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 ROOT=Path(__file__).resolve().parent
-P=json.loads((ROOT.parent/'design_parameters.json').read_text())
+P=json.loads((ROOT.parent/'design_parameters.json').read_text(encoding='utf-8'))
 W,H=420,297
-pdfmetrics.registerFont(TTFont('DV','/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'))
-pdfmetrics.registerFont(TTFont('DVB','/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'))
+pdfmetrics.registerFont(TTFont('DV',FONT_REGULAR))
+pdfmetrics.registerFont(TTFont('DVB',FONT_REGULAR))
 base='CARBENTRA-P16-EVT-B_face_view_polarity'
 c=canvas.Canvas(str(ROOT/(base+'.pdf')),pagesize=(W*mm,H*mm))
 c.setTitle('CARBENTRA CARBENTRA-P16-EVT-B | Face-view polarity and interface control')
@@ -198,7 +199,7 @@ text(14,283,'CARBENTRA-P16-EVT-B  |  2026-09-30  |  Original face-view polarity 
 text(14,287,'Source: design_parameters.json + socket_b_features.py; Volex interface cross-check. Source links and release gates in docs/README.md.',2.15,MUT)
 text(405,283,'A3 landscape  |  Main faces 1:1 at 100%',2.55,MUT,False,'end')
 text(405,287,'Reference only - do not scale for manufacture  |  Sheet 1 / 1',2.3,MUT,False,'end')
-c.save();svg.append('</svg>');(ROOT/(base+'.svg')).write_text('\n'.join(svg),encoding='utf-8')
-snap={'document_revision':'CARBENTRA-P16-EVT-B','title':'CARBENTRA Face-view polarity control','status':'Drawing QA only; not final model validation','source_files':{str(p.relative_to(ROOT.parent)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [ROOT.parent/'design_parameters.json',ROOT.parent/'socket_b_features.py',ROOT.parent/'power_links.py']},'coordinate_check':P['interface']['slots'],'output_files':[base+'.pdf',base+'.svg']}
-(ROOT/'drawing_source_snapshot.json').write_text(json.dumps(snap,indent=2)+'\n')
+c.save();svg.append('</svg>');(ROOT/(base+'.svg')).write_text('\n'.join(svg),encoding='utf-8', newline='\n')
+snap={'document_revision':'CARBENTRA-P16-EVT-B','title':'CARBENTRA Face-view polarity control','status':'Drawing QA only; not final model validation','source_files':{p.relative_to(ROOT.parent).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in [ROOT.parent/'design_parameters.json',ROOT.parent/'socket_b_features.py',ROOT.parent/'power_links.py']},'coordinate_check':P['interface']['slots'],'output_files':[base+'.pdf',base+'.svg']}
+(ROOT/'drawing_source_snapshot.json').write_text(json.dumps(snap,indent=2)+'\n', encoding='utf-8', newline='\n')
 print('Wrote',base+'.pdf and .svg')

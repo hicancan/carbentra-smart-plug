@@ -97,4 +97,4 @@ for t in list(b.GetTracks()):
   if key in seen:b.Remove(t)
   else:seen.add(key)
 p.SaveBoard(str(R/(stem+'.kicad_pcb')),b)
-(R/'validation'/(stem+'_routing.json')).write_text(json.dumps(routes,indent=2))
+(R/'validation'/(stem+'_routing.json')).write_text(json.dumps(routes,indent=2), encoding='utf-8', newline='\n')

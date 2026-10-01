@@ -79,4 +79,4 @@ for n,points in sorted(groups.items(),key=lambda kv:(kv[0] in ('GND_ISO','+3V3_I
  points=list(dict.fromkeys(points));tree=[points.pop(0)]
  while points:
   d,i,a=min((math.dist(a,z),i,a) for a in tree for i,z in enumerate(points));z=points.pop(i);ok=route(n,a,z);results.append(dict(net=n,a=a,z=z,routed=ok));tree.append(z);p.SaveBoard(str(P),b)
-(R/'validation/routing.json').write_text(json.dumps(results,indent=2))
+(R/'validation/routing.json').write_text(json.dumps(results,indent=2), encoding='utf-8', newline='\n')

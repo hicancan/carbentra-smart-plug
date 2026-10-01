@@ -5,11 +5,11 @@
 ## 已实现的代码路径
 
 - GPIO 本地输入、继电器请求与指示灯；默认编译配置禁止继电器驱动
-- 与 Python 参考一致的 C 策略核心：未知负载只监测、过期/重放/错误设备拒绝、停启间隔、本地故障优先
+- 唯一 C 策略核心：未知负载只监测、过期/重放/错误设备拒绝、停启间隔、本地故障优先
 - 真实 SPI ATM90E26 读取、LastData 校验、启动/标定记录装载与校验、有效测量转换
 - TMP102 I2C 板温读取；GPIO3 光耦脉冲反馈，用边沿捕获避免轮询与交流过零混叠
 - Wi-Fi Station 与指数退避重连；BLE Security2 配网需要每设备真实 salt/verifier，缺失时不降级到明文或共用密码
-- MQTT 双向 TLS，必须提供服务端 CA、客户端证书与密钥；没有默认地址/账号/密码或跳过证书校验的回退
+- MQTT 双向 TLS，CA、主机名及证书有效期检查全部启用；先通过独立配置的 P-256 公钥验证随机时间挑战，再启动 TLS；缺少可信时间配置时保持离线，不采用 SNTP 或旧缓存时间绕过有效期检查
 - 精确设备主题、拒绝 retained 命令、分片重组、长度/类型/重复键检查、队列上限和速率限制
 - 经认证 MQTT 链路上的随机时间挑战；命令时间使用边缘响应及单调时钟锚点，不直接把未认证 SNTP 当作命令时钟可信依据
 - NVS 持久命令序号，先写入再请求动作；存储异常时禁止远程控制，不擅自擦除配置
@@ -19,7 +19,7 @@
 
 ## 计量与数据完整性
 
-计量记录不能用虚构增益初始化。NVS `carbentra_factory/meter_cal` 必须包含 v2 校验记录：板版本、真实标定标识、21 个寄存器系数、与 PLconst 一致的脉冲常数和 CRC。缺失、错误版本、损坏或芯片状态校验失败时，测量无效且不能调试放行。每轮采样还检查计量运行模式、标定校验寄存器和状态字，防止计量芯片单独复位或 SPI 卡零被误报为合法零功率。CRC 只检测意外损坏，不代替签名、访问控制或标定证明。
+计量记录不能用虚构增益初始化。NVS `cb_factory/meter_cal` 必须包含 v3 校验记录（完整 24 字节板号，不截断 A/B/C 修订）：板版本、真实标定标识、21 个寄存器系数、与 PLconst 一致的脉冲常数和 CRC。缺失、错误版本、损坏或芯片状态校验失败时，测量无效且不能调试放行。每轮采样还检查计量运行模式、标定校验寄存器和状态字，防止计量芯片单独复位或 SPI 卡零被误报为合法零功率。CRC 只检测意外损坏，不代替签名、访问控制或标定证明。
 
 电能寄存器是清零式读取：每周期只读取一次目标寄存器，用 LastData 校验；不确定时标记缺失区间，不再次读取目标来假装恢复。正反向累计只包含已知有效区间；单位来自实际标定脉冲常数，不假定固定 3200。停机超过采样界限、测量失败及断电后的数据不可凭空补齐。
 
@@ -27,7 +27,7 @@
 
 ## 执行与保护
 
-`desired_on` 是请求状态，反馈信号是测得状态；消息回执区分请求与实际观察。GPIO3 需要至少三个合格周期，且高低电平持续时间均满足滤波条件，才报告检测到交流输出；LOW 持续至少 25 ms 作为有电或卡低故障处理，高电平且 40 ms 无合格脉冲仅报告“未检出交流脉冲”。任何状态都不证明端子无电。光耦反馈不能用来证明端子安全可触摸，也不能切断焊死触点。
+`desired_on` 是请求状态，反馈信号是测得状态；v2 回执携带命令 ID、序号、启动纪元、观察和截止时间。请求/无变化确认均非终态，合格新观察才产生 OBSERVED_VERIFIED；故障、人工 OFF 和超时分别产生失败终态。周期遥测及新故障即时样本携带 fault_latched。GPIO3 需要至少三个合格周期，且高低电平持续时间均满足滤波条件，才报告检测到交流输出；LOW 持续至少 25 ms 作为有电或卡低故障处理，高电平且 40 ms 无合格脉冲仅报告“未检出交流脉冲”。任何状态都不证明端子无电。光耦反馈不能用来证明端子安全可触摸，也不能切断焊死触点。
 
 板温不是触点最高温度或房间温度。独立硬件温控、熔断器及保护接地仍必须在电路与实物层面成立，不能以固件循环代替。热保护保持逻辑在电气 RevB 内单独设计。
 
@@ -35,10 +35,25 @@
 
 ## 构建与测试
 
-安装官方 ESP-IDF 5.4.3，加载其环境后，在 firmware 目录执行 `idf.py set-target esp32c3` 和 `idf.py build`。不应对真实市电产品直接执行 SDK 输出中的烧录/通电示例。
+本机入口见 [Windows 开发说明](../WINDOWS_DEVELOPMENT.md)。普通工具先执行 `uv venv --python 3.12`，再执行 `uv sync --locked`。目标构建运行 `pwsh -NoProfile -File scripts/build_firmware.ps1`，使用官方 ESP-IDF 5.4.3 的独立工具环境，产物进入任务临时目录，不烧录硬件。
 
-主机测试：`bash firmware/tests/run_host_tests.sh`，使用 C 编译器；优先使用官方 SDK 的 cJSON 源，未安装 SDK 时使用仓库内相同版本的 MIT 许可测试副本。37 项策略测试与 10000 次故障优先不变量、命令边界与计量编码向量由实际程序检查。ASan/UBSan 已启用；沙箱不支持 LeakSanitizer 的进程检查，因此单独禁用泄漏检查，不能把它描述为全项内存认证。
+主机测试运行 `pwsh -NoProfile -File firmware/tests/run_host_tests.ps1 -AddressSanitizer`。MSVC 编译并实际执行唯一 C 保护核心、45 个策略案例、10000 次故障优先不变量、协议/计量/反馈与 7 个启动场景。Windows 已测 AddressSanitizer；不声称启用 Windows 不提供的 UBSan 或 LeakSanitizer。真实签名/证书测试通过 `firmware/tests/run_crypto_tests.ps1` 构建 SDK 的 mbedTLS；普通 Python 测试使用共享平台 uv 环境。
 
 尚无真实无线互通、射频、计量精度、继电器切换、功耗、温升或故障注入实测。默认程序禁止继电器动作；没有 OTA 自动更新实现，也没有配置安全启动/闪存加密密钥。配置这些内容涉及实际安全状态，必须在受控生产/调试流程中另行授权并验证。
 
 时间响应必须在两秒挑战窗口内到达。命令校验使用服务端秒时间、往返时延及量化余量组成的保守时间区间：签发时间不得晚于下界，过期时间必须晚于上界。落在当前不确定区间的签发时间最多等待五秒再判定，不提前执行未来命令。会话纪元随命令入队固定，出队和执行前再次检查，重连后的旧会话命令被丢弃。真实网络抖动、系统时钟源与重连流程仍需实机测试。
+
+## 统一合同与复现
+
+唯一端边合同见 [contracts/README.md](../../contracts/README.md)；平台负责空间登记、预测、策略和能碳核算，边缘不重复实现这些业务。旧标定格式明确拒绝；没有已部署设备时不添加未经证实的历史命名空间兼容层，不擦除任何 NVS。
+
+本机完整入口执行 `pwsh -NoProfile -File scripts/check_windows.ps1 -BuildTarget -CheckNativeCAD -RenderGPU`；共享平台路径由 `CARBENTRA_PLATFORM_ROOT` 明确给出。包含真正的 app_main 驱动桩启动/NVS负控、真实 mbedTLS 签名/过期证书/未来证书/错 CA/错主机名测试、实际 C JSON 编码到边缘落库的集成测试。目标固件另执行 idf.py build；所有通过项由 firmware/validation.json 绑定当前源码和产物摘要。
+
+
+## Classroom local-control upgrade (2026-10-01)
+
+The physical momentary input now uses 50 ms stable debounce and requires an observed release before the first boot-time press. It requests a toggle, never a blind ON: local ON must pass per-unit commissioning, approved/noncritical/sheddable load profile, valid fresh meter/feedback, no local fault, maintenance exclusion, and the same minimum dwell as network control. Network availability and wall-clock authentication are not required for this physical input. Physical OFF remains a safety action even when network/meter data is unavailable. The compile-time actuation gate remains OFF.
+
+Every real press records a bounded 15-minute manual hold plus an event sequence, timestamp and outcome; a rejected ON is visible and still prevents an immediate automatic override. A hold blocks new non-HOLD network actuation. Expiry only restores eligibility; it never energizes an output. Maintenance is explicit per-unit factory data and blocks ON. Existing protection/dwell/critical-load gates remain enforced. No remote hold override or fault-reset API is added.
+
+Wire v2 remains compatible with existing required fields. New optional telemetry fields are device_type=smart_plug, channel_id=relay.1, control_mode, actuation_enabled, maintenance, manual_hold_until_uptime_ms and last_local_input. They are captured with the sample so retransmission stays byte-semantically stable. The last_local_input object contains channel=1, event_seq/uptime_ms decimal strings, pressed and result. New ACK rejection statuses are MANUAL_HOLD and MAINTENANCE. A local event is deduplicated by boot_epoch/event_seq, not by message arrival. Optical AC detection remains distinct from a relay request and is never proof of electrical safety.

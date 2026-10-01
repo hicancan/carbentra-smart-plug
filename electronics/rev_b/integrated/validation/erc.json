@@ -1,0 +1,61 @@
+{
+  "$schema": "https://schemas.kicad.org/erc.v1.json",
+  "coordinate_units": "mm",
+  "date": "2026-10-01T19:57:31",
+  "ignored_checks": [
+    {
+      "description": "Global label only appears once in the schematic",
+      "key": "single_global_label"
+    },
+    {
+      "description": "Four connection points are joined together",
+      "key": "four_way_junction"
+    },
+    {
+      "description": "SPICE model issue",
+      "key": "simulation_model_issue"
+    },
+    {
+      "description": "Assigned footprint doesn't match footprint filters",
+      "key": "footprint_filter"
+    }
+  ],
+  "included_severities": [
+    "error",
+    "warning"
+  ],
+  "kicad_version": "10.0.5",
+  "sheets": [
+    {
+      "path": "/",
+      "uuid_path": "/c5d96951-a8b5-51df-97ab-dc1b173e8a0c",
+      "violations": []
+    },
+    {
+      "path": "/1 controller/",
+      "uuid_path": "/c5d96951-a8b5-51df-97ab-dc1b173e8a0c/3a308576-487f-5c45-8bb5-214ebe46dd88",
+      "violations": []
+    },
+    {
+      "path": "/2 meter/",
+      "uuid_path": "/c5d96951-a8b5-51df-97ab-dc1b173e8a0c/2858d91e-8c2f-54d4-b8ad-4fa435360327",
+      "violations": []
+    },
+    {
+      "path": "/3 feedback/",
+      "uuid_path": "/c5d96951-a8b5-51df-97ab-dc1b173e8a0c/50a1e305-b7b2-5303-9d67-bbc4e19761fa",
+      "violations": []
+    },
+    {
+      "path": "/4 thermal/",
+      "uuid_path": "/c5d96951-a8b5-51df-97ab-dc1b173e8a0c/41d20fd4-fe1d-5f34-83ad-19645d8270cc",
+      "violations": []
+    },
+    {
+      "path": "/5 assembly protection/",
+      "uuid_path": "/c5d96951-a8b5-51df-97ab-dc1b173e8a0c/37bf4fe7-6bd9-513a-a1f1-11e9c5a79b22",
+      "violations": []
+    }
+  ],
+  "source": "integrated.kicad_sch"
+}

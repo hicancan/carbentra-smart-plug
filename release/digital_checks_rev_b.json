@@ -12,972 +12,987 @@
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/exports/integrated_assembly.obj",
+      "check": "frozen electronics\\rev_b\\integrated\\exports\\integrated_assembly.obj",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/exports/remote_head_assembled.obj",
+      "check": "frozen electronics\\rev_b\\integrated\\exports\\remote_head_assembled.obj",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/integrated.kicad_pcb",
+      "check": "frozen electronics\\rev_b\\integrated\\integrated.kicad_pcb",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/CARBENTRA-P16-EVT-B.FCStd",
+      "check": "frozen mechanical\\rev_b\\artifacts_metadata.py",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/CARBENTRA-P16-EVT-B_mechanical.step",
+      "check": "frozen mechanical\\rev_b\\assembly_world_bounds.json",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/CARBENTRA-P16-EVT-B_system_assembly.FCStd",
+      "check": "frozen mechanical\\rev_b\\audit_connectivity.py",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/CARBENTRA-P16-EVT-B_system_assembly.step",
+      "check": "frozen mechanical\\rev_b\\base_fit_report.json",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/CARBENTRA-P16-B-base-provisional.FCStd",
+      "check": "frozen mechanical\\rev_b\\base_geometry_report.json",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/MECHANICAL_PART_INVENTORY.csv",
+      "check": "frozen mechanical\\rev_b\\build_base.py",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/PACKAGING_STUDY.md",
+      "check": "frozen mechanical\\rev_b\\CARBENTRA-P16-B-base-provisional.FCStd",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/README.md",
+      "check": "frozen mechanical\\rev_b\\CARBENTRA-P16-EVT-B.FCStd",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/VALIDATION_SUMMARY.md",
+      "check": "frozen mechanical\\rev_b\\CARBENTRA-P16-EVT-B_mechanical.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/artifacts_metadata.py",
+      "check": "frozen mechanical\\rev_b\\CARBENTRA-P16-EVT-B_system_assembly.FCStd",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/assembly_world_bounds.json",
+      "check": "frozen mechanical\\rev_b\\CARBENTRA-P16-EVT-B_system_assembly.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/audit_connectivity.py",
+      "check": "frozen mechanical\\rev_b\\CARBENTRA-P16-EVT-B_system_detailed.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/base_fit_report.json",
+      "check": "frozen mechanical\\rev_b\\check_base.py",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/base_geometry_report.json",
+      "check": "frozen mechanical\\rev_b\\contact_engagement_report.json",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/build_base.py",
+      "check": "frozen mechanical\\rev_b\\contacts_inserted_maximum_reference.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/check_base.py",
+      "check": "frozen mechanical\\rev_b\\contacts_inserted_nominal.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/contact_engagement_report.json",
+      "check": "frozen mechanical\\rev_b\\design_parameters.json",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/contacts_inserted_maximum_reference.step",
+      "check": "frozen mechanical\\rev_b\\detailed_export_report.json",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/contacts_inserted_nominal.step",
+      "check": "frozen mechanical\\rev_b\\docs\\CARBENTRA-P16-EVT-B_face_view_polarity.pdf",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/design_parameters.json",
+      "check": "frozen mechanical\\rev_b\\docs\\CARBENTRA-P16-EVT-B_face_view_polarity.svg",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/docs/CARBENTRA-P16-EVT-B_face_view_polarity.pdf",
+      "check": "frozen mechanical\\rev_b\\docs\\drawing_source_snapshot.json",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/docs/CARBENTRA-P16-EVT-B_face_view_polarity.svg",
+      "check": "frozen mechanical\\rev_b\\docs\\generate_face_view_drawing.py",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/docs/README.md",
+      "check": "frozen mechanical\\rev_b\\docs\\qa\\DRAWING_QA.md",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/docs/TOLERANCE_AND_RELEASE_GATES.md",
+      "check": "frozen mechanical\\rev_b\\docs\\README.md",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/docs/drawing_source_snapshot.json",
+      "check": "frozen mechanical\\rev_b\\docs\\TOLERANCE_AND_RELEASE_GATES.md",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/docs/generate_face_view_drawing.py",
+      "check": "frozen mechanical\\rev_b\\export_detailed_assembly.py",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/docs/qa/DRAWING_QA.md",
+      "check": "frozen mechanical\\rev_b\\export_release.py",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/export_release.py",
+      "check": "frozen mechanical\\rev_b\\export_roundtrip_report.json",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/export_roundtrip_report.json",
+      "check": "frozen mechanical\\rev_b\\finalize_snapshot.py",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/finalize_snapshot.py",
+      "check": "frozen mechanical\\rev_b\\insulation_domain_audit.py",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/insulation_domain_audit.py",
+      "check": "frozen mechanical\\rev_b\\insulation_domain_report.json",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/insulation_domain_report.json",
+      "check": "frozen mechanical\\rev_b\\insulation_domain_report.md",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/insulation_domain_report.md",
+      "check": "frozen mechanical\\rev_b\\integrated_fit_report.json",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/integrated_fit_report.json",
+      "check": "frozen mechanical\\rev_b\\MECHANICAL_PART_INVENTORY.csv",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/AuxFuseCradle.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\AuxFuseCradle.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/AuxFuseRetainer.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\AuxFuseRetainer.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/BladeSleeve_L.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\Blade_L.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/BladeSleeve_N.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\Blade_N.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/Blade_L.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\Blade_PE.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/Blade_N.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\BladeSleeve_L.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/Blade_PE.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\BladeSleeve_N.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/Carrier.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\Carrier.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/Contact_L.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\Contact_L.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/Contact_N.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\Contact_N.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/Contact_PE.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\Contact_PE.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/FrontLid.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\FrontLid.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/FuseRetainerScrew_0.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\FuseRetainerScrew_0.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/FuseRetainerScrew_1.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\FuseRetainerScrew_1.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/FuseRetainerScrew_2.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\FuseRetainerScrew_2.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/FuseRetainerScrew_3.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\FuseRetainerScrew_3.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/HeadConnectorEnvelope.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\HeadConnectorEnvelope.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/HeadPigtail_0.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\HeadPigtail_0.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/HeadPigtail_1.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\HeadPigtail_1.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/HeadPigtail_2.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\HeadPigtail_2.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/LocalButton.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\LocalButton.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/MainFuseCap1.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\MainFuseCap1.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/MainFuseCap2.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\MainFuseCap2.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/MainFuseCeramic.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\MainFuseCeramic.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/MainFuseClip1.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\MainFuseClip1.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/MainFuseClip2.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\MainFuseClip2.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/MainFuseCollector1.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\MainFuseCollector1.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/MainFuseCollector2.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\MainFuseCollector2.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/MainFuseHolder.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\MainFuseHolder.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/MainFuseRetainer.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\MainFuseRetainer.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/PEBus.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\Pawl_L.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/PEChannel.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\Pawl_N.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/PawlSpring_L.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\PawlSpring_L.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/PawlSpring_N.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\PawlSpring_N.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/Pawl_L.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\PEBus.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/Pawl_N.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\PEChannel.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/PowerCarrier_L_FUSE_THERMAL.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\PowerCarrier_L_FUSE_THERMAL.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/PowerCarrier_L_OUTPUT.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\PowerCarrier_L_OUTPUT.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/PowerCarrier_L_PROTECTED.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\PowerCarrier_L_PROTECTED.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/PowerCarrier_L_RAW.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\PowerCarrier_L_RAW.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/PowerCarrier_N_OUTPUT.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\PowerCarrier_N_OUTPUT.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/PowerCarrier_N_RAW.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\PowerCarrier_N_RAW.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/PowerCore_L_FUSE_THERMAL.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\PowerCore_L_FUSE_THERMAL.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/PowerCore_L_OUTPUT.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\PowerCore_L_OUTPUT.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/PowerCore_L_PROTECTED.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\PowerCore_L_PROTECTED.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/PowerCore_L_RAW.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\PowerCore_L_RAW.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/PowerCore_N_OUTPUT.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\PowerCore_N_OUTPUT.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/PowerCore_N_RAW.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\PowerCore_N_RAW.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/RFAntenna.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\RearFinish.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/RFCoax.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\RearmButton.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/RFConnectorEnvelope.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\RearShell.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/RFServiceSlackEnvelope.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\RFAntenna.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/RearFinish.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\RFCoax.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/RearShell.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\RFConnectorEnvelope.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/RearmButton.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\RFServiceSlackEnvelope.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/Screw_0.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\Screw_0.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/Screw_1.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\Screw_1.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/Screw_2.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\Screw_2.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/Screw_3.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\Screw_3.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/SeamRing.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\SeamRing.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/ShutterGuide.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\ShutterGuide.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/ShutterReturnSpring.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\ShutterReturnSpring.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/ShutterSlider.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\ShutterSlider.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/StatusLightGuide.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\StatusLightGuide.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/ThermalBody.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\ThermalBody.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/ThermalLead1.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\ThermalLead1.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/ThermalLead2.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\ThermalLead2.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/ThermalPad.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\ThermalPad.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/ThermalRetainer.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\ThermalRetainer.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/ThermalRetainerScrew_0.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\ThermalRetainerScrew_0.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/ThermalRetainerScrew_1.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\ThermalRetainerScrew_1.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/meshes/ThermalSleeve.stl",
+      "check": "frozen mechanical\\rev_b\\meshes\\ThermalSleeve.stl",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/AuxFuseCradle.step",
+      "check": "frozen mechanical\\rev_b\\PACKAGING_STUDY.md",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/AuxFuseRetainer.step",
+      "check": "frozen mechanical\\rev_b\\parts\\AuxFuseCradle.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/BladeSleeve_L.step",
+      "check": "frozen mechanical\\rev_b\\parts\\AuxFuseRetainer.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/BladeSleeve_N.step",
+      "check": "frozen mechanical\\rev_b\\parts\\Blade_L.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/Blade_L.step",
+      "check": "frozen mechanical\\rev_b\\parts\\Blade_N.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/Blade_N.step",
+      "check": "frozen mechanical\\rev_b\\parts\\Blade_PE.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/Blade_PE.step",
+      "check": "frozen mechanical\\rev_b\\parts\\BladeSleeve_L.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/Carrier.step",
+      "check": "frozen mechanical\\rev_b\\parts\\BladeSleeve_N.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/Contact_L.step",
+      "check": "frozen mechanical\\rev_b\\parts\\Carrier.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/Contact_N.step",
+      "check": "frozen mechanical\\rev_b\\parts\\Contact_L.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/Contact_PE.step",
+      "check": "frozen mechanical\\rev_b\\parts\\Contact_N.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/FrontLid.step",
+      "check": "frozen mechanical\\rev_b\\parts\\Contact_PE.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/FuseRetainerScrew_0.step",
+      "check": "frozen mechanical\\rev_b\\parts\\FrontLid.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/FuseRetainerScrew_1.step",
+      "check": "frozen mechanical\\rev_b\\parts\\FuseRetainerScrew_0.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/FuseRetainerScrew_2.step",
+      "check": "frozen mechanical\\rev_b\\parts\\FuseRetainerScrew_1.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/FuseRetainerScrew_3.step",
+      "check": "frozen mechanical\\rev_b\\parts\\FuseRetainerScrew_2.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/HeadConnectorEnvelope.step",
+      "check": "frozen mechanical\\rev_b\\parts\\FuseRetainerScrew_3.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/HeadPigtail_0.step",
+      "check": "frozen mechanical\\rev_b\\parts\\HeadConnectorEnvelope.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/HeadPigtail_1.step",
+      "check": "frozen mechanical\\rev_b\\parts\\HeadPigtail_0.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/HeadPigtail_2.step",
+      "check": "frozen mechanical\\rev_b\\parts\\HeadPigtail_1.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/LocalButton.step",
+      "check": "frozen mechanical\\rev_b\\parts\\HeadPigtail_2.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/MainFuseCap1.step",
+      "check": "frozen mechanical\\rev_b\\parts\\LocalButton.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/MainFuseCap2.step",
+      "check": "frozen mechanical\\rev_b\\parts\\MainFuseCap1.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/MainFuseCeramic.step",
+      "check": "frozen mechanical\\rev_b\\parts\\MainFuseCap2.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/MainFuseClip1.step",
+      "check": "frozen mechanical\\rev_b\\parts\\MainFuseCeramic.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/MainFuseClip2.step",
+      "check": "frozen mechanical\\rev_b\\parts\\MainFuseClip1.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/MainFuseCollector1.step",
+      "check": "frozen mechanical\\rev_b\\parts\\MainFuseClip2.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/MainFuseCollector2.step",
+      "check": "frozen mechanical\\rev_b\\parts\\MainFuseCollector1.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/MainFuseHolder.step",
+      "check": "frozen mechanical\\rev_b\\parts\\MainFuseCollector2.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/MainFuseRetainer.step",
+      "check": "frozen mechanical\\rev_b\\parts\\MainFuseHolder.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/PEBus.step",
+      "check": "frozen mechanical\\rev_b\\parts\\MainFuseRetainer.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/PEChannel.step",
+      "check": "frozen mechanical\\rev_b\\parts\\Pawl_L.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/PawlSpring_L.step",
+      "check": "frozen mechanical\\rev_b\\parts\\Pawl_N.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/PawlSpring_N.step",
+      "check": "frozen mechanical\\rev_b\\parts\\PawlSpring_L.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/Pawl_L.step",
+      "check": "frozen mechanical\\rev_b\\parts\\PawlSpring_N.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/Pawl_N.step",
+      "check": "frozen mechanical\\rev_b\\parts\\PEBus.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/PowerCarrier_L_FUSE_THERMAL.step",
+      "check": "frozen mechanical\\rev_b\\parts\\PEChannel.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/PowerCarrier_L_OUTPUT.step",
+      "check": "frozen mechanical\\rev_b\\parts\\PowerCarrier_L_FUSE_THERMAL.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/PowerCarrier_L_PROTECTED.step",
+      "check": "frozen mechanical\\rev_b\\parts\\PowerCarrier_L_OUTPUT.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/PowerCarrier_L_RAW.step",
+      "check": "frozen mechanical\\rev_b\\parts\\PowerCarrier_L_PROTECTED.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/PowerCarrier_N_OUTPUT.step",
+      "check": "frozen mechanical\\rev_b\\parts\\PowerCarrier_L_RAW.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/PowerCarrier_N_RAW.step",
+      "check": "frozen mechanical\\rev_b\\parts\\PowerCarrier_N_OUTPUT.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/PowerCore_L_FUSE_THERMAL.step",
+      "check": "frozen mechanical\\rev_b\\parts\\PowerCarrier_N_RAW.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/PowerCore_L_OUTPUT.step",
+      "check": "frozen mechanical\\rev_b\\parts\\PowerCore_L_FUSE_THERMAL.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/PowerCore_L_PROTECTED.step",
+      "check": "frozen mechanical\\rev_b\\parts\\PowerCore_L_OUTPUT.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/PowerCore_L_RAW.step",
+      "check": "frozen mechanical\\rev_b\\parts\\PowerCore_L_PROTECTED.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/PowerCore_N_OUTPUT.step",
+      "check": "frozen mechanical\\rev_b\\parts\\PowerCore_L_RAW.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/PowerCore_N_RAW.step",
+      "check": "frozen mechanical\\rev_b\\parts\\PowerCore_N_OUTPUT.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/RFAntenna.step",
+      "check": "frozen mechanical\\rev_b\\parts\\PowerCore_N_RAW.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/RFCoax.step",
+      "check": "frozen mechanical\\rev_b\\parts\\RearFinish.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/RFConnectorEnvelope.step",
+      "check": "frozen mechanical\\rev_b\\parts\\RearmButton.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/RFServiceSlackEnvelope.step",
+      "check": "frozen mechanical\\rev_b\\parts\\RearShell.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/RearFinish.step",
+      "check": "frozen mechanical\\rev_b\\parts\\RFAntenna.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/RearShell.step",
+      "check": "frozen mechanical\\rev_b\\parts\\RFCoax.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/RearmButton.step",
+      "check": "frozen mechanical\\rev_b\\parts\\RFConnectorEnvelope.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/Screw_0.step",
+      "check": "frozen mechanical\\rev_b\\parts\\RFServiceSlackEnvelope.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/Screw_1.step",
+      "check": "frozen mechanical\\rev_b\\parts\\Screw_0.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/Screw_2.step",
+      "check": "frozen mechanical\\rev_b\\parts\\Screw_1.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/Screw_3.step",
+      "check": "frozen mechanical\\rev_b\\parts\\Screw_2.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/SeamRing.step",
+      "check": "frozen mechanical\\rev_b\\parts\\Screw_3.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/ShutterGuide.step",
+      "check": "frozen mechanical\\rev_b\\parts\\SeamRing.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/ShutterReturnSpring.step",
+      "check": "frozen mechanical\\rev_b\\parts\\ShutterGuide.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/ShutterSlider.step",
+      "check": "frozen mechanical\\rev_b\\parts\\ShutterReturnSpring.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/StatusLightGuide.step",
+      "check": "frozen mechanical\\rev_b\\parts\\ShutterSlider.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/ThermalBody.step",
+      "check": "frozen mechanical\\rev_b\\parts\\StatusLightGuide.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/ThermalLead1.step",
+      "check": "frozen mechanical\\rev_b\\parts\\ThermalBody.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/ThermalLead2.step",
+      "check": "frozen mechanical\\rev_b\\parts\\ThermalLead1.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/ThermalPad.step",
+      "check": "frozen mechanical\\rev_b\\parts\\ThermalLead2.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/ThermalRetainer.step",
+      "check": "frozen mechanical\\rev_b\\parts\\ThermalPad.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/ThermalRetainerScrew_0.step",
+      "check": "frozen mechanical\\rev_b\\parts\\ThermalRetainer.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/ThermalRetainerScrew_1.step",
+      "check": "frozen mechanical\\rev_b\\parts\\ThermalRetainerScrew_0.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts/ThermalSleeve.step",
+      "check": "frozen mechanical\\rev_b\\parts\\ThermalRetainerScrew_1.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/parts_manifest.json",
+      "check": "frozen mechanical\\rev_b\\parts\\ThermalSleeve.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/polarity_connectivity_report.json",
+      "check": "frozen mechanical\\rev_b\\parts_manifest.json",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/power_link_manifest.json",
+      "check": "frozen mechanical\\rev_b\\polarity_connectivity_report.json",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/power_links.py",
+      "check": "frozen mechanical\\rev_b\\power_link_manifest.json",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/rear_terminal_clearance_candidate.step",
+      "check": "frozen mechanical\\rev_b\\power_links.py",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/shutter_kinematic_report.json",
+      "check": "frozen mechanical\\rev_b\\README.md",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/socket_b_features.py",
+      "check": "frozen mechanical\\rev_b\\rear_terminal_clearance_candidate.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/system_export_report.json",
+      "check": "frozen mechanical\\rev_b\\shutter_kinematic_report.json",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/validate_contact_engagement.py",
+      "check": "frozen mechanical\\rev_b\\socket_b_features.py",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/validate_integrated_fit.py",
+      "check": "frozen mechanical\\rev_b\\system_export_report.json",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/validate_shutter.py",
+      "check": "frozen mechanical\\rev_b\\validate_contact_engagement.py",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/verify_exports.py",
+      "check": "frozen mechanical\\rev_b\\validate_integrated_fit.py",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen mechanical/rev_b/CARBENTRA-P16-EVT-B_system_detailed.step",
+      "check": "frozen mechanical\\rev_b\\validate_shutter.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen mechanical\\rev_b\\VALIDATION_SUMMARY.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen mechanical\\rev_b\\verify_exports.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen mechanical\\rev_b\\CARBENTRA-P16-EVT-B_system_detailed.step",
       "passed": true,
       "detail": ""
     },
@@ -987,127 +1002,227 @@
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/integrated.kicad_pro",
+      "check": "frozen electronics\\rev_b\\integrated\\electrical_bom.csv",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/integrated.kicad_sch",
+      "check": "frozen electronics\\rev_b\\integrated\\electrical_manifest.json",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/integrated.kicad_pcb",
+      "check": "frozen electronics\\rev_b\\integrated\\exports\\component_envelopes.json",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/electrical_manifest.json",
+      "check": "frozen electronics\\rev_b\\integrated\\exports\\copper_review.pdf",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/electrical_bom.csv",
+      "check": "frozen electronics\\rev_b\\integrated\\exports\\integrated_assembly.obj",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/routing_recipe.json",
+      "check": "frozen electronics\\rev_b\\integrated\\exports\\integrated_assembly.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/exports/integrated_assembly.step",
+      "check": "frozen electronics\\rev_b\\integrated\\exports\\placement_assembly.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/exports/integrated_assembly.obj",
+      "check": "frozen electronics\\rev_b\\integrated\\exports\\remote_head_assembled.json",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/exports/placement_assembly.step",
+      "check": "frozen electronics\\rev_b\\integrated\\exports\\remote_head_assembled.obj",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/exports/component_envelopes.json",
+      "check": "frozen electronics\\rev_b\\integrated\\exports\\remote_head_assembled.step",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/exports/remote_head_assembled.step",
+      "check": "frozen electronics\\rev_b\\integrated\\exports\\schematic.pdf",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/exports/remote_head_assembled.obj",
+      "check": "frozen electronics\\rev_b\\integrated\\integrated.kicad_dru",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/exports/remote_head_assembled.json",
+      "check": "frozen electronics\\rev_b\\integrated\\integrated.kicad_pcb",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/exports/schematic.pdf",
+      "check": "frozen electronics\\rev_b\\integrated\\integrated.kicad_pro",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/exports/copper_review.pdf",
+      "check": "frozen electronics\\rev_b\\integrated\\integrated.kicad_sch",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/validation/final_summary.json",
+      "check": "frozen electronics\\rev_b\\integrated\\integrated_assembly.kicad_sch",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/validation/rear_termination.json",
+      "check": "frozen electronics\\rev_b\\integrated\\integrated_controller.kicad_sch",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/validation/rebuild_check.json",
+      "check": "frozen electronics\\rev_b\\integrated\\integrated_feedback.kicad_sch",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/validation/final_drc.rpt",
+      "check": "frozen electronics\\rev_b\\integrated\\integrated_meter.kicad_sch",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/validation/final_erc.rpt",
+      "check": "frozen electronics\\rev_b\\integrated\\integrated_thermal.kicad_sch",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/validation/final_pin_audit.json",
+      "check": "frozen electronics\\rev_b\\integrated\\routing_recipe.json",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/validation/final_isolation.json",
+      "check": "frozen electronics\\rev_b\\integrated\\scripts\\audit_isolation.py",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/validation/geometry.json",
+      "check": "frozen electronics\\rev_b\\integrated\\scripts\\audit_pcb_pins.py",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/scripts/audit_rear_termination.py",
+      "check": "frozen electronics\\rev_b\\integrated\\scripts\\audit_rear_termination.py",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "frozen electronics/rev_b/integrated/scripts/correct_rear_clearance.py",
+      "check": "frozen electronics\\rev_b\\integrated\\scripts\\correct_rear_clearance.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen electronics\\rev_b\\integrated\\scripts\\export_geometry.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen electronics\\rev_b\\integrated\\scripts\\finalize_validation.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen electronics\\rev_b\\integrated\\scripts\\plot_review.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen electronics\\rev_b\\integrated\\scripts\\test_native_rules.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen electronics\\rev_b\\integrated\\scripts\\test_projected_isolation.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen electronics\\rev_b\\integrated\\scripts\\verify_schematic.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen electronics\\rev_b\\integrated\\validation\\electrical_source_hashes.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen electronics\\rev_b\\integrated\\validation\\final_drc.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen electronics\\rev_b\\integrated\\validation\\final_drc.rpt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen electronics\\rev_b\\integrated\\validation\\final_erc.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen electronics\\rev_b\\integrated\\validation\\final_erc.rpt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen electronics\\rev_b\\integrated\\validation\\final_isolation.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen electronics\\rev_b\\integrated\\validation\\final_pin_audit.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen electronics\\rev_b\\integrated\\validation\\final_source_graph.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen electronics\\rev_b\\integrated\\validation\\final_summary.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen electronics\\rev_b\\integrated\\validation\\geometry.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen electronics\\rev_b\\integrated\\validation\\rear_termination.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen electronics\\rev_b\\integrated\\validation\\rebuild_check.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen electronics\\rev_b\\integrated\\validation\\rule_controls\\projected_negative.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frozen electronics\\rev_b\\integrated\\validation\\rule_controls\\result.json",
       "passed": true,
       "detail": ""
     },
@@ -1307,19 +1422,29 @@
       "detail": "{\n    \"programs\": [\n\n    ],\n    \"stream_groups\": [\n\n    ],\n    \"streams\": [\n        {\n            \"codec_name\": \"h264\",\n            \"width\": 1280,\n            \"height\": 1280,\n            \"avg_frame_rate\": \"24/1\",\n            \"nb_read_frames\": \"144\"\n        }\n    ],\n    \"format\": {\n        \"duration\": \"6.000000\"\n    }\n}\n"
     },
     {
+      "check": "hardware evidence",
+      "passed": true,
+      "detail": "{\n  \"scope\": \"Digital consistency only, not physical qualification\",\n  \"passed\": true,\n  \"checks\": [\n    {\n      \"check\": \"nonempty unique mechanical freeze\",\n      \"passed\": true,\n      \"detail\": null\n    },\n    {\n      \"check\": \"current mechanical freeze\",\n      \"passed\": true,\n      \"detail\": []\n    },\n    {\n      \"check\": \"mechanical bounded digital pass\",\n      \"passed\": true,\n      \"detail\": null\n    },\n    {\n      \"check\": \"current electrical handoff\",\n      \"passed\": true,\n      \"detail\": []\n    },\n    {\n      \"check\": \"electrical development hold retained\",\n      \"passed\": true,\n      \"detail\": null\n    },\n    {\n      \"check\": \"current native PCB and rule checks\",\n      \"passed\": true,\n      \"detail\": []\n    },\n    {\n      \"check\": \"all current schematic sheets\",\n      \"passed\": true,\n      \"detail\": []\n    },\n    {\n      \"check\": \"native DRC and ERC zero\",\n      \"passed\": true,\n      \"detail\": null\n    },\n    {\n      \"check\": \"native and independent negative controls\",\n      \"passed\": true,\n      \"detail\": null\n    },\n    {\n      \"check\": \"full insulation audit current inputs\",\n      \"passed\": true,\n      \"detail\": []\n    },\n    {\n      \"check\": \"full insulation audit rather than reused incremental result\",\n      \"passed\": true,\n      \"detail\": null\n    },\n    {\n      \"check\": \"drawing generated from current sources\",\n      \"passed\": true,\n      \"detail\": []\n    },\n    {\n      \"check\": \"fresh geometry rebuild current inputs\",\n      \"passed\": true,\n      \"detail\": []\n    },\n    {\n      \"check\": \"fresh geometry equals retained design\",\n      \"passed\": true,\n      \"detail\": null\n    },\n    {\n      \"check\": \"recertification current evidence\",\n      \"passed\": true,\n      \"detail\": []\n    },\n    {\n      \"check\": \"physical holds retained\",\n      \"passed\": true,\n      \"detail\": null\n    },\n    {\n      \"check\": \"three retained reviewed PDFs unchanged\",\n      \"passed\": true,\n      \"detail\": null\n    }\n  ]\n}\n"
+    },
+    {
       "check": "firmware evidence",
       "passed": true,
-      "detail": "{\n  \"passed\": true,\n  \"checks\": 41,\n  \"failures\": []\n}\n"
+      "detail": "{\n  \"passed\": true,\n  \"scope\": \"Current firmware + explicit shared Edge source/build/software proof; no physical qualification\",\n  \"checks\": 194,\n  \"failures\": []\n}\n"
     },
     {
-      "check": "edge tests",
+      "check": "canonical C core and startup tests",
       "passed": true,
-      "detail": "........................\n----------------------------------------------------------------------\nRan 24 tests in 0.021s\n\nOK\n"
+      "detail": "**********************************************************************\n** Visual Studio 2022 Developer PowerShell v17.14.38\n** Copyright (c) 2025 Microsoft Corporation\n**********************************************************************\ncarbentra_policy.c\ntest_policy.c\n正在生成代码...\nPASS local input: commissioning/load/feedback/dwell guards, offline OFF, debounce, manual hold and maintenance\nPASS 45 policy cases and 10000 local-trip invariants\ncarbentra_command_json.c\ncarbentra_json.c\ncarbentra_meter_decode.c\ncJSON.c\ntest_protocol.c\n正在生成代码...\n  正在创建库 D:\\Temp\\codex\\carbentra-localize-20261001\\plug\\host\\test_protocol\\test_protocol.lib 和对象 D:\\Temp\\codex\\carbentra-localize-20261001\\plug\\host\\test_protocol\\test_protocol.exp\nPASS JSON boundaries, meter encodings/checksum/CRC, runtime reset and stuck-link regression\ncarbentra_feedback.c\ntest_feedback.c\n正在生成代码...\nPASS feedback qualification: 50/60Hz, startup, 3 periods, spikes, dropout, stuck LOW and time rollback\ncarbentra_storage.c\ntest_storage.c\n正在生成代码...\nPASS NVS startup: stable namespaces, replay preservation, six injected errors, fresh store and boot overflow; no erase API\ncarbentra_calibration.c\ncarbentra_meter_decode.c\ncarbentra_execution.c\ntest_calibration_execution.c\n正在生成代码...\nPASS calibration v3 exact board/revision/CRC and command correlated observed/failed/superseded/deadline terminal states\ncarbentra_storage.c\ncarbentra_policy.c\ncarbentra_feedback.c\ncarbentra_execution.c\ncJSON.c\ntest_startup.c\nD:\\code\\github\\hicancan\\carbentra-suite\\carbentra-smart-plug\\firmware\\tests\\test_startup.c(54): warning C4305: “=”: 从“double”到“float”截断\n正在生成代码...\n  正在创建库 D:\\Temp\\codex\\carbentra-localize-20261001\\plug\\host\\test_startup\\test_startup.lib 和对象 D:\\Temp\\codex\\carbentra-localize-20261001\\plug\\host\\test_startup\\test_startup.exp\nPASS app_main mocked startup failure=0: relay off, invalid measurements explicit, journal failure blocks networking; coherent ISR feedback snapshot\nPASS app_main mocked startup failure=1: relay off, invalid measurements explicit, journal failure blocks networking; coherent ISR feedback snapshot\nPASS app_main mocked startup failure=2: relay off, invalid measurements explicit, journal failure blocks networking; coherent ISR feedback snapshot\nPASS app_main mocked startup failure=3: relay off, invalid measurements explicit, journal failure blocks networking; coherent ISR feedback snapshot\nPASS app_main mocked startup failure=4: relay off, invalid measurements explicit, journal failure blocks networking; coherent ISR feedback snapshot\nPASS app_main mocked startup failure=5: relay off, invalid measurements explicit, journal failure blocks networking; coherent ISR feedback snapshot\nPASS app_main mocked startup failure=6: relay off, invalid measurements explicit, journal failure blocks networking; coherent ISR feedback snapshot\n"
     },
     {
-      "check": "policy reference tests",
+      "check": "real cryptography and certificate tests",
       "passed": true,
-      "detail": "........................\n----------------------------------------------------------------------\nRan 24 tests in 0.001s\n\nOK\n"
+      "detail": "**********************************************************************\n** Visual Studio 2022 Developer PowerShell v17.14.38\n** Copyright (c) 2025 Microsoft Corporation\n**********************************************************************\n-- Configuring done (0.4s)\n-- Generating done (0.0s)\n-- Build files have been written to: D:/Temp/codex/carbentra-localize-20261001/plug/crypto/mbedtls\nninja: no work to do.\ntest_time_signature.c\ncarbentra_time_signature.c\ncarbentra_json.c\ncJSON.c\n正在生成代码...\n  正在创建库 D:\\Temp\\codex\\carbentra-localize-20261001\\plug\\crypto\\time_signature\\test_time_signature.lib 和对象 D:\\Temp\\codex\\carbentra-localize-20261001\\plug\\crypto\\time_signature\\test_time_signature.exp\ntest_certificate_dates.c\n============================= test session starts =============================\nplatform win32 -- Python 3.12.13, pytest-9.1.1, pluggy-1.6.0 -- D:\\code\\github\\hicancan\\carbentra-suite\\carbentra-campus-platform\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\code\\github\\hicancan\\carbentra-suite\\carbentra-campus-platform\nconfigfile: pyproject.toml\nplugins: anyio-4.15.1\ncollecting ... collected 3 items\n\n..\\carbentra-campus-platform\\edge\\tests\\test_time_bootstrap.py::SignedTimeTests::test_real_firmware_crypto PASSED [ 33%]\n..\\carbentra-campus-platform\\edge\\tests\\test_time_bootstrap.py::SignedTimeTests::test_signer_rejects_invalid_inputs PASSED [ 66%]\n..\\carbentra-campus-platform\\edge\\tests\\test_certificate_dates.py::CertificateTests::test_dates_ca_and_hostname PASSED [100%]\n\n- generated xml file: D:\\Temp\\codex\\carbentra-localize-20261001\\plug\\crypto\\crypto-tests.xml -\n============================== 3 passed in 0.41s ==============================\n"
+    },
+    {
+      "check": "shared edge release tests; no unexpected skips",
+      "passed": true,
+      "detail": "..................................................... [ 71%]\n.s.....s.............                                               [100%]\n=========================== short test summary info ===========================\nSKIPPED [1] ..\\carbentra-campus-platform\\edge\\tests\\test_presence_auth.py:79: Authenticated Sense enrollment uses POSIX private-key permissions\nSKIPPED [1] ..\\carbentra-campus-platform\\edge\\tests\\test_presence_auth.py:73: POSIX private-key permissions are verified in the Linux suite\n72 passed, 2 skipped, 24 subtests passed in 5.94s\n"
     },
     {
       "check": "final Chinese review PDF",

@@ -1,7 +1,8 @@
 #!/usr/bin/python3
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 """Optional export-only supplement: detailed PCB, no frozen geometry modification."""
 import os,sys,json,hashlib,datetime
-B=os.path.dirname(os.path.abspath(__file__));R=os.path.abspath(B+'/../..');sys.path.extend(['/usr/lib/freecad-python3/lib',B])
+B=os.path.dirname(os.path.abspath(__file__));R=os.path.abspath(B+'/../..');sys.path.extend([FREECAD_LIB,B])
 import FreeCAD as A,Part,socket_b_features
 import datetime as _dtmod
 sources={'mechanical':B+'/CARBENTRA-P16-EVT-B.FCStd','main':R+'/electronics/rev_b/integrated/exports/integrated_assembly.FCStd','head':R+'/electronics/rev_b/integrated/exports/remote_head_assembled.step'}

@@ -4,217 +4,7 @@
   "status": "DEVELOPMENT AUDIT / NO INSULATION OR ENERGIZATION APPROVAL",
   "scope": "Concrete nominal 3D proximity of exposed primary link ends, fuse metal, thermal-cutoff leads, contacts and primary solder tails to isolated circuitry and controls; covered-link/core distances separately identified",
   "units": "mm",
-  "rf_geometry_reconciliation": {
-    "status": "All33 inspected primary metal, insulation carriers/sleeves, existing control/thermal and screw shapes are byte-identical after removing triangulations",
-    "reference_export": "mechanical/rev_b/CARBENTRA-P16-EVT-B.FCStd",
-    "reference_export_sha256": "9af6ad8f930632b6d672ae2c9f215f0361f31ad44212c4460ae7f8b14a37286a",
-    "reference_basis": "12:06 exported copy of the12:02 audited native build; parent export roundtrip report recorded zero per-part volume differences",
-    "updated_native": "mechanical/rev_b/CARBENTRA-P16-B-base-provisional.FCStd",
-    "updated_native_sha256": "63ffd16d85f4f4bbb9ed7b98d0bbd067ceb9eae9e78fa0b20741dcd0ab05dd71",
-    "method": "FreeCAD Shape.cleaned().exportBrepToString() SHA-256; removes visualization mesh data before comparing geometry",
-    "parts": [
-      {
-        "id": "MainFuseClip1",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "6acc1a16c1fe3877a5cac9d668ea20520587fe8e2a4c9f98de1831d17f730a99",
-        "after_clean_sha256": "6acc1a16c1fe3877a5cac9d668ea20520587fe8e2a4c9f98de1831d17f730a99"
-      },
-      {
-        "id": "MainFuseClip2",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "9e1f5751545057fbca860ae9e4ecdeaa4df7f8598fdde6396068497bafb5a6cb",
-        "after_clean_sha256": "9e1f5751545057fbca860ae9e4ecdeaa4df7f8598fdde6396068497bafb5a6cb"
-      },
-      {
-        "id": "MainFuseCollector1",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "d4be0a3fe1a1245aba62b0f9337fb099edae3b5f1606769a001dcb35c56f318b",
-        "after_clean_sha256": "d4be0a3fe1a1245aba62b0f9337fb099edae3b5f1606769a001dcb35c56f318b"
-      },
-      {
-        "id": "MainFuseCollector2",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "d11db028fe90ed9bc7a825b337513748b2211a8ee71297bb575bedd5544f68bd",
-        "after_clean_sha256": "d11db028fe90ed9bc7a825b337513748b2211a8ee71297bb575bedd5544f68bd"
-      },
-      {
-        "id": "MainFuseCap1",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "1d099eb4fd91d4ea6603ffa227589f1528e82722c8a766a5591e947443168a3a",
-        "after_clean_sha256": "1d099eb4fd91d4ea6603ffa227589f1528e82722c8a766a5591e947443168a3a"
-      },
-      {
-        "id": "MainFuseCap2",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "733b09679399168ca09cbe507628af7b436d5aefb9a7e59545a005d23e872dc2",
-        "after_clean_sha256": "733b09679399168ca09cbe507628af7b436d5aefb9a7e59545a005d23e872dc2"
-      },
-      {
-        "id": "ThermalLead1",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "9b40598f0a65d692c8e6ffe6556c7b0566aa9b5362ad14c1e19da6d26d678377",
-        "after_clean_sha256": "9b40598f0a65d692c8e6ffe6556c7b0566aa9b5362ad14c1e19da6d26d678377"
-      },
-      {
-        "id": "ThermalLead2",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "46e3adc679bf3489474bd495c5cefc1f3146df52525fe6d3e24859c12654e2aa",
-        "after_clean_sha256": "46e3adc679bf3489474bd495c5cefc1f3146df52525fe6d3e24859c12654e2aa"
-      },
-      {
-        "id": "Contact_L",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "10389890ed6ea57ba8b5f5dea611dd4922fe36035da73fc017b115285520a110",
-        "after_clean_sha256": "10389890ed6ea57ba8b5f5dea611dd4922fe36035da73fc017b115285520a110"
-      },
-      {
-        "id": "Contact_N",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "f57d9b4a148dd6fb3b141c7f59bdfcdf03f07670f0b270c57da3afe7fb7e6b4a",
-        "after_clean_sha256": "f57d9b4a148dd6fb3b141c7f59bdfcdf03f07670f0b270c57da3afe7fb7e6b4a"
-      },
-      {
-        "id": "Blade_L",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "ad6022c79d535f9f0e6ca4860bd27c271973d5883032231f685c307c313b7d9c",
-        "after_clean_sha256": "ad6022c79d535f9f0e6ca4860bd27c271973d5883032231f685c307c313b7d9c"
-      },
-      {
-        "id": "Blade_N",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "0e8172568d17e3e2b87654ba8f5e2e58125ab7668d67fe70ebb4bddae3541f9a",
-        "after_clean_sha256": "0e8172568d17e3e2b87654ba8f5e2e58125ab7668d67fe70ebb4bddae3541f9a"
-      },
-      {
-        "id": "PowerCore_L_RAW",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "af86b8b8639fbff300a01073f4bdfd32445bf6d984b14b070c95104a29b22918",
-        "after_clean_sha256": "af86b8b8639fbff300a01073f4bdfd32445bf6d984b14b070c95104a29b22918"
-      },
-      {
-        "id": "PowerCore_N_RAW",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "82801b9d728d8a9b2da6c6a419eca9cbc5ca9c48ef48a4f5b4d03b6677bbb76a",
-        "after_clean_sha256": "82801b9d728d8a9b2da6c6a419eca9cbc5ca9c48ef48a4f5b4d03b6677bbb76a"
-      },
-      {
-        "id": "PowerCore_L_FUSE_THERMAL",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "21ad76ede9bcee43dc35af3e8f393ea61a24360b8f26255796e471c5a616c5ba",
-        "after_clean_sha256": "21ad76ede9bcee43dc35af3e8f393ea61a24360b8f26255796e471c5a616c5ba"
-      },
-      {
-        "id": "PowerCore_L_PROTECTED",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "ffbc4c24de35e2f9f425e98410cca9784e5ca6379ad14cafe7de99adbca0926e",
-        "after_clean_sha256": "ffbc4c24de35e2f9f425e98410cca9784e5ca6379ad14cafe7de99adbca0926e"
-      },
-      {
-        "id": "PowerCore_L_OUTPUT",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "920ee2250f64d35ad53b06bc0062bee86acb2efb382a7ecb4c2c2661c0f20053",
-        "after_clean_sha256": "920ee2250f64d35ad53b06bc0062bee86acb2efb382a7ecb4c2c2661c0f20053"
-      },
-      {
-        "id": "PowerCore_N_OUTPUT",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "98673c711b04cb3e962a39c00c992645e0670519de84a36d78825002e259ac0e",
-        "after_clean_sha256": "98673c711b04cb3e962a39c00c992645e0670519de84a36d78825002e259ac0e"
-      },
-      {
-        "id": "PowerCarrier_L_RAW",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "dcd7cc7fd9b5dde92703da9bb6bb8c571fb47b8e5f8e3bc19daca38b29f31ef3",
-        "after_clean_sha256": "dcd7cc7fd9b5dde92703da9bb6bb8c571fb47b8e5f8e3bc19daca38b29f31ef3"
-      },
-      {
-        "id": "PowerCarrier_N_RAW",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "f639f0930f136c2ce7781648e1a503d5fa4fb2e6aacd144d7088e1edb65b5b1d",
-        "after_clean_sha256": "f639f0930f136c2ce7781648e1a503d5fa4fb2e6aacd144d7088e1edb65b5b1d"
-      },
-      {
-        "id": "PowerCarrier_L_FUSE_THERMAL",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "f1e49a8a3a724cf32cc008d26f438c4fc4426ceeb67d4a4031ccf71239d9a447",
-        "after_clean_sha256": "f1e49a8a3a724cf32cc008d26f438c4fc4426ceeb67d4a4031ccf71239d9a447"
-      },
-      {
-        "id": "PowerCarrier_L_PROTECTED",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "540f140a07814d77102382595d7b68e43c125eb9f0e36abfa64b3580790ddd08",
-        "after_clean_sha256": "540f140a07814d77102382595d7b68e43c125eb9f0e36abfa64b3580790ddd08"
-      },
-      {
-        "id": "PowerCarrier_L_OUTPUT",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "7f1e703cbce99caf1aac8aab52fe8d7be5a9e7684838832bd7174439e2cb3f2a",
-        "after_clean_sha256": "7f1e703cbce99caf1aac8aab52fe8d7be5a9e7684838832bd7174439e2cb3f2a"
-      },
-      {
-        "id": "PowerCarrier_N_OUTPUT",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "f2109c540a04a2a5702331f32f2bf3b47a0af7183a225ec71cfacdbc723b7444",
-        "after_clean_sha256": "f2109c540a04a2a5702331f32f2bf3b47a0af7183a225ec71cfacdbc723b7444"
-      },
-      {
-        "id": "LocalButton",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "beab88b6e4a28d3d90de252768c4b736c54fad2f068f875800870cf926eec5b8",
-        "after_clean_sha256": "beab88b6e4a28d3d90de252768c4b736c54fad2f068f875800870cf926eec5b8"
-      },
-      {
-        "id": "RearmButton",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "c501ec8bc8f4e946778fe4d66bec95b312de63421f4f58681e874deaad350102",
-        "after_clean_sha256": "c501ec8bc8f4e946778fe4d66bec95b312de63421f4f58681e874deaad350102"
-      },
-      {
-        "id": "ThermalPad",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "05a1e65dc592be96507ccc64325841ae5c8fb0e61d6c0ca7433b96299e131620",
-        "after_clean_sha256": "05a1e65dc592be96507ccc64325841ae5c8fb0e61d6c0ca7433b96299e131620"
-      },
-      {
-        "id": "BladeSleeve_L",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "f49eac6377ea4abcccd7f4e86d2544c1e26a4ed120d3da8ac17e228e1898328b",
-        "after_clean_sha256": "f49eac6377ea4abcccd7f4e86d2544c1e26a4ed120d3da8ac17e228e1898328b"
-      },
-      {
-        "id": "BladeSleeve_N",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "de5831fa5528f1835cfc45d4dbc29f65c301780cf28dd7546963b3f6431db579",
-        "after_clean_sha256": "de5831fa5528f1835cfc45d4dbc29f65c301780cf28dd7546963b3f6431db579"
-      },
-      {
-        "id": "Screw_0",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "9e86f347c129cd0b28aed174908d675f4b59c758703560cab94e4fcc9bfe8668",
-        "after_clean_sha256": "9e86f347c129cd0b28aed174908d675f4b59c758703560cab94e4fcc9bfe8668"
-      },
-      {
-        "id": "Screw_1",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "a3c037b73f8a6678326ffd42bf96341b47aeddc68ada3c3dae585bd2853fc69e",
-        "after_clean_sha256": "a3c037b73f8a6678326ffd42bf96341b47aeddc68ada3c3dae585bd2853fc69e"
-      },
-      {
-        "id": "Screw_2",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "c2293bbeb1a7df656619da45fa24415eefcaeb9c6e080ff2ed9c518d74ea5a59",
-        "after_clean_sha256": "c2293bbeb1a7df656619da45fa24415eefcaeb9c6e080ff2ed9c518d74ea5a59"
-      },
-      {
-        "id": "Screw_3",
-        "identical_clean_brep": true,
-        "before_clean_sha256": "e31d283a69b33e675b08981d576ec95a1b0eb62df6167c0049cc2ce6be09e6fa",
-        "after_clean_sha256": "e31d283a69b33e675b08981d576ec95a1b0eb62df6167c0049cc2ce6be09e6fa"
-      }
-    ],
-    "power_link_generator_unchanged": true,
-    "historical_scope": "Comparison performed for the RF-reservation-only change before the analytic world-space transform correction. The five affected contact/TF1 sources were subsequently rerun in this final audit; the historic comparison is not a claim of current byte-identical contact BReps."
-  },
+  "rf_geometry_reconciliation": null,
   "fixed_input_reconciliation": [],
   "filled_zone_metadata": [
     {
@@ -230,81 +20,44 @@
       ]
     }
   ],
-  "incremental_scope": "Exact-mirror export-fidelity correction: rechecked Contact_L,Contact_N,ThermalBody,ThermalLead1,ThermalLead2 against all targets and thermal head; added ThermalBody conservatively as potentially primary, total53 sources. Prior other sources/target layouts unchanged.",
-  "prior_full_audit_input_snapshot": {
-    "mechanical/rev_b/CARBENTRA-P16-B-base-provisional.FCStd": {
-      "sha256": "b820edea393c4b4a77a8ce50f736544baa50d0b3e14fd29cb145b722360dc941",
-      "mtime_ns": 1790770813555830969
-    },
-    "mechanical/rev_b/socket_b_features.py": {
-      "sha256": "c80aa99ecc7f9d408bcdc24cbc66015e20debcc4d5e9b7c824e54d480abbb7a6",
-      "mtime_ns": 1790770798010747637
-    },
-    "mechanical/rev_b/power_links.py": {
-      "sha256": "84e30c9fce812364d92e0ece2ed3ebb02e8bb5b98365e9c333a67c141e07b069",
-      "mtime_ns": 1790769401220903804
-    },
-    "mechanical/rev_b/design_parameters.json": {
-      "sha256": "e6b42dedae5380c615d54bbe1dfb333dc490dc494e3cd10f783d8381a56d1130",
-      "mtime_ns": 1790770474509832986
-    },
-    "electronics/rev_b/integrated/integrated.kicad_pcb": {
-      "sha256": "4d7e9873a8ee5407c3d85fe8441672f0e26eebc90ed07c9dd3c443b68b161660",
-      "mtime_ns": 1790769528628046418
-    },
-    "electronics/rev_b/integrated/exports/placement_assembly.FCStd": {
-      "sha256": "c01f165548db9a58c2fdd9eed379de85faf3d4788cb8a8aa70447a556b96de92",
-      "mtime_ns": 1790769747428826326
-    },
-    "electronics/rev_b/integrated/exports/component_envelopes.json": {
-      "sha256": "d045b547cb7fcf4fb7b30e1ccebe7240e63b737f26e7a74cf996ef59aef4c551",
-      "mtime_ns": 1790769805138617755
-    },
-    "electronics/rev_b/integrated/electrical_manifest.json": {
-      "sha256": "f2e8f6e336a5a5863f1e5e8b8ca86a6c38358e462ed8fe0c1c87b070d35e1c37",
-      "mtime_ns": 1790769659554423400
-    },
-    "electronics/rev_b/integrated/exports/remote_head_assembled.step": {
-      "sha256": "86c4ae0043990e8524e627eb34ec557a1ce723f986d46241531c243e0a07a68b",
-      "mtime_ns": 1790767953921697839
-    }
-  },
+  "incremental_scope": "Full source/target distance audit",
+  "prior_full_audit_input_snapshot": null,
   "input_snapshot": {
     "mechanical/rev_b/CARBENTRA-P16-B-base-provisional.FCStd": {
       "sha256": "5014c43bd451f3764d00777a9cb8c5e1eac664d920650c4be0b6d957995c24c7",
-      "mtime_ns": 1790770925718288319
+      "mtime_ns": 1790716924000000000
     },
     "mechanical/rev_b/socket_b_features.py": {
       "sha256": "08ee1d239867098693be98989d287a39c0c064f862c43edf60e79100c7391320",
-      "mtime_ns": 1790770912414970735
+      "mtime_ns": 1790716912000000000
     },
     "mechanical/rev_b/power_links.py": {
       "sha256": "84e30c9fce812364d92e0ece2ed3ebb02e8bb5b98365e9c333a67c141e07b069",
-      "mtime_ns": 1790769401220903804
+      "mtime_ns": 1790715400000000000
     },
     "mechanical/rev_b/design_parameters.json": {
-      "sha256": "e6b42dedae5380c615d54bbe1dfb333dc490dc494e3cd10f783d8381a56d1130",
-      "mtime_ns": 1790770474509832986
+      "sha256": "b14743c8a4e09c9f762f2b509a3011ce2a610799c8bc5fbfb7592d1ec43a6ab3",
+      "mtime_ns": 1790781571809090300
     },
     "electronics/rev_b/integrated/integrated.kicad_pcb": {
       "sha256": "4d7e9873a8ee5407c3d85fe8441672f0e26eebc90ed07c9dd3c443b68b161660",
-      "mtime_ns": 1790769528628046418
+      "mtime_ns": 1790715528000000000
     },
     "electronics/rev_b/integrated/exports/placement_assembly.FCStd": {
       "sha256": "c01f165548db9a58c2fdd9eed379de85faf3d4788cb8a8aa70447a556b96de92",
-      "mtime_ns": 1790769747428826326
+      "mtime_ns": 1790715746000000000
     },
     "electronics/rev_b/integrated/exports/component_envelopes.json": {
-      "sha256": "d045b547cb7fcf4fb7b30e1ccebe7240e63b737f26e7a74cf996ef59aef4c551",
-      "mtime_ns": 1790769805138617755
+      "sha256": "7f731f7bf1ec624d843be019381e07767e4a1475cdd3d79e12641630535c2d92",
+      "mtime_ns": 1790781571315499600
     },
     "electronics/rev_b/integrated/electrical_manifest.json": {
       "sha256": "f2e8f6e336a5a5863f1e5e8b8ca86a6c38358e462ed8fe0c1c87b070d35e1c37",
-      "mtime_ns": 1790769659554423400
+      "mtime_ns": 1790855798197902700
     },
     "electronics/rev_b/integrated/exports/remote_head_assembled.step": {
       "sha256": "86c4ae0043990e8524e627eb34ec557a1ce723f986d46241531c243e0a07a68b",
-      "mtime_ns": 1790767953921697839
+      "mtime_ns": 1790713952000000000
     }
   },
   "inputs_changed_during_run": [],
@@ -1350,7 +1103,7 @@
         [
           [
             -7.444664454288024,
-            -2.566158644056005,
+            -2.5661586440560042,
             6.06122696212394
           ],
           [
@@ -1386,7 +1139,7 @@
         [
           [
             -7.396180355277278,
-            -2.5559090726202247,
+            -2.555909072620224,
             5.888706315828045
           ],
           [
@@ -1420,7 +1173,7 @@
         [
           [
             -7.440026598022756,
-            -2.565178198093934,
+            -2.5651781980939337,
             6.04874330180048
           ],
           [
@@ -1518,7 +1271,7 @@
         [
           [
             -7.74726933638238,
-            -2.6301295215008897,
+            -2.630129521500889,
             6.482074294320291
           ],
           [
@@ -1550,7 +1303,7 @@
         [
           [
             -7.43106335057853,
-            -2.5632833615010995,
+            -2.5632833615010986,
             6.023056656844817
           ],
           [
@@ -2989,11 +2742,11 @@
         "net": null,
         "representation": "Nominal metallic thread-major/shaft/head envelope; rear head potentially accessible when unplugged or partly withdrawn; insulating-boss engagement ignored as intentional mounting"
       },
-      "distance_mm": 20.05679559857779,
+      "distance_mm": 20.05679559857777,
       "closest_points_mm": [
         [
           [
-            -29.59999999999998,
+            -29.60000000000001,
             -20.5,
             20.6
           ],
@@ -3463,7 +3216,7 @@
       "closest_points_mm": [
         [
           [
-            3.063565660105599,
+            3.063565660105598,
             -21.745066606191923,
             43.295174639541735
           ],
@@ -3495,11 +3248,11 @@
         "representation": "lead_reserve",
         "pad_assignment_distance_mm": 0.0
       },
-      "distance_mm": 35.2653877041033,
+      "distance_mm": 35.265387704103304,
       "closest_points_mm": [
         [
           [
-            2.9969399602121305,
+            2.996939960212129,
             -21.38694341445449,
             43.30984042163515
           ],
@@ -3533,7 +3286,7 @@
       "closest_points_mm": [
         [
           [
-            3.0635295554579147,
+            3.0635295554579134,
             -21.740086669884416,
             43.29518258696887
           ],
@@ -3566,14 +3319,14 @@
       "closest_points_mm": [
         [
           [
-            3.098768579687462,
+            3.0987685796874613,
             -22.240347084652452,
-            44.8
+            44.79999999999999
           ],
           [
             21.38541826879412,
             -32.52895874604263,
-            44.8
+            44.79999999999999
           ]
         ]
       ],
@@ -3595,18 +3348,18 @@
         "net": null,
         "representation": "Nominal metallic thread-major/shaft/head envelope; rear head potentially accessible when unplugged or partly withdrawn; insulating-boss engagement ignored as intentional mounting"
       },
-      "distance_mm": 42.03644601012618,
+      "distance_mm": 42.036446010126184,
       "closest_points_mm": [
         [
           [
-            3.173687242685664,
+            3.173687242685663,
             -22.072862425233115,
-            44.8
+            44.79999999999999
           ],
           [
             42.95890950259316,
             -35.64485133224357,
-            44.8
+            44.79999999999999
           ]
         ]
       ],
@@ -3632,9 +3385,9 @@
       "closest_points_mm": [
         [
           [
-            2.566752982319101,
+            2.5667529823190995,
             -20.809398149065597,
-            44.8
+            44.79999999999999
           ],
           [
             20.300882411382887,
@@ -3664,7 +3417,7 @@
       "closest_points_mm": [
         [
           [
-            3.0635775448429583,
+            3.063577544842957,
             -21.749999999999996,
             43.29517202344962
           ],
@@ -3698,7 +3451,7 @@
       "closest_points_mm": [
         [
           [
-            2.5567227698502464,
+            2.5567227698502455,
             -20.873285430435267,
             43.40674190856809
           ],
@@ -3731,7 +3484,7 @@
       "closest_points_mm": [
         [
           [
-            2.3920350366809244,
+            2.392035036680923,
             -20.77888907395244,
             43.84302329943276
           ],
@@ -4064,13 +3817,13 @@
         "ref": "U301",
         "pin": "5"
       },
-      "distance_mm": 35.54606000831942,
+      "distance_mm": 35.54606000831941,
       "closest_points_mm": [
         [
           [
-            -7.432895197061763,
-            -4.459927508994527,
-            43.30441496150053
+            -7.432895197061768,
+            -4.459927508994528,
+            43.30441496150051
           ],
           [
             10.020000000000003,
@@ -4100,17 +3853,17 @@
         "representation": "lead",
         "pad_assignment_distance_mm": 0.0
       },
-      "distance_mm": 38.3892059238,
+      "distance_mm": 38.389205923799985,
       "closest_points_mm": [
         [
           [
-            -7.756712168640579,
-            -3.9697240774413007,
-            43.375694199856284
+            -7.7567121669774775,
+            -3.969724078806289,
+            43.375694199490184
           ],
           [
-            2.8747873921412506,
-            17.103592919790177,
+            2.87478739204654,
+            17.103592919837958,
             13.1
           ]
         ]
@@ -4134,13 +3887,13 @@
         "ref": "C107",
         "representation": "Nominal/max vendor-dimension or F.Fab package envelope, not exposed copper or detailed supplier solid"
       },
-      "distance_mm": 36.32191921008992,
+      "distance_mm": 36.32191921008991,
       "closest_points_mm": [
         [
           [
-            -7.535923276694272,
-            -4.225661758689181,
-            43.32709370810747
+            -7.535923276694278,
+            -4.225661758689183,
+            43.32709370810745
           ],
           [
             9.325000000000003,
@@ -4171,12 +3924,12 @@
       "closest_points_mm": [
         [
           [
-            -7.486758361061086,
+            -7.486758361061088,
             -5.4220751177483395,
             44.8
           ],
           [
-            21.778551075326742,
+            21.77855107532674,
             -31.983774646754974,
             44.8
           ]
@@ -4204,14 +3957,14 @@
       "closest_points_mm": [
         [
           [
-            -9.094480958087496,
+            -9.094480958087502,
             -5.417778648735514,
-            43.67016653693906
+            43.67016653693904
           ],
           [
             -43.17263440746127,
             -35.27510954187337,
-            43.67016653693906
+            43.67016653693904
           ]
         ]
       ],
@@ -4237,7 +3990,7 @@
       "closest_points_mm": [
         [
           [
-            -7.61710184552329,
+            -7.617101845523292,
             -3.957705987515249,
             44.8
           ],
@@ -4265,13 +4018,13 @@
         "kind": "native_track_capsule",
         "net": "+3V3_ISO"
       },
-      "distance_mm": 37.286984867891285,
+      "distance_mm": 37.28698486789127,
       "closest_points_mm": [
         [
           [
-            -7.477735757010182,
-            -4.337793885248468,
-            43.31428535509042
+            -7.477735757010187,
+            -4.33779388524847,
+            43.314285355090405
           ],
           [
             10.935766613073787,
@@ -4299,13 +4052,13 @@
         "ref": "K101",
         "representation": "Nominal/max vendor-dimension or F.Fab package envelope, not exposed copper or detailed supplier solid"
       },
-      "distance_mm": 14.496429103642564,
+      "distance_mm": 14.49642910364255,
       "closest_points_mm": [
         [
           [
-            -7.390905127061379,
+            -7.390905127061384,
             -4.749999999999998,
-            43.29517202344963
+            43.29517202344962
           ],
           [
             -7.200000000000003,
@@ -4336,7 +4089,7 @@
       "closest_points_mm": [
         [
           [
-            -7.24435886078847,
+            -7.244358860788472,
             -4.749999999999998,
             44.310763515207995
           ],
@@ -6647,12 +6400,12 @@
         [
           [
             16.22724133595217,
-            5.25,
+            5.850000000000001,
             50.5
           ],
           [
             16.22724133595217,
-            5.25,
+            5.850000000000001,
             13.17
           ]
         ]
@@ -9464,7 +9217,7 @@
           ],
           [
             22.964908226718485,
-            -32.91437344317444,
+            -32.91437344317443,
             17.4
           ]
         ]
@@ -14331,8 +14084,8 @@
             13.1
           ],
           [
-            17.577631593190002,
-            29.986187063481587,
+            17.577631593190006,
+            29.986187063481584,
             46.5
           ]
         ]
@@ -15406,7 +15159,7 @@
         [
           [
             -7.542772248542779,
-            -2.1612172619854935,
+            -2.161217261985494,
             6.0604815946860455
           ],
           [
@@ -15441,7 +15194,7 @@
       "closest_points_mm": [
         [
           [
-            -9.846730492757038,
+            -9.84673049275704,
             1.4480691323312476,
             5.835831879324309
           ],
@@ -15476,7 +15229,7 @@
         [
           [
             -8.229984097081168,
-            -0.49874991266335567,
+            -0.4987499126633561,
             6.028559785680683
           ],
           [
@@ -15508,7 +15261,7 @@
         [
           [
             -7.474940039632547,
-            -2.572558923345097,
+            -2.5725589233450963,
             6.132709889446021
           ],
           [
@@ -15574,12 +15327,12 @@
         [
           [
             -9.647068273683963,
-            0.896706855961078,
+            0.8967068559610771,
             6.4093037839526295
           ],
           [
-            17.569291126211727,
-            29.993977167788838,
+            17.569291126211724,
+            29.99397716778884,
             46.5
           ]
         ]
@@ -15608,7 +15361,7 @@
         [
           [
             -9.87661128978598,
-            1.4297886154827895,
+            1.4297886154827886,
             5.987529970292464
           ],
           [
@@ -15642,12 +15395,12 @@
         [
           [
             -8.208209474885361,
-            -2.727572579608617,
+            -2.7275725796086165,
             6.688371591539896
           ],
           [
             -7.200000000000003,
-            -2.7275725796086174,
+            -2.7275725796086157,
             13.1
           ]
         ]
@@ -15675,12 +15428,12 @@
         [
           [
             -8.027973178733667,
-            -2.689470504280418,
+            -2.6894705042804175,
             6.6417629247959775
           ],
           [
             4.8272413,
-            -2.6894705042804135,
+            -2.689470504280413,
             41.865
           ]
         ]
@@ -15776,7 +15529,7 @@
       "closest_points_mm": [
         [
           [
-            10.38601643988156,
+            10.386016439881558,
             22.375430485702275,
             50.07395261620323
           ],
@@ -15875,7 +15628,7 @@
       "closest_points_mm": [
         [
           [
-            14.021096544361333,
+            14.021096544361331,
             21.881136182267422,
             50.94805370039232
           ],
@@ -16310,7 +16063,7 @@
       "closest_points_mm": [
         [
           [
-            -0.4857301093265556,
+            -0.48573010932655736,
             -21.747150129000477,
             38.6197583843352
           ],
@@ -16346,7 +16099,7 @@
       "closest_points_mm": [
         [
           [
-            0.2909418193465494,
+            0.29094181934654895,
             -21.486666565620617,
             39.14372450954182
           ],
@@ -16380,7 +16133,7 @@
       "closest_points_mm": [
         [
           [
-            0.08322633119374823,
+            0.08322633119374645,
             -21.743439440813592,
             38.95781903505762
           ],
@@ -16409,16 +16162,16 @@
         "net": null,
         "representation": "Outer envelope of front-lid guide, not a metal touch probe or certified insulating barrier"
       },
-      "distance_mm": 21.12243013838951,
+      "distance_mm": 21.122430138389515,
       "closest_points_mm": [
         [
           [
-            2.9349336504816588,
+            2.9349336504816574,
             -22.24608084629332,
             43.323489374342266
           ],
           [
-            21.38023081895122,
+            21.380230818951222,
             -32.53821703456805,
             43.323489374342266
           ]
@@ -16442,18 +16195,18 @@
         "net": null,
         "representation": "Nominal metallic thread-major/shaft/head envelope; rear head potentially accessible when unplugged or partly withdrawn; insulating-boss engagement ignored as intentional mounting"
       },
-      "distance_mm": 30.57129090078874,
+      "distance_mm": 30.571290900788743,
       "closest_points_mm": [
         [
           [
-            -20.02173893754368,
-            -15.309092244585432,
-            38.80000000250666
+            -20.021738937543034,
+            -15.309092244586175,
+            38.800000002507595
           ],
           [
-            -43.167192552981255,
-            -35.28136813583719,
-            38.80000006862264
+            -43.167192552981106,
+            -35.28136813583736,
+            38.800000068623646
           ]
         ]
       ],
@@ -16479,7 +16232,7 @@
       "closest_points_mm": [
         [
           [
-            2.4029796857854,
+            2.402979685785399,
             -20.803801661767057,
             43.44058414321433
           ],
@@ -16511,7 +16264,7 @@
       "closest_points_mm": [
         [
           [
-            -0.1951667247937734,
+            -0.19516672479377473,
             -21.749999999999996,
             38.78328695081904
           ],
@@ -16545,7 +16298,7 @@
       "closest_points_mm": [
         [
           [
-            -8.557674275367857,
+            -8.557674275367855,
             -20.641398915805873,
             37.94943571005119
           ],
@@ -16574,11 +16327,11 @@
         "net": null,
         "representation": "Whole world-placed STEP assembly, not all surfaces conductive"
       },
-      "distance_mm": 10.337544071290028,
+      "distance_mm": 10.33754407129003,
       "closest_points_mm": [
         [
           [
-            2.31872040442998,
+            2.3187204044299787,
             -20.778566215683686,
             43.459131464468484
           ],
@@ -16682,8 +16435,8 @@
       "closest_points_mm": [
         [
           [
-            -9.997624394084575,
-            -4.34251226902533,
+            -9.997624394084577,
+            -4.342512269025331,
             39.33165267616083
           ],
           [
@@ -16711,18 +16464,18 @@
         "net": null,
         "representation": "Outer envelope of front-lid guide, not a metal touch probe or certified insulating barrier"
       },
-      "distance_mm": 39.6387078491614,
+      "distance_mm": 39.638707849161406,
       "closest_points_mm": [
         [
           [
-            -7.650347751840923,
+            -7.650347751840928,
             -5.428775065922075,
-            43.35228105205039
+            43.35228105205037
           ],
           [
             21.773125686842544,
             -31.98976847268791,
-            43.35228105205039
+            43.35228105205037
           ]
         ]
       ],
@@ -16777,13 +16530,13 @@
         "net": null,
         "representation": "NON-PHYSICAL/default-hidden annular routing reservation for about44mm of selected100mm coax; not an actual shield/cable solid, qualified bend or strain relief"
       },
-      "distance_mm": 42.43962641758607,
+      "distance_mm": 42.43962641758608,
       "closest_points_mm": [
         [
           [
-            -7.788363712130925,
-            -3.944816797003008,
-            43.38266140080865
+            -7.7883637121309315,
+            -3.9448167970030075,
+            43.38266140080864
           ],
           [
             18.13142556408409,
@@ -16877,18 +16630,18 @@
         "net": null,
         "representation": "Whole world-placed STEP assembly, not all surfaces conductive"
       },
-      "distance_mm": 12.218146427061379,
+      "distance_mm": 12.218146427061384,
       "closest_points_mm": [
         [
           [
-            -7.390905127061379,
+            -7.390905127061384,
             -4.749999999999998,
-            43.29517202344963
+            43.29517202344962
           ],
           [
-            4.8272413,
+            4.827241300000001,
             -4.749999999999998,
-            43.29517202344963
+            43.29517202344962
           ]
         ]
       ],
@@ -18154,14 +17907,14 @@
         "closest_points_mm": [
           [
             [
-              3.098768579687462,
+              3.0987685796874613,
               -22.240347084652452,
-              44.8
+              44.79999999999999
             ],
             [
               21.38541826879412,
               -32.52895874604263,
-              44.8
+              44.79999999999999
             ]
           ]
         ],
@@ -18183,16 +17936,16 @@
           "net": null,
           "representation": "Outer envelope of front-lid guide, not a metal touch probe or certified insulating barrier"
         },
-        "distance_mm": 21.12243013838951,
+        "distance_mm": 21.122430138389515,
         "closest_points_mm": [
           [
             [
-              2.9349336504816588,
+              2.9349336504816574,
               -22.24608084629332,
               43.323489374342266
             ],
             [
-              21.38023081895122,
+              21.380230818951222,
               -32.53821703456805,
               43.323489374342266
             ]
@@ -18650,7 +18403,7 @@
         "closest_points_mm": [
           [
             [
-              14.021096544361333,
+              14.021096544361331,
               21.881136182267422,
               50.94805370039232
             ],
@@ -18871,7 +18624,7 @@
         "closest_points_mm": [
           [
             [
-              -7.61710184552329,
+              -7.617101845523292,
               -3.957705987515249,
               44.8
             ],
@@ -18900,13 +18653,13 @@
           "net": null,
           "representation": "NON-PHYSICAL/default-hidden annular routing reservation for about44mm of selected100mm coax; not an actual shield/cable solid, qualified bend or strain relief"
         },
-        "distance_mm": 42.43962641758607,
+        "distance_mm": 42.43962641758608,
         "closest_points_mm": [
           [
             [
-              -7.788363712130925,
-              -3.944816797003008,
-              43.38266140080865
+              -7.7883637121309315,
+              -3.9448167970030075,
+              43.38266140080864
             ],
             [
               18.13142556408409,
@@ -19962,7 +19715,7 @@
         "closest_points_mm": [
           [
             [
-              2.3920350366809244,
+              2.392035036680923,
               -20.77888907395244,
               43.84302329943276
             ],
@@ -20429,7 +20182,7 @@
       "closest_points_mm": [
         [
           [
-            14.021096544361333,
+            14.021096544361331,
             21.881136182267422,
             50.94805370039232
           ],
@@ -20523,33 +20276,5 @@
     "exposed_primary_minimum_mm": 8.79485813375159,
     "met_by_exposed_pair": true,
     "note": "A nominal distance over8mm would still require actual clearance/creepage/tolerance and insulation coordination review. Covered cores are never classified as8mm-air passes."
-  },
-  "world_space_transform_correction": {
-    "method": "transformShape(matrix, copy=True, checkScale=False)",
-    "sources_rechecked": [
-      "Contact_L",
-      "Contact_N",
-      "ThermalBody",
-      "ThermalLead1",
-      "ThermalLead2"
-    ],
-    "contact_N_expected_world_bbox_mm": [
-      -12.892304845413275,
-      -10.330127018922198,
-      44.0,
-      -3.5621778264910766,
-      0.8301270189221954,
-      55.3
-    ],
-    "thermal_body_expected_world_bbox_mm": [
-      14.227241335952169,
-      -12.1,
-      49.0,
-      18.22724133595217,
-      2.6,
-      53.0
-    ],
-    "contact_to_head_distance_mm": 0.5,
-    "status": "Corrected world-space analytic geometry audited; supersedes local-frame mirror trial"
   }
 }

@@ -1,4 +1,6 @@
 > [!NOTE]
+
+> 2026-10-01 classroom upgrade: the sole multi-device Edge and contract authority moved to `carbentra-campus-platform/edge` and `packages/iot-contract`. This repository owns Plug hardware, firmware and physical qualification facts. New local ON uses the same commissioning/load/feedback/dwell guards; actual presses establish a15-minute manual hold. The default target still disables actuation. Historical broker/PDF evidence does not automatically validate upgraded shared sources.
 > This document is the **platform / competition narrative** for **碳迹未来 · CARBENTRA**.
 > The repository root README is intentionally product-first and documents **CARBENTRA Plug**.
 > → [Back to CARBENTRA Plug](../README.md)
@@ -28,7 +30,7 @@
 
 多数校园能耗系统止步于“采集 → 上云 → 看大屏”。
 
-**碳迹未来**想继续往前走一步：如果每一个普通负载都能获得设备级感知能力、边缘自治能力和受约束的执行能力，那么校园能源系统就不再只是被动记录能耗，而可以形成从预测、优化、调度到反馈验证的闭环。
+**碳迹未来**想继续往前走一步：如果每一个普通负载都能获得设备级感知能力、持久协议运输能力和受约束的执行能力，那么校园能源系统就不再只是被动记录能耗，而可以形成从预测、优化、调度到反馈验证的闭环。
 
 **CARBENTRA** 是这套闭环背后的技术平台；**CARBENTRA Plug** 是它的第一个设备级终端。
 
@@ -41,7 +43,7 @@ CARBENTRA 不把“智能”理解成给插座加一个远程开关。设备只�
 ```mermaid
 flowchart LR
     A["CARBENTRA Plug / Sense<br/>感知 · 保护 · 执行"]
-    B["CARBENTRA Edge<br/>聚合 · 约束 · 本地自治"]
+    B["CARBENTRA Edge<br/>合同 · 持久运输 · 命令网关"]
     C["CARBENTRA Cloud<br/>预测 · 优化 · 全局调度"]
     D["CARBENTRA Twin<br/>状态映射 · 可视化 · 追踪"]
     F["Forecast<br/>负荷 / 场景预测"]
@@ -59,7 +61,7 @@ flowchart LR
 这条链路对应四个层次：
 
 - **Device**：测量真实设备状态，执行受约束动作，并始终让本地保护优先于云端策略。
-- **Edge**：完成设备聚合、数据质量判断、功率预算、策略过滤、离线缓存和局部自治。
+- **Edge**：完成设备合同校验、持久收据、outbox / inbox、离线缓存和有界运输。
 - **Cloud**：面向校园全局进行预测、优化和调度，不把设备安全边界交给远端算法。
 - **Twin**：把设备、空间、能耗、碳排、策略与执行结果映射到同一可追踪视图中。
 
@@ -74,7 +76,7 @@ flowchart LR
 └── CARBENTRA
     ├── CARBENTRA Plug      设备级用能感知与执行终端
     ├── CARBENTRA Sense     环境 / 占用 / 状态感知节点
-    ├── CARBENTRA Edge      楼宇与回路级边缘协调
+    ├── CARBENTRA Edge      楼宇设备协议与持久运输
     ├── CARBENTRA Cloud     预测、优化与全局调度
     └── CARBENTRA Twin      数字孪生与运行态势映射
 ```
@@ -90,7 +92,7 @@ flowchart LR
 | Mechanical | FreeCAD 参数化机械、STEP、零件与装配检查 | [`mechanical/`](../mechanical/) |
 | Electronics | KiCad 原理图、PCB、BOM、规则与验证记录 | [`electronics/`](../electronics/) |
 | Firmware | ESP32-C3 固件、策略/反馈/协议主机测试 | [`firmware/`](../firmware/) |
-| Edge | MQTT / SQLite 参考服务、预测与能碳核算基线 | [`edge/`](../edge/) |
+| Edge | MQTT / SQLite 持久运输、严格合同、平台 outbox / 命令 inbox | [`edge/`](../edge/) |
 | System | 云边端架构、负载能力模型、网络与传感契约 | [`docs/system/`](../docs/system/) |
 | Twin & Visuals | Blender 场景、GLB、六视图、剖切与爆炸动画 | [`visuals/`](../visuals/) |
 | Release Evidence | 数字工程检查、交付边界与审阅材料 | [`release/`](../release/) |
@@ -102,9 +104,13 @@ flowchart LR
 软件侧检查不需要连接真实市电设备：
 
 ```bash
-python3 -m unittest discover -s tests/policy -v
-python3 -m unittest discover -s edge/tests -v
-bash firmware/tests/run_host_tests.sh
+python3 -m venv .venv
+. .venv/bin/activate
+export CARBENTRA_PLATFORM_ROOT=/absolute/path/to/carbentra-campus-platform
+pip install --require-hashes -r "$CARBENTRA_PLATFORM_ROOT/edge/requirements.lock"
+pip install pytest==9.1.1
+# Set MBEDTLS_INCLUDE and MBEDTLS_CRYPTO_LIBRARY to a reviewed host SDK library.
+bash firmware/tests/run_development_checks.sh
 python3 scripts/validate_firmware_evidence.py
 python3 scripts/check_brand_hygiene.py
 ```
@@ -124,7 +130,7 @@ GitHub Actions 会在 push / pull request 时运行对应的数字开发检查�
 
 ## CARBENTRA Plug：设备侧真正负责什么
 
-CARBENTRA Plug 的目标不是“猜出接上了什么电器然后随意控制”，而是把负载能力、控制权限、数据时效和安全约束显式化。设备侧只接受在本地能力边界内的动作；边缘与云端负责更高层的预测和协调。
+CARBENTRA Plug 的目标不是“猜出接上了什么电器然后随意控制”，而是把负载能力、控制权限、数据时效和安全约束显式化。设备侧只接受在本地能力边界内的动作；边缘负责持久运输；平台唯一负责预测、策略、账本和协调。
 
 当前 Rev B 数字工程包含设备计量、执行反馈、热状态链路、网络时间与消息完整性约束、策略有效期与序列检查，以及面向失联和异常状态的 fail-safe 设计参考。具体实现与尚未闭环的问题以各子目录 README 和发布门禁为准。
 

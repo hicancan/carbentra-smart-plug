@@ -1,35 +1,49 @@
 {
-  "scope": "Current-source hash and reproducible development evidence consistency only; not hardware verification",
-  "target_build_state": "REBUILD_REQUIRED_AFTER_BRAND_NAMESPACE_MIGRATION",
+  "scope": "Current firmware + explicit shared Edge source/build/software proof; no physical qualification",
   "passed": true,
   "checks": [
     {
-      "check": "source edge/accounting.py",
+      "check": "source .github/workflows/digital-checks.yml",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "source edge/service.py",
+      "check": "source .python-version",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "source edge/tests/test_accounting.py",
+      "check": "source contracts/device-capabilities.json",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "source edge/tests/test_edge.py",
+      "check": "source contracts/README.md",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "source edge/tests/test_forecast.py",
+      "check": "source edge/PROVENANCE.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source edge/README.md",
       "passed": true,
       "detail": ""
     },
     {
       "check": "source firmware/CMakeLists.txt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/core/carbentra_calibration.c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/core/carbentra_calibration.h",
       "passed": true,
       "detail": ""
     },
@@ -44,12 +58,32 @@
       "detail": ""
     },
     {
+      "check": "source firmware/core/carbentra_execution.c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/core/carbentra_execution.h",
+      "passed": true,
+      "detail": ""
+    },
+    {
       "check": "source firmware/core/carbentra_feedback.c",
       "passed": true,
       "detail": ""
     },
     {
       "check": "source firmware/core/carbentra_feedback.h",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/core/carbentra_json.c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/core/carbentra_json.h",
       "passed": true,
       "detail": ""
     },
@@ -74,12 +108,17 @@
       "detail": ""
     },
     {
-      "check": "source firmware/main/CMakeLists.txt",
+      "check": "source firmware/core/carbentra_storage_contract.h",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "source firmware/main/Kconfig.projbuild",
+      "check": "source firmware/core/carbentra_time_signature.c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/core/carbentra_time_signature.h",
       "passed": true,
       "detail": ""
     },
@@ -109,6 +148,36 @@
       "detail": ""
     },
     {
+      "check": "source firmware/main/carbentra_storage.c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/main/carbentra_storage.h",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/main/carbentra_time_bootstrap.c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/main/carbentra_time_bootstrap.h",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/main/CMakeLists.txt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/main/Kconfig.projbuild",
+      "passed": true,
+      "detail": ""
+    },
+    {
       "check": "source firmware/partitions.csv",
       "passed": true,
       "detail": ""
@@ -124,7 +193,82 @@
       "detail": ""
     },
     {
+      "check": "source firmware/tests/mocks/driver/gpio.h",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/mocks/esp_err.h",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/mocks/esp_log.h",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/mocks/esp_mac.h",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/mocks/esp_timer.h",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/mocks/freertos/FreeRTOS.h",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/mocks/freertos/task.h",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/mocks/nvs.h",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/mocks/nvs_flash.h",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/run_crypto_tests.ps1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/run_crypto_tests.sh",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/run_development_checks.sh",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/run_host_tests.ps1",
+      "passed": true,
+      "detail": ""
+    },
+    {
       "check": "source firmware/tests/run_host_tests.sh",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/test_calibration_execution.c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/test_certificate_dates.c",
       "passed": true,
       "detail": ""
     },
@@ -140,6 +284,21 @@
     },
     {
       "check": "source firmware/tests/test_protocol.c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/test_startup.c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/test_storage.c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source firmware/tests/test_time_signature.c",
       "passed": true,
       "detail": ""
     },
@@ -169,12 +328,97 @@
       "detail": ""
     },
     {
-      "check": "target identity",
+      "check": "source pyproject.toml",
       "passed": true,
-      "detail": "esp32c3"
+      "detail": ""
     },
     {
-      "check": "target rebuild explicitly pending",
+      "check": "source scripts/build_firmware.ps1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source scripts/check_windows.ps1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source scripts/validate_firmware_evidence.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source scripts/validate_release_rev_b.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source uv.lock",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "evidence firmware/target_build.log",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "evidence firmware/tests/host_results.txt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "evidence firmware/tests/crypto_results.txt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "evidence firmware/evidence/shared-edge-validation.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "evidence firmware/evidence/shared-edge-results.txt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "evidence firmware/evidence/host-windows-validation.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "evidence firmware/evidence/shared-edge-linux-validation.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "evidence firmware/evidence/shared-backend-integration.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "evidence firmware/evidence/shared-mqtt-integration.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "binary bootloader_DEV.bin",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "binary carbentra_endpoint_DEV_ACTUATION_DISABLED.bin",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "binary partition-table_DEV.bin",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "actual ESP32-C3 build",
       "passed": true,
       "detail": ""
     },
@@ -184,12 +428,547 @@
       "detail": ""
     },
     {
-      "check": "host regression evidence",
+      "check": "certificate dates enabled",
       "passed": true,
       "detail": ""
     },
     {
-      "check": "edge evidence",
+      "check": "C host regressions",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "complete firmware source inventory",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source snapshot digest",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "legacy edge retired",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "explicit shared platform source",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared suite no unexpected skips",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/adapters.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/ble_scanner.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/channel_transport.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/command_transport.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/config.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/contract.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/ingress.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/leased_dispatcher.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/migrations.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/platform_forwarder.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/platform_http.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/presence_auth.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/rules.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/runtime.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/service.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/store.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tests/conftest.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tests/fixtures.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tests/test_certificate_dates.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tests/test_channel_transport.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tests/test_command_transport.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tests/test_contract_consistency.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tests/test_edge.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tests/test_firmware_wire.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tests/test_forwarder.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tests/test_leased_dispatcher.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tests/test_legacy_migration.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tests/test_platform_tls.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tests/test_presence_auth.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tests/test_rules.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tests/test_time_bootstrap.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tests/test_virtual_bridge.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/time_bootstrap.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tools/backend_fixture.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tools/check_backend_multidevice.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tools/check_legacy_migration.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tools/check_mqtt_multidevice.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tools/migrate_legacy.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tools/run_checks.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/tools/status.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/virtual_bridge.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source edge/wire.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/capabilities.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/examples/descriptors.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/examples/device-ack-v2.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/examples/device-telemetry-v2.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/examples/plug-event.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/examples/presence-gatt-v1-test-vector.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/examples/sense-event.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/examples/switch-command.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/examples/switch-event.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/manifest.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/package.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/products.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/protocols/presence-gatt-v1.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/python/carbentra_iot_contract/__init__.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/python/carbentra_iot_contract/plug_wire.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/schemas/command.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/schemas/descriptor.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/schemas/event.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/schemas/switch-ack.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/schemas/wire/device-ack-v2.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/schemas/wire/device-command.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source packages/iot-contract/schemas/wire/device-wire-v2.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source pyproject.toml",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shared source uv.lock",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "current source-bound shared MQTT proof",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source edge/adapters.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source edge/ble_scanner.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source edge/channel_transport.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source edge/command_transport.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source edge/config.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source edge/contract.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source edge/ingress.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source edge/leased_dispatcher.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source edge/migrations.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source edge/platform_forwarder.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source edge/platform_http.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source edge/presence_auth.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source edge/rules.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source edge/runtime.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source edge/service.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source edge/store.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source edge/time_bootstrap.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source edge/tools/check_mqtt_multidevice.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source edge/virtual_bridge.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source edge/wire.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source packages/iot-contract/capabilities.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source packages/iot-contract/manifest.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source packages/iot-contract/package.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source packages/iot-contract/products.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source packages/iot-contract/protocols/presence-gatt-v1.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source packages/iot-contract/python/carbentra_iot_contract/__init__.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source packages/iot-contract/python/carbentra_iot_contract/plug_wire.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source packages/iot-contract/schemas/command.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source packages/iot-contract/schemas/descriptor.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source packages/iot-contract/schemas/event.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source packages/iot-contract/schemas/switch-ack.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source packages/iot-contract/schemas/wire/device-ack-v2.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source packages/iot-contract/schemas/wire/device-command.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "MQTT shared source packages/iot-contract/schemas/wire/device-wire-v2.schema.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "cross-repository proof current",
       "passed": true,
       "detail": ""
     }

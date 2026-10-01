@@ -1,9 +1,10 @@
 #!/usr/bin/python3
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 """Hierarchical merger preserving source circuit drawings and true pins; no PCB writes."""
 from pathlib import Path
 import re,json,uuid,copy,math
 R=Path(__file__).resolve().parents[1];BASE=R.parent
-M=json.loads((R/'electrical_manifest.json').read_text());PARTS={c['ref']:c for c in M['components']}
+M=json.loads((R/'electrical_manifest.json').read_text(encoding='utf-8'));PARTS={c['ref']:c for c in M['components']}
 def uid(x):return str(uuid.uuid5(uuid.NAMESPACE_URL,'carbentra/revb/integrated/'+x))
 def q(x):return json.dumps(str(x))
 def parse(s):
@@ -29,7 +30,7 @@ def geometry(sym):
  return out
 libcache={}
 def std(lib,name):
- if lib not in libcache:libcache[lib]={atom(s[1]):s for s in cs(parse(Path('/usr/share/kicad/symbols',lib+'.kicad_sym').read_text()),'symbol')}
+ if lib not in libcache:libcache[lib]={atom(s[1]):s for s in cs(parse(Path(kicad_resource('symbols'),lib+'.kicad_sym').read_text(encoding='utf-8')),'symbol')}
  s=copy.deepcopy(libcache[lib][name]);e=ch(s,'extends')
  if e:
   base=std(lib,atom(e[1]));pr={atom(v[1]):v for v in cs(base,'property')};pr.update({atom(v[1]):v for v in cs(s,'property')});s=[s[0],s[1]]+list(pr.values())+[v for v in base[2:] if not(isinstance(v,list) and v[0] in ['property','extends'])]
@@ -49,7 +50,7 @@ libraries=[]
 # Native clock and its dedicated bypass are drawn on the integration overview.
 rootrefs={'F501','Y201','CX201'}
 for mod in maps:
- tree=parse((BASE/mod/sourcefiles[mod]).read_text());ls=ch(tree,'lib_symbols');defs={atom(s[1]):s for s in cs(ls,'symbol')};rowmap={c['source_ref']:c for c in PARTS.values() if c['source_module']==mod and c['ref'] not in rootrefs}
+ tree=parse((BASE/mod/sourcefiles[mod]).read_text(encoding='utf-8'));ls=ch(tree,'lib_symbols');defs={atom(s[1]):s for s in cs(ls,'symbol')};rowmap={c['source_ref']:c for c in PARTS.values() if c['source_module']==mod and c['ref'] not in rootrefs}
  # Integrated-only pin-compatible higher-margin supply; change native symbol too.
  if mod=='controller':
   newdef=std('Converter_ACDC','IRM-10-5');newdef[1]=q('Converter_ACDC:IRM-10-5');ls.append(newdef);defs['Converter_ACDC:IRM-10-5']=newdef
@@ -142,11 +143,11 @@ for mod in maps:
  if title:
   if ch(title,'title'):ch(title,'title')[1]=q('CARBENTRA EVT-B: '+mod)
   if ch(title,'rev'):ch(title,'rev')[1]=q('EVT-B HOLD')
- (R/('integrated_'+mod+'.kicad_sch')).write_text(ser(tree))
+ (R/('integrated_'+mod+'.kicad_sch')).write_text(ser(tree), encoding='utf-8', newline='\n')
  lname='Integrated_'+mod;libs=[]
  for sym in cs(ls,'symbol'):
   cp=copy.deepcopy(sym);cp[1]=q(atom(cp[1]).split(':')[-1]);libs.append(ser(cp))
- (R/(lname+'.kicad_sym')).write_text('(kicad_symbol_lib (version 20241209) (generator "kicad_symbol_editor")'+''.join(libs)+')');libraries.append(lname)
+ (R/(lname+'.kicad_sym')).write_text('(kicad_symbol_lib (version 20241209) (generator "kicad_symbol_editor")'+''.join(libs)+')', encoding='utf-8', newline='\n');libraries.append(lname)
 # Root overview with real fuse, clock and supply assertions.
 rootdefs={};items=[]
 def add(ref,lib,name,xy,nets,value,fp='',ds='',bom=True):
@@ -180,9 +181,9 @@ for ref,lib,name,xy in [('F501','Device','Fuse',(330.2,76.2)),('Y201','Oscillato
 for i,net in enumerate(['+3V3_ISO','HOT_N','HOT_AUX_FUSED','HOT_AVDD','TH_3V3_HEAD','TH_GND_HEAD','HOT_NC']):
  add('#FLG'+str(i+1),'power','PWR_FLAG',(30.48+(i%4)*91.44,218.44+(i//4)*22.86),{'1':net},'NC LIVE-POTENTIAL NET ANCHOR' if net=='HOT_NC' else 'EXTERNAL / PASSIVE RAIL',bom=False)
 for txt,x,y,siz in [('CARBENTRA / CARBENTRA-P16-EVT-B INTEGRATED ELECTRICAL SOURCE',12.7,15.24,2),('101 main-board parts + 4 remote-head parts + 4 off-board assemblies; harness models are not PCB parts',12.7,25.4,1.3),('Hierarchy is functional grouping. Shared global net names are real electrical connections.',12.7,33.02,1.3),('CANDIDATE ONLY: no fabrication, energization, safety or certification release',12.7,40.64,1.3),('AUXILIARY FUSE: protected line to isolated supply input',279.4,48.26,1.1),('POWERED CLOCK: OSCO is NC; exact frequency procurement HOLD',279.4,116.84,1.1),('HOT_GND is LINE POTENTIAL. PE is external, continuous and never switched.',12.7,266.7,1.2),('Remote head: component face rear; smooth GND copper backside to qualified insulating pad. Thermal lag/insulation HOLD.',12.7,276.86,1.1)]:items.append(f'(text {q(txt)} (at {x} {y} 0) (effects (font (size {siz} {siz})) (justify left)) (uuid {uid(txt)}))')
-(R/'integrated.kicad_sch').write_text(f'(kicad_sch (version 20250114) (generator "eeschema") (uuid {ROOT}) (paper "A3") (title_block (title "CARBENTRA CARBENTRA-P16-EVT-B integrated source") (rev "EVT-B HOLD")) (lib_symbols '+''.join(rootdefs.values())+')'+''.join(items)+')')
-(R/'IntegratedRoot.kicad_sym').write_text('(kicad_symbol_lib (version 20241209) (generator "kicad_symbol_editor")'+''.join(s.replace('IntegratedRoot:','') for s in rootdefs.values())+')');libraries.append('IntegratedRoot')
-(R/'sym-lib-table').write_text('(sym_lib_table'+''.join(f'(lib (name "{n}") (type "KiCad") (uri "${{KIPRJMOD}}/{n}.kicad_sym") (options "") (descr "Integrated source symbols"))' for n in libraries)+')')
+(R/'integrated.kicad_sch').write_text(f'(kicad_sch (version 20250114) (generator "eeschema") (uuid {ROOT}) (paper "A3") (title_block (title "CARBENTRA CARBENTRA-P16-EVT-B integrated source") (rev "EVT-B HOLD")) (lib_symbols '+''.join(rootdefs.values())+')'+''.join(items)+')', encoding='utf-8', newline='\n')
+(R/'IntegratedRoot.kicad_sym').write_text('(kicad_symbol_lib (version 20241209) (generator "kicad_symbol_editor")'+''.join(s.replace('IntegratedRoot:','') for s in rootdefs.values())+')', encoding='utf-8', newline='\n');libraries.append('IntegratedRoot')
+(R/'sym-lib-table').write_text('(sym_lib_table'+''.join(f'(lib (name "{n}") (type "KiCad") (uri "${{KIPRJMOD}}/{n}.kicad_sym") (options "") (descr "Integrated source symbols"))' for n in libraries)+')', encoding='utf-8', newline='\n')
 # Do not overwrite parent's PCB project configuration.
-if not (R/'integrated.kicad_pro').exists():(R/'integrated.kicad_pro').write_text(json.dumps({'meta':{'filename':'integrated.kicad_pro','version':1}},indent=2))
-M['status']='SCHEMATIC GENERATED; awaiting ERC and independent netlist check';M['components']=list(PARTS.values());(R/'electrical_manifest.json').write_text(json.dumps(M,indent=2));print('Generated integration overview + five functional/assembly sheets')
+if not (R/'integrated.kicad_pro').exists():(R/'integrated.kicad_pro').write_text(json.dumps({'meta':{'filename':'integrated.kicad_pro','version':1}},indent=2), encoding='utf-8', newline='\n')
+M['status']='SCHEMATIC GENERATED; awaiting ERC and independent netlist check';M['components']=list(PARTS.values());(R/'electrical_manifest.json').write_text(json.dumps(M,indent=2), encoding='utf-8', newline='\n');print('Generated integration overview + five functional/assembly sheets')

@@ -4,8 +4,8 @@ Document: CARBENTRA CARBENTRA-P16-EVT-B face-view polarity control
 Date: 2026-09-30
 Scope: drawing and documentation presentation only; not mechanical, electrical or product validation
 
-- Rendered the one-page A3 PDF at 2000 px width, then checked the final refresh at 1600 px width and inspected the final image
-- Corrected an early inset/title overlap and dashed-style carryover before final review
+- Regenerated the current branded PDF and SVG from the current design parameters on 2026-09-30; rendered the one-page A3 PDF at 1800 px width and inspected the refreshed image
+- Confirmed the inherited inset/title layout and line styles remain clear after regeneration
 - Confirmed front female L-right/N-left and rear male L-left/N-right, with PE uppermost in both
 - Confirmed all three world coordinates, 108/93/65 body dimensions and 21/18 rear projections are present
 - Confirmed the source/reference, nominal-envelope and open-release warnings are visible

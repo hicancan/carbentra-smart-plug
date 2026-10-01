@@ -1,46 +1,36 @@
-# CARBENTRA Rev B：从这里开始
+# CARBENTRA Plug Rev B：当前交付入口
 
-本交付服务于“碳迹未来”平台，是统一自适应智能插座的数字工程开发包。机械、电气、固件和边缘参考实现均附可检查证据；尚未制作并验证实物，不能直接据此接入 220 V。
+本仓负责Plug机械、电气、固件和物理放行事实。2026-10-01教室升级后，多产品Edge及合同已统一到carbentra-campus-platform；hardware/edge只留迁移与来源记录，不再有第二套运行实现。实物尚未制造/逐台标定/市电安全验证，制造与通电继续HOLD。
 
-## 推荐查看顺序
+本机可复现入口见 [Windows 开发说明](../docs/WINDOWS_DEVELOPMENT.md)：uv / Python 3.12、MSVC、ESP-IDF 5.4.3、KiCad 10.0.5、FreeCAD 1.1.4、Blender 5.2.2。当前总数字检查 290 项通过；Windows 与 Linux 互补验证明确记录 OS 专属排除。原生 CAD、三张用户修改的展示图和有依赖的源模块均保留。
 
-1. `release/CARBENTRA_RevB_Design_Review_CN.pdf`：最终中文图文审阅册（最终发布时提供）
-2. `visuals/rev_b/renders/`：外观、内部、透明、剖切、爆炸与六视图
-3. `visuals/rev_b/animation/carbentra_exploded.mp4`：装配爆炸动画
-4. `mechanical/rev_b/CARBENTRA-P16-EVT-B_system_assembly.FCStd` / `.step`：轻量工程装配
-5. `mechanical/rev_b/CARBENTRA-P16-EVT-B_system_detailed.step`：包含详细 PCB 几何的补充装配
-6. `visuals/rev_b/carbentra_studio.blend`：可编辑展示场景
-7. `electronics/rev_b/integrated/integrated.kicad_pro`：整合电路工程，先读同目录 README
-8. `docs/firmware/README.md`、`edge/README.md` 和 `docs/system/`：固件、边缘与云边端架构
-9. `docs/ENGINEERING_RELEASE_GATES.md`：进入样机阶段之前的阻断项
+153 个已忽略备份/帧/旧 host 产物约 402.15 MiB 的磁盘删除被自动审批拦截；它们未进入公开包。`scripts/clean_local_outputs.ps1` 默认只读，用户显式 `-Apply` 才执行固化清单。详见 `release/windows-cleanup.json`。
 
-## 修订与打开方式
+## 当前查看顺序
 
-- 当前修订为 Rev B；Rev A 目录为历史基线，不能混用尺寸或检查结论
-- FreeCAD 1.0：打开 FCStd，或导入 STEP。71 个物理机械零件；射频余线预留体为非物理辅助几何，默认隐藏
-- Blender 4.3.2：打开 `.blend`；动画源场景为同目录 `carbentra_animation.blend`
-- KiCad 9：打开整合项目，保留本地符号库、封装库和设计规则
-- `visuals/rev_b/exports/carbentra_twin_light.glb`：优化的显示模型，可用于数字孪生应用开发；它没有自动连接真实遥测
-- `visuals/rev_b/exports/carbentra_assembly.glb`：详细显示导出。显示网格不替代 CAD 精确几何
-- 脚本按 Linux 构建环境编写；Windows 打开源文件可使用对应跨平台软件，执行重建脚本时需调整软件和字体路径
+1. `firmware/validation.json`：官方ESP-IDF5.4.3/ESP32-C3真实构建、当前C源/开发二进制摘要、主机测试及显式共享Edge证据
+2. `docs/firmware/README.md`：本地按钮ON的同等安全守卫、15分钟手动保持、维护/受保护负载边界、可信时间和反馈语义
+3. `contracts/README.md`、`edge/README.md`：共享包/共享运行时的唯一入口；运行完整跨仓测试必须设置CARBENTRA_PLATFORM_ROOT
+4. `electronics/rev_b/integrated/integrated.kicad_pro`：未改变的整合电路工程；机械/电气当前独立数字检查见`release/digital_checks_rev_b.json`及相关freeze证据
+5. `mechanical/rev_b/CARBENTRA-P16-EVT-B_system_assembly.FCStd` / `.step`与detailed.step：可编辑和补充CAD
+6. `visuals/rev_b/`：原有实际CAD派生外观/装配/动画；本次软件升级没有重造未改变的外壳或PCB
+7. `release/CARBENTRA_RevB_Design_Review_CN.pdf`：历史硬件设计审阅册；其中旧软件联调描述不能代替当前共享Edge证明
+8. `docs/ENGINEERING_RELEASE_GATES.md`：实物与现场部署的独立门槛
 
-## 已实现及证据
+## 当前软件变化
 
-- 机械：原创外壳、插接与保护门、接触簧片、接地路径、端接、保护器件安装、无线与温度拾取布局；冻结清单及几何检查位于 `mechanical/rev_b/`
-- 电气：四层整合 PCB、六张原理图页、BOM、布局/布线与独立规则负控；最终 ERC、DRC 和未连接项均为 0，详见 `electronics/rev_b/integrated/validation/`
-- 固件：ESP32-C3 开发构建、计量链路诊断、Wi-Fi/BLE 配置路径、认证通信及策略保护；默认禁止执行器动作，需真实凭据、标定和硬件验证
-- 边缘：SQLite 接收持久化、重复数据冲突检测、建议型削峰、预测基线和有来源的能碳核算边界；并非完整部署的校园平台
-- 最终数字交付状态：`release/digital_checks_rev_b.json`；固件证据：`firmware/validation.json` 和 `release/firmware_evidence_checks.json`
+物理按键经稳定50ms防抖且开机先释放，允许请求切换；ON必须通过逐台调试放行、已批准非关键可切负载、有效新鲜计量/反馈、无故障及最短停启间隔。没有通过伪造网络鉴权绕过策略。物理OFF仍可离线请求。真实按键记录事件序号/时间/结果并形成15分钟手动保持；自动指令不能立即反向覆盖。维护状态阻止ON；故障锁存不能远程清除。
 
-## Git 与交付
+目标已实际重新编译，执行器默认仍被编译禁用。45个C策略案例、额外local-input守卫断言、10,000个故障优先不变量、7个启动场景、真实签名/证书负控及固件JSON→共享Edge合同测试已执行。当前共享suite数量和源摘要见`firmware/evidence/shared-edge-validation.json`；若共同仓继续变化，须重跑并更新证据，不以旧pass覆盖新源。
 
-当前规范远端为 `https://github.com/hicancan/carbentra-smart-plug`。仓库保留完整 Git 历史；离线交付可继续使用 Git bundle 作为可验证备份，但 GitHub `main` 是当前协作与审阅入口。发布包不包含个人凭据、SSH 私钥或本地认证配置。
+`release/software_broker_integration.json`仅为退休Edge的历史五组软件证明。新的多设备/两教室mTLS和实际后端闭环证据属于共同平台；firmware/validation.json明确区分当前共享proof与过期/缺失状态。虚拟软件设备的SIMULATED来源不会被当作真实运行结果。
 
-## 实物阶段仍未完成
+## 独立职责和限制
 
-- 16 A 等级与插接规格仍是设计目标；标准量规、公差、插拔力、接触力、寿命和材料工艺需实测
-- 市电绝缘、保护接地、温升、异常故障、保护配合与空调浪涌能力需专业审查和试验
-- 计量需逐台标定，无线、EMC、网络安全与真实校园部署尚未验证
-- 自动升级、安全启动生产配置、实际预测模型训练和平台端到端验收尚未完成
+- Plug/Switch/Sense硬件仓：各自电路、固件、物理输入和资格边界
+- 校园资产仓：空间身份、坐标、模型及浏览器资产；不是现场测绘/部署数量证明
+- 平台仓：唯一设备合同/Edge、资产绑定、权限、命令生命周期、预测/策略、能碳账本和UI
 
-几何距离、软件测试及 ERC/DRC 通过均不构成安全认证。必须完成相关工程放行流程后，才能决定样机通电与现场试用。
+独立hardware CI仅检查本仓C host、CAD证据和ESP目标编译。跨仓密码学/设备wire/MQTT检查在显式共同工作区执行；缺共享源不会被静默跳过为pass。当前没有生产部署、真实设备烧录或市电动作，也不声称远程GitHub CI已验证本地修改。
+
+16A、插接量规、绝缘/接地、耐压漏电、温升、异常故障、保护配合、浪涌EMC、逐台计量标定与实际无线/反馈互通仍需专业实测。数字通过不是安全认证或已证明校园节能成果。远端身份以Git配置/日志为准，交付状态以当前源/产物摘要为准。

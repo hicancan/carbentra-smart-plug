@@ -1,0 +1,115 @@
+{
+  "checks": [
+    {
+      "name": "durable_telemetry_identity_dedupe_and_time_exchange",
+      "status": "passed",
+      "duration_s": 0.962,
+      "detail": {
+        "raw_path": "mTLS MQTT → hardware Edge SQLite/outbox → HTTP → PostgreSQL",
+        "devices": 2,
+        "edge_samples": 2,
+        "duplicate_did_not_duplicate": true
+      }
+    },
+    {
+      "name": "mtls_certificate_cn_topic_acl_and_no_wildcard_write",
+      "status": "passed",
+      "duration_s": 1.011,
+      "detail": {
+        "certificate_identity_overrides_spoofed_username": true,
+        "unauthorized_publish_reason": 135,
+        "denied_topics": [
+          "carbentra/v1/VIRTUAL-QA-02/telemetry",
+          "carbentra/v1/VIRTUAL-QA-01/cmd",
+          "carbentra/v1/VIRTUAL-QA-02/time",
+          "carbentra/v1/UNENROLLED/telemetry"
+        ],
+        "unknown_certificate_topics_denied": true,
+        "no_client_certificate_rejected": true
+      }
+    },
+    {
+      "name": "virtual_command_mqtt_independent_feedback_and_durable_cloud_verification",
+      "status": "passed",
+      "duration_s": 1.217,
+      "detail": {
+        "command_id": "cmd_90cbcb45e11040c29df5895e04158749",
+        "states": [
+          "requested",
+          "dispatched",
+          "acknowledged",
+          "verified"
+        ],
+        "mqtt_puback_did_not_verify": true,
+        "independent_output_present": false,
+        "postcommand_sample_seq": "2",
+        "voltage_absence_proven": false,
+        "physical_actuation": false
+      }
+    },
+    {
+      "name": "mqtt_puback_without_observation_times_out",
+      "status": "passed",
+      "duration_s": 4.205,
+      "detail": {
+        "command_id": "cmd_d52c039cd70b471eb912001b84e50e2f",
+        "terminal": "timed_out",
+        "desired_did_not_change_observed": true
+      }
+    },
+    {
+      "name": "edge_restart_outbox_durability_and_no_blind_command_replay",
+      "status": "passed",
+      "duration_s": 0.73,
+      "detail": {
+        "sample_seq": "2",
+        "edge_receipt_during_cloud_outage": true,
+        "sqlite_outbox_survived_edge_restart": true,
+        "delivery_recovered": true,
+        "published_command_not_replayed": true
+      }
+    }
+  ],
+  "passed": 5,
+  "failed": 0,
+  "source_mode": "SIMULATED",
+  "physical_dispatch": false,
+  "ephemeral_test_private_keys_deleted": true,
+  "tested_source_sha256": {
+    "/workspace/scratch/abc8258751a2/campus-system-review/repos/hardware/contracts/device-ack-v2.schema.json": "e56e46def806ff073b542b310bea06bb118099beae885e9f2783104662756464",
+    "/workspace/scratch/abc8258751a2/campus-system-review/repos/hardware/contracts/device-command.schema.json": "b739516e3a9bad01bf26ba2af16de79eb21e180408a24def19dcd9b39c47d52d",
+    "/workspace/scratch/abc8258751a2/campus-system-review/repos/hardware/contracts/device-wire-v2.schema.json": "92f0b974138d742009679dd2c0ca87ad8d31b9d924e66cd89b0a50d97602a671",
+    "/workspace/scratch/abc8258751a2/campus-system-review/repos/hardware/edge/command_transport.py": "a7b11607358a50b8e77e6a2e95f5bd306921c0c780444b57ce58a69abce1ce1c",
+    "/workspace/scratch/abc8258751a2/campus-system-review/repos/hardware/edge/platform_forwarder.py": "417e04162ea3e4cecd2483bbe5115571fc3d2ace73879b4c43f6cb972eb29b83",
+    "/workspace/scratch/abc8258751a2/campus-system-review/repos/hardware/edge/platform_http.py": "ddafba60ea1e893ed66936fc6cfddd7b4b8a3844d83007977cb313d67374ae97",
+    "/workspace/scratch/abc8258751a2/campus-system-review/repos/hardware/edge/service.py": "686a566fa4be9a321af31c3ab715e1f847c50c701e7e8b5f12dceca6c34379c1",
+    "/workspace/scratch/abc8258751a2/campus-system-review/repos/hardware/edge/time_bootstrap.py": "9fe287d9c12709290ea66a879e7bc6c8958a63346b8e50072ff781445d1d7a62",
+    "/workspace/scratch/abc8258751a2/campus-system-review/repos/hardware/edge/wire.py": "a3b12e8d6dc4217496fd0585f5f3b6e856f2af928e76a1c523643b5a1561c3ff",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/__init__.py": "97caaad026bc59a64f7252e8c46e6e7f8f7f054492f3b9919a8a6a8a4b6a47b0",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/accounting.py": "8c317f54a7eb9978bf5e27923293ce2f26fe91ab426750adb4dbde4d7fa57319",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/adapter.py": "1d686126368100849a4c64340a963d23aa019e1f1d6e5b55edc27f5fa6297c66",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/analytics.py": "70ca5b8d365d089a3b1466ad9fec1fa4e344caa8c71578555c577f57101c784c",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/commissioning.py": "97164db8e1ebf62dc92e774fde3c4d3a38fb71ab072e43a142f692173305dc1a",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/common.py": "13f6f58961133b9ae291a8231ba805ff19483b782f559abc800465a5ee81876c",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/config.py": "f9c826d3fd6ec34a026a6ab04cdb869907fd457706f3080ec320d7af5e8e97b9",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/control.py": "0aa7ce61c42288505469db329a5eac4e2e22f04dbbc31f2a67477a9043aa8c90",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/db.py": "eba781ed003441aedea60bc642ef1ece1d92e4c3dfb364ba5de359feb96128e3",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/forecasting.py": "62abecc2a6cf7d670763a0e241017ca432db302de761d0b339e879eecfb4c197",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/invariants.py": "f477bbd38bbdfbad3f6af55b483a1ff74a61204320761c315c6365b95251e52e",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/main.py": "2882f714afb213ad7c97161b308a01a7584cd2eb3660a36f9e5fc95ef3bad776",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/migrate.py": "c26320f69535ebe09a8a0e03ffd18b75ed86e650b41ac9e0468358c947d2e7c8",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/models.py": "44bfeaf486e0d8924929f2386f63bf7d66675b4e4fe6b8fe5467d13ebad9021c",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/registry.py": "7f794d5497e75508ed6931d72303914fe818ed23cf75a9d89b9174f8e867832c",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/routes.py": "6f9b7cb8c47ebffe4b93eca9e8d689ce69962c39e19417f375d3dc108bdc8903",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/scheduling.py": "fa747e4f5e8d57ca39ff7115815b997f07d95ab058aa2835ab086be459c03bfb",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/schemas.py": "9c0c16ba930511021e07b7970e0e16b529694485d87f1082fda833c1f0559726",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/scoping.py": "4303420bef872c19fbc7e39924b49083d33bb63be0f4a46d59ae9f9e9e94cb60",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/security.py": "9afc313c1c2d2c7beb6a609f881a3f0b99cabdb41ee0a6a7855ad0d3d596dc42",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/seed.py": "62441f9dc4a610a31fede8dfc984feacb8fbb31181d67e89e5ad096246939ba7",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/simulation.py": "5a90c016832e908e638eae2378489862a2f1f473d053a425c4a888d0d54d2855",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/telemetry.py": "345c984a1ebf167b199abb29c34d539036326d0f6e43a1d795b6e9733b65d7e7",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/backend/app/worker.py": "00f75193035f3709977fbfc5ee9fbf0b488e14b502428e8bad67f1536248cea7",
+    "/workspace/scratch/abc8258751a2/carbentra-campus-platform/tests/acceptance/mqtt_stack.py": "5ac8354c96f0aec2cc34f6c0f85edc104365e03203df01b8eae88d679ca16ca0"
+  },
+  "changed_during_run": []
+}

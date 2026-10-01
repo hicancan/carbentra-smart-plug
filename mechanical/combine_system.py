@@ -1,10 +1,11 @@
 #!/usr/bin/python3
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 """Combine the validated mechanical document and frozen electronics STEP.
 Electronics source remains owned by its native KiCad project.
 """
 import os,sys,json
 BASE=os.path.dirname(os.path.abspath(__file__))
-sys.path.extend(['/usr/lib/freecad-python3/lib',BASE])
+sys.path.extend([FREECAD_LIB,BASE])
 import FreeCAD as App,Part,socket_features
 pcb_path=os.path.join(BASE,'../electronics/exports/pcb_assembly.step')
 d=App.openDocument(BASE+'/CARBENTRA-P16-EVT-A.FCStd')

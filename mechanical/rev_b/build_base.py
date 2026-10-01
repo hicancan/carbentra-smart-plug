@@ -1,8 +1,9 @@
 #!/usr/bin/python3
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 """Generate only the provisional Rev B mechanical base while PCB layout is being frozen."""
 import os,sys,json
 BASE=os.path.dirname(os.path.abspath(__file__))
-sys.path.extend(['/usr/lib/freecad-python3/lib',BASE])
+sys.path.extend([FREECAD_LIB,BASE])
 import FreeCAD as App,Part
 from socket_b_features import SocketBPart,P
 D=App.newDocument('CARBENTRA_P16_EVT_B')

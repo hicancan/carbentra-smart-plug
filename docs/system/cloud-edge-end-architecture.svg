@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100">
-<title>碳迹未来：云—边—端控制与数据架构</title><desc>云端目标下发、边缘聚合与能力过滤、端侧安全执行。遥测回传和原生空调接口独立显示。Rev B 开发架构，云端为规划，未连接真实硬件。</desc>
+<title>碳迹未来：云—边—端控制与数据架构</title><desc>云端目标下发、边缘持久协议运输、端侧安全执行。遥测回传和原生空调接口独立显示。Rev B 开发架构，端边云有代码与数字验证，未连接真实硬件。</desc>
 <defs><marker id="down" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#1a8179" stroke-width="1.5"/></marker><marker id="up" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#698296" stroke-width="1.5"/></marker></defs>
 <rect width="1600" height="1100" fill="#eef3f1"/>
 <g font-family="Noto Sans CJK SC, sans-serif" fill="#193f45">
@@ -11,13 +11,13 @@
 <text x="100" y="337" font-size="21" fill="#deeeea">空间 / 回路 / 资产拓扑　·　能耗与碳账本　·　教学与舒适度约束</text>
 <text x="100" y="376" font-size="21" fill="#deeeea">经批准的策略、目标与预算　｜　因子来源 + 基线版本 + 数据质量</text>
 <path d="M230 424 V484" stroke="#1a8179" stroke-width="3" marker-end="url(#down)"/>
-<text x="255" y="461" font-size="18">有界目标 / 版本 / 失效时间</text>
+<text x="255" y="461" font-size="18">授权命令 / 唯一标识 / 截止时间</text>
 <path d="M1045 485 V431" stroke="#698296" stroke-width="3" marker-end="url(#up)"/>
-<text x="743" y="461" font-size="18" fill="#617b80">聚合观测 / 异常 / 核算证据</text>
+<text x="743" y="461" font-size="18" fill="#617b80">原始观测 / 故障 / 持久收据</text>
 <rect x="70" y="498" width="1130" height="195" rx="18" fill="white" stroke="#c5d7d2"/>
-<text x="100" y="538" font-size="17" fill="#1a8179">02 / EDGE</text><text x="100" y="578" font-size="29" font-weight="700">楼宇网关 · 聚合与约束分配</text>
-<text x="100" y="622" font-size="21">回路预算　·　负载能力过滤　·　消息去重　·　时钟 / 数据质量</text>
-<text x="100" y="660" font-size="21" fill="#617b80">断网缓存有上限；重连只请求新命令，不补执行旧动作</text>
+<text x="100" y="538" font-size="17" fill="#1a8179">02 / EDGE</text><text x="100" y="578" font-size="29" font-weight="700">楼宇网关 · 协议与持久运输</text>
+<text x="100" y="622" font-size="21">严格合同　·　SQLite 收据　·　重试 outbox　·　签名时钟</text>
+<text x="100" y="660" font-size="21" fill="#617b80">命令持久 inbox；PUBACK 不等于执行，未知投递不盲目重放</text>
 <path d="M230 699 V760" stroke="#1a8179" stroke-width="3" marker-end="url(#down)"/>
 <text x="255" y="735" font-size="18">认证命令 / TTL / 序列 / 档案</text>
 <path d="M1045 760 V705" stroke="#698296" stroke-width="3" marker-end="url(#up)"/>
@@ -31,9 +31,9 @@
 <text x="1265" y="252" font-size="23" font-weight="700">可信数据链</text>
 <text x="1265" y="299" font-size="20">设备 + 计量时代 + 序号</text><text x="1265" y="339" font-size="20">单位 / 校准 / 质量</text><text x="1265" y="379" font-size="20">总表与分表不重复相加</text><text x="1265" y="419" font-size="20">预测 ≠ 实测减排</text><text x="1265" y="479" font-size="17" fill="#617b80">缺测、未知因子均明确显示</text>
 <rect x="1240" y="556" width="290" height="257" rx="18" fill="white" stroke="#c5d7d2"/>
-<text x="1265" y="601" font-size="23" font-weight="700">空调原生接口</text><text x="1265" y="648" font-size="20">由网关授权适配</text><text x="1265" y="688" font-size="20">调节正常模式 / 设定值</text><text x="1265" y="728" font-size="20">不频繁切断市电</text><text x="1265" y="778" font-size="17" fill="#617b80">协议与设备兼容性待验证</text>
+<text x="1265" y="601" font-size="23" font-weight="700">空调原生接口</text><text x="1265" y="648" font-size="20">由平台授权适配</text><text x="1265" y="688" font-size="20">调节正常模式 / 设定值</text><text x="1265" y="728" font-size="20">不频繁切断市电</text><text x="1265" y="778" font-size="17" fill="#617b80">协议与设备兼容性待验证</text>
 <path d="M1200 611 H1233" stroke="#1a8179" stroke-width="3" marker-end="url(#down)"/>
 <rect x="1240" y="846" width="290" height="160" rx="18" fill="#e5eae8"/>
-<text x="1265" y="889" font-size="21" font-weight="700">安全实现仍待完成</text><text x="1265" y="930" font-size="18">身份 / 签名 / 安全升级</text><text x="1265" y="967" font-size="18">独立保护 / 实测 / 认证</text>
-<text x="70" y="1055" font-size="18" fill="#617b80">Rev B 开发设计　·　端侧固件与边缘参考已有代码　·　云端为系统规划，未连接真实设备</text>
+<text x="1265" y="889" font-size="21" font-weight="700">独立实物放行门槛</text><text x="1265" y="930" font-size="18">安全加固 / 密钥生产 / 升级</text><text x="1265" y="967" font-size="18">独立保护 / 实测 / 认证</text>
+<text x="70" y="1055" font-size="18" fill="#617b80">Rev B 数字开发验证　·　平台统一资产、预测与账本　·　物理继电器默认禁用，未连接真实设备</text>
 </g></svg>

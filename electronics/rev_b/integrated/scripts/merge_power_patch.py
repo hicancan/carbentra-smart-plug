@@ -1,6 +1,6 @@
 from pathlib import Path
 import json,pcbnew as p
-R=Path(__file__).resolve().parents[1];b=p.LoadBoard(str(R/'integrated.kicad_pcb'));changes=json.loads((R/'validation/power_candidate_patch.json').read_text())['changes'];ls={'F.Cu':p.F_Cu,'B.Cu':p.B_Cu}
+R=Path(__file__).resolve().parents[1];b=p.LoadBoard(str(R/'integrated.kicad_pcb'));changes=json.loads((R/'validation/power_candidate_patch.json').read_text(encoding='utf-8'))['changes'];ls={'F.Cu':p.F_Cu,'B.Cu':p.B_Cu}
 def vec(a):return p.VECTOR2I(*[p.FromMM(v)for v in a])
 for c in changes:
  if c['action']=='width':

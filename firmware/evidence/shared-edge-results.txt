@@ -1,0 +1,6 @@
+..................................................... [ 71%]
+.s.....s.............                                               [100%]
+=========================== short test summary info ===========================
+SKIPPED [1] edge\tests\test_presence_auth.py:79: Authenticated Sense enrollment uses POSIX private-key permissions
+SKIPPED [1] edge\tests\test_presence_auth.py:73: POSIX private-key permissions are verified in the Linux suite
+72 passed, 2 skipped, 24 subtests passed in 5.80s

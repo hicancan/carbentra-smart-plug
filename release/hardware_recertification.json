@@ -1,0 +1,60 @@
+{
+  "revision": "CARBENTRA-P16-EVT-B",
+  "generated_utc": "2026-10-01T12:00:50.420791+00:00",
+  "scope": "Windows native digital validation; retained design, no physical qualification",
+  "release_for_fabrication": false,
+  "release_for_energization": false,
+  "native_tools": {
+    "KiCad": "10.0.5",
+    "FreeCAD": "1.1.4",
+    "Blender": "5.2.2 LTS"
+  },
+  "geometry_objects_compared": 523,
+  "pcb_rebuild_comparison": {
+    "layers": true,
+    "footprints": true,
+    "copper": true,
+    "zones": true
+  },
+  "full_insulation_audit": true,
+  "pdf_visual_review": {
+    "passed": true,
+    "pages": 11,
+    "method": "Rendered all 1 mechanical, 6 schematic and 4 copper pages using Poppler; inspected the mechanical page and complete schematic/copper contact sheets. Polarity, dimensions, nets/functional sheets, copper layers, board hash and HOLD warnings remain visible.",
+    "scope": "Presentation/source export review only; not licensed mechanical gauge or electrical certification",
+    "retained_review_basis": "All three reviewed PDFs are byte-identical to prior reviewed delivery; no new visual inspection is claimed."
+  },
+  "evidence_sha256": {
+    "electronics/rev_b/integrated/HANDOFF.json": "79167d5213aaa0c3ee4ec0c400b0a544c74420828027729ba7fa99fb9bba2269",
+    "electronics/rev_b/integrated/exports/copper_review.pdf": "1d511dff4226ead41b0c8645f18a6619670146385a70241b92c02b147d9a4bff",
+    "electronics/rev_b/integrated/exports/schematic.pdf": "159a33af136b66ac31a13636fce40a603b054f412778907071597d3b4dfdebaa",
+    "electronics/rev_b/integrated/validation/electrical_source_hashes.json": "996e4d5bfd60724b6d8a12bb0845e6866936430cb7267aeb2197536f4c986b09",
+    "electronics/rev_b/integrated/validation/final_drc.json": "c0a10be2e331d9bb91e6b2b4d9d993aff9bea4f96fe49f93eb4b91051f8acb8c",
+    "electronics/rev_b/integrated/validation/final_erc.json": "81066acbfa630aeb126fe75f5355e52d503a5e2e2188d6e7ec6b284e04429c75",
+    "electronics/rev_b/integrated/validation/final_summary.json": "ea1a6707d36b7db8125c2a0f5e286bf756977096c2e4bf5824fee29b69a39835",
+    "electronics/rev_b/integrated/validation/rebuild_check.json": "50fffd47c78d33b40a06ee2ed810317574a13118c08513baf7ed0512a671bbe6",
+    "mechanical/rev_b/contact_engagement_report.json": "af0a40f6f1adb8086c014e77996b858cd997e60f17b532e7734443b8031d165d",
+    "mechanical/rev_b/detailed_export_report.json": "ad37c7c1de985068fa2e76cd2e493d6a87c76470a064c9f96671ec6a8ec50f4a",
+    "mechanical/rev_b/docs/CARBENTRA-P16-EVT-B_face_view_polarity.pdf": "b6b512b8328366b994437ab9f95a5867514a3100bb0418707b7ae48ea5f67919",
+    "mechanical/rev_b/docs/drawing_source_snapshot.json": "154d3f2844ebbf84b6a6ce61e8840d807330e8148e589193350f7b86afea9628",
+    "mechanical/rev_b/docs/qa/face_view_polarity.png": "8299b61787731d0f80392fdb2598fbb5017e92731f47f40cab2fe65c8032d602",
+    "mechanical/rev_b/export_roundtrip_report.json": "8ede4abf3f4bc234024dfe12a8cee664605e150d5c1294eda93e7de5f2e5d5df",
+    "mechanical/rev_b/freeze_manifest.json": "80f1b507bedb125bf6024749943f28beaf0458d92dbb3506350d4226caedd9ac",
+    "mechanical/rev_b/insulation_domain_report.json": "a0fd79953e52e0af4568a9f1c8f41c22d18e5b76a7dcf49eee89451f0bfd5ab8",
+    "mechanical/rev_b/integrated_fit_report.json": "59fd89290396f08b4a2b6bf8a8229e3ed75efd9a447a11d6e9379bedf49cdbc8",
+    "mechanical/rev_b/polarity_connectivity_report.json": "54784ef630f015ba4acb4f6cf530b26b9b05c9cefc49b00ed788157871ad0e46",
+    "mechanical/rev_b/shutter_kinematic_report.json": "0418e499d7ca21d9456c964c2c9d8aaf15c41c1d492b3ff36af4424991a502ce",
+    "release/hardware_geometry_rebuild.json": "e0270b2f8656d2e29f9dea3a77e8654e0f3da426a2fd07102ce90f4a7c025a70",
+    "release/hardware_validation_run.txt": "f68110ef626947162013a41ca7189f04f790f2c3da007a2ed68a4b49dbc68142",
+    "release/windows-native-scene.json": "5ab8e9d13db00124e7337a1428a4d0572985c7f6f870e3f598161db6580aeca3",
+    "scripts/cad_equivalence.py": "167ce87b117550aed7ffc0888213370da2bf6677f43cdf366df7da8334387a9b",
+    "scripts/carbentra_pcb.py": "7856d3da58322358fe4b1176cc082b61a912e3f1f017a32e53288d2d556f107e",
+    "scripts/carbentra_tools.py": "4e50a4c46fe0b57f854d79d1f1787838ca925627d20900dc4dec08cb49a6dec0",
+    "scripts/engineering.ps1": "57377f803661d664cf09f1b50e2a9e51fd28ecd90b35668805005471570ed764",
+    "scripts/finalize_hardware_handoff.py": "6fccb42a148a0a9ad34bd812568fd4643dae16dc1bd0938c4eb0b31fdfc94f07",
+    "scripts/record_windows_hardware.py": "fb54e3d3d5cf84f87dd8422149a3a96675b7a9dd085ef8c71309c232d22cd975",
+    "scripts/run_engineering.py": "65592353e42db9ccc0b96ef6f15fb0d55a5fcba50d8f81c41fcbe1ad57f16372",
+    "scripts/validate_hardware_evidence.py": "65aaf9382acfde4ad0446dbab4015939536955536408f8ba65ba4b776273f8e9",
+    "scripts/verify_hardware_rebuild.py": "854cfc413ec1ba312bf3a1b89d0d70e2f961c5e422fed016cd71b2a1bdbf436e"
+  }
+}

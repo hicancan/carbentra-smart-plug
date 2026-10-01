@@ -1,21 +1,9 @@
-# 楼宇边缘参考服务
+# Shared Edge runtime
 
-`service.py` 提供可运行的 MQTT 适配器和可独立测试的核心：
+There is no second Plug-only Edge implementation in this repository. The sole runtime is `carbentra-campus-platform/edge`; schemas, semantic validators and canonical examples live in that repository's `packages/iot-contract`.
 
-- 只处理允许清单中的设备，主题和内容身份必须一致
-- 回复带同一随机挑战的时间响应，供设备建立命令时间锚点
-- SQLite WAL 持久保存遥测；设备 ID、启动纪元和规范十进制序号去重；相同标识但内容冲突时拒绝返回收据，不悄悄覆盖已有数据
-- 数据落库后返回收据，不把 MQTT PUBACK 等同于数据库持久化
-- 保留控制器回执，拒绝异常类型、重复 JSON 键、非有限数字和超大负载
-- 给出只建议、不发送动作的负载削减计划
-- 提供透明的稳健线性预测基线，以便未来与实际学习模型比较
+Set `CARBENTRA_PLATFORM_ROOT` to the actual local platform checkout. No remote repository or deployment URL is guessed. Create its project environment with `uv venv --python 3.12`, install its root `uv.lock` with `uv sync --locked`, then run its `edge/service.py` with the reviewed per-device enrollment/configuration. See the platform Edge README/runbook for MQTT mTLS, HMAC-authenticated Sense GATT, channel control, offline outbox and deployment gates.
 
-没有部署真实 broker、云服务或网络设备。MQTT 适配器需安装 requirements.txt，并由用户提供 broker 地址、服务端 CA、边缘客户端证书/密钥及设备清单。程序没有共用口令，不生成证书，不降低 TLS 验证。
+For cross-repository verification, set `CARBENTRA_PLATFORM_ROOT` and run `pwsh -NoProfile -File scripts/check_windows.ps1 -BuildTarget` from this hardware checkout. It compiles the actual MSVC/mbedTLS firmware gates and uses the shared platform environment. Tool paths and CAD/GPU checks are documented in [Windows development](../docs/WINDOWS_DEVELOPMENT.md). Missing shared source or dependencies is an error. Named POSIX permission checks execute in the complementary Linux suite; Windows executes all three real firmware integration gates. Evidence records both summaries instead of treating platform-specific exclusions as passes.
 
-Broker 必须配置每设备证书身份与主题 ACL：设备只发布自己的 hello/telemetry/ack，只订阅自己的 time/cmd/receipt；边缘账号只管理已登记设备。允许清单不能替代 broker 的发布权限隔离。
-
-单元测试：`python3 -m unittest discover -s edge/tests -v`。测试使用内存数据库和明确的合成数据，不连接真实网络。预测残差 MAD 不是经过校准的置信区间；没有以合成测试证明真实节能、碳减排或预测精度。
-
-服务当前不自动发布控制命令。要启用真实调度，还需具体资产、负载权限、舒适度和安全约束、真实验证数据与操作授权。密钥路径仅在用户自己配置后读取，不把密钥放入本仓库。
-
-`accounting.py` 提供需要显式因子来源的购电排放计算，保留部分区间标记，拒绝总表与分表重复相加。单元测试中的 0.5 因子仅是算术测试数据，不是实际地区排放因子。该工具不生成未经证实的减排量。
+Independent hardware CI runs only its own C host regression, PCB evidence and ESP32-C3 compilation. Cross-repository cryptography/wire/MQTT proof belongs to the shared platform integration job/workspace. `PROVENANCE.json` records the retired source snapshot; Git history retains the former code. Historical broker evidence is not asserted against new sources. No physical dispatch gate is enabled by migration.

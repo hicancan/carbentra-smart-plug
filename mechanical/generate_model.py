@@ -1,7 +1,8 @@
 #!/usr/bin/python3
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 import sys,os,json,csv
 BASE=os.path.dirname(os.path.abspath(__file__))
-sys.path.extend(['/usr/lib/freecad-python3/lib',BASE])
+sys.path.extend([FREECAD_LIB,BASE])
 import FreeCAD as App,Part,MeshPart
 from socket_features import SocketPart,P,H
 os.makedirs(BASE+'/meshes',exist_ok=True);os.makedirs(BASE+'/step',exist_ok=True)

@@ -4,7 +4,7 @@ import json,sys
 from pathlib import Path
 import pcbnew as p
 from sexpr_util import parse,ch
-R=Path(__file__).resolve().parents[1];circuit=json.loads((R/'circuit_manifest.json').read_text());tree=parse((R/'exports/carbentra.net').read_text());nets=ch(tree,'nets');actual={}
+R=Path(__file__).resolve().parents[1];circuit=json.loads((R/'circuit_manifest.json').read_text(encoding='utf-8'));tree=parse((R/'exports/carbentra.net').read_text(encoding='utf-8'));nets=ch(tree,'nets');actual={}
 for n in nets[1:]:
  if not isinstance(n,list):continue
  name=ch(n,'name')[1].strip('"');name=name.lstrip('/')
@@ -21,4 +21,4 @@ for c in circuit:
   for pd in fp.Pads():
    if pd.GetNumber()==pin and pd.GetNetname()!=net:errors.append(f'{c["ref"]}.{pin}: board net differs')
 report={'status':'PASS' if not errors else 'FAIL','components':len(circuit),'assigned_pins_checked':count,'errors':errors,'limitations':['Compares digital connectivity; not physical continuity or powered test','Manufacturer pin review and layout safety remain independent requirements']}
-(R/'validation/net_pin_consistency.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2));sys.exit(bool(errors))
+(R/'validation/net_pin_consistency.json').write_text(json.dumps(report,indent=2), encoding='utf-8', newline='\n');print(json.dumps(report,indent=2));sys.exit(bool(errors))

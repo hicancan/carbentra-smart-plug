@@ -4,13 +4,14 @@
 #include <stdint.h>
 #include <stddef.h>
 #define CARBENTRA_ID_MAX 48
+#define CARBENTRA_MANUAL_HOLD_MS 900000u
 
 typedef enum { CARBENTRA_HOLD, CARBENTRA_SHED, CARBENTRA_RESTORE } carbentra_action;
 typedef enum {
  CARBENTRA_ACCEPTED, CARBENTRA_DUPLICATE, CARBENTRA_LOCAL_TRIP, CARBENTRA_OFFLINE_HOLD, CARBENTRA_NO_AUTH,
  CARBENTRA_WRONG_DEVICE, CARBENTRA_BAD_CLOCK, CARBENTRA_BAD_WINDOW, CARBENTRA_REPLAY, CARBENTRA_ID_CONFLICT,
  CARBENTRA_STALE_DATA, CARBENTRA_UNKNOWN_LOAD, CARBENTRA_CRITICAL_LOAD, CARBENTRA_CAPABILITY_DENIED,
- CARBENTRA_PROFILE_MISMATCH, CARBENTRA_MIN_DWELL, CARBENTRA_INVALID, CARBENTRA_NOT_COMMISSIONED
+ CARBENTRA_PROFILE_MISMATCH, CARBENTRA_MIN_DWELL, CARBENTRA_INVALID, CARBENTRA_NOT_COMMISSIONED, CARBENTRA_MANUAL_HOLD, CARBENTRA_MAINTENANCE
 } carbentra_result;
 typedef struct {
  char id[CARBENTRA_ID_MAX]; bool approved, critical, allow_mains_shed;
@@ -27,12 +28,21 @@ typedef struct {
 typedef struct {
  char device_id[CARBENTRA_ID_MAX]; bool commissioned, desired_on, fault_latched;
  uint64_t changed_ms, last_seq; bool has_last;
+ bool maintenance; uint64_t manual_hold_until_ms;
  carbentra_command last;
 } carbentra_state;
 typedef struct { carbentra_result status; bool target_on, actuate, latch_fault; } carbentra_decision;
+typedef struct { bool raw,stable,armed,initialized; uint64_t changed_ms; } carbentra_button;
+bool carbentra_button_press(carbentra_button*,bool pressed,uint64_t now);
 carbentra_decision carbentra_evaluate(const carbentra_state*,const carbentra_profile*,const carbentra_command*,const carbentra_context*);
 /* Call commit only after replay journal is durable AND actuator request succeeded.
  * Actual output voltage feedback remains separate from desired_on. */
+/* Physical local input does not impersonate an authenticated remote command.
+ * OFF always remains possible; ON uses the same per-unit/load/feedback/dwell gates.
+ * Caller commits only after its actuator request succeeds. */
+carbentra_decision carbentra_evaluate_local(const carbentra_state*,const carbentra_profile*,bool target_on,const carbentra_context*);
+void carbentra_commit_local(carbentra_state*,const carbentra_context*,carbentra_decision);
+const char *carbentra_control_mode(const carbentra_state*,const carbentra_profile*,uint64_t now);
 void carbentra_commit(carbentra_state*,const carbentra_command*,const carbentra_context*,carbentra_decision);
 const char* carbentra_result_name(carbentra_result);
 #endif

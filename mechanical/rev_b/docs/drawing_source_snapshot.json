@@ -3,7 +3,7 @@
   "title": "CARBENTRA Face-view polarity control",
   "status": "Drawing QA only; not final model validation",
   "source_files": {
-    "design_parameters.json": "e6b42dedae5380c615d54bbe1dfb333dc490dc494e3cd10f783d8381a56d1130",
+    "design_parameters.json": "b14743c8a4e09c9f762f2b509a3011ce2a610799c8bc5fbfb7592d1ec43a6ab3",
     "socket_b_features.py": "08ee1d239867098693be98989d287a39c0c064f862c43edf60e79100c7391320",
     "power_links.py": "84e30c9fce812364d92e0ece2ed3ebb02e8bb5b98365e9c333a67c141e07b069"
   },

@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 import os,sys,json
-BASE=os.path.dirname(os.path.abspath(__file__));sys.path.extend(['/usr/lib/freecad-python3/lib',BASE])
+BASE=os.path.dirname(os.path.abspath(__file__));sys.path.extend([FREECAD_LIB,BASE])
 import FreeCAD as App,Part,socket_b_features as m
 V=App.Vector
 D=App.openDocument(BASE+'/CARBENTRA-P16-B-base-provisional.FCStd')

@@ -5,7 +5,7 @@ import os,json,hashlib
 R=Path(__file__).resolve().parents[1]
 for d in ['CONFIG','CACHE','DATA']:os.environ['XDG_'+d+'_HOME']=str(R/'.xdg'/d.lower())
 import pcbnew as p
-raw=(R/'integrated.kicad_pcb').read_bytes();b=p.LoadBoard(str(R/'integrated.kicad_pcb'));changes=json.loads((R/'validation/power_candidate_patch.json').read_text())['changes'];tracks=list(b.GetTracks());xy=lambda x:[round(p.ToMM(x.x),5),round(p.ToMM(x.y),5)];results=[]
+raw=(R/'integrated.kicad_pcb').read_bytes();b=p.LoadBoard(str(R/'integrated.kicad_pcb'));changes=json.loads((R/'validation/power_candidate_patch.json').read_text(encoding='utf-8'))['changes'];tracks=list(b.GetTracks());xy=lambda x:[round(p.ToMM(x.x),5),round(p.ToMM(x.y),5)];results=[]
 for c in changes:
  found=[]
  for t in tracks:
@@ -17,4 +17,4 @@ for c in changes:
  results.append({'operation':c,'matching_objects':len(found)})
 assert (R/'integrated.kicad_pcb').read_bytes()==raw,'Live PCB changed during audit; rerun after current save completes'
 report={'status':'PASS' if all(v['matching_objects']==1 for v in results) else 'FAIL','expected_operations':len(results),'actual_master_sha256':hashlib.sha256(raw).hexdigest(),'operations':results,'master_modified':False}
-(R/'validation/power_patch_application_audit.json').write_text(json.dumps(report,indent=2));print(report['status'],len(results));assert report['status']=='PASS'
+(R/'validation/power_patch_application_audit.json').write_text(json.dumps(report,indent=2), encoding='utf-8', newline='\n');print(report['status'],len(results));assert report['status']=='PASS'

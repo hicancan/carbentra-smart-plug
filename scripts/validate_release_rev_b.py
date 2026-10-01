@@ -1,12 +1,12 @@
 """Final CARBENTRA digital-deliverable checks, never hardware certification."""
 from pathlib import Path
-import hashlib,json,struct,subprocess,sys
+import hashlib,json,struct,subprocess,sys,tempfile,os
 R=Path(__file__).resolve().parents[1]; checks=[]
 def check(name,ok,detail=''):checks.append({'check':name,'passed':bool(ok),'detail':detail})
 def read(rel):
  p=R/rel
  if not p.exists():check('required '+rel,False);return {}
- return json.loads(p.read_text())
+ return json.loads(p.read_text(encoding='utf-8'))
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def pinned(base,path,meta):
  p=base/path;check('frozen '+str(p.relative_to(R)),p.is_file() and p.stat().st_size==meta['bytes'] and sha(p)==meta['sha256'])
@@ -62,11 +62,20 @@ if movie.exists():
  d=json.loads(r.stdout) if r.returncode==0 else {};v=d.get('streams',[{}])[0]
  check('actual144-frame24fps animation',r.returncode==0 and v.get('avg_frame_rate')=='24/1' and int(v.get('nb_read_frames','0'))==144 and abs(float(d.get('format',{}).get('duration',0))-6)<.1,r.stdout)
 else:check('actual animation',False)
-for cmd,label in [([sys.executable,'scripts/validate_firmware_evidence.py'],'firmware evidence'),([sys.executable,'-m','unittest','discover','-s','edge/tests'],'edge tests'),([sys.executable,'-m','unittest','discover','-s','tests/policy'],'policy reference tests')]:
- r=subprocess.run(cmd,cwd=R,capture_output=True,text=True);check(label,r.returncode==0,r.stdout+r.stderr)
+temp_root=Path(os.environ.get('CARBENTRA_TEMP_ROOT','D:/Temp/codex/carbentra-localize-20261001/plug'));temp_root.mkdir(parents=True,exist_ok=True)
+test_dir=tempfile.TemporaryDirectory(prefix='carbentra-release-tests-',dir=temp_root)
+for name,binary in [('CARBENTRA_STARTUP_TEST_BINARY','test_startup'),('CARBENTRA_TIME_TEST_BINARY','test_time_signature'),('CARBENTRA_CERT_TEST_BINARY','test_certificate_dates')]:os.environ.setdefault(name,str(Path(os.environ['TEMP'])/('host/test_startup/test_startup.exe' if binary=='test_startup' else 'crypto/'+binary.removeprefix('test_')+'/'+binary+'.exe')))
+platform=Path(os.environ.get('CARBENTRA_PLATFORM_ROOT','/nonexistent'))
+commands=[([sys.executable,'scripts/validate_hardware_evidence.py'],'hardware evidence'),([sys.executable,'scripts/validate_firmware_evidence.py'],'firmware evidence'),(['pwsh','-NoProfile','-File','firmware/tests/run_host_tests.ps1','-AddressSanitizer'],'canonical C core and startup tests'),(['pwsh','-NoProfile','-File','firmware/tests/run_crypto_tests.ps1'],'real cryptography and certificate tests')]
+if (platform/'edge/tools/run_checks.py').is_file():commands.append(([str(platform/'.venv/Scripts/python.exe'),str(platform/'edge/tools/run_checks.py'),'--release','--output',str(Path(test_dir.name)/'shared-edge.json')],'shared edge release tests; no unexpected skips'))
+else:check('explicit shared platform checkout',False,'Set CARBENTRA_PLATFORM_ROOT; missing shared source is not a pass')
+for cmd,label in commands:
+ allowed={'PATH','PATHEXT','SYSTEMROOT','WINDIR','COMSPEC','TEMP','TMP','USERPROFILE','APPDATA','LOCALAPPDATA','PROGRAMFILES','PROGRAMFILES(X86)','PROGRAMDATA','HOMEDRIVE','HOMEPATH','PYTHONUTF8','PYTHONPATH','IDF_PATH','IDF_TOOLS_PATH','IDF_PYTHON_ENV_PATH','CARBENTRA_PLATFORM_ROOT','CARBENTRA_STARTUP_TEST_BINARY','CARBENTRA_TIME_TEST_BINARY','CARBENTRA_CERT_TEST_BINARY','CARBENTRA_TEMP_ROOT','UV_CACHE_DIR','UV_PYTHON_INSTALL_DIR','UV_TOOL_DIR','UV_INSTALL_DIR'}
+ child_env={k:v for k,v in os.environ.items() if k.upper() in allowed}
+ r=subprocess.run(cmd,cwd=R,capture_output=True,text=True,env=child_env);check(label,r.returncode==0,r.stdout+r.stderr)
 review=R/'release/CARBENTRA_RevB_Design_Review_CN.pdf';check('final Chinese review PDF',review.is_file() and review.stat().st_size>1000)
 pq=read('release/review_pdf_qa.json')
 check('final PDF visual QA and hash',pq.get('passed') and pq.get('all_pages_rendered_and_contact_sheet_visually_reviewed') and pq.get('sha256')==sha(review))
 out={'product':'CARBENTRA','revision':'CARBENTRA-P16-EVT-B','scope':'Frozen digital consistency and software checks only; no physical/electrical certification','release_for_fabrication':False,'release_for_energization':False,'passed':all(c['passed'] for c in checks),'checks':checks}
-(R/'release/digital_checks_rev_b.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
+(R/'release/digital_checks_rev_b.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n', encoding='utf-8', newline='\n')
 print(json.dumps({'passed':out['passed'],'check_count':len(checks),'failures':[c['check'] for c in checks if not c['passed']]},ensure_ascii=False,indent=2));sys.exit(0 if out['passed'] else 1)

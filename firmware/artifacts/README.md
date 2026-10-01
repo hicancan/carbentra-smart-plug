@@ -1,14 +1,5 @@
-# Target firmware artifacts
+# Development-only target artifacts
 
-The source tree has completed the **CARBENTRA** namespace and product-identity migration. The previously checked-in ESP32-C3 binaries were built before that migration, so they were intentionally removed rather than relabeled as if they matched the current sources.
+Current ESP32-C3 binaries are produced by official ESP-IDF 5.4.3 from the source snapshot bound in `../validation.json`. All supplied application images are compiled with actuation disabled. `../target_build.log` and the source/artifact hashes bind the actual build; no earlier binary is substituted.
 
-Current evidence is therefore split deliberately:
-
-- host-side policy, protocol, feedback and meter regressions are reproducible from the current source;
-- edge unit tests are reproducible from the current source;
-- the ESP32-C3 target remains the intended hardware target;
-- a fresh target binary must be built from the current tree in a configured ESP-IDF environment before any binary is published again.
-
-`firmware/validation.json` records this state as `REBUILD_REQUIRED_AFTER_BRAND_NAMESPACE_MIGRATION`.
-
-This is a digital-development repository, not a commissioning package. No checked-in binary is evidence that the device is safe to energize, switch mains loads, or deploy in the field.
+These files are digital build evidence. Do not flash or energize a unit on the strength of a passing build. Independent hardware release, measured per-unit calibration, owner credentials/ACL and signed-time provisioning remain required. No key or production calibration is included.

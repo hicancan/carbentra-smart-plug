@@ -1,8 +1,14 @@
 {
   "file": "release/CARBENTRA_RevB_Design_Review_CN.pdf",
-  "sha256": "09c0379bcd303a456989a398bac02701071e4ea2b064c17ef896bafa9fbf9ab6",
+  "sha256": "af054d5e163a70b07f96cce5c904e07008a85b2f444a709613a5ea3acda59d4a",
   "pages": 10,
   "all_pages_rendered_and_contact_sheet_visually_reviewed": true,
   "out_of_page_text_pages": [],
-  "passed": true
+  "passed": true,
+  "reviewed_changes": [
+    "Canonical C policy; no duplicate Python policy",
+    "Edge transport ownership, platform business ownership",
+    "Current target-build and crypto/schema evidence boundary",
+    "Physical manufacturing/energization HOLD retained"
+  ]
 }

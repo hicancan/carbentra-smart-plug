@@ -48,3 +48,6 @@ visuals/**/animation/frames/
 mechanical/rev_b/CARBENTRA-P16-B-base-provisional*
 
 !mechanical/rev_b/CARBENTRA-P16-B-base-provisional.FCStd
+
+# Local isolated development dependencies.
+.venv/

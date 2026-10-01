@@ -7,23 +7,52 @@ permissions:
   contents: read
 jobs:
   software-evidence:
-    runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    runs-on: windows-2022
+    timeout-minutes: 15
     steps:
       - name: Check out source
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 verified 2026-09-30
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           fetch-depth: 0
           persist-credentials: false
-      - name: Python policy reference
-        run: python3 -m unittest discover -s tests/policy -v
-      - name: Edge reference tests
-        run: python3 -m unittest discover -s edge/tests -v
-      - name: C policy, feedback and protocol tests
-        run: bash firmware/tests/run_host_tests.sh
-      - name: Verify delivered development build evidence
-        run: python3 scripts/validate_firmware_evidence.py
-      - name: Brand naming hygiene
-        run: python3 scripts/check_brand_hygiene.py
-      - name: Known credential-pattern check
-        run: python3 scripts/check_publish_hygiene.py
+      - name: Install uv
+        uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+        with:
+          version: '0.11.17'
+      - name: Locked Python environment
+        shell: pwsh
+        run: |
+          uv venv --python 3.12
+          uv sync --locked
+      - name: Independent firmware C and hardware-evidence regressions
+        shell: pwsh
+        run: |
+          pwsh -NoProfile -File firmware/tests/run_host_tests.ps1 -AddressSanitizer -OutputDirectory "$env:RUNNER_TEMP/carbentra-host"
+          uv run --locked python -m unittest discover -s tests/hardware -v
+          uv run --locked python scripts/validate_hardware_evidence.py
+      # Shared cryptography/wire/MQTT integration runs in the platform workspace,
+      # with explicit CARBENTRA_PLATFORM_ROOT and compiled firmware proof binaries.
+      # An absent sibling checkout is never treated as an integration pass.
+      - name: Brand and publication hygiene
+        shell: pwsh
+        run: |
+          uv run --locked python scripts/check_brand_hygiene.py
+          uv run --locked python scripts/check_publish_hygiene.py
+  esp32c3-target:
+    runs-on: ubuntu-24.04
+    container: espressif/idf:v5.4.3
+    timeout-minutes: 25
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Build actuation-disabled ESP32-C3 target with certificate date verification
+        shell: bash
+        run: |
+          test "$(git -C "$IDF_PATH" rev-parse HEAD)" = ea1c174c1cbb7348bd8ba0ff1eb306246938dd80
+          . "$IDF_PATH/export.sh"
+          cd firmware
+          idf.py build
+          grep -q '^CONFIG_MBEDTLS_HAVE_TIME_DATE=y$' sdkconfig
+          grep -q '^# CONFIG_CARBENTRA_ALLOW_ACTUATION is not set$' sdkconfig

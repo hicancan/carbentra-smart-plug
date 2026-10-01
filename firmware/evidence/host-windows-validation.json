@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "platform": "Windows MSVC x64",
+  "address_sanitizer": true,
+  "undefined_behavior_sanitizer": false,
+  "physical_hardware": false,
+  "passed": true,
+  "tests": [
+    {
+      "test": "test_policy",
+      "scenarios": 1,
+      "passed": true,
+      "executable": "test_policy.exe",
+      "sha256": "5cb434d582b99fd124096bd741645985aef664ba3758e33d21eb5a7f60b31f5a"
+    },
+    {
+      "test": "test_protocol",
+      "scenarios": 1,
+      "passed": true,
+      "executable": "test_protocol.exe",
+      "sha256": "e4f6a9e70d36fc68be2620ab61678594a01482320df9d2b741c65d098d658805"
+    },
+    {
+      "test": "test_feedback",
+      "scenarios": 1,
+      "passed": true,
+      "executable": "test_feedback.exe",
+      "sha256": "e9bee259a7337fe790bf744f3376fa326517b2e6a18d5e7fd90c8d113a1b2760"
+    },
+    {
+      "test": "test_storage",
+      "scenarios": 1,
+      "passed": true,
+      "executable": "test_storage.exe",
+      "sha256": "ef0e3d11bcc7427c8d1ed31d80a7143cdf57461f6e79eb467868867d7ee8e632"
+    },
+    {
+      "test": "test_calibration_execution",
+      "scenarios": 1,
+      "passed": true,
+      "executable": "test_calibration_execution.exe",
+      "sha256": "708153b7e676d7b9230467e70f4594ab3a76a88083f4611b1976d1229193b896"
+    },
+    {
+      "test": "test_startup",
+      "scenarios": 7,
+      "passed": true,
+      "executable": "test_startup.exe",
+      "sha256": "12a3c79bb9cdf5afc534396d22e897a34000db80fcec3d6dda14472dd369f053"
+    }
+  ]
+}

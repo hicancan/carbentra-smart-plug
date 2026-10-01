@@ -1,5 +1,5 @@
 {
-  "board_sha256": "81855516e2be510d5bfd49dfe893b80331724bd7b54d9b0b0839f470d19e1b20",
+  "board_sha256": "b1dc226d6c2ea3ae5d043b75abdf47471f6de8f79a4ecaf2ade52eda2b43abc7",
   "basis": "all-layer XY projection, conservative pad bounding rectangles; vias/NC pins included; copper-zone outlines included as completely filled conservative regions",
   "copper_items": 2822,
   "minimum_mm": 7.599999999999994,

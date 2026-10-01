@@ -97,8 +97,8 @@ y=bullet('测量完成边界','板上 TMP102 不代表已测得插套热点或�
 end()
 
 base('验证状态与真实完成程度','数字检查、工程审查和物理测试是不同证据，不能互相替代。')
-v=json.loads((R/'mechanical/validation.json').read_text())
-digital=json.loads((R/'release/digital_checks.json').read_text()) if (R/'release/digital_checks.json').exists() else {}
+v=json.loads((R/'mechanical/validation.json').read_text(encoding='utf-8'))
+digital=json.loads((R/'release/digital_checks.json').read_text(encoding='utf-8')) if (R/'release/digital_checks.json').exists() else {}
 y=690
 y=bullet('机械数字检查',f'当前机械检查记录包含 {v.get("parts",20)} 个零件。与 970 个电气导出实体的整合检查，仅发现 6 处预期端子导体接入。插入通道与参数重算均有独立记录；这些是数字几何检查。',y)
 y=bullet('电路与 PCB 检查','最终 ERC 为 0 错误、0 警告；几何 DRC 为 0 违规，低压部分无未连接项。仍有 9 处市电连接未布线。33 个电气元件的 104 个引脚网络已核对；计量子板和实际输出反馈尚未实现。',y)
@@ -109,5 +109,5 @@ end()
 
 base('文件使用与工程交接','保留原始设计、生成脚本和验证记录，使下一位设计者可以继续工作。')
 y=690
-for a,b in [('机械与装配','mechanical：FreeCAD 参数化源文件、STEP 装配与零件、STL、参数表和检查记录。修改参数后重新生成并执行检查。'),('电气与 PCB','electronics：KiCad 工程、原理图、PCB、物料清单、导出与检查。具体开放问题以模块 README 为准。'),('视觉与动画','visuals：Blender 场景、渲染图、六视图、动画和 GLB。动画与源场景使用一致装配，不能当成实际制造过程证明。'),('系统与策略','docs/system、tests/policy：架构、能力模型、遥测示例、验收与可执行策略参考。示例均不代表真实设备数据。'),('版本与校验','发布包保留 Git 历史的 bundle、文件清单与校验值。仓库未公开发布；修改后应新建提交并重新验证。'),('证据与引用','用户提供的参考图不作为器件内部证据。器件官方来源与选型限制见 electronics，平台核算与协议依据见 docs/system。')]:y=bullet(a,b,y)
+for a,b in [('机械与装配','mechanical：FreeCAD 参数化源文件、STEP 装配与零件、STL、参数表和检查记录。修改参数后重新生成并执行检查。'),('电气与 PCB','electronics：KiCad 工程、原理图、PCB、物料清单、导出与检查。具体开放问题以模块 README 为准。'),('视觉与动画','visuals：Blender 场景、渲染图、六视图、动画和 GLB。动画与源场景使用一致装配，不能当成实际制造过程证明。'),('系统与策略','docs/system、firmware/core、contracts：架构、能力模型、遥测示例、验收与可执行策略参考。示例均不代表真实设备数据。'),('版本与校验','发布包保留 Git 历史的 bundle、文件清单与校验值。仓库未公开发布；修改后应新建提交并重新验证。'),('证据与引用','用户提供的参考图不作为器件内部证据。器件官方来源与选型限制见 electronics，平台核算与协议依据见 docs/system。')]:y=bullet(a,b,y)
 end();C.save();print(TARGET)

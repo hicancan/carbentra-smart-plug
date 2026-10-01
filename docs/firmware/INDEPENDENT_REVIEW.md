@@ -1,5 +1,7 @@
 # Rev B 固件与边缘服务独立复核
 
+> 历史审查记录：对应2026-09-30源快照，不是本次classroom升级或共享Edge迁移后的当前通过结论。当前证据以firmware/validation.json为准。
+
 审查日期：2026-09-30 UTC。范围：`firmware/main`、`firmware/core` 与 `edge/service.py`。方法为源代码检查、主机纯函数测试和内存数据库反例测试；没有连接、烧录或操作真实硬件，没有部署 broker，也没有读取设备密钥。
 
 ## 结论

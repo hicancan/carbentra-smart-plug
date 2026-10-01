@@ -1,7 +1,8 @@
 #!/usr/bin/python3
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 """Reproducible engineering-development export; no fabrication-release implication."""
 import os,sys,json,hashlib
-BASE=os.path.dirname(os.path.abspath(__file__));sys.path.extend(['/usr/lib/freecad-python3/lib',BASE])
+BASE=os.path.dirname(os.path.abspath(__file__));sys.path.extend([FREECAD_LIB,BASE])
 import FreeCAD as A,Part,MeshPart,socket_b_features as m
 D=A.openDocument(BASE+'/CARBENTRA-P16-B-base-provisional.FCStd');objs=[o for o in D.Objects if hasattr(o,'PartKind')]
 for sub in ['meshes','parts']:os.makedirs(BASE+'/'+sub,exist_ok=True)

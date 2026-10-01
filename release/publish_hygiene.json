@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "objects_and_files_checked": 2083,
+  "objects_and_files_checked": 2496,
   "scope": "Known credential patterns only; matched values are never recorded",
   "findings": []
 }

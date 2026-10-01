@@ -30,7 +30,7 @@ The final main board has **101 electrical items plus four mounting footprints**.
 
 ## Verification and its boundary
 
-The canonical results are `final_drc.rpt`, `final_erc.rpt`, `final_pin_audit.json`, `final_isolation.json` and `final_source_graph.json` under `validation/`. Historical intermediate results are under `validation/history/`.
+The canonical results are `final_drc.rpt`, `final_erc.rpt`, `final_pin_audit.json`, `final_isolation.json` and `final_source_graph.json` under `validation/`. Historical intermediate results are retained in Git; only current canonical reports are kept in the working tree.
 
 - Native DRC: zero violations, zero unconnected items, zero footprint errors
 - ERC: zero errors and zero warnings

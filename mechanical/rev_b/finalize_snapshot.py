@@ -2,7 +2,7 @@
 """Bind the bounded engineering-review snapshot to its measured evidence."""
 import json,hashlib,pathlib,datetime
 B=pathlib.Path(__file__).resolve().parent;R=B.parents[1]
-def read(n):return json.loads((B/n).read_text())
+def read(n):return json.loads((B/n).read_text(encoding='utf-8'))
 fit=read('integrated_fit_report.json');contact=read('contact_engagement_report.json');conn=read('polarity_connectivity_report.json');ins=read('insulation_domain_report.json');rt=read('export_roundtrip_report.json');sh=read('shutter_kinematic_report.json');man=read('parts_manifest.json')
 assert fit['mechanical_all_valid'] and fit['mechanical_all_single_solids']
 assert not [r for r in fit['mechanical_intersections'] if not r['intentional_interface']]
@@ -36,9 +36,9 @@ This freezes the bounded digital review configuration. It is not a fabrication, 
 
 The PCB bodies and several connector/lead geometries are nominal/max envelopes, not complete vendor internal CAD. The RF reservation allocates routing space; it does not pretend to be a purchased component or an exact cable centerline. Exterior/main-current packaging stayed fixed during the final checks.
 '''
-(B/'VALIDATION_SUMMARY.md').write_text(text)
+(B/'VALIDATION_SUMMARY.md').write_text(text, encoding='utf-8', newline='\n')
 files=[p for p in B.rglob('*') if p.is_file() and p.suffix in ['.py','.json','.md','.csv','.FCStd','.step','.stl','.pdf','.svg'] and '__pycache__' not in p.parts and p.name!='freeze_manifest.json']
 extra=[R/'electronics/rev_b/integrated/integrated.kicad_pcb',R/'electronics/rev_b/integrated/exports/integrated_assembly.obj',R/'electronics/rev_b/integrated/exports/remote_head_assembled.obj']
-rows=[{'path':str(p.relative_to(R)),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'bytes':p.stat().st_size} for p in sorted(files+extra)]
+rows=[{'path':p.relative_to(R).as_posix(),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'bytes':p.stat().st_size} for p in sorted(files+extra)]
 out={'brand':'CARBENTRA','revision':'CARBENTRA-P16-EVT-B','snapshot_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'Bounded digital engineering review configuration; not a manufacturing/energization/certification release','physical_mechanical_parts':71,'nonphysical_reservations':1,'combined_physical_objects':234,'all_defined_digital_checks_pass':True,'files':rows}
-(B/'freeze_manifest.json').write_text(json.dumps(out,indent=2));(B/'checksums.sha256').write_text(''.join(x['sha256']+'  '+x['path']+'\n' for x in rows));print(json.dumps({k:v for k,v in out.items() if k!='files'},indent=2))
+(B/'freeze_manifest.json').write_text(json.dumps(out,indent=2), encoding='utf-8', newline='\n');(B/'checksums.sha256').write_text(''.join(x['sha256']+'  '+x['path']+'\n' for x in rows), encoding='utf-8', newline='\n');print(json.dumps({k:v for k,v in out.items() if k!='files'},indent=2))

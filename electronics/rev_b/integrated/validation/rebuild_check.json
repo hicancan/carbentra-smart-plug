@@ -1,6 +1,7 @@
 {
   "status": "PASS",
-  "method": "Fresh copied source tree rebuilt six schematic sheets, placement and saved copper recipe; reran native ERC/DRC, pin/net audit, projected-domain negative controls, and the independent rear-termination 3D check using copied mechanical native geometry.",
+  "method": "Windows KiCad native rebuilt schematic ERC, numbered net/pad checks and DRC; separate retained/rebuilt physical signature comparison",
+  "kicad_version": "10.0.5",
   "native_DRC": {
     "violations": 0,
     "unconnected": 0,
@@ -13,11 +14,14 @@
   },
   "main_numbered_pad_keys": 321,
   "recipe_sha256": "9b4dcdac04286d41399bf56e140ea3b86cc6bc16784abe4fe52750a41e2e16bb",
-  "rebuild_output_board_sha256": "f6b697c5e8793dec317a4b4b24ed0717d64a79e81374f51c3e63fff38f82eed8",
-  "rear_termination_3D": {
-    "report": "rear_termination.json",
-    "minimum_mm": 8.516644687799777,
-    "target_mm": 8.4,
-    "scope": "Rear L/N blades and bare input-link starts versus isolated pads, tracks, vias and conservative plane outline; full assembly audit is separate"
-  }
+  "rebuild_output_board_sha256": "6248d623c0d15efe6a5a330ead2d32531fc141d5bc3a94615cd31b6660574250",
+  "retained_board_sha256": "4d7e9873a8ee5407c3d85fe8441672f0e26eebc90ed07c9dd3c443b68b161660",
+  "physical_signature_comparison": {
+    "layers": true,
+    "footprints": true,
+    "copper": true,
+    "zones": true
+  },
+  "fabrication_release": "HOLD",
+  "energization_release": "HOLD"
 }

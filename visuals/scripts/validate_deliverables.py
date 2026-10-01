@@ -13,12 +13,12 @@ for n in names:
   assert min(item['pixels'])>=2000,n
  entries.append(item)
 b=(V/'exports/carbentra_assembly.glb').read_bytes();magic,ver,total=struct.unpack_from('<III',b);assert magic==0x46546c67 and ver==2 and total==len(b)
-l,t=struct.unpack_from('<II',b,12);g=json.loads(b[20:20+l]);nodes={o.get('name') for o in g['nodes']};mech=json.loads(Path(os.environ.get('CARBENTRA_MECHANICAL_DIR',str(R/'mechanical')),'parts_manifest.json').read_text());assert all(o['id'] in nodes for o in mech['parts'] if o.get('render_default',True) is not False and o.get('geometry_role')!='clearance_envelope')
+l,t=struct.unpack_from('<II',b,12);g=json.loads(b[20:20+l]);nodes={o.get('name') for o in g['nodes']};mech=json.loads(Path(os.environ.get('CARBENTRA_MECHANICAL_DIR',str(R/'mechanical')),'parts_manifest.json').read_text(encoding='utf-8'));assert all(o['id'] in nodes for o in mech['parts'] if o.get('render_default',True) is not False and o.get('geometry_role')!='clearance_envelope')
 report={'status':'Engineering development; verification pending','deliverables':entries,'glb_nodes':len(g['nodes']),'glb_meshes':len(g['meshes']),'all_mechanical_source_ids_present':True,'video':json.loads(subprocess.check_output(['ffprobe','-v','error','-show_entries','stream=width,height,r_frame_rate,nb_frames:format=duration','-of','json',str(V/'animation/carbentra_exploded.mp4')]))}
 stream=report['video']['streams'][0];assert stream['width']>=1080 and stream['height']>=1080 and stream['r_frame_rate']=='24/1';assert int(stream['nb_frames'])==int(os.environ.get('CARBENTRA_ANIMATION_FRAMES','144'))
-iv=json.loads((V/'exports/import_validation.json').read_text());assert iv['source_sha256']['mechanical_manifest']==hashlib.sha256(Path(iv['mechanical_source']).read_bytes()).hexdigest();assert iv['source_sha256']['electronics_obj']==hashlib.sha256(Path(iv['electronic_source']).read_bytes()).hexdigest()
+iv=json.loads((V/'exports/import_validation.json').read_text(encoding='utf-8'));assert iv['source_sha256']['mechanical_manifest']==hashlib.sha256(Path(iv['mechanical_source']).read_bytes()).hexdigest();assert iv['source_sha256']['electronics_obj']==hashlib.sha256(Path(iv['electronic_source']).read_bytes()).hexdigest()
 for item in iv.get('electronic_inputs',[]):assert item['sha256']==hashlib.sha256(Path(item['file']).read_bytes()).hexdigest()
 report['current_source_hashes_match']=True
 report['nonphysical_envelopes_excluded']=iv.get('excluded_nonphysical_envelopes',[])
-report['light_model_validation']=json.loads((V/'exports/light_glb_ready.json').read_text())
-(V/'exports/deliverables_validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print(json.dumps({k:v for k,v in report.items() if k!='deliverables'},ensure_ascii=False,indent=2))
+report['light_model_validation']=json.loads((V/'exports/light_glb_ready.json').read_text(encoding='utf-8'))
+(V/'exports/deliverables_validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2), encoding='utf-8', newline='\n');print(json.dumps({k:v for k,v in report.items() if k!='deliverables'},ensure_ascii=False,indent=2))

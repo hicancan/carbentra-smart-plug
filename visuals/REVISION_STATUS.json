@@ -1,8 +1,7 @@
 {
   "current_render_revision": "CARBENTRA-P16-EVT-B",
   "status": "Rev B is the canonical current visual and digital-engineering baseline",
-  "archive_directory": "revA_baseline",
-  "archive_status": "Rev A editable sources are retained for engineering history; stale pre-brand-consolidation raster exports are not canonical",
   "animation_status": "Rev B 144-frame, 24 fps exploded/reassembly animation is the current deliverable",
-  "brand_system": "碳迹未来 / CARBENTRA / CARBENTRA Plug"
+  "brand_system": "碳迹未来 / CARBENTRA / CARBENTRA Plug",
+  "history_source": "Git history; no duplicated Rev A working-tree archive"
 }

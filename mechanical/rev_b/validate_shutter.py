@@ -1,7 +1,8 @@
 #!/usr/bin/python3
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 """Digital travel/contact checks, not a child-safety or durability certification."""
 import os,sys,json
-B=os.path.dirname(os.path.abspath(__file__));sys.path.extend(['/usr/lib/freecad-python3/lib',B])
+B=os.path.dirname(os.path.abspath(__file__));sys.path.extend([FREECAD_LIB,B])
 import socket_b_features as m
 moving=['ShutterSlider','Pawl_L','Pawl_N','PawlSpring_L','PawlSpring_N','ShutterReturnSpring']
 static=['ShutterGuide','FrontLid','Carrier']

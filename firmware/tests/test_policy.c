@@ -49,7 +49,27 @@ int main(void){
  reset();c.action=CARBENTRA_HOLD;p.approved=false;s.commissioned=false;EXPECT(CARBENTRA_ACCEPTED);
  reset();s.desired_on=false;c.action=CARBENTRA_RESTORE;EXPECT(CARBENTRA_ACCEPTED);
  reset();s.desired_on=false;s.changed_ms=499000;c.action=CARBENTRA_RESTORE;EXPECT(CARBENTRA_MIN_DWELL);
+ /* Unique cases retained from the removed unused Python policy copy. */
+ reset();s.desired_on=false;c.action=CARBENTRA_RESTORE;x.online=false;EXPECT(CARBENTRA_OFFLINE_HOLD);assert(!s.desired_on);
+ reset();d=carbentra_evaluate(&s,&p,NULL,&x);assert(d.status==CARBENTRA_INVALID&&!d.actuate&&s.desired_on);tests++;
+ reset();d=carbentra_evaluate(&s,&p,&c,&x);carbentra_commit(&s,&c,&x,d);uint64_t changed=s.changed_ms;x.wall_lower_s=x.wall_upper_s=1100;EXPECT(CARBENTRA_DUPLICATE);assert(s.changed_ms==changed);
+ reset();c.action=(carbentra_action)-1;EXPECT(CARBENTRA_INVALID);
+ reset();x.online=false;d=carbentra_evaluate(&s,&p,&c,&x);assert(d.status==CARBENTRA_OFFLINE_HOLD);x.online=true;x.wall_lower_s=x.wall_upper_s=1100;EXPECT(CARBENTRA_BAD_WINDOW);
+ reset();s.manual_hold_until_ms=x.mono_ms+1;EXPECT(CARBENTRA_MANUAL_HOLD);x.mono_ms++;EXPECT(CARBENTRA_ACCEPTED);
+ reset();s.maintenance=true;EXPECT(CARBENTRA_MAINTENANCE);
+ reset();s.desired_on=false;x.online=false;x.authenticated=false;x.clock_trusted=false;
+ d=carbentra_evaluate_local(&s,&p,true,&x);assert(d.status==CARBENTRA_ACCEPTED&&d.target_on);carbentra_commit_local(&s,&x,d);assert(s.desired_on&&s.manual_hold_until_ms==x.mono_ms+CARBENTRA_MANUAL_HOLD_MS);
+ reset();s.commissioned=false;d=carbentra_evaluate_local(&s,&p,true,&x);assert(d.status==CARBENTRA_NOT_COMMISSIONED);
+ reset();p.critical=true;d=carbentra_evaluate_local(&s,&p,true,&x);assert(d.status==CARBENTRA_CRITICAL_LOAD);
+ reset();s.maintenance=true;d=carbentra_evaluate_local(&s,&p,true,&x);assert(d.status==CARBENTRA_MAINTENANCE);
+ reset();x.observation_valid=false;d=carbentra_evaluate_local(&s,&p,true,&x);assert(d.status==CARBENTRA_STALE_DATA);
+ reset();s.desired_on=false;s.changed_ms=x.mono_ms;d=carbentra_evaluate_local(&s,&p,true,&x);assert(d.status==CARBENTRA_MIN_DWELL);
+ reset();s.commissioned=false;s.maintenance=true;p.critical=true;x.observation_valid=false;
+ d=carbentra_evaluate_local(&s,&p,false,&x);assert(d.status==CARBENTRA_ACCEPTED&&!d.target_on);carbentra_commit_local(&s,&x,d);assert(!s.desired_on);
+ reset();x.local_trip=true;d=carbentra_evaluate_local(&s,&p,true,&x);assert(d.latch_fault&&!d.target_on);
+ carbentra_button button={0};assert(!carbentra_button_press(&button,true,0));assert(!carbentra_button_press(&button,true,1000));assert(!carbentra_button_press(&button,false,1001));assert(!carbentra_button_press(&button,false,1051));assert(!carbentra_button_press(&button,true,1100));assert(!carbentra_button_press(&button,true,1149));assert(carbentra_button_press(&button,true,1150));assert(!carbentra_button_press(&button,true,2000));
  /* randomized invalid/fault property: a trip never requests on */
  for(int i=0;i<10000;i++){reset();x.local_trip=true;c.action=(carbentra_action)(i%5);x.online=i%2;d=carbentra_evaluate(&s,&p,&c,&x);assert(!d.target_on&&d.latch_fault);}
+ puts("PASS local input: commissioning/load/feedback/dwell guards, offline OFF, debounce, manual hold and maintenance");
  printf("PASS %d policy cases and 10000 local-trip invariants\n",tests);return 0;
 }

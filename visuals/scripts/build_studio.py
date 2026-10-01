@@ -42,8 +42,8 @@ M['lightpipe']=mat('15 • Optical lightpipe body',(.22,.65,.50),rough=.18,trans
 M['wirebrown']=mat('13 • L conductor jacket',(.18,.05,.018),rough=.38);M['wireblue']=mat('14 • N conductor jacket',(.012,.08,.28),rough=.38)
 M['ceramic']=mat('12 • Ceramic packages',(.30,.17,.075),rough=.4)
 parts=[]; meta={}; electronics=[]
-params=json.loads((MECH/'design_parameters.json').read_text()); front_z=params['enclosure']['depth']/1000
-(OUT/'exports/render_context.json').write_text(json.dumps({'revision':params.get('revision','Engineering development'),'enclosure_mm':params['enclosure'],'source_root':str(ROOT),'status':'Engineering development; verification pending','annotation_language':os.environ.get('CARBENTRA_LABEL_LANGUAGE','zh')},indent=2))
+params=json.loads((MECH/'design_parameters.json').read_text(encoding='utf-8')); front_z=params['enclosure']['depth']/1000
+(OUT/'exports/render_context.json').write_text(json.dumps({'revision':params.get('revision','Engineering development'),'enclosure_mm':params['enclosure'],'source_root':str(ROOT),'status':'Engineering development; verification pending','annotation_language':os.environ.get('CARBENTRA_LABEL_LANGUAGE','zh')},indent=2), encoding='utf-8', newline='\n')
 STAGE_SCALE=max(params['enclosure']['width']/88,params['enclosure']['height']/88,(params['enclosure']['depth']+20)/75)
 STAGE_CENTER=(front_z-.02)/2
 def stage_point(p):return Vector((p[0]*STAGE_SCALE,p[1]*STAGE_SCALE,(p[2]-.0175)*STAGE_SCALE+STAGE_CENTER))
@@ -75,7 +75,7 @@ def material_for(n):
 def import_stl(path,name):
  bpy.ops.wm.stl_import(filepath=str(path));o=bpy.context.object;o.name=name;o.scale=(.001,)*3;bpy.ops.object.transform_apply(location=False,rotation=False,scale=True);bpy.ops.object.shade_smooth_by_angle(angle=math.radians(35));return o
 mf=MECH/'parts_manifest.json'
-raw=json.loads(mf.read_text()) if mf.exists() else {}
+raw=json.loads(mf.read_text(encoding='utf-8')) if mf.exists() else {}
 entries=raw.get('parts',[]) if isinstance(raw,dict) else raw
 for e in entries:meta[e.get('id',e.get('name',''))]=e
 if not entries:raise RuntimeError('Mechanical manifest required')
@@ -119,7 +119,7 @@ for prefix in ('MainB_','HeadB_'):
  pts=[o.matrix_world@v.co for o in electronics if o.type=='MESH' and o.name.startswith(prefix) for v in o.data.vertices]
  if pts:validation['electronic_aggregate_bounds_mm'][prefix]=[1000*min(v[i] for v in pts) for i in range(3)]+[1000*max(v[i] for v in pts) for i in range(3)]
 if os.environ.get('CARBENTRA_EXPECTED_ASSEMBLY_BOUNDS'):
- expected=json.loads(Path(os.environ['CARBENTRA_EXPECTED_ASSEMBLY_BOUNDS']).read_text())
+ expected=json.loads(Path(os.environ['CARBENTRA_EXPECTED_ASSEMBLY_BOUNDS']).read_text(encoding='utf-8'))
  expected_groups=expected.get('electronic_aggregate_bounds_mm',{prefix:expected[prefix.rstrip('_')+'_aggregate'] for prefix in ('MainB_','HeadB_') if prefix.rstrip('_')+'_aggregate' in expected})
  for prefix,bb in expected_groups.items():
   actual=validation['electronic_aggregate_bounds_mm'][prefix];error=max(abs(a-b) for a,b in zip(actual,bb))
@@ -128,8 +128,8 @@ if os.environ.get('CARBENTRA_EXPECTED_ASSEMBLY_BOUNDS'):
 validation['electronic_inputs']=[{'file':str(p),'source_units':'mm','source_frame':'board-local' if z else 'assembly-common-frame','already_transformed':not bool(z),'applied_source_to_assembly_mm':[[1,0,0,0],[0,1,0,0],[0,0,1,z],[0,0,0,1]],'blender_unit_scale':0.001,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p,z in pcb_inputs]
 if os.environ.get('CARBENTRA_HEAD_OBJ'):
  sidecar=Path(os.environ['CARBENTRA_HEAD_OBJ']).with_suffix('.json')
- if sidecar.exists():validation['head_pretransform_provenance']=json.loads(sidecar.read_text())
-(OUT/'exports/import_validation.json').write_text(json.dumps(validation,indent=2))
+ if sidecar.exists():validation['head_pretransform_provenance']=json.loads(sidecar.read_text(encoding='utf-8'))
+(OUT/'exports/import_validation.json').write_text(json.dumps(validation,indent=2), encoding='utf-8', newline='\n')
 
 FONT_FILE=ROOT/'assets/fonts/NotoSansSC-Regular.ttf'
 font=bpy.data.fonts.load(str(FONT_FILE))
@@ -194,7 +194,7 @@ def render(name,size=(2400,2000),samples=256):
   if o.type=='MESH':
    center=sum((o.matrix_world @ Vector(c) for c in o.bound_box),Vector())/8
    q=world_to_camera_view(scene,cam,center);anchors[o.name]=[q.x*size[0],(1-q.y)*size[1]]
- (OUT/'renders'/f'{name}_anchors.json').write_text(json.dumps(anchors,indent=2))
+ (OUT/'renders'/f'{name}_anchors.json').write_text(json.dumps(anchors,indent=2), encoding='utf-8', newline='\n')
 
 # Explicit presentation layers are derived from the mechanical grouping. Offsets do not alter assembled geometry.
 spacing={-40:-40,-35:-35,-25:-25,-24:-24,0:0,8:8,10:10,12:12,22:40,25:45,36:68,37:55,46:62,62:80,64:80}
@@ -210,7 +210,7 @@ def explosion_vector_mm(o):
  return (0,0,z)
 def explode(factor=1):
  for o in parts:o.location=basepos[o.name]+Vector(explosion_vector_mm(o))*.001*factor
-(OUT/'exports/visual_explosion_offsets.json').write_text(json.dumps({'status':'Display-only inspection layout; not a manufacturing assembly procedure','offsets_mm':{o.name:explosion_vector_mm(o) for o in parts}},indent=2))
+(OUT/'exports/visual_explosion_offsets.json').write_text(json.dumps({'status':'Display-only inspection layout; not a manufacturing assembly procedure','offsets_mm':{o.name:explosion_vector_mm(o) for o in parts}},indent=2), encoding='utf-8', newline='\n')
 
 def save_export():
  reset();scene.render.film_transparent=False;scene.render.engine='CYCLES';scene.view_settings.view_transform='AgX';scene.view_settings.look='AgX - Medium High Contrast';scene.view_settings.exposure=-3.5;camera((.145,-.185,.215));
@@ -315,7 +315,7 @@ if MODE in ('animation','all'):
  for frame in [1,18,40,60,84,105,126,144]:
   scene.frame_set(frame);qs=[world_to_camera_view(scene,cam,o.matrix_world@Vector(c)) for o in parts for c in o.bound_box]
   framing[str(frame)]={'min_xy':[min(q[i] for q in qs) for i in range(2)],'max_xy':[max(q[i] for q in qs) for i in range(2)]}
- (OUT/'animation/framing_validation.json').write_text(json.dumps(framing,indent=2))
+ (OUT/'animation/framing_validation.json').write_text(json.dumps(framing,indent=2), encoding='utf-8', newline='\n')
  if any(min(v['min_xy'])<.025 or max(v['max_xy'])>.975 for v in framing.values()):raise RuntimeError('Animation framing guard: part would approach edge')
  frames=OUT/'animation/frames';frames.mkdir(parents=True,exist_ok=True)
  scene.render.image_settings.file_format='PNG';scene.render.filepath=str(frames/'frame_')

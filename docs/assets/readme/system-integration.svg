@@ -14,11 +14,11 @@
 
   <rect x="520" y="145" width="560" height="120" class="box"/>
   <text x="800" y="195" text-anchor="middle" class="t s">CARBENTRA Cloud</text>
-  <text x="800" y="232" text-anchor="middle" class="t m">forecast · carbon-aware optimization · global dispatch</text>
+  <text x="800" y="232" text-anchor="middle" class="t m">forecast · constraint evaluation · global dispatch</text>
 
   <rect x="520" y="330" width="560" height="120" class="box"/>
   <text x="800" y="380" text-anchor="middle" class="t s">CARBENTRA Edge</text>
-  <text x="800" y="417" text-anchor="middle" class="t m">aggregation · local coordination · policy filtering · offline continuity</text>
+  <text x="800" y="417" text-anchor="middle" class="t m">wire validation · durable receipts · retry outbox · bounded transport</text>
 
   <rect x="90" y="535" width="370" height="120" class="focus"/>
   <text x="275" y="585" text-anchor="middle" class="t s">CARBENTRA Plug</text>

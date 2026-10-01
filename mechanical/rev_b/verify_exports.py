@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 import os,sys,json,hashlib
-B=os.path.dirname(os.path.abspath(__file__));sys.path.extend(['/usr/lib/freecad-python3/lib',B]);import FreeCAD as A,Part,socket_b_features
+B=os.path.dirname(os.path.abspath(__file__));sys.path.extend([FREECAD_LIB,B]);import FreeCAD as A,Part,socket_b_features
 def equivalent(a,b):
  aa=a.split();bb=b.split()
  if len(aa)!=len(bb):return False

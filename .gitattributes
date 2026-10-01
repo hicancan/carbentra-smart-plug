@@ -1,0 +1,13 @@
+* text=auto eol=lf
+*.pdf binary
+*.FCStd binary
+*.blend binary
+*.glb binary
+*.png binary
+*.webp binary
+*.gif binary
+*.jpg binary
+*.mp4 binary
+*.ttf binary
+*.bin binary
+*.stl binary

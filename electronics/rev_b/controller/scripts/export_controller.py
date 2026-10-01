@@ -1,10 +1,11 @@
 #!/usr/bin/python3
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 import sys,json
 from pathlib import Path
-sys.path.append('/usr/lib/freecad/lib')
+sys.path.append(FREECAD_LIB)
 import FreeCAD as A,Part,Mesh
 import pcbnew as p
-R=Path(__file__).resolve().parents[1]; b=p.LoadBoard(str(R/'carbentra.kicad_pcb')); cs={c['ref']:c for c in json.loads((R/'circuit_manifest.json').read_text())}
+R=Path(__file__).resolve().parents[1]; b=p.LoadBoard(str(R/'carbentra.kicad_pcb')); cs={c['ref']:c for c in json.loads((R/'circuit_manifest.json').read_text(encoding='utf-8'))}
 doc=A.newDocument('CARBENTRA_Controller_REV_B'); objects=[];manifest=[]
 def obj(name,shape,color):
  o=doc.addObject('Part::Feature','ControllerB_'+name);o.Label=name;o.Shape=shape;objects.append(o);return o
@@ -53,5 +54,5 @@ with (R/'exports/pcb_assembly.obj').open('w') as f:
   for v in vertices:f.write(f'v {v.x:.5f} {v.y:.5f} {v.z:.5f}\n')
   for tri in faces:f.write('f '+' '.join(str(i+offset) for i in tri)+'\n')
   offset+=len(vertices)
-(R/'exports/component_envelopes.json').write_text(json.dumps({'coordinate_system':'millimetres; common mechanics frame; PCB lower-left(-36,-34,0), top1.6; y positive up','status':'REV B DEVELOPMENT / FABRICATION HOLD','components':manifest},indent=2))
+(R/'exports/component_envelopes.json').write_text(json.dumps({'coordinate_system':'millimetres; common mechanics frame; PCB lower-left(-36,-34,0), top1.6; y positive up','status':'REV B DEVELOPMENT / FABRICATION HOLD','components':manifest},indent=2), encoding='utf-8', newline='\n')
 print('Exported',len(objects),'solids,',len(manifest),'package envelopes')

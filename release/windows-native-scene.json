@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "source": "carbentra_studio.blend",
+  "source_sha256": "2b6195065707406fb6113a93c1768ef0ec3d249e171bbf271e276d8a8faaf557",
+  "blender": "5.2.2 LTS",
+  "backend": "OPTIX",
+  "gpu": [
+    "NVIDIA GeForce RTX 5060 Laptop GPU"
+  ],
+  "product_meshes": 3223,
+  "render": "docs/WINDOWS_DEVELOPMENT.assets/native-scene-gpu.png",
+  "export": "native-scene-roundtrip.glb",
+  "export_bytes": 72876160,
+  "scope": "Actual retained native scene import, GPU render and GLB export; no physical qualification",
+  "export_sha256": "2d2eac7ef4a81547e8f2bfef4b905473d6a2ec271bd9132c7fba427d7e809c41",
+  "export_retention": "Transient roundtrip verification output; canonical authored assets remain under visuals/rev_b",
+  "visual_inspection": "Product body, seams, indicator openings and shadows visible; low-sample proof frame, not marketing render"
+}

@@ -1,5 +1,6 @@
 #include "carbentra_command_json.h"
 #include "cJSON.h"
+#include "carbentra_json.h"
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
@@ -15,13 +16,12 @@ static bool number_s(cJSON*j,const char*k,int64_t*out){
  *out=(int64_t)v->valuedouble;return true;
 }
 bool carbentra_parse_command(const char *buf,carbentra_command*out){
- if(!buf || !out || strlen(buf)>1024 || strstr(buf,"\\u0000"))return false;
- unsigned depth=0; for(const char*z=buf;*z;z++){if(*z=='{'||*z=='[')depth++;} if(depth>16)return false;
- cJSON*j=cJSON_ParseWithLengthOpts(buf,strlen(buf)+1,NULL,true);if(!j)return false;
+ if(!out)return false;
+ cJSON*j=carbentra_json_object(buf,1024,7);if(!j)return false;
  bool ok=cJSON_IsObject(j);*out=(carbentra_command){0};
  ok=ok&&copy_id(j,"id",out->id)&&copy_id(j,"device_id",out->device_id)&&copy_id(j,"profile_id",out->profile_id)&&number_s(j,"issued_s",&out->issued_s)&&number_s(j,"expires_s",&out->expires_s);
  cJSON*s=cJSON_GetObjectItemCaseSensitive(j,"seq"),*a=cJSON_GetObjectItemCaseSensitive(j,"action");
- if(!cJSON_IsString(s)||!s->valuestring||!s->valuestring[0]||strlen(s->valuestring)>20)ok=false;
+ if(!cJSON_IsString(s)||!s->valuestring||!s->valuestring[0]||s->valuestring[0]=='0'||strlen(s->valuestring)>20)ok=false;
  else {for(const char*p=s->valuestring;*p;p++)if(*p<'0'||*p>'9')ok=false;
   char*end=NULL;errno=0;out->seq=strtoull(s->valuestring,&end,10);if(errno||!end||*end||!out->seq)ok=false;}
  if(!cJSON_IsString(a)||!a->valuestring)ok=false;

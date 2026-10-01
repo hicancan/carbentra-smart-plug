@@ -1,6 +1,6 @@
 # CARBENTRA visual engineering
 
-This directory is the visual layer of **碳迹未来 · CARBENTRA**. The canonical current assets are under [`rev_b/`](rev_b/); Rev A is retained only as an engineering-history baseline.
+This directory is the visual layer of **碳迹未来 · CARBENTRA**. The canonical current assets are under [`rev_b/`](rev_b/); historical revisions remain in Git rather than a duplicate working-tree archive.
 
 All product geometry is derived from the shared mechanical and ECAD sources in their common millimetre coordinate frame. Blender converts those engineering exports to presentation units; it does not substitute an unrelated shell or AI-generated product geometry.
 
@@ -31,7 +31,7 @@ The Blender pipeline supports `CARBENTRA_USE_GPU=1` for a local CUDA/OptiX rende
 
 ## Revision policy
 
-[`revA_baseline/`](revA_baseline/) is kept to document engineering evolution. It must not be mixed with Rev B dimensions, PCB placement, validation results or release status. Generated archive media that still carried obsolete branding is intentionally excluded from the current canonical set; Git history remains the provenance record.
+Historical Rev A sources are recoverable from Git (including pre-cleanup commit 763972e), rather than maintained as a second working-tree pipeline. Canonical Rev B generators, scene dependencies and freeze records do not reference the removed archive. Never mix historical dimensions, placement or check results with current release evidence.
 
 ## Engineering boundary
 

@@ -1,13 +1,14 @@
 #!/usr/bin/python3
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 """Simplified PCB/package envelopes for integration; not vendor detailed solids."""
 import json,sys,math
 from pathlib import Path
 import pcbnew as p
-sys.path.append('/usr/lib/freecad/lib')
+sys.path.append(FREECAD_LIB)
 import FreeCAD as A,Part
 R=Path(__file__).resolve().parents[1];cases=[(R,'thermal_controller',45,35),(R,'thermal_sensor',12,12),(R.parent/'feedback','output_feedback',35,25)]
 for folder,stem,W,H in cases:
- mf=json.loads((folder/'pin_net_manifest.json').read_text());components={c['ref']:c for c in mf['components']};b=p.LoadBoard(str(folder/(stem+'.kicad_pcb')));doc=A.newDocument(stem);objects=[];data=[]
+ mf=json.loads((folder/'pin_net_manifest.json').read_text(encoding='utf-8'));components={c['ref']:c for c in mf['components']};b=p.LoadBoard(str(folder/(stem+'.kicad_pcb')));doc=A.newDocument(stem);objects=[];data=[]
  def add(name,shape):
   o=doc.addObject('Part::Feature',name);o.Label=name;o.Shape=shape;objects.append(o);return o
  shape=Part.makeBox(W,H,1.6,A.Vector(0,0,0))
@@ -34,4 +35,4 @@ for folder,stem,W,H in cases:
  # Trace geometry intentionally omitted: routing is in KiCad, not represented by fake lines.
  doc.recompute();Part.export(objects,str(folder/'exports'/(stem+'_envelope.step')));doc.saveAs(str(folder/'exports'/(stem+'_envelope.FCStd')))
  out={'status':'DEVELOPMENT / HOLD','coordinate_system':'Local mm, board lower-left=(0,0,0), top copper z=1.6, +y upward (mirrored KiCad y)','board_mm':[W,H,1.6],'height_reservation_above_PCB_mm':2 if stem=='thermal_sensor' else 9,'height_reservation_below_PCB_mm':.1 if stem=='thermal_sensor' else 3,'mating_harness_actuator_and_insulation_not_included':True,'components':data}
- (folder/'exports'/(stem+'_envelopes.json')).write_text(json.dumps(out,indent=2));A.closeDocument(doc.Name);print(stem,len(data),'component envelopes')
+ (folder/'exports'/(stem+'_envelopes.json')).write_text(json.dumps(out,indent=2), encoding='utf-8', newline='\n');A.closeDocument(doc.Name);print(stem,len(data),'component envelopes')

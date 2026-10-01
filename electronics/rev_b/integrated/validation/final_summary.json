@@ -1,14 +1,14 @@
 {
   "status": "DIGITAL CHECKS PASS / DEVELOPMENT HOLD",
-  "generated_utc": "2026-09-30T12:01:01.424355+00:00",
+  "generated_utc": "2026-10-01T11:57:35.115844+00:00",
   "board_sha256": "4d7e9873a8ee5407c3d85fe8441672f0e26eebc90ed07c9dd3c443b68b161660",
   "rules_sha256": "11144295aff979f5f97726d49437094a17201b2f0f324db7bca6da21a7a276a0",
   "schematic_files_sha256": {
-    "integrated.kicad_sch": "841782003493d17101422e651f251dc6aa98c9142d778b4e310fc2fc656ae532",
+    "integrated.kicad_sch": "7dc0fcb395801d5f6ac22c4777efd34fc6b91e32d14cebaf69e9a85ba4b42744",
     "integrated_assembly.kicad_sch": "8d70c062c6873e2ca9b980f5c69169dac8f411cce44aee2997f146242cf13adf",
     "integrated_controller.kicad_sch": "c474bcbdca4896b058759f779ebba08a704f4543de996b96d6d625dfee6f62f5",
     "integrated_feedback.kicad_sch": "94de99781f408c4038f8f4ecfcc7280f97a5fce837df0cd551ac9cc33ebdf5c5",
-    "integrated_meter.kicad_sch": "5e735097e1448d56c75ec46196912366e17f9fae5b13fda493b75b1ec9164892",
+    "integrated_meter.kicad_sch": "471d1f1c53fb9173b95b5405ad81ee2c7d25d250e9bcb65766580874622740a2",
     "integrated_thermal.kicad_sch": "83b12289d65c14bfb8d201804e8df82ee629f77acbe5004c8fb4c017b5182186"
   },
   "main_electrical_items": 101,
@@ -43,8 +43,8 @@
     "independent_checker_rejects_shifted_hot_pad": true
   },
   "authoritative_reports": [
-    "final_drc.rpt",
-    "final_erc.rpt",
+    "final_drc.json",
+    "final_erc.json",
     "final_pin_audit.json",
     "final_isolation.json",
     "final_source_graph.json",

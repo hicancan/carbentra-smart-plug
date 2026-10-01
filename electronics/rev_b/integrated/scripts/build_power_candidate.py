@@ -31,4 +31,4 @@ for x in [36.8,37.5,38.2,38.9,39.6,40.3]:
  for y in [59.65]:
   v=p.PCB_VIA(b);v.SetPosition(p.VECTOR2I(p.FromMM(x),p.FromMM(y)));v.SetWidth(p.F_Cu,p.FromMM(.8));v.SetDrill(p.FromMM(.4));v.SetViaType(p.VIATYPE_THROUGH);v.SetLayerPair(p.F_Cu,p.B_Cu);v.SetNetCode(b.FindNet('HOT_GND').GetNetCode());b.Add(v);changes.append({'action':'add_via','net':'HOT_GND','at':[x,y],'diameter_mm':.8,'drill_mm':.4,'layers':['F.Cu','B.Cu']})
 p.SaveBoard(str(R/'integrated_power_candidate.kicad_pcb'),b)
-(R/'validation/power_candidate_patch.json').write_text(json.dumps({'source_master_sha256':hashlib.sha256(raw).hexdigest(),'scope':'Separate candidate only; no footprint moves and no removed existing paths','changes':changes},indent=2));print('Candidate created, changes',len(changes))
+(R/'validation/power_candidate_patch.json').write_text(json.dumps({'source_master_sha256':hashlib.sha256(raw).hexdigest(),'scope':'Separate candidate only; no footprint moves and no removed existing paths','changes':changes},indent=2), encoding='utf-8', newline='\n');print('Candidate created, changes',len(changes))

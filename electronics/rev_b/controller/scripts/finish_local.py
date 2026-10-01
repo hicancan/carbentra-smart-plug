@@ -1,5 +1,5 @@
 from pathlib import Path
-exec(Path(__file__).with_name('route_controller.py').read_text().split('groups={}')[0])
+exec(Path(__file__).with_name('route_controller.py').read_text(encoding='utf-8').split('groups={}')[0])
 S=.05;NX=1441;NY=1361;xx,yy=np.meshgrid(np.arange(NX)*S,np.arange(NY)*S,indexing='ij');D=.45;DR=.2
 W=.6;seg((50.1375,33),(52.475,33),'SW',0);W=.15
 for a,z in zip([(52.475,33),(52,33),(52,27.05)],[(52,33),(52,27.05),(51,27.05)]):seg(a,z,'SW',0)

@@ -82,7 +82,7 @@ pairs=[
 ('BUTTON',(60.175,61),(67.75,18.5),0,0),
 ('SPI_SCLK',(50.25,14),(69,41.08),0,1),
 ('GND_ISO',(47,17.05),(40.5,15.25),0,0)]
-if '--pairs' in sys.argv:pairs=json.loads(Path(sys.argv[sys.argv.index('--pairs')+1]).read_text())
+if '--pairs' in sys.argv:pairs=json.loads(Path(sys.argv[sys.argv.index('--pairs')+1]).read_text(encoding='utf-8'))
 if __name__=='__main__':
  for pair in pairs:
   route(*pair);p.SaveBoard(str(P),b)

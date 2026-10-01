@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from pathlib import Path
-exec(Path(__file__).with_name('route_controller.py').read_text().split('groups={}')[0])
+exec(Path(__file__).with_name('route_controller.py').read_text(encoding='utf-8').split('groups={}')[0])
 D=.45;DR=.2
 zs={0 if z.GetLayer()==p.F_Cu else 1:z for z in b.Zones()};fsp=zs[0].GetFilledPolysList(p.F_Cu);bsp=zs[1].GetFilledPolysList(p.B_Cu)
 for i in range(fsp.OutlineCount()):

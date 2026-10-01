@@ -18,7 +18,7 @@ block(1260,475,465,150,'POWER',['PS1 IRM-03-5 isolated 5 V candidate','U2 AP6320
 text(70,695,'PE: continuous protective conductor outside PCB; never switched or bonded to control ground',23,'#ffcf8f')
 block(55,790,530,250,'END / EDGE / CLOUD',['END: measure + actuate within hardware limits','EDGE: local policy, timeout, watchdog, hold','CLOUD: bounded profile and configuration','Offline operation must not depend on cloud','Profiles cannot increase physical current ratings']);block(625,790,530,250,'WHAT IS REAL IN THIS RELEASE',['KiCad source, pin-connected schematic, BOM','33 real footprints and package envelopes','Low-voltage routing + actual ERC / DRC','STEP / FCStd / OBJ review geometry','Mains and remaining airwires UNROUTED']);block(1195,790,550,250,'RELEASE GATES',['Complete mains protection and metrology','Close routing / DRC / independent review','Qualify terminals, copper, PE, creepage','Test EMC, dielectric, thermal and endurance','No Gerber / drill package; never energize'])
 text(60,1110,'Architecture diagram is a review aid, not a wiring instruction or a safety certification',23,'#a1b9c1');text(60,1150,'Sources: Mean Well IRM-03 • TE RT1 • Espressif C3-WROOM-02U • Diodes AP63203 • TI TMP102 • ADI metrology',18,'#a1b9c1');p.append('</svg>')
-(R/'exports/electrical_architecture.svg').write_text(''.join(p))
+(R/'exports/electrical_architecture.svg').write_text(''.join(p), encoding='utf-8', newline='\n')
 try:
  import cairosvg;cairosvg.svg2pdf(url=str(R/'exports/electrical_architecture.svg'),write_to=str(R/'exports/electrical_architecture.pdf'))
 except ImportError:pass

@@ -35,5 +35,5 @@ for raw in sorted(paths):
  for label,pattern in patterns.items():
   if pattern.search(data):findings.append({'scope':'working_tree','path':rel,'kind':label})
 result={'status':'PASS' if not findings else 'BLOCKED','objects_and_files_checked':checked,'scope':'Known credential patterns only; matched values are never recorded','findings':findings}
-(R/'release').mkdir(exist_ok=True);(R/'release/publish_hygiene.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+(R/'release').mkdir(exist_ok=True);(R/'release/publish_hygiene.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n', encoding='utf-8', newline='\n')
 print(json.dumps(result,ensure_ascii=False,indent=2));sys.exit(1 if findings else 0)

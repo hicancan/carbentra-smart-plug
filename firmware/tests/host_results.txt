@@ -1,3 +1,47 @@
-PASS 37 policy cases and 10000 local-trip invariants
+**********************************************************************
+** Visual Studio 2022 Developer PowerShell v17.14.38
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+carbentra_policy.c
+test_policy.c
+正在生成代码...
+PASS local input: commissioning/load/feedback/dwell guards, offline OFF, debounce, manual hold and maintenance
+PASS 45 policy cases and 10000 local-trip invariants
+carbentra_command_json.c
+carbentra_json.c
+carbentra_meter_decode.c
+cJSON.c
+test_protocol.c
+正在生成代码...
+  正在创建库 <VALIDATION_OUTPUT>\host\test_protocol\test_protocol.lib 和对象 <VALIDATION_OUTPUT>\host\test_protocol\test_protocol.exp
 PASS JSON boundaries, meter encodings/checksum/CRC, runtime reset and stuck-link regression
+carbentra_feedback.c
+test_feedback.c
+正在生成代码...
 PASS feedback qualification: 50/60Hz, startup, 3 periods, spikes, dropout, stuck LOW and time rollback
+carbentra_storage.c
+test_storage.c
+正在生成代码...
+PASS NVS startup: stable namespaces, replay preservation, six injected errors, fresh store and boot overflow; no erase API
+carbentra_calibration.c
+carbentra_meter_decode.c
+carbentra_execution.c
+test_calibration_execution.c
+正在生成代码...
+PASS calibration v3 exact board/revision/CRC and command correlated observed/failed/superseded/deadline terminal states
+carbentra_storage.c
+carbentra_policy.c
+carbentra_feedback.c
+carbentra_execution.c
+cJSON.c
+test_startup.c
+<PLUG_ROOT>\firmware\tests\test_startup.c(54): warning C4305: “=”: 从“double”到“float”截断
+正在生成代码...
+  正在创建库 <VALIDATION_OUTPUT>\host\test_startup\test_startup.lib 和对象 <VALIDATION_OUTPUT>\host\test_startup\test_startup.exp
+PASS app_main mocked startup failure=0: relay off, invalid measurements explicit, journal failure blocks networking; coherent ISR feedback snapshot
+PASS app_main mocked startup failure=1: relay off, invalid measurements explicit, journal failure blocks networking; coherent ISR feedback snapshot
+PASS app_main mocked startup failure=2: relay off, invalid measurements explicit, journal failure blocks networking; coherent ISR feedback snapshot
+PASS app_main mocked startup failure=3: relay off, invalid measurements explicit, journal failure blocks networking; coherent ISR feedback snapshot
+PASS app_main mocked startup failure=4: relay off, invalid measurements explicit, journal failure blocks networking; coherent ISR feedback snapshot
+PASS app_main mocked startup failure=5: relay off, invalid measurements explicit, journal failure blocks networking; coherent ISR feedback snapshot
+PASS app_main mocked startup failure=6: relay off, invalid measurements explicit, journal failure blocks networking; coherent ISR feedback snapshot

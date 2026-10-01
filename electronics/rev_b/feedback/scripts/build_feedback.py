@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 """Rebuild standalone Rev B detector development candidate. Never edits EVT-A."""
 from pathlib import Path
 import json, uuid, math, csv, itertools
@@ -29,13 +30,13 @@ for pin in range(1,9):
  x=-5.3725 if pin<=4 else 5.3725;y=(-1.905+(pin-1)*1.27) if pin<=4 else (1.905-(pin-5)*1.27)
  s+=f'(pad "{pin}" smd rect (at {x} {y}) (size 1.905 .65) (layers "F.Cu" "F.Paste" "F.Mask"))'
 s+='(fp_circle (center -2.7 -2.4) (end -2.35 -2.4) (stroke (width .12) (type default)) (fill none) (layer "F.SilkS")))'
-(fpdir/'SSO8_ACPL_K376.kicad_mod').write_text(s)
+(fpdir/'SSO8_ACPL_K376.kicad_mod').write_text(s, encoding='utf-8', newline='\n')
 s=base('PR01_P10.16')+' (attr through_hole)'+rect((1.83,-1.25),(8.33,1.25),'F.Fab')+rect((-1.2,-1.7),(11.36,1.7),'F.CrtYd',.05)+rect((1.83,-1.25),(8.33,1.25),'F.SilkS',.12)
 for pin,x in [(1,0),(2,10.16)]:s+=f'(pad "{pin}" thru_hole circle (at {x} 0) (size 1.8 1.8) (drill .9) (layers "*.Cu" "*.Mask"))'
-(fpdir/'PR01_P10.16.kicad_mod').write_text(s+')')
+(fpdir/'PR01_P10.16.kicad_mod').write_text(s+')', encoding='utf-8', newline='\n')
 s=base('Wire_Pad_1.2mm')+' (attr through_hole)'+rect((-1.45,-1.45),(1.45,1.45),'F.CrtYd',.05)+'(pad "1" thru_hole circle (at 0 0) (size 2.4 2.4) (drill 1.2) (layers "*.Cu" "*.Mask")))'
-(fpdir/'Wire_Pad_1.2mm.kicad_mod').write_text(s)
-(ROOT/'fp-lib-table').write_text('(fp_lib_table (lib (name "Feedback") (type "KiCad") (uri "${KIPRJMOD}/Feedback.pretty") (options "") (descr "Rev B detector footprints, manufacturer based")))')
+(fpdir/'Wire_Pad_1.2mm.kicad_mod').write_text(s, encoding='utf-8', newline='\n')
+(ROOT/'fp-lib-table').write_text('(fp_lib_table (lib (name "Feedback") (type "KiCad") (uri "${KIPRJMOD}/Feedback.pretty") (options "") (descr "Rev B detector footprints, manufacturer based")))', encoding='utf-8', newline='\n')
 # Custom simple symbols, pin-correct and embedded for portability.
 pindefs={
  'R_H':[(1,'1','passive',-5.08,0,0),(2,'2','passive',5.08,0,180)],
@@ -92,16 +93,16 @@ for i,(net,x) in enumerate([('+3V3_ISO',55.88),('GND_ISO',86.36)]):
  items.append(f'(symbol (lib_id "Feedback:SupplyFlag") (at {x} 119.38 0) (unit 1) (in_bom no) (on_board no) (uuid {uid(net+"flag")}) (property "Reference" "#FLG0{i+1}" (at {x} 119.38 0) (effects (font (size 1 1)) (hide yes))) (property "Value" "External supply" (at {x} 116.38 0) (effects (font (size 1 1)))) (instances (project "output_feedback" (path "/{uid("sheet")}" (reference "#FLG0{i+1}") (unit 1)))))')
  label(net,(x,119.38),net+'flaglabel')
 for text,x,y,size in [('REV B OUTPUT PRESENCE / DEVELOPMENT ONLY',17.78,15.24,2),('198-264 VAC, 50/60 Hz | NO FABRICATION / NO ENERGIZATION RELEASE',17.78,22.86,1.3),('MAINS INPUT: tap the ACTUAL socket contacts after all switched poles',17.78,33.02,1.3),('ISOLATED 3.3 V: active-low pulses, 100/120 Hz when AC is present',147.32,106.68,1.1),('DC+ / DC- / NC intentionally open. Do not bridge either isolation domain.',17.78,132.08,1.2),('No safety isolation proof, no proof of absence of voltage, no physical contact-position feedback.',17.78,139.7,1.2),('132k total series resistance; built-in bridge/threshold controller inside U1.',17.78,147.32,1.2),('Use a separate hardware thermal interlock AND a qualified series thermal cutoff.',17.78,154.94,1.2)]:items.append(f'(text {q(text)} (at {x} {y} 0) (effects (font (size {size} {size})) (justify left)) (uuid {uid(text)}))')
-(ROOT/'output_feedback.kicad_sch').write_text(f'(kicad_sch (version 20250114) (generator "eeschema") (uuid {uid("sheet")}) (paper "A4") (title_block (title "CARBENTRA Rev B output detector") (rev "B-CANDIDATE / HOLD")) (lib_symbols '+''.join(syms.values())+')'+''.join(items)+')')
-(ROOT/'Feedback.kicad_sym').write_text('(kicad_symbol_lib (version 20241209) (generator "kicad_symbol_editor")'+''.join(v.replace('Feedback:','') for v in syms.values())+')')
-(ROOT/'sym-lib-table').write_text('(sym_lib_table (lib (name "Feedback") (type "KiCad") (uri "${KIPRJMOD}/Feedback.kicad_sym") (options "") (descr "Pin-verified custom detector symbols")))')
+(ROOT/'output_feedback.kicad_sch').write_text(f'(kicad_sch (version 20250114) (generator "eeschema") (uuid {uid("sheet")}) (paper "A4") (title_block (title "CARBENTRA Rev B output detector") (rev "B-CANDIDATE / HOLD")) (lib_symbols '+''.join(syms.values())+')'+''.join(items)+')', encoding='utf-8', newline='\n')
+(ROOT/'Feedback.kicad_sym').write_text('(kicad_symbol_lib (version 20241209) (generator "kicad_symbol_editor")'+''.join(v.replace('Feedback:','') for v in syms.values())+')', encoding='utf-8', newline='\n')
+(ROOT/'sym-lib-table').write_text('(sym_lib_table (lib (name "Feedback") (type "KiCad") (uri "${KIPRJMOD}/Feedback.kicad_sym") (options "") (descr "Pin-verified custom detector symbols")))', encoding='utf-8', newline='\n')
 # 35 x 25 mm board, whole-width two domains; blank barrier has no copper on either layer.
 b=p.BOARD();b.GetDesignSettings().SetCopperLayerCount(2);b.GetDesignSettings().SetBoardThickness(p.FromMM(1.6))
 names=sorted({n for c in parts for n in c['pins'].values() if n});nets={}
 for n in names:nn=p.NETINFO_ITEM(b,n);b.Add(nn);nets[n]=nn
 fps={}
 for c in parts:
- lib,name=c['footprint'].split(':');pathlib=fpdir if lib=='Feedback' else Path('/usr/share/kicad/footprints')/(lib+'.pretty');fp=p.FootprintLoad(str(pathlib),name)
+ lib,name=c['footprint'].split(':');pathlib=fpdir if lib=='Feedback' else Path(kicad_resource('footprints'))/(lib+'.pretty');fp=p.FootprintLoad(str(pathlib),name)
  fp.SetReference(c['ref']);fp.SetValue(c['value']);fp.SetPosition(mm(*c['board'][:2]));fp.SetOrientationDegrees(c['board'][2]);fp.SetPath(p.KIID_PATH('/'+uid('sheet')+'/'+uid(c['ref'])))
  fp.Reference().SetVisible(False);fp.Value().SetVisible(False)
  for pad in fp.Pads():
@@ -138,17 +139,17 @@ for txt,x,y,size in [('REV B / FAB HOLD',11,12.5,.75),('NO PE ON PCB',11,24,.65)
  t=p.PCB_TEXT(b);t.SetText(txt);t.SetPosition(mm(x,y));t.SetTextSize(mm(size,size));t.SetTextThickness(p.FromMM(.1));t.SetLayer(p.Dwgs_User);b.Add(t)
 p.SaveBoard(str(ROOT/'output_feedback.kicad_pcb'),b)
 # Explicit net classes plus physical distance rule; component NC pads 2/3 are also primary, 7 secondary.
-proj=json.loads((ROOT.parents[1]/'carbentra.kicad_pro').read_text())
+proj=json.loads((ROOT.parents[1]/'carbentra.kicad_pro').read_text(encoding='utf-8'))
 proj['meta']={'filename':'output_feedback.kicad_pro','version':1}
 proj['net_settings']={'classes':[{'name':'Default','clearance':.2,'track_width':.25,'via_diameter':.65,'via_drill':.3,'microvia_diameter':.3,'microvia_drill':.1,'diff_pair_width':.2,'diff_pair_gap':.25,'diff_pair_via_gap':.25},{'name':'MAINS','clearance':.25,'track_width':.35,'via_diameter':.65,'via_drill':.3,'microvia_diameter':.3,'microvia_drill':.1,'diff_pair_width':.2,'diff_pair_gap':.25,'diff_pair_via_gap':.25},{'name':'SELV','clearance':.2,'track_width':.25,'via_diameter':.65,'via_drill':.3,'microvia_diameter':.3,'microvia_drill':.1,'diff_pair_width':.2,'diff_pair_gap':.25,'diff_pair_via_gap':.25}], 'netclass_assignments':{n:('MAINS' if n in ['L_POST','N_POST','L_MID','N_MID','AC1','AC2'] else 'SELV') for n in names},'netclass_patterns':[], 'meta':{'version':4}}
 proj['board']['design_settings']['rules']['min_through_hole_diameter']=.3
-(ROOT/'output_feedback.kicad_pro').write_text(json.dumps(proj,indent=2))
+(ROOT/'output_feedback.kicad_pro').write_text(json.dumps(proj,indent=2), encoding='utf-8', newline='\n')
 (ROOT/'output_feedback.kicad_dru').write_text('''(version 1)
 (rule "Primary to isolated logic copper" (condition "(A.NetClass == 'MAINS' && B.NetClass == 'SELV') || (A.NetClass == 'SELV' && B.NetClass == 'MAINS')") (constraint clearance (min 8mm)))
 (rule "Unattenuated input L to N" (condition "(A.NetName == 'L_POST' && B.NetName == 'N_POST') || (A.NetName == 'N_POST' && B.NetName == 'L_POST')") (constraint clearance (min 3.2mm)))
-''')
+''', encoding='utf-8', newline='\n')
 manifest={'status':'DEVELOPMENT_CANDIDATE_NO_ENERGIZATION','board_mm':[35,25,1.6],'envelope_height_above_pcb_mm':9.0,'envelope_height_below_pcb_mm':3.0,'components':parts,'U1_verified_pin_names':{str(x[0]):x[1] for x in pindefs['ACPL_K376']},'unconnected_pads':{'U1':['2','3','7']},'isolation':{'minimum_design_copper_clearance_mm':8,'opto_nominal_pad_edge_clearance_mm':8.84,'slot_mm':[24.1,2,25.1,23]},'host_interface':{'J3.1':'+3V3_ISO','J3.2':'GND_ISO','J3.3':'OUTPUT_PRESENT_N','GPIO_required':1,'logic':'active-low pulses, not a static relay-position state'}}
-(ROOT/'pin_net_manifest.json').write_text(json.dumps(manifest,indent=2))
+(ROOT/'pin_net_manifest.json').write_text(json.dumps(manifest,indent=2), encoding='utf-8', newline='\n')
 with (ROOT/'bom.csv').open('w') as f:
  w=csv.writer(f);w.writerow(['Reference','Value','MPN candidate','Footprint','Max height mm','Source','Status'])
  for c in parts:w.writerow([c['ref'],c['value'],c['mpn'],c['footprint'],c['height_mm'],c['datasheet'],'DEVELOPMENT / VERIFY ASSEMBLY'])

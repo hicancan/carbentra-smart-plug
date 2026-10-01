@@ -3,7 +3,7 @@ from PIL import Image,ImageDraw,ImageFont
 from pathlib import Path
 import json,os
 V=Path(os.environ.get('CARBENTRA_OUTPUT_DIR',str(Path(__file__).resolve().parents[1])));R=V/'renders'
-CTX=json.loads((V/'exports/render_context.json').read_text()) if (V/'exports/render_context.json').exists() else {'revision':'CARBENTRA-P16-EVT-A','enclosure_mm':{'width':88,'height':88,'depth':55}}
+CTX=json.loads((V/'exports/render_context.json').read_text(encoding='utf-8')) if (V/'exports/render_context.json').exists() else {'revision':'CARBENTRA-P16-EVT-A','enclosure_mm':{'width':88,'height':88,'depth':55}}
 FONT_FILE=Path(__file__).resolve().parents[2]/'assets/fonts/NotoSansSC-Regular.ttf'
 REG=str(FONT_FILE);BOLD=REG
 def f(s,b=False):return ImageFont.truetype(BOLD if b else REG,s)
@@ -15,7 +15,7 @@ def footer(im):
 if (R/'06_exploded_raw.png').exists():
  im=Image.new('RGB',(3400,3100),BG);header(im,'统一平台，结构可见','共同机械与电子源模型  /  分层爆炸视图');footer(im)
  raw=Image.open(R/'06_exploded_raw.png').convert('RGBA');raw.thumbnail((2080,2390));pos=((im.width-raw.width)//2,365);im.paste(raw,pos,raw)
- a=json.loads((R/'06_exploded_raw_anchors.json').read_text());sx=raw.width/2400;sy=raw.height/2600
+ a=json.loads((R/'06_exploded_raw_anchors.json').read_text(encoding='utf-8'));sx=raw.width/2400;sy=raw.height/2600
  groups=[('FrontLid','前壳与操控','前盖、实体按键与状态灯',0),('ShutterGuide','防护门机构','导向、双拨爪与回位机构',0),('Carrier','绝缘承载结构','插套支撑及绝缘隔离',0),('Contact_N','三极插套','独立导电件及接触结构',1),('PCB','电源、计量与控制','一体化主板架构',1),('RearShell','后壳与安装结构','电路板定位与螺钉安装',1),('Blade_N','三极输入接口','厂家尺寸参考，量规待验证',1),('MainFuseCeramic','分支保护结构','熔断器与温度保护候选件',0)]
  # PCB names derive from source OBJ; never introduce a fictitious part anchor.
  if 'PCB' not in a:

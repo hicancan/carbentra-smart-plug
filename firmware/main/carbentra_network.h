@@ -15,3 +15,5 @@ bool carbentra_network_trusted_time(int64_t *lower_s,int64_t *upper_s);
 bool carbentra_network_receipt(char epoch[33],uint64_t *sequence);
 
 uint32_t carbentra_network_epoch(void);
+
+bool carbentra_network_trusted_time_at(uint64_t mono_ms,int64_t *lower_s,int64_t *upper_s);

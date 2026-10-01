@@ -1,5 +1,5 @@
 ** Drc report for supported.kicad_pcb **
-** Created on 2026-09-30T05:01:56-0700 **
+** Created on 2026-09-30T12:45:33-0700 **
 
 ** Found 1 DRC violations **
 [clearance]: Clearance violation (rule 'DOMAIN NEGATIVE CONTROL' clearance 8.0000 mm; actual 6.0000 mm)

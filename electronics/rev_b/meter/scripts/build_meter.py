@@ -1,11 +1,12 @@
 #!/usr/bin/python3
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 """Rev B meter source generator. Development only; no manufacturing release."""
 import re,json,uuid,copy,csv,math,sys
 from pathlib import Path
 import pcbnew as p
 ROOT=Path(__file__).resolve().parents[1]; BASE=ROOT.parents[1]; OUT=ROOT/'exports'; OUT.mkdir(exist_ok=True)
 # Reuse the transparent upstream-library parser, not the baseline generator.
-s= (BASE/'scripts/build_electronics.py').read_text(); start=s.index('def uid(');end=s.index('parts=[]');exec(s[start:end]);
+s= (BASE/'scripts/build_electronics.py').read_text(encoding='utf-8'); start=s.index('def uid(');end=s.index('parts=[]');exec(s[start:end]);
 def uid(s):return str(uuid.uuid5(uuid.NAMESPACE_URL,'carbentra/rev-b-meter/'+s))
 parts=[]
 def add(ref,lib,name,value,fp,nets,pos,sch,mpn,url,height=1,body=None):
@@ -67,14 +68,14 @@ if '--schematic-only' not in sys.argv:
  b=p.BOARD();b.GetDesignSettings().SetBoardThickness(p.FromMM(1.6));names=sorted(set(n for c in parts for n in c['nets'].values()));nets={}
  for n in names:net=p.NETINFO_ITEM(b,n);b.Add(net);nets[n]=net
  for c in parts:
-  lib,name=c['fp'].split(':');fp=p.FootprintLoad(str(ROOT/'RevB.pretty') if lib=='RevB' else '/usr/share/kicad/footprints/'+lib+'.pretty',name)
+  lib,name=c['fp'].split(':');fp=p.FootprintLoad(str(ROOT/'RevB.pretty') if lib=='RevB' else kicad_resource('footprints/')+lib+'.pretty',name)
   if not fp:raise RuntimeError(c['fp'])
   fp.SetReference(c['ref']);fp.SetValue(c['value']);fp.SetPosition(p.VECTOR2I(p.FromMM(c['pos'][0]),p.FromMM(c['pos'][1])));fp.SetOrientationDegrees(c['pos'][2]);fp.SetPath(p.KIID_PATH('/'+uid('sheet')+'/'+uid(c['ref'])))
   for pd in fp.Pads():
    if pd.GetNumber() in c['nets']:pd.SetNet(nets[c['nets'][pd.GetNumber()]])
   fp.Reference().SetLayer(p.F_Fab);fp.Value().SetVisible(False);b.Add(fp)
  for i,(x,y) in enumerate([(3,3),(72,3),(3,42),(72,42)]):
-  f=p.FootprintLoad('/usr/share/kicad/footprints/MountingHole.pretty','MountingHole_2.2mm_M2');f.SetReference('H'+str(i+1));f.Reference().SetLayer(p.F_Fab);f.SetPosition(p.VECTOR2I(p.FromMM(x),p.FromMM(y)));b.Add(f)
+  f=p.FootprintLoad(kicad_resource('footprints/MountingHole.pretty'),'MountingHole_2.2mm_M2');f.SetReference('H'+str(i+1));f.Reference().SetLayer(p.F_Fab);f.SetPosition(p.VECTOR2I(p.FromMM(x),p.FromMM(y)));b.Add(f)
  for a,z in [((0,0),(75,0)),((75,0),(75,45)),((75,45),(0,45)),((0,45),(0,0))]:
   ln=p.PCB_SHAPE();ln.SetShape(p.SHAPE_T_SEGMENT);ln.SetStart(p.VECTOR2I(p.FromMM(a[0]),p.FromMM(a[1])));ln.SetEnd(p.VECTOR2I(p.FromMM(z[0]),p.FromMM(z[1])));ln.SetLayer(p.Edge_Cuts);ln.SetWidth(p.FromMM(.05));b.Add(ln)
  p.SaveBoard(str(ROOT/'meter.kicad_pcb'),b)
@@ -109,16 +110,16 @@ for j,n in enumerate(['ISO_3V3','ISO_5V','ISO_GND','HOT_AVDD']):
  items.append(f'(symbol (lib_id "{key}") (at {x} {y} 0) (unit 1) (in_bom no) (on_board no) (uuid {uid(ref)}) (property "Reference" "{ref}" (at {x} {y} 0) (effects (font (size 1 1)) (hide yes))) (property "Value" "PWR_FLAG" (at {x} {y-3.81} 0) (effects (font (size 1 1)))) (instances (project "meter" (path "/{uid("sheet")}" (reference "{ref}") (unit 1)))))')
  items.append(f'(label "{n}" (at {x} {y} 0) (effects (font (size 1 1)) (justify left bottom)) (uuid {uid(ref+"label")}))')
 for txt,x,y in [('CARBENTRA REV B - METER - DEVELOPMENT / ENERGIZATION HOLD',15,15),('HOT_* = LIVE LINE REFERENCED. Never connect hot ground to PE, USB, isolated ground or accessible metal.',15,23),('Protected line -> Kelvin shunt -> relay COM. Voltage samples input L-N; separate ACPL-K376 senses switched output.',15,30),('01  LOAD SHUNT + MATCHED RC',15,43),('02  VOLTAGE DIVIDER + FILTER',15,120),('03  ATM90E26 AFE',170,43),('04  REINFORCED SPI BARRIER',280,38),('05  ISOLATED POWER 5V -> 3.3V',280,155),('06  CLOCK / RESET / DECOUPLING',15,202)]:items.append(f'(text {q(txt)} (at {x} {y} 0) (effects (font (size 1.2 1.2)) (justify left)) (uuid {uid(txt)}))')
-(ROOT/'meter.kicad_sch').write_text(f'(kicad_sch (version 20250114) (generator "eeschema") (uuid {uid("sheet")}) (paper "A3") (title_block (title "CARBENTRA REV B isolated metering") (rev "ENGINEERING CANDIDATE")) (lib_symbols '+''.join(symbols.values())+')'+''.join(items)+')')
-(ROOT/'RevB.kicad_sym').write_text('(kicad_symbol_lib (version 20241209) (generator "kicad_symbol_editor") '+''.join(v.replace(q(k),q(k.split(':')[1]),1) for k,v in symbols.items())+')')
-(ROOT/'sym-lib-table').write_text('(sym_lib_table (lib (name "RevB") (type "KiCad") (uri "${KIPRJMOD}/RevB.kicad_sym") (options "") (descr "Rev B symbols")))')
-(ROOT/'fp-lib-table').write_text('(fp_lib_table (lib (name "RevB") (type "KiCad") (uri "${KIPRJMOD}/RevB.pretty") (options "") (descr "Datasheet-derived candidate footprints")))')
-(ROOT/'circuit_manifest.json').write_text(json.dumps([{k:v for k,v in c.items() if k!='sym'} for c in parts],indent=2))
+(ROOT/'meter.kicad_sch').write_text(f'(kicad_sch (version 20250114) (generator "eeschema") (uuid {uid("sheet")}) (paper "A3") (title_block (title "CARBENTRA REV B isolated metering") (rev "ENGINEERING CANDIDATE")) (lib_symbols '+''.join(symbols.values())+')'+''.join(items)+')', encoding='utf-8', newline='\n')
+(ROOT/'RevB.kicad_sym').write_text('(kicad_symbol_lib (version 20241209) (generator "kicad_symbol_editor") '+''.join(v.replace(q(k),q(k.split(':')[1]),1) for k,v in symbols.items())+')', encoding='utf-8', newline='\n')
+(ROOT/'sym-lib-table').write_text('(sym_lib_table (lib (name "RevB") (type "KiCad") (uri "${KIPRJMOD}/RevB.kicad_sym") (options "") (descr "Rev B symbols")))', encoding='utf-8', newline='\n')
+(ROOT/'fp-lib-table').write_text('(fp_lib_table (lib (name "RevB") (type "KiCad") (uri "${KIPRJMOD}/RevB.pretty") (options "") (descr "Datasheet-derived candidate footprints")))', encoding='utf-8', newline='\n')
+(ROOT/'circuit_manifest.json').write_text(json.dumps([{k:v for k,v in c.items() if k!='sym'} for c in parts],indent=2), encoding='utf-8', newline='\n')
 with (ROOT/'bom.csv').open('w') as f:
  w=csv.writer(f);w.writerow(['Reference','Value','MPN candidate','Footprint','Source','Release']);
  for c in parts:w.writerow([c['ref'],c['value'],c['mpn'],c['fp'],c['url'],'engineering candidate / hold'])
 if '--schematic-only' not in sys.argv:(ROOT/'meter.kicad_dru').write_text('''(version 1)
 (rule "minimum signal clearance" (constraint clearance (min 0.15mm)))
 (rule "HOT to ISO barrier 8mm" (condition "(A.NetName == 'HOT_*' && B.NetName == 'ISO_*') || (B.NetName == 'HOT_*' && A.NetName == 'ISO_*')") (constraint clearance (min 8mm)))
-''')
+''', encoding='utf-8', newline='\n')
 print(len(parts),'parts',len(set(n for c in parts for n in c['nets'].values())),'nets')

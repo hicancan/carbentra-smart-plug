@@ -1,20 +1,21 @@
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 """Compose annotated CAD render sheets. No AI imagery or substitute geometry."""
 from PIL import Image,ImageDraw,ImageFont
 from pathlib import Path
 import json,os
 V=Path(os.environ.get('CARBENTRA_OUTPUT_DIR',str(Path(__file__).resolve().parents[1])));R=V/'renders'
-CTX=json.loads((V/'exports/render_context.json').read_text()) if (V/'exports/render_context.json').exists() else {'revision':'CARBENTRA-P16-EVT-A','enclosure_mm':{'width':88,'height':88,'depth':55}}
-REG='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf';BOLD='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+CTX=json.loads((V/'exports/render_context.json').read_text(encoding='utf-8')) if (V/'exports/render_context.json').exists() else {'revision':'CARBENTRA-P16-EVT-A','enclosure_mm':{'width':88,'height':88,'depth':55}}
+REG=FONT_REGULAR;BOLD=FONT_REGULAR
 def f(s,b=False):return ImageFont.truetype(BOLD if b else REG,s)
 INK='#173c40';GRAY='#657a7c';JADE='#198c76';LINE='#9bb1af';BG='#f5f7f3'
 def header(im,title,subtitle):
- d=ImageDraw.Draw(im);d.text((115,80),'CARBENTRA  /',font=f(27),fill=GRAY);d.text((410,76),'碳迹未来',font=ImageFont.truetype('/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc',27),fill=GRAY);d.text((115,140),title,font=f(69,True),fill=INK);d.text((118,238),subtitle,font=f(27),fill=GRAY);d.line((115,310,im.width-115,310),fill=LINE,width=2)
+ d=ImageDraw.Draw(im);d.text((115,80),'CARBENTRA  /',font=f(27),fill=GRAY);d.text((410,76),'碳迹未来',font=ImageFont.truetype(FONT_REGULAR,27),fill=GRAY);d.text((115,140),title,font=f(69,True),fill=INK);d.text((118,238),subtitle,font=f(27),fill=GRAY);d.line((115,310,im.width-115,310),fill=LINE,width=2)
 def footer(im):
  d=ImageDraw.Draw(im);d.line((115,im.height-145,im.width-115,im.height-145),fill=LINE,width=2);d.text((115,im.height-112),CTX['revision']+'  •  ENGINEERING DEVELOPMENT  •  VERIFICATION PENDING',font=f(24),fill=GRAY);d.text((115,im.height-73),'Single three-pin 16 A-class target. Interface dimensions, electrical safety and certification remain unverified.',font=f(23),fill=GRAY)
 if (R/'06_exploded_raw.png').exists():
  im=Image.new('RGB',(3400,3100),BG);header(im,'One platform. Visible architecture.','Common mechanical and electronic model  /  exploded assembly');footer(im)
  raw=Image.open(R/'06_exploded_raw.png').convert('RGBA');raw.thumbnail((2080,2390));pos=((im.width-raw.width)//2,365);im.paste(raw,pos,raw)
- a=json.loads((R/'06_exploded_raw_anchors.json').read_text());sx=raw.width/2400;sy=raw.height/2600
+ a=json.loads((R/'06_exploded_raw_anchors.json').read_text(encoding='utf-8'));sx=raw.width/2400;sy=raw.height/2600
  groups=[('FrontLid','FRONT HOUSING','Moulded lid + physical control',0),('ShutterGuide','SHUTTER MECHANISM','Development guide and slider',0),('Carrier','INSULATING CARRIER','Contact support and separation',0),('Contact_N','RECEPTACLE CONTACTS','Three individual contact envelopes',1),('PCB','POWER + CONTROL','One shared board architecture',1),('RearShell','REAR HOUSING','Board mounts and screw locations',1),('Blade_N','INPUT INTERFACE','Single three-pin engineering target',1),('FuseCeramic','BRANCH PROTECTION','Fuse and thermal-cutoff candidates',0)]
  # PCB names derive from source OBJ; never introduce a fictitious part anchor.
  if 'PCB' not in a:

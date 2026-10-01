@@ -1,0 +1,16 @@
+CARBENTRA Plug Windows native hardware validation, 2026-10-01
+
+PASS PowerShell scripts/rebuild_windows.ps1: separate source copy rebuilt with native KiCad 10.0.5 and FreeCAD 1.1.4.
+PASS four retained/rebuilt native assemblies, 523 object geometries; exact OCC bidirectional Boolean differences and negative controls.
+PASS retained/rebuilt PCB layers, footprint/pad/mask/net geometry, 2486 copper objects and planes.
+PASS separate rebuilt schematic ERC 0/0, full graph 348 terminals, main PCB 321 numbered pad keys and native DRC 0.
+PASS retained PCB native supported-rule/independent shifted-pad negative controls; unsupported rule cannot falsely claim clearance enforcement.
+PASS full source/target 3D insulation audit, no input changes, no unintended intersections; minimum nominal screen 8.5166446878 mm, target 8.4 mm.
+PASS rear terminal nominal geometric margin.
+PASS native Blender 5.2.2 LTS scene GPU render on RTX 5060 Laptop with OptiX; real GLB export of 3223 product meshes.
+PASS retained reviewed mechanical/schematic/copper PDFs: original 11-page review remains applicable to byte-identical PDFs; no new PDF visual review claimed.
+
+Authoritative measurements and exact input digests are in hardware_geometry_rebuild.json,
+windows-native-scene.json, mechanical/rev_b/*_report.json, electronics/rev_b/integrated/validation/*,
+and hardware_recertification.json. No hardware connection, flashing, mains energization,
+per-unit calibration, thermal/EMC testing or physical release occurred. Fabrication/energization HOLD.

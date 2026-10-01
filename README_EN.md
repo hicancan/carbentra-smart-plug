@@ -1,5 +1,7 @@
 <div align="center">
 
+> 2026-10-01 classroom upgrade: the sole multi-device Edge and contract authority moved to `carbentra-campus-platform/edge` and `packages/iot-contract`. This repository owns Plug hardware, firmware and physical qualification facts. New local ON uses the same commissioning/load/feedback/dwell guards; actual presses establish a15-minute manual hold. The default target still disables actuation. Historical broker/PDF evidence does not automatically validate upgraded shared sources.
+
 [中文](README.md) · **English**
 
 # CARBENTRA Plug
@@ -11,12 +13,14 @@
 [![Digital development checks](https://github.com/hicancan/carbentra-smart-plug/actions/workflows/digital-checks.yml/badge.svg)](https://github.com/hicancan/carbentra-smart-plug/actions/workflows/digital-checks.yml)
 ![Revision](https://img.shields.io/badge/revision-Rev%20B-0f766e)
 ![MCU](https://img.shields.io/badge/MCU-ESP32--C3-2563eb)
-![ECAD](https://img.shields.io/badge/ECAD-KiCad%209-7c3aed)
+![ECAD](https://img.shields.io/badge/ECAD-KiCad%2010-7c3aed)
 ![CAD](https://img.shields.io/badge/CAD-FreeCAD-0284c7)
 
 [Mechanical](mechanical/rev_b/) · [Electronics](electronics/rev_b/integrated/) · [Firmware](firmware/) · [Edge](edge/) · [Release evidence](release/) · [Platform context](docs/PLATFORM_OVERVIEW.md)
 
 </div>
+
+Local digital validation and source digests are in [current delivery evidence](release/START_HERE.md). The GitHub badge shows remote workflow status; physical release gates remain separate.
 
 <p align="center">
   <a href="visuals/rev_b/renders/01_hero_ivory.png">
@@ -49,7 +53,7 @@ That makes the plug useful not only as a standalone IoT device, but as the **dev
 - **Bounded actuation** — requested state is filtered through local safety, dwell, freshness, identity, and load-profile rules.
 - **Physical feedback** — post-switch AC-presence feedback is treated as measured evidence, not assumed relay state.
 - **Thermal / protection path** — independent thermal permission chain and fuse/protection components remain explicit engineering domains.
-- **Edge integration** — MQTT, durable telemetry receipts, command sequencing, and local edge coordination.
+- **Edge integration** — MQTT, durable telemetry receipts, command sequencing, and durable platform transport.
 
 > **Local safety is authoritative. Cloud intelligence never bypasses the device boundary.**
 
@@ -210,7 +214,7 @@ Three invariants define the control philosophy:
 
 The current source includes:
 
-- C policy core aligned with the Python reference policy;
+- one canonical C local-safety policy core;
 - ATM90E26 acquisition and integrity checks;
 - TMP102 board-temperature acquisition;
 - qualified AC-presence feedback capture;
@@ -222,24 +226,24 @@ The current source includes:
 
 ### Reproducible software checks
 
-```bash
-python3 -m unittest discover -s tests/policy -v
-python3 -m unittest discover -s edge/tests -v
-bash firmware/tests/run_host_tests.sh
-python3 scripts/validate_firmware_evidence.py
-python3 scripts/check_brand_hygiene.py
+```powershell
+uv venv --python 3.12
+uv sync --locked
+$env:CARBENTRA_PLATFORM_ROOT='D:\code\github\hicancan\carbentra-suite\carbentra-campus-platform'
+pwsh -NoProfile -File scripts/check_windows.ps1 -BuildTarget -CheckNativeCAD -RenderGPU
 ```
+
+Windows runtime separation, native CAD rebuild and tool paths: [development guide](docs/WINDOWS_DEVELOPMENT.md).
 
 Current host-side evidence includes:
 
-- **24 / 24** policy reference tests passing;
-- **24 / 24** edge unit tests passing;
-- **37** firmware policy cases passing;
+- **45** canonical C safety-policy cases passing;
+- edge release gates with explicit OS exclusions and complementary checks; current count in firmware/evidence/shared-edge-validation.json;
 - **10,000** local-trip priority invariants passing;
 - protocol / meter-reset / stuck-link regressions passing;
 - feedback qualification tests passing.
 
-The ESP32-C3 target remains the intended hardware target, but the previously generated binary artifacts were removed after the namespace migration rather than falsely relabeled. A fresh target build is intentionally required before publishing or flashing a new binary.
+The current ESP32-C3 source has been rebuilt with official ESP-IDF 5.4.3, actuation disabled and certificate-date checks enabled. Exact source and binary hashes are in firmware/validation.json. Physical verification remains HOLD.
 
 ---
 
@@ -254,8 +258,8 @@ The wider CARBENTRA platform appears only after the device boundary is clear.
 At system level:
 
 - **CARBENTRA Plug** senses, protects, executes, and verifies.
-- **CARBENTRA Edge** aggregates devices, applies local coordination, filters policy, and keeps bounded functionality available when the cloud is absent.
-- **CARBENTRA Cloud** performs forecasting, carbon-aware optimization, and global dispatch.
+- **CARBENTRA Edge** validates device contracts, persists receipts/outbox/inbox, and transports bounded commands under independent release gates.
+- **CARBENTRA Cloud** performs forecasting, constraint evaluation, and global dispatch.
 - **CARBENTRA Twin** can map devices, spaces, energy, carbon, policy, and execution state into a common operational view.
 
 > **One plug is a controllable load. Thousands of plugs become an orchestratable energy system.**
@@ -272,9 +276,9 @@ The competition/project-level story — **碳迹未来——基于 AIoT 云边�
 | Mechanical CAD | ✅ Native CAD + STEP + fit / shutter / contact / connectivity evidence |
 | Electrical design | ✅ Six-sheet schematic + routed 4-layer PCB + digital ERC/DRC evidence |
 | Firmware host logic | ✅ Policy, protocol, feedback, and metering regressions passing |
-| Edge reference service | ✅ Durable telemetry / accounting / forecast baseline tests passing |
+| Edge reference service | ✅ Strict wire contract / durable transport / mTLS virtual-device integration |
 | Visual / twin assets | ✅ Blender, GLB, renders, exploded animation |
-| ESP32-C3 fresh target binary | ⚠️ Rebuild required after current namespace migration |
+| ESP32-C3 fresh target binary | ✅ Current-source official ESP-IDF 5.4.3 build, actuation disabled |
 | Physical EVT prototype | ⏳ Not yet built and qualified |
 | Meter calibration | ⏳ Requires traceable per-unit physical calibration |
 | 16 A thermal / fault validation | ⏳ Physical test required |
@@ -325,10 +329,8 @@ firmware/
 └── validation.json
 
 edge/
-├── service.py
-├── accounting.py
-├── forecast.py
-└── tests/
+├── README.md        # shared implementation: carbentra-campus-platform/edge
+└── PROVENANCE.json  # migration record
 ```
 
 ### Visual / digital twin
@@ -353,7 +355,7 @@ carbentra-smart-plug/
 ├── mechanical/      # CAD, STEP, parts, fit and mechanism evidence
 ├── electronics/     # KiCad schematic, PCB, BOM, exports, electrical checks
 ├── firmware/        # ESP32-C3 source, policy, metering, network, host tests
-├── edge/            # edge reference service, durable telemetry, accounting
+├── edge/            # migration provenance; implementation lives in campus-platform
 ├── visuals/         # Blender scenes, renders, GLB, animation
 ├── docs/            # product/system contracts, brand and platform context
 ├── tests/           # reference policy tests

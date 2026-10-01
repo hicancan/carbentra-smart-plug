@@ -18,7 +18,7 @@ if os.environ.get('CARBENTRA_TWIN_LOD_DIR'):
    o.data=temp.data.copy();bpy.data.objects.remove(temp,do_unlink=True);o.data.materials.clear()
    for m in mats:o.data.materials.append(m)
    o['display_tessellation_chord_mm']=.04;lod_parts.append(o.name)
-(V/'exports/twin_tessellation.json').write_text(json.dumps({'native_cad_retessellated_parts':lod_parts,'chord_tolerance_mm':.04 if lod_parts else None,'angular_tolerance_rad':.3 if lod_parts else None,'external_surfaces_preserved_full_resolution':True,'statement':'Display approximation of the same native CAD surfaces; not geometry-identical to full-resolution mesh' if lod_parts else 'No retessellation'},indent=2))
+(V/'exports/twin_tessellation.json').write_text(json.dumps({'native_cad_retessellated_parts':lod_parts,'chord_tolerance_mm':.04 if lod_parts else None,'angular_tolerance_rad':.3 if lod_parts else None,'external_surfaces_preserved_full_resolution':True,'statement':'Display approximation of the same native CAD surfaces; not geometry-identical to full-resolution mesh' if lod_parts else 'No retessellation'},indent=2), encoding='utf-8', newline='\n')
 batches={'PCB detail / routed copper':[], 'PCB detail / pads and vias':[]}
 for o in allparts:
  if o.name.removeprefix('MainB_').removeprefix('HeadB_').startswith('Copper_'):batches['PCB detail / routed copper'].append(o)
@@ -39,7 +39,7 @@ bpy.ops.export_scene.gltf(filepath=str(p),export_format='GLB',use_selection=True
 def inspect(p):
  b=p.read_bytes();l,t=struct.unpack_from('<II',b,12);j=json.loads(b[20:20+l]);return {'bytes':len(b),'nodes':len(j['nodes']),'meshes':len(j['meshes']),'names':[x.get('name') for x in j['nodes']]}
 a=inspect(V/'exports/carbentra_assembly.glb');b=inspect(p)
-required=[x['id'] for x in json.loads(Path(os.environ.get('CARBENTRA_MECHANICAL_DIR',str(ROOT/'mechanical')),'parts_manifest.json').read_text())['parts'] if x.get('render_default',True) is not False and x.get('geometry_role')!='clearance_envelope']
+required=[x['id'] for x in json.loads(Path(os.environ.get('CARBENTRA_MECHANICAL_DIR',str(ROOT/'mechanical')),'parts_manifest.json').read_text(encoding='utf-8'))['parts'] if x.get('render_default',True) is not False and x.get('geometry_role')!='clearance_envelope']
 assert all(n in b['names'] for n in required)
 report={'full':{k:v for k,v in a.items() if k!='names'},'light':{k:v for k,v in b.items() if k!='names'},'node_reduction_percent':round((1-b['nodes']/a['nodes'])*100,1),'byte_reduction_percent':round((1-b['bytes']/a['bytes'])*100,1),'all_mechanical_part_names_preserved':True,'method':'Batch actual copper and pad/via meshes by material; omit redundant ref-designator glyph annotations; '+('internal native-CAD display tessellation at 0.04 mm chord / 0.3 rad angular tolerance; full-resolution exterior preserved' if lod_parts else 'no retessellation')}
-(V/'exports/twin_optimization.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2))
+(V/'exports/twin_optimization.json').write_text(json.dumps(report,indent=2), encoding='utf-8', newline='\n');print(json.dumps(report,indent=2))

@@ -1,0 +1,1975 @@
+{
+  "scope": "Ignored reproducible output inventory; authored sources and Git history retained",
+  "files": 153,
+  "bytes": 421684916.0,
+  "entries": [
+    {
+      "path": "visuals/carbentra_animation.blend1",
+      "bytes": 25047581,
+      "reason": "Byte-identical blob in reachable Git history",
+      "git_blob": "711c06c73ff58946e0d051de1603473742ac9b81",
+      "retained_object": "711c06c73ff58946e0d051de1603473742ac9b81 visuals/carbonmirror_animation.blend",
+      "sha256": "3a914ca633e681e674c79e4102d504a90b4101dd9d8313b0789519d50bfe9ed9",
+      "artifact_kind": "blend_backup"
+    },
+    {
+      "path": "visuals/carbentra_studio.blend1",
+      "bytes": 20721703,
+      "reason": "Byte-identical blob in reachable Git history",
+      "git_blob": "aa67741de78e64357a142ed0f66a2b34bef0cfe4",
+      "retained_object": "aa67741de78e64357a142ed0f66a2b34bef0cfe4 visuals/carbonmirror_studio.blend",
+      "sha256": "528f9547d27bf507779a57c1d8e8fa24a2181719aec1b24ee30ee725396929ed",
+      "artifact_kind": "blend_backup"
+    },
+    {
+      "path": "visuals/revA_baseline/carbentra_animation.blend1",
+      "bytes": 25047581,
+      "reason": "Byte-identical blob in reachable Git history",
+      "git_blob": "711c06c73ff58946e0d051de1603473742ac9b81",
+      "retained_object": "711c06c73ff58946e0d051de1603473742ac9b81 visuals/carbonmirror_animation.blend",
+      "sha256": "3a914ca633e681e674c79e4102d504a90b4101dd9d8313b0789519d50bfe9ed9",
+      "artifact_kind": "blend_backup"
+    },
+    {
+      "path": "visuals/revA_baseline/carbentra_studio.blend1",
+      "bytes": 20721703,
+      "reason": "Byte-identical blob in reachable Git history",
+      "git_blob": "aa67741de78e64357a142ed0f66a2b34bef0cfe4",
+      "retained_object": "aa67741de78e64357a142ed0f66a2b34bef0cfe4 visuals/carbonmirror_studio.blend",
+      "sha256": "528f9547d27bf507779a57c1d8e8fa24a2181719aec1b24ee30ee725396929ed",
+      "artifact_kind": "blend_backup"
+    },
+    {
+      "path": "visuals/rev_b/carbentra_animation.blend1",
+      "bytes": 27581059,
+      "reason": "Byte-identical blob in reachable Git history",
+      "git_blob": "8d4629a62a1ffd009f563a7618d652b1cc8fb357",
+      "retained_object": "8d4629a62a1ffd009f563a7618d652b1cc8fb357 visuals/rev_b/carbonmirror_animation.blend",
+      "sha256": "8ad4790c931c87dc72491500a74c462d371f5a0f1896a9c89e2507bd3eafe877",
+      "artifact_kind": "blend_backup"
+    },
+    {
+      "path": "visuals/rev_b/carbentra_studio.blend1",
+      "bytes": 71934012,
+      "reason": "Byte-identical blob in reachable Git history",
+      "git_blob": "a465c906083a9ba7293ee4813fe04fe2d2b6dde4",
+      "retained_object": "a465c906083a9ba7293ee4813fe04fe2d2b6dde4 visuals/rev_b/carbonmirror_studio.blend",
+      "sha256": "312a35e62b5f1e2f8be96cc11e98d845fc1409c1abd836f56c3744d75f9c5d4d",
+      "artifact_kind": "blend_backup"
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0001.png",
+      "bytes": 1531389,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "449387cc2c8d7ab14db322b8243b4fe94a9ee0319b935f4799f4b9a3f86bb608",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0002.png",
+      "bytes": 1531526,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "82346db912a314c8918522ac4fe5941eb444cd53f47738c63ca4386671ac101c",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0003.png",
+      "bytes": 1531272,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "4c5e4ceed1160c2c42d8235eb3c698cd43ef98f47f65d2153d2e44c335da0623",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0004.png",
+      "bytes": 1531090,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "6c3e3fbf4527d128e77d9c9214d2ee3c1acf19c5a15c975a04098a498767f6be",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0005.png",
+      "bytes": 1529865,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "504d63d9fbd20f3701765fce789beaccb258073773385c1bca60d0bf7356f7cb",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0006.png",
+      "bytes": 1532888,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "7707aef4cc303f862c3cf98d350ac0f86a8c9a974f4fc38a0b1e3e7427fd8758",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0007.png",
+      "bytes": 1533092,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "666a50f04bcd83b4e4ce34a6f69aef5a68f0595ad0325af0d427f256de90a98c",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0008.png",
+      "bytes": 1531667,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "5f069b89d93dc048ae02a3ff87b880b7ab12c58f8781477025c81f7833b9ba65",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0009.png",
+      "bytes": 1528255,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "4e66fee977ef70709bc64e37b22e61da8eda3df1ceeab1c091f0be8cc97b6456",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0010.png",
+      "bytes": 1528425,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "239f33ef000ead90548d5e5e6bd1442e0e3f03948dfa8bc252ce71026d8a8d56",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0011.png",
+      "bytes": 1531807,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "a22f38409c2f70ef4f7bdb65beb572b71e912194a941472d3a78c4a286d1b7d7",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0012.png",
+      "bytes": 1532176,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "6ab9b08436906ae6c84dbce75beb4700005efc73e6dfe0cb3c4177642ebc971d",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0013.png",
+      "bytes": 1527421,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "a3d5a6218ac662e0407da9ea5a05ab563c3bb8088f212f3f67af8e6e3405672d",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0014.png",
+      "bytes": 1526746,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "1875a82f7190b5f494e86d5bb20d04aea130058a2189f0b8a4c356d625a5fce3",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0015.png",
+      "bytes": 1531102,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "240091cfaaed69d28f955e3e3e9a1a338c0aef9bd9883ca06ae37a995340db24",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0016.png",
+      "bytes": 1532749,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "fbc94ac8d39194f4d47517b437fc724abf06f00402d7d3450348212fbfabd773",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0017.png",
+      "bytes": 1532247,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "d24941c4c833ac1678c7a681e0d43636aae081fd1362280a7ae456f43e98886b",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0018.png",
+      "bytes": 1529245,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "6ffee8779ae04cbc66e0a1e8d0e8ca361fceca32501e835a3f9da4d5293adc6c",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0019.png",
+      "bytes": 1529568,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "d301a46959404d39270e9035c24a2204e0b61e029552a792a0483eb2b0d9cfb5",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0020.png",
+      "bytes": 1533303,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "a1769a46f36f1482f42ecc972431aad53eaa3ba9d945b7166688d111bae78099",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0021.png",
+      "bytes": 1530830,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "71c68ade25344642f3c17897faa151b14c55324ec61626bcd13a90597394a953",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0022.png",
+      "bytes": 1525090,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "ae1bf964e23a274a0125e5b97bb9de7c8df4f2df6c676e16034312f2525699d3",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0023.png",
+      "bytes": 1539188,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "5a060d86990f25f53c3fefd5f08bb2484b61e2ec196f5dac573abaa3f0061d05",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0024.png",
+      "bytes": 1542975,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "8a1b47763e9d270b33a6c78697f7078ca0f22a29633b197f4cf183809939cbce",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0025.png",
+      "bytes": 1540051,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "da82f1c57e2bc81822a7e64df04a719c8aa584be0b2135849e42bea5526281cb",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0026.png",
+      "bytes": 1547412,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "c7876b19847e5e8e95bbcb9a1c58860bb9cb6cb28b406620d8a1cb79fabde141",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0027.png",
+      "bytes": 1551721,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "146878f6fcd353d5b936fd220d8c796b22774d9d60e760d59d6f0ec2a7183423",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0028.png",
+      "bytes": 1559649,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "2962f3f3689eca2d7d9006db39eb399ae4e11ffc9c239bfac669284ee56034d6",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0029.png",
+      "bytes": 1564750,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "927debd603fa4a361951636f1a1c544f4bc1435a9de23e7ea7d0b3c4e940784d",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0030.png",
+      "bytes": 1568796,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "e3adb18f1bcf1cbce1feab3785a9ef8eefd30f4e254347d22cf69100af879c9f",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0031.png",
+      "bytes": 1575550,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "2ad4c90cd10b348cfcb98374963eff0abc7ee5d6832c083537ec17c3bc25fba0",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0032.png",
+      "bytes": 1580766,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "eb02da622670e9d7144d263cd8c175823def70fe0e43ef2f91bce6ca05f007e5",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0033.png",
+      "bytes": 1587143,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "c0c6471c34f4a02212f11225a8d893cfc86cf62f22422507ef4566d82c3e56d9",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0034.png",
+      "bytes": 1587115,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "c5490e5dc9fc891f83f96b71a4f521cffb0d0c7265c323c2b16efb63f8f9030d",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0035.png",
+      "bytes": 1589935,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "4d96546154ddbcafe79c3d30ee182ae02a2e3878bb8ae196b3bff0eeeb2abe84",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0036.png",
+      "bytes": 1595476,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "ccaa02b5fb63883a19eb4fd05999a1d47112e197a7cc765a6eacaabb2f0fce58",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0037.png",
+      "bytes": 1603889,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "06a58584a6703fb526d8099a460e22fdb1ef9ffa0c02dc78adebfd1f534fe299",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0038.png",
+      "bytes": 1607172,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "62cf4d9edfa4f0f9cd4d6071675d046aeaf09e323f9fdff1713c09d361e0c469",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0039.png",
+      "bytes": 1617344,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "d052b7f0b9f31939764b357f1824772bfe588281c2a320e303d78906f103d8e7",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0040.png",
+      "bytes": 1618830,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "b7868bea65d9a3c44df6fd361c7dc96d471f2b12b6e38f209f64e125c71b9bd8",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0041.png",
+      "bytes": 1623674,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "2629a3a7d106015f87c87c6c0118e0bf4f0252c6a13f27bbcd7d9516742c0553",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0042.png",
+      "bytes": 1627917,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "1d567dec47bff618fecb8b66f03966705acd1d4b08c73b816b99a08ffda5c83d",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0043.png",
+      "bytes": 1632100,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "970b9268a3ffb2fc083aaaf15a89148196b7d2221ca3c61493a55a7aa6538054",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0044.png",
+      "bytes": 1636626,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "82d05ed5f4dbcca15d88bc847630cded49da1678d3a340eb51b39b9be9d5a26a",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0045.png",
+      "bytes": 1638881,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "246b259942a58d4ca345008e78ddb4bb7a1b355dddcff7f3d5032ffd77a834ad",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0046.png",
+      "bytes": 1638798,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "b30461db26f7b27d40f86281625f619dd638ea3fb8032a3fa791359fcb89246e",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0047.png",
+      "bytes": 1642816,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "f0bc3bf0b1f411bcdd90fba397462d374d766629b2b4ea158396b80e6f530cd9",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0048.png",
+      "bytes": 1653236,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "b92d81b5e264d5991820edfc91730f512850b80ee62ece48f1be6cf9186f8a02",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0049.png",
+      "bytes": 1653998,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "a9d4fa1bfc19979c554a7b64652747d0d36ab3da476b9c5e5e59f9d7a60f4604",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0050.png",
+      "bytes": 1653162,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "d68d1f7027798381bedb85939c2dfadea0c6aeceeec5d52b4ae4c8ae74030165",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0051.png",
+      "bytes": 1657661,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "7e265867656d7befb19f9d16b7e6197629b5e0b4908f71a89b80ae9d06f9464d",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0052.png",
+      "bytes": 1658536,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "0891a3412227e5ca75a684009635c30c8a43817ccbca659ec9ebab1bec223fae",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0053.png",
+      "bytes": 1659816,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "5f71bd8cb35cd4ea75f058e5284abda5b1c8fd4827ce2df3e31d656e50b6892c",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0054.png",
+      "bytes": 1658412,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "e01d91705d5f188daa5804f7b14d79fbb7a47eb6dc4137e468e490afa2b92c20",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0055.png",
+      "bytes": 1660469,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "1a160be1cc26e9ceec9bf33c730502de21aa9114409c5c066c63f1ba7a362a73",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0056.png",
+      "bytes": 1664537,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "b9db5a0f35ff6b49f7daa0923197972249fd2afe7cb510d6795a34689c629de7",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0057.png",
+      "bytes": 1666092,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "aa2f1efa2f43cf89567e1ca1250d210f1a9234aa99694e80f20f7352f2b30b1a",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0058.png",
+      "bytes": 1666358,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "d3de1d2295c3380142f92ae18f691ce97f8d382eb0059ca4a2469c6a1d6d0638",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0059.png",
+      "bytes": 1664413,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "4cc82423ea46b60fffce0a8afcad3b8fc854b21f525246b5e7236a6ebd25a506",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0060.png",
+      "bytes": 1661942,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "6b3402393f97c017511ed12ab8ba9e82c7868bf930213e9a189686bc2b4445e5",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0061.png",
+      "bytes": 1662820,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "72100d233cb95b58694aa1059579c4ff80e8b95bbfa17d3af11a6ddadcd24076",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0062.png",
+      "bytes": 1663750,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "8ef1db00abc6f3620285d660f9327867f59c28d15efc7ca96bf60a5f37a3baaf",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0063.png",
+      "bytes": 1664535,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "eb84974dba34db24ed4db515c75ffa4840a983df0a324ad871e1518f0f876d35",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0064.png",
+      "bytes": 1666504,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "781ed5a275ca5e5ec423dbc649c89adbffd8230e224de03da5041adb4659023a",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0065.png",
+      "bytes": 1666722,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "100ced87afddb1259fbf8b78871968fd429559d616afc57b7214aabe50afadc3",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0066.png",
+      "bytes": 1665179,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "240455d8dc3e012a6ba09bde57f69d30abe8dc92f437fac01dfb9ace748e8552",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0067.png",
+      "bytes": 1665359,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "f73df1b09a0f41c38361181f7855905073658cb7c19cf750fd506031554f4e72",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0068.png",
+      "bytes": 1661803,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "e8fd446732ba533565077c3860e950f15206b78733552f25a2eab6c36cd8f5e2",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0069.png",
+      "bytes": 1663117,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "bcffa8a5b2fc7f240dd5991e929a62ee5984e95be439bb096a72e6240ab85d33",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0070.png",
+      "bytes": 1663321,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "df82da3df0dc01cae07ba8837f934b4f5c5fcbb9c5ebbf550ff037a7a16b449b",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0071.png",
+      "bytes": 1654941,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "be42c6b63f753e9acc26c33a6d865fffb28a95d4b4c071ea7a846fdf020e3d31",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0072.png",
+      "bytes": 1657319,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "4f29c4cc73977b453b8a014843db20bbe86f0edb3e9effeeaede28f4e3bb9a8b",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0073.png",
+      "bytes": 1657606,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "1bd43349f7d914e3bb37bef0cdc87169d0aabec1c9ef1c6e5e6d19c88fff7739",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0074.png",
+      "bytes": 1656632,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "841970cab5e8ed7f7f27afb3b71c6bce5ef45352a5978a6f396aa5659bfe0a20",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0075.png",
+      "bytes": 1655690,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "aef3b073a04a5376aed6ebe32986d0645354d6c699d3acfa1ea8817581145f3e",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0076.png",
+      "bytes": 1654129,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "bba9b47225ca35785a88fbdbd109f72c7980b68b563a60765da3c982cace6901",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0077.png",
+      "bytes": 1655164,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "7631e59da0c79bc378519053c6353513188feb0075dba9685c0646bb404a15a4",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0078.png",
+      "bytes": 1657652,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "c13a0c7e6ca28a2ed7ee53f2913df16f39c9c0afbad0003a3143e13fb18d42f0",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0079.png",
+      "bytes": 1656408,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "a51d5e7fdc21182ae840b168466c645f6b4eecd9b6a3b69b1ed7b4fb7f568ba3",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0080.png",
+      "bytes": 1656745,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "be4513915fcac8eed6351aa6282c4d8fddcde3614886ffbdf49a3d2b962f5b93",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0081.png",
+      "bytes": 1661454,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "9337c22187369e7022173de693d0c8c04f5f34728f0cdf58be8f8b87184bf51a",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0082.png",
+      "bytes": 1657018,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "35686a02a57d5778f8f53efdca4fd7c6ddefa0a215dcf6936a8b03bd1815026d",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0083.png",
+      "bytes": 1655629,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "ffb0b2d01ba9bb97551399f84e44e523484878acc656f94d178dd86702e22594",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0084.png",
+      "bytes": 1661874,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "e6c1e4e39732d3cb75e7a02a9528f84e917405355aa35103f3f25742113420e4",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0085.png",
+      "bytes": 1664071,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "0448ffdf6083c84dab0633d3b16c3f7d7aef1afdd57c673e365ff63b3233cc77",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0086.png",
+      "bytes": 1662314,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "3dd5298927fe70aa7e662fe950dc9735df99afa49e8d42fa99cde99578dcbf75",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0087.png",
+      "bytes": 1657002,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "9a8745b3e326db2037a3cb95b37e32aa7b59d1b33472c37ddcd761fc68da514e",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0088.png",
+      "bytes": 1660495,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "c05179e7b03d308441f7c54343c85ba680fb619bcb3dac03e8afd3ad8435109f",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0089.png",
+      "bytes": 1655714,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "1cdb6c3e41cc7913b8ff2f91f4f57f3bea185aff54a508f089c2b924721c2677",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0090.png",
+      "bytes": 1654646,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "2225930b12f5c42a10ab6f9b6a29f9c19816e6b1cb0c0455a591f86a7fbea776",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0091.png",
+      "bytes": 1650628,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "b45226fda58f1dd0ab4837c958dce3d3e943ec0288163a15960ec51b0989e355",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0092.png",
+      "bytes": 1654286,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "25081138db0684b98dc6766361833c762bdb68b15aaae4befe90471fa5685f31",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0093.png",
+      "bytes": 1652378,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "6e692a93b8a7bf1e8f03b4143efefb52ffe3e1fa9bccdf82a15b7d9153929b51",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0094.png",
+      "bytes": 1644514,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "f7bceed99d6d9bf41ced26acef5c1138c73c23dcd9cf9e0c123ea03962970a13",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0095.png",
+      "bytes": 1640784,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "11647fb1018a85076037fabb1f6284c4354611da2b901c92ebc97da4d224934a",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0096.png",
+      "bytes": 1640878,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "246b5378d4daf06e347d01931db978b98130de0e24f6f8679e176a881a3e24d7",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0097.png",
+      "bytes": 1636065,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "00effa3ef71fe97aa9e723cbd48b80e2c3de838ca734b47428f53017eff5cee8",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0098.png",
+      "bytes": 1635863,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "7850073fd485474dda20fa870fc83e57a15449dbfa7b5ed841af47beb188c765",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0099.png",
+      "bytes": 1632626,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "485996fe99f53c2aeccdd14deb10a63eaf98aafa18f7cf33c5caf76c29b567a0",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0100.png",
+      "bytes": 1629814,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "e6d3872e7ff524b1d67c4cec67e1e90b1559b741c3ec8d6ac636a131f1c33da9",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0101.png",
+      "bytes": 1627857,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "6931dc84a02209a7a2287f4a0baa985b3e5fc93f1433903fda349b6286fb2a0f",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0102.png",
+      "bytes": 1621254,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "ba289ba7879ed4e021eb07e81e03558502c35d9de18634266c4ace40b04b7c19",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0103.png",
+      "bytes": 1621445,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "025ad7448c452aa2d29849d3685468956613275b92da42daf85a2b70f9395cbb",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0104.png",
+      "bytes": 1609240,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "b6ddb2a0c241e6a32dd8ffb1d00fd28ab3054bcda55987be742e41af31aeca38",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0105.png",
+      "bytes": 1612322,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "5394cc9c552d1f96499a863c0a2891cc54ee1d0019dcc0dd858d25563e03ba2d",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0106.png",
+      "bytes": 1605721,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "ef4813fe47720af0a4bbef21b12398cbe90e176b401b022ea36e0ae5d732b98b",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0107.png",
+      "bytes": 1600865,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "beb23278faa90217e09bb59ecf07fd8b0dc57e69b027fda69d914b5da3111270",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0108.png",
+      "bytes": 1591041,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "95fa89c5efe06bf34ca929ea6d41d137d6bd9ff94e5bc69cdbb04b8adf74a61e",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0109.png",
+      "bytes": 1588193,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "f9053a5cff84c1fb80ad16049f03a9929d598a0188072d97cba2ca3a58aae633",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0110.png",
+      "bytes": 1580724,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "21793e63d31b3f2bd1af6fb30d473aaa676f1873a0b4708a77dffcfc2301c810",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0111.png",
+      "bytes": 1581597,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "5b1971aa588c6a22e352ae89ec8089ae33e4187d0ca4eb50af2e38764eb2f604",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0112.png",
+      "bytes": 1578651,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "3822857ac5b3e7d8fcd0ad2095cffc803a0cb119cc06b5855fe75f23ffd334fd",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0113.png",
+      "bytes": 1576488,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "3536969057bdf31f2f43af440aa95b5cbe0ba4f0c4ae63c4ae39cbb7977702a3",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0114.png",
+      "bytes": 1570046,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "0c79bf2610969188b1084e2d3fb91e413a45991f798c106e98810e6345c8735c",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0115.png",
+      "bytes": 1570871,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "9b78edeb017c51e76a1cdf4ac5d297df2e6a88da54c3a32f48c3d83430abb1bb",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0116.png",
+      "bytes": 1565597,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "876710d0c8262a4c0d1c4d0a8d5492d6946ba08d4ed864ea79144fad5a648875",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0117.png",
+      "bytes": 1560093,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "a3cdb093067c7dcc132114cabf08fe3e4f41213d678cead26b7a0fa7b6afbd68",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0118.png",
+      "bytes": 1553662,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "b114679594243c952228a147f495abb46deecae371cea9dc27afd4332b036c98",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0119.png",
+      "bytes": 1548906,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "578870c969a3031925f5d9f5e06d7364c1b8831bbfcc75c2bd5b6521a862fe9a",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0120.png",
+      "bytes": 1550307,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "842bcfbe3f9352bd5df9dc675b8160bb2195a83b86c7e8043943a16c1cbf44c2",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0121.png",
+      "bytes": 1540595,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "ef4c5766adfcaacd148545b9d6704ea902ce23aea9c42991d8e47dcd8527c751",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0122.png",
+      "bytes": 1538589,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "42f8b438b60e63b48dd066a6c141e3177286a5aa61bfe44df284dfdc8aa84497",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0123.png",
+      "bytes": 1531621,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "cc4382cc45f96e491a23b6041b1c79de79eb70113cef6ccfb3b7e9104f1d7098",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0124.png",
+      "bytes": 1537678,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "257770bbcc58f90806911bab8d46b613dd0f46512d53fd179cb581abd2c0c580",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0125.png",
+      "bytes": 1538530,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "59ccd0ee54ea5e099abbf798c9b31f7b03ae9886a40af51312293667e20041bd",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0126.png",
+      "bytes": 1536695,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "c7ff9770a0b6b19c18a09c177fe74ed88f24b8545e0346689da21689e19cdd5f",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0127.png",
+      "bytes": 1536975,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "596e8f8e5f2523ecdfd0d454427d6176a7c5a360a54ccf166c9e1e2dd1070e13",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0128.png",
+      "bytes": 1536205,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "e7863479f95ba4779494a98f98f4fe2f95d6317c1a34a4f517c1d17a71ae87e8",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0129.png",
+      "bytes": 1537244,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "1d4b0891cc7ee78fbdf5d0c416c3f0840329d8172a13bd74e2647eba1827cf2c",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0130.png",
+      "bytes": 1536442,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "aac2ba2b8df750186630a86359ed9363a266c66fe2d020b2615d3cddfea692f1",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0131.png",
+      "bytes": 1538404,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "00d5ab1dd7002bb702e29d3d40397225f59175c7a971a5bf6511cf4d0de648d0",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0132.png",
+      "bytes": 1536805,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "23c7b8d981ce896231a2fc590b4bc71747b83895e275c38e54fcaf4af09050b9",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0133.png",
+      "bytes": 1540023,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "84af6079a71996aaa7c3324ad3538b8e656e8624d71d934a36dc1ae5b47e57bc",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0134.png",
+      "bytes": 1538152,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "5ad5bd172665d849812ea7d587200d6532f2af9e95828d62dc2af2ccf02ecb4c",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0135.png",
+      "bytes": 1538038,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "f357d52e86a8e8a75cb7c29e160dd94651ca0064b06a34134b301090e25daae6",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0136.png",
+      "bytes": 1537636,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "c7dab358414fc12d4abad9b29256f4ad597cb0c7302577342636d2103ac6aa93",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0137.png",
+      "bytes": 1535622,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "1b3faf0c7912a3c2fdbce704a894567b43e97fec8670fb798aa314c68258b41a",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0138.png",
+      "bytes": 1535947,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "163fc6fa5452a84b2eeb33b208b16524434981dc236ae69efea76cf6cb89c6de",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0139.png",
+      "bytes": 1532794,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "893ee64e1d4a44ba04a7cc58314a0a4f65c62380e75bb663ee1bbee07065d767",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0140.png",
+      "bytes": 1533636,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "f1a486620cb4cb361a4a66a4908ed222a27f85f4b6a8053050a6d4a4177c884a",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0141.png",
+      "bytes": 1535812,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "3c9185502433f7a0725bc3d7b549006fdd82a19e74d1eb63f978b66790c5b80b",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0142.png",
+      "bytes": 1535970,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "9683f234a15cf36eb1a5ed88fe7b6edcf1d7588819f2a5a6389f4a3d189215df",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0143.png",
+      "bytes": 1537261,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "d361e42c9fc59a1836bde11205578e067915b8c874d31240a2c304031fbc2799",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "visuals/rev_b/animation/frames/frame_0144.png",
+      "bytes": 1537555,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "39bd64fb9b197a095260d9cb52c2b266e59628b0fd21be4fbd9247ee636b718f",
+      "artifact_kind": "render_frame",
+      "rebuild_sources": {
+        "visuals/rev_b/carbentra_animation.blend": "095fdc52648471d5cc449491d45345c901785b0b581cd0626a97c538cd0b8c8a",
+        "visuals/rev_b/animation/carbentra_exploded.mp4": "d6c3ecb5afd07ba35d054c306fdb49035ad5afeb5e958bdec5d05542d98235af"
+      }
+    },
+    {
+      "path": "firmware/build-host/test_feedback",
+      "bytes": 64048,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "bbd4e7ba0d7964647430806dcf92fe621374ff76a2c94ef93e974983a4f484ca",
+      "artifact_kind": "host_build",
+      "rebuild_sources": {
+        "firmware/tests/run_host_tests.ps1": "90a7a167f0b2d68a88384edb7abe238855e283eac70567b487736009d857a7aa",
+        "firmware/core/carbentra_policy.c": "59208d2f2df4c11afaa24b0b5af8f96ffce1f3cd69158c29237b34340e672664"
+      }
+    },
+    {
+      "path": "firmware/build-host/test_policy",
+      "bytes": 156176,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "15d98f2816a6239ee872cc3ce2003ba1a671d8856baf70abe783d16bc0648e1a",
+      "artifact_kind": "host_build",
+      "rebuild_sources": {
+        "firmware/tests/run_host_tests.ps1": "90a7a167f0b2d68a88384edb7abe238855e283eac70567b487736009d857a7aa",
+        "firmware/core/carbentra_policy.c": "59208d2f2df4c11afaa24b0b5af8f96ffce1f3cd69158c29237b34340e672664"
+      }
+    },
+    {
+      "path": "firmware/build-host/test_protocol",
+      "bytes": 529536,
+      "reason": "Reproducible frame or host build output",
+      "git_blob": null,
+      "retained_object": null,
+      "sha256": "9d437d1270f0102256116c2bc9c84e679ccf9631f90f3bf0da58cbfa50e8b091",
+      "artifact_kind": "host_build",
+      "rebuild_sources": {
+        "firmware/tests/run_host_tests.ps1": "90a7a167f0b2d68a88384edb7abe238855e283eac70567b487736009d857a7aa",
+        "firmware/core/carbentra_policy.c": "59208d2f2df4c11afaa24b0b5af8f96ffce1f3cd69158c29237b34340e672664"
+      }
+    }
+  ],
+  "disk_deletion_completed": false,
+  "reason": "Both verified bulk removal and explicit per-file PowerShell removal rejected by automatic approval review; no bypass attempted",
+  "publication": "All listed paths are ignored and absent from the published Git tree and source ZIP"
+}

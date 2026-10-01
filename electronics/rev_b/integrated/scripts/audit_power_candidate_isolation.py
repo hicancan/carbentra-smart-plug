@@ -47,4 +47,4 @@ for a in hot:
   if dist<8.399 and (':copper' in a['label'] or ':copper' in z['label']):margin_bad.append({'distance_mm':dist,'hot':a['label'],'isolated':z['label']})
   if dist<7.999:bad.append({'distance_mm':dist,'hot':a['label'],'isolated':z['label']})
 result={'basis':'all-layer XY projection, conservative pad bounding rectangles; vias/NC pins included; zones not included until final polygon audit','copper_items':len(items),'minimum_mm':best[0],'minimum_pair':best[1:],'component_only_minimum':body_best,'routing_margin_below_8p4':margin_bad,'violations_below_8mm':bad,'pass':not bad}
-(R/'validation/power_candidate_projected_isolation.json').write_text(json.dumps(result,indent=2));print(json.dumps(result,indent=2))
+(R/'validation/power_candidate_projected_isolation.json').write_text(json.dumps(result,indent=2), encoding='utf-8', newline='\n');print(json.dumps(result,indent=2))

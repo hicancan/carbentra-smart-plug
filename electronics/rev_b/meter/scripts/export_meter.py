@@ -1,9 +1,10 @@
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 import sys,json,math
 from pathlib import Path
-sys.path.append('/usr/lib/freecad/lib')
+sys.path.append(FREECAD_LIB)
 import FreeCAD as A,Part
 import pcbnew as p
-R=Path(__file__).resolve().parents[1];b=p.LoadBoard(str(R/'meter.kicad_pcb'));cs={c['ref']:c for c in json.loads((R/'circuit_manifest.json').read_text())}
+R=Path(__file__).resolve().parents[1];b=p.LoadBoard(str(R/'meter.kicad_pcb'));cs={c['ref']:c for c in json.loads((R/'circuit_manifest.json').read_text(encoding='utf-8'))}
 doc=A.newDocument('CARBENTRA_Meter_Rev_B');objects=[];manifest=[]
 def obj(name,shape):
  o=doc.addObject('Part::Feature','MeterB_'+name);o.Label=o.Name;o.Shape=shape;objects.append(o);return o
@@ -43,5 +44,5 @@ with (R/'exports/meter_assembly.obj').open('w') as f:
   for v in vs:f.write(f'v {v.x:.5f} {v.y:.5f} {v.z:.5f}\n')
   for tri in fs:f.write('f '+' '.join(str(k+off) for k in tri)+'\n')
   off+=len(vs)
-(R/'exports/component_envelopes.json').write_text(json.dumps({'board_id':'MeterB','coordinate_system':'mm, standalone board center XY origin, bottom z0; PCBx mapsx-37.5, PCBy maps22.5-y','board_size_mm':[75,45,1.6],'mount_holes_mm':[[-34.5,-19.5,2.2],[-34.5,19.5,2.2],[34.5,-19.5,2.2],[34.5,19.5,2.2]],'underside_terminal_lead_projection_mm':3.4,'status':'REV B DEVELOPMENT; assembly location not yet allocated','components':manifest},indent=2))
-(R/'validation/geometry.json').write_text(json.dumps({'objects':len(objects),'valid':all(o.Shape.isValid() and o.Shape.Volume>0 for o in objects),'component_envelopes':len(manifest),'limitations':['Package envelopes only; lead and paste geometry not vendor detailed','Pads shown as conservative rectangular bounds','Native PCB drawing authoritative for copper zones; OBJ traces are inspection overlay']},indent=2));print('Exported',len(objects),'objects;',len(manifest),'bodies')
+(R/'exports/component_envelopes.json').write_text(json.dumps({'board_id':'MeterB','coordinate_system':'mm, standalone board center XY origin, bottom z0; PCBx mapsx-37.5, PCBy maps22.5-y','board_size_mm':[75,45,1.6],'mount_holes_mm':[[-34.5,-19.5,2.2],[-34.5,19.5,2.2],[34.5,-19.5,2.2],[34.5,19.5,2.2]],'underside_terminal_lead_projection_mm':3.4,'status':'REV B DEVELOPMENT; assembly location not yet allocated','components':manifest},indent=2), encoding='utf-8', newline='\n')
+(R/'validation/geometry.json').write_text(json.dumps({'objects':len(objects),'valid':all(o.Shape.isValid() and o.Shape.Volume>0 for o in objects),'component_envelopes':len(manifest),'limitations':['Package envelopes only; lead and paste geometry not vendor detailed','Pads shown as conservative rectangular bounds','Native PCB drawing authoritative for copper zones; OBJ traces are inspection overlay']},indent=2), encoding='utf-8', newline='\n');print('Exported',len(objects),'objects;',len(manifest),'bodies')

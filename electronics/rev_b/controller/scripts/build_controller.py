@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 """Programmatic development-source generation. Never produces manufacturing files."""
 import re,json,uuid,copy,csv,math,sys
 from pathlib import Path
@@ -23,7 +24,7 @@ def children(v,k):return [x for x in v if isinstance(x,list) and x[0]==k]
 def child(v,k):return next((x for x in v if isinstance(x,list) and x[0]==k),None)
 cache={}
 def libsym(lib,name):
- if lib not in cache:cache[lib]={atom(x[1]):x for x in children(parse(Path('/usr/share/kicad/symbols',lib+'.kicad_sym').read_text()),'symbol')}
+ if lib not in cache:cache[lib]={atom(x[1]):x for x in children(parse(Path(kicad_resource('symbols'),lib+'.kicad_sym').read_text(encoding='utf-8')),'symbol')}
  s=copy.deepcopy(cache[lib][name]); ext=child(s,'extends')
  if ext:
   base=libsym(lib,atom(ext[1])); props={atom(x[1]):x for x in children(base,'property')};props.update({atom(x[1]):x for x in children(s,'property')})
@@ -65,7 +66,7 @@ if '--schematic-only' not in sys.argv:
  names=sorted(set(n for c in parts for n in c['nets'].values())); nets={}
  for n in names:net=p.NETINFO_ITEM(b,n);b.Add(net);nets[n]=net
  for c in parts:
-  lib,name=c['fp'].split(':'); fp=p.FootprintLoad('/usr/share/kicad/footprints/'+lib+'.pretty',name)
+  lib,name=c['fp'].split(':'); fp=p.FootprintLoad(kicad_resource('footprints/')+lib+'.pretty',name)
   if not fp:raise RuntimeError(c['fp'])
   fp.SetReference(c['ref']);fp.SetValue(c['value']);fp.SetPosition(p.VECTOR2I(p.FromMM(c['pos'][0]),p.FromMM(c['pos'][1])));fp.SetOrientationDegrees(c['pos'][2]);fp.SetPath(p.KIID_PATH('/'+uid('sheet')+'/'+uid(c['ref'])))
   for pad in fp.Pads():
@@ -75,21 +76,21 @@ if '--schematic-only' not in sys.argv:
   fp.Value().SetVisible(False);fp.Reference().SetLayer(p.F_Fab);fp.Reference().SetTextSize(p.VECTOR2I(p.FromMM(.8),p.FromMM(.8)))
   b.Add(fp)
  for i,(x,y) in enumerate([(5,5),(67,5),(67,63),(5,63)]):
-  f=p.FootprintLoad('/usr/share/kicad/footprints/MountingHole.pretty','MountingHole_3.2mm_M3');f.SetReference('H'+str(i+1));f.SetPosition(p.VECTOR2I(p.FromMM(x),p.FromMM(y)));b.Add(f)
+  f=p.FootprintLoad(kicad_resource('footprints/MountingHole.pretty'),'MountingHole_3.2mm_M3');f.SetReference('H'+str(i+1));f.SetPosition(p.VECTOR2I(p.FromMM(x),p.FromMM(y)));b.Add(f)
  for a,z in [((0,0),(72,0)),((72,0),(72,68)),((72,68),(0,68)),((0,68),(0,0))]:
   s=p.PCB_SHAPE();s.SetShape(p.SHAPE_T_SEGMENT);s.SetStart(p.VECTOR2I(p.FromMM(a[0]),p.FromMM(a[1])));s.SetEnd(p.VECTOR2I(p.FromMM(z[0]),p.FromMM(z[1])));s.SetLayer(p.Edge_Cuts);s.SetWidth(p.FromMM(.05));b.Add(s)
  for txt,x,y,size in [('CARBENTRA DEV-B',35,65,1),('FABRICATION HOLD',23,2,1),('MAINS / UNROUTED',18,41,.8),('SELV CANDIDATE',59,34,.7),('NO PE ON PCB',19,33,.8)]:
   t=p.PCB_TEXT(b);t.SetText(txt);t.SetPosition(p.VECTOR2I(p.FromMM(x),p.FromMM(y)));t.SetTextSize(p.VECTOR2I(p.FromMM(size),p.FromMM(size)));t.SetTextThickness(p.FromMM(.13));t.SetLayer(p.Dwgs_User);b.Add(t)
  p.SaveBoard(str(ROOT/'carbentra.kicad_pcb'),b)
  # Omit J5's clipped decorative silk, retaining Fab/courtyard/pads unchanged.
- tree=parse((ROOT/'carbentra.kicad_pcb').read_text())
+ tree=parse((ROOT/'carbentra.kicad_pcb').read_text(encoding='utf-8'))
  for fp in children(tree,'footprint'):
   ref=next((atom(v[2]) for v in children(fp,'property') if atom(v[1])=='Reference'),'')
   if ref in ('J5','PS1'):fp[:]=[v for v in fp if not(isinstance(v,list) and v[0] in ('fp_line','fp_poly','fp_circle','fp_arc') and child(v,'layer') and atom(child(v,'layer')[1])=='F.SilkS')]
- (ROOT/'carbentra.kicad_pcb').write_text(ser(tree))
+ (ROOT/'carbentra.kicad_pcb').write_text(ser(tree), encoding='utf-8', newline='\n')
  project=ROOT/'carbentra.kicad_pro'
  if project.exists():
-  conf=json.loads(project.read_text());conf['board']['design_settings']['rules']['min_through_hole_diameter']=.2;project.write_text(json.dumps(conf,indent=2))
+  conf=json.loads(project.read_text(encoding='utf-8'));conf['board']['design_settings']['rules']['min_through_hole_diameter']=.2;project.write_text(json.dumps(conf,indent=2), encoding='utf-8', newline='\n')
 # Functional schematic arrangement (A3); placements do not alter PCB.
 positions={'PS1':(95,65),'J5':(40,65),'U2':(65,140),'L1':(100,140),'C1':(35,140),'C2':(85,115),'C3':(115,160),'C4':(135,160),'K1':(180,65),'Q1':(180,120),'D1':(215,65),'R1':(150,120),'R2':(160,145),'J1':(150,42),'J2':(225,42),'U1':(320,85),'C5':(295,42),'R3':(260,65),'C6':(260,95),'R4':(340,142),'R5':(365,142),'R6':(390,142),'J4':(380,75),'U3':(320,205),'R7':(280,180),'R8':(270,210),'R9':(360,180),'C7':(355,218),'SW1':(185,215),'R10':(155,195),'LED1':(215,250),'R11':(180,250),'J3':(60,245)}
 for c in parts:c['sch']=positions[c['ref']]
@@ -128,10 +129,10 @@ for j,n in enumerate(['L_AUX_FUSED','N','+3V3_ISO','L_NC_UNUSED']):
  key='CARBENTRA:PWR_FLAG';ss=libsym('power','PWR_FLAG');ss[1]=q(key);symbols[key]=ser(ss);x=round(90/1.27)*1.27+j*25.4;y=265.43;ref='#FLG0'+str(j+1)
  items.append(f'(symbol (lib_id "{key}") (at {x} {y} 0) (unit 1) (in_bom no) (on_board yes) (uuid {uid(ref)}) (property "Reference" "{ref}" (at {x} {y} 0) (effects (font (size 1 1)) (hide yes))) (property "Value" "PWR_FLAG" (at {x} {y-5.08} 0) (effects (font (size 1 1)))) (instances (project "carbentra" (path "/{uid("sheet")}" (reference "{ref}") (unit 1)))))')
  items.append(f'(label "{n}" (at {x} {y} 0) (effects (font (size 1 1)) (justify left bottom)) (uuid {uid(ref+"label")}))')
-(ROOT/'carbentra.kicad_sch').write_text(f'(kicad_sch (version 20250114) (generator "eeschema") (uuid {uid("sheet")}) (paper "A3") (title_block (title "CARBENTRA - REV B single socket controller") (rev "DEV-B / FAB HOLD")) (lib_symbols '+''.join(symbols.values())+')'+''.join(items)+')')
-(ROOT/'CARBENTRA.kicad_sym').write_text('(kicad_symbol_lib (version 20241209) (generator \"kicad_symbol_editor\") '+''.join(v.replace(q(k),q(k.split(':')[1]),1) for k,v in symbols.items())+')')
-(ROOT/'sym-lib-table').write_text('(sym_lib_table (lib (name \"CARBENTRA\") (type \"KiCad\") (uri \"${KIPRJMOD}/CARBENTRA.kicad_sym\") (options \"\") (descr \"Vendored upstream KiCad symbol geometry\")))')
-(ROOT/'circuit_manifest.json').write_text(json.dumps([{k:v for k,v in c.items() if k!='sym'} for c in parts],indent=2))
+(ROOT/'carbentra.kicad_sch').write_text(f'(kicad_sch (version 20250114) (generator "eeschema") (uuid {uid("sheet")}) (paper "A3") (title_block (title "CARBENTRA - REV B single socket controller") (rev "DEV-B / FAB HOLD")) (lib_symbols '+''.join(symbols.values())+')'+''.join(items)+')', encoding='utf-8', newline='\n')
+(ROOT/'CARBENTRA.kicad_sym').write_text('(kicad_symbol_lib (version 20241209) (generator \"kicad_symbol_editor\") '+''.join(v.replace(q(k),q(k.split(':')[1]),1) for k,v in symbols.items())+')', encoding='utf-8', newline='\n')
+(ROOT/'sym-lib-table').write_text('(sym_lib_table (lib (name \"CARBENTRA\") (type \"KiCad\") (uri \"${KIPRJMOD}/CARBENTRA.kicad_sym\") (options \"\") (descr \"Vendored upstream KiCad symbol geometry\")))', encoding='utf-8', newline='\n')
+(ROOT/'circuit_manifest.json').write_text(json.dumps([{k:v for k,v in c.items() if k!='sym'} for c in parts],indent=2), encoding='utf-8', newline='\n')
 with (ROOT/'bom.csv').open('w') as f:
  w=csv.writer(f);w.writerow(['Reference','Value','Manufacturer part candidate','Footprint','Source URL','Status']);
  for c in parts:w.writerow([c['ref'],c['value'],c['mpn'],c['fp'],c['url'],'UNRELEASED: verify exact variant, sourcing and application'])

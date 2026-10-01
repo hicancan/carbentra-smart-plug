@@ -8,9 +8,4 @@ config CARBENTRA_ALLOW_ACTUATION
 config CARBENTRA_BOARD_REV_B
     bool "Use revision B GPIO3 output-presence feedback"
     default y
-config CARBENTRA_SNTP_SERVER
-    string "Commissioned local time server"
-    default ""
-    help
-        Empty disables network time. Provision a trusted campus time service.
 endmenu

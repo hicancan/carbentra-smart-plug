@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 import sys,os,json
-BASE=os.path.dirname(os.path.abspath(__file__));sys.path.extend(['/usr/lib/freecad-python3/lib',BASE])
+BASE=os.path.dirname(os.path.abspath(__file__));sys.path.extend([FREECAD_LIB,BASE])
 import FreeCAD as A,socket_b_features as m
 D=A.openDocument(BASE+'/CARBENTRA-P16-B-base-provisional.FCStd')
 pairs=[('Blade_PE','PEBus'),('PEBus','Contact_PE'),('Blade_L','PowerCore_L_RAW'),('PowerCore_L_RAW','MainFuseCollector1'),('MainFuseCollector1','MainFuseClip1'),('MainFuseClip1','MainFuseCap1'),('MainFuseCap2','MainFuseClip2'),('MainFuseClip2','MainFuseCollector2'),('MainFuseCollector2','PowerCore_L_FUSE_THERMAL'),('PowerCore_L_FUSE_THERMAL','ThermalLead2'),('ThermalLead1','PowerCore_L_PROTECTED'),('PowerCore_L_OUTPUT','Contact_L'),('Blade_N','PowerCore_N_RAW'),('PowerCore_N_OUTPUT','Contact_N')]

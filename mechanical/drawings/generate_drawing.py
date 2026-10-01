@@ -1,12 +1,13 @@
 #!/usr/bin/python3
+from carbentra_tools import FREECAD_LIB, FONT_REGULAR, PYTHON, kicad_resource
 """Dimensioned layout drawing. All values sourced from development geometry inputs."""
 import json,os,math
 from reportlab.pdfgen import canvas
 from reportlab.lib.colors import HexColor
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-pdfmetrics.registerFont(TTFont('DejaVu','/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'))
-pdfmetrics.registerFont(TTFont('DejaVu-Bold','/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'))
+pdfmetrics.registerFont(TTFont('DejaVu',FONT_REGULAR))
+pdfmetrics.registerFont(TTFont('DejaVu-Bold',FONT_REGULAR))
 BASE=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 P=json.load(open(BASE+'/design_parameters.json'))
 out=BASE+'/drawings/CARBENTRA-P16-EVT-A_general_arrangement.pdf'

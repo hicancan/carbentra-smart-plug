@@ -1,5 +1,8 @@
 #include "carbentra_network.h"
 #include "carbentra_command_json.h"
+#include "carbentra_json.h"
+#include "carbentra_storage_contract.h"
+#include "carbentra_time_bootstrap.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -9,6 +12,7 @@
 #include <errno.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/queue.h"
+#include "freertos/task.h"
 #include "esp_wifi.h"
 #include "esp_event.h"
 #include "esp_netif.h"
@@ -20,7 +24,10 @@
 #include "cJSON.h"
 #include "wifi_provisioning/manager.h"
 #include "wifi_provisioning/scheme_ble.h"
-#include "esp_sntp.h"
+
+#if !CONFIG_MBEDTLS_HAVE_TIME_DATE
+#error "Certificate date verification must remain enabled; use signed time bootstrap"
+#endif
 #define MAX_COMMAND 1024
 static const char *TAG="carbentra_network";
 static esp_mqtt_client_handle_t client;
@@ -34,7 +41,8 @@ static char clock_nonce[33];
 static bool clock_trusted; static int64_t clock_anchor_lower_s,clock_anchor_upper_s;static uint32_t network_epoch; static uint64_t clock_anchor_ms,clock_requested_ms;
 static int rx_kind;
 static portMUX_TYPE clock_mux=portMUX_INITIALIZER_UNLOCKED;
-static char *broker_uri,*ca_pem,*client_pem,*client_key;
+static char *broker_uri,*ca_pem,*client_pem,*client_key,*time_url,*time_public_key;
+static volatile bool ip_ready,certificate_time_ready;
 static char rx[MAX_COMMAND+1];static size_t rx_len,rx_total;
 static bool accepting;
 static uint8_t salt[64],verifier[512];
@@ -54,22 +62,22 @@ static void request_clock(void){
  carbentra_network_publish("hello",text);
 }
 static void receive_receipt(const char*text){
- cJSON*j=cJSON_ParseWithLengthOpts(text,strlen(text)+1,NULL,true);if(!j)return;
+ cJSON*j=carbentra_json_object(text,MAX_COMMAND,2);if(!j)return;
  cJSON*e=cJSON_GetObjectItemCaseSensitive(j,"boot_epoch"),*s=cJSON_GetObjectItemCaseSensitive(j,"sample_seq");
  if(cJSON_IsString(e)&&e->valuestring&&strlen(e->valuestring)==32&&cJSON_IsString(s)&&s->valuestring&&strlen(s->valuestring)>0&&strlen(s->valuestring)<=20){
-  bool ok=true;for(const char*p=s->valuestring;*p;p++)if(*p<'0'||*p>'9')ok=false;
+  bool ok=s->valuestring[0]!='0';for(const char*p=e->valuestring;*p;p++)if(!((*p>='0'&&*p<='9')||(*p>='a'&&*p<='f')))ok=false;for(const char*p=s->valuestring;*p;p++)if(*p<'0'||*p>'9')ok=false;
   errno=0;receipt r={0};char*end;r.sequence=strtoull(s->valuestring,&end,10);if(errno||*end||r.sequence==0)ok=false;
   memcpy(r.epoch,e->valuestring,32);if(ok)xQueueSend(receipts,&r,0);
  }
  cJSON_Delete(j);
 }
 static void receive_clock(const char *text){
- cJSON*j=cJSON_ParseWithLengthOpts(text,strlen(text)+1,NULL,true);if(!j)return;
+ cJSON*j=carbentra_json_object(text,MAX_COMMAND,2);if(!j)return;
  cJSON*n=cJSON_GetObjectItemCaseSensitive(j,"clock_nonce"),*t=cJSON_GetObjectItemCaseSensitive(j,"unix_s");
  uint64_t now=esp_timer_get_time()/1000;char expected[33];uint64_t requested;
  portENTER_CRITICAL(&clock_mux);memcpy(expected,clock_nonce,sizeof(expected));requested=clock_requested_ms;portEXIT_CRITICAL(&clock_mux);
  if(cJSON_IsString(n)&&n->valuestring&&!strcmp(n->valuestring,expected)&&cJSON_IsNumber(t)&&isfinite(t->valuedouble)&&floor(t->valuedouble)==t->valuedouble&&t->valuedouble>=1700000000&&t->valuedouble<4102444800.0&&now>=requested&&now-requested<=2000){
-  portENTER_CRITICAL(&clock_mux);clock_anchor_lower_s=(int64_t)t->valuedouble;clock_anchor_upper_s=(int64_t)t->valuedouble+1+(int64_t)((now-requested+999)/1000);clock_anchor_ms=now;clock_trusted=true;portEXIT_CRITICAL(&clock_mux);
+  portENTER_CRITICAL(&clock_mux);clock_anchor_lower_s=(int64_t)t->valuedouble;clock_anchor_upper_s=(int64_t)t->valuedouble+1+(int64_t)((now-requested+999)/1000);clock_anchor_ms=now;clock_trusted=true;clock_nonce[0]=0;portEXIT_CRITICAL(&clock_mux);
  }
  cJSON_Delete(j);
 }
@@ -97,27 +105,44 @@ static void mqtt_event(void *arg,esp_event_base_t base,int32_t id,void *data){
 }
 static void reconnect(void*arg){(void)arg;esp_wifi_connect();}
 static void stop_provisioning(void*arg){(void)arg;wifi_prov_mgr_stop_provisioning();}
+static void bootstrap_task(void *arg){
+ (void)arg;bool started=false;uint64_t authenticated_at=0,next_attempt=0;
+ for(;;){uint64_t now=esp_timer_get_time()/1000;
+  if(started&&now-authenticated_at>600000){
+   certificate_time_ready=false;connected=false;
+   esp_err_t stopped=esp_mqtt_client_stop(client);
+   portENTER_CRITICAL(&clock_mux);clock_trusted=false;portEXIT_CRITICAL(&clock_mux);
+   if(commands)xQueueReset(commands);
+   if(stopped==ESP_OK)started=false;
+   else{vTaskDelay(pdMS_TO_TICKS(1000));continue;}
+  }
+  if(ip_ready&&now>=next_attempt&&(!started||now-authenticated_at>=300000)){
+   /* A separate task keeps slow or malicious time endpoints out of local protection. */
+   esp_err_t e=carbentra_time_bootstrap(time_url,time_public_key);
+   now=esp_timer_get_time()/1000;next_attempt=now+15000;
+   if(e==ESP_OK){authenticated_at=now;certificate_time_ready=true;if(!started)started=esp_mqtt_client_start(client)==ESP_OK;if(!started)certificate_time_ready=false;}
+   else ESP_LOGW(TAG,"Signed time unavailable; no TLS verification bypass");
+  }
+  vTaskDelay(pdMS_TO_TICKS(1000));
+ }
+}
 static void wifi_event(void*arg,esp_event_base_t base,int32_t id,void*data){
  (void)arg;(void)data;
  if(base==WIFI_EVENT&&id==WIFI_EVENT_STA_START)esp_wifi_connect();
- if(base==WIFI_EVENT&&id==WIFI_EVENT_STA_DISCONNECTED){connected=false;
+ if(base==WIFI_EVENT&&id==WIFI_EVENT_STA_DISCONNECTED){connected=false;ip_ready=false;
   if(reconnect_timer){esp_timer_stop(reconnect_timer);esp_timer_start_once(reconnect_timer,(uint64_t)reconnect_s*1000000);if(reconnect_s<32)reconnect_s*=2;}}
- if(base==IP_EVENT&&id==IP_EVENT_STA_GOT_IP){reconnect_s=1;
-  static bool started;if(client&&!started){esp_mqtt_client_start(client);started=true;}
-  #if defined(CONFIG_CARBENTRA_SNTP_SERVER)
-  if(strlen(CONFIG_CARBENTRA_SNTP_SERVER)>0&&!esp_sntp_enabled()) {esp_sntp_setoperatingmode(SNTP_OPMODE_POLL);esp_sntp_setservername(0,CONFIG_CARBENTRA_SNTP_SERVER);esp_sntp_init();}
-  #endif
- }
+ if(base==IP_EVENT&&id==IP_EVENT_STA_GOT_IP){reconnect_s=1;ip_ready=true;}
  if(base==WIFI_PROV_EVENT&&id==WIFI_PROV_END){if(provision_timeout)esp_timer_stop(provision_timeout);wifi_prov_mgr_deinit();}
 }
 esp_err_t carbentra_network_start(const char*device_id){
  /* Credentials are provisioned by the owner outside this source project.
     Never ship common passwords, private keys or Security0 provisioning. */
- nvs_handle_t n;esp_err_t err=nvs_open("carbentra_secure",NVS_READONLY,&n);
+ nvs_handle_t n;esp_err_t err=nvs_open(CARBENTRA_NVS_SECURE,NVS_READONLY,&n);
  if(err!=ESP_OK){ESP_LOGW(TAG,"No owner provisioning: networking stays disabled");return err;}
  broker_uri=read_string(n,"broker",256);ca_pem=read_string(n,"ca_pem",8192);
  client_pem=read_string(n,"client_cert",8192);client_key=read_string(n,"client_key",8192);
- if(!broker_uri||strncmp(broker_uri,"mqtts://",8)||!ca_pem||!client_pem||!client_key){nvs_close(n);ESP_LOGE(TAG,"mTLS configuration incomplete; no insecure fallback");return ESP_ERR_INVALID_STATE;}
+ time_url=read_string(n,"time_url",256);time_public_key=read_string(n,"time_pub",1024);
+ if(!broker_uri||strncmp(broker_uri,"mqtts://",8)||!ca_pem||!client_pem||!client_key||!time_url||strncmp(time_url,"http://",7)||!time_public_key){nvs_close(n);ESP_LOGE(TAG,"mTLS/signed-time configuration incomplete; no insecure fallback");return ESP_ERR_INVALID_STATE;}
  snprintf(base_topic,sizeof(base_topic),"carbentra/v1/%s",device_id);
  snprintf(command_topic,sizeof(command_topic),"%s/cmd",base_topic);snprintf(time_topic,sizeof(time_topic),"%s/time",base_topic);snprintf(receipt_topic,sizeof(receipt_topic),"%s/receipt",base_topic);
  commands=xQueueCreate(8,sizeof(queued_command));receipts=xQueueCreate(8,sizeof(receipt));if(!commands||!receipts){nvs_close(n);return ESP_ERR_NO_MEM;}
@@ -142,17 +167,18 @@ esp_err_t carbentra_network_start(const char*device_id){
    err=wifi_prov_mgr_start_provisioning(WIFI_PROV_SECURITY_2,&sec2,device_id,NULL);
    if(err==ESP_OK){esp_timer_create_args_t pt={.callback=stop_provisioning,.name="prov_limit"};ESP_ERROR_CHECK(esp_timer_create(&pt,&provision_timeout));esp_timer_start_once(provision_timeout,180ULL*1000000);}}
  }
+ if(err==ESP_OK&&xTaskCreate(bootstrap_task,"signed_time",8192,NULL,4,NULL)!=pdPASS)err=ESP_ERR_NO_MEM;
  nvs_close(n);return err;
 }
-bool carbentra_network_online(void){return connected;}
+bool carbentra_network_online(void){return connected&&certificate_time_ready;}
 bool carbentra_network_command(carbentra_command*out,uint32_t*received_epoch){queued_command q;if(!commands||!out||!received_epoch||xQueueReceive(commands,&q,0)!=pdTRUE)return false;*out=q.command;*received_epoch=q.received_epoch;return true;}
-int carbentra_network_publish(const char*kind,const char*json){if(!connected||!client)return -1;char topic[110];snprintf(topic,sizeof(topic),"%s/%s",base_topic,kind);return esp_mqtt_client_enqueue(client,topic,json,0,1,0,true);}
+int carbentra_network_publish(const char*kind,const char*json){if(!carbentra_network_online()||!client)return -1;char topic[110];snprintf(topic,sizeof(topic),"%s/%s",base_topic,kind);return esp_mqtt_client_enqueue(client,topic,json,0,1,0,true);}
 unsigned carbentra_network_dropped_commands(void){return dropped;}
 
 void carbentra_network_tick(void){uint64_t now=esp_timer_get_time()/1000;portENTER_CRITICAL(&clock_mux);bool need=(!clock_trusted||now-clock_anchor_ms>300000)&&now-clock_requested_ms>15000;portEXIT_CRITICAL(&clock_mux);if(connected&&need)request_clock();}
-bool carbentra_network_trusted_time(int64_t*lower,int64_t*upper){
- uint64_t now=esp_timer_get_time()/1000;portENTER_CRITICAL(&clock_mux);
- bool ok=clock_trusted&&now>=clock_anchor_ms&&now-clock_anchor_ms<=600000;
+bool carbentra_network_trusted_time_at(uint64_t now,int64_t*lower,int64_t*upper){
+ portENTER_CRITICAL(&clock_mux);
+ bool ok=clock_trusted&&certificate_time_ready&&now>=clock_anchor_ms&&now-clock_anchor_ms<=600000;
  int64_t elapsed=ok?(int64_t)((now-clock_anchor_ms)/1000):0;
  int64_t lo=clock_anchor_lower_s+(elapsed>0?elapsed-1:0),hi=clock_anchor_upper_s+elapsed+1;
  portEXIT_CRITICAL(&clock_mux);
@@ -161,3 +187,5 @@ bool carbentra_network_trusted_time(int64_t*lower,int64_t*upper){
 uint32_t carbentra_network_epoch(void){portENTER_CRITICAL(&clock_mux);uint32_t e=network_epoch;portEXIT_CRITICAL(&clock_mux);return e;}
 
 bool carbentra_network_receipt(char epoch[33],uint64_t*seq){receipt r;if(!receipts||xQueueReceive(receipts,&r,0)!=pdTRUE)return false;memcpy(epoch,r.epoch,33);*seq=r.sequence;return true;}
+
+bool carbentra_network_trusted_time(int64_t*lower,int64_t*upper){return carbentra_network_trusted_time_at(esp_timer_get_time()/1000,lower,upper);}

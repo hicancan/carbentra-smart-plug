@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "device_type": "smart_plug",
+  "wire_schema_version": 2,
+  "firmware_target": "esp32c3",
+  "channels": [
+    {
+      "wire_id": "relay.1",
+      "canonical_id": "relay.1",
+      "capabilities": [
+        "on_off",
+        "physical_momentary_input",
+        "manual_hold"
+      ],
+      "feedback": "qualified_optical_ac_pulses",
+      "voltage_absence_proven": false
+    }
+  ],
+  "measurement_boundary": {
+    "scope": "single_plug_output",
+    "energy_quality": "calibrated_known_intervals_since_boot",
+    "persistent_energy_total": false
+  },
+  "physical_release": {
+    "compile_default": "disabled",
+    "requires": [
+      "per_unit_commissioning",
+      "approved_noncritical_sheddable_load",
+      "valid_calibrated_measurement",
+      "qualified_feedback",
+      "minimum_dwell",
+      "independent_hardware_qualification"
+    ],
+    "physical_testing_performed": false
+  },
+  "control": {
+    "boot": "off",
+    "local_input": "50ms_debounce_release_before_first_press",
+    "manual_hold_default_ms": 900000,
+    "remote_override": false,
+    "local_on": "same_commissioning_load_feedback_dwell_guards",
+    "local_off": "safety_action_available_offline",
+    "maintenance": "blocks_on",
+    "fault": "latched_requests_off"
+  },
+  "scope": "Hardware implementation and physical release facts; canonical capabilities and descriptors belong to the shared package",
+  "canonical_descriptor_source": "carbentra-campus-platform/packages/iot-contract/examples/descriptors.json",
+  "canonical_schema_source": "carbentra-campus-platform/packages/iot-contract/schemas/descriptor.schema.json"
+}
